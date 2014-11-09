@@ -8,46 +8,47 @@ Warning--entry type for "Fox:2011:Online" isn't style-file defined
 Warning--entry type for "Google_Translate_Research" isn't style-file defined
 --line 57 of file ../mybib.bib
 Warning--empty institution in Gov_Internet_Usage_UK_2014
+Warning--empty journal in community1948universal
 Warning--empty journal in kenny2011ethics
-You've used 8 entries,
+You've used 9 entries,
             2118 wiz_defined-function locations,
-            543 strings with 5122 characters,
-and the built_in function-call counts, 1775 in all, are:
-= -- 166
-> -- 62
+            547 strings with 5228 characters,
+and the built_in function-call counts, 1980 in all, are:
+= -- 185
+> -- 69
 < -- 0
-+ -- 27
-- -- 18
-* -- 83
-:= -- 314
-add.period$ -- 20
-call.type$ -- 8
-change.case$ -- 35
++ -- 31
+- -- 20
+* -- 91
+:= -- 352
+add.period$ -- 23
+call.type$ -- 9
+change.case$ -- 39
 chr.to.int$ -- 0
-cite$ -- 10
-duplicate$ -- 65
-empty$ -- 167
-format.name$ -- 18
-if$ -- 368
+cite$ -- 12
+duplicate$ -- 75
+empty$ -- 184
+format.name$ -- 20
+if$ -- 408
 int.to.chr$ -- 0
-int.to.str$ -- 8
-missing$ -- 2
-newline$ -- 39
-num.names$ -- 16
-pop$ -- 50
+int.to.str$ -- 9
+missing$ -- 3
+newline$ -- 44
+num.names$ -- 18
+pop$ -- 56
 preamble$ -- 1
-purify$ -- 25
+purify$ -- 28
 quote$ -- 0
-skip$ -- 57
+skip$ -- 64
 stack$ -- 0
-substring$ -- 74
+substring$ -- 80
 swap$ -- 5
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 32
-warning$ -- 2
-while$ -- 17
-width$ -- 9
-write$ -- 77
-(There were 4 warnings)
+type$ -- 36
+warning$ -- 3
+while$ -- 19
+width$ -- 10
+write$ -- 86
+(There were 5 warnings)
