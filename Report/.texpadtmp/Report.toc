@@ -1,24 +1,28 @@
-\contentsline {section}{\numberline {1}Useful thoughts from Lilian}{6}
-\contentsline {section}{\numberline {2}Introduction}{6}
-\contentsline {subsection}{\numberline {2.1}Background of this project}{6}
-\contentsline {subsection}{\numberline {2.2}Motivation for this project}{6}
-\contentsline {subsection}{\numberline {2.3}Aims of this project}{7}
-\contentsline {subsection}{\numberline {2.4}Structure of this report}{7}
-\contentsline {subsection}{\numberline {2.5}Assumptions Within This Project}{8}
-\contentsline {section}{\numberline {3}Literature Review}{9}
-\contentsline {subsection}{\numberline {3.1}Previous work using SMS}{9}
-\contentsline {subsection}{\numberline {3.2}Ethical Issues}{10}
-\contentsline {subsubsection}{\numberline {3.2.1}Ethics of Providing Information}{10}
-\contentsline {subsubsection}{\numberline {3.2.2}Ethics of Translation}{10}
-\contentsline {subsubsection}{\numberline {3.2.3}User Privacy and Data Protection}{12}
-\contentsline {subsection}{\numberline {3.3}Software Design Life-cycles}{12}
-\contentsline {section}{\numberline {4}Method and Requirements}{13}
-\contentsline {section}{\numberline {5}Design}{14}
-\contentsline {section}{\numberline {6}Implementation}{15}
-\contentsline {section}{\numberline {7}Results}{16}
-\contentsline {section}{\numberline {8}Discussion}{17}
-\contentsline {subsection}{\numberline {8.1}Protecting the Identity of Users}{17}
-\contentsline {subsubsection}{\numberline {8.1.1}The Purpose of a Non-reversible Hash}{17}
-\contentsline {section}{\numberline {9}Conclusion}{18}
-\contentsline {section}{\numberline {10}Extending this project}{19}
-\contentsline {section}{\numberline {11}Appendix 1 - Data usage}{20}
+\contentsline {section}{\numberline {1}Useful thoughts from Lilian}{8}
+\contentsline {section}{\numberline {2}Introduction}{8}
+\contentsline {subsection}{\numberline {2.1}Background of this project}{8}
+\contentsline {subsection}{\numberline {2.2}Motivation for this project}{9}
+\contentsline {subsection}{\numberline {2.3}Aims of this project}{9}
+\contentsline {subsection}{\numberline {2.4}Structure of this report}{9}
+\contentsline {subsection}{\numberline {2.5}Assumptions Within This Project}{10}
+\contentsline {section}{\numberline {3}Literature Review}{11}
+\contentsline {subsection}{\numberline {3.1}Previous work using SMS}{11}
+\contentsline {subsection}{\numberline {3.2}Ethical Issues}{12}
+\contentsline {subsubsection}{\numberline {3.2.1}Ethics of Providing Information}{12}
+\contentsline {subsubsection}{\numberline {3.2.2}Ethics of Translation}{13}
+\contentsline {subsubsection}{\numberline {3.2.3}User Privacy and Data Protection}{14}
+\contentsline {subsection}{\numberline {3.3}Software Design Life-cycles}{14}
+\contentsline {section}{\numberline {4}Method and Requirements}{15}
+\contentsline {subsection}{\numberline {4.1}Chosen Software Development Lifecycle}{15}
+\contentsline {subsection}{\numberline {4.2}Plan for Software Development}{15}
+\contentsline {subsection}{\numberline {4.3}Requirements}{15}
+\contentsline {subsection}{\numberline {4.4}Evaluating Success}{15}
+\contentsline {section}{\numberline {5}Design}{16}
+\contentsline {subsection}{\numberline {5.1}Software Design}{16}
+\contentsline {subsubsection}{\numberline {5.1.1}Micro-system for Protecting User Identity}{16}
+\contentsline {subsection}{\numberline {5.2}Platform, Language and Tools}{16}
+\contentsline {section}{\numberline {6}Implementation}{17}
+\contentsline {section}{\numberline {7}Results}{18}
+\contentsline {section}{\numberline {8}Discussion}{19}
+\contentsline {section}{\numberline {9}Conclusion}{20}
+\contentsline {section}{\numberline {10}Extending this project}{21}

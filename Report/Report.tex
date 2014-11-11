@@ -15,11 +15,16 @@
 \usepackage[autostyle]{csquotes}
 \usepackage{marginnote}
 
+% to avoid having to escape all underscores to avoid "missing $ inserted" error.
+\usepackage{url}
+
 %\textwidth = 490pt
 
 \usepackage{graphicx}
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
 \graphicspath{ {./figures/} }
+
+\setlength{\parskip}{0.8em}
 
 \begin{document}
 
@@ -52,6 +57,11 @@ This project raises ethical issues relating to the responsibility of providing a
 \listoftables
 \newpage
 
+\section*{Statement of Ethics}
+% TODO write this
+{\bf Pretty much the most important part - write this!}
+
+\newpage
 \section{Useful thoughts from Lilian}
 Take a quick look at list of other students previous projects to get an idea of how intro/lit review is structured etc.
 
@@ -61,11 +71,13 @@ Remember to take notes on when I come across problems, for my conclusion.
 
 \subsection{Background of this project}
 
-The inspiration for this project originates from a project the author undertook in September 2014 whilst attending a week long 'hackathon' (Yacht Hack, http://toughhackers.com/yacht-hack-2014/), with Julie Markham and Nicholas Hopper, called Shy.  On this project, the author created a project to prototype a mobile application that would facilitate the immediate answering of questions that fall within certain categories.
+The inspiration for this project originates from a project the author undertook in September 2014 whilst attending a week long 'hackathon' (Yacht Hack, http://toughhackers.com/yacht-hack-2014/), with Julie Markham and Nicholas Hopper, called Shy.  On this project, the author co-created a project to prototype a mobile application that would facilitate the immediate answering of questions that fall within certain categories.
+
+One of the initial aims of Shy was to further the transition from e-learning (learning conducted online, usually with the help of a computer) to m-learning (learning using tools available on a mobile device).  M-learning is an especially important topic at the moment, due to the high, and increasing, availability of mobile devices worldwide.
 
 A semi-functional prototype was completed for iOS (shown in Figure~\ref{fig:shy-ios-screenshots}, although question recommendations were evaluated without knowledge of previous material the user had viewed, and as such there was no knowledge of their interests to support explicitly targeted answers for a question they might search for.
 
-Up until this point, the service was restricted to working on iOS smart devices only, with poor quality question/answer matching.
+Up until this point, the service was restricted to working on iOS smart devices only, with poor quality question/answer matching.  
 
 \begin{figure}[htb] 
 \includegraphics[width=\linewidth]{shy-screenshots}
@@ -74,12 +86,9 @@ Up until this point, the service was restricted to working on iOS smart devices 
 \end{figure}
 
 \subsection{Motivation for this project}
-Access to knowledge is, in the opinion of the author, a critical part of modern life.  It's also a Human Right, under the Article 27 of the Universal Declaration of Human Rights~\cite{community1948universal}.  Indeed, we use tools to access knowledge hundreds of times each day, often unaware that we are doing so.  Despite this, hundreds of millions of individuals live without this facility.  This project aims to investigate and create a technology to give more people access to knowledge, and thus their human rights.
+Access to knowledge is, in the opinion of the author, a critical part of modern life.  It's also a Human Right, under Article 27 of the Universal Declaration of Human Rights~\cite{community1948universal}.  Indeed, we use tools to access knowledge hundreds of times each day, often unaware that we are doing so.  Despite this, hundreds of millions of individuals live without this facility.  This project aims to investigate and create a technology to give more people access to knowledge, and thus their human rights.
 
-The project also involves the use of a number of systems to work, including machine translation, an SMS input/output system and a custom system to build a profile on a user, to facilitate high-quality question-answer matching.  These, along with some complex ethics and privacy issues create an interesting project that draws together many technologies and discussions in a way that can be used as a basis for other projects in the future.
-
-Computer software is an important tool for teaching as it encourages users to take a hands-on approach to learning, and provides some variation from traditional methods of teaching. JFLAP specifically was also found to increase the level of involvement for
-Chapter 1. Introduction 3￼students in a study by Rodger [2]. The University of York uses JFLAP in the teaching of a first-year Computer Science module on formal languages, and most students have found that the software has helped them to understand the processes behind the computational models involved (see Section 3.1.1.1). In addition, after having experienced the software as a user, there was a considerable incentive to extend the software to enhance the learning experience for users.
+The project also involves the use of a number of systems to work, including machine translation, an SMS input/output system and a custom system to build a profile on a user, to facilitate high-quality question-answer matching.  These, along with complex ethics and privacy issues create an interesting project that draws together many technologies and discussions in a way that can be used as a basis for other projects in the future.
 
 \subsection{Aims of this project}
 
@@ -90,7 +99,7 @@ This report starts with a review of pre-existing literature on this topic, in ch
 
 Chapter~\ref{sec:method} describes the method that will be taken to develop the software and service.  This covers the software development life-cycle that will be followed, and sets out a plan for when development will take place.  Requirements will also be identified, described and categorised  as either functional or non-functional.  A method of evaluating the success of the software will also be discussed and choosen.
 
-The design of the software, driven from information collected from the requirements, will be set out in Chapter~\ref{sec:design}.  The individual components that make up the technology will be described and discussed\marginnote{described and discussed, or just described?}, followed by a description of how these modules will interface with each other to build a complete system.  
+The design of the software, driven from information collected from the requirements, will be set out in Chapter~\ref{sec:design}.  The individual components that make up the technology will be described and discussed\marginnote{described and discussed, or just described?}, followed by a description of how these modules will interface with each other to build a complete system.  Finally, this section will include a description of the platform, language and other tools that will be used.
 
 Chapter~\ref{sec:implementation} contains details about the implementation of the software.  This includes information on the tools that were used to create components such as the SMS interface and question/answer matching system.
 
@@ -125,11 +134,11 @@ This is easy to do in the developed world, where up to 75\% of the population ar
 
 % But there are other communication methods which are proven to work
 \subsection{Previous work using SMS}
-Although the above suggests that the African continent is majoritively disconnected, this is not the case.  Because of restrictions in the electricity available, the ways in which a mobile phone can be used in Africa have far surpassed those in the developed world ~\cite{Fox:2011:Online}.  Interesting such examples include automated services which SMS HIV/AIDS sufferers, reminding them of medication to take, and providing access to current market information for agriculture and farming, saving farmers from making daily trips (often many kilometres) or relying on out-of-date information from a weekly radio broadcast ~\cite{Aker_Mobile_Phones_2010}.
+Although the above suggests that the African continent is majoritively disconnected, this is not the case.  Because of restrictions in the electricity available, the ways in which a mobile phone can be used in Africa have far surpassed those in the developed world~\cite{Fox:2011:Online}.  Interesting such examples include automated services which SMS HIV/AIDS sufferers, reminding them of medication to take, and providing access to current market information for agriculture and farming, saving farmers from making daily trips (often many kilometres) or relying on out-of-date information from a weekly radio broadcast~\cite{Aker_Mobile_Phones_2010}.
 
-Interactive systems have also been developed to operate over SMS.  One successful example includes mobile money platforms.  These allow for users, from any background, to pay and be paid for goods, and to transfer money across long distances, at negligible cost ~\cite{Aker_Mobile_Phones_2010}.  One of the most highly adopted services is M-Pesa - which, in Kenya alone, was responsible for £5.7 Billion in transfers in 2012 \footnote{Data from Safaricom, M-Pesa operator in Kenya - actual value 817,085,000,000 Kenyan Shillings, converted to GBP on 1st November 2014 at rate of approximately 0.007.}.  M-Pesa gives users a balance linked to a national ID number, from which they can pay for goods by sending an SMS with a cashier (recipient) number or pay outstanding bills in a similar way.  Non-subscribers can also use the system, by depositing money with a M-Pesa cashier in exchange for an access code, which can be sent via SMS to a contact, who can subsequently redeem it with their local cashier~\cite{Aker_Mobile_Phones_2010}.
+Interactive systems have also been developed to operate over SMS.  One successful example includes mobile money platforms.  These allow for users, from any background, to pay and be paid for goods, and to transfer money across long distances, at negligible cost~\cite{Aker_Mobile_Phones_2010}.  One of the most highly adopted services is M-Pesa - which, in Kenya alone, was responsible for £5.7 Billion in transfers in 2012 \footnote{Data from Safaricom, M-Pesa operator in Kenya - actual value 817,085,000,000 Kenyan Shillings, converted to GBP on 1st November 2014 at rate of approximately 0.007.}.  M-Pesa gives users a balance linked to a national ID number, from which they can pay for goods by sending an SMS with a cashier (recipient) number or pay outstanding bills in a similar way.  Non-subscribers can also use the system, by depositing money with a M-Pesa cashier in exchange for an access code, which can be sent via SMS to a contact, who can subsequently redeem it with their local cashier~\cite{Aker_Mobile_Phones_2010}.
 
-This difference in standard use of cell phones is demonstrated in the International Telecommunications Unions's 2013 report, which shows that in Europe, for 790 million mobile subscriptions, 53\% of subscribers have mobile internet access (422 million), compared to 17\% in Africa (93 million have mobile broadband, out of 545 mobile subscribers).  This is due to the prohibitively high cost of accessing data services, regardless of the hardware that the user has.  \footnote{In 2012 in Europe, 500 MB of data per month for 12 months cost 1.2\% of the average Gross National Income Per Capita (GNI pc).  In Africa, the average price was 30x this, at 36.2\% of an individuals GNI pc.  ~\cite{ITU_Information_Society_2013}}
+This difference in standard use of cell phones is demonstrated in the International Telecommunications Unions's 2013 report, which shows that in Europe, for 790 million mobile subscriptions, 53\% of subscribers have mobile internet access (422 million), compared to 17\% in Africa (93 million have mobile broadband, out of 545 mobile subscribers).  This is due to the prohibitively high cost of accessing data services, regardless of the hardware that the user has.  \footnote{In 2012 in Europe, 500 MB of data per month for 12 months cost 1.2\% of the average Gross National Income Per Capita (GNI pc).  In Africa, the average price was 30x this, at 36.2\% of an individuals GNI pc~\cite{ITU_Information_Society_2013}.}
 
 % No research has been undertaken investigating whether bringing knowledge through this method is viable option.
 
@@ -150,18 +159,18 @@ A significant part of this project is represented by the support of multiple lan
 This project involves two blocks of translation.  These are:
 \begin{itemize}
   \item The translation of the user's input into the language of the system (English)
-  \item The translation of the answer to a users question from the system language to their local language.\ldots
+  \item The translation of the answer to a users question from the system language to their local language.
 \end{itemize}
 The second of these raises some issues.  To understand these, it is necessary to first understand the two categories of machine translation.
 
 Rule-based machine translation effectively treats human language in a similar style to programming languages.  Formal grammars and lexicons are used to represent words that exist in either the source or target language, structures representing the translation of individual words or groups of words.  Map structures map individual or groups of words to their translated counterparts, sometimes with multiple results (a 1-many map), from which rules decide which is selected.  Maps and rule sets are created by trained computational linguists~\cite{kenny2011ethics}.
 
-More commonly, Statistical Machine Translation (SMT) is used (for example, this is used by Google and Microsoft Bing Translate)~\cite{kenny2011ethics, Google_Translate_Research}.  Statistical machine translation learns maps between strings of words of potentially non-equal lengths from pre-existing original texts and their trusted human translations.  The accuracy and breadth of language support for translation increases as more source material is analysed by the system, as potentially erroneous or low quality translations can be identified and marked.  SMT is also dependent on the quality of the human translation on the input material ~\cite{kenny2011ethics}.
+More commonly, Statistical Machine Translation (SMT) is used (for example, this is used by Google and Microsoft Bing Translate)~\cite{kenny2011ethics, Google_Translate_Research}.  Statistical machine translation learns maps between strings of words of potentially non-equal lengths from pre-existing original texts and their trusted human translations.  The accuracy and breadth of language support for translation increases as more source material is analysed by the system, as potentially erroneous or low quality translations can be identified and marked.  SMT is also dependent on the quality of the human translation on the input material~\cite{kenny2011ethics}.
 
 The aforementioned issue that is present in statistical machine learning systems comes from the knowledge we assume an individual has and derives from a word.  In human translation, this is solved by the translators knowledge of the difference in material culture, allowing them to append necessary information to the resulting translation that the recipient might find useful.  In statistical machine learning, cultural awareness of material knowledge is a separate problem on it's own, on this scale.  {\bf formal reference to this, probably again from Kenny, but should be able to find better}.  To take one example, from Melby (2006),
 
 \blockquote{"when translating a French menu, a human translator might stop to think that an English speaker in France would appreciate being told that a steak tartare is served entirely raw, even if this information is not contained in the original text (because French people might be assumed to know this already). Such a translator would be aware of differences in material culture, and would be able to empathise with the English speaker who might choose to avoid the dish, given more information"~\cite{melby2006can, kenny2011ethics}}
-\marginnote{Lilian: quote taken from ~\cite{kenny2011ethics}, but quote is interpreted from ~\cite{melby2006can} - so I think referencing both is correct, but for this reason rather than last reason we discussed?}
+\marginnote{Lilian: quote taken from~\cite{kenny2011ethics}, but quote is interpreted from~\cite{melby2006can} - so I think referencing both is correct, but for this reason rather than last reason we discussed?}
 
 This issue is a result of the translation engine not been capable of taking as input, and using, a complete representation of the expected cultural differences between those who speak the input language and those who speak the output language~\cite{melby2006can}.
 
@@ -170,45 +179,66 @@ This issue is a result of the translation engine not been capable of taking as i
 Because the potential use of this system, regardless of whether this is within this project or by a third-party using the results of this project upon completion, could include distributing information that may be used by an individual making an important decision, cultural confusion such as this could have potentially catastrophic effects.
 
 \subsubsection{User Privacy and Data Protection}
-Privacy is a significant part of this project, since the
+{\bf Explain User Privacy and discuss techniques to protect identity. Say what a non-reversible hash is.}%TODO privacy, hashing
 
 \subsection{Software Design Life-cycles}
+{\bf Describe and compare some software design life-cycles} %TODO Describe and compare software design lifecycles
 
 \newpage
 \section{Method and Requirements}
 \label{sec:method}
 
+\subsection{Chosen Software Development Lifecycle}
+%TODO start writing this!
+
+\subsection{Plan for Software Development}
+%TODO start writing this!
+
+\subsection{Requirements}
+%TODO start writing this!
+
+\subsection{Evaluating Success}
+%TODO start writing this!
+
 \newpage
 \section{Design}
 \label{sec:design}
 
+\subsection{Software Design}
+%TODO start writing this!
+
+\subsubsection{Micro-system for Protecting User Identity}
+{\bf explain the system that uses a middle-application to parse numbers into anonymous hashes, which are used in the database, protecting the user's identity for all but the second their query is been processed}
+%TODO Write / create diagrams showing microsystem for protecting identify with middle-application.
+
+\subsection{Platform, Language and Tools}
+%TODO start writing this!
+
 \newpage
 \section{Implementation}
 \label{sec:implementation}
+{\bf This section will contain information on how data is stored, the structure of databases, and the format of and method through which data is sent to an SMS provider.}
 
 \newpage
 \section{Results}
 \label{sec:results}
+This section's content...
 
 \newpage
 \section{Discussion}
 \label{sec:discussion}
 This section's content...
 
-\subsection{Protecting the Identity of Users}
-This subsection's content...
-
-\subsubsection{The Purpose of a Non-reversible Hash}
-This subsubsection's content...
-
 \newpage
 
 \section{Conclusion}
 \label{sec:conclusion}
+This section's content...
 
 \newpage
 
 \section{Extending this project}
+{\bf Section not complete} %TODO Finish this section.
 If the author was able to expand this project, areas for expansion include:
 \begin{itemize}
   \item Addressing the issue of literacy
@@ -217,9 +247,10 @@ If the author was able to expand this project, areas for expansion include:
 
 \newpage
 
-\bibliography{mybib}{}
-\bibliographystyle{plain}
+{\bf Melby reference not right, publisher weird - ask Lilian in next session.  Url Commented in TEX here} 
+%http://scholar.google.co.uk/scholar?hl=en&q=melby+why+cant+a+computer+translate+like+a+person&btnG=&as_sdt=1%2C5&as_sdtp=
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,mybib}
 
-\section{Appendix 1 - Data usage}
 
 \end{document}  %End of document.
