@@ -24,7 +24,7 @@
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
 \graphicspath{ {./figures/} }
 
-\setlength{\parskip}{0.8em}
+\setlength{\parskip}{0.6em}
 
 \begin{document}
 
@@ -65,6 +65,10 @@ This project raises ethical issues relating to the responsibility of providing a
 \section{Useful thoughts from Lilian}
 Take a quick look at list of other students previous projects to get an idea of how intro/lit review is structured etc.
 
+Remove page number on title page.
+
+
+
 Remember to take notes on when I come across problems, for my conclusion.
 
 \section{Introduction}
@@ -75,9 +79,11 @@ The inspiration for this project originates from a project the author undertook 
 
 One of the initial aims of Shy was to further the transition from e-learning (learning conducted online, usually with the help of a computer) to m-learning (learning using tools available on a mobile device).  M-learning is an especially important topic at the moment, due to the high, and increasing, availability of mobile devices worldwide.
 
-A semi-functional prototype was completed for iOS (shown in Figure~\ref{fig:shy-ios-screenshots}, although question recommendations were evaluated without knowledge of previous material the user had viewed, and as such there was no knowledge of their interests to support explicitly targeted answers for a question they might search for.
+A semi-functional prototype was completed for iOS (shown in Figure~\ref{fig:shy-ios-screenshots}), although question recommendations were evaluated without knowledge of previous material the user had viewed, and as such there was no knowledge of their interests to support explicitly targeted answers for a question they might search for.
 
-Up until this point, the service was restricted to working on iOS smart devices only, with poor quality question/answer matching.  
+Up until this point, the service was restricted to working on iOS smart devices only, with poor quality question/answer matching.
+
+{\bf should add at least one more significant paragraph here, not sure what to write about though}
 
 \begin{figure}[htb] 
 \includegraphics[width=\linewidth]{shy-screenshots}
@@ -97,16 +103,20 @@ The first goal of this project is to assess and address the ethical issues that 
 \subsection{Structure of this report}
 This report starts with a review of pre-existing literature on this topic, in chapter~\ref{sec:literatureReview}, where the author looks at existing software, tools and services of a similar type to those that will be either used in this project or that which this project hopes to create to research the problems that they stumbled across.  Comparisons between different software development life-cycles are also discussed.
 
-Chapter~\ref{sec:method} describes the method that will be taken to develop the software and service.  This covers the software development life-cycle that will be followed, and sets out a plan for when development will take place.  Requirements will also be identified, described and categorised  as either functional or non-functional.  A method of evaluating the success of the software will also be discussed and choosen.
+Chapter~\ref{sec:method} describes the method that will be taken to develop the software and service.  This covers the software development life-cycle that will be followed, and sets out a plan for when development will take place.  Requirements will also be identified, described and categorised  as either functional or non-functional.  A method of evaluating the success of the software will also be discussed and chosen.
 
 The design of the software, driven from information collected from the requirements, will be set out in Chapter~\ref{sec:design}.  The individual components that make up the technology will be described and discussed\marginnote{described and discussed, or just described?}, followed by a description of how these modules will interface with each other to build a complete system.  Finally, this section will include a description of the platform, language and other tools that will be used.
 
 Chapter~\ref{sec:implementation} contains details about the implementation of the software.  This includes information on the tools that were used to create components such as the SMS interface and question/answer matching system.
 
-Results from the evaluation of the system will be presented in Chapter~\ref{sec:results}.  A discussion of these results and their implication on this project is presented to the reader in Chapter~\ref{sec:discussion}.
+Results from the evaluation of the system will be presented in Chapter~\ref{sec:results}.  A discussion of these results and their implication on this project is then presented to the reader in Chapter~\ref{sec:discussion}.
 
-Finally, a conclusion is made in Chapter~\ref{sec:conclusion}.....
-\marginnote{ Lilian: How should my conclusion/evaluation be presented?  I thought it should be an evaluation section, with a conclusion of the evaluation as a subsection, but this doesn't follow the structure we briefly discussed in our last meeting?}
+Chapter~\ref{sec:evaluation} contains an evaluation of the software produced and the process taken to complete it.  Comparisons will be made to the success criteria, set out for the project in section <insert number here>.
+
+The authors thoughts on potential future work, building on the work produced in this project, are then displayed in chapter~\ref{sec:extending}.  
+
+Finally, the main achievements of this project and then the report is concluded in chapter~\ref{sec:conclusion} with final thoughts.
+
 
 % Lilian: This section should be expended, especially mentioning the consequences of such assumptions. Why do you make those assumption (e.g. time constraint, little or no consequences, ...). What limitation this may cause to your findings.  Shows a mastery of the field.
 \subsection{Assumptions Within This Project}
@@ -134,11 +144,11 @@ This is easy to do in the developed world, where up to 75\% of the population ar
 
 % But there are other communication methods which are proven to work
 \subsection{Previous work using SMS}
-Although the above suggests that the African continent is majoritively disconnected, this is not the case.  Because of restrictions in the electricity available, the ways in which a mobile phone can be used in Africa have far surpassed those in the developed world~\cite{Fox:2011:Online}.  Interesting such examples include automated services which SMS HIV/AIDS sufferers, reminding them of medication to take, and providing access to current market information for agriculture and farming, saving farmers from making daily trips (often many kilometres) or relying on out-of-date information from a weekly radio broadcast~\cite{Aker_Mobile_Phones_2010}.
+Although the above suggests that the African continent is majoritively disconnected, this is not the case.  Because of restrictions in the electricity available, the ways in which a mobile phone can be used in Africa have far surpassed those in the developed world~\cite{Fox:2011:Online}, in-part due to the low power consumption of a mobile phone.  Interesting such examples include automated services which SMS HIV/AIDS sufferers, reminding them of medication to take, and providing access to current market information for agriculture and farming, saving farmers from making daily trips (often many kilometres) or relying on out-of-date information from a weekly radio broadcast~\cite{Aker_Mobile_Phones_2010}.
 
-Interactive systems have also been developed to operate over SMS.  One successful example includes mobile money platforms.  These allow for users, from any background, to pay and be paid for goods, and to transfer money across long distances, at negligible cost~\cite{Aker_Mobile_Phones_2010}.  One of the most highly adopted services is M-Pesa - which, in Kenya alone, was responsible for £5.7 Billion in transfers in 2012 \footnote{Data from Safaricom, M-Pesa operator in Kenya - actual value 817,085,000,000 Kenyan Shillings, converted to GBP on 1st November 2014 at rate of approximately 0.007.}.  M-Pesa gives users a balance linked to a national ID number, from which they can pay for goods by sending an SMS with a cashier (recipient) number or pay outstanding bills in a similar way.  Non-subscribers can also use the system, by depositing money with a M-Pesa cashier in exchange for an access code, which can be sent via SMS to a contact, who can subsequently redeem it with their local cashier~\cite{Aker_Mobile_Phones_2010}.
+Interactive systems have also been developed to operate over SMS.  One successful example includes mobile money platforms.  These allow for users, from any background, to pay and be paid for goods, and to transfer money across long distances, at negligible cost~\cite{Aker_Mobile_Phones_2010}.  One of the most highly adopted services is M-Pesa - which, in Kenya alone, was responsible for \textsterling5.7 Billion in transfers in 2012 \footnote{Data from Safaricom, M-Pesa operator in Kenya - actual value 817,085,000,000 Kenyan Shillings, converted to GBP on 1st November 2014 at rate of approximately 0.007.}.  M-Pesa gives users a balance linked to a national ID number, from which they can pay for goods by sending an SMS with a cashier (recipient) number or pay outstanding bills in a similar way.  Non-subscribers can also use the system, by depositing money with a M-Pesa cashier in exchange for an access code, which can be sent via SMS to a contact, who can subsequently redeem it with their local cashier~\cite{Aker_Mobile_Phones_2010}.
 
-This difference in standard use of cell phones is demonstrated in the International Telecommunications Unions's 2013 report, which shows that in Europe, for 790 million mobile subscriptions, 53\% of subscribers have mobile internet access (422 million), compared to 17\% in Africa (93 million have mobile broadband, out of 545 mobile subscribers).  This is due to the prohibitively high cost of accessing data services, regardless of the hardware that the user has.  \footnote{In 2012 in Europe, 500 MB of data per month for 12 months cost 1.2\% of the average Gross National Income Per Capita (GNI pc).  In Africa, the average price was 30x this, at 36.2\% of an individuals GNI pc~\cite{ITU_Information_Society_2013}.}
+This difference in standard use of cell phones is demonstrated in the International Telecommunications Unions's 2013 report~\cite{ITU_Cell_Usage_2013}, which shows that in Europe, for 790 million mobile subscriptions, 53\% of subscribers have mobile internet access (422 million), compared to 17\% in Africa (93 million have mobile broadband, out of 545 mobile subscribers).  This is due to the prohibitively high cost of accessing data services, regardless of the hardware that the user has.  In 2012 in Europe, 500 MB of data per month for 12 months cost 1.2\% of the average Gross National Income Per Capita (GNI pc).  In Africa, the average price was 30x this, at 36.2\% of an individuals GNI pc~\cite{ITU_Information_Society_2013}.
 
 % No research has been undertaken investigating whether bringing knowledge through this method is viable option.
 
@@ -146,7 +156,7 @@ This difference in standard use of cell phones is demonstrated in the Internatio
 This project raises a swathe of ethical issues related to translation accuracy, providing information to people in an ethical way and maintaining user privacy.
 
 \subsubsection{Ethics of Providing Information}
-One significant issue for this project stems from providing information that may affect an individual or lead them to take a harmful action.  In a similar way to that which a teacher has a responsibility to teach accurate information to a pupil, due to their position of trust, any service relied upon by a user must equally provide accurate information.  The result of not doing this could be providing inaccurate information that leads to a user carrying out an action that causes harm.
+One significant issue for this project stems from providing information that may affect an individual or lead them to take a harmful action.  {\bf In a similar way to that which a teacher has a responsibility to teach accurate information to a pupil, due to their position of trust, any service relied upon by a user must equally provide accurate information.  The result of not doing this could be providing inaccurate information that leads to a user carrying out an action that causes harm}.% TODO Reword last two sentences.  This is something imporant and obvious - perhaps simple analogy is not necessary.  Perhaps give a generalised example.
 
 % Lilian: You may want to look toward news paper (online/printed) to look at current/past issues that led to a law suit/inquiry and subsequent verdict/laws that may have been changed.
 
@@ -179,7 +189,33 @@ This issue is a result of the translation engine not been capable of taking as i
 Because the potential use of this system, regardless of whether this is within this project or by a third-party using the results of this project upon completion, could include distributing information that may be used by an individual making an important decision, cultural confusion such as this could have potentially catastrophic effects.
 
 \subsubsection{User Privacy and Data Protection}
-{\bf Explain User Privacy and discuss techniques to protect identity. Say what a non-reversible hash is.}%TODO privacy, hashing
+This project uses a simple Artificial Intelligence (AI) to keep a record of information that has already been returned to a user, to attempt to save sending repetitive information (saving the cost of additional SMS).  This raises another ethical issue though - a privacy issue.  The material that a user has researched is likely to be sensitive - such is the nature of health related questions.  This means that the information on a user has to be kept securely, in a way that an individual user can not be identified.
+
+One way of doing this is using a technology called hashing.  Ideal hashing is the technique of taking data as an input and generating an output value (called a 'hash') that is unique to an input.  Hash functions are ideally one way functions, where given input data X, the output hash will always be Y, whenever and however the hashing algorithm is executed.  This allows a users identify (phone number) to be obscured (hashed), in such a way that the mobile number can not be recovered from the database.  When a question is received, the phone number (represented by variable X in the above example) can be hashed and the data for this number looked up from the database, without the database application ever been aware of the phone number of the user.  In the example in Figure~\ref{fig:hashPhoneNumber}, a phone number (X) is used as input to an imaginary hashing function and the output hash (Y) is shown on the right hand side.  As just described, this number can then be used as the key for the user information database, shown in Table~\ref{table:hashDatabase} to retrieve the information needed for the AI.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=200pt]{hashPhoneNumber}
+    \caption{Hashing a phone number using an imaginary hashing algorithm}
+    \label{fig:hashPhoneNumber}
+\end{figure}
+
+\begin{table}
+\begin{center}
+    \begin{tabular}{| l | l |}
+    \hline
+    userId & userData \\ \hline
+    8f64B2 & \{‘previousQuestions’:[13,301,170,577]\} \\ \hline
+    9ac5e3 & \{‘previousQuestions’:[441,56]\} \\ \hline
+    f9dd7e & \{‘previousQuestions’:[301,623,89,280,364,621,209]\} \\
+    \hline
+    \end{tabular}
+    \caption{Example of software database: hashed phone numbers paired with a list of previous returned answer ID's. }
+    \label{table:hashDatabase}
+\end{center}
+\end{table}
+
+In practise though, the output of a hashing algorithm tends not to be unique to the input, because a hash from an algorithm is of a pre-defined length.  This is demonstrated by the commonly used hashing algorithm, MD5.  MD5 produces as output of 128 bits in size, meaning there are 2128 possible outputs.  Although this number is very large, 
 
 \subsection{Software Design Life-cycles}
 {\bf Describe and compare some software design life-cycles} %TODO Describe and compare software design lifecycles
@@ -231,19 +267,27 @@ This section's content...
 
 \newpage
 
-\section{Conclusion}
-\label{sec:conclusion}
+\newpage
+\section{Evaluation}
+\label{sec:evaluation}
 This section's content...
 
 \newpage
 
 \section{Extending this project}
-{\bf Section not complete} %TODO Finish this section.
+\label{sec:extending}
+{\bf Section not complete} %TODO Write extending project
 If the author was able to expand this project, areas for expansion include:
 \begin{itemize}
   \item Addressing the issue of literacy
   \item Automating the expansion of the database \ldots
 \end{itemize}
+
+\newpage
+
+\section{Conclusion}
+\label{sec:conclusion}
+This section's content...
 
 \newpage
 
