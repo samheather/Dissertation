@@ -229,8 +229,33 @@ Although hashing algorithms are computationally one-way, they can suffer from an
 
 In modern password authentication, a tool called bcrypt is used, which 'salts' passwords (additional unique data is added to each password before hashing), nullifying the use of Precomputed Hash Chains and subsequently Rainbow Tables.  However, this would prevent efficient lookup of phone numbers in the communications part of the application (where answers and sent back to the user).  As such, the best way of protecting a users phone number in the event of a database hack is to use a combination of a largely uncommon hashing algorithm, on the basis of it is unlikely anybody will have wasted vast computation power for a table that's useful in such a small number of situations, a hashing algorithm with a large output size, again because it makes a table more infeasible (because of size constraints) and a further change to the output hash, specific to this application.  This way, a hacker would need to know this change (from the source code) as well as the password database, to be able to make use of a hashing table.  The above is commonly implemented by hashing the result of one hash with another hashing algorithm.
 
-\subsection{Software Design Life-cycles}
+\subsection{Software Design Life cycles}
 {\bf Describe and compare some software design life-cycles} %TODO Describe and compare software design lifecycles
+There are many software development life cycles that a developer or company has available for them to choose from.  Four common ones include the Waterfall Model, Iterative Model, Spiral Model and the Agile Development Model.\marginnote{Do I need to reference that these are common?}  In order to choose which life cycle suits this project best, research into all four has been carried out.
+
+\marginnote{Should this be in this section, or moved to the "Method and Requirements" section?}
+
+\subsubsection{The Waterfall Model}
+The waterfall model consists of 5 phases of work, where each leads directly into the next.  It is a plan driven development model, which means that all process activities such as the implementation of the project must be planned and scheduled before work on them begins ~\cite{sommervilleSoftwareEngineering}.  The five layers in the model are:
+\begin{enumerate}
+  \item Requirements.  In this stage, both user and system requirements for the project are determined after examining the business goals for the project.  These form the system specification.
+  \item Design.  In this stage, a plan for the software development is created.  The overall architecture for the software is created, the external libraries to be used are chosen and the interaction between different modules is modelled.
+  \item Implementation.  In this stage, the software is implemented to match the design and architecture set out in the Design phase.  Unit tests are written to ensure that each module matches its specification.
+  \item Testing.  In this section the system is tested as a whole to test for any bugs that might not be picked up when testing individual modules in isolation.  The software is then delivered.
+  \item Maintenance.  Finally, the software is deployed and maintained.  This includes making changes to the requirements and subsequently the software (implementation) as the business goals change.  ~\cite{sommervilleSoftwareEngineering}
+  \ldots
+\end{enumerate}
+%TODO add main advantage
+%TODO add main disadvantage
+
+\subsubsection{The Iterative Model}
+The waterfall model consists of 5 levels
+
+\subsubsection{Boehm's Spiral Model}
+The Spiral Model was originally developed as a result of the adjustments that were regularly made to the waterfall model in large government projects ~\cite{spiralModelSoftwareDevelopment}.
+
+\subsubsection{Agile Development}
+The waterfall model consists of 5 levels
 
 \newpage
 \section{Method and Requirements}
@@ -241,12 +266,60 @@ In modern password authentication, a tool called bcrypt is used, which 'salts' p
 
 \subsection{Plan for Software Development}
 %TODO start writing this!
+Software development will follow the principles set forth in the iterative software development life cycle.  That is: Initial planning will take place 
 
 \subsection{Requirements}
-\subsubsection{Use Cases}
+
+\subsubsection{Use Cases / User Goals}
+%TODO Have I used use cases correctly here?
+Two personas were created in Appendix Section \ref{sec:appendixPersonnas} to represent individuals who may have a need for the work resulting from this project.  From these personas, user goals are extracted.  These describe what a general user aims to achieve with this service.
+\begin{enumerate}
+  \item Nanjala wants to be able to read general information on any given topic.
+  \item Ethan wants to be able to retrieve facts from direct questions.
+  \item Both Nanjala and Ethan want to be able to achieve their goals entirely via SMS because of their circumstances.
+  \item Ethan needs a simple and efficient user interface that allows him to retrieve facts quickly. 
+  \item Ethan wants to be able to feedback into the system when he finds an answer particularly useful or unhelpful. 
+  \item Nanjala wants to be able to show the service to her friends without explaining how to use it every time.
+  \item Nanjala wants to get recommendations on content she might find interesting. \marginnote{Haven't decided yet if this is a feature I will implement - time based!}
+  \ldots
+\end{enumerate}
 
 \subsubsection{User Requirements}
-\subsubsection{System Requirements}
+User goals are distilled into formal user requirements.  Each user requirement corresponds directly to the correspondingly numbered user goal.
+\begin{enumerate}
+  \item Users must be able to request general or descriptive information on a geographical entity.
+  \item Users must be able to ask questions requesting a fact or statistic about an entity and get the answer or number they are looking for.
+  \item Users must be able to interact with the system over SMS.
+  \item Users must be able to make their queries and get responses quickly.
+  \item Users must be able to feedback to the system when an answer is of noticeably low or high quality so the system can learn and improve.
+  \item Users must be able to learn how to use the system themselves and this learning process should be quick.
+  \item Users must be able to get recommendations on entities they might be interested in, based on previous query history.\marginnote{Haven't decided yet if this is a feature I will implement - time based!}
+  \ldots
+\end{enumerate}
+
+\subsubsection{System Requirements - Functional}
+\begin{enumerate}
+  \item The system will receive queries via SMS, process them and then respond via SMS.
+  \item The system shall use a datasource that contains both facts and descriptive text on geographical entities to answer queries.
+  \item The system must be able to parse queries to identify the entity that is been asked about and the specific parameter of that entity that should be returned as the answer to the users query.
+  \item As well as giving direct facts and statistics, the system should be able to give general descriptive information on an entity.
+  \item The system must be able to match words of similar meaning to the parameters in the data source.  For example, the word 'long' must be matched to the parameter 'length'.
+  \item The system must learn from user feedback when answers that are returned are of high or low quality an apply this knowledge to future queries.
+  \item The system must be self-explanatory, with the facility to offer instructions to a user.
+  \item The system must use user state so that it can accept queries that are dependent on past questions (for example, a query asking for more information or feedback on the quality of a past question).
+  \ldots
+\end{enumerate}
+
+\subsubsection{System Requirements - Non-Functional}
+Fit criterion are stated after each non-functional requirement, which will be used to identify whether a requirement has been met successfully.
+\begin{enumerate}
+  \item The system behind the SMS gateway must respond in a timely manner.  Fit Criterion: from an SMS been received, a response must be sent within 10 seconds.  SMS transmission times on the cellular network and gateway are out of the control of this project, so are not accounted for.
+  \item The answers returned must be of high quality.  Fit Criterion: in testing, the system returns the requested information for at least 80\% of queries.
+  \item Answers that are consistently rated poorly are no returned in fewer cases.  Fit Criterion: {\b to determine later}%TODO determine fit criterion.
+  \item Instructions to use the service should be clear and concise, with no ambiguity.  Fit Criterion: {\b to determine later - may not keep this}%TODO determine fit criterion / delete this
+  \item The system should accept and be able to process questions in natural human language as opposed to a delimited message.{\b to determine later}%TODO determine fit criterion / delete this
+  \item \ldots
+\end{enumerate}
 
 \subsection{Evaluating Success}
 %TODO start writing this!
@@ -312,16 +385,30 @@ This section's content...
 \bibliography{IEEEabrv,mybib}
 
 \section{Appendix - Personnas}
+\label{sec:appendixPersonnas}
 \subsection{Nanjala}
 %TODO Add photo
 \subsubsection{Demographics}
 \begin{itemize}
   \item Female, Aged 15
   \item Living in the village of Amuria, Uganda, 300km from the Capital, Kampala.  Internet access is difficult and expensive to obtain in Amuria, however there is good mobile network coverage.
-  \item Currently in general education at her village school. \ldots
+  \item Currently in general education at her village school.
+  \item Nanjala is curious and wants to be able to ask questions and retrieve and read more information at her own leisure.  She prefers to be told about something than to learn facts. \ldots
 \end{itemize}
 \subsubsection{Average Day}
-In a typical day, Nanjala will rise early to help her family with housework chores, before she prepares for school.  At school, Nanjala works 
+In a typical day, Nanjala will rise early to help her family with housework chores, before she prepares for school.  Nanjala wants to become a teacher.  At school, she studies Science, Maths and Geography, and works hard for her classes and on her homework.  Nanjala's school has a small library and a body of students, all of whom are as hard-working as Nanjala, meaning that books are often unavailable when Nanjala would like to look something up.  This increases the amount of time that her homework takes, and can even result in her not having access to information when she must go home to her family.
+
+\subsection{Ethan}
+%TODO Add photo
+\subsubsection{Demographics}
+\begin{itemize}
+  \item Male, Aged 22
+  \item Living at his family's Ranch in the Australian Outback.  Although there is internet access, it's very slow and phone calls / SMS are used whenever possible.
+  \item Ethan is in his final year of studying for a degree in Land Management at the University of Sydney.  At the moment he is back home for his Easter holidays.
+    \item Ethan is very conscientious, and wants to contribute his own knowledge to the world - especially to projects that help him.  He's written to authors before to point out mistakes in their works. \ldots
+\end{itemize}
+\subsubsection{Average Day}
+Ethan is a focussed worker and tends to work hard on projects to get them out of the way quickly.  His final-year dissertation focusses on the differences in land management around the world, and requires the use of lots of facts and figures, which he has to research.  In the morning, Ethan plans what he aims to research and write that day.  He then works on parts grouped by section.  A few times an hour, Ethan needs to find a relevant fact or figure about a country or geographical structure, such as the population density of a country or the height of a mountain.  Getting this information from the internet is very slow - his family share a dial-up modem which can take minutes just to connect and allow a Google search.
 
 
 \end{document}  %End of document.

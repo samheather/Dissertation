@@ -102,4 +102,15 @@ C.~Teat and S.~Peltsverger, ``The security of cryptographic hashes,'' in
   \url{http://doi.acm.org/10.1145/2016039.2016072}
 \BIBentrySTDinterwordspacing
 
+\bibitem{sommervilleSoftwareEngineering}
+\BIBentryALTinterwordspacing
+I.~Sommerville, \emph{Software Engineering}.\hskip 1em plus 0.5em minus
+  0.4em\relax Pearson Education, 2010. [Online]. Available:
+  \url{http://www.amazon.com/Software-Engineering-Ian-Sommerville/dp/0137053460%3FSubscriptionId%3D0JYN1NVW651KCA56C102%26tag%3Dtechkie-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0137053460}
+\BIBentrySTDinterwordspacing
+
+\bibitem{spiralModelSoftwareDevelopment}
+B.~Boehm, ``A spiral model of software development and enhancement,''
+  \emph{Computer}, vol.~21, no.~5, pp. 61--72, May 1988.
+
 \end{thebibliography}

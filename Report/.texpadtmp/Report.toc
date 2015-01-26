@@ -11,19 +11,34 @@
 \contentsline {subsubsection}{\numberline {3.2.1}Ethics of Providing Information}{12}
 \contentsline {subsubsection}{\numberline {3.2.2}Ethics of Translation}{13}
 \contentsline {subsubsection}{\numberline {3.2.3}User Privacy and Data Protection}{14}
-\contentsline {subsection}{\numberline {3.3}Software Design Life-cycles}{16}
-\contentsline {section}{\numberline {4}Method and Requirements}{17}
-\contentsline {subsection}{\numberline {4.1}Chosen Software Development Lifecycle}{17}
-\contentsline {subsection}{\numberline {4.2}Plan for Software Development}{17}
-\contentsline {subsection}{\numberline {4.3}Requirements}{17}
-\contentsline {subsection}{\numberline {4.4}Evaluating Success}{17}
-\contentsline {section}{\numberline {5}Design}{18}
-\contentsline {subsection}{\numberline {5.1}Software Design}{18}
-\contentsline {subsubsection}{\numberline {5.1.1}Micro-system for Protecting User Identity}{18}
-\contentsline {subsection}{\numberline {5.2}Platform, Language and Tools}{18}
-\contentsline {section}{\numberline {6}Implementation}{19}
-\contentsline {section}{\numberline {7}Results}{20}
-\contentsline {section}{\numberline {8}Discussion}{21}
-\contentsline {section}{\numberline {9}Evaluation}{22}
-\contentsline {section}{\numberline {10}Extending this project}{23}
-\contentsline {section}{\numberline {11}Conclusion}{24}
+\contentsline {subsection}{\numberline {3.3}Software Design Life cycles}{16}
+\contentsline {subsubsection}{\numberline {3.3.1}The Waterfall Model}{16}
+\contentsline {subsubsection}{\numberline {3.3.2}The Iterative Model}{17}
+\contentsline {subsubsection}{\numberline {3.3.3}Boehm's Spiral Model}{17}
+\contentsline {subsubsection}{\numberline {3.3.4}Agile Development}{17}
+\contentsline {section}{\numberline {4}Method and Requirements}{18}
+\contentsline {subsection}{\numberline {4.1}Chosen Software Development Lifecycle}{18}
+\contentsline {subsection}{\numberline {4.2}Plan for Software Development}{18}
+\contentsline {subsection}{\numberline {4.3}Requirements}{18}
+\contentsline {subsubsection}{\numberline {4.3.1}Use Cases / User Goals}{18}
+\contentsline {subsubsection}{\numberline {4.3.2}User Requirements}{18}
+\contentsline {subsubsection}{\numberline {4.3.3}System Requirements - Functional}{19}
+\contentsline {subsubsection}{\numberline {4.3.4}System Requirements - Non-Functional}{19}
+\contentsline {subsection}{\numberline {4.4}Evaluating Success}{20}
+\contentsline {section}{\numberline {5}Design}{21}
+\contentsline {subsection}{\numberline {5.1}Software Design}{21}
+\contentsline {subsubsection}{\numberline {5.1.1}Micro-system for Protecting User Identity}{21}
+\contentsline {subsection}{\numberline {5.2}Platform, Language and Tools}{21}
+\contentsline {section}{\numberline {6}Implementation}{22}
+\contentsline {section}{\numberline {7}Results}{23}
+\contentsline {section}{\numberline {8}Discussion}{24}
+\contentsline {section}{\numberline {9}Evaluation}{25}
+\contentsline {section}{\numberline {10}Extending this project}{26}
+\contentsline {section}{\numberline {11}Conclusion}{27}
+\contentsline {section}{\numberline {12}Appendix - Personnas}{29}
+\contentsline {subsection}{\numberline {12.1}Nanjala}{29}
+\contentsline {subsubsection}{\numberline {12.1.1}Demographics}{29}
+\contentsline {subsubsection}{\numberline {12.1.2}Average Day}{29}
+\contentsline {subsection}{\numberline {12.2}Ethan}{30}
+\contentsline {subsubsection}{\numberline {12.2.1}Demographics}{30}
+\contentsline {subsubsection}{\numberline {12.2.2}Average Day}{30}
