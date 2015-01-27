@@ -229,7 +229,7 @@ Although hashing algorithms are computationally one-way, they can suffer from an
 
 In modern password authentication, a tool called bcrypt is used, which 'salts' passwords (additional unique data is added to each password before hashing), nullifying the use of Precomputed Hash Chains and subsequently Rainbow Tables.  However, this would prevent efficient lookup of phone numbers in the communications part of the application (where answers and sent back to the user).  As such, the best way of protecting a users phone number in the event of a database hack is to use a combination of a largely uncommon hashing algorithm, on the basis of it is unlikely anybody will have wasted vast computation power for a table that's useful in such a small number of situations, a hashing algorithm with a large output size, again because it makes a table more infeasible (because of size constraints) and a further change to the output hash, specific to this application.  This way, a hacker would need to know this change (from the source code) as well as the password database, to be able to make use of a hashing table.  The above is commonly implemented by hashing the result of one hash with another hashing algorithm.
 
-\subsection{Software Design Life cycles}
+\subsection{Software Design Life Cycles}
 {\bf Describe and compare some software design life-cycles} %TODO Describe and compare software design lifecycles
 There are many software development life cycles that a developer or company has available for them to choose from.  Four common ones include the Waterfall Model, Iterative Model, Spiral Model and the Agile Development Model.\marginnote{Do I need to reference that these are common?}  In order to choose which life cycle suits this project best, research into all four has been carried out.
 
@@ -244,17 +244,49 @@ The waterfall model consists of 5 phases of work, where each leads directly into
   \item Testing.  In this section the system is tested as a whole to test for any bugs that might not be picked up when testing individual modules in isolation.  The software is then delivered.
   \item Maintenance.  Finally, the software is deployed and maintained.  This includes making changes to the requirements and subsequently the software (implementation) as the business goals change.  ~\cite{sommervilleSoftwareEngineering}
 \end{enumerate}
+
+Because the waterfall model is so fixed and progressive (once development has moved from one stage to another, it can not go back)
 %TODO add main advantage
 %TODO add main disadvantage
 
 \subsubsection{The Iterative Model}
-The waterfall model consists of 5 levels
+Iterative development is the practise of splitting the overall development of a project into multiple independent and distinct blocks.  A block contains a sequence of tasks (essentially a mini life cycle) such that each iteration can really be thought of as it's own project.  Each iteration tends to focus on a specific set of features, such that when the iteration is complete the overall project is stable and the modules developed to-date can be tested as a whole system ~\cite{differenceBetweenLifeCycleModels}.
+
+There are a multiple variations of the iterative development method, including Timeboxed Iterative Development (where all iterations have a fixed, inflexible length) and Client-driven Iterative Development (where each iteration contains the features that the client considers have the highest business value) ~\cite{larman2004agile}.
+
+A common variation is based on the waterfall model, and is shown in Figure \ref{fig:iterativeDevelopment}.  The first three tasks in the cycle represent the first four stages in the waterfall model (Requirements, Design, Implementation and Testing), at which point there is the option to either evaluate progress so far, and start another iteration, or to deploy the software and end development.  One significant difference between this and the waterfall model is that maintenance is not represented.
+
+%TODO add main advantage
+%TODO add main disadvantage
+
+\begin{figure}[htb] 
+\centering
+    \includegraphics[width=0.8\linewidth]{iterativeDevelopment}
+\caption{Iterative Development Method}
+\label{fig:iterativeDevelopment}
+\end{figure}
 
 \subsubsection{Boehm's Spiral Model}
-The Spiral Model was originally developed as a result of the adjustments that were regularly made to the waterfall model in large government projects ~\cite{spiralModelSoftwareDevelopment}.
+The Spiral Model was originally developed as a result of the adjustments that were regularly made to the waterfall model in large government projects ~\cite{spiralModelSoftwareDevelopment}.  The Spiral Model is a general model and can be used as a generator for other more specific models, given the parameters for a project such as it's risks ~\cite{boehm2000spiral}.  Models such as the waterfall model are specialisations of the spiral model ~\cite{boehm2000spiral}.
+
+%TODO add main advantage
+%TODO add main disadvantage
+
+A detailed description on the spiral model can be found in Boehm's paper "A spiral model of software development and enhancement", where he published the complete concept ~\cite{spiralModelSoftwareDevelopment}.
 
 \subsubsection{Agile Development}
-The waterfall model consists of 5 levels
+Agile Development essentially represents a group of development techniques (such as 'Extreme Programming') targeted towards either the development of a small to medium sized product for sale or the development of a custom system within an organisation, where the customer has a high degree of involvement ~\cite{sommervilleSoftwareEngineering}.
+
+Agile development is highly targeted towards teams, with components such as Pair Programming, Collective Ownership, regular meetings and employee health (avoiding overtime) playing an integral part in the model ~\cite{sommervilleSoftwareEngineering}.
+
+\subsubsection{Development Life Cycle Summary}
+Iterative development has been chosen as the model that this project will follow, based on the following factors:
+\begin{enumerate}
+  \item Boehm's Spiral Model and Agile Development are both targeted towards development teams.  A significant part of these models relates to team interaction, so they are not appropriate to this project.
+  \item The Waterfall Model is rigid and inflexible.  It does not allow for the changes to the requirements and implementation that might be proposed after evaluating the quality of the first implementation.
+  \item The Iterative development model can be implemented well by a single developer \marginnote{I need to add this as a 'pro' above}, and supports adjusting the requirements and implementation in each iteration of the cycle.
+\end{enumerate}
+
 
 \newpage
 \section{Method and Requirements}
