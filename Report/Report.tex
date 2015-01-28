@@ -223,68 +223,82 @@ Two properties that this project does need from it's hashing algorithm are colli
 
 Irreversibility is a necessary property of the hashing algorithm chosen for this project.  This ensures that the key used in the database can not be used to retrieve the phone number of the user, thus protecting their identity.  Commonly used hashing algorithm families, such as the MD family (e.g. MD5) and SHA family are all designed to be one-way~\cite{schneierCryptanalysisMD5SHA}\footnote{Bruce Schneier is a fellow at Harvard's Berkman center for internet and society.  He has been posting regularly for his newsletter and then blog since 1998 (over 16 years) and has published material related to this field throughout this time.  He has been involved in the creation of other cryptographic algorithms, such as the Skein hashing algorithm, blowfish block cipher, so may have a vested interest in dis-crediting other algorithms such as MD5 and SHA.  However, the essay cited above is written as a result of the Crypto 2004 Conference in California, Schneier has a world-renowned reputation for cryptography and computer security and the algorithm that he suggests should be used at the end is not one that he has involvement in.  For these reasons, I believe this source is reliable.}.  
 
-Although hashing algorithms are computationally one-way, they can suffer from another type of vulnerability affecting the security of the original input data.  When hashes are used for short strings of information (passwords, for example), a simple way to try and retrieve the original data is to compute a dictionary of the hashes of lots of common passwords, from which matches can be found.  This idea has been extended to produce Precomputed Hash Chains and subsequently Rainbow Tables.  These are highly efficient data structures that consist of chains of processed input messages and their hashes (with a reduce function to reach the next item in the chain), allowing original input data to be looked-up from it's hash.  Both Precomputed Hash Chains and Rainbow Tables tend to be Terabyte's in size, and as such they only exist in a significant form for the most common hash functions (including MD5 and SHA) ~\cite{Teat:2011:SCH:2016039.2016072}.  Within this project, this raises privacy implications, as hashes within the database would be 'convertible' to phone numbers.  
+Although hashing algorithms are computationally one-way, they can suffer from another type of vulnerability affecting the security of the original input data.  When hashes are used for short strings of information (passwords, for example), a simple way to try and retrieve the original data is to compute a dictionary of the hashes of lots of common passwords, from which matches can be found.  This idea has been extended to produce Precomputed Hash Chains and subsequently Rainbow Tables.  These are highly efficient data structures that consist of chains of processed input messages and their hashes (with a reduce function to reach the next item in the chain), allowing original input data to be looked-up from it's hash.  Both Precomputed Hash Chains and Rainbow Tables tend to be Terabyte's in size, and as such they only exist in a significant form for the most common hash functions (including MD5 and SHA)~\cite{Teat:2011:SCH:2016039.2016072}.  Within this project, this raises privacy implications, as hashes within the database would be 'convertible' to phone numbers.  
 
 {\bf perhaps the below should move to method and requirements - TODO needs to be cleaned up as well.}
 
 In modern password authentication, a tool called bcrypt is used, which 'salts' passwords (additional unique data is added to each password before hashing), nullifying the use of Precomputed Hash Chains and subsequently Rainbow Tables.  However, this would prevent efficient lookup of phone numbers in the communications part of the application (where answers and sent back to the user).  As such, the best way of protecting a users phone number in the event of a database hack is to use a combination of a largely uncommon hashing algorithm, on the basis of it is unlikely anybody will have wasted vast computation power for a table that's useful in such a small number of situations, a hashing algorithm with a large output size, again because it makes a table more infeasible (because of size constraints) and a further change to the output hash, specific to this application.  This way, a hacker would need to know this change (from the source code) as well as the password database, to be able to make use of a hashing table.  The above is commonly implemented by hashing the result of one hash with another hashing algorithm.
 
 \subsection{Software Design Life Cycles}
-{\bf Describe and compare some software design life-cycles} %TODO Describe and compare software design lifecycles
 There are many software development life cycles that a developer or company has available for them to choose from.  Four common ones include the Waterfall Model, Iterative Model, Spiral Model and the Agile Development Model.\marginnote{Do I need to reference that these are common?}  In order to choose which life cycle suits this project best, research into all four has been carried out.
 
 \marginnote{Should this be in this section, or moved to the "Method and Requirements" section?}
 
 \subsubsection{The Waterfall Model}
-The waterfall model consists of 5 phases of work, where each leads directly into the next.  It is a plan driven development model, which means that all process activities such as the implementation of the project must be planned and scheduled before work on them begins ~\cite{sommervilleSoftwareEngineering}.  The five layers in the model are:
+The waterfall model consists of 5 phases of work, where each leads directly into the next.  It is a plan driven development model, which means that all process activities such as the implementation of the project must be planned and scheduled before work on them begins~\cite{sommervilleSoftwareEngineering}.  The five layers are shown in Figure \ref{fig:waterfallModel} and described below:
 \begin{enumerate}
   \item Requirements.  In this stage, both user and system requirements for the project are determined after examining the business goals for the project.  These form the system specification.
   \item Design.  In this stage, a plan for the software development is created.  The overall architecture for the software is created, the external libraries to be used are chosen and the interaction between different modules is modelled.
   \item Implementation.  In this stage, the software is implemented to match the design and architecture set out in the Design phase.  Unit tests are written to ensure that each module matches its specification.
   \item Testing.  In this section the system is tested as a whole to test for any bugs that might not be picked up when testing individual modules in isolation.  The software is then delivered.
-  \item Maintenance.  Finally, the software is deployed and maintained.  This includes making changes to the requirements and subsequently the software (implementation) as the business goals change.  ~\cite{sommervilleSoftwareEngineering}
+  \item Maintenance.  Finally, the software is deployed and maintained.  This includes making changes to the requirements and subsequently the software (implementation) as the business goals change. ~\cite{sommervilleSoftwareEngineering}
 \end{enumerate}
 
-Because the waterfall model is so fixed and progressive (once development has moved from one stage to another, it can not go back)
-%TODO add main advantage
-%TODO add main disadvantage
+\begin{figure}[htb] 
+\centering
+    \includegraphics[width=0.8\linewidth]{waterfallModel}
+\caption{Waterfall Development Model}
+\small source: Sommerville~\cite{sommervilleSoftwareEngineering}
+\label{fig:waterfallModel}
+\end{figure}
+
+A key disadvantage of the waterfall model is that once development has moved from one stage to another it can not go back because the model is fixed and progresses in one direction only, until the maintenance step.  The main advantage of the Waterfall Model is it's simplicity - it is easy to understand and to use, saving time at the start of the project that could be wasted on learning and preparing for a more complex model.
 
 \subsubsection{The Iterative Model}
-Iterative development is the practise of splitting the overall development of a project into multiple independent and distinct blocks.  A block contains a sequence of tasks (essentially a mini life cycle) such that each iteration can really be thought of as it's own project.  Each iteration tends to focus on a specific set of features, such that when the iteration is complete the overall project is stable and the modules developed to-date can be tested as a whole system ~\cite{differenceBetweenLifeCycleModels}.
+Iterative development is the practise of splitting the overall development of a project into multiple independent and distinct blocks.  A block contains a sequence of tasks (essentially a mini life cycle) such that each iteration can really be thought of as it's own project.  Each iteration tends to focus on a specific set of features, such that when the iteration is complete the overall project is stable and the modules developed to-date can be tested as a whole system~\cite{differenceBetweenLifeCycleModels}.
 
-There are a multiple variations of the iterative development method, including Timeboxed Iterative Development (where all iterations have a fixed, inflexible length) and Client-driven Iterative Development (where each iteration contains the features that the client considers have the highest business value) ~\cite{larman2004agile}.
+There are a multiple variations of the iterative development method, including Timeboxed Iterative Development (where all iterations have a fixed, inflexible length) and Client-driven Iterative Development (where each iteration contains the features that the client considers have the highest business value)~\cite{larman2004agile}.
 
 A common variation is based on the waterfall model, and is shown in Figure \ref{fig:iterativeDevelopment}.  The first three tasks in the cycle represent the first four stages in the waterfall model (Requirements, Design, Implementation and Testing), at which point there is the option to either evaluate progress so far, and start another iteration, or to deploy the software and end development.  One significant difference between this and the waterfall model is that maintenance is not represented.
 
-%TODO add main advantage
-%TODO add main disadvantage
+A key advantage of the Iterative Model is that it allows for the user to revise their requirements as they progress, making it dynamic and flexible.  This is also it's disadvantage, in that the lack of fixed structure can be a weakness unless the project is planned well.
 
 \begin{figure}[htb] 
 \centering
     \includegraphics[width=0.8\linewidth]{iterativeDevelopment}
 \caption{Iterative Development Method}
+\small source: \url{https://commons.wikimedia.org/wiki/File:Iterative_development_model_V2.jpg}
 \label{fig:iterativeDevelopment}
 \end{figure}
 
 \subsubsection{Boehm's Spiral Model}
-The Spiral Model was originally developed as a result of the adjustments that were regularly made to the waterfall model in large government projects ~\cite{spiralModelSoftwareDevelopment}.  The Spiral Model is a general model and can be used as a generator for other more specific models, given the parameters for a project such as it's risks ~\cite{boehm2000spiral}.  Models such as the waterfall model are specialisations of the spiral model ~\cite{boehm2000spiral}.
+The Spiral Model was originally developed as a result of the adjustments that were commonly made to the waterfall model in large government projects~\cite{spiralModelSoftwareDevelopment}.  The Spiral Model is a general model and can be used as a generator for other more specific models, given the parameters for a project such as it's risks~\cite{boehm2000spiral}.  Models such as the waterfall model are specialisations of the spiral model~\cite{boehm2000spiral}.
 
-%TODO add main advantage
-%TODO add main disadvantage
+Each loop represents a stage of the software development, from planning on the inside loop to system testing and verification on the outside, as shown in Figure \ref{fig:spiralModel}.
 
-A detailed description on the spiral model can be found in Boehm's paper "A spiral model of software development and enhancement", where he published the complete concept ~\cite{spiralModelSoftwareDevelopment}.
+\begin{figure}[htb] 
+\centering
+    \includegraphics[width=0.8\linewidth]{spiralModel}
+\caption{Boehm's Spiral Model}
+\small source: Sommerville~\cite{sommervilleSoftwareEngineering}
+\label{fig:spiralModel}
+\end{figure}
+
+A key advantage of the Spiral Model is the level of detail it models.  The stage of a sub-task within the entire development process is represented by the distance from the origin, and each loop is split into small, well described sections.  A key disadvantage is that the planning and use of the model is largely driven by the results of complex risk analysis on the sub-tasks~\cite{sommervilleSoftwareEngineering}.  Although this makes it favourable to large organisations, it has the opposite effect for individuals.
+
+A detailed description on the spiral model can be found in Boehm's paper "A spiral model of software development and enhancement", where he published the complete concept~\cite{spiralModelSoftwareDevelopment}.
 
 \subsubsection{Agile Development}
-Agile Development essentially represents a group of development techniques (such as 'Extreme Programming') targeted towards either the development of a small to medium sized product for sale or the development of a custom system within an organisation, where the customer has a high degree of involvement ~\cite{sommervilleSoftwareEngineering}.
+Agile Development essentially represents a group of development techniques targeted towards either the development of a small to medium sized product for sale or the development of a custom system within an organisation, where the customer has a high degree of involvement (for example 'Extreme Programming')~\cite{sommervilleSoftwareEngineering}.
 
-Agile development is highly targeted towards teams, with components such as Pair Programming, Collective Ownership, regular meetings and employee health (avoiding overtime) playing an integral part in the model ~\cite{sommervilleSoftwareEngineering}.
+Agile development is highly targeted towards teams, with components such as Pair Programming, Collective Ownership, regular meetings and employee health (avoiding overtime) playing an integral part in the model~\cite{sommervilleSoftwareEngineering}.
 
 \subsubsection{Development Life Cycle Summary}
 Iterative development has been chosen as the model that this project will follow, based on the following factors:
 \begin{enumerate}
   \item Boehm's Spiral Model and Agile Development are both targeted towards development teams.  A significant part of these models relates to team interaction, so they are not appropriate to this project.
   \item The Waterfall Model is rigid and inflexible.  It does not allow for the changes to the requirements and implementation that might be proposed after evaluating the quality of the first implementation.
-  \item The Iterative development model can be implemented well by a single developer \marginnote{I need to add this as a 'pro' above}, and supports adjusting the requirements and implementation in each iteration of the cycle.
+  \item The Iterative development model can be implemented effectively by a single developer \marginnote{I need to add this as a 'pro' above}, and supports the adjustment of requirements and implementation in each iteration of the cycle.
 \end{enumerate}
 
 

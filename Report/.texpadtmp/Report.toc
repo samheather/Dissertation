@@ -13,33 +13,33 @@
 \contentsline {subsubsection}{\numberline {3.2.3}User Privacy and Data Protection}{14}
 \contentsline {subsection}{\numberline {3.3}Software Design Life Cycles}{16}
 \contentsline {subsubsection}{\numberline {3.3.1}The Waterfall Model}{16}
-\contentsline {subsubsection}{\numberline {3.3.2}The Iterative Model}{17}
-\contentsline {subsubsection}{\numberline {3.3.3}Boehm's Spiral Model}{18}
-\contentsline {subsubsection}{\numberline {3.3.4}Agile Development}{18}
-\contentsline {subsubsection}{\numberline {3.3.5}Development Life Cycle Summary}{18}
-\contentsline {section}{\numberline {4}Method and Requirements}{20}
-\contentsline {subsection}{\numberline {4.1}Chosen Software Development Lifecycle}{20}
-\contentsline {subsection}{\numberline {4.2}Plan for Software Development}{20}
-\contentsline {subsection}{\numberline {4.3}Requirements}{20}
-\contentsline {subsubsection}{\numberline {4.3.1}Use Cases / User Goals}{20}
-\contentsline {subsubsection}{\numberline {4.3.2}User Requirements}{20}
-\contentsline {subsubsection}{\numberline {4.3.3}System Requirements - Functional}{21}
-\contentsline {subsubsection}{\numberline {4.3.4}System Requirements - Non-Functional}{21}
-\contentsline {subsection}{\numberline {4.4}Evaluating Success}{22}
-\contentsline {section}{\numberline {5}Design}{23}
-\contentsline {subsection}{\numberline {5.1}Software Design}{23}
-\contentsline {subsubsection}{\numberline {5.1.1}Micro-system for Protecting User Identity}{23}
-\contentsline {subsection}{\numberline {5.2}Platform, Language and Tools}{23}
-\contentsline {section}{\numberline {6}Implementation}{24}
-\contentsline {section}{\numberline {7}Results}{25}
-\contentsline {section}{\numberline {8}Discussion}{26}
-\contentsline {section}{\numberline {9}Evaluation}{27}
-\contentsline {section}{\numberline {10}Extending this project}{28}
-\contentsline {section}{\numberline {11}Conclusion}{29}
-\contentsline {section}{\numberline {12}Appendix - Personnas}{31}
-\contentsline {subsection}{\numberline {12.1}Nanjala}{31}
-\contentsline {subsubsection}{\numberline {12.1.1}Demographics}{31}
-\contentsline {subsubsection}{\numberline {12.1.2}Average Day}{31}
-\contentsline {subsection}{\numberline {12.2}Ethan}{32}
-\contentsline {subsubsection}{\numberline {12.2.1}Demographics}{32}
-\contentsline {subsubsection}{\numberline {12.2.2}Average Day}{32}
+\contentsline {subsubsection}{\numberline {3.3.2}The Iterative Model}{18}
+\contentsline {subsubsection}{\numberline {3.3.3}Boehm's Spiral Model}{19}
+\contentsline {subsubsection}{\numberline {3.3.4}Agile Development}{19}
+\contentsline {subsubsection}{\numberline {3.3.5}Development Life Cycle Summary}{20}
+\contentsline {section}{\numberline {4}Method and Requirements}{21}
+\contentsline {subsection}{\numberline {4.1}Chosen Software Development Lifecycle}{21}
+\contentsline {subsection}{\numberline {4.2}Plan for Software Development}{21}
+\contentsline {subsection}{\numberline {4.3}Requirements}{21}
+\contentsline {subsubsection}{\numberline {4.3.1}Use Cases / User Goals}{21}
+\contentsline {subsubsection}{\numberline {4.3.2}User Requirements}{21}
+\contentsline {subsubsection}{\numberline {4.3.3}System Requirements - Functional}{22}
+\contentsline {subsubsection}{\numberline {4.3.4}System Requirements - Non-Functional}{22}
+\contentsline {subsection}{\numberline {4.4}Evaluating Success}{23}
+\contentsline {section}{\numberline {5}Design}{24}
+\contentsline {subsection}{\numberline {5.1}Software Design}{24}
+\contentsline {subsubsection}{\numberline {5.1.1}Micro-system for Protecting User Identity}{24}
+\contentsline {subsection}{\numberline {5.2}Platform, Language and Tools}{24}
+\contentsline {section}{\numberline {6}Implementation}{25}
+\contentsline {section}{\numberline {7}Results}{26}
+\contentsline {section}{\numberline {8}Discussion}{27}
+\contentsline {section}{\numberline {9}Evaluation}{28}
+\contentsline {section}{\numberline {10}Extending this project}{29}
+\contentsline {section}{\numberline {11}Conclusion}{30}
+\contentsline {section}{\numberline {12}Appendix - Personnas}{32}
+\contentsline {subsection}{\numberline {12.1}Nanjala}{32}
+\contentsline {subsubsection}{\numberline {12.1.1}Demographics}{32}
+\contentsline {subsubsection}{\numberline {12.1.2}Average Day}{32}
+\contentsline {subsection}{\numberline {12.2}Ethan}{33}
+\contentsline {subsubsection}{\numberline {12.2.1}Demographics}{33}
+\contentsline {subsubsection}{\numberline {12.2.2}Average Day}{33}
