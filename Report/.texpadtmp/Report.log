@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.20)  3 FEB 2015 17:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.20)  3 FEB 2015 20:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -325,24 +325,24 @@ Package marginnote Info: xpos seems to be 312.17297pt,
 File: ./figures/googleCholera.png Graphic file (type png)
 
 <use ./figures/googleCholera.png>
-Package pdftex.def Info: ./figures/googleCholera.png used on input line 145.
+Package pdftex.def Info: ./figures/googleCholera.png used on input line 147.
 (pdftex.def)             Requested size: 345.0pt x 199.65887pt.
  [13 <./figures/googleCholera.png>]
 LaTeX Font Info:    Font shape `OT1/ptm/m/ui' in size <10> not available
-(Font)              Font shape `OT1/ptm/m/it' tried instead on input line 158.
+(Font)              Font shape `OT1/ptm/m/it' tried instead on input line 160.
  [14]
 [15]
 Package marginnote Info: Margin note 16.1 is on absolute page 16
-(marginnote)              on input line 193.
-Package marginnote Info: right page because not two side mode on input line 193
+(marginnote)              on input line 195.
+Package marginnote Info: right page because not two side mode on input line 195
 .
 Package marginnote Info: xpos seems to be 134.26999pt,
-(marginnote)             \marginnoterightadjust ignored on input line 193.
+(marginnote)             \marginnoterightadjust ignored on input line 195.
  <./figures/hashPhoneNumber.png, id=59, 402.50375pt x 135.50626pt>
 File: ./figures/hashPhoneNumber.png Graphic file (type png)
 
 <use ./figures/hashPhoneNumber.png>
-Package pdftex.def Info: ./figures/hashPhoneNumber.png used on input line 210.
+Package pdftex.def Info: ./figures/hashPhoneNumber.png used on input line 212.
 (pdftex.def)             Requested size: 200.0pt x 67.33115pt.
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
@@ -364,23 +364,23 @@ Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
  [16] [17 <./figures/hashPhoneNumber.png>]
 Package marginnote Info: Margin note 18.1 is on absolute page 18
-(marginnote)              on input line 243.
-Package marginnote Info: right page because not two side mode on input line 243
+(marginnote)              on input line 245.
+Package marginnote Info: right page because not two side mode on input line 245
 .
 Package marginnote Info: xpos seems to be 405.333pt,
-(marginnote)             \marginnoterightadjust ignored on input line 243.
+(marginnote)             \marginnoterightadjust ignored on input line 245.
 Package marginnote Info: Margin note 18.2 is on absolute page 18
-(marginnote)              on input line 246.
-Package marginnote Info: right page because not two side mode on input line 246
+(marginnote)              on input line 248.
+Package marginnote Info: right page because not two side mode on input line 248
 .
 Package marginnote Info: xpos seems to be 134.26999pt,
-(marginnote)             \marginnoterightadjust ignored on input line 246.
+(marginnote)             \marginnoterightadjust ignored on input line 248.
 
 [18] <./figures/waterfallModel.png, id=70, 452.69125pt x 262.9825pt>
 File: ./figures/waterfallModel.png Graphic file (type png)
 
 <use ./figures/waterfallModel.png>
-Package pdftex.def Info: ./figures/waterfallModel.png used on input line 259.
+Package pdftex.def Info: ./figures/waterfallModel.png used on input line 261.
 (pdftex.def)             Requested size: 276.00105pt x 160.33481pt.
  [19 <./figures/waterfallModel.png>]
 <./figures/iterativeDevelopment.jpg, id=76, 318.43968pt x 167.12437pt>
@@ -388,48 +388,48 @@ File: ./figures/iterativeDevelopment.jpg Graphic file (type jpg)
 
 <use ./figures/iterativeDevelopment.jpg>
 Package pdftex.def Info: ./figures/iterativeDevelopment.jpg used on input line 
-278.
+280.
 (pdftex.def)             Requested size: 276.00105pt x 144.85129pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 280.
+(Font)              <9> on input line 282.
  [20 <./figures/iterativeDevelopment.jpg>] <./figures/spiralModel.png, id=80, 5
 69.12625pt x 392.46625pt>
 File: ./figures/spiralModel.png Graphic file (type png)
 
 <use ./figures/spiralModel.png>
-Package pdftex.def Info: ./figures/spiralModel.png used on input line 291.
+Package pdftex.def Info: ./figures/spiralModel.png used on input line 293.
 (pdftex.def)             Requested size: 276.00105pt x 190.33391pt.
  [21 <./figures/spiralModel.png>]
 Package marginnote Info: Margin note 22.1 is on absolute page 22
-(marginnote)              on input line 312.
-Package marginnote Info: right page because not two side mode on input line 312
+(marginnote)              on input line 314.
+Package marginnote Info: right page because not two side mode on input line 314
 .
 Package marginnote Info: xpos seems to be 201.1406pt,
-(marginnote)             \marginnoterightadjust ignored on input line 312.
+(marginnote)             \marginnoterightadjust ignored on input line 314.
  [22]
 Package marginnote Info: Margin note 23.1 is on absolute page 23
-(marginnote)              on input line 336.
-Package marginnote Info: right page because not two side mode on input line 336
+(marginnote)              on input line 338.
+Package marginnote Info: right page because not two side mode on input line 338
 .
 Package marginnote Info: xpos seems to be 469.1866pt,
-(marginnote)             \marginnoterightadjust ignored on input line 336.
+(marginnote)             \marginnoterightadjust ignored on input line 338.
  [23]
 Package marginnote Info: Margin note 24.1 is on absolute page 24
-(marginnote)              on input line 348.
-Package marginnote Info: right page because not two side mode on input line 348
+(marginnote)              on input line 350.
+Package marginnote Info: right page because not two side mode on input line 350
 .
 Package marginnote Info: xpos seems to be 304.50897pt,
-(marginnote)             \marginnoterightadjust ignored on input line 348.
+(marginnote)             \marginnoterightadjust ignored on input line 350.
 
 [24] [25]
 Package marginnote Info: Margin note 26.1 is on absolute page 27
-(marginnote)              on input line 407.
-Package marginnote Info: right page because not two side mode on input line 407
+(marginnote)              on input line 409.
+Package marginnote Info: right page because not two side mode on input line 409
 .
 Package marginnote Info: xpos seems to be 214.78984pt,
-(marginnote)             \marginnoterightadjust ignored on input line 407.
+(marginnote)             \marginnoterightadjust ignored on input line 409.
  [26] [27]
-Overfull \hbox (14.10641pt too wide) in paragraph at lines 412--413
+Overfull \hbox (14.10641pt too wide) in paragraph at lines 414--415
 \OT1/ptm/b/n/10 This sec-tion will con-tain in-for-ma-tion on how data is store
 d, the struc-ture of databases,
  []
@@ -489,7 +489,7 @@ r/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive
 s/type1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/ur
 w/times/utmri8a.pfb>
 Output written on /Users/Samuel/Documents/University/Project/Report/.texpadtmp/
-Report.pdf (37 pages, 931245 bytes).
+Report.pdf (37 pages, 931462 bytes).
 PDF statistics:
  162 PDF objects out of 1000 (max. 8388607)
  105 compressed objects within 2 object streams
