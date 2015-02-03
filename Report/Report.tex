@@ -68,23 +68,22 @@ Take a quick look at list of other students previous projects to get an idea of 
 
 Remove page number on title page.
 
-
-
 Remember to take notes on when I come across problems, for my conclusion.
 
+\newpage
 \section{Introduction}
 
 \subsection{Background of this project}
 
-The inspiration for this project originates from a project the author undertook in September 2014 whilst attending a week long 'hackathon' (Yacht Hack, http://toughhackers.com/yacht-hack-2014/), with Julie Markham and Nicholas Hopper, called Shy.  On this project, the author co-created a project to prototype a mobile application that would facilitate the immediate answering of questions that fall within certain categories.
+The inspiration for this project originates from a project the author undertook in September 2014 whilst attending a week long 'hackathon' (Yacht Hack, http://toughhackers.com/yacht-hack-2014/), with Julie Markham and Nicholas Hopper, called Shy.  On this project, the author co-created a project to prototype a mobile application that would facilitate the immediate answering of questions that fall within certain categories, using a knowledge base, simple machine learning and profiling of users baed on their usage history.
 
 One of the initial aims of Shy was to further the transition from e-learning (learning conducted online, usually with the help of a computer) to m-learning (learning using tools available on a mobile device).  M-learning is an especially important topic at the moment, due to the high, and increasing, availability of mobile devices worldwide.
 
-A semi-functional prototype was completed for iOS (shown in Figure~\ref{fig:shy-ios-screenshots}), although question recommendations were evaluated without knowledge of previous material the user had viewed, and as such there was no knowledge of their interests to support explicitly targeted answers for a question they might search for.
+A semi-functional prototype was completed for iOS (shown in Figure~\ref{fig:shy-ios-screenshots}), although question recommendations were evaluated without knowledge of previous material the user had viewed.  This meant that, as such there was no knowledge of their interests, explicitly targeted answers for a question and suggestions of questions could not be made.
 
-Up until this point, the service was restricted to working on iOS smart devices only, with poor quality question/answer matching.
+Up until this point, the service was restricted to working on iOS smart devices only, with poor quality question/answer matching.  In the initial project, the knowledge base was built for questions on personal health, sex, relationships and family.
 
-{\bf should add at least one more significant paragraph here, not sure what to write about though}
+\marginnote{should add at least one more significant paragraph here, not sure what to write about}though}
 
 \begin{figure}[htb] 
 \includegraphics[width=\linewidth]{shy-screenshots}
@@ -93,13 +92,13 @@ Up until this point, the service was restricted to working on iOS smart devices 
 \end{figure}
 
 \subsection{Motivation for this project}
-Access to knowledge is, in the opinion of the author, a critical part of modern life.  It's also a Human Right, under Article 27 of the Universal Declaration of Human Rights~\cite{community1948universal}.  Indeed, we use tools to access knowledge hundreds of times each day, often unaware that we are doing so.  Despite this, hundreds of millions of individuals live without this facility.  This project aims to investigate and create a technology to give more people access to knowledge, and thus their human rights.
+Access to knowledge is, in the opinion of the author, a critical part of modern life.  It's also a Human Right, under Article 27 of the Universal Declaration of Human Rights~\cite{community1948universal}.  We use tools to access knowledge hundreds of times each day, often unaware that we are doing so.  Despite this, hundreds of millions of individuals live without this facility.  This project aims to \marginnote{does it really investigate the (technical)(?) problem?}investigate the (technical)(?) problem behind this and to create a technology to give more people access to knowledge, and thus their human rights.
 
-The project also involves the use of a number of systems to work, including machine translation, an SMS input/output system and a custom system to build a profile on a user, to facilitate high-quality question-answer matching.  These, along with complex ethics and privacy issues create an interesting project that draws together many technologies and discussions in a way that can be used as a basis for other projects in the future.
+The project also involves the use of a number of systems to work, including machine translation, an SMS input/output system and a system to build a profile on a user, to facilitate high-quality question-answer matching.  The system will also feature machine learning, so that as time progresses, the quality of answers it returns increases.  This along with complex ethics and privacy issues create an interesting project that draws together many technologies and discussions in a way that can be used as a basis for other projects in the future.
 
 \subsection{Aims of this project}
 
-The first goal of this project is to assess and address the ethical issues that arise from the software that this project aims to create.  These include the responsibility the software has, stemming from it's position of trust, to provide accurate information and protecting the privacy of users by using only necessary information, among others.  The author will do this by researching ethical issues relating to the technologies that the project will use, for example machine translation.  This will then be used to feed the design process of the software and to specify the expected use-case of it.  Finally, the resulting software will be evaluated through experimentation, with volunteers been asked to ask a set of questions within a topic area, in a non-English language, and evaluate the relevance of answers returned.
+The first goal of this project is to assess and address the ethical issues that arise from the software that this project aims to create.  These include the responsibility the software (and hence the software author) has, because of it's position of trust, to provide accurate information and to protect the privacy of it's users by using only necessary information, among others.  The author will do this by researching ethical issues relating to the technologies that the project will use, for example machine translation.  This will then be used to feed the design process of the software and to specify the expected use-case of it.  Finally, the resulting software will be evaluated through experimentation, with volunteers been asked to ask a set of questions within a topic area, in a non-English language, and evaluate the relevance of answers returned.
 
 \subsection{Structure of this report}
 This report starts with a review of pre-existing literature on this topic, in chapter~\ref{sec:literatureReview}, where the author looks at existing software, tools and services of a similar type to those that will be either used in this project or that which this project hopes to create to research the problems that they stumbled across.  Comparisons between different software development life-cycles are also discussed.
@@ -121,7 +120,7 @@ Finally, the main achievements of this project and then the report is concluded 
 
 % Lilian: This section should be expended, especially mentioning the consequences of such assumptions. Why do you make those assumption (e.g. time constraint, little or no consequences, ...). What limitation this may cause to your findings.  Shows a mastery of the field.
 \subsection{Assumptions Within This Project}
-This project will make the assumption that users of this service have basic literacy skills in a language supported by the project.  Although this is not true for the whole of Africa, expanding the remit of this project to include a 'graphical' user interface that works over SMS is a challenge larger than would fit in an undergraduate dissertation.
+This project will make the assumption that users of this service have basic literacy skills in a language supported by the project.  Although this is not a correct assumption world-wide, expanding the remit of this project to include a 'graphical' user interface that works over SMS would scale this project outside of the acceptable/expected range for an undergraduate dissertation.
 
 \newpage
 
@@ -349,6 +348,7 @@ User goals are distilled into formal user requirements.  Each user requirement c
   \item The system must learn from user feedback when answers that are returned are of high or low quality an apply this knowledge to future queries.
   \item The system must be self-explanatory, with the facility to offer instructions to a user.
   \item The system must use user state so that it can accept queries that are dependent on past questions (for example, a query asking for more information or feedback on the quality of a past question).
+  \item The system must be easy to implement and flexible, to accommodate future projects that make use of adaptations of this project.
 \end{enumerate}
 
 \subsubsection{System Requirements - Non-Functional}
@@ -443,6 +443,7 @@ This section's content...
 \bibliographystyle{IEEEtran}
 \bibliography{IEEEabrv,mybib}
 
+\newpage
 \section{Appendix - Personnas}
 \label{sec:appendixPersonnas}
 \subsection{Nanjala}
@@ -457,6 +458,7 @@ This section's content...
 \subsubsection{Average Day}
 In a typical day, Nanjala will rise early to help her family with housework chores, before she prepares for school.  Nanjala wants to become a teacher.  At school, she studies Science, Maths and Geography, and works hard for her classes and on her homework.  Nanjala's school has a small library and a body of students, all of whom are as hard-working as Nanjala, meaning that books are often unavailable when Nanjala would like to look something up.  This increases the amount of time that her homework takes, and can even result in her not having access to information when she must go home to her family.
 
+\newpage
 \subsection{Ethan}
 %TODO Add photo
 \subsubsection{Demographics}

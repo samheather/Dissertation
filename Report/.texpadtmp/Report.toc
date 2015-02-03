@@ -36,10 +36,10 @@
 \contentsline {section}{\numberline {9}Evaluation}{29}
 \contentsline {section}{\numberline {10}Extending this project}{30}
 \contentsline {section}{\numberline {11}Conclusion}{31}
-\contentsline {section}{\numberline {12}Appendix - Personnas}{33}
-\contentsline {subsection}{\numberline {12.1}Nanjala}{33}
-\contentsline {subsubsection}{\numberline {12.1.1}Demographics}{33}
-\contentsline {subsubsection}{\numberline {12.1.2}Average Day}{33}
-\contentsline {subsection}{\numberline {12.2}Ethan}{34}
-\contentsline {subsubsection}{\numberline {12.2.1}Demographics}{34}
-\contentsline {subsubsection}{\numberline {12.2.2}Average Day}{34}
+\contentsline {section}{\numberline {12}Appendix - Personnas}{34}
+\contentsline {subsection}{\numberline {12.1}Nanjala}{34}
+\contentsline {subsubsection}{\numberline {12.1.1}Demographics}{34}
+\contentsline {subsubsection}{\numberline {12.1.2}Average Day}{34}
+\contentsline {subsection}{\numberline {12.2}Ethan}{35}
+\contentsline {subsubsection}{\numberline {12.2.1}Demographics}{35}
+\contentsline {subsubsection}{\numberline {12.2.2}Average Day}{35}
