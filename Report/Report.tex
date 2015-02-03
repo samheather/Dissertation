@@ -14,6 +14,7 @@
 \usepackage{cite}
 \usepackage[autostyle]{csquotes}
 \usepackage{marginnote}
+\usepackage{listings}% for source code styling
 
 % to avoid having to escape all underscores to avoid "missing $ inserted" error.
 \usepackage{url}
@@ -188,6 +189,7 @@ This issue is a result of the translation engine not been capable of taking as i
 
 Because the potential use of this system, regardless of whether this is within this project or by a third-party using the results of this project upon completion, could include distributing information that may be used by an individual making an important decision, cultural confusion such as this could have potentially catastrophic effects.
 
+\label{subsubsec:userPrivacyAndDataProtection}
 \subsubsection{User Privacy and Data Protection}
 This project uses a simple Artificial Intelligence (AI) to keep a record of information that has already been returned to a user, to attempt to save sending repetitive information (saving the cost of additional SMS).  This raises another ethical issue though - a privacy issue.  The material that a user has researched is likely to be sensitive - such is the nature of health related questions.  This means that the information on a user has to be kept securely, in a way that an individual user can not be identified.
 
@@ -294,6 +296,7 @@ Agile Development essentially represents a group of development techniques targe
 Agile development is highly targeted towards teams, with components such as Pair Programming, Collective Ownership, regular meetings and employee health (avoiding overtime) playing an integral part in the model~\cite{sommervilleSoftwareEngineering}.
 
 \subsubsection{Development Life Cycle Summary}
+\label{sec:developmentLifeCycleSummary}
 Iterative development has been chosen as the model that this project will follow, based on the following factors:
 \begin{enumerate}
   \item Boehm's Spiral Model and Agile Development are both targeted towards development teams.  A significant part of these models relates to team interaction, so they are not appropriate to this project.
@@ -306,15 +309,11 @@ Iterative development has been chosen as the model that this project will follow
 \section{Method and Requirements}
 \label{sec:method}
 
-\subsection{Chosen Software Development Lifecycle}
-%TODO start writing this!
-
 \subsection{Plan for Software Development}
 %TODO start writing this!
-Software development will follow the principles set forth in the iterative software development life cycle.  That is: Initial planning will take place 
+The Iterative Development Model was selected in Section \ref{sec:developmentLifeCycleSummary}.  Therefore, the development of this service will follow the principles set forth in this process.
 
 \subsection{Requirements}
-
 \subsubsection{Use Cases / User Goals}
 %TODO Have I used use cases correctly here?
 Two personas were created in Appendix Section \ref{sec:appendixPersonnas} to represent individuals who may have a need for the work resulting from this project.  From these personas, user goals are extracted.  These describe what a general user aims to achieve with this service.
@@ -373,11 +372,30 @@ Fit criterion are stated after each non-functional requirement, which will be us
 %TODO start writing this!
 
 \subsubsection{Micro-system for Protecting User Identity}
-{\bf explain the system that uses a middle-application to parse numbers into anonymous hashes, which are used in the database, protecting the user's identity for all but the second their query is been processed}
-%TODO Write / create diagrams showing microsystem for protecting identify with middle-application.
 
-\subsection{Platform, Language and Tools}
-%TODO start writing this!
+In section \ref{subsubsec:userPrivacyAndDataProtection}, the need to protect the privacy of a user and the general technique that will be used (involving irreversible hashing) are described.  The design of this system will now be discussed.
+
+The main gateway into the system will be an HTTP call to a Python function, which takes the phone number of the user and the question been asked as its parameters.  The header and basic structure of this function is:
+
+\begin{lstlisting}
+def entry(userCell, question):
+    hashedCell = someHashFunction(userCell)
+    answer = findAnswer(hashedCell, question)
+    return userCell, answer
+\end{lstlisting}
+
+The userCell is required at the output of the function to determine the number to which a response will be sent.  However, as the computation of an answer only requires a general constant representation of user identify, not necessarily the user phone number, the specific value of userCell is not required within the computation of the answer.  As such, a hash is passed into the answer-computing function.  This hash will be used within the database to store a user's history and profile.  This means that only a user's history can be identified from the database, not the actual identity of a user.
+
+\subsection{Language, Platform and Tools}
+\subsubsection{Language}
+The language Python has been selected to be the main language in project for three reasons:
+\begin{enumerate}
+  \item Python is universally compatible and simple to execute.  Once the server application is written, it will be simple to migrate it between machines and make adjustments.
+  \item Python is commonly used and has significant community support in the form of libraries for all the tools that will be used in this project (for example, libraries for queries databases and for sending text messages).
+  \item The author has significant expertise in the language, as does Lilian Blot (dissertation Supervisor).
+\end{enumerate}
+
+A testing utility will also be created to query the application without using SMS.  A simple OS X Cocoa \marginnote{double check Swift is still technically Cocoa?} application will be created that queries the HTTP interface with for expected JSON and displays an answer.  Objective-C and and Mac OS X were chosen as the language and platform for this as the author has experience with Objective-C and uses a Mac.  Because the application is only for testing purposes, there was no requirement for universal compatibility.
 
 \newpage
 \section{Implementation}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.20)  28 JAN 2015 17:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.20)  3 FEB 2015 13:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -71,6 +71,31 @@ Package csquotes Info: Enabling multilingual quotes.
 Package: marginnote 2012/03/29 v1.1i non floating margin notes for LaTeX
 \c@mn@abspage=\count95
 )
+(/usr/local/texlive/2014/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count96
+\lst@gtempboxa=\box26
+\lst@token=\toks16
+\lst@length=\count97
+\lst@currlwidth=\dimen103
+\lst@column=\count98
+\lst@pos=\count99
+\lst@lostspace=\dimen104
+\lst@width=\dimen105
+\lst@newlines=\count100
+\lst@lineno=\count101
+\lst@maxwidth=\dimen106
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2014/03/04 1.5c (Carsten Heinz)
+\c@lstnumber=\count102
+\lst@skipnumbers=\count103
+\lst@framebox=\box27
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2014/03/04 1.5c listings configuration
+))
+Package: listings 2014/03/04 1.5c (Carsten Heinz)
+
 (/usr/local/texlive/2014/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
@@ -98,54 +123,55 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count96
+\Gread@gobject=\count104
 ))
-\Gin@req@height=\dimen103
-\Gin@req@width=\dimen104
+\Gin@req@height=\dimen107
+\Gin@req@width=\dimen108
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
 
 
 Package csquotes Warning: No multilingual support.
-(csquotes)                Cannot enable multilingual quotes on input line 29.
+(csquotes)                Cannot enable multilingual quotes on input line 30.
 
 (/Users/Samuel/Documents/University/Project/Report/.texpadtmp/Report.aux)
 \openout1 = `Report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 30.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 Package marginnote Info: \pdfoutput not 0 and \pdflastxpos available.
 (marginnote)             Extended position detection mode activated.
+\c@lstlisting=\count105
 
 (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count97
-\scratchdimen=\dimen105
-\scratchbox=\box26
-\nofMPsegments=\count98
-\nofMParguments=\count99
-\everyMPshowfont=\toks16
-\MPscratchCnt=\count100
-\MPscratchDim=\dimen106
-\MPnumerator=\count101
-\makeMPintoPDFobject=\count102
-\everyMPtoPDFconversion=\toks17
+\scratchcounter=\count106
+\scratchdimen=\dimen109
+\scratchbox=\box28
+\nofMPsegments=\count107
+\nofMParguments=\count108
+\everyMPshowfont=\toks17
+\MPscratchCnt=\count109
+\MPscratchDim=\dimen110
+\MPnumerator=\count110
+\makeMPintoPDFobject=\count111
+\everyMPtoPDFconversion=\toks18
 ) (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -194,12 +220,12 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 37.
+(Font)              <12> on input line 38.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 37.
+(Font)              <8> on input line 38.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 37.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 37.
+(Font)              <6> on input line 38.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 38.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
@@ -207,22 +233,18 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 
 {/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 42.
 Package marginnote Info: Margin note 2.1 is on absolute page 2
-(marginnote)              on input line 44.
-Package marginnote Info: right page because not two side mode on input line 44.
+(marginnote)              on input line 45.
+Package marginnote Info: right page because not two side mode on input line 45.
 
 Package marginnote Info: xpos seems to be 172.77002pt,
-(marginnote)             \marginnoterightadjust ignored on input line 44.
-
-Overfull \hbox (7.10725pt too wide) in paragraph at lines 44--44
-\OT1/ptm/m/n/9 method/experiment, 
- []
-
-[2]
+(marginnote)             \marginnoterightadjust ignored on input line 45.
+ [2]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 53.
- (/Users/Samuel/Documents/University/Project/Report/.texpadtmp/Report.toc
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 54.
+
+(/Users/Samuel/Documents/University/Project/Report/.texpadtmp/Report.toc
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -247,15 +269,15 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 [6] [7]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 76.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 77.
 
-Overfull \hbox (2.42645pt too wide) in paragraph at lines 78--79
+Overfull \hbox (2.42645pt too wide) in paragraph at lines 79--80
 \OT1/ptm/m/n/10 The in-spi-ra-tion for this project orig-i-nates from a project
  the au-thor un-der-took in Septem-
  []
 
 
-Overfull \hbox (34.05658pt too wide) in paragraph at lines 78--79
+Overfull \hbox (34.05658pt too wide) in paragraph at lines 79--80
 \OT1/ptm/m/n/10 ber 2014 whilst at-tend-ing a week long 'hackathon' (Yacht Hack
 , http://toughhackers.com/yacht-
  []
@@ -264,47 +286,47 @@ Overfull \hbox (34.05658pt too wide) in paragraph at lines 78--79
 File: ./figures/shy-screenshots.jpg Graphic file (type jpg)
 
 <use ./figures/shy-screenshots.jpg>
-Package pdftex.def Info: ./figures/shy-screenshots.jpg used on input line 89.
+Package pdftex.def Info: ./figures/shy-screenshots.jpg used on input line 90.
 (pdftex.def)             Requested size: 345.0pt x 137.03407pt.
  [8] [9 <./figures/shy-screenshots.jpg>]
 Package marginnote Info: Margin note 10.1 is on absolute page 10
-(marginnote)              on input line 108.
-Package marginnote Info: right page because not two side mode on input line 108
+(marginnote)              on input line 109.
+Package marginnote Info: right page because not two side mode on input line 109
 .
 Package marginnote Info: xpos seems to be 312.17297pt,
-(marginnote)             \marginnoterightadjust ignored on input line 108.
+(marginnote)             \marginnoterightadjust ignored on input line 109.
 
 [10] <./figures/googleCholera.png, id=38, 669.50125pt x 387.4475pt>
 File: ./figures/googleCholera.png Graphic file (type png)
 
 <use ./figures/googleCholera.png>
-Package pdftex.def Info: ./figures/googleCholera.png used on input line 136.
+Package pdftex.def Info: ./figures/googleCholera.png used on input line 137.
 (pdftex.def)             Requested size: 345.0pt x 199.65887pt.
  [11 <./figures/googleCholera.png>]
 LaTeX Font Info:    Font shape `OT1/ptm/m/ui' in size <10> not available
-(Font)              Font shape `OT1/ptm/m/it' tried instead on input line 149.
+(Font)              Font shape `OT1/ptm/m/it' tried instead on input line 150.
  [12]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 171.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 172.
 
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 171.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 172.
  [13]
 Package marginnote Info: Margin note 14.1 is on absolute page 14
-(marginnote)              on input line 184.
-Package marginnote Info: right page because not two side mode on input line 184
+(marginnote)              on input line 185.
+Package marginnote Info: right page because not two side mode on input line 185
 .
 Package marginnote Info: xpos seems to be 134.26999pt,
-(marginnote)             \marginnoterightadjust ignored on input line 184.
+(marginnote)             \marginnoterightadjust ignored on input line 185.
 
 <./figures/hashPhoneNumber.png, id=53, 402.50375pt x 135.50626pt>
 File: ./figures/hashPhoneNumber.png Graphic file (type png)
 
 <use ./figures/hashPhoneNumber.png>
-Package pdftex.def Info: ./figures/hashPhoneNumber.png used on input line 200.
+Package pdftex.def Info: ./figures/hashPhoneNumber.png used on input line 202.
 (pdftex.def)             Requested size: 200.0pt x 67.33115pt.
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
@@ -326,23 +348,23 @@ Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
  [14] [15 <./figures/hashPhoneNumber.png>]
 Package marginnote Info: Margin note 16.1 is on absolute page 16
-(marginnote)              on input line 233.
-Package marginnote Info: right page because not two side mode on input line 233
+(marginnote)              on input line 235.
+Package marginnote Info: right page because not two side mode on input line 235
 .
 Package marginnote Info: xpos seems to be 405.333pt,
-(marginnote)             \marginnoterightadjust ignored on input line 233.
+(marginnote)             \marginnoterightadjust ignored on input line 235.
 Package marginnote Info: Margin note 16.2 is on absolute page 16
-(marginnote)              on input line 236.
-Package marginnote Info: right page because not two side mode on input line 236
+(marginnote)              on input line 238.
+Package marginnote Info: right page because not two side mode on input line 238
 .
 Package marginnote Info: xpos seems to be 134.26999pt,
-(marginnote)             \marginnoterightadjust ignored on input line 236.
+(marginnote)             \marginnoterightadjust ignored on input line 238.
 
 [16] <./figures/waterfallModel.png, id=64, 452.69125pt x 262.9825pt>
 File: ./figures/waterfallModel.png Graphic file (type png)
 
 <use ./figures/waterfallModel.png>
-Package pdftex.def Info: ./figures/waterfallModel.png used on input line 249.
+Package pdftex.def Info: ./figures/waterfallModel.png used on input line 251.
 (pdftex.def)             Requested size: 276.00105pt x 160.33481pt.
  [17 <./figures/waterfallModel.png>]
 <./figures/iterativeDevelopment.jpg, id=69, 318.43968pt x 167.12437pt>
@@ -350,46 +372,53 @@ File: ./figures/iterativeDevelopment.jpg Graphic file (type jpg)
 
 <use ./figures/iterativeDevelopment.jpg>
 Package pdftex.def Info: ./figures/iterativeDevelopment.jpg used on input line 
-268.
+270.
 (pdftex.def)             Requested size: 276.00105pt x 144.85129pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 270.
+(Font)              <9> on input line 272.
  [18 <./figures/iterativeDevelopment.jpg>] <./figures/spiralModel.png, id=73, 5
 69.12625pt x 392.46625pt>
 File: ./figures/spiralModel.png Graphic file (type png)
 
 <use ./figures/spiralModel.png>
-Package pdftex.def Info: ./figures/spiralModel.png used on input line 281.
+Package pdftex.def Info: ./figures/spiralModel.png used on input line 283.
 (pdftex.def)             Requested size: 276.00105pt x 190.33391pt.
  [19 <./figures/spiralModel.png>]
 Package marginnote Info: Margin note 20.1 is on absolute page 20
-(marginnote)              on input line 301.
-Package marginnote Info: right page because not two side mode on input line 301
+(marginnote)              on input line 304.
+Package marginnote Info: right page because not two side mode on input line 304
 .
 Package marginnote Info: xpos seems to be 201.1406pt,
-(marginnote)             \marginnoterightadjust ignored on input line 301.
+(marginnote)             \marginnoterightadjust ignored on input line 304.
  [20]
 Package marginnote Info: Margin note 21.1 is on absolute page 21
-(marginnote)              on input line 329.
-Package marginnote Info: right page because not two side mode on input line 329
+(marginnote)              on input line 328.
+Package marginnote Info: right page because not two side mode on input line 328
 .
 Package marginnote Info: xpos seems to be 469.1866pt,
-(marginnote)             \marginnoterightadjust ignored on input line 329.
+(marginnote)             \marginnoterightadjust ignored on input line 328.
  [21]
 Package marginnote Info: Margin note 22.1 is on absolute page 22
-(marginnote)              on input line 341.
-Package marginnote Info: right page because not two side mode on input line 341
+(marginnote)              on input line 340.
+Package marginnote Info: right page because not two side mode on input line 340
 .
 Package marginnote Info: xpos seems to be 304.50897pt,
-(marginnote)             \marginnoterightadjust ignored on input line 341.
+(marginnote)             \marginnoterightadjust ignored on input line 340.
 
-[22] [23] [24]
-Overfull \hbox (14.10641pt too wide) in paragraph at lines 385--386
+[22] [23]
+Package marginnote Info: Margin note 24.1 is on absolute page 25
+(marginnote)              on input line 398.
+Package marginnote Info: right page because not two side mode on input line 398
+.
+Package marginnote Info: xpos seems to be 214.78984pt,
+(marginnote)             \marginnoterightadjust ignored on input line 398.
+ [24] [25]
+Overfull \hbox (14.10641pt too wide) in paragraph at lines 403--404
 \OT1/ptm/b/n/10 This sec-tion will con-tain in-for-ma-tion on how data is store
 d, the struc-ture of databases,
  []
 
-[25] [26] [27] [28] [29] [30]
+[26] [27] [28] [29] [30] [31]
 (/Users/Samuel/Documents/University/Project/Report/.texpadtmp/Report.bbl
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
@@ -415,7 +444,7 @@ Missing character: There is no ¼ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
-[31]
+[32]
 Underfull \hbox (badness 1436) in paragraph at lines 111--115
 []\OT1/ptm/m/n/10 N. Rah-many. (2012) The dif-fer-ences be-tween life cy-cle
  []
@@ -425,16 +454,16 @@ Underfull \hbox (badness 1142) in paragraph at lines 111--115
 \OT1/ptm/m/n/10 mod-els - ad-van-tages and dis-ad-van-tages. Ac-cessed: 2015-
  []
 
-) [32] [33]
+) [33] [34]
 (/Users/Samuel/Documents/University/Project/Report/.texpadtmp/Report.aux) ) 
 Here is how much of TeX's memory you used:
- 2807 strings out of 493117
- 41785 string characters out of 6135432
- 111882 words of memory out of 5000000
- 6202 multiletter control sequences out of 15000+600000
+ 3996 strings out of 493117
+ 59385 string characters out of 6135432
+ 132382 words of memory out of 5000000
+ 7379 multiletter control sequences out of 15000+600000
  28108 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,8n,27p,1234b,317s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,8n,32p,1234b,841s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/us
 r/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive
 /2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
@@ -444,10 +473,10 @@ r/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive
 s/type1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/ur
 w/times/utmri8a.pfb>
 Output written on /Users/Samuel/Documents/University/Project/Report/.texpadtmp/
-Report.pdf (33 pages, 926021 bytes).
+Report.pdf (34 pages, 928241 bytes).
 PDF statistics:
- 146 PDF objects out of 1000 (max. 8388607)
- 94 compressed objects within 1 object stream
+ 149 PDF objects out of 1000 (max. 8388607)
+ 96 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
