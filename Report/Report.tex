@@ -415,7 +415,14 @@ The language Python has been selected to be the main language in project for fou
 A testing utility will also be created to query the application from a personal computer without using SMS.  A simple OS X Cocoa application will be created that queries the HTTP interface with JSON in the expected format and displays an answer.  Objective-C and and Mac OS X were chosen as the language and platform for this as the author has experience with Objective-C and uses a Mac.  There was no requirement for universal compatibility because the application is only for testing and development purposes.
 
 \subsubsection{Platform}
+The development platform of the utility will be Linux.  This is for three reasons:
+\begin{enumerate}
+  \item Linux manages Python and its libraries in a simple way without complex installers with tools like the Python Package Index (a library repository)~\cite{pypi}.
+  \item Common libraries that I will use for crating HTTP servers \marginnote{terminology}, database queries and sending SMS tend to be written primarily on the Linux platform.
+  \item The author has familiarity with Linux and has access to significant Linux infrastructure under a grant from Rackspace.
+\end{enumerate}
 
+As previously stated, the interface to the application will be over the SMS platform.
 
 \newpage
 \section{Implementation}

@@ -125,4 +125,10 @@ B.~Boehm, ``A spiral model of software development and enhancement,''
 B.~Boehm and W.~J. Hansen, ``Spiral development: Experience, principles, and
   refinements,'' DTIC Document, Tech. Rep., 2000.
 
+\bibitem{pypi}
+\BIBentryALTinterwordspacing
+P.~community. (2015) Pypi - the python package index. Accessed: 2015-02-04.
+  [Online]. Available: \url{https://pypi.python.org/pypi}
+\BIBentrySTDinterwordspacing
+
 \end{thebibliography}
