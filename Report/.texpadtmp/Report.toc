@@ -13,8 +13,8 @@
 \contentsline {subsubsection}{\numberline {3.2.3}User Privacy and Data Protection}{16}
 \contentsline {subsection}{\numberline {3.3}Software Design Life Cycles}{18}
 \contentsline {subsubsection}{\numberline {3.3.1}The Waterfall Model}{18}
-\contentsline {subsubsection}{\numberline {3.3.2}The Iterative Model}{20}
-\contentsline {subsubsection}{\numberline {3.3.3}Boehm's Spiral Model}{21}
+\contentsline {subsubsection}{\numberline {3.3.2}The Iterative Model}{19}
+\contentsline {subsubsection}{\numberline {3.3.3}Boehm's Spiral Model}{20}
 \contentsline {subsubsection}{\numberline {3.3.4}Agile Development}{21}
 \contentsline {subsubsection}{\numberline {3.3.5}Development Life Cycle Summary}{22}
 \contentsline {section}{\numberline {4}Method and Requirements}{23}
@@ -43,3 +43,6 @@
 \contentsline {subsection}{\numberline {12.2}Ethan}{37}
 \contentsline {subsubsection}{\numberline {12.2.1}Demographics}{37}
 \contentsline {subsubsection}{\numberline {12.2.2}Average Day}{37}
+\contentsline {subsection}{\numberline {12.3}Cedric}{38}
+\contentsline {subsubsection}{\numberline {12.3.1}Demographics}{38}
+\contentsline {subsubsection}{\numberline {12.3.2}Average Trip}{38}

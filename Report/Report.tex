@@ -15,6 +15,7 @@
 \usepackage[autostyle]{csquotes}
 \usepackage{marginnote}
 \usepackage{listings}% for source code styling
+\usepackage{xcolor}
 
 % to avoid having to escape all underscores to avoid "missing $ inserted" error.
 \usepackage{url}
@@ -141,15 +142,13 @@ The main use-case for this project is going to be parts of the world with limite
 {\bf The point of this is to show that I 'own' the material and subject (competence).  Show different points of view, choose a side, express a view on which I prefer and if I agree, critique.  Have objective goals.}
 
 % expand introduction to explain why sms, then look at related work in next section.  compare to smart phones loosely.
-A significant amount of work has previously been undertaken in the area of making knowledge quickly accessible to us in the form of questions and answers.  To take one example, consider the situation of suspecting that a relative was suffering from a disease, for example, Cholera.  The initial step would be to search for information before seeking medical assistance.  In the connected world, this is easy - a simple Google search returns the answers, as shown in Figure \ref{fig:cholera}.
+A significant amount of work has previously been undertaken in the area of making knowledge quickly accessible to us in the form of questions and answers.  To take one example, consider the situation of trying to find the population of London as quickly as possible.  The initial step would be to search for information.  In the connected world, this is easy - a simple Google search returns the answers, as shown in Figure \ref{fig:googleInstant}.
 
 \begin{figure}[htb] 
-\includegraphics[width=\linewidth]{googleCholera}
-\caption{Google Now information box}
-\label{fig:cholera}
+\includegraphics[width=\linewidth]{googleInstant}
+\caption{Google Now information box.  Screenshot made on 3rd February 2015.}
+\label{fig:googleInstant}
 \end{figure}
-
-% Lilian: You should give a caption to all figures and tables. use \label{fig:WebQuery} after \caption{Web query result for "Symptoms...}  for example. In this instance you should mentioned the date you made the query and which search engine you have used.
 
 This is easy to do in the developed world, where up to 75\% of the population are connected to the internet~\cite{ITU_Cell_Usage_2013} (with the population of elderly people been largely responsible for the remaining 25\%~\cite{Gov_Internet_Usage_UK_2014}).  This contrasts strongly with the situation in the African continent, where, in 2013, internet usage had only reached 16\%~\cite{ITU_Cell_Usage_2013}, a figure largely inflated by South Africa, where 5\% of the African population generate 2/3 of internet traffic from the African Continent~\cite{ITU_Cell_Usage_2013}.
 
@@ -388,7 +387,7 @@ In section \ref{subsubsec:userPrivacyAndDataProtection}, the need to protect the
 
 The main gateway into the system will be an HTTP call to a Python function, which takes the phone number of the user and the question been asked as its parameters.  The header and basic structure of this function is:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=Python]
 def entry(userCell, question):
     hashedCell = someHashFunction(userCell)
     answer = findAnswer(hashedCell, question)
@@ -473,14 +472,32 @@ In a typical day, Nanjala will rise early to help her family with housework chor
 \subsection{Ethan}
 %TODO Add photo
 \subsubsection{Demographics}
+\textcolor{red}{
 \begin{itemize}
   \item Male, Aged 22
   \item Living at his family's Ranch in the Australian Outback.  Although there is internet access, it's very slow and phone calls / SMS are used whenever possible.
   \item Ethan is in his final year of studying for a degree in Land Management at the University of Sydney.  At the moment he is back home for his Easter holidays.
-    \item Ethan is very conscientious, and wants to contribute his own knowledge to the world - especially to projects that help him.  He's written to authors before to point out mistakes in their works.
+  \item Ethan is very conscientious, and wants to contribute his own knowledge to the world - especially to projects that help him.  He's written to authors before to point out mistakes in their works.
 \end{itemize}
+}
 \subsubsection{Average Day}
+\textcolor{red}{
 Ethan is a focussed worker and tends to work hard on projects to get them out of the way quickly.  His final-year dissertation focusses on the differences in land management around the world, and requires the use of lots of facts and figures, which he has to research.  In the morning, Ethan plans what he aims to research and write that day.  He then works on parts grouped by section.  A few times an hour, Ethan needs to find a relevant fact or figure about a country or geographical structure, such as the population density of a country or the height of a mountain.  Getting this information from the internet is very slow - his family share a dial-up modem which can take minutes just to connect and allow a Google search.
+}
+
+\newpage
+\subsection{Cedric}
+%TODO Add photo
+\subsubsection{Demographics}
+\begin{itemize}
+  \item Male, Aged 27
+  \item Lives in Zürich (Switzerland) and goes for regular weekend hiking trips in the Alps, where mobile signal is intermittent \marginnote{cite this}.
+  \item Works in a service role in the city and so has little disposable income to spend on guide books for the many places he visits.
+  \item Cedric is a extremely competent hiker, often going off-track and summiting 'difficult' peaks.  He likes to be spontaneous, only deciding which peaks he will attempt when he arrives.
+  \item Cedric is very conscientious, and wants to contribute his own knowledge to the world - especially to projects that help him.  He's written to authors before to point out mistakes.
+\end{itemize}
+\subsubsection{Average Trip}
+Cedric likes to get to the mountains early on a Saturday morning or Friday evening to give him as long as possible there.  A typical trip will involve an intercity train from the Zürich Hauptbahnhof (main station) to another town, followed by local trains and buses to get into the mountain ranges.  There, he will use Swiss Hiking Trail Network signs and local conversations to select a peak or route.  Once Cedric has selected a route and is reaching higher ground, he uses a combination of his view and the signage to identify other peaks that he would like to wander around.  Cedric only has a non-smart phone with him because a) he can't afford to loose or damage his work phone and b) it would not be useful anyway, since the internet is intermittent.  However, he still wishes he could get information like whether there are hike-able \marginnote{a word?} routes or the height of a peak that he sees without having to phone friends back in the city.
 
 
 \end{document}  %End of document.
