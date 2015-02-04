@@ -163,10 +163,16 @@ This difference in standard use of cell phones is demonstrated in the Internatio
 % No research has been undertaken investigating whether bringing knowledge through this method is viable option.
 
 \subsection{Ethical Issues}
-This project raises a swathe of ethical issues related to translation accuracy, providing information to people in an ethical way and maintaining user privacy.
+This project raises a number of ethical issues related to translation accuracy, providing information to people in an ethically acceptable way (with focus on information accuracy) and maintaining user privacy.
 
 \subsubsection{Ethics of Providing Information}
-One significant issue for this project stems from providing information that may affect an individual or lead them to take a harmful action.  {\bf In a similar way to that which a teacher has a responsibility to teach accurate information to a pupil, due to their position of trust, any service relied upon by a user must equally provide accurate information.  The result of not doing this could be providing inaccurate information that leads to a user carrying out an action that causes harm}.% TODO Reword last two sentences.  This is something imporant and obvious - perhaps simple analogy is not necessary.  Perhaps give a generalised example.
+One significant issue for this project stems from providing information that may affect an individual or lead them to take a harmful action.
+
+% TODO Finish Ethics of Providing Informatio
+
+{\bf In a similar way to that which a teacher has a responsibility to teach accurate information to a pupil, due to their position of trust, any service relied upon by a user must equally provide accurate information.  The result of not doing this could be providing inaccurate information that leads to a user carrying out an action that causes harm}.
+
+% TODO Reword last two sentences.  This is something important and obvious - perhaps simple analogy is not necessary.  Perhaps give a generalised example.
 
 % Lilian: You may want to look toward news paper (online/printed) to look at current/past issues that led to a law suit/inquiry and subsequent verdict/laws that may have been changed.
 
@@ -324,7 +330,6 @@ The Iterative Development Model was selected in Section \ref{sec:developmentLife
 
 \subsection{Requirements}
 \subsubsection{Use Cases / User Goals}
-%TODO Have I used use cases correctly here?
 Two personas were created in Appendix Section \ref{sec:appendixPersonnas} to represent individuals who may have a need for the work resulting from this project.  From these personas, user goals are extracted.  These describe what a general user aims to achieve with this service.
 \begin{enumerate}
   \item Nanjala wants to be able to read general information on any given topic.
@@ -349,6 +354,7 @@ User goals are distilled into formal user requirements.  Each user requirement c
 \end{enumerate}
 
 \subsubsection{System Requirements - Functional}
+\label{subsubsec:systemRequirementsFunctional}
 \begin{enumerate}
   \item The system will receive queries via SMS, process them and then respond via SMS.
   \item The system shall use a datasource that contains both facts and descriptive text on geographical entities to answer queries.
@@ -358,7 +364,7 @@ User goals are distilled into formal user requirements.  Each user requirement c
   \item The system must learn from user feedback when answers that are returned are of high or low quality an apply this knowledge to future queries.
   \item The system must be self-explanatory, with the facility to offer instructions to a user.
   \item The system must use user state so that it can accept queries that are dependent on past questions (for example, a query asking for more information or feedback on the quality of a past question).
-  \item The system must be easy to implement and flexible, to accommodate future projects that make use of adaptations of this project.
+  \item \label{requirement:easyToImplement} The system must be easy to implement and flexible, to accommodate future projects that make use of adaptations of this project.
 \end{enumerate}
 
 \subsubsection{System Requirements - Non-Functional}
@@ -398,14 +404,18 @@ The userCell is required at the output of the function to determine the number t
 
 \subsection{Language, Platform and Tools}
 \subsubsection{Language}
-The language Python has been selected to be the main language in project for three reasons:
+The language Python has been selected to be the main language in project for four reasons:
 \begin{enumerate}
-  \item Python is universally compatible and simple to execute.  Once the server application is written, it will be simple to migrate it between machines and make adjustments.
-  \item Python is commonly used and has significant community support in the form of libraries for all the tools that will be used in this project (for example, libraries for queries databases and for sending text messages).
+  \item Python is universally compatible and simple to execute.  Once the server application is written, it will be simple to migrate it between machines and adjust the applications configuration / environment.
+  \item Python is commonly used and has significant community support in the form of libraries for all the tools that will be used in this project (for example, libraries for querying common databases and for sending text messages).
+  \item Python is an extremely flexible language in which it is easy to implement applications of this type without syntax issues.  This fulfils the requirement (\ref{subsubsec:systemRequirementsFunctional} point \ref{requirement:easyToImplement}) that the application is easy and quick to implement.
   \item The author has significant expertise in the language, as does Lilian Blot (dissertation Supervisor).
 \end{enumerate}
 
-A testing utility will also be created to query the application without using SMS.  A simple OS X Cocoa \marginnote{double check Swift is still technically Cocoa?} application will be created that queries the HTTP interface with for expected JSON and displays an answer.  Objective-C and and Mac OS X were chosen as the language and platform for this as the author has experience with Objective-C and uses a Mac.  Because the application is only for testing purposes, there was no requirement for universal compatibility.
+A testing utility will also be created to query the application from a personal computer without using SMS.  A simple OS X Cocoa application will be created that queries the HTTP interface with JSON in the expected format and displays an answer.  Objective-C and and Mac OS X were chosen as the language and platform for this as the author has experience with Objective-C and uses a Mac.  There was no requirement for universal compatibility because the application is only for testing and development purposes.
+
+\subsubsection{Platform}
+
 
 \newpage
 \section{Implementation}
@@ -491,13 +501,12 @@ Ethan is a focussed worker and tends to work hard on projects to get them out of
 \subsubsection{Demographics}
 \begin{itemize}
   \item Male, Aged 27
-  \item Lives in Zürich (Switzerland) and goes for regular weekend hiking trips in the Alps, where mobile signal is intermittent \marginnote{cite this}.
+  \item Lives in Zurich (Switzerland) and goes for regular weekend hiking trips in the Alps, where mobile signal is naturally patchy.
   \item Works in a service role in the city and so has little disposable income to spend on guide books for the many places he visits.
   \item Cedric is a extremely competent hiker, often going off-track and summiting 'difficult' peaks.  He likes to be spontaneous, only deciding which peaks he will attempt when he arrives.
-  \item Cedric is very conscientious, and wants to contribute his own knowledge to the world - especially to projects that help him.  He's written to authors before to point out mistakes.
+  \item Cedric is very conscientious, and wants to contribute his own knowledge to the world - especially to projects that help him.
 \end{itemize}
 \subsubsection{Average Trip}
-Cedric likes to get to the mountains early on a Saturday morning or Friday evening to give him as long as possible there.  A typical trip will involve an intercity train from the Zürich Hauptbahnhof (main station) to another town, followed by local trains and buses to get into the mountain ranges.  There, he will use Swiss Hiking Trail Network signs and local conversations to select a peak or route.  Once Cedric has selected a route and is reaching higher ground, he uses a combination of his view and the signage to identify other peaks that he would like to wander around.  Cedric only has a non-smart phone with him because a) he can't afford to loose or damage his work phone and b) it would not be useful anyway, since the internet is intermittent.  However, he still wishes he could get information like whether there are hike-able \marginnote{a word?} routes or the height of a peak that he sees without having to phone friends back in the city.
-
+Cedric likes to get to the mountains early on a Saturday morning or Friday evening to give him as long as possible there.  A typical trip will involve an intercity train from the Zurich Hauptbahnhof (main station) to another town, followed by local trains and buses to get into the mountain ranges.  There, he will use Swiss Hiking Trail Network signs and local conversations to select a peak or route.  Once Cedric has selected a route and is reaching higher ground, he uses a combination of his view and the signage to identify other peaks that he would like to wander around.  Cedric only has a non-smart phone with him because a) he can't afford to loose or damage his work phone and b) it would not be useful anyway, since the internet is intermittent.  However, he still wishes he could get information like whether there are maintained routes on the slopes of a given peak or the height of a peak that he sees without having to phone friends back in the city.
 
 \end{document}  %End of document.

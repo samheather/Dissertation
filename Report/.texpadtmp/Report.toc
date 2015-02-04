@@ -13,8 +13,8 @@
 \contentsline {subsubsection}{\numberline {3.2.3}User Privacy and Data Protection}{16}
 \contentsline {subsection}{\numberline {3.3}Software Design Life Cycles}{18}
 \contentsline {subsubsection}{\numberline {3.3.1}The Waterfall Model}{18}
-\contentsline {subsubsection}{\numberline {3.3.2}The Iterative Model}{19}
-\contentsline {subsubsection}{\numberline {3.3.3}Boehm's Spiral Model}{20}
+\contentsline {subsubsection}{\numberline {3.3.2}The Iterative Model}{20}
+\contentsline {subsubsection}{\numberline {3.3.3}Boehm's Spiral Model}{21}
 \contentsline {subsubsection}{\numberline {3.3.4}Agile Development}{21}
 \contentsline {subsubsection}{\numberline {3.3.5}Development Life Cycle Summary}{22}
 \contentsline {section}{\numberline {4}Method and Requirements}{23}
@@ -30,6 +30,7 @@
 \contentsline {subsubsection}{\numberline {5.1.1}Micro-system for Protecting User Identity}{26}
 \contentsline {subsection}{\numberline {5.2}Language, Platform and Tools}{26}
 \contentsline {subsubsection}{\numberline {5.2.1}Language}{26}
+\contentsline {subsubsection}{\numberline {5.2.2}Platform}{27}
 \contentsline {section}{\numberline {6}Implementation}{28}
 \contentsline {section}{\numberline {7}Results}{29}
 \contentsline {section}{\numberline {8}Discussion}{30}
