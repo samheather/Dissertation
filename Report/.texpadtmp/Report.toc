@@ -34,25 +34,25 @@
 \contentsline {subsubsection}{\numberline {5.2.3}Database}{27}
 \contentsline {paragraph}{Conceptual Data Model}{27}
 \contentsline {paragraph}{Logical Database Design}{28}
-\contentsline {paragraph}{Database Technology}{28}
-\contentsline {paragraph}{Physical Database Design}{29}
-\contentsline {subsubsection}{\numberline {5.2.4}Libraries}{29}
-\contentsline {paragraph}{Database Querying}{29}
-\contentsline {paragraph}{Creating HTTP Server and REST API}{29}
-\contentsline {paragraph}{Sending SMS}{29}
-\contentsline {section}{\numberline {6}Implementation}{30}
-\contentsline {section}{\numberline {7}Results}{31}
-\contentsline {section}{\numberline {8}Discussion}{32}
-\contentsline {section}{\numberline {9}Evaluation}{33}
-\contentsline {section}{\numberline {10}Extending this project}{34}
-\contentsline {section}{\numberline {11}Conclusion}{35}
-\contentsline {section}{\numberline {12}Appendix - Personnas}{38}
-\contentsline {subsection}{\numberline {12.1}Nanjala}{38}
-\contentsline {subsubsection}{\numberline {12.1.1}Demographics}{38}
-\contentsline {subsubsection}{\numberline {12.1.2}Average Day}{38}
-\contentsline {subsection}{\numberline {12.2}Ethan}{39}
-\contentsline {subsubsection}{\numberline {12.2.1}Demographics}{39}
-\contentsline {subsubsection}{\numberline {12.2.2}Average Day}{39}
-\contentsline {subsection}{\numberline {12.3}Cedric}{40}
-\contentsline {subsubsection}{\numberline {12.3.1}Demographics}{40}
-\contentsline {subsubsection}{\numberline {12.3.2}Average European Trip}{40}
+\contentsline {paragraph}{Database Technology}{29}
+\contentsline {paragraph}{Physical Database Design}{30}
+\contentsline {subsubsection}{\numberline {5.2.4}Libraries}{30}
+\contentsline {paragraph}{Database Querying}{30}
+\contentsline {paragraph}{Creating HTTP Server and REST API}{30}
+\contentsline {paragraph}{Sending SMS}{30}
+\contentsline {section}{\numberline {6}Implementation}{31}
+\contentsline {section}{\numberline {7}Results}{32}
+\contentsline {section}{\numberline {8}Discussion}{33}
+\contentsline {section}{\numberline {9}Evaluation}{34}
+\contentsline {section}{\numberline {10}Extending this project}{35}
+\contentsline {section}{\numberline {11}Conclusion}{36}
+\contentsline {section}{\numberline {12}Appendix - Personnas}{39}
+\contentsline {subsection}{\numberline {12.1}Nanjala}{39}
+\contentsline {subsubsection}{\numberline {12.1.1}Demographics}{39}
+\contentsline {subsubsection}{\numberline {12.1.2}Average Day}{39}
+\contentsline {subsection}{\numberline {12.2}Ethan}{40}
+\contentsline {subsubsection}{\numberline {12.2.1}Demographics}{40}
+\contentsline {subsubsection}{\numberline {12.2.2}Average Day}{40}
+\contentsline {subsection}{\numberline {12.3}Cedric}{41}
+\contentsline {subsubsection}{\numberline {12.3.1}Demographics}{41}
+\contentsline {subsubsection}{\numberline {12.3.2}Average European Trip}{41}

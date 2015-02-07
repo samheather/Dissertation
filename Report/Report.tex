@@ -16,6 +16,7 @@
 \usepackage{marginnote}
 \usepackage{listings}% for source code styling
 \usepackage{xcolor}
+\usepackage{booktabs}% For stacking in tables
 
 % to avoid having to escape all underscores in URL's to avoid "missing $ inserted" error.
 \usepackage{url}
@@ -443,7 +444,7 @@ There are five entities in the conceptual data model for this project.  These ar
 \end{itemize}
 
 \myparagraph{Logical Database Design}
-The logical design of the database reduces the number of entities form five conceptual model to three.  This is because there is a one-to-one relationship between both the \textit{Complete User History} and \textit{Last Question Asked by a User} entities, and the User entity.
+The logical design of the database reduces the number of entities form five conceptual model to three.  This is because there is a one-to-one relationship between the \textit{User} entity and both the \textit{Complete User History} and \textit{Last Question Asked by a User} entities, with a small number of fields.  In a large system where relational databases were been used, it would make sense to keep these entities separate, but in this case merging them allows a wider variety of databases to be used, simplifies the implementation and does not add significantly add to the complexity of the data model.
 
 The logical database requirements are listen in Table \ref{table:logicalDatabaseDesignListing} and represented graphically in \ref{table:logicalDatabaseDesignDiagram}.
 
@@ -469,18 +470,87 @@ The logical database requirements are listen in Table \ref{table:logicalDatabase
 \end{figure}
 
 \myparagraph{Database Technology}
-The database requirements for this project are:
+The database technology requirements for this project are:
 
 \begin{enumerate}
-  \item The selected database must be as simple as supports the system requirements to allow for quick development and to avoid adding unnecessary complexity.
+  \item The selected database must be as simple in implementation and interface as possible, whilst still supporting the system requirements.  This is to allow for quick development and to avoid adding unnecessary complexity.
   \item The selected database must allow for storage and retrieval of records with multiple parameters.
   \item Support for records that are related to each other is not required (so relational databases are not required, but not ruled out).
-  \item The database needs to have built-in support for Sharding and Replication, to allow the application to scale.
+  \item The database needs to have built-in support for Sharding and Replication/Mirroring to allow the application to scale.
+  \item The database must have a library for interfacing with it in the language of this project (Python).
 \end{enumerate}
 
-There are a number of database technologies available that would fulfil the data requirements of this project, but these can be split into the categories of relational databases (SQL) and document stores (NoSQL).  
+There are a number of database technologies available that would fulfil the data requirements of this project.  These can be split into the categories of relational databases (SQL) and document stores (NoSQL).  Two common database approaches that meet the above requirements are MySQL with an ORM \footnote{ORM: Object-relational mapping tool, which maps queries from the syntax of your programming language to SQL.  ORM's commonly also apply optimisations to queries, and validate them against SQL injections.}, and MongoDB with the Mongo Client.  Table \ref{table:mysqlVsMongo} shows a comparison of both of these technologies.
+
+\begin{table}
+\begin{center}
+    \begin{tabular}{| p{3.8cm} | p{4.0cm} | p{4.6cm} |}
+    \hline
+     & MySQL/SQLAlchemy & MongoDB \\ \hline
+    Fixed Schema & Yes, reducing flexible & No, giving flexibility \\ \hline
+    Querying Simplicity & Requires complex ORM and awareness of transactions, or construction of SQL queries. & MongoDB comes with a Python client, which allows queries in the form of dictionaries. \\ \hline
+    Relational Queries Supported & Yes (could be of help in a future extension) & No \\ \hline
+    Records support nested parameters & No & Yes \\ \hline
+    Built in Sharding support & No & Yes \\ \hline
+    Built in Mirroring support & No & Yes \\ \hline
+    \end{tabular}
+    \caption{MySQL \& SQLAlchemy vs MongoDB}
+    \label{table:mysqlVsMongo}
+\end{center}
+\end{table}
+
+From this comparison, the decision to use MongoDB has been taken, because MongoDB has more flexibility than SQL, writing queries is easier in Python and, other than the possibility of future extensions requiring relational structure, it is more scaleable than SQL.
 
 \myparagraph{Physical Database Design}
+MongoDB separates entities into collections but does not place restrictions on the structure of objects within a collection.  The general structure of the keys of a document (a JSON dictionary) is shown in Table \ref{table:collectionStructure}.
+
+\begin{table}
+\begin{center}
+    \begin{tabular}{| l | l |}
+    \hline
+    
+    Users &
+    \begin{lstlisting}
+    {
+    '_id',
+    'cellNumber',
+    'history',
+    'lastQuestion' : {
+        'text',
+        'givenProperty',
+        'returnedProperty'
+        }
+    }
+    \end{lstlisting}
+    \\ \hline
+    
+    KeywordRelatednessQuality &
+    \begin{lstlisting}
+    {
+    '_id',
+    'givenProperty',
+    'returnedProperty',
+    'oneStarRatings',
+    'twoStarRatings',
+    'threeStarRatings',
+    'fourStarRatings',
+    'fiveStarRatings'
+    }
+    \end{lstlisting}
+    \\ \hline
+    
+    InitialInteligence &
+    \begin{lstlisting}
+    Something here
+    \end{lstlisting}
+    \color{red} Undecided.
+    \\ \hline
+    
+    \end{tabular}
+    \caption{Typical Document in each MongoDB Collection}
+    \label{table:collectionStructure}
+\end{center}
+\end{table}
 
 \subsubsection{Libraries}
 \myparagraph{Database Querying}
