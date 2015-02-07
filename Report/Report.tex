@@ -17,8 +17,11 @@
 \usepackage{listings}% for source code styling
 \usepackage{xcolor}
 
-% to avoid having to escape all underscores to avoid "missing $ inserted" error.
+% to avoid having to escape all underscores in URL's to avoid "missing $ inserted" error.
 \usepackage{url}
+
+% Paragraph that starts on a new line.
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
 
 %\textwidth = 490pt
 
@@ -402,7 +405,7 @@ def entry(userCell, question):
 
 The userCell is required at the output of the function to determine the number to which a response will be sent.  However, as the computation of an answer only requires a general constant representation of user identify, not necessarily the user phone number, the specific value of userCell is not required within the computation of the answer.  As such, a hash is passed into the answer-computing function.  This hash will be used within the database to store a user's history and profile.  This means that only a user's history can be identified from the database, not the actual identity of a user.
 
-\subsection{Language, Platform and Tools}
+\subsection{Language, Platform and Tools and Libraries}
 \subsubsection{Language}
 The language Python has been selected to be the main language in project for four reasons:
 \begin{enumerate}
@@ -418,11 +421,73 @@ A testing utility will also be created to query the application from a personal 
 The development platform of the utility will be Linux.  This is for three reasons:
 \begin{enumerate}
   \item Linux manages Python and its libraries in a simple way without complex installers with tools like the Python Package Index (a library repository)~\cite{pypi}.
-  \item Common libraries that I will use for crating HTTP servers \marginnote{terminology}, database queries and sending SMS tend to be written primarily on the Linux platform.
+  \item Common libraries that I will use for creating a HTTP server, creating a REST API\marginnote{Lilian: should I explain what this is somewhere?}, making database queries and sending SMSs tend to be written primarily on the Linux platform.
   \item The author has familiarity with Linux and has access to significant Linux infrastructure under a grant from Rackspace.
 \end{enumerate}
 
 As previously stated, the interface to the application will be over the SMS platform.
+
+\subsubsection{Database}
+There are two tables of data that need to be stored.  These are the tables for user profiles (to allow the application to work with stateful queries), and for the machine learning of question-answer quality.  The logical design of these two tables/collections is:
+
+\myparagraph{Conceptual Data Model}
+% TODO - write conceptual database model
+There are five entities in the conceptual data model for this project.  These are:
+
+\begin{itemize}
+  \item {\bf Users:} An entity that represents a user, purely by an identifier based on their phone number.
+  \item {\bf Complete User History:} A history of all questions they have asked previously (to allow for future expansion of the system, perhaps to implement a recommendations system).
+  \item {\bf Last Question Asked by a User:} An object containing the parameters of the last query.  This allows the system to handle stateful queries based upon a previous query.
+  \item {\bf Keyword Pairs Quality Learning:} Will contain the property requested by a user, the property returned to that user, and the number of times a matching was ranked as been either one, two, three, four or five stars.
+  \item {\bf Initial Inteligence:} \color{red} Undecided.
+\end{itemize}
+
+\myparagraph{Logical Database Design}
+The logical design of the database reduces the number of entities form five conceptual model to three.  This is because there is a one-to-one relationship between both the \textit{Complete User History} and \textit{Last Question Asked by a User} entities, and the User entity.
+
+The logical database requirements are listen in Table \ref{table:logicalDatabaseDesignListing} and represented graphically in \ref{table:logicalDatabaseDesignDiagram}.
+
+\begin{table}
+\begin{center}
+    \begin{tabular}{| l | p{6cm} |}
+    \hline
+    Table/Collection & Parameters \\ \hline
+    Users & (\underline{id}, cellNumber, history, lastQuestionText, lastQuestionRequestedProperty, lastQuestionReturnedProperty) \\ \hline
+    KeywordRelatednessQuality & (\underline{id}, givenProperty, returnedProperty, oneStarRatings, twoStarRatings, threeStarRatings, fourStarRatings, fiveStarRatings) \\ \hline
+    InitialInteligence & \color{red} Undecided. \\ \hline
+    \end{tabular}
+    \caption{Logical Database Design.  \underline{Underlined} fields represent primary keys.}
+    \label{table:logicalDatabaseDesignListing}
+\end{center}
+\end{table}
+\marginnote{\color{red}Need to fill in initial inteligence}
+
+\begin{figure}[htb] 
+\includegraphics[width=\linewidth]{logicalModel}
+\caption{Logical Model of Data}
+\label{table:logicalDatabaseDesignDiagram}
+\end{figure}
+
+\myparagraph{Database Technology}
+The database requirements for this project are:
+
+\begin{enumerate}
+  \item The selected database must be as simple as supports the system requirements to allow for quick development and to avoid adding unnecessary complexity.
+  \item The selected database must allow for storage and retrieval of records with multiple parameters.
+  \item Support for records that are related to each other is not required (so relational databases are not required, but not ruled out).
+  \item The database needs to have built-in support for Sharding and Replication, to allow the application to scale.
+\end{enumerate}
+
+There are a number of database technologies available that would fulfil the data requirements of this project, but these can be split into the categories of relational databases (SQL) and document stores (NoSQL).  
+
+\myparagraph{Physical Database Design}
+
+\subsubsection{Libraries}
+\myparagraph{Database Querying}
+
+\myparagraph{Creating HTTP Server and REST API}
+
+\myparagraph{Sending SMS}
 
 \newpage
 \section{Implementation}
@@ -508,12 +573,33 @@ Ethan is a focussed worker and tends to work hard on projects to get them out of
 \subsubsection{Demographics}
 \begin{itemize}
   \item Male, Aged 27
-  \item Lives in Zurich (Switzerland) and goes for regular weekend hiking trips in the Alps, where mobile signal is naturally patchy.
+  \item Lives in Zurich (Switzerland) and goes on regular hiking trips, from 3-4 day trips around Europe to longer trips to the South American Andes and southern Asia.
   \item Works in a service role in the city and so has little disposable income to spend on guide books for the many places he visits.
-  \item Cedric is a extremely competent hiker, often going off-track and summiting 'difficult' peaks.  He likes to be spontaneous, only deciding which peaks he will attempt when he arrives.
+  \item Cedric is a competent albeit not professional hiker, often going off-track and summiting 'difficult' peaks or reaching famous camping grounds.  He likes to be spontaneous, only deciding which peaks he will attempt when he arrives.
   \item Cedric is very conscientious, and wants to contribute his own knowledge to the world - especially to projects that help him.
 \end{itemize}
-\subsubsection{Average Trip}
-Cedric likes to get to the mountains early on a Saturday morning or Friday evening to give him as long as possible there.  A typical trip will involve an intercity train from the Zurich Hauptbahnhof (main station) to another town, followed by local trains and buses to get into the mountain ranges.  There, he will use Swiss Hiking Trail Network signs and local conversations to select a peak or route.  Once Cedric has selected a route and is reaching higher ground, he uses a combination of his view and the signage to identify other peaks that he would like to wander around.  Cedric only has a non-smart phone with him because a) he can't afford to loose or damage his work phone and b) it would not be useful anyway, since the internet is intermittent.  However, he still wishes he could get information like whether there are maintained routes on the slopes of a given peak or the height of a peak that he sees without having to phone friends back in the city.
+\subsubsection{Average European Trip}
+A typical trip will involve an intercity train from the Zurich Hauptbahnhof (main station) to the city closest to the range Cedric will he hiking.  He takes the train because it tends to be cheaper than flights.  Once in the area, Cedric will take local trains and buses to get into the mountain ranges.  There, he will use the local hiking trail network signs and conversations with the locals to select a peak or route.  Once Cedric has got moving is reaching higher ground, he uses a combination of his view and the signage to identify other peaks that he would like to wander around.  
+
+Cedric takes a non-smart phone with him because a) the battery life on his smart phone is not long enough for his whole trip, whereas his non-smart phone lasts a week at a time, and b) his smart phone would not be useful anyway, since the internet is so intermittent.  He still wishes he could get information like whether there are maintained routes on the slopes of a given peak or the height of a peak that he sees without having to phone friends back in the city.
 
 \end{document}  %End of document.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>220</y>
+      <w>230</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>Users
+--
+id
+cellNumber
+history
+lastQuestionText
+lastQuestionRequestedProperty
+lastQuestionReturnedProperty</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>260</x>
+      <y>220</y>
+      <w>210</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>KeywordRelatednessQuality
+--
+id
+givenProperty
+returnedProperty
+oneStarRatings
+twoStarRatings
+threeStarRatings
+fourStarRatings
+fiveStarRatings</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>490</x>
+      <y>220</y>
+      <w>210</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>InitialInteligence
+--
+Some stuff will go here.</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
