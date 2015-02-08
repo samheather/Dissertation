@@ -1,7 +1,7 @@
 \contentsline {section}{\numberline {1}Useful thoughts from Lilian}{8}
 \contentsline {section}{\numberline {2}Introduction}{9}
 \contentsline {subsection}{\numberline {2.1}Background of this project}{9}
-\contentsline {subsection}{\numberline {2.2}Motivation for this project}{9}
+\contentsline {subsection}{\numberline {2.2}Motivation for this project}{10}
 \contentsline {subsection}{\numberline {2.3}Aims of this project}{10}
 \contentsline {subsection}{\numberline {2.4}Structure of this report}{11}
 \contentsline {subsection}{\numberline {2.5}Assumptions Within This Project}{12}
@@ -12,7 +12,7 @@
 \contentsline {subsubsection}{\numberline {3.2.2}Ethics of Translation}{15}
 \contentsline {subsubsection}{\numberline {3.2.3}User Privacy and Data Protection}{16}
 \contentsline {subsection}{\numberline {3.3}Software Design Life Cycles}{18}
-\contentsline {subsubsection}{\numberline {3.3.1}The Waterfall Model}{18}
+\contentsline {subsubsection}{\numberline {3.3.1}The Waterfall Model}{19}
 \contentsline {subsubsection}{\numberline {3.3.2}The Iterative Model}{20}
 \contentsline {subsubsection}{\numberline {3.3.3}Boehm's Spiral Model}{21}
 \contentsline {subsubsection}{\numberline {3.3.4}Agile Development}{21}
@@ -34,25 +34,25 @@
 \contentsline {subsubsection}{\numberline {5.2.3}Database}{27}
 \contentsline {paragraph}{Conceptual Data Model}{27}
 \contentsline {paragraph}{Logical Database Design}{28}
-\contentsline {paragraph}{Database Technology}{29}
+\contentsline {paragraph}{Database Technology}{28}
 \contentsline {paragraph}{Physical Database Design}{30}
 \contentsline {subsubsection}{\numberline {5.2.4}Libraries}{30}
 \contentsline {paragraph}{Database Querying}{30}
 \contentsline {paragraph}{Creating HTTP Server and REST API}{30}
 \contentsline {paragraph}{Sending SMS}{30}
-\contentsline {section}{\numberline {6}Implementation}{31}
-\contentsline {section}{\numberline {7}Results}{32}
-\contentsline {section}{\numberline {8}Discussion}{33}
-\contentsline {section}{\numberline {9}Evaluation}{34}
-\contentsline {section}{\numberline {10}Extending this project}{35}
-\contentsline {section}{\numberline {11}Conclusion}{36}
-\contentsline {section}{\numberline {12}Appendix - Personnas}{39}
-\contentsline {subsection}{\numberline {12.1}Nanjala}{39}
-\contentsline {subsubsection}{\numberline {12.1.1}Demographics}{39}
-\contentsline {subsubsection}{\numberline {12.1.2}Average Day}{39}
-\contentsline {subsection}{\numberline {12.2}Ethan}{40}
-\contentsline {subsubsection}{\numberline {12.2.1}Demographics}{40}
-\contentsline {subsubsection}{\numberline {12.2.2}Average Day}{40}
-\contentsline {subsection}{\numberline {12.3}Cedric}{41}
-\contentsline {subsubsection}{\numberline {12.3.1}Demographics}{41}
-\contentsline {subsubsection}{\numberline {12.3.2}Average European Trip}{41}
+\contentsline {section}{\numberline {6}Implementation}{32}
+\contentsline {section}{\numberline {7}Results}{33}
+\contentsline {section}{\numberline {8}Discussion}{34}
+\contentsline {section}{\numberline {9}Evaluation}{35}
+\contentsline {section}{\numberline {10}Extending this project}{36}
+\contentsline {section}{\numberline {11}Conclusion}{37}
+\contentsline {section}{\numberline {12}Appendix - Personnas}{40}
+\contentsline {subsection}{\numberline {12.1}Nanjala}{40}
+\contentsline {subsubsection}{\numberline {12.1.1}Demographics}{40}
+\contentsline {subsubsection}{\numberline {12.1.2}Average Day}{40}
+\contentsline {subsection}{\numberline {12.2}Ethan}{41}
+\contentsline {subsubsection}{\numberline {12.2.1}Demographics}{41}
+\contentsline {subsubsection}{\numberline {12.2.2}Average Day}{41}
+\contentsline {subsection}{\numberline {12.3}Cedric}{42}
+\contentsline {subsubsection}{\numberline {12.3.1}Demographics}{42}
+\contentsline {subsubsection}{\numberline {12.3.2}Average European Trip}{42}

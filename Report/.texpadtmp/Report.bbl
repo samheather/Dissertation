@@ -27,6 +27,16 @@ U.~N. international community, ``The universal declaration of human rights,''
   1948. [Online]. Available: \url{http://www.un.org/en/documents/udhr}
 \BIBentrySTDinterwordspacing
 
+\bibitem{falaki}
+\BIBentryALTinterwordspacing
+H.~Falaki, R.~Mahajan, S.~Kandula, D.~Lymberopoulos, R.~Govindan, and
+  D.~Estrin, ``Diversity in smartphone usage,'' in \emph{Proceedings of the 8th
+  International Conference on Mobile Systems, Applications, and Services}, ser.
+  MobiSys '10.\hskip 1em plus 0.5em minus 0.4em\relax New York, NY, USA: ACM,
+  2010, pp. 179--194. [Online]. Available:
+  \url{http://doi.acm.org/10.1145/1814433.1814453}
+\BIBentrySTDinterwordspacing
+
 \bibitem{ITU_Cell_Usage_2013}
 \BIBentryALTinterwordspacing
 I.~T.~U. (ITU), ``Key ict indicators for developed and developing countries and
