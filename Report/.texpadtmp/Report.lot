@@ -1,4 +1,4 @@
-\contentsline {table}{\numberline {1}{\ignorespaces Example of software database: hashed phone numbers paired with a list of previous returned answer ID's. }}{17}
-\contentsline {table}{\numberline {2}{\ignorespaces Logical Database Design. \relax $\@@underline {\hbox {Underlined}}\mathsurround \z@ $\relax fields represent primary keys.}}{29}
-\contentsline {table}{\numberline {3}{\ignorespaces MySQL \& SQLAlchemy vs MongoDB}}{30}
-\contentsline {table}{\numberline {4}{\ignorespaces Typical Document in each MongoDB Collection}}{31}
+\contentsline {table}{\numberline {1}{\ignorespaces Example of software database: hashed phone numbers paired with a list of previous returned answer ID's. }}{18}
+\contentsline {table}{\numberline {2}{\ignorespaces Logical Database Design. \relax $\@@underline {\hbox {Underlined}}\mathsurround \z@ $\relax fields represent primary keys.}}{30}
+\contentsline {table}{\numberline {3}{\ignorespaces MySQL \& SQLAlchemy vs MongoDB}}{31}
+\contentsline {table}{\numberline {4}{\ignorespaces Typical Document in each MongoDB Collection}}{32}
