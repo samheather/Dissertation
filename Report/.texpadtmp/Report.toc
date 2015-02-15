@@ -46,13 +46,10 @@
 \contentsline {section}{\numberline {9}Evaluation}{35}
 \contentsline {section}{\numberline {10}Extending this project}{36}
 \contentsline {section}{\numberline {11}Conclusion}{37}
-\contentsline {section}{\numberline {12}Appendix - Personnas}{40}
+\contentsline {section}{\numberline {12}Appendix - Personas}{40}
 \contentsline {subsection}{\numberline {12.1}Nanjala}{40}
 \contentsline {subsubsection}{\numberline {12.1.1}Demographics}{40}
 \contentsline {subsubsection}{\numberline {12.1.2}Average Day}{40}
-\contentsline {subsection}{\numberline {12.2}Ethan}{41}
+\contentsline {subsection}{\numberline {12.2}Cedric}{41}
 \contentsline {subsubsection}{\numberline {12.2.1}Demographics}{41}
-\contentsline {subsubsection}{\numberline {12.2.2}Average Day}{41}
-\contentsline {subsection}{\numberline {12.3}Cedric}{42}
-\contentsline {subsubsection}{\numberline {12.3.1}Demographics}{42}
-\contentsline {subsubsection}{\numberline {12.3.2}Average European Trip}{42}
+\contentsline {subsubsection}{\numberline {12.2.2}Average European Trip}{41}

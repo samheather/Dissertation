@@ -80,13 +80,11 @@ Remember to take notes on when I come across problems, for my conclusion.
 
 \subsection{Background of this project}
 
-The inspiration for this project originates from a project the author undertook in September 2014 whilst attending Yacht Hack (a week-long hackathon on a Yacht in Croatia)\footnote{http://toughhackers.com/yacht-hack-2014/)}.  In collaboration with Julie Markham and Nicholas Hopper, the author co-created a project to prototype a mobile application that would facilitate the immediate answering of questions that fall within certain categories, using a knowledge base, simple machine learning and profiling of users baed on their usage history.
+The inspiration for this project originates from a project the author undertook in September 2014 whilst attending Yacht Hack, a week-long hackathon on a Yacht in Croatia\footnote{http://toughhackers.com/yacht-hack-2014/)}.  In collaboration with Julie Markham and Nicholas Hopper, the author co-created a project to prototype a mobile application that would facilitate the immediate answering of questions that fall within certain categories using a knowledge base, simple machine learning and profiling of users based on their usage history.
 
 One of the initial goals of Shy was to bring knowledge via m-learning (learning using tools available on a mobile device) as opposed to e-learning (learning conducted online, usually with the help of a computer).  This is because m-learning systems are available to a much larger demographic of people, because the technology (mobile devices, commonly phones) is becoming ever cheaper and more accessible.
 
-A semi-functional prototype was completed for iOS, as seen in Figure~\ref{fig:shy-ios-screenshots}.  The front-end was complete, however in the backend question-answer matching was evaluated without knowledge of previous material the user had viewed.  This meant that explicitly targeted answers for a question and suggestions of questions that a given user profile might be interested in could not be made.
-
-Up until this point, the service was restricted to working on iOS smart devices only, with poor quality question/answer matching.  In the initial project, the knowledge base was built for questions on personal health, sex, relationships and family.
+A semi-functional prototype was completed for iOS, as seen in Figure~\ref{fig:shy-ios-screenshots}.  The front-end was complete, however in the backend question-answer matching was evaluated without knowledge of previous material the user had viewed.  This meant that explicitly targeted answers for a question and suggestions of questions that a given user profile might be interested in could not be made.  Up until this point, the service was restricted to working on iOS smart devices only, with poor quality question-answer matching.  In the initial project, the knowledge base was built for questions on personal health, sex, relationships and family.
 
 \marginnote{should add at least one more significant paragraph here, not sure what to write about though}
 
@@ -99,16 +97,16 @@ Up until this point, the service was restricted to working on iOS smart devices 
 \subsection{Motivation for this project}
 Access to knowledge is a critical part of modern life.  It's also a Human Right, under Article 27 of the Universal Declaration of Human Rights~\cite{community1948universal}.  We have the facility to retrieve information and instantly communicate with each other using our smart phones, and commonly do it up to 200 times a day~\cite{falaki} - a facility that hundreds of millions of individuals live without.  This project aims to \marginnote{does it really investigate the (technical and ethical)(?) challenge?}investigate the (technical and ethical)(?) challenges behind this and to create a technology to give more people access to knowledge, and thus their human rights.
 
-The project involves the use of a number of systems to work, including machine translation, an SMS input/output system and a system to build a profile on a user, to facilitate high-quality targetted question-answer matching.  The system will also feature machine learning, so that as time progresses, the quality of the answers it returns increases.  The use of these systems in one application along with complex ethics and privacy issues create an interesting project that draws together many technologies and discussions in a way that can be used as a basis for further research in the future.
+The project involves the use of a number of systems to work including machine translation, an SMS input/output system and a system to build a profile on a user in order to facilitate high-quality targeted question-answer matching.  The system will also feature machine learning so that as time progresses, the quality of the answers it returns increases.  The use of these systems in one application along with complex ethics and privacy issues create an interesting project that draws together many technologies and discussions in a way that can be used as a basis for further research in the future.
 
 \subsection{Aims of this project}
 
-The first goal of this project is to assess and address the ethical issues that arise from the software that this project aims to create.  These include the responsibility the software (and hence the software author) has, because of its position of trust, to provide accurate information and to protect the privacy of it's users by using only necessary information, among others.  This project will do this by researching ethical issues relating to the technologies that the project will use, for example machine translation.  This will then be used to feed the design process of the software and to specify the expected use-case of it.  Finally, the resulting software will be evaluated through experimentation, with volunteers been asked to ask a set of questions within a topic area, in a non-English language, and evaluate the relevance of answers returned.
+The first goal of this project is to assess and address the ethical issues that arise from the software that this project aims to create.  These include the responsibility the software (and hence the software author) has, because of its position of trust, to provide accurate information and to protect the privacy of its users by using only necessary information, among others.  This project will do this by researching ethical issues relating to the technologies that the project will use, for example machine translation.  This will then be used to feed the design process of the software and to specify the expected use-case of it.  Finally, the resulting software will be evaluated through experimentation, with volunteers asking the system a set of questions within a topic area, in a non-English language, and evaluate the relevance of answers returned.
 
-The initial goal for this dissertation project was to focus on questions relating to personal health, sex, relationships and family.  This was as a direct result of the focus of 'Shy' (the app motivating this project).  Although a health and diseases database was located in the early stages of the project (Diseases Database, www.diseasesdatabase.com), it was targeted at professional uses for the data and came with a significant licence fee, as well as complex documentation that the provider insisted on customising specifically for each use-case.  Attempts were made to acquire a free academic research licence via email, but these were not responded to.  Additionally, as the project progressed in the early stages it became clear that the author's original two-page document discussing ethical considerations with the project did not cover all possible situations.  Indeed, the Author and Supervisor were still discovering further significant ethical issues as far as 8 weeks into the project, which would have required a complex ethics panel review, critically delaying this project.  Two example ethical issues that occurred were:
+The initial goal for this dissertation was to focus on questions relating to personal health, sex, relationships and family.  This was as a direct result of the focus of 'Shy' (the app motivating this project).  Although a health and diseases database was located in the early stages of the project (Diseases Database, www.diseasesdatabase.com), it was targeted at professional uses for the data and came with a significant licence fee, as well as complex documentation that the provider insisted on customising specifically for each use-case.  Attempts were made to acquire a free academic research licence via email, but these were not responded to.  Additionally, as the project progressed in the early stages it became clear that the author's original two-page document discussing ethical considerations with the project did not cover all possible situations.  Indeed, the Author and Supervisor were still discovering further significant ethical issues as far as eight weeks into the project, which would have required a complex ethics panel review, critically delaying this project.  Two example ethical issues that occurred were:
 
 \begin{itemize}
-  \item Any application has that dispenses health related information that a user might act upon in a life changing manner HAS to respond with correct information, since an incorrect response could lead to a user taking an action which leads to them harming themselves.
+  \item Any application has that dispenses health related information that a user might act upon in a life changing manner has to respond with correct information, since an incorrect response could lead to a user taking an action which leads to them harming themselves.
   \item Privacy is critical since the questions been asked are personal.  This could not be absolutely guaranteed, since a third-party service had to be used to send SMSs and, although unlikely, it was possible that this service could build profiles on users and identify them.
 \end{itemize}
 
@@ -121,13 +119,13 @@ Chapter~\ref{sec:method} describes the method that will be taken to develop the 
 
 The design of the software, driven from information collected from the requirements, will be set out in Chapter~\ref{sec:design}.  The individual components that make up the technology will be described and discussed\marginnote{described and discussed, or just described?}, followed by a description of how these modules will interface with each other to build a complete system.  Finally, this section will include a description of the platform, language and other tools that will be used.
 
-Chapter~\ref{sec:implementation} contains details about the implementation of the software.  This includes information on the tools that were used to create components such as the SMS interface and question/answer matching system.
+Chapter~\ref{sec:implementation} contains details about the implementation of the software.  This includes information on the tools that were used to create components such as the SMS interface and question-answer matching system.
 
 Results from the evaluation of the system will be presented in Chapter~\ref{sec:results}.  A discussion of these results and their implication on this project is then presented to the reader in Chapter~\ref{sec:discussion}.
 
 Chapter~\ref{sec:evaluation} contains an evaluation of the software produced and the process taken to complete it.  Comparisons will be made to the success criteria, set out for the project in section <insert number here>.
 
-The authors thoughts on potential future work, building on the work produced in this project, are then displayed in chapter~\ref{sec:extending}.  
+The author's thoughts on potential future work, building on the work produced in this project, are then displayed in chapter~\ref{sec:extending}.  
 
 Finally, the main achievements of this project and then the report is concluded in chapter~\ref{sec:conclusion} with final thoughts.
 
@@ -136,7 +134,7 @@ Finally, the main achievements of this project and then the report is concluded 
 \subsection{Assumptions Within This Project}
 This project will make the assumption that users of this service have basic literacy skills in a language supported by the project.  Although this is not a correct assumption world-wide, expanding the remit of this project to include a 'graphical' user interface that works over SMS would scale this project outside of the acceptable/expected range for an undergraduate dissertation.
 
-The main use-case for this project is going to be parts of the world with limited internet access.  Although these exist all-over the world, the African continent is typical of this problem so I will focus my research in demonstrating a need for this tool there.
+The main use-case for this project is going to be parts of the world with limited internet access.  Although these exist all over the world, the African continent is typical of this problem so I will focus my research in demonstrating a need for this tool there.
 
 {\color{red} extend this}
 
@@ -148,7 +146,7 @@ The main use-case for this project is going to be parts of the world with limite
 {\bf The point of this is to show that I 'own' the material and subject (competence).  Show different points of view, choose a side, express a view on which I prefer and if I agree, critique.  Have objective goals.}
 
 % TODO expand introduction to explain why sms, then look at related work in next section.  compare to smart phones loosely.
-A significant amount of work has previously been undertaken in the area of making knowledge quickly accessible to us in the form of questions and answers.  To take one example, consider that an individual needs to find the population of London as quickly as possible.  The initial step would be to search for information.  In the connected world, this is easy - a simple Google search returns the answers without even having to click through to any resources, as shown in Figure \ref{fig:googleInstant}.
+A significant amount of work has previously been undertaken in the area of making knowledge quickly accessible to us in the form of questions and answers.  To take one example, consider that an individual needs to find the population of London as quickly as possible.  The initial step would be to search for information.  In the connected world, this is easy: a simple Google search returns the answers without even having to click through to any resources, as shown in Figure \ref{fig:googleInstant}.
 
 \begin{figure}[htb] 
 \includegraphics[width=\linewidth]{googleInstant}
@@ -156,15 +154,15 @@ A significant amount of work has previously been undertaken in the area of makin
 \label{fig:googleInstant}
 \end{figure}
 
-This is easy to do in the developed world where up to 75\% of the population are connected to the internet~\cite{ITU_Cell_Usage_2013} (with the population of elderly people been largely responsible for the remaining 25\%~\cite{Gov_Internet_Usage_UK_2014}).  This contrasts strongly with the situation in the African continent, where, in 2013, internet usage had only reached 16\%~\cite{ITU_Cell_Usage_2013}, a figure largely inflated by South Africa, where 5\% of the African population generate 2/3 of internet traffic from the African Continent~\cite{ITU_Cell_Usage_2013}.
+This is easy to do in the developed world where up to 75\% of the population are connected to the internet~\cite{ITU_Cell_Usage_2013}, with the population of elderly people been largely responsible for the remaining 25\%~\cite{Gov_Internet_Usage_UK_2014}.  This contrasts strongly with the situation in the African continent, where in 2013, internet usage had only reached 16\%~\cite{ITU_Cell_Usage_2013}, a figure largely inflated by South Africa where 5\% of the African population generate 2/3 of internet traffic from the African Continent~\cite{ITU_Cell_Usage_2013}.
 
 % But there are other communication methods which are proven to work
 \subsection{Previous work using SMS}
-Although the above suggests that the African continent is majoritively disconnected, this is not the case.  Because of restrictions in the electricity available, the ways in which a non-smart phone \marginnote{\color{red}cite that these are lower power consumption, or assume?} can be used in Africa have far surpassed those in the developed world~\cite{Fox:2011:Online}, in-part due to the low power consumption of a mobile phone.  Interesting such examples include automated services which SMS HIV/AIDS \marginnote{\color{red}Order ok?} sufferers, reminding them of medication to take, and providing access to current market information for agriculture and farming, saving farmers from making daily trips (often many kilometres) or relying on out-of-date information from a weekly radio broadcast~\cite{Aker_Mobile_Phones_2010}.
+Although the above suggests that the African continent is majoritively disconnected, this is not the case.  Because of restrictions in the electricity available, the ways in which a non-smart phone \marginnote{\color{red}cite that these are lower power consumption, or assume?} can be used in Africa have far surpassed those in the developed world~\cite{Fox:2011:Online}, in part due to the low power consumption of a mobile phone.  Interesting such examples include automated services which SMS HIV/AIDS \marginnote{\color{red}Order ok?} sufferers, reminding them of medication to take and providing access to current market information for agriculture and farming, saving farmers from making daily trips (often many kilometres) or relying on out-of-date information from a weekly radio broadcast~\cite{Aker_Mobile_Phones_2010}.
 
-Interactive systems have also been developed to operate over SMS.  One successful example includes mobile money platforms.  These allow for users from any background to pay and be paid for goods and to transfer money across long distances at negligible cost~\cite{Aker_Mobile_Phones_2010}.  One of the most highly adopted services is M-Pesa - which in Kenya alone was responsible for \textsterling5.7 Billion in transfers in 2012 \footnote{Data from Safaricom, M-Pesa operator in Kenya - actual value 817,085,000,000 Kenyan Shillings, converted to GBP on 1st November 2014 at rate of approximately 0.007.}.  M-Pesa gives users a balance linked to a national ID number, from which they can pay for goods by sending an SMS with a cashier (recipient) number or pay outstanding bills in a similar way.  Non-subscribers can also use the system, by depositing money with a M-Pesa cashier in exchange for an access code, which can be sent via SMS to a contact, who can subsequently redeem it with their local cashier~\cite{Aker_Mobile_Phones_2010}.
+Interactive systems have also been developed to operate over SMS.  One successful example is mobile money platforms.  These allow for users from any background to pay and be paid for goods and to transfer money across long distances at negligible cost~\cite{Aker_Mobile_Phones_2010}.  One of the most highly adopted services is M-Pesa, which in Kenya alone was responsible for \textsterling5.7 Billion in transfers in 2012 \footnote{Data from Safaricom, M-Pesa operator in Kenya - actual value 817,085,000,000 Kenyan Shillings, converted to GBP on 1st November 2014 at rate of approximately 0.007.}.  M-Pesa gives users a balance linked to a national ID number from which they can pay for goods by sending an SMS with a cashier (recipient) number or pay outstanding bills in a similar way.  Non-subscribers can also use the system by depositing money with a M-Pesa cashier in exchange for an access code, which can be sent via SMS to a contact who can subsequently redeem it with their local cashier~\cite{Aker_Mobile_Phones_2010}.
 
-\marginnote{\color{red}Should all this be used in motivation/justification for project?}This difference in standard use of cell phones is demonstrated in the International Telecommunications Unions's 2013 report~\cite{ITU_Cell_Usage_2013}, which shows that in Europe, for 790 million mobile subscriptions, 53\% of subscribers have mobile internet access (422 million), compared to 17\% in Africa (93 million have mobile broadband, out of 545 mobile subscribers).  This is due to the prohibitively high cost of accessing data services, regardless of the hardware that the user has.  In 2012 in Europe, 500 MB of data per month for 12 months cost 1.2\% of the average Gross National Income Per Capita (GNI pc).  In Africa, the average price was 30x this, at 36.2\% of an individuals GNI pc~\cite{ITU_Information_Society_2013}.
+\marginnote{\color{red}Should all this be used in motivation/justification for project?}This difference in standard use of cell phones is demonstrated in the International Telecommunications Union's 2013 report~\cite{ITU_Cell_Usage_2013}, which shows that in Europe, for 790 million mobile subscriptions, 53\% of subscribers have mobile internet access (422 million), compared to 17\% in Africa (93 million have mobile broadband, out of 545 mobile subscribers).  This is due to the prohibitively high cost of accessing data services, regardless of the hardware that the user has.  In 2012 in Europe, 500 MB of data per month for 12 months cost 1.2\% of the average Gross National Income Per Capita (GNI pc).  In Africa, the average price was 30x this, at 36.2\% of an individuals GNI pc~\cite{ITU_Information_Society_2013}.
 
 % No research has been undertaken investigating whether bringing knowledge through this method is viable option.
 
@@ -176,7 +174,7 @@ One significant issue for this project stems from providing information that may
 
 % TODO Finish Ethics of Providing Informatio
 
-{\bf In a similar way to that which a teacher has a responsibility to teach accurate information to a pupil, due to their position of trust, any service relied upon by a user must equally provide accurate information.  The result of not doing this could be providing inaccurate information that leads to a user carrying out an action that causes harm}.
+{\bf In a similar way to that which a teacher has a responsibility to teach accurate information to a pupil due to their position of trust, any service relied upon by a user must equally provide accurate information.  The result of not doing this could be providing inaccurate information that leads to a user carrying out an action that causes harm}.
 
 % TODO Reword last two sentences.  This is something important and obvious - perhaps simple analogy is not necessary.  Perhaps give a generalised example.
 
@@ -191,7 +189,7 @@ A significant part of this project is represented by the support of multiple lan
 This project involves two blocks of translation.  These are:
 \begin{itemize}
   \item The translation of the user's input into the language of the system (English)
-  \item The translation of the answer to a users question from the system language to their local language.
+  \item The translation of the answer to a user's question from the system language to their local language.
 \end{itemize}
 The second of these raises some issues, but to understand these it is first necessary to understand the two categories of machine translation.
 
@@ -199,7 +197,7 @@ Rule-based machine translation effectively treats human language in a similar st
 
 More commonly, Statistical Machine Translation (SMT) is used, for example, by Google and Microsoft in their translation products~\cite{kenny2011ethics, Google_Translate_Research}.  SMT learns mappings between strings of words of potentially unequal lengths from pre-existing original texts and their trusted human translations.  The accuracy and breadth of language support for translation increases as more source material is analysed by the system, as potentially erroneous or low quality translations can be identified and flagged.  SMT is also dependent on the quality of the human translation on the input material~\cite{kenny2011ethics}.
 
-A significant issue that is present in statistical machine learning systems comes from the knowledge we assume an individual has and derives from a word - and and in this project this affects the translation of the answers returned to a user.  In human translation, this is solved by the translators knowledge of the difference in material culture, allowing them to append necessary information to the resulting translation that the recipient might find useful.  In statistical machine learning, cultural awareness of material knowledge is a separate problem on it's own, on this scale.  {\bf formal reference to this, probably again from Kenny, but should be able to find better}.  To take one example, from Melby (2006),
+A significant issue that is present in statistical machine learning systems comes from the knowledge we assume an individual has and derives from a word; in this project, this affects the translation of the answers returned to a user.  In human translation this is solved by the translator's knowledge of the difference in material culture, allowing them to append necessary information to the resulting translation that the recipient might find useful.  In statistical machine learning, cultural awareness of material knowledge is a separate problem on its own.  {\bf formal reference to this, probably again from Kenny, but should be able to find better}.  To take one example from Melby (2006):
 
 \blockquote{"when translating a French menu, a human translator might stop to think that an English speaker in France would appreciate being told that a steak tartare is served entirely raw, even if this information is not contained in the original text (because French people might be assumed to know this already). Such a translator would be aware of differences in material culture, and would be able to empathise with the English speaker who might choose to avoid the dish, given more information"~\cite{melby2006can, kenny2011ethics}}
 \marginnote{Lilian: quote taken from~\cite{kenny2011ethics}, but quote is interpreted from~\cite{melby2006can} - so I think referencing both is correct, but for this reason rather than last reason we discussed?}
@@ -208,13 +206,13 @@ This issue is a result of the translation engine not being capable of take and u
 
 {\bf below should really be expanded and be in the discussion.  Explain the decision to keep translated answers in the database, which are pre-approved, to ensure no cultural misunderstandings.}
 
-The potential uses of this system include distributing information that may be used by individuals making important decisions, regardless of whether this is within this project or in further work based off of this project, cultural confusion such as this could have potentially catastrophic effects.
+The potential uses of this system include distributing information that may be used by individuals making important decisions, regardless of whether this is within this project or in further work based off of this project, as cultural confusion such as this could have potentially catastrophic effects.
 
 \label{subsubsec:userPrivacyAndDataProtection}
 \subsubsection{User Privacy and Data Protection}
-This project uses a simple Artificial Intelligence (AI) to keep a record of information that has already been returned to a user, to attempt to save sending repetitive information (saving the cost of additional SMS).  This raises another ethical issue though - a privacy issue.  The material that a user has researched is likely to be sensitive - such is the nature of health related questions.  This means that the information on a user has to be kept securely, in a way that an individual user can not be identified.
+This project uses a simple Artificial Intelligence (AI) to keep a record of information that has already been returned to a user, to attempt to save sending repetitive information (saving the cost of additional SMS).  This raises another ethical issue though of privacy.  The material that a user has researched is likely to be sensitive; such is the nature of health related questions.  This means that the information on a user has to be kept securely, in a way that an individual user can not be identified.
 
-One way of doing this is using a technology called hashing.  Ideal hashing is the technique of taking data as an input and generating an output value (called a 'hash') that is unique to an input.  Hash functions are ideally one way functions, where given input data X, the output hash will always be Y, whenever and however the hashing algorithm is executed.  This allows a users identify (phone number) to be obscured (hashed), in such a way that the mobile number can not be recovered from the database.  When a question is received, the phone number (represented by variable X in the above example) can be hashed and the data for this number looked up from the database, without the database application ever been aware of the phone number of the user.  In the example in Figure~\ref{fig:hashPhoneNumber}, a phone number (X) is used as input to an imaginary hashing function and the output hash (Y) is shown on the right hand side.  As just described, this number can then be used as the key for the user information database, shown in Table~\ref{table:hashDatabase} to retrieve the information needed for the AI.
+One way of doing this is using a technology called hashing.  Hashing is the technique of taking data as an input and generating an output value (called a 'hash') that is unique to an input.  Hash functions are ideally one way functions where given input data X, the output hash will always be Y, whenever and however the hashing algorithm is executed.  This allows a user's identity (phone number) to be obscured (hashed), in such a way that the mobile number can not be recovered from the database.  When a question is received, the phone number (represented by variable X in the above example) can be hashed and the data for this number looked up from the database without the database application ever being aware of the phone number of the user.  In the example in Figure~\ref{fig:hashPhoneNumber}, a phone number (X) is used as input to an imaginary hashing function and the output hash (Y) is shown on the right hand side.  As just described, this number can then be used as the key for the user information database, shown in Table~\ref{table:hashDatabase} to retrieve the information needed for the AI.
 
 {\bf reference the above from security engineering ross anderson, chapter 10 and 21?}
 
@@ -242,29 +240,29 @@ One way of doing this is using a technology called hashing.  Ideal hashing is th
 
 In practise it is possible for the output of a hashing algorithm not to be unique to a particular input.  This is because the range of possible input values is much smaller than the range of output hashes, and because all valid inputs must map to an output, there is repetition in outputs~\cite{mitCryptographyMd5}.  This property of hashing algorithms can be a security risk for some use-cases, where hashes are used to verify that data has not changed since been hashed.  In this case, a third-party may be attempting to generate alternative, malicious data with the same hash as some pre-existing data, to swap them unnoticed~\cite{securityEngineeringHashingAnderson}.  In the use-case of this project however, hashes are only been used to anonymise phone numbers to some unidentifiable string of characters and numbers, meaning that the above-described collision risk is not a security risk.
 
-Two properties that this project does need from it's hashing algorithm are collision resistance and irreversibility.  Collision resistance the property of a hashing algorithm that determines the probability of the same output hash for two distinct random inputs~\cite{mitCryptographyMd5}.  A high collision resistance is necessary to ensure that two users of the system with distinct phone numbers don't get mapped to the same row in the database, resulting in poor quality question/answer matching.
+Two properties that this project does need from its hashing algorithm are collision resistance and irreversibility.  Collision resistance is the property of a hashing algorithm that determines the probability of the same output hash for two distinct random inputs~\cite{mitCryptographyMd5}.  A high collision resistance is necessary to ensure that two users of the system with distinct phone numbers don't get mapped to the same row in the database, resulting in poor quality question-answer matching.
 
-Irreversibility is a necessary property of the hashing algorithm chosen for this project.  This ensures that the key used in the database can not be used to retrieve the phone number of the user, thus protecting their identity.  Commonly used hashing algorithm families, such as the MD family (e.g. MD5) and SHA family are all designed to be one-way~\cite{schneierCryptanalysisMD5SHA}\footnote{Bruce Schneier is a fellow at Harvard's Berkman center for internet and society.  He has been posting regularly for his newsletter and then blog since 1998 (over 16 years) and has published material related to this field throughout this time.  He has been involved in the creation of other cryptographic algorithms, such as the Skein hashing algorithm, blowfish block cipher, so may have a vested interest in dis-crediting other algorithms such as MD5 and SHA.  However, the essay cited above is written as a result of the Crypto 2004 Conference in California, Schneier has a world-renowned reputation for cryptography and computer security and the algorithm that he suggests should be used at the end is not one that he has involvement in.  For these reasons, I believe this source is reliable.}.  
+Irreversibility is a necessary property of the hashing algorithm chosen for this project.  This ensures that the key used in the database cannot be used to retrieve the phone number of the user, thus protecting their identity.  Commonly used hashing algorithm families, such as the MD family (e.g. MD5) and SHA family are all designed to be one-way~\cite{schneierCryptanalysisMD5SHA}\footnote{Bruce Schneier is a fellow at Harvard's Berkman center for internet and society.  He has been posting regularly for his newsletter and then blog since 1998 (over 16 years) and has published material related to this field throughout this time.  He has been involved in the creation of other cryptographic algorithms, such as the Skein hashing algorithm, blowfish block cipher, so may have a vested interest in dis-crediting other algorithms such as MD5 and SHA.  However, the essay cited above is written as a result of the Crypto 2004 Conference in California, Schneier has a world-renowned reputation for cryptography and computer security and the algorithm that he suggests should be used at the end is not one that he has involvement in.  For these reasons, I believe this source is reliable.}.  
 
-Although hashing algorithms are computationally one-way, they can suffer from another type of vulnerability affecting the security of the original input data.  When hashes are used for short strings of information (passwords, for example), a simple way to try and retrieve the original data is to compute a dictionary of the hashes of lots of common passwords, from which matches can be found.  This idea has been extended to produce Precomputed Hash Chains and subsequently Rainbow Tables.  These are highly efficient data structures that consist of chains of processed input messages and their hashes (with a reduce function to reach the next item in the chain), allowing original input data to be looked-up from it's hash.  Both Precomputed Hash Chains and Rainbow Tables tend to be Terabyte's in size, and as such they only exist in a significant form for the most common hash functions (including MD5 and SHA)~\cite{Teat:2011:SCH:2016039.2016072}.  Within this project, this raises privacy implications, as hashes within the database would be 'convertible' to phone numbers.  
+Although hashing algorithms are computationally one-way, they can suffer from another type of vulnerability affecting the security of the original input data.  When hashes are used for short strings of information (passwords, for example), a simple way to try and retrieve the original data is to compute a dictionary of the hashes of lots of common passwords, from which matches can be found.  This idea has been extended to produce Precomputed Hash Chains and subsequently Rainbow Tables.  These are highly efficient data structures that consist of chains of processed input messages and their hashes (with a reduce function to reach the next item in the chain), allowing original input data to be looked-up from its hash.  Both Precomputed Hash Chains and Rainbow Tables tend to be Terabytes in size, and as such they only exist in a significant form for the most common hash functions (including MD5 and SHA)~\cite{Teat:2011:SCH:2016039.2016072}.  Within this project, this raises privacy implications, as hashes within the database would be 'convertible' to phone numbers.  
 
 {\bf perhaps the below should move to method and requirements - TODO needs to be cleaned up as well.}
 
-In modern password authentication, a tool called bcrypt is used, which 'salts' passwords (additional unique data is added to each password before hashing), nullifying the use of Precomputed Hash Chains and subsequently Rainbow Tables.  However, this would prevent efficient lookup of phone numbers in the communications part of the application (where answers and sent back to the user).  As such, the best way of protecting a users phone number in the event of a database hack is to use a combination of a largely uncommon hashing algorithm, on the basis of it is unlikely anybody will have wasted vast computation power for a table that's useful in such a small number of situations, a hashing algorithm with a large output size, again because it makes a table more infeasible (because of size constraints) and a further change to the output hash, specific to this application.  This way, a hacker would need to know this change (from the source code) as well as the password database, to be able to make use of a hashing table.  The above is commonly implemented by hashing the result of one hash with another hashing algorithm.
+In modern password authentication, a tool called bcrypt is used, which 'salts' passwords (additional unique data is added to each password before hashing), nullifying the use of Precomputed Hash Chains and subsequently Rainbow Tables.  However, this would prevent efficient lookup of phone numbers in the communications part of the application (where answers and sent back to the user).  As such, the best way of protecting a user's phone number in the event of a database hack is to use a combination of a largely uncommon hashing algorithm, on the basis that it is unlikely anybody will have used vast computation power for a table that's useful in such a small number of situations; a hashing algorithm with a large output size, again because it makes a table more infeasible (because of size constraints); and a further change to the output hash, specific to this application.  This way, a hacker would need to know this change (from the source code) as well as the password database, to be able to make use of a hashing table.  The above is commonly implemented by hashing the result of one hash with another hashing algorithm.
 
 \subsection{Software Design Life Cycles}
-There are many software development life cycles that a developer or company has available for them to choose from.  Four common ones include the Waterfall Model, Iterative Model, Spiral Model and the Agile Development Model.\marginnote{Do I need to reference that these are common?}  In order to choose which life cycle suits this project best, research into all four has been carried out.
+There are many software development life cycles that a developer or company has available to choose from.  Four common ones include the Waterfall Model, Iterative Model, Spiral Model and the Agile Development Model.\marginnote{Do I need to reference that these are common?}  In order to choose which life cycle suits this project best, research into all four has been carried out.
 
 \marginnote{Should this be in this section, or moved to the "Method and Requirements" section?}
 
 \subsubsection{The Waterfall Model}
 The waterfall model consists of 5 phases of work, where each leads directly into the next.  It is a plan driven development model, which means that all process activities such as the implementation of the project must be planned and scheduled before work on them begins~\cite{sommervilleSoftwareEngineering}.  The five layers are shown in Figure \ref{fig:waterfallModel} and described below:
 \begin{enumerate}
-  \item Requirements.  In this stage, both user and system requirements for the project are determined after examining the business goals for the project.  These form the system specification.
-  \item Design.  In this stage, a plan for the software development is created.  The overall architecture for the software is created, the external libraries to be used are chosen and the interaction between different modules is modelled.
-  \item Implementation.  In this stage, the software is implemented to match the design and architecture set out in the Design phase.  Unit tests are written to ensure that each module matches its specification.
-  \item Testing.  In this section the system is tested as a whole to test for any bugs that might not be picked up when testing individual modules in isolation.  The software is then delivered.
-  \item Maintenance.  Finally, the software is deployed and maintained.  This includes making changes to the requirements and subsequently the software (implementation) as the business goals change. ~\cite{sommervilleSoftwareEngineering}
+  \item {\bf Requirements}.  In this stage, both user and system requirements for the project are determined after examining the business goals for the project.  These form the system specification.
+  \item {\bf Design}.  In this stage, a plan for the software development is created.  The overall architecture for the software is created, the external libraries to be used are chosen and the interaction between different modules is modelled.
+  \item {\bf Implementation}.  In this stage, the software is implemented to match the design and architecture set out in the Design phase.  Unit tests are written to ensure that each module matches its specification.
+  \item {\bf Testing}.  In this section the system is tested as a whole to check for any bugs that might not be picked up when testing individual modules in isolation.  The software is then delivered.
+  \item {\bf Maintenance}.  Finally, the software is deployed and maintained.  This includes making changes to the requirements and subsequently the software (implementation) as the business goals change. ~\cite{sommervilleSoftwareEngineering}
 \end{enumerate}
 
 \begin{figure}[htb] 
@@ -275,16 +273,16 @@ The waterfall model consists of 5 phases of work, where each leads directly into
 \label{fig:waterfallModel}
 \end{figure}
 
-A key disadvantage of the waterfall model is that once development has moved from one stage to another it can not go back because the model is fixed and progresses in one direction only, until the maintenance step.  The main advantage of the Waterfall Model is it's simplicity - it is easy to understand and to use, saving time at the start of the project that could be wasted on learning and preparing for a more complex model.
+A key disadvantage of the waterfall model is that once development has moved from one stage to another it cannot go back because the model is fixed and progresses in one direction only, until the maintenance step.  The main advantage of the Waterfall Model is its simplicity: it is easy to understand and to use, saving time at the start of the project that could be wasted on learning and preparing for a more complex model.
 
 \subsubsection{The Iterative Model}
-Iterative development is the practise of splitting the overall development of a project into multiple independent and distinct blocks.  A block contains a sequence of tasks (essentially a mini life cycle) such that each iteration can really be thought of as it's own project.  Each iteration tends to focus on a specific set of features, such that when the iteration is complete the overall project is stable and the modules developed to-date can be tested as a whole system~\cite{differenceBetweenLifeCycleModels}.
+Iterative development is the practise of splitting the overall development of a project into multiple independent and distinct blocks.  A block contains a sequence of tasks (essentially a mini life cycle) such that each iteration can really be thought of as its own project.  Each iteration tends to focus on a specific set of features such that when the iteration is complete the overall project is stable and the modules developed to-date can be tested as a whole system~\cite{differenceBetweenLifeCycleModels}.
 
-There are a multiple variations of the iterative development method, including Timeboxed Iterative Development (where all iterations have a fixed, inflexible length) and Client-driven Iterative Development (where each iteration contains the features that the client considers have the highest business value)~\cite{larman2004agile}.
+There are a multiple variations of the iterative development method, including Timeboxed Iterative Development, where all iterations have a fixed inflexible duration, and Client-driven Iterative Development, where each iteration contains the features that the client considers have the highest business value~\cite{larman2004agile}.
 
-A common variation is based on the waterfall model, and is shown in Figure \ref{fig:iterativeDevelopment}.  The first three tasks in the cycle represent the first four stages in the waterfall model (Requirements, Design, Implementation and Testing), at which point there is the option to either evaluate progress so far, and start another iteration, or to deploy the software and end development.  One significant difference between this and the waterfall model is that maintenance is not represented.
+A common variation is based on the waterfall model and is shown in Figure \ref{fig:iterativeDevelopment}.  The first three tasks in the cycle represent the first four stages in the waterfall model (Requirements, Design, Implementation and Testing), at which point there is the option to either evaluate progress so far, and start another iteration, or to deploy the software and end development.  One significant difference between this and the waterfall model is that maintenance is not represented.
 
-A key advantage of the Iterative Model is that it allows for the user to revise their requirements as they progress, making it dynamic and flexible.  This is also it's disadvantage, in that the lack of fixed structure can be a weakness unless the project is planned well.
+A key advantage of the Iterative Model is that it allows for the user to revise their requirements as they progress, making it dynamic and flexible.  This is also its disadvantage, in that the lack of fixed structure can be a weakness unless the project is planned well.
 
 \begin{figure}[htb] 
 \centering
@@ -295,7 +293,7 @@ A key advantage of the Iterative Model is that it allows for the user to revise 
 \end{figure}
 
 \subsubsection{Boehm's Spiral Model}
-The Spiral Model was originally developed as a result of the adjustments that were commonly made to the waterfall model in large government projects~\cite{spiralModelSoftwareDevelopment}.  The Spiral Model is a general model and can be used as a generator for other more specific models, given the parameters for a project such as it's risks~\cite{boehm2000spiral}.  Models such as the waterfall model are specialisations of the spiral model~\cite{boehm2000spiral}.
+The Spiral Model was originally developed as a result of the adjustments that were commonly made to the waterfall model in large government projects~\cite{spiralModelSoftwareDevelopment}.  The Spiral Model is a general model and can be used as a generator for other more specific models, given the parameters for a project such as its risks~\cite{boehm2000spiral}.  Models such as the waterfall model are specialisations of the spiral model~\cite{boehm2000spiral}.
 
 Each loop represents a stage of the software development, from planning on the inside loop to system testing and verification on the outside, as shown in Figure \ref{fig:spiralModel}.
 
@@ -336,7 +334,7 @@ The Iterative Development Model was selected in Section \ref{sec:developmentLife
 
 \subsection{Requirements}
 \subsubsection{Use Cases / User Goals}
-Two personas were created in Appendix Section \ref{sec:appendixPersonnas} to represent individuals who may have a need for the work resulting from this project.  From these personas, user goals are extracted.  These describe what a general user aims to achieve with this service.
+Two personas were created in Appendix Section \ref{sec:appendixPersonas} to represent individuals who may have a need for the work resulting from this project.  From these personas, user goals are extracted.  These describe what a general user aims to achieve with this service.
 \begin{enumerate}
   \item Nanjala wants to be able to read general information on any given topic.
   \item Ethan wants to be able to retrieve facts from direct questions.
@@ -364,7 +362,7 @@ User goals are distilled into formal user requirements.  Each user requirement c
 \begin{enumerate}
   \item The system will receive queries via SMS, process them and then respond via SMS.
   \item The system shall use a datasource that contains both facts and descriptive text on geographical entities to answer queries.
-  \item The system must be able to parse queries to identify the entity that is been asked about and the specific parameter of that entity that should be returned as the answer to the users query.
+  \item The system must be able to parse queries to identify the entity that is been asked about and the specific parameter of that entity that should be returned as the answer to the user's query.
   \item As well as giving direct facts and statistics, the system should be able to give general descriptive information on an entity.
   \item The system must be able to match words of similar meaning to the parameters in the data source.  For example, the word 'long' must be matched to the parameter 'length'.
   \item The system must learn from user feedback when answers that are returned are of high or low quality an apply this knowledge to future queries.
@@ -397,7 +395,7 @@ Fit criterion are stated after each non-functional requirement, which will be us
 
 In section \ref{subsubsec:userPrivacyAndDataProtection}, the need to protect the privacy of a user and the general technique that will be used (involving irreversible hashing) are described.  The design of this system will now be discussed.
 
-The main gateway into the system will be an HTTP call to a Python function, which takes the phone number of the user and the question been asked as its parameters.  The header and basic structure of this function is:
+The main gateway into the system will be an HTTP call to a Python function, which takes the phone number of the user and the question being asked as its parameters.  The header and basic structure of this function is:
 
 \begin{lstlisting}[language=Python]
 def entry(userCell, question):
@@ -406,13 +404,13 @@ def entry(userCell, question):
     return userCell, answer
 \end{lstlisting}
 
-The userCell is required at the output of the function to determine the number to which a response will be sent.  However, as the computation of an answer only requires a general constant representation of user identify, not necessarily the user phone number, the specific value of userCell is not required within the computation of the answer.  As such, a hash is passed into the answer-computing function.  This hash will be used within the database to store a user's history and profile.  This means that only a user's history can be identified from the database, not the actual identity of a user.
+The userCell is required at the output of the function to determine the number to which a response will be sent.  However, as the computation of an answer only requires a general constant representation of user identity, not necessarily the user's phone number, the specific value of userCell is not required within the computation of the answer.  As such, a hash is passed into the answer-computing function.  This hash will be used within the database to store a user's history and profile.  This means that only a user's history can be identified from the database, not the actual identity of a user.
 
 \subsection{Language, Platform and Tools and Libraries}
 \subsubsection{Language}
 The language Python has been selected to be the main language in project for four reasons:
 \begin{enumerate}
-  \item Python is universally compatible and simple to execute.  Once the server application is written, it will be simple to migrate it between machines and adjust the applications configuration / environment.
+  \item Python is universally compatible and simple to execute.  Once the server application is written, it will be simple to migrate it between machines and adjust the application's configuration or environment.
   \item Python is commonly used and has significant community support in the form of libraries for all the tools that will be used in this project (for example, libraries for querying common databases and for sending text messages).
   \item Python is an extremely flexible language in which it is easy to implement applications of this type without syntax issues.  This fulfils the requirement (\ref{subsubsec:systemRequirementsFunctional} point \ref{requirement:easyToImplement}) that the application is easy and quick to implement.
   \item The author has significant expertise in the language, as does Lilian Blot (dissertation Supervisor).
@@ -424,7 +422,7 @@ A testing utility will also be created to query the application from a personal 
 The development platform of the utility will be Linux.  This is for three reasons:
 \begin{enumerate}
   \item Linux manages Python and its libraries in a simple way without complex installers with tools like the Python Package Index (a library repository)~\cite{pypi}.
-  \item Common libraries that I will use for creating a HTTP server, creating a REST API\marginnote{Lilian: should I explain what this is somewhere?}, making database queries and sending SMSs tend to be written primarily on the Linux platform.
+  \item Common libraries that will be used for creating a HTTP server, creating a REST API\marginnote{Lilian: should I explain what this is somewhere?}, making database queries and sending SMSs tend to be written primarily on the Linux platform.
   \item The author has familiarity with Linux and has access to significant Linux infrastructure under a grant from Rackspace.
 \end{enumerate}
 
@@ -439,13 +437,13 @@ There are five entities in the conceptual data model for this project.  These ar
 
 \begin{itemize}
   \item {\bf Users:} An entity that represents a user, purely by an identifier based on their phone number.
-  \item {\bf Complete User History:} A history of all questions they have asked previously (to allow for future expansion of the system, perhaps to implement a recommendations system).
+  \item {\bf Complete User History:} A history of all questions they have asked previously to allow for future expansion of the system, perhaps to implement a recommendations system.
   \item {\bf Last Question Asked by a User:} An object containing the parameters of the last query.  This allows the system to handle stateful queries based upon a previous query.
   \item {\bf Keyword Pairs Quality Learning:} Will contain the property requested by a user, the property returned to that user, and the number of times a matching was ranked as been either one, two, three, four or five stars.
-  \item {\bf Initial Inteligence:} \color{red} Undecided.
+  \item {\bf Initial Intelligence:} \color{red} Undecided.
 \end{itemize}
 
-These are shown in Figure \ref{fig:conceptualDatabaseDesignDiagram}, which also shows the entity relationships.
+These entities shown in Figure \ref{fig:conceptualDatabaseDesignDiagram}, which also shows the entity relationships.
 
 \begin{figure}[htb] 
 \includegraphics[width=\linewidth]{conceptualModel}
@@ -454,9 +452,9 @@ These are shown in Figure \ref{fig:conceptualDatabaseDesignDiagram}, which also 
 \end{figure}
 
 \myparagraph{Logical Database Design}
-The logical design of the database reduces the number of entities form five conceptual model to three.  This is because there is a one-to-one relationship between the \textit{User} entity and both the \textit{Complete User History} and \textit{Last Question Asked by a User} entities, with a small number of fields.  In a large system where relational databases were been used, it would make sense to keep these entities separate, but in this case merging them allows a wider variety of databases to be used, simplifies the implementation and does not add significantly add to the complexity of the data model.
+The logical design of the database reduces the number of entities from five in the conceptual model to three.  This is because there is a one-to-one relationship between the \textit{User} entity and both the \textit{Complete User History} and \textit{Last Question Asked by a User} entities, with a small number of fields.  In a large system where relational databases were used it would make sense to keep these entities separate, but in this case merging them allows a wider variety of databases to be used, simplifies the implementation and does not add significantly add to the complexity of the data model.
 
-The logical database requirements are listen in Table \ref{table:logicalDatabaseDesignListing} and represented graphically in Figure \ref{fig:logicalDatabaseDesignDiagram}.
+The logical database requirements are listed in Table \ref{table:logicalDatabaseDesignListing} and represented graphically in Figure \ref{fig:logicalDatabaseDesignDiagram}.
 
 \begin{table}
 \begin{center}
@@ -465,13 +463,13 @@ The logical database requirements are listen in Table \ref{table:logicalDatabase
     Table/Collection & Parameters \\ \hline
     Users & (\underline{id}, cellNumber, history, lastQuestionText, lastQuestionRequestedProperty, lastQuestionReturnedProperty) \\ \hline
     KeywordRelatednessQuality & (\underline{id}, givenProperty, returnedProperty, oneStarRatings, twoStarRatings, threeStarRatings, fourStarRatings, fiveStarRatings) \\ \hline
-    InitialInteligence & \color{red} Undecided. \\ \hline
+    InitialIntelligence & \color{red} Undecided. \\ \hline
     \end{tabular}
     \caption{Logical Database Design.  \underline{Underlined} fields represent primary keys.}
     \label{table:logicalDatabaseDesignListing}
 \end{center}
 \end{table}
-\marginnote{\color{red}Need to fill in initial inteligence}
+\marginnote{\color{red}Need to fill in initial intelligence}
 
 \begin{figure}[htb] 
 \includegraphics[width=\linewidth]{logicalModel}
@@ -485,9 +483,9 @@ The database technology requirements for this project are:
 \begin{enumerate}
   \item The selected database must be as simple in implementation and interface as possible, whilst still supporting the system requirements.  This is to allow for quick development and to avoid adding unnecessary complexity.
   \item The selected database must allow for storage and retrieval of records with multiple parameters.
-  \item Support for records that are related to each other is not required (so relational databases are not required, but not ruled out).
+  \item Support for records that are related to each other is not required; so relational databases are not required, but not ruled out.
   \item The database needs to have built-in support for Sharding and Replication/Mirroring to allow the application to scale.
-  \item The database must have a library for interfacing with it in the language of this project (Python).
+  \item The database must have a library for interfacing with it in the language of this project.
 \end{enumerate}
 
 There are a number of database technologies available that would fulfil the data requirements of this project.  These can be split into the categories of relational databases (SQL) and document stores (NoSQL).  Two common database approaches that meet the above requirements are MySQL with an ORM \footnote{ORM: Object-relational mapping tool, which maps queries from the syntax of your programming language to SQL.  ORM's commonly also apply optimisations to queries, and validate them against SQL injections.}, and MongoDB with the Mongo Client.  Table \ref{table:mysqlVsMongo} shows a comparison of both of these technologies.
@@ -509,7 +507,7 @@ There are a number of database technologies available that would fulfil the data
 \end{center}
 \end{table}
 
-From this comparison, the decision to use MongoDB has been taken, because MongoDB has more flexibility than SQL, writing queries is easier in Python and, other than the possibility of future extensions requiring relational structure, it is more scaleable than SQL.
+From this comparison, the decision to use MongoDB has been taken because MongoDB has more flexibility than SQL, writing queries is easier in Python and, other than the possibility of future extensions requiring relational structure, it is more scalable than SQL.
 
 \myparagraph{Physical Database Design}
 MongoDB separates entities into collections but does not place restrictions on the structure of objects within a collection.  The general structure of the keys of a document (a JSON dictionary) is shown in Table \ref{table:collectionStructure}.
@@ -616,14 +614,14 @@ This section's content...
 \bibliography{IEEEabrv,mybib}
 
 \newpage
-\section{Appendix - Personnas}
-\label{sec:appendixPersonnas}
+\section{Appendix - Personas}
+\label{sec:appendixPersonas}
 \subsection{Nanjala}
 %TODO Add photo
 \subsubsection{Demographics}
 \begin{itemize}
-  \item Female, Aged 15
-  \item Living in the village of Amuria, Uganda, 300km from the Capital, Kampala.  Internet access is difficult and expensive to obtain in Amuria, however there is good mobile network coverage.
+  \item Female, aged 15
+  \item Living in the village of Amuria, Uganda, 300km from the Capital, Kampala.  Internet access is difficult and expensive to obtain in Amuria, though there is good mobile network coverage.
   \item Currently in general education at her village school.
   \item Nanjala is curious and wants to be able to ask questions and retrieve and read more information at her own leisure.  She prefers to be told about something than to learn facts.
 \end{itemize}
@@ -631,35 +629,18 @@ This section's content...
 In a typical day, Nanjala will rise early to help her family with housework chores, before she prepares for school.  Nanjala wants to become a teacher.  At school, she studies Science, Maths and Geography, and works hard for her classes and on her homework.  Nanjala's school has a small library and a body of students, all of whom are as hard-working as Nanjala, meaning that books are often unavailable when Nanjala would like to look something up.  This increases the amount of time that her homework takes, and can even result in her not having access to information when she must go home to her family.
 
 \newpage
-\subsection{Ethan}
-%TODO Add photo
-\subsubsection{Demographics}
-\textcolor{red}{
-\begin{itemize}
-  \item Male, Aged 22
-  \item Living at his family's Ranch in the Australian Outback.  Although there is internet access, it's very slow and phone calls / SMS are used whenever possible.
-  \item Ethan is in his final year of studying for a degree in Land Management at the University of Sydney.  At the moment he is back home for his Easter holidays.
-  \item Ethan is very conscientious, and wants to contribute his own knowledge to the world - especially to projects that help him.  He's written to authors before to point out mistakes in their works.
-\end{itemize}
-}
-\subsubsection{Average Day}
-\textcolor{red}{
-Ethan is a focussed worker and tends to work hard on projects to get them out of the way quickly.  His final-year dissertation focusses on the differences in land management around the world, and requires the use of lots of facts and figures, which he has to research.  In the morning, Ethan plans what he aims to research and write that day.  He then works on parts grouped by section.  A few times an hour, Ethan needs to find a relevant fact or figure about a country or geographical structure, such as the population density of a country or the height of a mountain.  Getting this information from the internet is very slow - his family share a dial-up modem which can take minutes just to connect and allow a Google search.
-}
-
-\newpage
 \subsection{Cedric}
 %TODO Add photo
 \subsubsection{Demographics}
 \begin{itemize}
-  \item Male, Aged 27
-  \item Lives in Zurich (Switzerland) and goes on regular hiking trips, from 3-4 day trips around Europe to longer trips to the South American Andes and southern Asia.
+  \item Male, aged 27
+  \item Lives in Zurich, Switzerland, and goes on regular hiking trips, from 3-4 day trips around Europe to longer trips to the South American Andes and southern Asia.
   \item Works in a service role in the city and so has little disposable income to spend on guide books for the many places he visits.
   \item Cedric is a competent albeit not professional hiker, often going off-track and summiting 'difficult' peaks or reaching famous camping grounds.  He likes to be spontaneous, only deciding which peaks he will attempt when he arrives.
-  \item Cedric is very conscientious, and wants to contribute his own knowledge to the world - especially to projects that help him.
+  \item Cedric is very conscientious and wants to contribute his own knowledge to the world; especially to projects that help him.
 \end{itemize}
 \subsubsection{Average European Trip}
-A typical trip will involve an intercity train from the Zurich Hauptbahnhof (main station) to the city closest to the range Cedric will he hiking.  He takes the train because it tends to be cheaper than flights.  Once in the area, Cedric will take local trains and buses to get into the mountain ranges.  There, he will use the local hiking trail network signs and conversations with the locals to select a peak or route.  Once Cedric has got moving is reaching higher ground, he uses a combination of his view and the signage to identify other peaks that he would like to wander around.  
+A typical trip will involve an intercity train from the Zurich Hauptbahnhof (main station) to the city closest to the range Cedric will be hiking.  He takes the train because it tends to be cheaper than flights.  Once in the area, Cedric will take local trains and buses to get into the mountain ranges.  There, he will use the local hiking trail network signs and conversations with the locals to select a peak or route.  Once Cedric has got moving and is reaching higher ground, he uses a combination of his view and the signage to identify other peaks that he would like to wander around.  
 
 Cedric takes a non-smart phone with him because a) the battery life on his smart phone is not long enough for his whole trip, whereas his non-smart phone lasts a week at a time, and b) his smart phone would not be useful anyway, since the internet is so intermittent.  He still wishes he could get information like whether there are maintained routes on the slopes of a given peak or the height of a peak that he sees without having to phone friends back in the city.
 
