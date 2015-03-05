@@ -112,6 +112,24 @@ C.~Teat and S.~Peltsverger, ``The security of cryptographic hashes,'' in
   \url{http://doi.acm.org/10.1145/2016039.2016072}
 \BIBentrySTDinterwordspacing
 
+\bibitem{royce1970managing-FirstDescriptionOfWaterFallModelNotByName}
+W.~W. Royce, ``Managing the development of large software systems,'' in
+  \emph{proceedings of IEEE WESCON}, vol.~26, no.~8.\hskip 1em plus 0.5em minus
+  0.4em\relax Los Angeles, 1970.
+
+\bibitem{briefHistoryOfIncrementalAndIterativeSoftwareDevelopment}
+C.~Larman and V.~R. Basili, ``Iterative and incremental development: A brief
+  history,'' \emph{Computer}, vol.~36, no.~6, pp. 47--56, 2003.
+
+\bibitem{spiralModelSoftwareDevelopment}
+B.~Boehm, ``A spiral model of software development and enhancement,''
+  \emph{Computer}, vol.~21, no.~5, pp. 61--72, May 1988.
+
+\bibitem{beck2001agile}
+K.~Beck, M.~Beedle, A.~van Bennekum, A.~Cockburn, W.~Cunningham, M.~Fowler,
+  J.~Grenning, J.~Highsmith, A.~Hunt, R.~Jeffries \emph{et~al.}, ``The agile
+  manifesto,'' 2001.
+
 \bibitem{sommervilleSoftwareEngineering}
 I.~Sommerville, \emph{Software Engineering}.\hskip 1em plus 0.5em minus
   0.4em\relax Pearson Education, 2010.
@@ -126,10 +144,6 @@ N.~Rahmany. (2012) The differences between life cycle models - advantages and
 \bibitem{larman2004agile}
 C.~Larman, \emph{Agile and iterative development: a manager's guide}.\hskip 1em
   plus 0.5em minus 0.4em\relax Addison-Wesley Professional, 2004.
-
-\bibitem{spiralModelSoftwareDevelopment}
-B.~Boehm, ``A spiral model of software development and enhancement,''
-  \emph{Computer}, vol.~21, no.~5, pp. 61--72, May 1988.
 
 \bibitem{boehm2000spiral}
 B.~Boehm and W.~J. Hansen, ``Spiral development: Experience, principles, and

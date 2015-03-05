@@ -18,6 +18,11 @@
 \usepackage{xcolor}
 \usepackage{booktabs}% For stacking in tables
 
+% To draw a box
+\usepackage{amsmath}%
+\usepackage{MnSymbol}%
+\usepackage{wasysym}%
+
 % to avoid having to escape all underscores in URL's to avoid "missing $ inserted" error.
 \usepackage{url}
 
@@ -41,6 +46,7 @@
   \texttt{sam@heather.sh}}
 \date{\today}
 \maketitle
+\thispagestyle{empty}
 
 \newpage
 
@@ -81,8 +87,6 @@ The author would like to acknowledge the following individuals for their contrib
 \section{Useful thoughts from Lilian}
 Take a quick look at list of other students previous projects to get an idea of how intro/lit review is structured etc.
 
-Remove page number on title page.
-
 Remember to take notes on when I come across problems, for my conclusion.
 
 \newpage
@@ -92,7 +96,7 @@ Remember to take notes on when I come across problems, for my conclusion.
 
 The inspiration for this project originates from a project the author undertook in September 2014 whilst attending Yacht Hack, a week-long hackathon on a Yacht in Croatia\footnote{http://toughhackers.com/yacht-hack-2014/)}.  The author co-created a project to prototype a mobile application that would facilitate the immediate answering of questions that fall within certain categories using a knowledge base, simple machine learning and profiling of users based on their usage history.
 
-One of the initial goals of Shy was to bring knowledge via m-learning (learning using tools available on a mobile device) as opposed to e-learning (learning conducted online, usually with the help of a computer).  This is because m-learning systems are available to a much larger demographic of people, because the technology (mobile devices, commonly phones) is becoming ever cheaper and more accessible.
+One of the initial goals of Shy was to bring knowledge via m-learning\footnote{M-Learning: learning using tools available on a mobile device} as opposed to e-learning\footnote{E-Learning: learning conducted online, usually with the help of a computer}.  This is because m-learning systems are available to a much larger demographic of people, because the hardware (mobile devices, commonly phones) is becoming ever cheaper and more accessible.
 
 A semi-functional prototype was completed for iOS, as seen in Figure~\ref{fig:shy-ios-screenshots}.  The front-end was complete, however in the backend question-answer matching was evaluated without knowledge of previous material the user had viewed.  This meant that explicitly targeted answers for a question and suggestions of questions that a given user profile might be interested in could not be made.  Up until this point, the service was restricted to working on iOS smart devices only, with poor quality question-answer matching.  In the initial project, the knowledge base was built for questions on personal health, sex, relationships and family.
 
@@ -113,7 +117,7 @@ The project involves the use of a number of systems to work including machine tr
 
 The first goal of this project is to assess and address the ethical issues that arise from the software that this project aims to create.  These include the responsibility the software (and hence the software author) has, because of its position of trust, to provide accurate information and to protect the privacy of its users by storing only necessary information, among others.  This project will do this by researching ethical issues relating to the technologies that the project will use, for example machine translation.  This will then be used to feed the design process of the software and to specify the expected use-case of it.  Finally, the resulting software will be evaluated through experimentation, with volunteers asking the software a set of questions within a topic area, in a non-English language, and evaluate the relevance of answers returned.
 
-The initial goal for this dissertation was to focus on questions relating to personal health, sex, relationships and family, which was as a direct result of the focus of 'Shy'.  Although a health and diseases database was located in the early stages of the project (Diseases Database, www.diseasesdatabase.com), it was targeted at professional uses for the data and came with a significant licence fee, as well as complex documentation that the provider insisted on customising specifically for each use-case.  Attempts were made to acquire a free academic research licence via email, but these were not responded to.  Additionally, as the project progressed in the early stages it became clear that the author's original two-page document discussing ethical considerations with the project did not cover all possible situations.  Indeed, the Author and Supervisor were still discovering further significant ethical issues as far as eight weeks into the project, which would have required a complex ethics panel review, critically delaying this project.  Two example ethical issues that occurred were:
+The initial goal for this dissertation was to focus on questions relating to personal health, sex, relationships and family, which was as a direct result of the focus of 'Shy'.  Although a health and diseases database was located in the early stages of the project (Diseases Database, www.diseasesdatabase.com), it was targeted at professional uses for the data and came with a significant licence fee, as well as complex documentation that the provider customised specifically for each use-case.  The author did attempt to acquire a free academic research licence via email but was unsuccessful\marginnote{objective enough?}.  Additionally, as the project progressed in the early stages it became clear that the author's original two-page document discussing ethical considerations with the project did not cover all possible situations.  Indeed, the Author and Supervisor were still discovering further significant ethical issues as far as eight weeks into the project, which would have required a complex ethics panel review, critically delaying this project.  Two example ethical issues that occurred were:
 
 \begin{itemize}
   \item Any application has that dispenses health related information that a user might act upon in a life changing manner has to respond with correct information, since an incorrect response could lead to a user taking an action which leads to them harming themselves.
@@ -168,11 +172,11 @@ This is easy to do in the developed world where up to 75\% of the population are
 
 % But there are other communication methods which are proven to work
 \subsection{Previous work using SMS}
-Although the above suggests that the African continent is majoritively disconnected, this is not the case.  Because of restrictions in the electricity available, the ways in which a non-smart phone \marginnote{\color{red}cite that these are lower power consumption, or assume?} can be used in Africa have far surpassed those in the developed world~\cite{Fox:2011:Online}, in part due to the low power consumption of a mobile phone.  Interesting such examples include automated services which SMS HIV/AIDS \marginnote{\color{red}Order ok?} sufferers, reminding them of medication to take and providing access to current market information for agriculture and farming, saving farmers from making daily trips (often many kilometres) or relying on out-of-date information from a weekly radio broadcast~\cite{Aker_Mobile_Phones_2010}.
+Although the above suggests that the African continent is majoritively disconnected, this is not the case.  Because of restrictions in the electricity available, the ways in which a non-smart phone \marginnote{\color{red}cite that these are lower power consumption, or assume?  Emma: Isn't necessary but would be helpful; leave it up to whether you need to fill out your word count or cut down.} can be used in Africa have far surpassed those in the developed world~\cite{Fox:2011:Online}, in part due to the low power consumption of a non-smart mobile phone.  Interesting examples of SMS use in Africa include an automated service which sends an SMS to HIV/AIDS \marginnote{\color{red}Order ok?} sufferers to remind them to take their medication, and a system for farmers that gives them the current market prices for goods, saving them from making regular long-distance trips to the market or relying on out-of-date information from a weekly radio broadcast~\cite{Aker_Mobile_Phones_2010}.
 
 Interactive systems have also been developed to operate over SMS.  One successful example is mobile money platforms.  These allow for users from any background to pay and be paid for goods and to transfer money across long distances at negligible cost~\cite{Aker_Mobile_Phones_2010}.  One of the most highly adopted services is M-Pesa, which in Kenya alone was responsible for \textsterling5.7 Billion in transfers in 2012 \footnote{Data from Safaricom, M-Pesa operator in Kenya - actual value 817,085,000,000 Kenyan Shillings, converted to GBP on 1st November 2014 at rate of approximately 0.007.}.  M-Pesa gives users a balance linked to a national ID number from which they can pay for goods by sending an SMS with a cashier (recipient) number or pay outstanding bills in a similar way.  Non-subscribers can also use the system by depositing money with a M-Pesa cashier in exchange for an access code, which can be sent via SMS to a contact who can subsequently redeem it with their local cashier~\cite{Aker_Mobile_Phones_2010}.
 
-\marginnote{\color{red}Should all this be used in motivation/justification for project?}This difference in standard use of cell phones is demonstrated in the International Telecommunications Union's 2013 report~\cite{ITU_Cell_Usage_2013}, which shows that in Europe, for 790 million mobile subscriptions, 53\% of subscribers have mobile internet access (422 million), compared to 17\% in Africa (93 million have mobile broadband, out of 545 mobile subscribers).  This is due to the prohibitively high cost of accessing data services, regardless of the hardware that the user has.  In 2012 in Europe, 500 MB of data per month for 12 months cost 1.2\% of the average Gross National Income Per Capita (GNI pc).  In Africa, the average price was 30x this, at 36.2\% of an individuals GNI pc~\cite{ITU_Information_Society_2013}.
+\marginnote{\color{red}Should all this be used in motivation/justification for project?}This difference in standard use of mobile phones is demonstrated in the International Telecommunications Union's 2013 report~\cite{ITU_Cell_Usage_2013}, which shows that in Europe, for 790 million mobile subscriptions, 53\% of subscribers have mobile internet access (422 million), compared to 17\% in Africa (93 million have mobile broadband, out of 545 mobile subscribers).  This is due to the prohibitively high cost of accessing data services, regardless of the hardware that the user has.  In 2012 in Europe, 500 MB of data per month for 12 months cost 1.2\% of the average Gross National Income Per Capita (GNI pc).  In Africa, the average price was 30x this, at 36.2\% of an individuals GNI pc~\cite{ITU_Information_Society_2013}.
 
 % No research has been undertaken investigating whether bringing knowledge through this method is viable option.
 
@@ -258,14 +262,14 @@ Although hashing algorithms are computationally one-way, they can suffer from an
 
 {\bf perhaps the below should move to method and requirements - TODO needs to be cleaned up as well.}
 
-In modern password authentication, a tool called bcrypt is used, which 'salts' passwords (additional unique data is added to each password before hashing), nullifying the use of Precomputed Hash Chains and subsequently Rainbow Tables.  However, this would prevent efficient lookup of phone numbers in the communications part of the application (where answers and sent back to the user).  As such, the best way of protecting a user's phone number in the event of a database hack is to use a combination of: a largely uncommon hashing algorithm, on the basis that it is unlikely anybody will have used vast computation power to create a table that's useful in such a small number of situations; a hashing algorithm with a large output size, again because it makes a table more infeasible (because of size constraints); and a further change to the output hash, specific to this application.  This way, a hacker would need to know this change (from the source code) as well as the password database, to be able to make use of a hashing table.  The above is commonly implemented by hashing the result of one hash with another hashing algorithm.
+In modern password authentication, a tool called bcrypt is commonly used, which 'salts' passwords (additional unique data is added to each password before hashing), nullifying the use of Precomputed Hash Chains and subsequently Rainbow Tables.  However, this would prevent efficient lookup of phone numbers in the communications part of the application (where answers and sent back to the user).  As such, the best way of protecting a user's phone number in the event of a database hack is to use a combination of: a largely uncommon hashing algorithm, on the basis that it is unlikely anybody will have used vast computation power to create a table that's useful in such a small number of situations; a hashing algorithm with a large output size, again because it makes a table more infeasible (because of size constraints); and a further change to the output hash, specific to this application.  This way, a hacker would need to know this change (from the source code) as well as the password database, to be able to make use of a hashing table.  The above is commonly implemented by hashing the result of one hash with another hashing algorithm.
 
 \marginnote{Did I completely forget about the existance of salting?!?!?!?!?!}
 
 \subsection{Software Design Life Cycles}
-There are many software development life cycles that a developer or company has available to choose from.  Four common ones include the Waterfall Model, Iterative Model, Spiral Model and the Agile Development Model.\marginnote{Do I need to reference that these are common?}  In order to choose which life cycle suits this project best, research into all four has been carried out.
+There are many software development life cycles that a developer or company has available to choose from.  Four common ones include the Waterfall Model~\cite{royce1970managing-FirstDescriptionOfWaterFallModelNotByName}, Iterative Model~\cite{briefHistoryOfIncrementalAndIterativeSoftwareDevelopment}\footnote{Iterative development came together from many concepts dating back to 1957.  There was no single paper that initially presented the entire concept, but this paper gives a summary of how the various concepts came together into the current Iterative Development model.}, Spiral Model~\cite{spiralModelSoftwareDevelopment} and the Agile Development Model~\cite{beck2001agile}\footnote{The Agile Manifesto brought together a group of Agile Methods which had been in use since the mid-1990's into a single concept - that of Agile Development.}.\marginnote{Lilian: Do I need to reference that these are common?}  In order to choose which life cycle suits this project best, research into all four has been carried out.
 
-\marginnote{Should this be in this section, or moved to the "Method and Requirements" section?}
+\marginnote{Lilian: Should this be in this section, or moved to the "Method and Requirements" section?}
 
 \subsubsection{The Waterfall Model}
 The waterfall model consists of 5 phases of work, where each leads directly into the next.  It is a plan driven development model, which means that all process activities such as the implementation of the project must be planned and scheduled before work on them begins~\cite{sommervilleSoftwareEngineering}.  The five layers are shown in Figure \ref{fig:waterfallModel} and described below:
@@ -285,7 +289,7 @@ The waterfall model consists of 5 phases of work, where each leads directly into
 \label{fig:waterfallModel}
 \end{figure}
 
-A key disadvantage of the waterfall model is that once development has moved from one stage to another it cannot go back because the model is fixed and progresses in one direction only, until the maintenance step.  The main advantage of the Waterfall Model is its simplicity: it is easy to understand and to use, saving time at the start of the project that could be wasted on learning and preparing for a more complex model.
+A key disadvantage of the waterfall model is that once development has moved from one stage to another it cannot go back because the model is fixed and progresses in one direction only, until the maintenance step.  The main advantage of the Waterfall Model is its simplicity: it is easy to understand and to use, saving time at the start of the project that would otherwise have been spent on learning and preparing to use a more complex model.
 
 \subsubsection{The Iterative Model}
 Iterative development is the practise of splitting the overall development of a project into multiple independent and distinct blocks.  A block contains a sequence of tasks (essentially a mini life cycle) such that each iteration can really be thought of as its own project.  Each iteration tends to focus on a specific set of features such that when the iteration is complete the overall project is stable and the modules developed to-date can be tested as a whole system~\cite{differenceBetweenLifeCycleModels}.
@@ -346,18 +350,20 @@ The Iterative Development Model was selected in Section \ref{sec:developmentLife
 
 \subsection{Requirements}
 \subsubsection{Use Cases / User Goals}
-Two personas were created in Appendix Section \ref{sec:appendixPersonas} to represent individuals who may have a need for the work resulting from this project.  From these personas, user goals are extracted.  These describe what a general user aims to achieve with this service.
+Two personas were created in Appendix Section \ref{sec:appendixPersonas} to represent individuals who may have a need for the work resulting from this project.  These are Nanjala, who is from Uganda, and Cedric, who is from Switzerland, and it is from these that user goals are extracted.  These describe what a general user aims to achieve with this service.
 \begin{enumerate}
   \item Nanjala wants to be able to read general information on any given topic.
-  \item Ethan wants to be able to retrieve facts from direct questions.
-  \item Both Nanjala and Ethan want to be able to achieve their goals entirely via SMS because of their circumstances.
-  \item Ethan needs a simple and efficient user interface that allows him to retrieve facts quickly. 
-  \item Ethan wants to be able to feedback into the system when he finds an answer particularly useful or unhelpful. 
+  \item Cedric wants to be able to retrieve facts from direct questions.
+  \item Both Nanjala and Cedric want to be able to achieve their goals entirely via SMS because of their circumstances.
+  \item Cedric needs a simple and efficient user interface that allows him to retrieve facts quickly. 
+  \item Cedric wants to be able to feedback into the system when he finds an answer particularly useful or unhelpful. 
   \item Nanjala wants to be able to show the service to her friends without explaining how to use it every time.
-  \item Nanjala wants to get recommendations on content she might find interesting. \marginnote{Haven't decided yet if this is a feature I will implement - time based!}
+  \item Nanjala wants to get recommendations on content she might find interesting. \marginnote{Note to self: might not implement this, in which case discuss in DISCUSSION.}
+  \item Cedric wants the system to protect his privacy, obscuring his identity.
 \end{enumerate}
 
 \subsubsection{User Requirements}
+\label{subsubsec:userRequirements}
 User goals are distilled into formal user requirements.  Each user requirement corresponds directly to the correspondingly numbered user goal.
 \begin{enumerate}
   \item Users must be able to request general or descriptive information on a geographical entity.
@@ -367,6 +373,7 @@ User goals are distilled into formal user requirements.  Each user requirement c
   \item Users must be able to feedback to the system when an answer is of noticeably low or high quality so the system can learn and improve.
   \item Users must be able to learn how to use the system themselves and this learning process should be quick.
   \item Users must be able to get recommendations on entities they might be interested in, based on previous query history.\marginnote{Haven't decided yet if this is a feature I will implement - time based!}
+  \item Users must be comfortable that their privacy is been protected whilst using the service.
 \end{enumerate}
 
 \subsubsection{System Requirements - Functional}
@@ -381,17 +388,28 @@ User goals are distilled into formal user requirements.  Each user requirement c
   \item The system must be self-explanatory, with the facility to offer instructions to a user.
   \item The system must use user state so that it can accept queries that are dependent on past questions (for example, a query asking for more information or feedback on the quality of a past question).
   \item \label{requirement:easyToImplement} The system must be easy to implement and flexible, to accommodate future projects that make use of adaptations of this project.
+  \item The system must obscure a user's phone number in the database.
 \end{enumerate}
 
 \subsubsection{System Requirements - Non-Functional}
-Fit criterion are stated after each non-functional requirement, which will be used to identify whether a requirement has been met successfully.
-\begin{enumerate}
-  \item The system behind the SMS gateway must respond in a timely manner.  Fit Criterion: from an SMS been received, a response must be sent within 10 seconds.  SMS transmission times on the cellular network and gateway are out of the control of this project, so are not accounted for.
-  \item The answers returned must be of high quality.  Fit Criterion: in testing, the system returns the requested information for at least 80\% of queries.
-  \item Answers that are consistently rated poorly are no returned in fewer cases.  Fit Criterion: {\b to determine later}%TODO determine fit criterion.
-  \item Instructions to use the service should be clear and concise, with no ambiguity.  Fit Criterion: {\b to determine later - may not keep this}%TODO determine fit criterion / delete this
-  \item The system should accept and be able to process questions in natural human language as opposed to a delimited message.{\b to determine later}%TODO determine fit criterion / delete this
-\end{enumerate}
+\label{subsubsec:systemRequirementsNonFunctional}
+Non-functional requirements are listed in table \ref{table:nonFunctionalRequirementsFitCrit} and are accompanied by a Fit Criterion, which will be used to identify whether a requirement has been met successfully.
+
+\begin{table}
+\begin{center}
+    \begin{tabular}{| p{6.0cm} | p{6.0cm} |}
+    \hline
+    Non-Functional Requirement & Fit Criterion \\ \hline
+    The system behind the SMS gateway must respond in a timely manner.  & From an SMS been received, a response must be sent within 10 seconds.  SMS transmission times on the cellular network and gateway are out of the control of this project, so are not accounted for. \\ \hline
+    The answers returned must be of high quality.  & In testing, the system returns the requested information for at least 80\% of queries. \\ \hline
+    Answers that are consistently rated poorly are no returned in fewer cases.  & {\bf to determine later} \\ \hline %TODO determine fit criterion.
+    Instructions to use the service should be clear and concise, with no ambiguity.  & {\bf to determine later - may not keep this} \\ \hline %TODO determine fit criterion / delete this
+    The system should accept and be able to process questions in natural human language as opposed to a delimited message. & {\bf to determine later} \\ \hline %TODO determine fit criterion / delete this
+    \end{tabular}
+    \caption{List of non-functional requirements and their Fit Criteria.}
+    \label{table:nonFunctionalRequirementsFitCrit}
+\end{center}
+\end{table}
 
 \subsection{Evaluating Success}
 %TODO start writing this!
@@ -399,9 +417,25 @@ Fit criterion are stated after each non-functional requirement, which will be us
 \newpage
 \section{Design}
 \label{sec:design}
+In this section, the design of the system will be described, including information on: the structure of the server application and database; interactions with third-party services; systems used to protect user-identity; and the language, platform, tools and libraries used for development.
 
-\subsection{Software Design}
-%TODO start writing this!
+\subsection{System Design}
+In this section, the high-level design of the system software and its interactions with third-party services is described.  The system design was driven by requirements listed in sections \ref{subsubsec:userRequirements}, \ref{subsubsec:systemRequirementsFunctional} and \ref{subsubsec:systemRequirementsNonFunctional}, which were generalised to:
+
+\begin{itemize}
+    \item The system must be modular with points to add additional plugins for example, for additional data sources.
+    \item The system must be easy to maintain, with distinct boundaries between functional components and behaviour.
+    \item The database must be local to decrease the risk of exposing data.
+    \item The system must have clear interfaces for interacting with the external world.
+\end{itemize}
+
+Based majoritively from these requirements, the formal aforementioned requirements and the application of an informal gap-analysis between each iteration of the architecture, the system architecture shown in Figure \ref{fig:systemArchitecture} was created.  This shows the structure of the system, from the level of hardware and third-party services through to individual software modules.
+
+\begin{figure}[htb] 
+\includegraphics[width=\linewidth]{systemArchitecture}
+\caption{System Architecture}
+\label{fig:systemArchitecture}
+\end{figure}
 
 \subsubsection{Micro-system for Protecting User Identity}
 
@@ -423,7 +457,7 @@ The userCell is required at the output of the function to determine the number t
 The language Python has been selected to be the main language in project for four reasons:
 \begin{enumerate}
   \item Python is universally compatible and simple to execute.  Once the server application is written, it will be simple to migrate it between machines and adjust the application's configuration or environment.
-  \item Python is commonly used and has significant community support in the form of libraries for all the tools that will be used in this project (for example, libraries for querying common databases and for sending text messages).
+  \item Python is commonly used and has significant community support in the form of libraries for all the tools that will be used in this project (for example, libraries for querying common databases and for sending text messages).  This is useful as it will prevent the author spending time implementing common functionality like database calls.
   \item Python is an extremely flexible language in which it is easy to implement applications of this type without syntax issues.  This fulfils the requirement (\ref{subsubsec:systemRequirementsFunctional} point \ref{requirement:easyToImplement}) that the application is easy and quick to implement.
   \item The author has significant expertise in the language, as does Lilian Blot (dissertation Supervisor).
 \end{enumerate}
@@ -441,7 +475,7 @@ The development platform of the utility will be Linux.  This is for three reason
 As previously stated, the interface to the application will be over the SMS platform.
 
 \subsubsection{Database}
-There are two tables of data that need to be stored.  These are the tables for user profiles (to allow the application to work with stateful queries), and for the machine learning of question-answer quality.  The logical design of these two tables/collections is:
+There are three tables of data that need to be stored.  These are the tables for user profiles (to allow the application to handle queries that make use of 'state' with users), for the machine learning of question-answer quality, and for an initial intelligence that a new deployment of the application starts with.  Both the conceptual data model and the logical database design are now presented.
 
 \myparagraph{Conceptual Data Model}
 % TODO - write conceptual database model
@@ -626,7 +660,7 @@ This section's content...
 \bibliography{IEEEabrv,mybib}
 
 \newpage
-\section{Appendix - Personas}
+\section{Appendix A - Personas}
 \label{sec:appendixPersonas}
 \subsection{Nanjala}
 %TODO Add photo
@@ -650,11 +684,57 @@ In a typical day, Nanjala will rise early to help her family with housework chor
   \item Works in a service role in the city and so has little disposable income to spend on guide books for the many places he visits.
   \item Cedric is a competent albeit not professional hiker, often going off-track and summiting 'difficult' peaks or reaching famous camping grounds.  He likes to be spontaneous, only deciding which peaks he will attempt when he arrives.
   \item Cedric is very conscientious and wants to contribute his own knowledge to the world; especially to projects that help him.
+  \item Cedric values his privacy is concerned about how much information he gives out online.
 \end{itemize}
 \subsubsection{Average European Trip}
 A typical trip will involve an intercity train from the Zurich Hauptbahnhof (main station) to the city closest to the range Cedric will be hiking.  He takes the train because it tends to be cheaper than flights.  Once in the area, Cedric will take local trains and buses to get into the mountain ranges.  There, he will use the local hiking trail network signs and conversations with the locals to select a peak or route.  Once Cedric has got moving and is reaching higher ground, he uses a combination of his view and the signage to identify other peaks that he would like to wander around.  
 
 Cedric takes a non-smart phone with him because a) the battery life on his smart phone is not long enough for his whole trip, whereas his non-smart phone lasts a week at a time, and b) his smart phone would not be useful anyway, since the internet is so intermittent.  He still wishes he could get information like whether there are maintained routes on the slopes of a given peak or the height of a peak that he sees without having to phone friends back in the city.
+
+\section*{Appendix B - Sample Consent Form}
+\label{sec:appendixConsentForm}
+\newpage
+
+\subsection*{System to access knowledge using Machine Learning and SMS - Usability and Usefulness Study}
+{\parindent0pt
+\subsubsection*{Informed Consent - Introduction}
+This study aims to investigate the usability and usefulness of a system developed to provide access to knowledge using machine learning and SMS.  The system aims to provide high quality answers to questions asked of it, where the questions relate to either a description or property of a geographical entity (for example, a city, river or mountain).  The system aims to learn where mistakes have been made and improve by receiving feedback from the user on the previous answer.  
+
+\subsubsection*{Form - please complete this section before the study}
+I, \textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore, agree to participate in this study.  I have been briefed on and understand the purpose and goals of the project.
+
+I understand that information will be collected from me during this study in the form of my answers to a questionnaire.  I understand that this information will be treated confidentially and only Sam Heather will have access to the original data in it's original format.  When the information is processed, shared, described or interpreted I will not be personally identified.
+
+I understand that I can withdraw from the study at any point without reason.
+
+I understand that the aim of this study is to identify whether the system developed in this project is useful and efficient to use to retrieve information about geographical entities.
+
+Date: \textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore
+Signature: \textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore
+
+{\bf Researcher's contact details:}\\
+Sam Heather\\
+sam@heather.sh
+
+{\bf Supervisor's contact details:}\\
+Lilian Blot\\
+lilian.blot@york.ac.uk
+
+\subsubsection*{...and this section after the study}
+$\square$ I have been suitably debriefed about the system and my performance.
+
+$\square$ I understand I can withdraw my data from the study at any time.
+
+$\square$ I have not been forced to take part in this study.
+
+$\square$ The Researcher has treated me with respect and answered all of my questions.
+
+}
+
+\newpage
+\section{More}
+abc
+
 
 \end{document}  %End of document.
 
