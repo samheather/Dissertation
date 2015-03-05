@@ -26,6 +26,10 @@
 % to avoid having to escape all underscores in URL's to avoid "missing $ inserted" error.
 \usepackage{url}
 
+% For column centering in the questionnaire
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
 % Paragraph that starts on a new line.
 \newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
 
@@ -690,6 +694,7 @@ In a typical day, Nanjala will rise early to help her family with housework chor
 A typical trip will involve an intercity train from the Zurich Hauptbahnhof (main station) to the city closest to the range Cedric will be hiking.  He takes the train because it tends to be cheaper than flights.  Once in the area, Cedric will take local trains and buses to get into the mountain ranges.  There, he will use the local hiking trail network signs and conversations with the locals to select a peak or route.  Once Cedric has got moving and is reaching higher ground, he uses a combination of his view and the signage to identify other peaks that he would like to wander around.  
 
 Cedric takes a non-smart phone with him because a) the battery life on his smart phone is not long enough for his whole trip, whereas his non-smart phone lasts a week at a time, and b) his smart phone would not be useful anyway, since the internet is so intermittent.  He still wishes he could get information like whether there are maintained routes on the slopes of a given peak or the height of a peak that he sees without having to phone friends back in the city.
+\newpage
 
 \section*{Appendix B - Sample Consent Form}
 \label{sec:appendixConsentForm}
@@ -732,8 +737,80 @@ $\square$ The Researcher has treated me with respect and answered all of my ques
 }
 
 \newpage
-\section{More}
-abc
+\section*{Appendix C - Sample Questionnaire}
+\label{sec:appendixQuestionnaire}
+\newpage
+
+\subsection*{Please fill in the following questionnaire with regard to your experience of the system that has been developed}.
+
+\begin{tabular}{|m{0.5cm}|m{7.0cm}|>{\centering\arraybackslash}m{4cm}|}
+\hline
+\centering \# &
+\centering Question &   
+\centering Agreement 1 = strongly disagree 7 = strongly agree \tabularnewline
+\hline
+1  & 
+Using the system would enable me to locate information more quickly when without access to the internet  & 
+1 \ 2 \ 3 \ 4 \ 5 \ 6 \ 7 \ N/A 
+\tabularnewline
+\hline
+2  & 
+Using the system would improve my performance when working or researching without access to the internet  & 
+1 \ 2 \ 3 \ 4 \ 5 \ 6 \ 7 \ N/A 
+\tabularnewline
+\hline
+3  & 
+Using the system would increase my productivity when performing casual research without access to the internet  & 
+1 \ 2 \ 3 \ 4 \ 5 \ 6 \ 7 \ N/A 
+\tabularnewline
+\hline
+4  & 
+Using the system would enhance my effectiveness at finding information without the internet  & 
+1 \ 2 \ 3 \ 4 \ 5 \ 6 \ 7 \ N/A 
+\tabularnewline
+\hline
+5  & 
+Using the system would make it easier for me to find information without access to the internet  & 
+1 \ 2 \ 3 \ 4 \ 5 \ 6 \ 7 \ N/A 
+\tabularnewline
+\hline
+6  & 
+I would find the system useful in day-to-day life when without access to the internet  & 
+1 \ 2 \ 3 \ 4 \ 5 \ 6 \ 7 \ N/A 
+\tabularnewline
+\hline
+7  & 
+Learning to operate the system would be easy for me  & 
+1 \ 2 \ 3 \ 4 \ 5 \ 6 \ 7 \ N/A 
+\tabularnewline
+\hline
+8  & 
+I would find it easy to get the system to do what I want it to do  & 
+1 \ 2 \ 3 \ 4 \ 5 \ 6 \ 7 \ N/A 
+\tabularnewline
+\hline
+9  & 
+My interaction with the system would be clear and understandable  & 
+1 \ 2 \ 3 \ 4 \ 5 \ 6 \ 7 \ N/A 
+\tabularnewline
+\hline
+10  & 
+I would find the system to be flexible to interact with  & 
+1 \ 2 \ 3 \ 4 \ 5 \ 6 \ 7 \ N/A 
+\tabularnewline
+\hline
+11  & 
+It would be easy for me to become skilful at using the system  & 
+1 \ 2 \ 3 \ 4 \ 5 \ 6 \ 7 \ N/A 
+\tabularnewline
+\hline
+12  & 
+I would find the system easy to use  & 
+1 \ 2 \ 3 \ 4 \ 5 \ 6 \ 7 \ N/A
+\tabularnewline
+\hline
+\end{tabular}
+
 
 
 \end{document}  %End of document.
