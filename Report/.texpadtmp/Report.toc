@@ -13,10 +13,10 @@
 \contentsline {subsubsection}{\numberline {3.2.3}User Privacy and Data Protection}{17}
 \contentsline {subsection}{\numberline {3.3}Software Design Life Cycles}{19}
 \contentsline {subsubsection}{\numberline {3.3.1}The Waterfall Model}{20}
-\contentsline {subsubsection}{\numberline {3.3.2}The Iterative Model}{21}
-\contentsline {subsubsection}{\numberline {3.3.3}Boehm's Spiral Model}{22}
+\contentsline {subsubsection}{\numberline {3.3.2}The Iterative Model}{20}
+\contentsline {subsubsection}{\numberline {3.3.3}Boehm's Spiral Model}{21}
 \contentsline {subsubsection}{\numberline {3.3.4}Agile Development}{22}
-\contentsline {subsubsection}{\numberline {3.3.5}Development Life Cycle Summary}{23}
+\contentsline {subsubsection}{\numberline {3.3.5}Development Life Cycle Summary}{22}
 \contentsline {section}{\numberline {4}Method and Requirements}{24}
 \contentsline {subsection}{\numberline {4.1}Plan for Software Development}{24}
 \contentsline {subsection}{\numberline {4.2}Requirements}{24}

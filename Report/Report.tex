@@ -230,14 +230,14 @@ The potential uses of this system include distributing information that may be u
 \subsubsection{User Privacy and Data Protection}
 This project uses a simple Artificial Intelligence (AI) to keep a record of information that has already been returned to a user, to attempt to save sending repetitive information (saving the cost of additional SMS).  This raises another ethical issue though of privacy.  The material that a user has researched is likely to be sensitive; such is the nature of health related questions.  This means that the information on a user has to be kept securely, in a way that an individual user can not be identified.
 
-One way of doing this is using a technology called hashing.  Hashing is the technique of taking data as an input and generating an output value (called a 'hash') that is unique to an input.  Hash functions are ideally one way functions where given input data X, the output hash will always be Y, whenever and however the hashing algorithm is executed.  This allows a user's identity (phone number) to be obscured, in such a way that the mobile number can not be recovered from the database.  When a question is received, the phone number (represented by variable X in the above example) can be hashed and the data for this number looked up from the database without the database application ever being aware of the phone number of the user.  In the example in Figure~\ref{fig:hashPhoneNumber}, a phone number (X) is used as input to an imaginary hashing function and the output hash (Y) is shown on the right hand side.  As just described, this number can then be used as the key for the user information database, shown in Table~\ref{table:hashDatabase} to retrieve the information needed for the AI.
+One way of doing this is using a technology called hashing.  Hashing is the technique of taking data as an input and generating an output value (called a 'hash') that is unique to an input.  Hash functions are ideally one way functions where given a piece of input data X, the output hash will always be a constant value Y, whenever and however the hashing algorithm is executed.  This allows a user's identity (phone number) to be obscured, in such a way that the mobile number can not be recovered from the database.  When a question is received, the phone number (represented by variable X in the above example) can be hashed and the data for this number looked up from the database without the database application ever being aware of the phone number of the user.  In the example in Figure~\ref{fig:hashPhoneNumber}, a phone number (X) is used as input to an imaginary hashing function and the output hash (Y) is shown on the right hand side.  As just described, this number can then be used as the key for the user information database, shown in Table~\ref{table:hashDatabase} to retrieve the information needed for the AI.
 
 {\bf reference the above from security engineering ross anderson, chapter 10 and 21?}
 
 \begin{figure}[htb]
     \centering
     \includegraphics[width=200pt]{hashPhoneNumber}
-    \caption{Hashing a phone number using an imaginary hashing algorithm}
+    \caption{Hashing a phone number using an arbitrary hashing algorithm}
     \label{fig:hashPhoneNumber}
 \end{figure}
 
@@ -256,19 +256,15 @@ One way of doing this is using a technology called hashing.  Hashing is the tech
 \end{center}
 \end{table}
 
-In practise it is possible for the output of a hashing algorithm not to be unique to a particular input.  This is because the range of possible input values is much smaller than the range of output hashes, and because all valid inputs must map to an output, there is repetition in outputs~\cite{mitCryptographyMd5}.  This property of hashing algorithms can be a security risk for some use-cases, where hashes are used to verify that data has not changed since been hashed.  In this case, a third-party may be attempting to generate alternative, malicious data with the same hash as some pre-existing data, to swap them unnoticed~\cite{securityEngineeringHashingAnderson}.  In the use-case of this project however, hashes are only been used to anonymise phone numbers to some unidentifiable string of characters and numbers, meaning that the above-described collision risk is not a security risk.
-
-Two properties that this project does need from its hashing algorithm are collision resistance and irreversibility.  Collision resistance is the property of a hashing algorithm that determines the probability of the same output hash for two distinct random inputs~\cite{mitCryptographyMd5}.  A high collision resistance is necessary to ensure that two users of the system with distinct phone numbers don't get mapped to the same row in the database, resulting in poor quality question-answer matching.
+In practise it is possible for the output of a hashing algorithm not to be unique to a particular input.  This is known as the collision resistance property of a hashing algorithm and formally is the property of a hashing algorithm that determines the probability of the same output hash for two distinct random inputs~\cite{mitCryptographyMd5}.  It occurs because the range of possible input values is much larger than the range of output hashes, and because all valid inputs must map to an output there is repetition in outputs~\cite{mitCryptographyMd5}.  This property of hashing algorithms can be a security risk for some use-cases, where hashes are used to verify that data has not changed since been hashed.  In this case, a third-party may be attempting to generate alternative, malicious data with the same hash as some pre-existing data, to swap them undetected~\cite{securityEngineeringHashingAnderson}.  In the use-case of this project there is no security risk since hashes are only used to anonymise phone numbers, however a high collision resistance is necessary to ensure that two users of the system with distinct phone numbers don't get mapped to the same row in the database, resulting in poor quality question-answer matching (or in the extreme worst case, privacy issues originating from returning to one user answers that are targeted to another).
 
 Irreversibility is a necessary property of the hashing algorithm chosen for this project.  This ensures that the key used in the database cannot be used to retrieve the phone number of the user, thus protecting their identity.  Commonly used hashing algorithm families, such as the MD family (e.g. MD5) and SHA family are all designed to be one-way~\cite{schneierCryptanalysisMD5SHA}\footnote{Bruce Schneier is a fellow at Harvard's Berkman center for internet and society.  He has been posting regularly for his newsletter and then blog since 1998 (over 16 years) and has published material related to this field throughout this time.  He has been involved in the creation of other cryptographic algorithms, such as the Skein hashing algorithm, blowfish block cipher, so may have a vested interest in dis-crediting other algorithms such as MD5 and SHA.  However, the essay cited above is written as a result of the Crypto 2004 Conference in California, Schneier has a world-renowned reputation for cryptography and computer security and the algorithm that he suggests should be used at the end is not one that he has involvement in.  For these reasons, I believe this source is reliable.}.  
 
-Although hashing algorithms are computationally one-way, they can suffer from another type of vulnerability affecting the security of the original input data.  When hashes are used for short strings of information (passwords, for example), a simple way to try and retrieve the original data is to compute a dictionary of the hashes of lots of common passwords, from which matches can be found.  This idea has been extended to produce Precomputed Hash Chains and subsequently Rainbow Tables.  These are highly efficient data structures that consist of chains of processed input messages and their hashes (with a reduce function to reach the next item in the chain), allowing original input data to be looked-up from its hash.  Both Precomputed Hash Chains and Rainbow Tables tend to be Terabytes in size, and as such they only exist in a significant form for the most common hash functions (including MD5 and SHA)~\cite{Teat:2011:SCH:2016039.2016072}.  Within this project, this raises privacy implications, as hashes within the database would be 'convertible' to phone numbers.  
+Although hashing algorithms are computationally one-way, they can suffer from another type of vulnerability affecting the security of the original input data.  When hashes are used for short strings of information (passwords, for example), a simple way to try and retrieve the original data is to compute a dictionary of the hashes of lots of common passwords, from which matches can be found.  This idea has been extended to produce Precomputed Hash Chains and subsequently Rainbow Tables.  These are highly efficient data structures that consist of chains of processed input messages and their hashes (with a reduce function to reach the next item in the chain), allowing original input data to be looked-up from its hash.  Both Precomputed Hash Chains and Rainbow Tables tend to be Terabytes in size, and as such they only exist in a significant form for the most commonly used hash functions (including MD5 and SHA)~\cite{Teat:2011:SCH:2016039.2016072}.  Within this project, this raises privacy implications, as hashes within the database would be 'convertible' to phone numbers.
 
 {\bf perhaps the below should move to method and requirements - TODO needs to be cleaned up as well.}
 
-In modern password authentication, a tool called bcrypt is commonly used, which 'salts' passwords (additional unique data is added to each password before hashing), nullifying the use of Precomputed Hash Chains and subsequently Rainbow Tables.  However, this would prevent efficient lookup of phone numbers in the communications part of the application (where answers and sent back to the user).  As such, the best way of protecting a user's phone number in the event of a database hack is to use a combination of: a largely uncommon hashing algorithm, on the basis that it is unlikely anybody will have used vast computation power to create a table that's useful in such a small number of situations; a hashing algorithm with a large output size, again because it makes a table more infeasible (because of size constraints); and a further change to the output hash, specific to this application.  This way, a hacker would need to know this change (from the source code) as well as the password database, to be able to make use of a hashing table.  The above is commonly implemented by hashing the result of one hash with another hashing algorithm.
-
-\marginnote{Did I completely forget about the existance of salting?!?!?!?!?!}
+In password authentication systems, this can be solved by the use of a technique called Salting.  Salting is where a 'salt' (a piece of additional unique data) is added to each piece of input data before hashing, and then this salt is stored at the start of the output hash.  This nullifies the use of Precomputed Hash Chains and subsequently Rainbow Tables. When checking if a plaintext password is equal to the hashed&salted representation, the salt from the stored hash is added to the plaintext password, the hashing algorithm applied and then the output compared to the stored obscured password. However, this would prevent efficient lookup of users from phone numbers in the application, as the application would have to compare an input phone number against every user object in the database, which is computationally expensive and slow since a salted hash has to be computed for potentially every user record.  As such, the best way of protecting a user's phone number in the event of a database hack without significantly degrading performance is to salt phone numbers with a constant large and complex salt (meaning a rainbow table would have to be specifically computed specifically for this application and would be extremely large in size).
 
 \subsection{Software Design Life Cycles}
 There are many software development life cycles that a developer or company has available to choose from.  Four common ones include the Waterfall Model~\cite{royce1970managing-FirstDescriptionOfWaterFallModelNotByName}, Iterative Model~\cite{briefHistoryOfIncrementalAndIterativeSoftwareDevelopment}\footnote{Iterative development came together from many concepts dating back to 1957.  There was no single paper that initially presented the entire concept, but this paper gives a summary of how the various concepts came together into the current Iterative Development model.}, Spiral Model~\cite{spiralModelSoftwareDevelopment} and the Agile Development Model~\cite{beck2001agile}\footnote{The Agile Manifesto brought together a group of Agile Methods which had been in use since the mid-1990's into a single concept - that of Agile Development.}.\marginnote{Lilian: Do I need to reference that these are common?}  In order to choose which life cycle suits this project best, research into all four has been carried out.
@@ -717,13 +713,11 @@ I understand that the aim of this study is to identify whether the system develo
 Date: \textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore
 Signature: \textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore
 
-{\bf Researcher's contact details:}\\
-Sam Heather\\
-sam@heather.sh
+{\bf Researcher's contact details:} Sam Heather, sam@heather.sh
 
-{\bf Supervisor's contact details:}\\
-Lilian Blot\\
-lilian.blot@york.ac.uk
+{\bf Supervisor's contact details:} Lilian Blot, lilian.blot@york.ac.uk
+
+\pagebreak
 
 \subsubsection*{...and this section after the study}
 $\square$ I have been suitably debriefed about the system and my performance.
@@ -733,6 +727,10 @@ $\square$ I understand I can withdraw my data from the study at any time.
 $\square$ I have not been forced to take part in this study.
 
 $\square$ The Researcher has treated me with respect and answered all of my questions.
+
+\vspace{10 mm}
+
+For the researcher: Participant ID: \textunderscore\textunderscore\textunderscore\textunderscore\textunderscore
 
 }
 
@@ -747,69 +745,78 @@ $\square$ The Researcher has treated me with respect and answered all of my ques
 \hline
 \centering \# &
 \centering Question &   
-\centering Agreement 1 = strongly disagree 7 = strongly agree \tabularnewline
+\centering Agreement \\ 1 = strongly disagree \\ 3 = neutral \\ 5 = strongly agree \tabularnewline
 \hline
 1  & 
 Using the system would enable me to locate information more quickly when without access to the internet  & 
-1 \ 2 \ 3 \ 4 \ 5 \ 6 \ 7 \ N/A 
+1 \ 2 \ 3 \ 4 \ 5
 \tabularnewline
 \hline
 2  & 
 Using the system would improve my performance when working or researching without access to the internet  & 
-1 \ 2 \ 3 \ 4 \ 5 \ 6 \ 7 \ N/A 
+1 \ 2 \ 3 \ 4 \ 5
 \tabularnewline
 \hline
 3  & 
 Using the system would increase my productivity when performing casual research without access to the internet  & 
-1 \ 2 \ 3 \ 4 \ 5 \ 6 \ 7 \ N/A 
+1 \ 2 \ 3 \ 4 \ 5
 \tabularnewline
 \hline
 4  & 
 Using the system would enhance my effectiveness at finding information without the internet  & 
-1 \ 2 \ 3 \ 4 \ 5 \ 6 \ 7 \ N/A 
+1 \ 2 \ 3 \ 4 \ 5
 \tabularnewline
 \hline
 5  & 
 Using the system would make it easier for me to find information without access to the internet  & 
-1 \ 2 \ 3 \ 4 \ 5 \ 6 \ 7 \ N/A 
+1 \ 2 \ 3 \ 4 \ 5
 \tabularnewline
 \hline
 6  & 
 I would find the system useful in day-to-day life when without access to the internet  & 
-1 \ 2 \ 3 \ 4 \ 5 \ 6 \ 7 \ N/A 
+1 \ 2 \ 3 \ 4 \ 5
 \tabularnewline
 \hline
 7  & 
 Learning to operate the system would be easy for me  & 
-1 \ 2 \ 3 \ 4 \ 5 \ 6 \ 7 \ N/A 
+1 \ 2 \ 3 \ 4 \ 5
 \tabularnewline
 \hline
 8  & 
 I would find it easy to get the system to do what I want it to do  & 
-1 \ 2 \ 3 \ 4 \ 5 \ 6 \ 7 \ N/A 
+1 \ 2 \ 3 \ 4 \ 5
 \tabularnewline
 \hline
 9  & 
 My interaction with the system would be clear and understandable  & 
-1 \ 2 \ 3 \ 4 \ 5 \ 6 \ 7 \ N/A 
+1 \ 2 \ 3 \ 4 \ 5
 \tabularnewline
 \hline
 10  & 
 I would find the system to be flexible to interact with  & 
-1 \ 2 \ 3 \ 4 \ 5 \ 6 \ 7 \ N/A 
+1 \ 2 \ 3 \ 4 \ 5
 \tabularnewline
 \hline
 11  & 
 It would be easy for me to become skilful at using the system  & 
-1 \ 2 \ 3 \ 4 \ 5 \ 6 \ 7 \ N/A 
+1 \ 2 \ 3 \ 4 \ 5
 \tabularnewline
 \hline
 12  & 
-I would find the system easy to use  & 
-1 \ 2 \ 3 \ 4 \ 5 \ 6 \ 7 \ N/A
+I would find the system easy to use & 
+1 \ 2 \ 3 \ 4 \ 5
+\tabularnewline
+\hline
+13  & 
+The information returned was useful, relevant, and answered the question asked & 
+1 \ 2 \ 3 \ 4 \ 5
 \tabularnewline
 \hline
 \end{tabular}
+
+\vspace{10 mm}
+
+For the researcher: Participant ID: \textunderscore\textunderscore\textunderscore\textunderscore\textunderscore
 
 
 
