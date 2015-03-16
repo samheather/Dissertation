@@ -112,6 +112,13 @@ C.~Teat and S.~Peltsverger, ``The security of cryptographic hashes,'' in
   \url{http://doi.acm.org/10.1145/2016039.2016072}
 \BIBentrySTDinterwordspacing
 
+\bibitem{hashingPasswordsInfoSec}
+\BIBentryALTinterwordspacing
+P.~Johannes B.~Ullrich. (2011) Hashing passwords. Accessed: 2015-03-16.
+  [Online]. Available:
+  \url{http://www.dshield.org/diary/Hashing+Passwords/11110}
+\BIBentrySTDinterwordspacing
+
 \bibitem{royce1970managing-FirstDescriptionOfWaterFallModelNotByName}
 W.~W. Royce, ``Managing the development of large software systems,'' in
   \emph{proceedings of IEEE WESCON}, vol.~26, no.~8.\hskip 1em plus 0.5em minus

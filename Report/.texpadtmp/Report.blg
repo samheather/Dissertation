@@ -23,45 +23,45 @@ Warning--empty journal in kenny2011ethics
 Warning--empty journal in melby2006can
 
 Done.
-You've used 23 entries,
+You've used 24 entries,
             4039 wiz_defined-function locations,
-            1358 strings with 19304 characters,
-and the built_in function-call counts, 12022 in all, are:
-= -- 985
-> -- 217
+            1365 strings with 19492 characters,
+and the built_in function-call counts, 12413 in all, are:
+= -- 1020
+> -- 221
 < -- 52
-+ -- 112
-- -- 43
-* -- 527
-:= -- 2083
-add.period$ -- 53
-call.type$ -- 23
-change.case$ -- 24
++ -- 114
+- -- 44
+* -- 538
+:= -- 2160
+add.period$ -- 56
+call.type$ -- 24
+change.case$ -- 26
 chr.to.int$ -- 117
-cite$ -- 27
-duplicate$ -- 918
-empty$ -- 1055
-format.name$ -- 50
-if$ -- 2659
+cite$ -- 28
+duplicate$ -- 948
+empty$ -- 1090
+format.name$ -- 51
+if$ -- 2742
 int.to.chr$ -- 0
-int.to.str$ -- 23
-missing$ -- 190
-newline$ -- 118
-num.names$ -- 23
-pop$ -- 474
+int.to.str$ -- 24
+missing$ -- 198
+newline$ -- 123
+num.names$ -- 24
+pop$ -- 496
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 938
+skip$ -- 970
 stack$ -- 0
-substring$ -- 291
-swap$ -- 651
+substring$ -- 293
+swap$ -- 671
 text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 23
+type$ -- 24
 warning$ -- 4
-while$ -- 41
-width$ -- 25
-write$ -- 255
+while$ -- 42
+width$ -- 26
+write$ -- 266
 (There was 1 error message)
