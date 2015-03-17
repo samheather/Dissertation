@@ -156,6 +156,28 @@ C.~Larman, \emph{Agile and iterative development: a manager's guide}.\hskip 1em
 B.~Boehm and W.~J. Hansen, ``Spiral development: Experience, principles, and
   refinements,'' DTIC Document, Tech. Rep., 2000.
 
+\bibitem{mediaWikiAPI}
+\BIBentryALTinterwordspacing
+MediaWiki.org. (2015) Api:main page. Accessed: 2015-03-17. [Online]. Available:
+  \url{http://www.mediawiki.org/wiki/API:Main_page}
+\BIBentrySTDinterwordspacing
+
+\bibitem{dbPediaIntro}
+\BIBentryALTinterwordspacing
+DBPedia. (2014) The dbpedia ontology. Accessed: 2015-03-17. [Online].
+  Available: \url{http://wiki.dbpedia.org/Ontology}
+\BIBentrySTDinterwordspacing
+
+\bibitem{dbPediaSparql}
+\BIBentryALTinterwordspacing
+------. (2015) Virtuoso sparql query editor. Accessed: 2015-03-17. [Online].
+  Available: \url{http://dbpedia.org/sparql}
+\BIBentrySTDinterwordspacing
+
+\bibitem{davis1989perceived}
+F.~D. Davis, ``Perceived usefulness, perceived ease of use, and user acceptance
+  of information technology,'' \emph{MIS quarterly}, pp. 319--340, 1989.
+
 \bibitem{pypi}
 \BIBentryALTinterwordspacing
 P.~community. (2015) Pypi - the python package index. Accessed: 2015-02-04.

@@ -413,8 +413,24 @@ Non-functional requirements are listed in table \ref{table:nonFunctionalRequirem
 \end{center}
 \end{table}
 
+\subsection{Data Sources}
+A number of possible datasources were identified from which data could be drawn from for this project.  These were all based off of Wikipedia (a large, linked source of knowledge), and include the Wikipedia API and various representations of the DBPedia Ontology.  In this section, both will be discussed and a decision will be made with regard to which ones are used.
+
+\subsubsection{Wikipedia API}
+The Wikipedia API is a standard MediaWiki API and allows applications to query a page or resource for various parameters from a page, including the page contents, infobox parameters, citation list and links to other articles in various flat or multi-layered data structures~\cite{mediaWikiAPI}.  Interactions are made via a HTTP GET request to a URL containing the parameters, and responses can be received in JSON.  This makes the API easy to use and widely compatible, especially since JSON can be converted to a dictionary in most languages.
+
+\subsubsection{DBPedia Ontology}
+The DBPedia Ontology is the result of a project that aims to build an OWL ontology representing all of the knowledge within Wikipedia.  The ontology has been manually created from the most commonly used infoboxes on Wikipedia and covers 685 classes with 2,795 properties, providing structured information on 4.2 million places, people, work, species and organisations~\cite{dbPediaIntro}.  This makes it especially good for use in applications since the data is both curated and well structured.
+
+There are two ways of querying the DBPedia Ontology.  One is using the standard SPARQL ontology query software to make a query form the ontology structure, however this is complex as queries must be structured correctly and it is necessary to know the class structure of the entities been queried~\cite{dbPediaSparql}.
+
+In the event that the class structure is not known, queries can be made by querying the top-level representation of an entity in the ontology, which presents data in a similar format to that of the Wikipedia API, albeit in a 'cleaner' form (with human readable keys) as a result of the data been processed by hand.  Although the keys are of a more human-readable format, some material is abstracted within the ontology, and so is inaccessible with a basic query.  An example of this is page for 'London', which does not have a parameter 'Mayor' with the value 'Boris Johnson'.  Instead it refers to a number of 'Leader Titles' and 'Leader Names', which include a reference to Boris Johnson\footnote{A web representation of the London object is available at: http://dbpedia.org/page/London}.
+
+\subsubsection{Choosing the Source and Interface for this Project}
+This project has a limited scope and time period available to it, and creating a system capable of identifying the relevant classes and then constructing SPARQL queries for looking up an abstract property is an example of an approach that is out of scope (as it involves natural language processing and semantic analysis of the names of the ontological classes - not just the query been made).  As such, this project will make use of a combination of the data from the Wikipedia API and DBPedia top-level entity representations, collecting keys from both and working with the key with the highest semantic relatedness match to identify the data-value that most likely is the answer to a user's question.  The DBPedia Ontology also provides access to the abstract at the same level as the infobox, so general descriptions of entities will be sourced from there.
+
 \subsection{Evaluating Success}
-%TODO start writing this!
+Success will be evaluated by establishing if the project fulfils it's original requirements, based on the original scenarios.  Many user requirements such as protecting the privacy of a user will be proven through software, whilst some that involve user interactions must be tested with users.  As such, user testing will be used to evaluate three specific properties of the software through a trial usage and subsequent questionnaire.  The questionnaire will aim to evaluate the usefulness of the system, the usability of the system and the quality of returned answers, and is based off of the IBM "Perceived Usefulness, Perceived Ease of Use, and User Acceptance of Information Technology" questionnaire~\cite{davis1989perceived}.  Questions were modified to change to suit the software been used in a situation without internet as opposed to a general workplace environment, and a question was added to investigate the quality of answers returned to a user.
 
 \newpage
 \section{Design}
@@ -443,7 +459,7 @@ Based majoritively from these requirements, the formal aforementioned requiremen
 
 In section \ref{subsubsec:userPrivacyAndDataProtection}, the need to protect the privacy of a user and the general technique that will be used (involving irreversible hashing) are described.  The design of this system will now be discussed.
 
-The main gateway into the system will be an HTTP call to a Python function, which takes the phone number of the user and the question being asked as its parameters.  The header and basic structure of this function is:
+The main gateway into the system will be an HTTP call to a Python function, which takes the phone number of the user and the question being asked as its parameters.  This function represents a core part of the privacy protection system, by generating the hashed phone number and only using that when calling functions that compute an answer.  The user's phone number is only subsequently used when 
 
 \begin{lstlisting}[language=Python]
 def entry(userCell, question):
