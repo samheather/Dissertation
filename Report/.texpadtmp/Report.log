@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.20)  17 MAR 2015 20:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.20)  29 MAR 2015 16:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -692,23 +692,23 @@ Package marginnote Info: xpos seems to be 469.1866pt,
 (marginnote)             \marginnoterightadjust ignored on input line 364.
  [24]
 Package marginnote Info: Margin note 25.1 is on absolute page 25
-(marginnote)              on input line 378.
-Package marginnote Info: right page because not two side mode on input line 378
+(marginnote)              on input line 379.
+Package marginnote Info: right page because not two side mode on input line 379
 .
 Package marginnote Info: xpos seems to be 304.50897pt,
-(marginnote)             \marginnoterightadjust ignored on input line 378.
-
-Overfull \hbox (21.63303pt too wide) in paragraph at lines 402--411
+(marginnote)             \marginnoterightadjust ignored on input line 379.
+ [25]
+Overfull \hbox (21.63303pt too wide) in paragraph at lines 404--413
  [] 
  []
 
-[25] [26] [27] [28]
+[26] [27] [28]
 <./figures/systemArchitecture.png, id=106, 963.6pt x 514.92375pt>
 File: ./figures/systemArchitecture.png Graphic file (type png)
 
 <use ./figures/systemArchitecture.png>
-Package pdftex.def Info: ./figures/systemArchitecture.png used on input line 45
-3.
+Package pdftex.def Info: ./figures/systemArchitecture.png used on input line 46
+1.
 (pdftex.def)             Requested size: 345.0pt x 184.35884pt.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -716,62 +716,62 @@ File: lstlang1.sty 2014/03/04 1.5c listings language file
 ) [29]
 [30 <./figures/systemArchitecture.png>]
 Package marginnote Info: Margin note 31.1 is on absolute page 31
-(marginnote)              on input line 489.
-Package marginnote Info: right page because not two side mode on input line 489
+(marginnote)              on input line 497.
+Package marginnote Info: right page because not two side mode on input line 497
 .
 Package marginnote Info: xpos seems to be 175.37988pt,
-(marginnote)             \marginnoterightadjust ignored on input line 489.
+(marginnote)             \marginnoterightadjust ignored on input line 497.
  [31]
 <./figures/conceptualModel.png, id=118, 692.5875pt x 291.0875pt>
 File: ./figures/conceptualModel.png Graphic file (type png)
 
 <use ./figures/conceptualModel.png>
-Package pdftex.def Info: ./figures/conceptualModel.png used on input line 513.
+Package pdftex.def Info: ./figures/conceptualModel.png used on input line 521.
 (pdftex.def)             Requested size: 345.0pt x 145.0015pt.
 
-Underfull \hbox (badness 1292) in paragraph at lines 529--529
+Underfull \hbox (badness 1292) in paragraph at lines 537--537
 \OT1/ptm/m/n/10 eS-tar-Rat-ings, twoStar-Rat-ings, three-Star-
  []
 
 Package marginnote Info: Margin note 32.1 is on absolute page 32
-(marginnote)              on input line 537.
-Package marginnote Info: right page because not two side mode on input line 537
+(marginnote)              on input line 545.
+Package marginnote Info: right page because not two side mode on input line 545
 .
 Package marginnote Info: xpos seems to be 134.26999pt,
-(marginnote)             \marginnoterightadjust ignored on input line 537.
+(marginnote)             \marginnoterightadjust ignored on input line 545.
 <./figures/logicalModel.png, id=119, 732.7375pt x 200.75pt>
 File: ./figures/logicalModel.png Graphic file (type png)
 
 <use ./figures/logicalModel.png>
-Package pdftex.def Info: ./figures/logicalModel.png used on input line 539.
+Package pdftex.def Info: ./figures/logicalModel.png used on input line 547.
 (pdftex.def)             Requested size: 345.0pt x 94.52098pt.
  [32 <./figures/conceptualModel.png (PNG copy)>]
-Underfull \hbox (badness 6428) in paragraph at lines 564--564
+Underfull \hbox (badness 6428) in paragraph at lines 572--572
 []|\OT1/ptm/m/n/10 Relational Queries Sup-
  []
 
 
-Overfull \hbox (45.41438pt too wide) in paragraph at lines 559--569
+Overfull \hbox (45.41438pt too wide) in paragraph at lines 567--577
  [] 
  []
 
 [33 <./figures/logicalModel.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 628--629
+Underfull \hbox (badness 10000) in paragraph at lines 636--637
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 630--631
+Underfull \hbox (badness 10000) in paragraph at lines 638--639
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 632--633
+Underfull \hbox (badness 10000) in paragraph at lines 640--641
 
  []
 
 [34] [35]
-Overfull \hbox (14.10641pt too wide) in paragraph at lines 637--638
+Overfull \hbox (14.10641pt too wide) in paragraph at lines 645--646
 \OT1/ptm/b/n/10 This sec-tion will con-tain in-for-ma-tion on how data is store
 d, the struc-ture of databases,
  []
@@ -819,17 +819,17 @@ Underfull \hbox (badness 1142) in paragraph at lines 146--150
  []
 
 ) [43] [44] [45] [46] [47] [48] [49]
-Overfull \hbox (34.80664pt too wide) in paragraph at lines 762--834
+Overfull \hbox (34.80664pt too wide) in paragraph at lines 770--842
 [][] 
  []
 
 [50] (/Users/Samuel/Documents/University/Project/Report/.texpadtmp/Report.aux) 
 ) 
 Here is how much of TeX's memory you used:
- 7554 strings out of 493117
- 104525 string characters out of 6135432
- 189976 words of memory out of 5000000
- 10828 multiletter control sequences out of 15000+600000
+ 7556 strings out of 493117
+ 104596 string characters out of 6135432
+ 189995 words of memory out of 5000000
+ 10830 multiletter control sequences out of 15000+600000
  42376 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,16n,42p,1418b,1087s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -844,7 +844,7 @@ ist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/
 type1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/
 times/utmri8a.pfb>
 Output written on /Users/Samuel/Documents/University/Project/Report/.texpadtmp/
-Report.pdf (50 pages, 1257003 bytes).
+Report.pdf (50 pages, 1257435 bytes).
 PDF statistics:
  213 PDF objects out of 1000 (max. 8388607)
  138 compressed objects within 2 object streams

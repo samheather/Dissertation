@@ -368,6 +368,7 @@ Two personas were created in Appendix Section \ref{sec:appendixPersonas} to repr
 \label{subsubsec:userRequirements}
 User goals are distilled into formal user requirements.  Each user requirement corresponds directly to the correspondingly numbered user goal.
 \begin{enumerate}
+  \item \label{requirement:userReqNaturalLanguage} Users must be able to interact with the system using natural language.
   \item Users must be able to request general or descriptive information on a geographical entity.
   \item Users must be able to ask questions requesting a fact or statistic about an entity and get the answer or number they are looking for.
   \item Users must be able to interact with the system over SMS.
@@ -381,6 +382,7 @@ User goals are distilled into formal user requirements.  Each user requirement c
 \subsubsection{System Requirements - Functional}
 \label{subsubsec:systemRequirementsFunctional}
 \begin{enumerate}
+  \item \label{requirement:sysReqNaturalLanguage} The system will be capable of processing queries in natural language form.
   \item The system will receive queries via SMS, process them and then respond via SMS.
   \item The system shall use a datasource that contains both facts and descriptive text on geographical entities to answer queries.
   \item The system must be able to parse queries to identify the entity that is been asked about and the specific parameter of that entity that should be returned as the answer to the user's query.
@@ -402,7 +404,7 @@ Non-functional requirements are listed in table \ref{table:nonFunctionalRequirem
     \begin{tabular}{| p{6.0cm} | p{6.0cm} |}
     \hline
     Non-Functional Requirement & Fit Criterion \\ \hline
-    The system behind the SMS gateway must respond in a timely manner.  & From an SMS been received, a response must be sent within 10 seconds.  SMS transmission times on the cellular network and gateway are out of the control of this project, so are not accounted for. \\ \hline
+    The system behind the SMS gateway must respond in a timely manner.  & From an SMS been received, a response must be sent within 20 seconds.  SMS transmission times on the cellular network and gateway are out of the control of this project, so are not accounted for. \\ \hline
     The answers returned must be of high quality.  & In testing, the system returns the requested information for at least 80\% of queries. \\ \hline
     Answers that are consistently rated poorly are no returned in fewer cases.  & {\bf to determine later} \\ \hline %TODO determine fit criterion.
     Instructions to use the service should be clear and concise, with no ambiguity.  & {\bf to determine later - may not keep this} \\ \hline %TODO determine fit criterion / delete this
@@ -429,8 +431,19 @@ In the event that the class structure is not known, queries can be made by query
 \subsubsection{Choosing the Source and Interface for this Project}
 This project has a limited scope and time period available to it, and creating a system capable of identifying the relevant classes and then constructing SPARQL queries for looking up an abstract property is an example of an approach that is out of scope (as it involves natural language processing and semantic analysis of the names of the ontological classes - not just the query been made).  As such, this project will make use of a combination of the data from the Wikipedia API and DBPedia top-level entity representations, collecting keys from both and working with the key with the highest semantic relatedness match to identify the data-value that most likely is the answer to a user's question.  The DBPedia Ontology also provides access to the abstract at the same level as the infobox, so general descriptions of entities will be sourced from there.
 
+\subsection{Processing Natural Language Queries}
+Because of the nature of the audience for the system been developed in this project, it needs to be able to process input in natural language form rather than enforcing a formal grammar on users (as described in User Requirement \ref{requirement:userReqNaturalLanguage} and System Requirement\ref{requirement:sysReqNaturalLanguage}). This involves constructing a natural language processing system to process queries and identify their meaning. In this project, queries are of a simple form - if a user is asking a question they are requesting a property of information about a given entity. As assumption is therefore made that each query consists of: a token representing the geographical entity been queried; a token representing the property been requested of that geographical entity; and some noise in the form of stop words 
+\footnote{Stop words are words that are frequently used in in language but do not carry any significance themselves \cite{dataMiningStopWords}. It is common practise in Natural Language Processing to to remove these stop words before attempting to process an input \cite{dataMiningStopWords}.}.
+
+It necessary to be able to identify the geographical entity in the query. This will be done using a Named Entity Extraction tool (of which there many tools available online, including Cortical\footnote{http://www.cortical.io/demos/keyword-extraction/}, Dandelion\footnote{https://dandelion.eu/products/datatxt/nex/demo}). These tools extract keywords from a text and in some cases are capable of categorising keywords according to an ontology. For example, Dandelion links entities to the DBPedia Ontology \cite{dandelionNex}.
+
+The property about the geographical entity will be established by removing stop words, punctuation and the name of the geographical entity from the string.  In the input 'What is the height of the Eiffel Tower?', this would result in the string 'height'.
+
 \subsection{Evaluating Success}
-Success will be evaluated by establishing if the project fulfils it's original requirements, based on the original scenarios.  Many user requirements such as protecting the privacy of a user will be proven through software, whilst some that involve user interactions must be tested with users.  As such, user testing will be used to evaluate three specific properties of the software through a trial usage and subsequent questionnaire.  The questionnaire will aim to evaluate the usefulness of the system, the usability of the system and the quality of returned answers, and is based off of the IBM "Perceived Usefulness, Perceived Ease of Use, and User Acceptance of Information Technology" questionnaire~\cite{davis1989perceived}.  Questions were modified to change to suit the software been used in a situation without internet as opposed to a general workplace environment, and a question was added to investigate the quality of answers returned to a user.
+Success will be evaluated by establishing if the project fulfils it's original requirements, based on the original scenarios.  Many user requirements such as protecting the privacy of a user will be proven through software, whilst some that involve user interactions must be tested with users.  As such, user testing will be used to evaluate three specific properties of the software through a trial usage and subsequent questionnaire.  The questionnaire will aim to evaluate the usefulness of the system, the usability of the system and the quality of returned answers, and is based off of the IBM "Perceived Usefulness, Perceived Ease of Use, and User Acceptance of Information Technology" questionnaire~\cite{davis1989perceived}.  Questions were modified to change to suit the software been used in a situation without internet as opposed to a general workplace environment, and a question was added to investigate the quality of answers returned to a user.  A copy of the questionnaire to be used is included in Appendix \ref{sec:appendixQuestionnaire}.
+
+% TODO - write the boundary at which I will say I succeeded (if I consistently score about netural)
+% TODO - write about Likert model for setting questionnaire scale.
 
 \newpage
 \section{Design}
