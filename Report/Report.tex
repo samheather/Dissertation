@@ -84,6 +84,7 @@ The author would like to acknowledge the following individuals for their contrib
 \begin{itemize}
   \item Julie Markham and Nicholas Hopper, with whom the author collaborated with on Shy, the mobile application that inspired this project.
   \item Lilian Blot, for his time and effort spent supervising and providing guidance for this project.
+  \item SpazioDati (http://spaziodati.eu/) for providing extended access to the Dandelion Text Semantics API at no extra charge.
 \end{itemize}
 
 
@@ -435,9 +436,11 @@ This project has a limited scope and time period available to it, and creating a
 Because of the nature of the audience for the system been developed in this project, it needs to be able to process input in natural language form rather than enforcing a formal grammar on users (as described in User Requirement \ref{requirement:userReqNaturalLanguage} and System Requirement\ref{requirement:sysReqNaturalLanguage}). This involves constructing a natural language processing system to process queries and identify their meaning. In this project, queries are of a simple form - if a user is asking a question they are requesting a property of information about a given entity. As assumption is therefore made that each query consists of: a token representing the geographical entity been queried; a token representing the property been requested of that geographical entity; and some noise in the form of stop words 
 \footnote{Stop words are words that are frequently used in in language but do not carry any significance themselves \cite{dataMiningStopWords}. It is common practise in Natural Language Processing to to remove these stop words before attempting to process an input \cite{dataMiningStopWords}.}.
 
-It necessary to be able to identify the geographical entity in the query. This will be done using a Named Entity Extraction tool (of which there many tools available online, including Cortical\footnote{http://www.cortical.io/demos/keyword-extraction/}, Dandelion\footnote{https://dandelion.eu/products/datatxt/nex/demo}). These tools extract keywords from a text and in some cases are capable of categorising keywords according to an ontology. For example, Dandelion links entities to the DBPedia Ontology \cite{dandelionNex}.
+It necessary to be able to identify the geographical entity in the query. This will be done using a Named Entity Extraction tool (of which there many tools available online, including Cortical\footnote{http://www.cortical.io/demos/keyword-extraction/} and Dandelion\footnote{https://dandelion.eu/products/datatxt/nex/demo}). These tools extract keywords from a text and in some cases are capable of categorising keywords according to an ontology. For example, Dandelion links entities to the DBPedia Ontology \cite{dandelionNex}.
 
 The property about the geographical entity will be established by removing stop words, punctuation and the name of the geographical entity from the string.  In the input 'What is the height of the Eiffel Tower?', this would result in the string 'height'.
+
+The result of this simple natural language processing should be that a sentence such as 'What is the Height of the Eiffel Tower?' is reduced to a structure indicating that the geographical entity is the 'Eiffel Tower' and the property is the 'height'.
 
 \subsection{Evaluating Success}
 Success will be evaluated by establishing if the project fulfils it's original requirements, based on the original scenarios.  Many user requirements such as protecting the privacy of a user will be proven through software, whilst some that involve user interactions must be tested with users.  As such, user testing will be used to evaluate three specific properties of the software through a trial usage and subsequent questionnaire.  The questionnaire will aim to evaluate the usefulness of the system, the usability of the system and the quality of returned answers, and is based off of the IBM "Perceived Usefulness, Perceived Ease of Use, and User Acceptance of Information Technology" questionnaire~\cite{davis1989perceived}.  Questions were modified to change to suit the software been used in a situation without internet as opposed to a general workplace environment, and a question was added to investigate the quality of answers returned to a user.  A copy of the questionnaire to be used is included in Appendix \ref{sec:appendixQuestionnaire}.
@@ -639,10 +642,23 @@ MongoDB separates entities into collections but does not place restrictions on t
 
 \subsubsection{Libraries}
 \myparagraph{Database Querying}
+MongoDB comes with a Python client called PyMongo\footnote{For more information: https://api.mongodb.org/python/current/}, which is developed by the same developers as MongoDB.  It is the recommended tool to interact with a MongoDB database~\cite{pyMongoDoc} and has good community support, so it will be used in this project.
 
 \myparagraph{Creating HTTP Server and REST API}
+% TODO - write Creating HTTP Server.
 
 \myparagraph{Sending SMS}
+There are a number of SMS providers with HTTP gateways available to choose from, all of which are similar. For this project, the provider must match the following criteria:
+\begin{itemize}
+  \item Forwards received messages to a REST API.
+  \item Supports sending messages via a REST API.
+  \item The provider must have good coverage of countries so that users from many countries can use the service.
+  \item The provider must have a 'good' reputation. User privacy is still an issue, since data is unencrypted when been sent over SMS, so the provider should be trustworthy. This is difficult to measure accurately, but one possible way of doing this is by looking at the number of significant clients a provider has.
+\end{itemize}
+
+Two services considered were that matched these criteria.  These were Twilio\footnote{Twilio website: https://www.twilio.com/} and Plivo\footnote{Plivo website: https://www.plivo.com/}. Both use REST API's for handling incoming messages and for sending responses. Both Twilio and Plivo have comparable coverage as well - Twilio state that they send and receive SMS with numbers in 198 countries~\cite{twilioCoverage}, and Plivo state that they support 207 countries~\cite{plivoCoverage} \footnote{This is referenced on a marketing page (https://www.plivo.com/twilio-alternative/) where Plivo compare their product to Twilio's, so is likely to be biased}. The difference is trivial, as the number of recognised independent states in the world is between 190 and 200 (depending on listing) - the US Government recognises 195~\cite{usStateDepartmentListOfIndependentStates}.
+
+With regard to reputation, for this project it was decided that Twilio is preferable to Plivo. Although it is difficult to measure reputation accurately, Twilio was founded in 2007 and has an group of clients including PayPal, Uber, Sprint and Airbnb, compared to Plivo, which was founded in 2011 and mainly works with entertainment companies.
 
 \newpage
 \section{Implementation}
@@ -675,6 +691,7 @@ If the author was able to expand this project, areas for expansion include:
 \begin{itemize}
   \item Addressing the issue of literacy
   \item Automating the expansion of the database
+  \item Units for metrics.
 \end{itemize}
 
 \newpage

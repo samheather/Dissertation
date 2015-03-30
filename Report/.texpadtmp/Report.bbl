@@ -174,6 +174,16 @@ DBPedia. (2014) The dbpedia ontology. Accessed: 2015-03-17. [Online].
   Available: \url{http://dbpedia.org/sparql}
 \BIBentrySTDinterwordspacing
 
+\bibitem{dataMiningStopWords}
+A.~Rajaraman and J.~D. Ullman, \emph{Mining of Massive Datasets}.\hskip 1em
+  plus 0.5em minus 0.4em\relax Cambridge University Press, 2012.
+
+\bibitem{dandelionNex}
+\BIBentryALTinterwordspacing
+datatxt-nex getting started. Accessed: 2015-03-25. [Online]. Available:
+  \url{https://dandelion.eu/docs/api/datatxt/nex/getting-started/}
+\BIBentrySTDinterwordspacing
+
 \bibitem{davis1989perceived}
 F.~D. Davis, ``Perceived usefulness, perceived ease of use, and user acceptance
   of information technology,'' \emph{MIS quarterly}, pp. 319--340, 1989.
@@ -182,6 +192,31 @@ F.~D. Davis, ``Perceived usefulness, perceived ease of use, and user acceptance
 \BIBentryALTinterwordspacing
 P.~community. (2015) Pypi - the python package index. Accessed: 2015-02-04.
   [Online]. Available: \url{https://pypi.python.org/pypi}
+\BIBentrySTDinterwordspacing
+
+\bibitem{pyMongoDoc}
+\BIBentryALTinterwordspacing
+Pymongo 3.0rc0 documentation. Accessed: 2015-03-26. [Online]. Available:
+  \url{https://api.mongodb.org/python/current/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{twilioCoverage}
+\BIBentryALTinterwordspacing
+Sms delivery reports and carrier acknowledgements - twilio. Accessed:
+  2015-03-28. [Online]. Available:
+  \url{https://www.twilio.com/sms/deliverability}
+\BIBentrySTDinterwordspacing
+
+\bibitem{plivoCoverage}
+\BIBentryALTinterwordspacing
+Plivo international sms coverage. Accessed: 2015-03-28. [Online]. Available:
+  \url{https://www.plivo.com/sms-api/coverage/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{usStateDepartmentListOfIndependentStates}
+\BIBentryALTinterwordspacing
+Independent states in the world. Accessed: 2015-03-28. [Online]. Available:
+  \url{http://www.state.gov/s/inr/rls/4250.htm}
 \BIBentrySTDinterwordspacing
 
 \end{thebibliography}

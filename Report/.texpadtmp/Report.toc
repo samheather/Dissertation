@@ -45,16 +45,16 @@
 \contentsline {paragraph}{Database Querying}{34}
 \contentsline {paragraph}{Creating HTTP Server and REST API}{34}
 \contentsline {paragraph}{Sending SMS}{34}
-\contentsline {section}{\numberline {6}Implementation}{36}
-\contentsline {section}{\numberline {7}Results}{37}
-\contentsline {section}{\numberline {8}Discussion}{38}
-\contentsline {section}{\numberline {9}Evaluation}{39}
-\contentsline {section}{\numberline {10}Extending this project}{40}
-\contentsline {section}{\numberline {11}Conclusion}{41}
-\contentsline {section}{\numberline {12}Appendix A - Personas}{44}
-\contentsline {subsection}{\numberline {12.1}Nanjala}{44}
-\contentsline {subsubsection}{\numberline {12.1.1}Demographics}{44}
-\contentsline {subsubsection}{\numberline {12.1.2}Average Day}{44}
-\contentsline {subsection}{\numberline {12.2}Cedric}{45}
-\contentsline {subsubsection}{\numberline {12.2.1}Demographics}{45}
-\contentsline {subsubsection}{\numberline {12.2.2}Average European Trip}{45}
+\contentsline {section}{\numberline {6}Implementation}{37}
+\contentsline {section}{\numberline {7}Results}{38}
+\contentsline {section}{\numberline {8}Discussion}{39}
+\contentsline {section}{\numberline {9}Evaluation}{40}
+\contentsline {section}{\numberline {10}Extending this project}{41}
+\contentsline {section}{\numberline {11}Conclusion}{42}
+\contentsline {section}{\numberline {12}Appendix A - Personas}{46}
+\contentsline {subsection}{\numberline {12.1}Nanjala}{46}
+\contentsline {subsubsection}{\numberline {12.1.1}Demographics}{46}
+\contentsline {subsubsection}{\numberline {12.1.2}Average Day}{46}
+\contentsline {subsection}{\numberline {12.2}Cedric}{47}
+\contentsline {subsubsection}{\numberline {12.2.1}Demographics}{47}
+\contentsline {subsubsection}{\numberline {12.2.2}Average European Trip}{47}
