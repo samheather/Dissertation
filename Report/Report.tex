@@ -488,6 +488,7 @@ The userCell is required at the output of the function to determine the number t
 
 \subsection{Language, Platform and Tools and Libraries}
 \subsubsection{Language}
+\label{section:designLanguage}
 The language Python has been selected to be the main language in project for four reasons:
 \begin{enumerate}
   \item Python is universally compatible and simple to execute.  Once the server application is written, it will be simple to migrate it between machines and adjust the application's configuration or environment.
@@ -645,6 +646,7 @@ MongoDB separates entities into collections but does not place restrictions on t
 MongoDB comes with a Python client called PyMongo\footnote{For more information: https://api.mongodb.org/python/current/}, which is developed by the same developers as MongoDB.  It is the recommended tool to interact with a MongoDB database~\cite{pyMongoDoc} and has good community support, so it will be used in this project.
 
 \myparagraph{Creating HTTP Server and REST API}
+\marginnote{write this}
 % TODO - write Creating HTTP Server.
 
 \myparagraph{Sending SMS}
@@ -656,7 +658,7 @@ There are a number of SMS providers with HTTP gateways available to choose from,
   \item The provider must have a 'good' reputation. User privacy is still an issue, since data is unencrypted when been sent over SMS, so the provider should be trustworthy. This is difficult to measure accurately, but one possible way of doing this is by looking at the number of significant clients a provider has.
 \end{itemize}
 
-Two services considered were that matched these criteria.  These were Twilio\footnote{Twilio website: https://www.twilio.com/} and Plivo\footnote{Plivo website: https://www.plivo.com/}. Both use REST API's for handling incoming messages and for sending responses. Both Twilio and Plivo have comparable coverage as well - Twilio state that they send and receive SMS with numbers in 198 countries~\cite{twilioCoverage}, and Plivo state that they support 207 countries~\cite{plivoCoverage} \footnote{This is referenced on a marketing page (https://www.plivo.com/twilio-alternative/) where Plivo compare their product to Twilio's, so is likely to be biased}. The difference is trivial, as the number of recognised independent states in the world is between 190 and 200 (depending on listing) - the US Government recognises 195~\cite{usStateDepartmentListOfIndependentStates}.
+Two services considered were that matched these criteria.  These were Twilio\footnote{Twilio website: https://www.twilio.com/} and Plivo\footnote{Plivo website: https://www.plivo.com/}. Both use REST API's for handling incoming messages and for sending responses. Both Twilio and Plivo have comparable coverage as well - Twilio state that they send and receive SMS with numbers in 198 countries~\cite{twilioCoverage}, and Plivo state that they support 207 countries~\cite{plivoCoverage}\footnote{This is referenced on a marketing page (https://www.plivo.com/twilio-alternative/) where Plivo compare their product to Twilio's, so is likely to be biased}. The difference is trivial, as the number of recognised independent states in the world is between 190 and 200 (depending on listing) - the US Government recognises 195~\cite{usStateDepartmentListOfIndependentStates}.
 
 With regard to reputation, for this project it was decided that Twilio is preferable to Plivo. Although it is difficult to measure reputation accurately, Twilio was founded in 2007 and has an group of clients including PayPal, Uber, Sprint and Airbnb, compared to Plivo, which was founded in 2011 and mainly works with entertainment companies.
 
@@ -664,6 +666,43 @@ With regard to reputation, for this project it was decided that Twilio is prefer
 \section{Implementation}
 \label{sec:implementation}
 {\bf This section will contain information on how data is stored, the structure of databases, and the format of and method through which data is sent to an SMS provider.}
+
+\subsection{Implementation Overview}
+As discussed in the Method and Requirements section, the implementation was completed whilst following the iterative development process. Software development took places in stages, which represented each iteration, and after each iteration a version of the software was demonstrated to Lilian Blot in a weekly meeting. In these meetings, the software's capabilities and success rate were discussed, and requirements were re-evaluated based on progress. Ideas for expansions to the software (for example, the Natural Language Processing, which was not in the original plan) were also discussed to get feedback.
+
+\subsection{Tools and services used}
+The following tools and services were used in the implementation:
+\begin{itemize}
+  \item Python was the programming language used in this project. This was due to a number of reasons, including that the author had experience with writing an application with some similar characteristics as those in this project. A full justification was given in section \ref{section:designLanguage}.
+  \item MongoDB version 2.6.6 was used as the database software in this project.
+  \item Both the application server and the database server were hosted on an Ubuntu version 14.10 "2 GB General Purpose v1" Linux server, hosted by Rackspace in London.
+  \item No integrated development environment (IDE) was used in the development of the server application. The author choose to use textural editors due to familiarity with them, and it was felt that the assistance provided by an IDE with managing modularity/abstraction/semantic checking would not be of significant benefit, bearing in mind the size of the server application.
+  
+  An IDE was used in the development of the client application (used during testing to reduce the use of expensive SMS). This was written in Objective-C for Mac, and created in the Xcode IDE, which is the industry standard\marginnote{cite?}.
+  \item The Twilio service was used to facilitate the SMS interface to the server application.
+  \item The Cortical and Dandelion API's were used for semantic analysis of text.
+\end{itemize}
+
+In addition, the following Python libraries from the Python Package Index\footnote{Python Package Index website: https://pypi.python.org/pypi} were used within the server application:
+\begin{itemize}
+    \item Greenlet~\cite{libraryGreenlet} - provides a notion of micro-threading (coroutines), which allows the server to process multiple HTTP requests at the same time.
+    \item gevent~\cite{libraryGevent} - a coroutine based networking library for Python.
+    \item gevent-websocket~\cite{libraryGeventWebsocket} - Handler for websockets for a Gevent server.
+    \item PyMongo~\cite{libraryPyMongo} - Python library containing tools to work with MongoDB databases.
+    \item wsaccel - NOT USED? \marginnote{check} %TODO - check
+    \item ujson~\cite{libraryUjson} - Twilio use JSON as the format for HTTP requests, so it makes sense to use it for all requests. ujson allows for effecient encoding and decoding of json to/from Python data structures.
+    \item Twilio - Twilio library used for receiving and sending SMS.
+    \item lxml~\cite{libraryLxml} - Used in the 'Wikipedia Utils' library, which handles interactions with the Wikipedia API. lxml is used for processing XML/HTML in Python.
+    \item Flask~\cite{libraryFlask} - a micro-framework for web applications, used for it's simple syntax for defining HTTP routes (URL's that trigger Python functions).
+    \item NumPy~\cite{libraryNumPy} - Numerical Python (numpy) is used for outlier detection in the rating system. It provides a function call for calculating the standard deviation of a set of numbers.
+    \item re - a Regular Expression matching library (built into Python) is used in the 'Wikipedia Utils' library, and in application code for converting CamelCase text to Snake case text.
+    \item Wikipedia Utils~\cite{libraryWikipediaUtils} - a library used for abstracting the Wikipedia API.
+\end{itemize}
+
+
+\subsection{Implementation of natural language processing module}
+In this section, a description of how the natural language processing module was implemented.
+% TODO - write this
 
 \newpage
 \section{Results}

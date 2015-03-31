@@ -181,7 +181,7 @@ A.~Rajaraman and J.~D. Ullman, \emph{Mining of Massive Datasets}.\hskip 1em
 \bibitem{dandelionNex}
 \BIBentryALTinterwordspacing
 datatxt-nex getting started. Accessed: 2015-03-25. [Online]. Available:
-  \url{https://dandelion.eu/docs/api/datatxt/nex/getting-started/}
+  \url{\url{https://dandelion.eu/docs/api/datatxt/nex/getting-started/}}
 \BIBentrySTDinterwordspacing
 
 \bibitem{davis1989perceived}
@@ -197,26 +197,64 @@ P.~community. (2015) Pypi - the python package index. Accessed: 2015-02-04.
 \bibitem{pyMongoDoc}
 \BIBentryALTinterwordspacing
 Pymongo 3.0rc0 documentation. Accessed: 2015-03-26. [Online]. Available:
-  \url{https://api.mongodb.org/python/current/}
+  \url{\url{https://api.mongodb.org/python/current/}}
 \BIBentrySTDinterwordspacing
 
 \bibitem{twilioCoverage}
 \BIBentryALTinterwordspacing
 Sms delivery reports and carrier acknowledgements - twilio. Accessed:
   2015-03-28. [Online]. Available:
-  \url{https://www.twilio.com/sms/deliverability}
+  \url{\url{https://www.twilio.com/sms/deliverability}}
 \BIBentrySTDinterwordspacing
 
 \bibitem{plivoCoverage}
 \BIBentryALTinterwordspacing
 Plivo international sms coverage. Accessed: 2015-03-28. [Online]. Available:
-  \url{https://www.plivo.com/sms-api/coverage/}
+  \url{\url{https://www.plivo.com/sms-api/coverage/}}
 \BIBentrySTDinterwordspacing
 
 \bibitem{usStateDepartmentListOfIndependentStates}
 \BIBentryALTinterwordspacing
 Independent states in the world. Accessed: 2015-03-28. [Online]. Available:
-  \url{http://www.state.gov/s/inr/rls/4250.htm}
+  \url{\url{http://www.state.gov/s/inr/rls/4250.htm}}
 \BIBentrySTDinterwordspacing
+
+\bibitem{libraryGreenlet}
+A.~Borzenkov, ``greenlet,'' \url{https://pypi.python.org/pypi/greenlet}, 2014,
+  accessed: 2015-03-30.
+
+\bibitem{libraryGevent}
+D.~Bilenko, ``gevent,'' \url{http://www.gevent.org/}, 2015, accessed:
+  2015-03-30.
+
+\bibitem{libraryGeventWebsocket}
+J.~Gelens, ``gevent-websocket,''
+  \url{https://pypi.python.org/pypi/gevent-websocket/}, 2015, accessed:
+  2015-03-30.
+
+\bibitem{libraryPyMongo}
+I.~MongoDB, ``Pymongo,'' \url{https://api.mongodb.org/python/current/}, 2015,
+  accessed: 2015-03-30.
+
+\bibitem{libraryUjson}
+J.~Tarnstrom, ``ujson,'' \url{https://pypi.python.org/pypi/ujson}, 2011,
+  accessed: 2015-03-30.
+
+\bibitem{libraryLxml}
+lxml open~source developers, ``lxml,'' \url{http://lxml.de/}, 2015, accessed:
+  2015-03-30.
+
+\bibitem{libraryFlask}
+F.~open~source developers, ``Flask,'' \url{http://flask.pocoo.org/}, 2014,
+  accessed: 2015-03-30.
+
+\bibitem{libraryNumPy}
+N.~open~source developers, ``Numpy,'' \url{http://www.numpy.org/}, 2015,
+  accessed: 2015-03-30.
+
+\bibitem{libraryWikipediaUtils}
+J.~Todd, ``Wikipedia utils,''
+  \url{https://classic.scraperwiki.com/scrapers/wikipedia_utils}, 2010,
+  accessed: 2015-03-30.
 
 \end{thebibliography}
