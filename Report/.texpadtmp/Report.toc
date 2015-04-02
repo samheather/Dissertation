@@ -52,16 +52,17 @@
 \contentsline {subsection}{\numberline {6.2}Tools and services used}{38}
 \contentsline {subsection}{\numberline {6.3}Implementation of natural language processing module}{39}
 \contentsline {subsection}{\numberline {6.4}Implementation of answer location system}{40}
-\contentsline {subsection}{\numberline {6.5}Implementation of rating and learning systme}{40}
-\contentsline {section}{\numberline {7}Results}{41}
-\contentsline {section}{\numberline {8}Discussion}{42}
-\contentsline {section}{\numberline {9}Evaluation}{43}
-\contentsline {section}{\numberline {10}Extending this project}{44}
-\contentsline {section}{\numberline {11}Conclusion}{45}
-\contentsline {section}{\numberline {12}Appendix A - Personas}{50}
-\contentsline {subsection}{\numberline {12.1}Nanjala}{50}
-\contentsline {subsubsection}{\numberline {12.1.1}Demographics}{50}
-\contentsline {subsubsection}{\numberline {12.1.2}Average Day}{50}
-\contentsline {subsection}{\numberline {12.2}Cedric}{51}
-\contentsline {subsubsection}{\numberline {12.2.1}Demographics}{51}
-\contentsline {subsubsection}{\numberline {12.2.2}Average European Trip}{51}
+\contentsline {subsection}{\numberline {6.5}Implementation of rating and learning systme}{41}
+\contentsline {subsection}{\numberline {6.6}Discussion of Implementation}{41}
+\contentsline {section}{\numberline {7}Results}{42}
+\contentsline {section}{\numberline {8}Discussion}{43}
+\contentsline {section}{\numberline {9}Evaluation}{44}
+\contentsline {section}{\numberline {10}Extending this project}{45}
+\contentsline {section}{\numberline {11}Conclusion}{46}
+\contentsline {section}{\numberline {12}Appendix A - Personas}{51}
+\contentsline {subsection}{\numberline {12.1}Nanjala}{51}
+\contentsline {subsubsection}{\numberline {12.1.1}Demographics}{51}
+\contentsline {subsubsection}{\numberline {12.1.2}Average Day}{51}
+\contentsline {subsection}{\numberline {12.2}Cedric}{52}
+\contentsline {subsubsection}{\numberline {12.2.1}Demographics}{52}
+\contentsline {subsubsection}{\numberline {12.2.2}Average European Trip}{52}

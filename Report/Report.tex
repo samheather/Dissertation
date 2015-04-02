@@ -680,6 +680,8 @@ With regard to reputation, for this project it was decided that Twilio is prefer
 \subsection{Implementation Overview}
 As discussed in the Method and Requirements section, the implementation was completed whilst following the iterative development process. Software development took places in stages, which represented each iteration, and after each iteration a version of the software was demonstrated to Lilian Blot in a weekly meeting. In these meetings, the software's capabilities and success rate were discussed, and requirements were re-evaluated based on progress. Ideas for expansions to the software (for example, the Natural Language Processing, which was not in the original plan) were also discussed to get feedback.
 
+The software has been constructed in a module manner to allow easy future expansion and modification.
+
 \subsection{Tools and services used}
 The following tools and services were used in the implementation:
 \begin{itemize}
@@ -722,13 +724,34 @@ The next step in the process is to identify the geographical entity that a user 
 The final step in the process is to identify the property that a user is requesting about the entity, for example, the height. This is done in the \texttt{stripToProperty()} function in the nlp module. This function identifies the property by assuming it will be the only text in the sentence with meaning, excluding the place name. As such, the first action of this function is to remove words relating to the name of the geographical entity been queried, which is does by checking each word in the question text against each word in the place string, and removing the word if they are equal. After this process, our example question will have been changed from \texttt{How tall is the Eiffel Tower} to \texttt{How tall is the?}. The next step is to remove meaningless words that do not identify the property that the user querying. These are stop words, such as \texttt{and, the, of}. As with removing words relating to the geographical entity, this is done by checking each word in the question text against a list of stop words and removing them if they match. In our above example, the question text will now be \texttt{tall}. This is the property determined to be the subject of a users' query.
 
 Having called both \texttt{extractEntities()} and \texttt{stripToProperty()}, the nlp module packages these results into a dictionary and returns them as the processed representation of the question text.
-% TODO XXX - write this
 
 \subsection{Implementation of answer location system}
+In this section, a description of the process followed to answer a question about a property of a geographical entity is described. 
+
+After having identified the place and the property of that place in the question (using the nlp module) the application must locate the value of that property for a place. This is done in the \texttt{sourceProcessor} module, which collates data from the data sources and then attempts to identify from those sources an answer to the users question.
+
+The entry point into \texttt{sourceProcessor} is the \texttt{findArgumentOnPage()} function, which takes the place name and the property been queried as input parameters. The first step of \texttt{findArgumentOnPage()} is to query the data sources for a dictionary of properties about the geographical entity, pulling down all information available on the entity in question. Interfaces to data sources are factored out into modules, such as \texttt{dbpediaParser} and \texttt{wikiPageParser}, which handle queries to these data sources and return the data to the application in a normalised form (a dictionary of keys and values about the geographical entity).
+
+After having retrieved list of properties about the entity, the application then iterates through the datasets (one dataset per source) checking the keys against the key in the question text. If any key in the keys for a dataset is an exact (case-insensitive) match, the value for that key is returned as the answer. Else, each key in the compared to the requested key for semantic relatedness. This tries to match key strings given in different contexts, and is useful in the case that a user asks a question using a different word to represent the property they require than the one in the data source. For example, in the question \texttt{How tall is the Eiffel tower?} the property string in this question is \texttt{tall}, whereas in the data source the key might appear as \texttt{height}. The word \texttt{tall} has a high semantic relatedness to the world \texttt{height}, which is measured by the \texttt{compare} module in the application. The \texttt{compare} module has a function \texttt{similarityOfProperty()}, which takes two strings as an input, and returns a value representing the semantic similarity of the two strings. % .......
+
+The \texttt{compare} also offers a selection of functions including 
+% also talk about issues with compare module, multiple services etc, here
+
+
 % TODO XXX - write this
 
 \subsection{Implementation of rating and learning systme}
 % TODO XXX - write this
+
+\subsection{Discussion of Implementation}
+% TODO XXX - write this
+ - Tweaking the constants for best results
+ - Excluding wikipedia due to dirty data
+Key issues:
+ - can't handle units
+ - sometimes wikipedia attaches other garbage
+ - can't do subjective stuff 'depth of the deepest ocean'
+ - can't do properties that are stored deep within the ontology.
 
 \newpage
 \section{Results}
