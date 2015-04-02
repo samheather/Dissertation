@@ -14,6 +14,11 @@ I was expecting a `,' or a `}'---line 85 of file ../mybib.bib
  :   Year = {2008},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 336 of file ../mybib.bib
+ :     
+ :     author = {Twilio},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -21,47 +26,48 @@ Warning--empty journal in community1948universal
 Warning--missing institution in Gov_Internet_Usage_UK_2014
 Warning--empty journal in kenny2011ethics
 Warning--empty journal in melby2006can
+Warning--all relevant fields are empty in libraryTwilio
 
 Done.
-You've used 43 entries,
+You've used 48 entries,
             4039 wiz_defined-function locations,
-            1464 strings with 21596 characters,
-and the built_in function-call counts, 19803 in all, are:
-= -- 1650
-> -- 295
+            1485 strings with 22086 characters,
+and the built_in function-call counts, 21584 in all, are:
+= -- 1797
+> -- 312
 < -- 61
-+ -- 155
-- -- 59
-* -- 768
-:= -- 3500
-add.period$ -- 97
-call.type$ -- 43
-change.case$ -- 61
++ -- 164
+- -- 63
+* -- 822
+:= -- 3818
+add.period$ -- 105
+call.type$ -- 48
+change.case$ -- 69
 chr.to.int$ -- 141
-cite$ -- 47
-duplicate$ -- 1562
-empty$ -- 1803
-format.name$ -- 67
-if$ -- 4365
+cite$ -- 53
+duplicate$ -- 1722
+empty$ -- 1985
+format.name$ -- 71
+if$ -- 4756
 int.to.chr$ -- 0
-int.to.str$ -- 43
-missing$ -- 341
-newline$ -- 196
-num.names$ -- 38
-pop$ -- 895
+int.to.str$ -- 48
+missing$ -- 379
+newline$ -- 211
+num.names$ -- 42
+pop$ -- 996
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1571
+skip$ -- 1722
 stack$ -- 0
-substring$ -- 393
-swap$ -- 1037
+substring$ -- 405
+swap$ -- 1124
 text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 43
-warning$ -- 4
-while$ -- 60
-width$ -- 45
-write$ -- 441
-(There was 1 error message)
+type$ -- 48
+warning$ -- 5
+while$ -- 64
+width$ -- 50
+write$ -- 481
+(There were 2 error messages)

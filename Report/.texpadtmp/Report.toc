@@ -45,19 +45,23 @@
 \contentsline {paragraph}{Database Querying}{35}
 \contentsline {paragraph}{Creating HTTP Server and REST API}{35}
 \contentsline {paragraph}{Sending SMS}{35}
+\contentsline {paragraph}{Semantic Analysis - Measuring semantic relatedness between texts}{37}
+\contentsline {paragraph}{Semantic Analysis - Discovering Named Entities in text}{37}
 \contentsline {section}{\numberline {6}Implementation}{38}
 \contentsline {subsection}{\numberline {6.1}Implementation Overview}{38}
 \contentsline {subsection}{\numberline {6.2}Tools and services used}{38}
 \contentsline {subsection}{\numberline {6.3}Implementation of natural language processing module}{39}
-\contentsline {section}{\numberline {7}Results}{40}
-\contentsline {section}{\numberline {8}Discussion}{41}
-\contentsline {section}{\numberline {9}Evaluation}{42}
-\contentsline {section}{\numberline {10}Extending this project}{43}
-\contentsline {section}{\numberline {11}Conclusion}{44}
-\contentsline {section}{\numberline {12}Appendix A - Personas}{48}
-\contentsline {subsection}{\numberline {12.1}Nanjala}{48}
-\contentsline {subsubsection}{\numberline {12.1.1}Demographics}{48}
-\contentsline {subsubsection}{\numberline {12.1.2}Average Day}{48}
-\contentsline {subsection}{\numberline {12.2}Cedric}{49}
-\contentsline {subsubsection}{\numberline {12.2.1}Demographics}{49}
-\contentsline {subsubsection}{\numberline {12.2.2}Average European Trip}{49}
+\contentsline {subsection}{\numberline {6.4}Implementation of answer location system}{40}
+\contentsline {subsection}{\numberline {6.5}Implementation of rating and learning systme}{40}
+\contentsline {section}{\numberline {7}Results}{41}
+\contentsline {section}{\numberline {8}Discussion}{42}
+\contentsline {section}{\numberline {9}Evaluation}{43}
+\contentsline {section}{\numberline {10}Extending this project}{44}
+\contentsline {section}{\numberline {11}Conclusion}{45}
+\contentsline {section}{\numberline {12}Appendix A - Personas}{50}
+\contentsline {subsection}{\numberline {12.1}Nanjala}{50}
+\contentsline {subsubsection}{\numberline {12.1.1}Demographics}{50}
+\contentsline {subsubsection}{\numberline {12.1.2}Average Day}{50}
+\contentsline {subsection}{\numberline {12.2}Cedric}{51}
+\contentsline {subsubsection}{\numberline {12.2.1}Demographics}{51}
+\contentsline {subsubsection}{\numberline {12.2.2}Average European Trip}{51}

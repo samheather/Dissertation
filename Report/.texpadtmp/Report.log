@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.20)  31 MAR 2015 23:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.20)  2 APR 2015 14:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -762,31 +762,56 @@ Package marginnote Info: right page because not two side mode on input line 651
 .
 Package marginnote Info: xpos seems to be 134.26999pt,
 (marginnote)             \marginnoterightadjust ignored on input line 651.
- [35] [36] [37]
-Overfull \hbox (14.10641pt too wide) in paragraph at lines 668--669
+ [35] [36]
+Package marginnote Info: Margin note 37.1 is on absolute page 37
+(marginnote)              on input line 669.
+Package marginnote Info: right page because not two side mode on input line 669
+.
+Package marginnote Info: xpos seems to be 136.76999pt,
+(marginnote)             \marginnoterightadjust ignored on input line 669.
+Package marginnote Info: Margin note 37.2 is on absolute page 37
+(marginnote)              on input line 674.
+Package marginnote Info: right page because not two side mode on input line 674
+.
+Package marginnote Info: xpos seems to be 136.76999pt,
+(marginnote)             \marginnoterightadjust ignored on input line 674.
+ [37]
+Overfull \hbox (14.10641pt too wide) in paragraph at lines 678--679
 \OT1/ptm/b/n/10 This sec-tion will con-tain in-for-ma-tion on how data is store
 d, the struc-ture of databases,
  []
 
 Package marginnote Info: Margin note 38.1 is on absolute page 38
-(marginnote)              on input line 681.
-Package marginnote Info: right page because not two side mode on input line 681
+(marginnote)              on input line 691.
+Package marginnote Info: right page because not two side mode on input line 691
 .
 Package marginnote Info: xpos seems to be 425.59752pt,
-(marginnote)             \marginnoterightadjust ignored on input line 681.
+(marginnote)             \marginnoterightadjust ignored on input line 691.
 [38]
-Overfull \hbox (6.61691pt too wide) in paragraph at lines 691--692
-[]\OT1/ptm/m/n/10 PyMongo [38] - Python li-brary con-tain-ing tools to work wit
+Overfull \hbox (6.61691pt too wide) in paragraph at lines 701--702
+[]\OT1/ptm/m/n/10 PyMongo [42] - Python li-brary con-tain-ing tools to work wit
 h Mon-goDB databases. 
  []
 
 Package marginnote Info: Margin note 39.1 is on absolute page 39
-(marginnote)              on input line 693.
-Package marginnote Info: right page because not two side mode on input line 693
+(marginnote)              on input line 703.
+Package marginnote Info: right page because not two side mode on input line 703
 .
 Package marginnote Info: xpos seems to be 254.94931pt,
-(marginnote)             \marginnoterightadjust ignored on input line 693.
-[39] [40] [41] [42] [43] [44]
+(marginnote)             \marginnoterightadjust ignored on input line 703.
+
+Overfull \hbox (65.24852pt too wide) in paragraph at lines 720--721
+\OT1/ptm/m/n/10 (place) by sim-ply check-ing each key-word for the type \OT1/pc
+r/m/n/10 http://dbpedia.org/ontology/Place
+ []
+
+
+Overfull \hbox (2.35794pt too wide) in paragraph at lines 720--721
+\OT1/ptm/m/n/10 in the types as-so-ci-ated with each key-word. This is done by 
+the \OT1/pcr/m/n/10 extractEntities()
+ []
+
+[39] [40] [41] [42] [43] [44] [45]
 (/Users/Samuel/Documents/University/Project/Report/.texpadtmp/Report.bbl
 ** WARNING: IEEEtran.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
@@ -812,7 +837,7 @@ Missing character: There is no ¼ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
-[45]
+[46]
 Underfull \hbox (badness 1173) in paragraph at lines 136--139
 []\OT1/ptm/m/n/10 K. Beck, M. Bee-dle, A. van Ben-nekum, A. Cock-burn, W. Cun-n
 ing-ham,
@@ -828,37 +853,54 @@ Underfull \hbox (badness 1142) in paragraph at lines 146--150
 \OT1/ptm/m/n/10 mod-els - ad-van-tages and dis-ad-van-tages. Ac-cessed: 2015-
  []
 
-[46]) [47] [48] [49] [50] [51] [52] [53]
-Overfull \hbox (34.80664pt too wide) in paragraph at lines 831--903
+[47]
+Underfull \hbox (badness 10000) in paragraph at lines 227--231
+[]\OT1/ptm/m/n/10 Cortical, ``Cor-ti-cal com-pare api,'' $http : / / www . cort
+ical . io / developers[]
+ []
+
+
+Underfull \hbox (badness 3460) in paragraph at lines 227--231
+\OT1/ptm/m/n/10 apidocumentation . html$, 2015, ac-cessed: 2015-03-31. On the r
+ef-er-enced
+ []
+
+
+Overfull \hbox (3.70628pt too wide) in paragraph at lines 237--239
+[]\OT1/ptm/m/n/10 ------, ``Named en-tity ex-trac-tion api,'' https://dandelion
+.eu/docs/api/datatxt/nex/v1/,
+ []
+
+[48]) [49] [50] [51] [52] [53] [54] [55]
+Overfull \hbox (34.80664pt too wide) in paragraph at lines 855--927
 [][] 
  []
 
-[54] (/Users/Samuel/Documents/University/Project/Report/.texpadtmp/Report.aux) 
+[56] (/Users/Samuel/Documents/University/Project/Report/.texpadtmp/Report.aux) 
 ) 
 Here is how much of TeX's memory you used:
- 7575 strings out of 493117
- 104926 string characters out of 6135432
- 191122 words of memory out of 5000000
- 10849 multiletter control sequences out of 15000+600000
- 42376 words of font info for 102 fonts, out of 8000000 for 9000
+ 7586 strings out of 493117
+ 105133 string characters out of 6135432
+ 191202 words of memory out of 5000000
+ 10859 multiletter control sequences out of 15000+600000
+ 42891 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,16n,42p,1418b,1087s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{/u
-sr/local/texlive/2014/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{/usr/l
-ocal/texlive/2014/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{/usr/local
-/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2014/t
-exmf-dist/fonts/type1/public/mnsymbol/MnSymbol10.pfb></usr/local/texlive/2014/t
-exmf-dist/fonts/type1/public/mnsymbol/MnSymbol7.pfb></usr/local/texlive/2014/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014/tex
-mf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2014/texmf-dist/
-fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type
-1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/time
-s/utmri8a.pfb>
+sr/local/texlive/2014/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{/usr/l
+ocal/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/20
+14/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol10.pfb></usr/local/texlive/20
+14/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol7.pfb></usr/local/texlive/201
+4/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014
+/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2014/texmf-d
+ist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/
+type1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/
+times/utmri8a.pfb>
 Output written on /Users/Samuel/Documents/University/Project/Report/.texpadtmp/
-Report.pdf (54 pages, 1267193 bytes).
+Report.pdf (56 pages, 1271520 bytes).
 PDF statistics:
- 228 PDF objects out of 1000 (max. 8388607)
- 149 compressed objects within 2 object streams
+ 232 PDF objects out of 1000 (max. 8388607)
+ 151 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
