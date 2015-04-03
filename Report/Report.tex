@@ -669,6 +669,16 @@ With regard to reputation, for this project it was decided that Twilio is prefer
 
 \myparagraph{Semantic Analysis - Discovering Named Entities in text}
 \label{sec:choosingNamedEntityExtractionApi}
+
+A named entity extraction tool was required to establish the geographical entity ('place') in a users' question. The requirements of the tool were:
+\begin{itemize}
+  \item Accepts a string of text and returns a list of keywords representing the place.
+  \item Keywords are categorised by a group classes, allowing for differentiation between a keyword representing a place, concept or person.
+  \item Accessible via a HTTP REST API for ease of implementation (fulfilling functional system requirement \ref{requirement:easyToImplement} in section \ref{subsubsec:systemRequirementsFunctional}).
+\end{itemize}
+
+During initial research, two keyword extraction API's were discovered, the Cortical Keyword Extraction API~\cite{serviceCorticalNex} and the Dandelion Named Entity Extraction API~\cite{serviceDandelionNex}.
+
 \marginnote{write this}
 % TODO XXX - write choosing NEX API
 
@@ -732,13 +742,17 @@ After having identified the place and the property of that place in the question
 
 The entry point into \texttt{sourceProcessor} is the \texttt{findArgumentOnPage()} function, which takes the place name and the property been queried as input parameters. The first step of \texttt{findArgumentOnPage()} is to query the data sources for a dictionary of properties about the geographical entity, pulling down all information available on the entity in question. Interfaces to data sources are factored out into modules, such as \texttt{dbpediaParser} and \texttt{wikiPageParser}, which handle queries to these data sources and return the data to the application in a normalised form (a dictionary of keys and values about the geographical entity).
 
-After having retrieved list of properties about the entity, the application then iterates through the datasets (one dataset per source) checking the keys against the key in the question text. If any key in the keys for a dataset is an exact (case-insensitive) match, the value for that key is returned as the answer. Else, each key in the compared to the requested key for semantic relatedness. This tries to match key strings given in different contexts, and is useful in the case that a user asks a question using a different word to represent the property they require than the one in the data source. For example, in the question \texttt{How tall is the Eiffel tower?} the property string in this question is \texttt{tall}, whereas in the data source the key might appear as \texttt{height}. The word \texttt{tall} has a high semantic relatedness to the world \texttt{height}, which is measured by the \texttt{compare} module in the application. The \texttt{compare} module has a function \texttt{similarityOfProperty()}, which takes two strings as an input, and returns a value representing the semantic similarity of the two strings. % .......
+After having retrieved a list of properties about the entity, the application then iterates through the datasets (one dataset per source) checking the keys against the key in the question text. If any key in the keys for a dataset is an exact (case-insensitive) match, the value for that key is returned as the answer. Else, each key in the compared to the requested key for semantic relatedness. This tries to match key strings given in different contexts, and is useful in the case that a user asks a question using a different word to represent the property they require than the one in the data source. After having compared each key to the property given by the user, the key with the highest semantic similarity is returned. 
 
-The \texttt{compare} also offers a selection of functions including 
+An example of where the semantic comparison and matching of keys is useful is in the question \texttt{How tall is the Eiffel tower?}, where the property string is \texttt{tall}, and in the data source the key might appear as \texttt{height}. The word \texttt{tall} has a high semantic relatedness to the word \texttt{height}, so the value for \texttt{height} will most likely be returned (unless another key with higher semantic similarity is found).
+
+This semantic comparison is done by the the \texttt{compare} module, which has a function \texttt{similarityOfProperty()}. This function takes two strings as an input, and returns a value representing the semantic similarity of the two strings. Two services are used for the semantic comparison: The Cortical~\cite{serviceCorticalSim} and Dandelion~\cite{serviceDandelionSim} similarity API's. Both of these 
+
+The Cortical API is not configured for recognising text in CamelCase, so helper functions such as \texttt{camelCaseToSnakeCase} and \texttt{camelCaseToSpace} are also included for converting CamelCase to either Snake Case or space-separated words.
+
+% TODO XXX - explain why had to use both, explain why using both is bad
 % also talk about issues with compare module, multiple services etc, here
-
-
-% TODO XXX - write this
+\bf{explain why had to use both, explain why using both is bad}
 
 \subsection{Implementation of rating and learning systme}
 % TODO XXX - write this
