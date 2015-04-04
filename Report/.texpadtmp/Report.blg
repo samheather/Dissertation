@@ -29,45 +29,45 @@ Warning--empty journal in melby2006can
 Warning--all relevant fields are empty in libraryTwilio
 
 Done.
-You've used 48 entries,
+You've used 51 entries,
             4039 wiz_defined-function locations,
-            1485 strings with 22086 characters,
-and the built_in function-call counts, 21584 in all, are:
-= -- 1797
-> -- 312
+            1500 strings with 22535 characters,
+and the built_in function-call counts, 22707 in all, are:
+= -- 1892
+> -- 324
 < -- 61
-+ -- 164
-- -- 63
-* -- 822
-:= -- 3818
-add.period$ -- 105
-call.type$ -- 48
-change.case$ -- 69
++ -- 170
+- -- 66
+* -- 854
+:= -- 4028
+add.period$ -- 112
+call.type$ -- 51
+change.case$ -- 75
 chr.to.int$ -- 141
-cite$ -- 53
-duplicate$ -- 1722
-empty$ -- 1985
-format.name$ -- 71
-if$ -- 4756
+cite$ -- 56
+duplicate$ -- 1818
+empty$ -- 2094
+format.name$ -- 74
+if$ -- 4999
 int.to.chr$ -- 0
-int.to.str$ -- 48
-missing$ -- 379
-newline$ -- 211
-num.names$ -- 42
-pop$ -- 996
+int.to.str$ -- 51
+missing$ -- 403
+newline$ -- 222
+num.names$ -- 45
+pop$ -- 1062
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1722
+skip$ -- 1812
 stack$ -- 0
-substring$ -- 405
-swap$ -- 1124
+substring$ -- 413
+swap$ -- 1178
 text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 48
+type$ -- 51
 warning$ -- 5
-while$ -- 64
-width$ -- 50
-write$ -- 481
+while$ -- 67
+width$ -- 53
+write$ -- 508
 (There were 2 error messages)

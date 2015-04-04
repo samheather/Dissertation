@@ -200,6 +200,31 @@ Pymongo 3.0rc0 documentation. Accessed: 2015-03-26. [Online]. Available:
   \url{https://api.mongodb.org/python/current/}
 \BIBentrySTDinterwordspacing
 
+\bibitem{eby2010python}
+P.~J. Eby, ``Python web server gateway interface v1.0.1,'' 2010, this document
+  is informally known as PEP 3333, based on it's PEP number.
+
+\bibitem{libraryFlask}
+F.~open~source developers, ``Flask,'' http://flask.pocoo.org/, 2014, accessed:
+  2015-03-30.
+
+\bibitem{libraryWerkzeug}
+A.~Ronacher, ``Werkzeug,'' http://werkzeug.pocoo.org/community/, 2015,
+  accessed: 2015-03-31.
+
+\bibitem{libraryGevent}
+D.~Bilenko, ``gevent,'' http://www.gevent.org/, 2015, accessed: 2015-03-30.
+
+\bibitem{geventImplementingServers}
+\BIBentryALTinterwordspacing
+------. Implementing servers. Accessed: 2015-04-3. [Online]. Available:
+  \url{http://www.gevent.org/servers.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{libraryGreenlet}
+A.~Borzenkov, ``greenlet,'' https://pypi.python.org/pypi/greenlet, 2014,
+  accessed: 2015-03-30.
+
 \bibitem{twilioCoverage}
 \BIBentryALTinterwordspacing
 Sms delivery reports and carrier acknowledgements - twilio. Accessed:
@@ -219,6 +244,16 @@ Independent states in the world. Accessed: 2015-03-28. [Online]. Available:
   \url{http://www.state.gov/s/inr/rls/4250.htm}
 \BIBentrySTDinterwordspacing
 
+\bibitem{serviceCorticalNex}
+Cortical, ``Cortical keyword extraction api,''
+  \url{http://www.cortical.io/developers_apidocumentation.html}, 2015,
+  accessed: 2015-03-31. On the referenced page, click "Text", then
+  "/text/keywords" for the Keyword Extraction API.
+
+\bibitem{serviceDandelionNex}
+SpazioDati, ``Named entity extraction api,''
+  https://dandelion.eu/docs/api/datatxt/nex/v1/, 2015, accessed: 2015-03-31.
+
 \bibitem{serviceTwilio}
 Twilio, ``Twilio sms service service,'' https://www.twilio.com/sms, 2015,
   accessed: 2015-03-31.
@@ -233,21 +268,6 @@ Cortical, ``Cortical compare api,''
 SpazioDati, ``Text similarity api,''
   https://dandelion.eu/docs/api/datatxt/sim/v1/, 2015, accessed: 2015-03-31.
 
-\bibitem{serviceDandelionNex}
-------, ``Named entity extraction api,''
-  https://dandelion.eu/docs/api/datatxt/nex/v1/, 2015, accessed: 2015-03-31.
-
-\bibitem{libraryGreenlet}
-A.~Borzenkov, ``greenlet,'' https://pypi.python.org/pypi/greenlet, 2014,
-  accessed: 2015-03-30.
-
-\bibitem{libraryGevent}
-D.~Bilenko, ``gevent,'' http://www.gevent.org/, 2015, accessed: 2015-03-30.
-
-\bibitem{libraryGeventWebsocket}
-J.~Gelens, ``gevent-websocket,''
-  https://pypi.python.org/pypi/gevent-websocket/, 2015, accessed: 2015-03-30.
-
 \bibitem{libraryPyMongo}
 I.~MongoDB, ``Pymongo,'' https://api.mongodb.org/python/current/, 2015,
   accessed: 2015-03-30.
@@ -261,10 +281,6 @@ J.~Tarnstrom, ``ujson,'' https://pypi.python.org/pypi/ujson, 2011, accessed:
 
 \bibitem{libraryLxml}
 lxml open~source developers, ``lxml,'' http://lxml.de/, 2015, accessed:
-  2015-03-30.
-
-\bibitem{libraryFlask}
-F.~open~source developers, ``Flask,'' http://flask.pocoo.org/, 2014, accessed:
   2015-03-30.
 
 \bibitem{libraryNumPy}

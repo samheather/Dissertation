@@ -76,6 +76,11 @@ This project raises ethical issues relating to the responsibility of providing a
 \section*{Statement of Ethics}
 % TODO write this
 {\bf Pretty much the most important part - write this!}
+ - data protection - users information irreversibly obscured and protected in the database to protect them in case of database hack.
+ - data protection - supervisor had root password to the server.
+ - experiment - participants were asked to sign consent forms, these were stored with supervisor.
+ - after experient, all participants were anonymised by a unique participant id, and the only mapping of these to names is the consent form, which the supervisor has
+ - ethics of providing information - steps taken to try and prevent wrong info been returned
 
 \newpage
 \section*{Acknowledgement}
@@ -646,8 +651,13 @@ MongoDB separates entities into collections but does not place restrictions on t
 MongoDB comes with a Python client called PyMongo\footnote{For more information: https://api.mongodb.org/python/current/}, which is developed by the same developers as MongoDB.  It is the recommended tool to interact with a MongoDB database~\cite{pyMongoDoc} and has good community support, so it will be used in this project.
 
 \myparagraph{Creating HTTP Server and REST API}
-\marginnote{write this}
-% TODO XXX - write Creating HTTP Server.
+The application needs to have an HTTP interface to allow interactions with it via SMS.  As a result of the non-functional requirement "The system behind the SMS gateway must respond in a timely manner" in section \ref{subsubsec:systemRequirementsNonFunctional}, the application will need to be able to process multiple HTTP requests concurrently to prevent requests queueing up and responses been significantly delayed.
+
+To create an HTTP Interface, the latest Web Server Gateway Interface (WSGI) specification (version 1.0.1, published as PEP 3333)~\cite{eby2010python} will be followed as it is the industry standard \marginnote{Reference this? (industry standard)}. The WSGI specification describes a general interface between web servers and web applications or frameworks (such as Twilio) in the Python language, thus describing how the web server should be constructed.
+
+In this project, two tools are needed: a WSGI server, and a framework for writing WSGI applications. Flask will be used for the framework as the author has extensive experience using it and it is 100\% compliant with the WSGI standard~\cite{libraryFlask}\footnote{100\% compliant according to the Flask product website.}.
+
+With respect to the WSGI server, many implementations exist such as a simple WSGI server included in Flask~\cite{libraryFlask} called Werkzeug~\cite{libraryWerkzeug}, and the Gevent WSGI server~\cite{libraryGevent}.  Support for multiple concurrent HTTP connections is not a requirement in the WSGI specification, and so some WSGI servers such as the implementation of Werkzeug in Flask do not support this\footnote{Werkzeug does support processing multiple HTTP requests concurrently by specifically enabling threading and increasing the default maximum number of processes from one (as described in the documentation at: http://werkzeug.pocoo.org/docs/0.10/serving/ [accessed: 4th April 2015]). However, the implementation of Werkzeug in Flask has these disabled in the source code because Flask uses thread-local storage (memory that is local to a single thread) and so can not support concurrent HTTP requests on new threads. This is stated on the Flask website at http://flask.pocoo.org/docs/0.10/design/\#thread-locals [accessed: 4th April 2015].}. Gevent does support concurrent HTTP connections~\cite{geventImplementingServers}\footnote{Gevent using the Greenlet library~\cite{libraryGreenlet}, which provides a notion of micro-threading (coroutines). When a new HTTP request is received, Gevent creates a new Greenlet, thus preventing the main thread been blocked and allowing multiple concurrent HTTP requests. The creation of the Greenlet is described in the preceeding reference(\cite{geventImplementingServers}).}, and so will be used in this project.
 
 \myparagraph{Sending SMS}
 There are a number of SMS providers with HTTP gateways available to choose from, all of which are similar. For this project, the provider must match the following criteria:
@@ -671,16 +681,17 @@ With regard to reputation, for this project it was decided that Twilio is prefer
 \label{sec:choosingNamedEntityExtractionApi}
 
 A named entity extraction tool was required to establish the geographical entity ('place') in a users' question. The requirements of the tool were:
-\begin{itemize}
+\begin{enumerate}
   \item Accepts a string of text and returns a list of keywords representing the place.
-  \item Keywords are categorised by a group classes, allowing for differentiation between a keyword representing a place, concept or person.
+  \item \label{nexRequirement:categoriseKeyword} Keywords are categorised by a group classes, allowing for differentiation between a keyword representing a place, concept or person.
   \item Accessible via a HTTP REST API for ease of implementation (fulfilling functional system requirement \ref{requirement:easyToImplement} in section \ref{subsubsec:systemRequirementsFunctional}).
-\end{itemize}
+\end{enumerate}
 
-During initial research, two keyword extraction API's were discovered, the Cortical Keyword Extraction API~\cite{serviceCorticalNex} and the Dandelion Named Entity Extraction API~\cite{serviceDandelionNex}.
+During initial research, two keyword extraction API's were discovered, the Cortical Keyword Extraction API~\cite{serviceCorticalNex} and the Dandelion Named Entity Extraction API~\cite{serviceDandelionNex}. However, the Cortical API does not fulfill requirement \ref{nexRequirement:categoriseKeyword}, simply returning a list of keywords. In comparison the Dandelion API returns a complex data structure which includes a list of DBPedia classes that the keyword is an instance of.
 
-\marginnote{write this}
-% TODO XXX - write choosing NEX API
+Research was done to identify a way of using the Cortical API to extract keywords and subsequently categorising the keywords after they have been been identified, however as there was no significant benefit of the Cortical API over the Dandelion API this was quickly discounted and the Dandelion API choosen.
+
+Results from the Dandelion API were checked against the \texttt{Place} class in the DBPedia Ontology by checking their \texttt{types} list (a list of DBPedia classes that the keyword fits into) for the string \texttt{http://dbpedia.org/ontology/Place}.
 
 \newpage
 \section{Implementation}
@@ -706,20 +717,18 @@ The following tools and services were used in the implementation:
 \end{itemize}
 
 In addition, the following Python libraries from the Python Package Index\footnote{Python Package Index website: https://pypi.python.org/pypi} were used within the server application:
-\begin{itemize}
-    \item Greenlet~\cite{libraryGreenlet} - provides a notion of micro-threading (coroutines), which allows the server to process multiple HTTP requests at the same time.
-    \item gevent~\cite{libraryGevent} - a coroutine based networking library for Python.
-    \item gevent-websocket~\cite{libraryGeventWebsocket} - Handler for websockets for a Gevent server.
+\begin{enumerate}
+    \item Greenlet~\cite{libraryGreenlet} - provides a notion of micro-threading (coroutines), which allows the server to process multiple HTTP requests concurrently.
+    \item gevent~\cite{libraryGevent} \label{librariesUsed:gevent} - a coroutine based networking library for Python. Gevent provides a Web Server Gateway Interface (WSGI) server that supports processing multiple requests concurrently, using Greenlet.
     \item PyMongo~\cite{libraryPyMongo} - Python library containing tools to work with MongoDB databases.
-    \item wsaccel - NOT USED? \marginnote{check} %TODO - check
     \item ujson~\cite{libraryUjson} - Twilio use JSON as the format for HTTP requests, so it makes sense to use it for all requests. ujson allows for effecient encoding and decoding of json to/from Python data structures.
     \item Twilio~\cite{libraryTwilio} - Twilio library used for receiving and sending SMS.
     \item lxml~\cite{libraryLxml} - Used in the 'Wikipedia Utils' library, which handles interactions with the Wikipedia API. lxml is used for processing XML/HTML in Python.
-    \item Flask~\cite{libraryFlask} - a micro-framework for web applications, used for it's simple syntax for defining HTTP routes (URL's that trigger Python functions).
+    \item Flask~\cite{libraryFlask} - a micro-framework for web applications, used for it's simple syntax for defining HTTP routes (URL's that trigger Python functions). Flask also comes with a WSGI server, but it does not support processing multiple HTTP requests concurrently, so it is replaced with the Gevent WSGI server in point \ref{librariesUsed:gevent}.
     \item NumPy~\cite{libraryNumPy} - Numerical Python (numpy) is used for outlier detection in the rating system. It provides a function call for calculating the standard deviation of a set of numbers.
-    \item re - a Regular Expression matching library (built into Python) is used in the 'Wikipedia Utils' library, and in application code for converting CamelCase text to Snake case text.
+    \item re - a Regular Expression matching library (built into Python) which is used in the 'Wikipedia Utils' library, and in application code for converting CamelCase text to Snake case text.
     \item Wikipedia Utils~\cite{libraryWikipediaUtils} - a library used for abstracting the Wikipedia API.
-\end{itemize}
+\end{enumerate}
 
 
 \subsection{Implementation of natural language processing module}
