@@ -411,10 +411,10 @@ Non-functional requirements are listed in table \ref{table:nonFunctionalRequirem
     \hline
     Non-Functional Requirement & Fit Criterion \\ \hline
     The system behind the SMS gateway must respond in a timely manner.  & From an SMS been received, a response must be sent within 20 seconds.  SMS transmission times on the cellular network and gateway are out of the control of this project, so are not accounted for. \\ \hline
-    The answers returned must be of high quality.  & In testing, the system returns the requested information for at least 80\% of queries. \\ \hline
-    Answers that are consistently rated poorly are no returned in fewer cases.  & {\bf to determine later} \\ \hline %TODO determine fit criterion.
-    Instructions to use the service should be clear and concise, with no ambiguity.  & {\bf to determine later - may not keep this} \\ \hline %TODO determine fit criterion / delete this
-    The system should accept and be able to process questions in natural human language as opposed to a delimited message. & {\bf to determine later} \\ \hline %TODO determine fit criterion / delete this
+    The answers returned must be of high quality.  & In testing, the system returns the correct information for at least 90\% of queries initially (before learning starts) if an answer is returned at-all. \\ \hline
+    Answers that are consistently rated poorly are are less likely to be returned. & In testing, after receiving a small number of negative ratings for an answer, a different answer is returned. \\ \hline
+    Instructions to use the service should be clear and concise, with no ambiguity.  & In testing, having explained the purpose of the system, a user should be able to use the system with just the help information, without needing to ask for assistance. \\ \hline  
+    The system should accept and be able to process questions in natural human language as opposed to a delimited message. & In testing, a user should be able to use the system for general questions without having had a syntax explained to them. \\ \hline
     \end{tabular}
     \caption{List of non-functional requirements and their Fit Criteria.}
     \label{table:nonFunctionalRequirementsFitCrit}
@@ -498,7 +498,7 @@ The language Python has been selected to be the main language in project for fou
 \begin{enumerate}
   \item Python is universally compatible and simple to execute.  Once the server application is written, it will be simple to migrate it between machines and adjust the application's configuration or environment.
   \item Python is commonly used and has significant community support in the form of libraries for all the tools that will be used in this project (for example, libraries for querying common databases and for sending text messages).  This is useful as it will prevent the author spending time implementing common functionality like database calls.
-  \item Python is an extremely flexible language in which it is easy to implement applications of this type without syntax issues.  This fulfils the requirement (\ref{subsubsec:systemRequirementsFunctional} point \ref{requirement:easyToImplement}) that the application is easy and quick to implement.
+  \item Python is an extremely flexible language in which it is easy to implement applications of this type without syntax issues.  This fulfils the system requirement in section (\ref{subsubsec:systemRequirementsFunctional}, point \ref{requirement:easyToImplement}) that the application is easy and quick to implement.
   \item The author has significant expertise in the language, as does Lilian Blot (dissertation Supervisor).
 \end{enumerate}
 
@@ -518,7 +518,7 @@ As previously stated, the interface to the application will be over the SMS plat
 There are three tables of data that need to be stored.  These are the tables for user profiles (to allow the application to handle queries that make use of 'state' with users), for the machine learning of question-answer quality, and for an initial intelligence that a new deployment of the application starts with.  Both the conceptual data model and the logical database design are now presented.
 
 \myparagraph{Conceptual Data Model}
-% TODO - write conceptual database model
+% TODO --- - write conceptual database model
 There are five entities in the conceptual data model for this project.  These are:
 
 \begin{itemize}
@@ -674,13 +674,30 @@ With regard to reputation, for this project it was decided that Twilio is prefer
 
 \myparagraph{Semantic Analysis - Measuring semantic relatedness between texts}
 \label{sec:choosingSemanticAnalysisApi}
-\marginnote{write this}
-% TODO - write choosing compare API
+Semantic comparison of text will be used for two purposes within the project: to match keywords from datasources (for example, if a user asks \texttt{how tall} something is, the property \texttt{height} would be appropriate to return; and to match questions with identical meaning to each other to save the application doing a full analysis of the data sources again. The requirements for these use-cases are different: for the former the tools needs to compare pairs of either single words or short strings or words for semantic similiarity; and for the latter the tool needs to be able to compare full sentences for semantic similarity.
+
+Semantic similarity is a measure of how semantically alike entities are in their meaning (for example, \texttt{bank} and \texttt{trust company})~\cite{Budanitsky:2006:EWM:1168106.1168108}. A more general measure exists, called Semantic Relatedness. Whereas semantic similarity compares entities by their meaning, entities may be semantically related by additional lexical relationships such as antonymy (the opposite of an entity, for example, tall-short) and meronymy (entities that are a part of another entity, for example, \texttt{car} and \texttt{wheel})\marginnote{should I give definitions in the footnotes?}~\cite{Budanitsky:2006:EWM:1168106.1168108}. Both use-cases in this application will be using semantic similarity as semantic relatedness is too general. An example using the datasource keyword matching usecase is that using semantic relatedness, the word \texttt{tall} would be related to \texttt{width} as well as the target word of \texttt{height} as a result of antonymy, potentially cluttering results. In the second use-case, consider a highly rated question in the database of \texttt{What is the population of England?} and then the question of \texttt{What is the population of London?} been processed. London is a part of England, so there is the potential for the population of England to be returned instead of the population of London.
+\marginnote{cite the above, use quotation marks?}
+% Cite the above
+
+A key requirement for the algorithm and method used to compute semantic similarity is that it can be done so in compliance with the system requirement in section (\ref{subsubsec:systemRequirementsFunctional}, point \ref{requirement:easyToImplement}) - that the system is easy to implement. A number of algorithms were discovered for calculating semantic similarity based on the WordNet lexical database~\cite{wordNet}, such as the Leacock–Chodorow~\cite{leacock1998combining} and Resnik~\cite{resnik1995using} algorithms. Although mathematical representations of the algorithms are published, to fulfil the aforementioned requirement a pre-implemented semantic comparison tool is needed. Both of the Leacock–Chodorow and Resnik algorithms are available in a Perl package as part of a 
+
+% Introduce hirst and leacock, categorise
+% introduce some semantic similarity algorith,s
+% explain most implementations were not available in python, difficult to port, too time consuming to implement myself
+% so looked for an online service / api that would be compatible with python app. rest API
+% found Dandelion and Cortical
+% Cortical good for comparing single words (so was used)
+% dandelion has bow, can switch to semantic similarity (so was used)
+
+
+An issue arose whilst considering these algorithms 
+% TODO --- - write choosing compare API
 
 \myparagraph{Semantic Analysis - Discovering Named Entities in text}
 \label{sec:choosingNamedEntityExtractionApi}
 
-A named entity extraction tool was required to establish the geographical entity ('place') in a users' question. The requirements of the tool were:
+A named entity extraction tool is required to establish the geographical entity ('place') in a users' question. The requirements of the tool were:
 \begin{enumerate}
   \item Accepts a string of text and returns a list of keywords representing the place.
   \item \label{nexRequirement:categoriseKeyword} Keywords are categorised by a group classes, allowing for differentiation between a keyword representing a place, concept or person.
@@ -759,7 +776,7 @@ This semantic comparison is done by the the \texttt{compare} module, which has a
 
 The Cortical API is not configured for recognising text in CamelCase, so helper functions such as \texttt{camelCaseToSnakeCase} and \texttt{camelCaseToSpace} are also included for converting CamelCase to either Snake Case or space-separated words.
 
-% TODO XXX - explain why had to use both, explain why using both is bad
+% TODO --- - explain why had to use both, explain why using both is bad
 % also talk about issues with compare module, multiple services etc, here
 \bf{explain why had to use both, explain why using both is bad}
 
@@ -770,10 +787,15 @@ The Cortical API is not configured for recognising text in CamelCase, so helper 
 % TODO XXX - write this
  - Tweaking the constants for best results
  - Excluding wikipedia due to dirty data
+ 
 Key issues:
+
  - can't handle units
+ 
  - sometimes wikipedia attaches other garbage
+ 
  - can't do subjective stuff 'depth of the deepest ocean'
+ 
  - can't do properties that are stored deep within the ontology.
 
 \newpage

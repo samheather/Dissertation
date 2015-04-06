@@ -25,44 +25,44 @@
 \contentsline {subsubsection}{\numberline {4.2.3}System Requirements - Functional}{26}
 \contentsline {subsubsection}{\numberline {4.2.4}System Requirements - Non-Functional}{27}
 \contentsline {subsection}{\numberline {4.3}Data Sources}{27}
-\contentsline {subsubsection}{\numberline {4.3.1}Wikipedia API}{27}
+\contentsline {subsubsection}{\numberline {4.3.1}Wikipedia API}{28}
 \contentsline {subsubsection}{\numberline {4.3.2}DBPedia Ontology}{28}
 \contentsline {subsubsection}{\numberline {4.3.3}Choosing the Source and Interface for this Project}{28}
 \contentsline {subsection}{\numberline {4.4}Processing Natural Language Queries}{29}
 \contentsline {subsection}{\numberline {4.5}Evaluating Success}{29}
-\contentsline {section}{\numberline {5}Design}{30}
-\contentsline {subsection}{\numberline {5.1}System Design}{30}
-\contentsline {subsubsection}{\numberline {5.1.1}Micro-system for Protecting User Identity}{30}
-\contentsline {subsection}{\numberline {5.2}Language, Platform and Tools and Libraries}{31}
-\contentsline {subsubsection}{\numberline {5.2.1}Language}{31}
-\contentsline {subsubsection}{\numberline {5.2.2}Platform}{32}
-\contentsline {subsubsection}{\numberline {5.2.3}Database}{32}
-\contentsline {paragraph}{Conceptual Data Model}{32}
-\contentsline {paragraph}{Logical Database Design}{33}
-\contentsline {paragraph}{Database Technology}{33}
-\contentsline {paragraph}{Physical Database Design}{35}
-\contentsline {subsubsection}{\numberline {5.2.4}Libraries}{35}
-\contentsline {paragraph}{Database Querying}{35}
-\contentsline {paragraph}{Creating HTTP Server and REST API}{35}
-\contentsline {paragraph}{Sending SMS}{37}
-\contentsline {paragraph}{Semantic Analysis - Measuring semantic relatedness between texts}{38}
-\contentsline {paragraph}{Semantic Analysis - Discovering Named Entities in text}{38}
-\contentsline {section}{\numberline {6}Implementation}{39}
-\contentsline {subsection}{\numberline {6.1}Implementation Overview}{39}
-\contentsline {subsection}{\numberline {6.2}Tools and services used}{39}
-\contentsline {subsection}{\numberline {6.3}Implementation of natural language processing module}{40}
-\contentsline {subsection}{\numberline {6.4}Implementation of answer location system}{41}
-\contentsline {subsection}{\numberline {6.5}Implementation of rating and learning systme}{42}
-\contentsline {subsection}{\numberline {6.6}Discussion of Implementation}{42}
-\contentsline {section}{\numberline {7}Results}{43}
-\contentsline {section}{\numberline {8}Discussion}{44}
-\contentsline {section}{\numberline {9}Evaluation}{45}
-\contentsline {section}{\numberline {10}Extending this project}{46}
-\contentsline {section}{\numberline {11}Conclusion}{47}
-\contentsline {section}{\numberline {12}Appendix A - Personas}{52}
-\contentsline {subsection}{\numberline {12.1}Nanjala}{52}
-\contentsline {subsubsection}{\numberline {12.1.1}Demographics}{52}
-\contentsline {subsubsection}{\numberline {12.1.2}Average Day}{52}
-\contentsline {subsection}{\numberline {12.2}Cedric}{53}
-\contentsline {subsubsection}{\numberline {12.2.1}Demographics}{53}
-\contentsline {subsubsection}{\numberline {12.2.2}Average European Trip}{53}
+\contentsline {section}{\numberline {5}Design}{31}
+\contentsline {subsection}{\numberline {5.1}System Design}{31}
+\contentsline {subsubsection}{\numberline {5.1.1}Micro-system for Protecting User Identity}{31}
+\contentsline {subsection}{\numberline {5.2}Language, Platform and Tools and Libraries}{32}
+\contentsline {subsubsection}{\numberline {5.2.1}Language}{32}
+\contentsline {subsubsection}{\numberline {5.2.2}Platform}{33}
+\contentsline {subsubsection}{\numberline {5.2.3}Database}{33}
+\contentsline {paragraph}{Conceptual Data Model}{33}
+\contentsline {paragraph}{Logical Database Design}{34}
+\contentsline {paragraph}{Database Technology}{34}
+\contentsline {paragraph}{Physical Database Design}{36}
+\contentsline {subsubsection}{\numberline {5.2.4}Libraries}{36}
+\contentsline {paragraph}{Database Querying}{36}
+\contentsline {paragraph}{Creating HTTP Server and REST API}{36}
+\contentsline {paragraph}{Sending SMS}{38}
+\contentsline {paragraph}{Semantic Analysis - Measuring semantic relatedness between texts}{39}
+\contentsline {paragraph}{Semantic Analysis - Discovering Named Entities in text}{39}
+\contentsline {section}{\numberline {6}Implementation}{40}
+\contentsline {subsection}{\numberline {6.1}Implementation Overview}{40}
+\contentsline {subsection}{\numberline {6.2}Tools and services used}{40}
+\contentsline {subsection}{\numberline {6.3}Implementation of natural language processing module}{41}
+\contentsline {subsection}{\numberline {6.4}Implementation of answer location system}{42}
+\contentsline {subsection}{\numberline {6.5}Implementation of rating and learning systme}{43}
+\contentsline {subsection}{\numberline {6.6}Discussion of Implementation}{43}
+\contentsline {section}{\numberline {7}Results}{44}
+\contentsline {section}{\numberline {8}Discussion}{45}
+\contentsline {section}{\numberline {9}Evaluation}{46}
+\contentsline {section}{\numberline {10}Extending this project}{47}
+\contentsline {section}{\numberline {11}Conclusion}{48}
+\contentsline {section}{\numberline {12}Appendix A - Personas}{53}
+\contentsline {subsection}{\numberline {12.1}Nanjala}{53}
+\contentsline {subsubsection}{\numberline {12.1.1}Demographics}{53}
+\contentsline {subsubsection}{\numberline {12.1.2}Average Day}{53}
+\contentsline {subsection}{\numberline {12.2}Cedric}{54}
+\contentsline {subsubsection}{\numberline {12.2.1}Demographics}{54}
+\contentsline {subsubsection}{\numberline {12.2.2}Average European Trip}{54}
