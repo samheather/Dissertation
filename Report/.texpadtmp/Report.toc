@@ -46,23 +46,23 @@
 \contentsline {paragraph}{Creating HTTP Server and REST API}{36}
 \contentsline {paragraph}{Sending SMS}{38}
 \contentsline {paragraph}{Semantic Analysis - Measuring semantic relatedness between texts}{39}
-\contentsline {paragraph}{Semantic Analysis - Discovering Named Entities in text}{39}
-\contentsline {section}{\numberline {6}Implementation}{40}
-\contentsline {subsection}{\numberline {6.1}Implementation Overview}{40}
-\contentsline {subsection}{\numberline {6.2}Tools and services used}{40}
-\contentsline {subsection}{\numberline {6.3}Implementation of natural language processing module}{41}
-\contentsline {subsection}{\numberline {6.4}Implementation of answer location system}{42}
-\contentsline {subsection}{\numberline {6.5}Implementation of rating and learning systme}{43}
-\contentsline {subsection}{\numberline {6.6}Discussion of Implementation}{43}
-\contentsline {section}{\numberline {7}Results}{44}
-\contentsline {section}{\numberline {8}Discussion}{45}
-\contentsline {section}{\numberline {9}Evaluation}{46}
-\contentsline {section}{\numberline {10}Extending this project}{47}
-\contentsline {section}{\numberline {11}Conclusion}{48}
-\contentsline {section}{\numberline {12}Appendix A - Personas}{53}
-\contentsline {subsection}{\numberline {12.1}Nanjala}{53}
-\contentsline {subsubsection}{\numberline {12.1.1}Demographics}{53}
-\contentsline {subsubsection}{\numberline {12.1.2}Average Day}{53}
-\contentsline {subsection}{\numberline {12.2}Cedric}{54}
-\contentsline {subsubsection}{\numberline {12.2.1}Demographics}{54}
-\contentsline {subsubsection}{\numberline {12.2.2}Average European Trip}{54}
+\contentsline {paragraph}{Semantic Analysis - Discovering Named Entities in text}{40}
+\contentsline {section}{\numberline {6}Implementation}{41}
+\contentsline {subsection}{\numberline {6.1}Implementation Overview}{41}
+\contentsline {subsection}{\numberline {6.2}Tools and services used}{41}
+\contentsline {subsection}{\numberline {6.3}Implementation of natural language processing module}{42}
+\contentsline {subsection}{\numberline {6.4}Implementation of answer location system}{43}
+\contentsline {subsection}{\numberline {6.5}Implementation of rating and learning systme}{44}
+\contentsline {subsection}{\numberline {6.6}Discussion of Implementation}{44}
+\contentsline {section}{\numberline {7}Results}{46}
+\contentsline {section}{\numberline {8}Discussion}{47}
+\contentsline {section}{\numberline {9}Evaluation}{48}
+\contentsline {section}{\numberline {10}Extending this project}{49}
+\contentsline {section}{\numberline {11}Conclusion}{50}
+\contentsline {section}{\numberline {12}Appendix A - Personas}{55}
+\contentsline {subsection}{\numberline {12.1}Nanjala}{55}
+\contentsline {subsubsection}{\numberline {12.1.1}Demographics}{55}
+\contentsline {subsubsection}{\numberline {12.1.2}Average Day}{55}
+\contentsline {subsection}{\numberline {12.2}Cedric}{56}
+\contentsline {subsubsection}{\numberline {12.2.1}Demographics}{56}
+\contentsline {subsubsection}{\numberline {12.2.2}Average European Trip}{56}

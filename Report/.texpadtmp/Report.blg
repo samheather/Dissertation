@@ -14,7 +14,7 @@ I was expecting a `,' or a `}'---line 85 of file ../mybib.bib
  :   Year = {2008},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 336 of file ../mybib.bib
+I was expecting a `,' or a `}'---line 343 of file ../mybib.bib
  :     
  :     author = {Twilio},
 (Error may have been on previous line)
@@ -29,45 +29,45 @@ Warning--empty journal in melby2006can
 Warning--all relevant fields are empty in libraryTwilio
 
 Done.
-You've used 51 entries,
+You've used 57 entries,
             4039 wiz_defined-function locations,
-            1500 strings with 22535 characters,
-and the built_in function-call counts, 22707 in all, are:
-= -- 1892
-> -- 324
-< -- 61
-+ -- 170
-- -- 66
-* -- 854
-:= -- 4028
-add.period$ -- 112
-call.type$ -- 51
-change.case$ -- 75
-chr.to.int$ -- 141
-cite$ -- 56
-duplicate$ -- 1818
-empty$ -- 2094
-format.name$ -- 74
-if$ -- 4999
+            1533 strings with 23424 characters,
+and the built_in function-call counts, 25940 in all, are:
+= -- 2164
+> -- 374
+< -- 82
++ -- 197
+- -- 74
+* -- 995
+:= -- 4565
+add.period$ -- 124
+call.type$ -- 57
+change.case$ -- 81
+chr.to.int$ -- 183
+cite$ -- 62
+duplicate$ -- 2069
+empty$ -- 2384
+format.name$ -- 85
+if$ -- 5733
 int.to.chr$ -- 0
-int.to.str$ -- 51
-missing$ -- 403
-newline$ -- 222
-num.names$ -- 45
-pop$ -- 1062
+int.to.str$ -- 57
+missing$ -- 447
+newline$ -- 244
+num.names$ -- 50
+pop$ -- 1165
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1812
+skip$ -- 2076
 stack$ -- 0
-substring$ -- 413
-swap$ -- 1178
-text.length$ -- 14
+substring$ -- 517
+swap$ -- 1359
+text.length$ -- 21
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 51
+type$ -- 57
 warning$ -- 5
-while$ -- 67
-width$ -- 53
-write$ -- 508
+while$ -- 80
+width$ -- 59
+write$ -- 566
 (There were 2 error messages)

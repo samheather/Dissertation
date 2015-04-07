@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.20)  4 APR 2015 21:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.20)  7 APR 2015 01:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -767,42 +767,60 @@ Package marginnote Info: Margin note 39.1 is on absolute page 39
 (marginnote)              on input line 679.
 Package marginnote Info: right page because not two side mode on input line 679
 .
-Package marginnote Info: xpos seems to be 136.76999pt,
+Package marginnote Info: xpos seems to be 461.31042pt,
 (marginnote)             \marginnoterightadjust ignored on input line 679.
+Package marginnote Info: Margin note 39.2 is on absolute page 39
+(marginnote)              on input line 682.
+Package marginnote Info: right page because not two side mode on input line 682
+.
+Package marginnote Info: xpos seems to be 181.8099pt,
+(marginnote)             \marginnoterightadjust ignored on input line 682.
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
  [39]
-Overfull \hbox (14.10641pt too wide) in paragraph at lines 699--700
+Overfull \hbox (8.6956pt too wide) in paragraph at lines 692--693
+[]\OT1/ptm/m/n/10 A named en-tity ex-trac-tion tool is re-quired to es-tab-lish
+ the ge-o-graph-i-cal en-tity ('place')
+ []
+
+[40]
+Overfull \hbox (14.10641pt too wide) in paragraph at lines 708--709
 \OT1/ptm/b/n/10 This sec-tion will con-tain in-for-ma-tion on how data is store
 d, the struc-ture of databases,
  []
 
-Package marginnote Info: Margin note 40.1 is on absolute page 40
-(marginnote)              on input line 714.
-Package marginnote Info: right page because not two side mode on input line 714
+Package marginnote Info: Margin note 41.1 is on absolute page 41
+(marginnote)              on input line 723.
+Package marginnote Info: right page because not two side mode on input line 723
 .
 Package marginnote Info: xpos seems to be 425.59752pt,
-(marginnote)             \marginnoterightadjust ignored on input line 714.
-[40]
-Overfull \hbox (6.61691pt too wide) in paragraph at lines 723--724
-[]\OT1/ptm/m/n/10 PyMongo [46] - Python li-brary con-tain-ing tools to work wit
+(marginnote)             \marginnoterightadjust ignored on input line 723.
+[41]
+Overfull \hbox (6.61691pt too wide) in paragraph at lines 732--733
+[]\OT1/ptm/m/n/10 PyMongo [52] - Python li-brary con-tain-ing tools to work wit
 h Mon-goDB databases. 
  []
 
-[41]
-Overfull \hbox (65.24852pt too wide) in paragraph at lines 741--742
+[42]
+Overfull \hbox (65.24852pt too wide) in paragraph at lines 750--751
 \OT1/ptm/m/n/10 (place) by sim-ply check-ing each key-word for the type \OT1/pc
 r/m/n/10 http://dbpedia.org/ontology/Place
  []
 
 
-Overfull \hbox (2.35794pt too wide) in paragraph at lines 741--742
+Overfull \hbox (2.35794pt too wide) in paragraph at lines 750--751
 \OT1/ptm/m/n/10 in the types as-so-ci-ated with each key-word. This is done by 
 the \OT1/pcr/m/n/10 extractEntities()
  []
 
-[42] [43] [44] [45] [46]
+[43] [44] [45] [46] [47] [48]
 LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `TS1/ptm/b/n' tried instead on input line 803.
- [47] [48]
+(Font)              Font shape `TS1/ptm/b/n' tried instead on input line 817.
+ [49] [50]
 (/Users/Samuel/Documents/University/Project/Report/.texpadtmp/Report.bbl
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 34.
@@ -835,65 +853,65 @@ Missing character: There is no ¼ in font ptmb7t!
 Missing character: There is no â in font ptmb7t!
 Missing character: There is no € in font ptmb7t!
 Missing character: There is no ™ in font ptmb7t!
-[49] [50]
-Underfull \hbox (badness 10000) in paragraph at lines 248--252
-[]\OT1/ptm/b/n/10 Cortical, ``Cor-ti-cal key-word ex-trac-tion api,'' $http : /
- / www . cortical . io /
- []
-
-
-Underfull \hbox (badness 1048) in paragraph at lines 248--252
-\OT1/ptm/b/n/10 developers[]apidocumentation . html$, 2015, ac-cessed: 2015-03-
-31. On the
- []
-
-
-Underfull \hbox (badness 1087) in paragraph at lines 248--252
-\OT1/ptm/b/n/10 ref-er-enced page, click "Text", then "/tex-t/key-words" for th
-e Key-word
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 254--256
-[]\OT1/ptm/b/n/10 SpazioDati, ``Named en-tity ex-trac-tion api,''
- []
-
-
-Underfull \hbox (badness 4713) in paragraph at lines 254--256
-\OT1/ptm/b/n/10 https://dandelion.eu/docs/api/datatxt/nex/v1/, 2015, ac-cessed:
- 2015-03-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 262--266
+[51] [52] [53]
+Underfull \hbox (badness 10000) in paragraph at lines 274--278
 []\OT1/ptm/b/n/10 Cortical, ``Cor-ti-cal com-pare api,'' $http : / / www . cort
 ical . io / developers[]
  []
 
 
-Overfull \hbox (10.84589pt too wide) in paragraph at lines 268--270
+Overfull \hbox (10.84589pt too wide) in paragraph at lines 280--282
 []\OT1/ptm/b/n/10 SpazioDati, ``Text sim-i-lar-ity api,'' https://dandelion.eu/
 docs/api/datatxt/sim/v1/,
  []
 
-[51]
-Underfull \hbox (badness 10000) in paragraph at lines 291--294
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--294
+[]\OT1/ptm/b/n/10 Cortical, ``Cor-ti-cal key-word ex-trac-tion api,'' $http : /
+ / www . cortical . io /
+ []
+
+
+Underfull \hbox (badness 1048) in paragraph at lines 290--294
+\OT1/ptm/b/n/10 developers[]apidocumentation . html$, 2015, ac-cessed: 2015-03-
+31. On the
+ []
+
+
+Underfull \hbox (badness 1087) in paragraph at lines 290--294
+\OT1/ptm/b/n/10 ref-er-enced page, click "Text", then "/tex-t/key-words" for th
+e Key-word
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 296--298
+[]\OT1/ptm/b/n/10 SpazioDati, ``Named en-tity ex-trac-tion api,''
+ []
+
+
+Underfull \hbox (badness 4713) in paragraph at lines 296--298
+\OT1/ptm/b/n/10 https://dandelion.eu/docs/api/datatxt/nex/v1/, 2015, ac-cessed:
+ 2015-03-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 323--326
 []\OT1/ptm/b/n/10 J. Todd, ``Wikipedia utils,'' $https : / / classic . scraperw
 iki . com / scrapers /
  []
 
-) [52] [53] [54] [55] [56] [57] [58]
-Overfull \hbox (34.80664pt too wide) in paragraph at lines 903--975
+) [54] [55] [56] [57] [58] [59] [60]
+Overfull \hbox (34.80664pt too wide) in paragraph at lines 917--989
 [][] 
  []
 
-[59] (/Users/Samuel/Documents/University/Project/Report/.texpadtmp/Report.aux) 
+[61] (/Users/Samuel/Documents/University/Project/Report/.texpadtmp/Report.aux) 
 ) 
 Here is how much of TeX's memory you used:
- 7599 strings out of 493117
- 105341 string characters out of 6135432
- 191198 words of memory out of 5000000
- 10869 multiletter control sequences out of 15000+600000
+ 7606 strings out of 493117
+ 105476 string characters out of 6135432
+ 191241 words of memory out of 5000000
+ 10876 multiletter control sequences out of 15000+600000
  45362 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,16n,42p,1605b,1087s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -909,10 +927,10 @@ type1/urw/times/utmbi8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw
 /times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utm
 ri8a.pfb>
 Output written on /Users/Samuel/Documents/University/Project/Report/.texpadtmp/
-Report.pdf (59 pages, 1290535 bytes).
+Report.pdf (61 pages, 1296306 bytes).
 PDF statistics:
- 245 PDF objects out of 1000 (max. 8388607)
- 160 compressed objects within 2 object streams
+ 252 PDF objects out of 1000 (max. 8388607)
+ 165 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
