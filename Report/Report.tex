@@ -58,11 +58,12 @@
 
 \marginnote{It is early days so it is normal that many things are missing from the abstract. You should keep in mind that it should include later on few sentences on method/experiment, result and conclusion.}
 
-In remote Africa there are millions of disadvantaged and uneducated individuals, who in the vast majority do not have access to the internet the knowledge that this brings.  Outside of their immediate friends and family, individuals can not access the information they need to further their education, or just for general interest.
+In remote Africa there are millions of disadvantaged and uneducated individuals, who in the vast majority do not have access to the internet the knowledge that this brings.  Outside of their immediate friends and family, individuals cannot access the information they need to further their education, or just for general interest.
 
 In many parts of the world, the number of people without access to the internet but access to a mobile phone is significant.  This project aims to research and develop a system capable of bringing knowledge through a question and answer based interactive system, in the language natively spoken by the user, through the use of a simple Artificial Intelligence and an SMS interface.  The system will be expandable, such that it can be adjusted to handle questions on any knowledge area.
 
 This project raises ethical issues relating to the responsibility of providing accurate information when in a position of trust, the ethics of machine translation and maintaining user privacy.
+% TODO - finish abstract
 \end{abstract}
 
 \newpage
@@ -87,30 +88,22 @@ This project raises ethical issues relating to the responsibility of providing a
 The author would like to acknowledge the following individuals for their contribution to this project:
 
 \begin{itemize}
+  \item SpazioDati (http://spaziodati.eu/) for providing extended access to the Dandelion Text Semantics API at no extra charge.
+  \item Rackspace for providing server infrastructure.
   \item Julie Markham and Nicholas Hopper, with whom the author collaborated with on Shy, the mobile application that inspired this project.
   \item Lilian Blot, for his time and effort spent supervising and providing guidance for this project.
-  \item SpazioDati (http://spaziodati.eu/) for providing extended access to the Dandelion Text Semantics API at no extra charge.
 \end{itemize}
-
-
-\newpage
-\section{Useful thoughts from Lilian}
-Take a quick look at list of other students previous projects to get an idea of how intro/lit review is structured etc.
-
-Remember to take notes on when I come across problems, for my conclusion.
 
 \newpage
 \section{Introduction}
 
 \subsection{Background of this project}
 
-The inspiration for this project originates from a project the author undertook in September 2014 whilst attending Yacht Hack, a week-long hackathon on a Yacht in Croatia\footnote{http://toughhackers.com/yacht-hack-2014/)}.  The author co-created a project to prototype a mobile application that would facilitate the immediate answering of questions that fall within certain categories using a knowledge base, simple machine learning and profiling of users based on their usage history.
+The inspiration for this project originates from a project the author undertook in September 2014 whilst attending Yacht Hack, a week-long hackathon on a Yacht in Croatia\footnote{http://toughhackers.com/yacht-hack-2014/}.  The author co-created a project called Shy to prototype a mobile application that would facilitate the immediate answering of questions that fall within certain categories using a knowledge base, simple machine learning and profiling of users based on their usage history.
 
 One of the initial goals of Shy was to bring knowledge via m-learning\footnote{M-Learning: learning using tools available on a mobile device} as opposed to e-learning\footnote{E-Learning: learning conducted online, usually with the help of a computer}.  This is because m-learning systems are available to a much larger demographic of people, because the hardware (mobile devices, commonly phones) is becoming ever cheaper and more accessible.
 
-A semi-functional prototype was completed for iOS, as seen in Figure~\ref{fig:shy-ios-screenshots}.  The front-end was complete, however in the backend question-answer matching was evaluated without knowledge of previous material the user had viewed.  This meant that explicitly targeted answers for a question and suggestions of questions that a given user profile might be interested in could not be made.  Up until this point, the service was restricted to working on iOS smart devices only, with poor quality question-answer matching.  In the initial project, the knowledge base was built for questions on personal health, sex, relationships and family.
-
-\marginnote{should add at least one more significant paragraph here, not sure what to write about though}
+A semi-functional prototype was completed for iOS, as seen in Figure~\ref{fig:shy-ios-screenshots}.  The front-end was complete; however in the backend question-answer matching was evaluated without knowledge of previous material the user had viewed.  This meant that explicitly targeted answers for a question and suggestions of questions that a given user profile might be interested in could not be made.  Up until this point, the service was restricted to working on iOS smart devices only, with poor quality question-answer matching.  In the initial project, the knowledge base was built for questions on personal health, sex, relationships and family.
 
 \begin{figure}[htb] 
 \includegraphics[width=\linewidth]{shy-screenshots}
@@ -119,44 +112,44 @@ A semi-functional prototype was completed for iOS, as seen in Figure~\ref{fig:sh
 \end{figure}
 
 \subsection{Motivation for this project}
-Access to knowledge is a critical part of modern life.  It's also a Human Right, under Article 27 of the Universal Declaration of Human Rights~\cite{community1948universal}.  We have the facility to retrieve information and instantly communicate with each other using our smart phones, and commonly do it up to 200 times a day~\cite{falaki} - a facility that hundreds of millions of individuals live without.  This project aims to investigate the technical and ethical challenges behind this and to create a technology to give more people access to knowledge, and thus their human rights.
+Access to knowledge is a critical part of modern life.  It's also a Human Right, under Article 27 of the Universal Declaration of Human Rights~\cite{community1948universal}.  As members of a developed country, we have the facility to retrieve information and instantly communicate with each other using our smart phones, and commonly do it up to 200 times a day~\cite{falaki} which is a facility that hundreds of millions of individuals in developing countries live without.  This project aims to investigate the technical and ethical challenges behind this and to create a technology to give more people access to knowledge, and thus their human rights.
 
-The project involves the use of a number of systems to work including machine translation, an SMS input/output system and a system to build a profile on a user in order to facilitate high-quality targeted question-answer matching.  The system will also feature machine learning so that as time progresses, the quality of the answers it returns increases.  The use of these systems in one application along with complex ethics and privacy issues create an interesting project that draws together many technologies and discussions in a way that can be used as a basis for further research in the future.
+The project involves the use of a number of systems, including machine translation, an SMS input/output system and a system to build a profile on a user in order to facilitate high-quality targeted question-answer matching.  The system will also feature machine learning so that as time progresses, the quality of the answers it returns increases.  The use of these systems in one application along with complex ethics and privacy issues create an interesting project that draws together many technologies and discussions in a way that can be used as a basis for further research in the future.
 
 \subsection{Aims of this project}
 
-The first goal of this project is to assess and address the ethical issues that arise from the software that this project aims to create.  These include the responsibility the software (and hence the software author) has, because of its position of trust, to provide accurate information and to protect the privacy of its users by storing only necessary information, among others.  This project will do this by researching ethical issues relating to the technologies that the project will use, for example machine translation.  This will then be used to feed the design process of the software and to specify the expected use-case of it.  Finally, the resulting software will be evaluated through experimentation, with volunteers asking the software a set of questions within a topic area, in a non-English language, and evaluate the relevance of answers returned.
+The first goal of this project is to assess and address the ethical issues that arise from the software that will be created.  These include the responsibility that the software and its developer has because of its position of trust to provide accurate information and to protect the privacy of its users by storing only necessary information, among others.  This project will do this by researching ethical issues relating to the technologies that the project will use, for example machine translation and user information storage.  This will then be used to feed the design process of the software and to specify the expected use-case of it.  Finally, the resulting software will be evaluated through experimentation, with volunteers asking the software a set of questions within a topic area, in a non-English language, and evaluate the relevance of answers returned.
 
-The initial goal for this dissertation was to focus on questions relating to personal health, sex, relationships and family, which was as a direct result of the focus of 'Shy'.  Although a health and diseases database was located in the early stages of the project (Diseases Database, www.diseasesdatabase.com), it was targeted at professional uses for the data and came with a significant licence fee, as well as complex documentation that the provider customised specifically for each use-case.  The author did attempt to acquire a free academic research licence via email but was unsuccessful\marginnote{objective enough?}.  Additionally, as the project progressed in the early stages it became clear that the author's original two-page document discussing ethical considerations with the project did not cover all possible situations.  Indeed, the Author and Supervisor were still discovering further significant ethical issues as far as eight weeks into the project, which would have required a complex ethics panel review, critically delaying this project.  Two example ethical issues that occurred were:
+Initially, the goal for this dissertation was to focus on questions relating to personal health, sex, relationships and family, which was as a direct result of the focus of 'Shy'.  Although a health and diseases database was located in the early stages of the project (Diseases Database, www.diseasesdatabase.com), it was targeted at professional uses for the data and came with a significant licence fee, as well as complex documentation that the provider customised specifically for each use-case.  An attempt was made to acquire a free academic research licence via email but this was unsuccessful.  Additionally, as the project progressed in the early stages it became clear that the author's original two-page document discussing ethical considerations with the project did not cover all possible situations.  Indeed, the Author and Supervisor\marginnote{Lilian: Should I avoid mentioning 'author' and 'supervisor' here? I want to communicate that there was effort in this. Should I reword to 'significant effort was .......'} were still discovering further significant ethical issues as far as eight weeks into the project, which would have required a complex ethics panel review, critically delaying this project.  Two example ethical issues that occurred were:
 
 \begin{itemize}
   \item Any application has that dispenses health related information that a user might act upon in a life changing manner has to respond with correct information, since an incorrect response could lead to a user taking an action which leads to them harming themselves.
   \item Privacy is critical since the questions been asked are personal.  This could not be absolutely guaranteed, since a third-party service had to be used to send SMSs and, although unlikely, it was possible that this service could build profiles on users and identify them.
 \end{itemize}
 
-As a result of the above issues with locating a reputable knowledge base and the complex ethical issues, a decision was made in early December 2014 to switch the target topic for questions to Geography and to use Wikipedia as a datasource, since it is openly available, well populated and multiple methods exist for extracting information from it.  In future work, it should be possible to extend this project to work with medical questions, if a high quality data-source is located and a solution to the ethical issues is found.
+As a result of the above issues with locating a reputable knowledge base and the complex ethical issues, a decision was made in early December 2014 to switch the target topic for questions to Geography and to use Wikipedia as a datasource, since it is openly available, well populated and multiple methods exist for extracting information from it.  In future work, it should be possible to extend this project to work with medical questions, if a high quality data-source is located and a solution to the ethical issues is found. A full discussion of possible future work is included in section \ref{sec:extending}.
 
 \subsection{Structure of this report}
-This report starts with a review of pre-existing literature on this topic in chapter~\ref{sec:literatureReview}, where the author looks at existing software, tools and services of a similar type to those that will be used in this project.  Comparisons between different software development life-cycles are also discussed.
+This report starts with a literature review in chapter~\ref{sec:literatureReview} where existing software, tools and services of a similar type to those that will be used in this project are presented, along with research into the ethical issues of the creation and use of the software under development. Comparisons between different software development life-cycles are also described and discussed.
 
 Chapter~\ref{sec:method} describes the method that will be taken to develop the software and service.  This covers the software development life-cycle that will be followed, and sets out a plan for when development will take place.  Requirements will also be identified, described and categorised  as either functional or non-functional.  A method of evaluating the success of the software will also be discussed and chosen.
 
-The design of the software, driven from information collected from the requirements, will be set out in Chapter~\ref{sec:design}.  The individual components that make up the technology will be described and discussed\marginnote{described and discussed, or just described?}, followed by a description of how these modules will interface with each other to build a complete system.  Finally, this section will include a description of the platform, language and other tools that will be used.
+The design of the software, driven from information collected from the requirements, will be set out in Chapter~\ref{sec:design}.  The individual components that make up the technology will be described and discussed, followed by a set of annotated diagrams showing how these modules will interface with each other to build a complete system.  Finally, this section will include a description of the platform, language and other tools that will be used.
 
-Chapter~\ref{sec:implementation} contains details about the implementation of the software.  This includes information on the tools that were used to create components such as the SMS interface and question-answer matching system.
+Chapter~\ref{sec:implementation} contains details about the implementation of the software.  This includes information on the tools that will be used to create components such as the SMS interface and question-answer matching system.
 
 Results from the evaluation of the system will be presented in Chapter~\ref{sec:results}.  A discussion of these results and their implication on this project is then presented to the reader in Chapter~\ref{sec:discussion}.
 
-Chapter~\ref{sec:evaluation} contains an evaluation of the software produced and the process taken to complete it.  Comparisons will be made to the success criteria, set out for the project in section <insert number here>.
+Chapter~\ref{sec:evaluation} contains an evaluation of the software produced and the process taken to complete it.  Comparisons will be made to the success criteria, set out for the project in section \ref{sec:evaluatingSuccess}.
 
-The author's thoughts on potential future work, building on the work produced in this project, are then displayed in chapter~\ref{sec:extending}.  
+Thoughts on potential future research that builds on the work produced in this project are then displayed in chapter~\ref{sec:extending}.
 
-Finally, the main achievements of this project and then the report is concluded in chapter~\ref{sec:conclusion} with final thoughts.
+Finally, the main achievements of this project are concluded in chapter~\ref{sec:conclusion} with closing thoughts.
 
 
 % Lilian: This section should be expended, especially mentioning the consequences of such assumptions. Why do you make those assumption (e.g. time constraint, little or no consequences, ...). What limitation this may cause to your findings.  Shows a mastery of the field.
 \subsection{Assumptions Within This Project}
-This project will make the assumption that users of this service have basic literacy skills in a language supported by the project.  Although this is not a correct assumption world-wide, expanding the remit of this project to include a 'graphical' user interface that works over SMS would scale this project outside of the acceptable/expected range for an undergraduate dissertation.
+This project will make the assumption that users of this service have basic literacy skills in \marginnote{Lilian: I no longer have language support, and you said to keep research in about it. Should I remove it from introduction / abstract etc?}a language supported by the project.  Although this is not a correct assumption world-wide, expanding the remit of this project to include a 'graphical' user interface that works over SMS would scale this project outside of the practical limitations of this project.
 
 The main use-case for this project is going to be parts of the world with limited internet access.  Although these exist all over the world, the African continent is typical of this problem so I will focus my research in demonstrating a need for this tool there.
 
@@ -170,7 +163,7 @@ The main use-case for this project is going to be parts of the world with limite
 {\bf The point of this is to show that I 'own' the material and subject (competence).  Show different points of view, choose a side, express a view on which I prefer and if I agree, critique.  Have objective goals.}
 
 % TODO expand introduction to explain why sms, then look at related work in next section.  compare to smart phones loosely.
-A significant amount of work has previously been undertaken in the area of making knowledge quickly accessible to us in the form of questions and answers.  To take one example, consider that an individual needs to find the population of London as quickly as possible.  The initial step would be to search for information.  In the connected world, this is easy: a simple Google search returns the answers without even having to click through to any resources, as shown in Figure \ref{fig:googleInstant}.
+A significant amount of work has previously been undertaken in the area of making knowledge quickly accessible to us in the form of questions and answers.  To take one example, imagine that an individual needs to find the population of London as quickly as possible.  The initial step would be to search for information.  In the connected world, this is easy: a simple Google search returns the answers without even having to click through to any resources, as shown in Figure \ref{fig:googleInstant}.
 
 \begin{figure}[htb] 
 \includegraphics[width=\linewidth]{googleInstant}
@@ -182,16 +175,16 @@ This is easy to do in the developed world where up to 75\% of the population are
 
 % But there are other communication methods which are proven to work
 \subsection{Previous work using SMS}
-Although the above suggests that the African continent is majoritively disconnected, this is not the case.  Because of restrictions in the electricity available, the ways in which a non-smart phone \marginnote{\color{red}cite that these are lower power consumption, or assume?  Emma: Isn't necessary but would be helpful; leave it up to whether you need to fill out your word count or cut down.} can be used in Africa have far surpassed those in the developed world~\cite{Fox:2011:Online}, in part due to the low power consumption of a non-smart mobile phone.  Interesting examples of SMS use in Africa include an automated service which sends an SMS to HIV/AIDS \marginnote{\color{red}Order ok?} sufferers to remind them to take their medication, and a system for farmers that gives them the current market prices for goods, saving them from making regular long-distance trips to the market or relying on out-of-date information from a weekly radio broadcast~\cite{Aker_Mobile_Phones_2010}.
+Although the above suggests that the African continent is majoritively disconnected, this is not the case.  Because of restrictions in the electricity available, the ways in which a non-smart phone \marginnote{\color{red}cite that these are lower power consumption, or assume?  Emma: Isn't necessary but would be helpful; leave it up to whether you need to fill out your word count or cut down.} can be used in Africa have far surpassed those in the developed world~\cite{Fox:2011:Online}, in part due to the low power consumption of a non-smart mobile phone.  Interesting examples of SMS use in Africa include an automated service which sends an SMS to HIV/AIDS sufferers to remind them to take their medication, and a system for farmers that gives them the current market prices for goods, saving them from making regular long-distance trips to the market or relying on out-of-date information from a weekly radio broadcast~\cite{Aker_Mobile_Phones_2010}.
 
 Interactive systems have also been developed to operate over SMS.  One successful example is mobile money platforms.  These allow for users from any background to pay and be paid for goods and to transfer money across long distances at negligible cost~\cite{Aker_Mobile_Phones_2010}.  One of the most highly adopted services is M-Pesa, which in Kenya alone was responsible for \textsterling5.7 Billion in transfers in 2012 \footnote{Data from Safaricom, M-Pesa operator in Kenya - actual value 817,085,000,000 Kenyan Shillings, converted to GBP on 1st November 2014 at rate of approximately 0.007.}.  M-Pesa gives users a balance linked to a national ID number from which they can pay for goods by sending an SMS with a cashier (recipient) number or pay outstanding bills in a similar way.  Non-subscribers can also use the system by depositing money with a M-Pesa cashier in exchange for an access code, which can be sent via SMS to a contact who can subsequently redeem it with their local cashier~\cite{Aker_Mobile_Phones_2010}.
 
-\marginnote{\color{red}Should all this be used in motivation/justification for project?}This difference in standard use of mobile phones is demonstrated in the International Telecommunications Union's 2013 report~\cite{ITU_Cell_Usage_2013}, which shows that in Europe, for 790 million mobile subscriptions, 53\% of subscribers have mobile internet access (422 million), compared to 17\% in Africa (93 million have mobile broadband, out of 545 mobile subscribers).  This is due to the prohibitively high cost of accessing data services, regardless of the hardware that the user has.  In 2012 in Europe, 500 MB of data per month for 12 months cost 1.2\% of the average Gross National Income Per Capita (GNI pc).  In Africa, the average price was 30x this, at 36.2\% of an individuals GNI pc~\cite{ITU_Information_Society_2013}.
+This difference in standard use of mobile phones is demonstrated in the International Telecommunications Union's 2013 report~\cite{ITU_Cell_Usage_2013}, which shows that in Europe, for 790 million mobile subscriptions, 53\% of subscribers have mobile internet access (422 million), compared to 17\% in Africa (93 million have mobile broadband, out of 545 mobile subscribers).  This is due to the prohibitively high cost of accessing data services, regardless of the hardware that the user has.  In 2012 in Europe, 500 MB of data per month for 12 months cost 1.2\% of the average Gross National Income Per Capita (GNI pc).  In Africa, the average price was 30x this, at 36.2\% of an individuals GNI pc~\cite{ITU_Information_Society_2013}.
 
 % No research has been undertaken investigating whether bringing knowledge through this method is viable option.
 
 \subsection{Ethical Issues}
-This project raises a number of ethical issues related to translation accuracy, providing information to people in an ethically acceptable way (with focus on information accuracy) and maintaining user privacy.
+This project raises a number of ethical issues related to translation accuracy, providing information to people in an ethically acceptable way (with a focus on information accuracy) and maintaining user privacy.
 
 \subsubsection{Ethics of Providing Information}
 One significant issue for this project stems from providing information that may affect an individual or lead them to take a harmful action.
@@ -207,6 +200,8 @@ One significant issue for this project stems from providing information that may
 % Lilian: You should provide both point of view so do use this material, then you will have to critic both point of views. 
 {\bf this needs to be waaaayyyyy expanded, but I struggled to find information that was useful.  There's lots on remote education, and on basic ethics of teaching, but I struggled to find anything specifically relating to ethics of ensuring information you provide is correct}.
 
+\marginnote{teachers code of conduct, wikipedia ethics to provide infomration that contributos believe to be correct. doctors and gp's provide to the best of their knowledge}
+
 \subsubsection{Ethics of Translation}
 A significant part of this project is represented by the support of multiple languages.  It is clear that translation on demand, at scale, needs to be automated by some kind of machine or algorithmic translation.
 
@@ -215,7 +210,7 @@ This project involves two blocks of translation.  These are:
   \item The translation of the user's input into the language of the system (English)
   \item The translation of the answer to a user's question from the system language to their local language.
 \end{itemize}
-The second of these raises some issues, but to understand these it is first necessary to understand the two categories of machine translation.
+The latter of these raises some issues that do not apply to the former. To understand these issues it is first necessary to understand the two categories of machine translation.
 
 Rule-based machine translation effectively treats human language in a similar style to programming languages.  Formal grammars and lexicons are used to represent words that exist in either the source or target language, structures representing the translation of individual words or groups of words.  Map structures contain mappings between individual or groups of words to their translated counterparts, sometimes with multiple results (a 1-to-many map), from which rules decide which is selected.  Maps and rule sets are created by trained computational linguists~\cite{kenny2011ethics}.
 
@@ -226,17 +221,17 @@ A significant issue that is present in statistical machine learning systems come
 \blockquote{"when translating a French menu, a human translator might stop to think that an English speaker in France would appreciate being told that a steak tartare is served entirely raw, even if this information is not contained in the original text (because French people might be assumed to know this already). Such a translator would be aware of differences in material culture, and would be able to empathise with the English speaker who might choose to avoid the dish, given more information"~\cite{melby2006can, kenny2011ethics}}
 \marginnote{Lilian: quote taken from~\cite{kenny2011ethics}, but quote is interpreted from~\cite{melby2006can} - so I think referencing both is correct, but for this reason rather than last reason we discussed?}
 
-This issue is a result of the translation engine not being capable of take and use a complete representation of the expected cultural differences between those who speak the input language and those who speak the output language~\cite{melby2006can}.
+This issue is a result of the translation engine not being capable of taking and using a complete representation of the expected cultural differences between those who speak the input language and those who speak the output language~\cite{melby2006can}. This does not apply to the first block of translation within the application where a user's input is translated into the language of the system, since the application will only need to parse text to identify geographical entities and the property been queried, making context unnecessary.
 
 {\bf below should really be expanded and be in the discussion.  Explain the decision to keep translated answers in the database, which are pre-approved, to ensure no cultural misunderstandings.}
 
 The potential uses of this system include distributing information that may be used by individuals making important decisions, regardless of whether that is within this project or in further work based off of this project, as cultural confusion such as this could have potentially catastrophic effects.
 
-\label{subsubsec:userPrivacyAndDataProtection}
 \subsubsection{User Privacy and Data Protection}
-This project uses a simple Artificial Intelligence (AI) to keep a record of information that has already been returned to a user, to attempt to save sending repetitive information (saving the cost of additional SMS).  This raises another ethical issue though of privacy.  The material that a user has researched is likely to be sensitive; such is the nature of health related questions.  This means that the information on a user has to be kept securely, in a way that an individual user can not be identified.
+\label{subsubsec:userPrivacyAndDataProtection}
+This project uses a simple Artificial Intelligence (AI) to keep a record of information that has already been returned to a user, to attempt to save sending repetitive information (saving the cost of additional SMS).  This raises another ethical issue though of privacy.  The material that a user has researched is likely to be sensitive; such is the nature of health related questions\marginnote{Lilian: Need to re-write this for new question subject, or can leave as a mark of the old subject topic?}.  This means that the information on a user has to be kept securely, in a way that an individual user can not be identified.
 
-One way of doing this is using a technology called hashing.  Hashing is the technique of taking data as an input and generating an output value (called a 'hash') that is unique to an input.  Hash functions are ideally one way functions where given a piece of input data X, the output hash will always be a constant value Y, whenever and however the hashing algorithm is executed.  This allows a user's identity (phone number) to be obscured, in such a way that the mobile number can not be recovered from the database.  When a question is received, the phone number (represented by variable X in the above example) can be hashed and the data for this number looked up from the database without the database application ever being aware of the phone number of the user.  In the example in Figure~\ref{fig:hashPhoneNumber}, a phone number (X) is used as input to an imaginary hashing function and the output hash (Y) is shown on the right hand side.  As just described, this number can then be used as the key for the user information database, shown in Table~\ref{table:hashDatabase} to retrieve the information needed for the AI.
+One way of doing this is using a technology called hashing.  Hashing is the technique of taking data as an input and generating an output value (called a 'hash') that is unique to an input.  Hash functions are ideally one way functions where given a piece of input data X, the output hash will always be a constant value Y, whenever and however the hashing algorithm is executed.  This allows a user's identifying information such as their phone number to be obscured, in such a way that the mobile number can not be recovered from the database.  When a question is received, the phone number (represented by variable X in the above example) can be hashed and the data for this number looked up from the database without the database application ever being aware of the phone number of the user.  In the example in Figure~\ref{fig:hashPhoneNumber}, a phone number (X) is used as input to an imaginary hashing function and the output hash (Y) is shown on the right hand side.  As just described, this number can then be used as the key for the user information database, shown in Table~\ref{table:hashDatabase} to retrieve the information needed for the AI.
 
 {\bf reference the above from security engineering ross anderson, chapter 10 and 21?}
 
@@ -257,27 +252,33 @@ One way of doing this is using a technology called hashing.  Hashing is the tech
     f9dd7e & \{‘previousQuestions’:[301,623,89,280,364,621,209]\} \\
     \hline
     \end{tabular}
-    \caption{Example of software database: hashed phone numbers paired with a list of previous returned answer ID's. }
+    \caption{Example of software database: hashed phone numbers paired with a list of previous returned answer IDs. }
     \label{table:hashDatabase}
 \end{center}
 \end{table}
 
-In practise it is possible for the output of a hashing algorithm not to be unique to a particular input.  This is known as the collision resistance property of a hashing algorithm and formally is the property of a hashing algorithm that determines the probability of the same output hash for two distinct random inputs~\cite{mitCryptographyMd5}.  It occurs because the range of possible input values is much larger than the range of output hashes, and because all valid inputs must map to an output there is repetition in outputs~\cite{mitCryptographyMd5}.  This property of hashing algorithms can be a security risk for some use-cases, where hashes are used to verify that data has not changed since been hashed.  In this case, a third-party may be attempting to generate alternative, malicious data with the same hash as some pre-existing data, to swap them undetected~\cite{securityEngineeringHashingAnderson}.  In the use-case of this project there is no security risk since hashes are only used to anonymise phone numbers, however a high collision resistance is necessary to ensure that two users of the system with distinct phone numbers don't get mapped to the same row in the database, resulting in poor quality question-answer matching (or in the extreme worst case, privacy issues originating from returning to one user answers that are targeted to another).
+In practise it is possible for the output of a hashing algorithm not to be unique to a particular input.  This is known as the collision resistance property of a hashing algorithm and formally is the property of a hashing algorithm that determines the probability of the same output hash for two distinct random inputs~\cite{mitCryptographyMd5}.  It occurs because the range of possible input values is much larger than the range of output hashes, and because all valid inputs must map to an output there is repetition in outputs~\cite{mitCryptographyMd5}.  This property of hashing algorithms can be a security risk for some use-cases, where hashes are used to verify that data has not changed since been hashed.  In this case, a third-party may be attempting to generate alternative, malicious data with the same hash as some pre-existing data, to swap them undetected~\cite{securityEngineeringHashingAnderson}.  In the use-case of this project there is no security risk since hashes are only used to anonymise phone numbers; however a high collision resistance is necessary to ensure that two users of the system with distinct phone numbers don't get mapped to the same row in the database, resulting in poor quality question-answer matching or in the extreme worst case, privacy issues originating from returning to one user answers that are targeted to another.
 
-Irreversibility is a necessary property of the hashing algorithm chosen for this project.  This ensures that the key used in the database cannot be used to retrieve the phone number of the user, thus protecting their identity.  Commonly used hashing algorithm families, such as the MD family (e.g. MD5) and SHA family are all designed to be one-way~\cite{schneierCryptanalysisMD5SHA}\footnote{Bruce Schneier is a fellow at Harvard's Berkman center for internet and society.  He has been posting regularly for his newsletter and then blog since 1998 (over 16 years) and has published material related to this field throughout this time.  He has been involved in the creation of other cryptographic algorithms, such as the Skein hashing algorithm, blowfish block cipher, so may have a vested interest in dis-crediting other algorithms such as MD5 and SHA.  However, the essay cited above is written as a result of the Crypto 2004 Conference in California, Schneier has a world-renowned reputation for cryptography and computer security and the algorithm that he suggests should be used at the end is not one that he has involvement in.  For these reasons, I believe this source is reliable.}.  
+Irreversibility is a necessary property of the hashing algorithm chosen for this project.  This ensures that the key used in the database cannot be used to retrieve the phone number of the user, thus protecting their identity.  Commonly used hashing algorithm families, such as the MD family (e.g. MD5) and SHA family are all designed to be one-way~\cite{schneierCryptanalysisMD5SHA}\footnote{Bruce Schneier is a fellow at Harvard's Berkman center for internet and society.  He has been posting regularly for his newsletter and then blog since 1998 (over 16 years) and has published material related to this field throughout this time.  He has been involved in the creation of other cryptographic algorithms, such as the Skein hashing algorithm, blowfish block cipher, so may have a vested interest in discrediting other algorithms such as MD5 and SHA.  However, the essay cited above is written as a result of the Crypto 2004 Conference in California, where the algorithm that Schneier suggests should be used at the end is not one that he has involvement in.  For these reasons, I believe this source is reliable.}\marginnote{Lilian: Dump the whole footnote?}.  
 
-Although hashing algorithms are computationally one-way, they can suffer from another type of vulnerability affecting the security of the original input data.  When hashes are used for short strings of information (passwords, for example), a simple way to try and retrieve the original data is to compute a dictionary of the hashes of lots of common passwords, from which matches can be found.  This idea has been extended to produce Precomputed Hash Chains and subsequently Rainbow Tables.  These are highly efficient data structures that consist of chains of processed input messages and their hashes (with a reduce function to reach the next item in the chain), allowing original input data to be looked-up from its hash.  Both Precomputed Hash Chains and Rainbow Tables tend to be Terabytes in size, and as such they only exist in a significant form for the most commonly used hash functions (including MD5 and SHA)~\cite{Teat:2011:SCH:2016039.2016072}.  Within this project, this raises privacy implications, as hashes within the database would be 'convertible' to phone numbers.
+Although hashing algorithms are computationally one-way, they can suffer from another type of vulnerability affecting the security of the original input data.  When hashes are used for short strings of information (passwords, for example), a simple way to try and retrieve the original data is to compute a dictionary of the hashes of lots of common passwords, from which matches can be found.  This idea has been extended to produce Precomputed Hash Chains and subsequently Rainbow Tables.  These are highly efficient data structures that consist of chains of processed input messages and their hashes with a reduce function to reach the next item in the chain, allowing original input data to be looked-up from its hash.  Both Precomputed Hash Chains and Rainbow Tables tend to be Terabytes in size, and as such they only exist in a significant form for the most commonly used hash functions (including MD5 and SHA)~\cite{Teat:2011:SCH:2016039.2016072}.  Within this project, this raises privacy implications, as hashes within the database would be 'convertible' to phone numbers.
 
-{\bf perhaps the below should move to method and requirements - TODO needs to be cleaned up as well.}
+In password authentication systems, this can be solved by the use of a technique called Salting~\cite{hashingPasswordsInfoSec}.  Salting is where a 'salt' - a piece of additional unique data - is added to each piece of input data before hashing, and then this salt is prepended to the output hash.  This nullifies the use of Precomputed Hash Chains and subsequently Rainbow Tables~\cite{hashingPasswordsInfoSec}. When checking if a plaintext password is equal to the hashed and salted representation, the salt from the stored hash is added to the plaintext password, the hashing algorithm applied and then the output compared to the stored obscured password. However, in this application this would prevent efficient lookup of users from phone numbers in the application, as the application would have to compare an input phone number against every user object in the database, which is computationally expensive and slow since a salted hash has to be computed for potentially every user record~\cite{hashingPasswordsInfoSec}.  
 
-In password authentication systems, this can be solved by the use of a technique called Salting~\cite{hashingPasswordsInfoSec}.  Salting is where a 'salt' (a piece of additional unique data) is added to each piece of input data before hashing, and then this salt is prepended to the output hash.  This nullifies the use of Precomputed Hash Chains and subsequently Rainbow Tables~\cite{hashingPasswordsInfoSec}. When checking if a plaintext password is equal to the hashed and salted representation, the salt from the stored hash is added to the plaintext password, the hashing algorithm applied and then the output compared to the stored obscured password. However, in this application this would prevent efficient lookup of users from phone numbers in the application, as the application would have to compare an input phone number against every user object in the database, which is computationally expensive and slow since a salted hash has to be computed for potentially every user record~\cite{hashingPasswordsInfoSec}.  
-
-As such, it has been decided that the best way of protecting a user's phone number in the event of a database hack without significantly degrading performance is to salt phone numbers with a constant, large and complex salt (meaning a rainbow table would have to be specifically computed specifically for this application and would be extremely large in size).
+As such, it has been decided that the best way of protecting a user's phone number in the event of a database hack without significantly degrading performance is to salt phone numbers with a constant, large and complex salt. This means that a rainbow table would have to be specifically computed specifically for this application and would be extremely large in size.
 
 \subsection{Software Design Life Cycles}
-There are many software development life cycles that a developer or company has available to choose from.  Four common ones include the Waterfall Model~\cite{royce1970managing-FirstDescriptionOfWaterFallModelNotByName}, Iterative Model~\cite{briefHistoryOfIncrementalAndIterativeSoftwareDevelopment}\footnote{Iterative development came together from many concepts dating back to 1957.  There was no single paper that initially presented the entire concept, but this paper gives a summary of how the various concepts came together into the current Iterative Development model.}, Spiral Model~\cite{spiralModelSoftwareDevelopment} and the Agile Development Model~\cite{beck2001agile}\footnote{The Agile Manifesto brought together a group of Agile Methods which had been in use since the mid-1990's into a single concept - that of Agile Development.}.\marginnote{Lilian: Do I need to reference that these are common?}  In order to choose which life cycle suits this project best, research into all four has been carried out.
+There are many software development life cycles that a developer or company has available to choose from.  Four common ones include the Waterfall Model~\cite{royce1970managing-FirstDescriptionOfWaterFallModelNotByName}, Iterative Model~\cite{briefHistoryOfIncrementalAndIterativeSoftwareDevelopment}\footnote{Iterative development came together from many concepts dating back to 1957.  There was no single paper that initially presented the entire concept, but this paper gives a summary of how the various concepts came together into the current Iterative Development model.}, Spiral Model~\cite{spiralModelSoftwareDevelopment} and the Agile Development Model~\cite{beck2001agile}\footnote{The Agile Manifesto brought together a group of Agile Methods which had been in use since the mid-1990's into a single concept, that of Agile Development.}.\marginnote{Lilian: Do I need to reference that these are common?} In order to choose which life cycle suits this project best, research into all four has been carried out.
 
-\marginnote{Lilian: Should this be in this section, or moved to the "Method and Requirements" section?}
+line space
+
+line space
+
+line space
+
+% TODO remove the above line space
+
+\marginnote{Lilian: remove these two footnotes? Not always necessary to reference the original}
 
 \subsubsection{The Waterfall Model}
 The waterfall model consists of 5 phases of work, where each leads directly into the next.  It is a plan driven development model, which means that all process activities such as the implementation of the project must be planned and scheduled before work on them begins~\cite{sommervilleSoftwareEngineering}.  The five layers are shown in Figure \ref{fig:waterfallModel} and described below:
@@ -286,27 +287,26 @@ The waterfall model consists of 5 phases of work, where each leads directly into
   \item {\bf Design}.  Here, a plan for the software development is created.  The overall architecture for the software is created, the external libraries to be used are chosen and the interaction between different modules is modelled.
   \item {\bf Implementation}.  In this stage, the software is implemented to match the design and architecture set out in the Design phase.  Unit tests are written to ensure that each module matches its specification.
   \item {\bf Testing}.  In this section the system is tested as a whole to check for any bugs that might not be picked up when testing individual modules in isolation.  The software is then delivered.
-  \item {\bf Maintenance}.  Finally, the software is deployed and maintained.  This includes making changes to the requirements and subsequently the software (implementation) as the business goals change. ~\cite{sommervilleSoftwareEngineering}
+  \item {\bf Maintenance}.  Finally, the software is deployed and maintained.  This includes making changes to the requirements and subsequently the software implementation as the business goals change. ~\cite{sommervilleSoftwareEngineering}
 \end{enumerate}
 
 \begin{figure}[htb] 
 \centering
     \includegraphics[width=0.8\linewidth]{waterfallModel}
-\caption{Waterfall Development Model}
-\small source: Sommerville~\cite{sommervilleSoftwareEngineering}
+\caption{Waterfall Development Model~\cite{sommervilleSoftwareEngineering}}
 \label{fig:waterfallModel}
 \end{figure}
 
-A key disadvantage of the waterfall model is that once development has moved from one stage to another it cannot go back because the model is fixed and progresses in one direction only, until the maintenance step.  The main advantage of the Waterfall Model is its simplicity: it is easy to understand and to use, saving time at the start of the project that would otherwise have been spent on learning and preparing to use a more complex model.
+A key advantage of the Waterfall Model is its simplicity: it is easy to understand and to use, saving time at the start of the project that would otherwise have been spent on learning and preparing to use a more complex model. The main disadvantage of the waterfall model is that once development has moved from one stage to another it cannot go back because the model is fixed and progresses in one direction only, until the maintenance step.
 
 \subsubsection{The Iterative Model}
-Iterative development is the practise of splitting the overall development of a project into multiple independent and distinct blocks.  A block contains a sequence of tasks (essentially a mini life cycle) such that each iteration can really be thought of as its own project.  Each iteration tends to focus on a specific set of features such that when the iteration is complete the overall project is stable and the modules developed to-date can be tested as a whole system~\cite{differenceBetweenLifeCycleModels}.
+Iterative development is the practise of splitting the overall development of a project into multiple independent and distinct blocks.  A block contains a sequence of tasks which are essentially a mini life cycle, such that each iteration can really be thought of as its own project.  Each iteration tends to focus on a specific set of features such that when the iteration is complete the overall project is stable and the modules developed to date can be tested as a whole system~\cite{differenceBetweenLifeCycleModels}.
 
-There are a multiple variations of the iterative development method, including Timeboxed Iterative Development, where all iterations have a fixed inflexible duration, and Client-driven Iterative Development, where each iteration contains the features that the client considers have the highest business value~\cite{larman2004agile}.
+There are a multiple variations of the iterative development method. Two of these are Timeboxed Iterative Development where all iterations have a fixed duration, and Client-driven Iterative Development where each iteration contains the features that the client considers have the highest business value~\cite{larman2004agile}.
 
-A common variation is based on the waterfall model and is shown in Figure \ref{fig:iterativeDevelopment}.  The first three tasks in the cycle represent the first four stages in the waterfall model (Requirements, Design, Implementation and Testing), at which point there is the option to either evaluate progress so far, and start another iteration, or to deploy the software and end development.  One significant difference between this and the waterfall model is that maintenance is not represented.
+A common variation is based on the waterfall model as shown in Figure \ref{fig:iterativeDevelopment}.  The first three tasks in the cycle represent the first four stages in the waterfall model (Requirements, Design, Implementation and Testing), at which point there is the option to either evaluate progress so far and start another iteration, or to deploy the software and end development.  One significant difference between this and the waterfall model is that maintenance is not represented.
 
-A key advantage of the Iterative Model is that it allows for the user to revise their requirements as they progress, making it dynamic and flexible.  This is also its disadvantage, in that the lack of fixed structure can be a weakness unless the project is planned well.
+A key advantage of the Iterative Model is that it allows for the user to revise their requirements as they progress, making it dynamic and flexible which is ideal for small development teams.  This is also its disadvantage, in that the lack of fixed structure can be a weakness unless the project is planned well.
 
 \begin{figure}[htb] 
 \centering
@@ -317,34 +317,33 @@ A key advantage of the Iterative Model is that it allows for the user to revise 
 \end{figure}
 
 \subsubsection{Boehm's Spiral Model}
-The Spiral Model was originally developed as a result of the adjustments that were commonly made to the waterfall model in large government projects~\cite{spiralModelSoftwareDevelopment}.  The Spiral Model is a general model and can be used as a generator for other more specific models, given the parameters for a project such as its risks~\cite{boehm2000spiral}.  Models such as the waterfall model are specialisations of the spiral model~\cite{boehm2000spiral}.
+The Spiral Model~\cite{spiralModelSoftwareDevelopment} was originally developed as a result of the adjustments that were commonly made to the waterfall model in large government projects.  The Spiral Model is a general model and can be used as a generator for other more specific models, given the parameters for a project such as its risks~\cite{boehm2000spiral}.  Models such as the waterfall model are specialisations of the spiral model~\cite{boehm2000spiral}.
 
 Each loop represents a stage of the software development, from planning on the inside loop to system testing and verification on the outside, as shown in Figure \ref{fig:spiralModel}.
+\marginnote{give better explanation}
+% todo give better explanation
 
 \begin{figure}[htb] 
 \centering
     \includegraphics[width=0.8\linewidth]{spiralModel}
-\caption{Boehm's Spiral Model}
-\small source: Sommerville~\cite{sommervilleSoftwareEngineering}
+\caption{Boehm's Spiral Model~\cite{sommervilleSoftwareEngineering}}
 \label{fig:spiralModel}
 \end{figure}
 
-A key advantage of the Spiral Model is the level of detail it models.  The stage of a sub-task within the entire development process is represented by the distance from the origin, and each loop is split into small, well described sections.  A key disadvantage is that the planning and use of the model is largely driven by the results of complex risk analysis on the sub-tasks~\cite{sommervilleSoftwareEngineering}.  Although this makes it favourable to large organisations, it has the opposite effect for individuals.
-
-A detailed description on the spiral model can be found in Boehm's paper "A spiral model of software development and enhancement", where he published the complete concept~\cite{spiralModelSoftwareDevelopment}.
+A key advantage of the Spiral Model is the level of detail it models.  The stage of a sub-task within the entire development process is represented by the distance from the origin and each loop is split into small, well described sections.  The main disadvantage is that the planning and use of the model is largely driven by the results of complex risk analysis on the sub-tasks~\cite{sommervilleSoftwareEngineering}.  Although this makes it favourable to large organisations, it has the opposite effect for smaller projects.
 
 \subsubsection{Agile Development}
-Agile Development essentially represents a group of development techniques targeted towards either the development of a small to medium sized product for sale or the development of a custom system within an organisation, where the customer has a high degree of involvement (for example 'Extreme Programming')~\cite{sommervilleSoftwareEngineering}.
+Agile Development essentially represents a group of development techniques targeted towards either the development of a small to medium sized product for sale or the development of a custom system within an organisation, where the customer has a high degree of involvement, for example 'Extreme Programming'~\cite{sommervilleSoftwareEngineering}.
 
-Agile development is highly targeted towards teams, with components such as Pair Programming, Collective Ownership, regular meetings and employee health (avoiding overtime) playing an integral part in the model~\cite{sommervilleSoftwareEngineering}.
+Agile development is highly targeted towards teams with components such as Pair Programming, Collective Ownership, regular meetings and employee health (avoiding overtime) playing an integral part in the model~\cite{sommervilleSoftwareEngineering}.
 
 \subsubsection{Development Life Cycle Summary}
 \label{sec:developmentLifeCycleSummary}
-Iterative development has been chosen as the model that this project will follow, based on the following factors:
+Iterative development has been chosen as the model that this project will use, based on the following factors:
 \begin{enumerate}
   \item Boehm's Spiral Model and Agile Development are both targeted towards development teams.  A significant part of these models relates to team interaction, so they are not appropriate to this project.
   \item The Waterfall Model is rigid and inflexible.  It does not allow for the changes to the requirements and implementation that might be proposed after evaluating the quality of the first implementation.
-  \item The Iterative development model can be implemented effectively by a single developer \marginnote{I need to add this as a 'pro' above}, and supports the adjustment of requirements and implementation in each iteration of the cycle.
+  \item The Iterative development model can be implemented effectively by a single developer, and supports the adjustment of requirements and implementation in each iteration of the cycle.
 \end{enumerate}
 
 
@@ -358,45 +357,48 @@ The Iterative Development Model was selected in Section \ref{sec:developmentLife
 
 \subsection{Requirements}
 \subsubsection{Use Cases / User Goals}
-Two personas were created in Appendix Section \ref{sec:appendixPersonas} to represent individuals who may have a need for the work resulting from this project.  These are Nanjala, who is from Uganda, and Cedric, who is from Switzerland, and it is from these that user goals are extracted.  These describe what a general user aims to achieve with this service.
+Two personas were created to represent individuals who may have a need for the work resulting from this project, which can be seen in Appendix A in Section \ref{sec:appendixPersonas}. These are Nanjala, who is from Uganda, and Cedric, who is from Switzerland, and it is from these that user goals are extracted. These describe what a general user aims to achieve with this service.
 \begin{enumerate}
   \item Nanjala wants to be able to read general information on any given topic.
   \item Cedric wants to be able to retrieve facts from direct questions.
-  \item Both Nanjala and Cedric want to be able to achieve their goals entirely via SMS because of their circumstances.
+  \item Both Nanjala and Cedric want to be able to achieve their goals entirely via SMS.
   \item Cedric needs a simple and efficient user interface that allows him to retrieve facts quickly. 
   \item Cedric wants to be able to feedback into the system when he finds an answer particularly useful or unhelpful. 
   \item Nanjala wants to be able to show the service to her friends without explaining how to use it every time.
-  \item Nanjala wants to get recommendations on content she might find interesting. \marginnote{Note to self: might not implement this, in which case discuss in DISCUSSION.}
+  \item Nanjala wants to get recommendations on content she might find interesting. \marginnote{Note to self: might not implement this, in which case discuss in DISCUSSION.}% TODO remove recommendations
   \item Cedric wants the system to protect his privacy, obscuring his identity.
+  \item Nanjala wants to be able to ask questions as she would ask a friend without having to learn a syntax.
 \end{enumerate}
 
 \subsubsection{User Requirements}
 \label{subsubsec:userRequirements}
 User goals are distilled into formal user requirements.  Each user requirement corresponds directly to the correspondingly numbered user goal.
 \begin{enumerate}
-  \item \label{requirement:userReqNaturalLanguage} Users must be able to interact with the system using natural language.
   \item Users must be able to request general or descriptive information on a geographical entity.
   \item Users must be able to ask questions requesting a fact or statistic about an entity and get the answer or number they are looking for.
   \item Users must be able to interact with the system over SMS.
   \item Users must be able to make their queries and get responses quickly.
   \item Users must be able to feedback to the system when an answer is of noticeably low or high quality so the system can learn and improve.
   \item Users must be able to learn how to use the system themselves and this learning process should be quick.
-  \item Users must be able to get recommendations on entities they might be interested in, based on previous query history.\marginnote{Haven't decided yet if this is a feature I will implement - time based!}
+  \item Users must be able to get recommendations on entities they might be interested in based on previous query history.\marginnote{Haven't decided yet if this is a feature I will implement - time based!}
   \item Users must be comfortable that their privacy is been protected whilst using the service.
+  \item \label{requirement:userReqNaturalLanguage} Users must be able to interact with the system using natural language.
 \end{enumerate}
 
 \subsubsection{System Requirements - Functional}
 \label{subsubsec:systemRequirementsFunctional}
+\marginnote{write intro text}
+% TODO - write intro text
 \begin{enumerate}
   \item \label{requirement:sysReqNaturalLanguage} The system will be capable of processing queries in natural language form.
   \item The system will receive queries via SMS, process them and then respond via SMS.
   \item The system shall use a datasource that contains both facts and descriptive text on geographical entities to answer queries.
-  \item The system must be able to parse queries to identify the entity that is been asked about and the specific parameter of that entity that should be returned as the answer to the user's query.
+  \item The system must be able to parse queries to identify the entity that is being asked about and the specific parameter of that entity that should be returned as the answer to the user's query.
   \item As well as giving direct facts and statistics, the system should be able to give general descriptive information on an entity.
   \item The system must be able to match words of similar meaning to the parameters in the data source.  For example, the word 'long' must be matched to the parameter 'length'.
   \item The system must learn from user feedback when answers that are returned are of high or low quality an apply this knowledge to future queries.
   \item The system must be self-explanatory, with the facility to offer instructions to a user.
-  \item The system must use user state so that it can accept queries that are dependent on past questions (for example, a query asking for more information or feedback on the quality of a past question).
+  \item The system must use user state so that it can accept queries that are dependent on past questions, for example a query asking for more information or feedback on the quality of a past question.
   \item \label{requirement:easyToImplement} The system must be easy to implement and flexible, to accommodate future projects that make use of adaptations of this project.
   \item The system must obscure a user's phone number in the database.
 \end{enumerate}
@@ -411,7 +413,7 @@ Non-functional requirements are listed in table \ref{table:nonFunctionalRequirem
     \hline
     Non-Functional Requirement & Fit Criterion \\ \hline
     The system behind the SMS gateway must respond in a timely manner.  & From an SMS been received, a response must be sent within 20 seconds.  SMS transmission times on the cellular network and gateway are out of the control of this project, so are not accounted for. \\ \hline
-    The answers returned must be of high quality.  & In testing, the system returns the correct information for at least 90\% of queries initially (before learning starts) if an answer is returned at-all. \\ \hline
+    The answers returned must be of high quality.  & In testing, the system returns the correct information for at least 90\% of queries initially (before learning starts) if an answer is returned at all. \\ \hline
     Answers that are consistently rated poorly are are less likely to be returned. & In testing, after receiving a small number of negative ratings for an answer, a different answer is returned. \\ \hline
     Instructions to use the service should be clear and concise, with no ambiguity.  & In testing, having explained the purpose of the system, a user should be able to use the system with just the help information, without needing to ask for assistance. \\ \hline  
     The system should accept and be able to process questions in natural human language as opposed to a delimited message. & In testing, a user should be able to use the system for general questions without having had a syntax explained to them. \\ \hline
@@ -422,7 +424,7 @@ Non-functional requirements are listed in table \ref{table:nonFunctionalRequirem
 \end{table}
 
 \subsection{Data Sources}
-A number of possible datasources were identified from which data could be drawn from for this project.  These were all based off of Wikipedia (a large, linked source of knowledge), and include the Wikipedia API and various representations of the DBPedia Ontology.  In this section, both will be discussed and a decision will be made with regard to which ones are used.
+A number of possible datasources were identified from which data could be drawn from for this project.  These were all based off of Wikipedia (a large, linked source of knowledge), and include the Wikipedia API and various representations of the DBPedia Ontology.  In this section, both will be discussed and a decision will be made with regard to which ones will be used.
 
 \subsubsection{Wikipedia API}
 The Wikipedia API is a standard MediaWiki API and allows applications to query a page or resource for various parameters from a page, including the page contents, infobox parameters, citation list and links to other articles in various flat or multi-layered data structures~\cite{mediaWikiAPI}.  Interactions are made via a HTTP GET request to a URL containing the parameters, and responses can be received in JSON.  This makes the API easy to use and widely compatible, especially since JSON can be converted to a dictionary in most languages.
@@ -430,25 +432,27 @@ The Wikipedia API is a standard MediaWiki API and allows applications to query a
 \subsubsection{DBPedia Ontology}
 The DBPedia Ontology is the result of a project that aims to build an OWL ontology representing all of the knowledge within Wikipedia.  The ontology has been manually created from the most commonly used infoboxes on Wikipedia and covers 685 classes with 2,795 properties, providing structured information on 4.2 million places, people, work, species and organisations~\cite{dbPediaIntro}.  This makes it especially good for use in applications since the data is both curated and well structured.
 
-There are two ways of querying the DBPedia Ontology.  One is using the standard SPARQL ontology query software to make a query form the ontology structure, however this is complex as queries must be structured correctly and it is necessary to know the class structure of the entities been queried~\cite{dbPediaSparql}.
+There are two ways of querying the DBPedia Ontology.  One is using the standard SPARQL ontology query software to make a query form the ontology structure; however this is complex as queries must be structured correctly and it is necessary to know the class structure of the entities being queried~\cite{dbPediaSparql}.
 
-In the event that the class structure is not known, queries can be made by querying the top-level representation of an entity in the ontology, which presents data in a similar format to that of the Wikipedia API, albeit in a 'cleaner' form (with human readable keys) as a result of the data been processed by hand.  Although the keys are of a more human-readable format, some material is abstracted within the ontology, and so is inaccessible with a basic query.  An example of this is page for 'London', which does not have a parameter 'Mayor' with the value 'Boris Johnson'.  Instead it refers to a number of 'Leader Titles' and 'Leader Names', which include a reference to Boris Johnson\footnote{A web representation of the London object is available at: http://dbpedia.org/page/London}.
+In the event that the class structure is not known, queries can be made by querying the top-level representation of an entity in the ontology, which presents data in a similar format to that of the Wikipedia API, albeit in a 'cleaner' form (with human readable keys) as a result of the data been processed by hand.  Although the keys are of a more human-readable format, some material is abstracted within the ontology and so is inaccessible with a basic query.  An example of this is page for 'London', which does not have a parameter 'Mayor' with the value 'Boris Johnson'.  Instead it refers to a number of 'Leader Titles' and 'Leader Names', which include a reference to Boris Johnson\footnote{A web representation of the London object is available at: http://dbpedia.org/page/London}.
 
 \subsubsection{Choosing the Source and Interface for this Project}
-This project has a limited scope and time period available to it, and creating a system capable of identifying the relevant classes and then constructing SPARQL queries for looking up an abstract property is an example of an approach that is out of scope (as it involves natural language processing and semantic analysis of the names of the ontological classes - not just the query been made).  As such, this project will make use of a combination of the data from the Wikipedia API and DBPedia top-level entity representations, collecting keys from both and working with the key with the highest semantic relatedness match to identify the data-value that most likely is the answer to a user's question.  The DBPedia Ontology also provides access to the abstract at the same level as the infobox, so general descriptions of entities will be sourced from there.
+This project has a limited scope and time period available to it, and creating a system capable of identifying the relevant classes and then constructing SPARQL queries for looking up an abstract property is an example of an approach that is out of scope, as it involves natural language processing and semantic analysis of the names of the ontological classes, not just the query being made.  As such, this project will make use of a combination of the data from the Wikipedia API and DBPedia top-level entity representations, collecting keys from both and working with the key with the highest semantic relatedness match to identify the data-value that most likely is the answer to a user's question.  The DBPedia Ontology also provides access to the abstract at the same level as the infobox, so general descriptions of entities will be sourced from there.
 
 \subsection{Processing Natural Language Queries}
-Because of the nature of the audience for the system been developed in this project, it needs to be able to process input in natural language form rather than enforcing a formal grammar on users (as described in User Requirement \ref{requirement:userReqNaturalLanguage} and System Requirement\ref{requirement:sysReqNaturalLanguage}). This involves constructing a natural language processing system to process queries and identify their meaning. In this project, queries are of a simple form - if a user is asking a question they are requesting a property of information about a given entity. As assumption is therefore made that each query consists of: a token representing the geographical entity been queried; a token representing the property been requested of that geographical entity; and some noise in the form of stop words 
-\footnote{Stop words are words that are frequently used in in language but do not carry any significance themselves \cite{dataMiningStopWords}. It is common practise in Natural Language Processing to to remove these stop words before attempting to process an input \cite{dataMiningStopWords}.}.
+Because of the nature of its audience, the system needs to be able to process input in natural language form rather than enforcing a formal grammar on users as described in User Requirement \ref{requirement:userReqNaturalLanguage} and System Requirement \ref{requirement:sysReqNaturalLanguage}. This involves constructing a natural language processing system to process queries and identify their meaning. In this project, queries are of a simple form: if a user is asking a question they are requesting a property of information about a given entity. An assumption is therefore made that each query consists of: a token representing the geographical entity been queried; a token representing the property been requested of that geographical entity; and some noise in the form of stop words 
+\footnote{Stop words are words that are frequently used in in language but do not carry any significance themselves \cite{dataMiningStopWords}. It is common practise in Natural Language Processing to to remove these stop words before attempting to process an input \cite{dataMiningStopWords}. An example of stop word is the word \texttt{the}.}.
 
-It necessary to be able to identify the geographical entity in the query. This will be done using a Named Entity Extraction tool (of which there many tools available online, including Cortical\footnote{http://www.cortical.io/demos/keyword-extraction/} and Dandelion\footnote{https://dandelion.eu/products/datatxt/nex/demo}). These tools extract keywords from a text and in some cases are capable of categorising keywords according to an ontology. For example, Dandelion links entities to the DBPedia Ontology \cite{dandelionNex}.
+It necessary to be able to identify the geographical entity in the query. This will be done using a Named Entity Extraction tool, of which there many available online including Cortical\footnote{http://www.cortical.io/demos/keyword-extraction/} and Dandelion\footnote{https://dandelion.eu/products/datatxt/nex/demo}. These tools extract keywords from a text and in some cases are capable of categorising keywords according to an ontology. For example, Dandelion links entities to the DBPedia Ontology \cite{dandelionNex}.
+% TODO - turn these URLs into citations
 
 The property about the geographical entity will be established by removing stop words, punctuation and the name of the geographical entity from the string.  In the input 'What is the height of the Eiffel Tower?', this would result in the string 'height'.
 
 The result of this simple natural language processing should be that a sentence such as 'What is the Height of the Eiffel Tower?' is reduced to a structure indicating that the geographical entity is the 'Eiffel Tower' and the property is the 'height'.
 
 \subsection{Evaluating Success}
-Success will be evaluated by establishing if the project fulfils it's original requirements, based on the original scenarios.  Many user requirements such as protecting the privacy of a user will be proven through software, whilst some that involve user interactions must be tested with users.  As such, user testing will be used to evaluate three specific properties of the software through a trial usage and subsequent questionnaire.  The questionnaire will aim to evaluate the usefulness of the system, the usability of the system and the quality of returned answers, and is based off of the IBM "Perceived Usefulness, Perceived Ease of Use, and User Acceptance of Information Technology" questionnaire~\cite{davis1989perceived}.  Questions were modified to change to suit the software been used in a situation without internet as opposed to a general workplace environment, and a question was added to investigate the quality of answers returned to a user.  A copy of the questionnaire to be used is included in Appendix \ref{sec:appendixQuestionnaire}.
+\label{sec:evaluatingSuccess}
+Success will be evaluated by establishing if the project fulfils its original requirements, based on the scenarios.  Many user requirements such as protecting the privacy of a user will be proven through software, whilst some that involve user interactions must be tested with users.  As such, user testing will be undertaken to evaluate three specific properties of the software through a trial usage and subsequent questionnaire.  The questionnaire will aim to evaluate the usefulness of the system, the usability of the system and the quality of returned answers, and is based off of the IBM "Perceived Usefulness, Perceived Ease of Use, and User Acceptance of Information Technology" questionnaire~\cite{davis1989perceived}.  Questions were modified to suit the software being used in a situation without internet as opposed to a general workplace environment, and a question was added to investigate the quality of answers returned to a user.  A copy of the questionnaire to be used is included in Appendix C in section \ref{sec:appendixQuestionnaire}.
 
 % TODO XXX - write the boundary at which I will say I succeeded (if I consistently score about netural)
 % TODO XXX - write about Likert model for setting questionnaire scale.
@@ -462,7 +466,7 @@ In this section, the design of the system will be described, including informati
 In this section, the high-level design of the system software and its interactions with third-party services is described.  The system design was driven by requirements listed in sections \ref{subsubsec:userRequirements}, \ref{subsubsec:systemRequirementsFunctional} and \ref{subsubsec:systemRequirementsNonFunctional}, which were generalised to:
 
 \begin{itemize}
-    \item The system must be modular with points to add additional plugins for example, for additional data sources.
+    \item The system must be modular with points to add additional plugins, for example for additional data sources.
     \item The system must be easy to maintain, with distinct boundaries between functional components and behaviour.
     \item The database must be local to decrease the risk of exposing data.
     \item The system must have clear interfaces for interacting with the external world.
@@ -482,6 +486,9 @@ In section \ref{subsubsec:userPrivacyAndDataProtection}, the need to protect the
 
 The main gateway into the system will be an HTTP call to a Python function, which takes the phone number of the user and the question being asked as its parameters.  This function represents a core part of the privacy protection system, by generating the hashed phone number and only using that when calling functions that compute an answer.  The user's phone number is only subsequently used when 
 
+\marginnote{delete this code and finish above sentence}
+%todo delete this code and finish above sentence
+
 \begin{lstlisting}[language=Python]
 def entry(userCell, question):
     hashedCell = someHashFunction(userCell)
@@ -497,9 +504,9 @@ The userCell is required at the output of the function to determine the number t
 The language Python has been selected to be the main language in project for four reasons:
 \begin{enumerate}
   \item Python is universally compatible and simple to execute.  Once the server application is written, it will be simple to migrate it between machines and adjust the application's configuration or environment.
-  \item Python is commonly used and has significant community support in the form of libraries for all the tools that will be used in this project (for example, libraries for querying common databases and for sending text messages).  This is useful as it will prevent the author spending time implementing common functionality like database calls.
+  \item Python is commonly used and has significant community support \marginnote{just cite a big community website} in the form of libraries for all the tools that will be used in this project, for example libraries for querying common databases and for sending text messages.  This is useful as it will save time implementing common functionality like database calls.
   \item Python is an extremely flexible language in which it is easy to implement applications of this type without syntax issues.  This fulfils the system requirement in section (\ref{subsubsec:systemRequirementsFunctional}, point \ref{requirement:easyToImplement}) that the application is easy and quick to implement.
-  \item The author has significant expertise in the language, as does Lilian Blot (dissertation Supervisor).
+  \item The author has significant expertise in the language.
 \end{enumerate}
 
 A testing utility will also be created to query the application from a personal computer without using SMS.  A simple OS X Cocoa application will be created that queries the HTTP interface with JSON in the expected format and displays an answer.  Objective-C and and Mac OS X were chosen as the language and platform for this as the author has experience with Objective-C and uses a Mac.  There was no requirement for universal compatibility because the application is only for testing and development purposes.
@@ -515,7 +522,7 @@ The development platform of the utility will be Linux.  This is for three reason
 As previously stated, the interface to the application will be over the SMS platform.
 
 \subsubsection{Database}
-There are three tables of data that need to be stored.  These are the tables for user profiles (to allow the application to handle queries that make use of 'state' with users), for the machine learning of question-answer quality, and for an initial intelligence that a new deployment of the application starts with.  Both the conceptual data model and the logical database design are now presented.
+There are three tables of data that need to be stored.  These are the tables for: user profiles, to allow the application to handle queries that make use of 'state' with users; the machine learning of question-answer quality; and an initial intelligence that a new deployment of the application starts with.  Both the conceptual data model and the logical database design are now presented.
 
 \myparagraph{Conceptual Data Model}
 % TODO --- - write conceptual database model
@@ -524,12 +531,12 @@ There are five entities in the conceptual data model for this project.  These ar
 \begin{itemize}
   \item {\bf Users:} An entity that represents a user, purely by an identifier based on their phone number.
   \item {\bf Complete User History:} A history of all questions they have asked previously to allow for future expansion of the system, perhaps to implement a recommendations system.
-  \item {\bf Last Question Asked by a User:} An object containing the parameters of the last query.  This allows the system to handle stateful queries based upon a previous query.
-  \item {\bf Keyword Pairs Quality Learning:} Will contain the property requested by a user, the property returned to that user, and the number of times a matching was ranked as been either one, two, three, four or five stars.
+  \item {\bf Last Question Asked by a User:} An object containing the parameters of the last question.  This allows the system to handle stateful queries based upon a previous query.
+  \item {\bf Keyword Pairs Quality Learning:} Will contain the property requested by a user, the property returned to that user, and the number of times a matching was ranked as being either one, two, three, four or five stars.
   \item {\bf Initial Intelligence:} \color{red} Undecided.
 \end{itemize}
 
-These entities shown in Figure \ref{fig:conceptualDatabaseDesignDiagram}, which also shows the entity relationships.
+These entities are shown in Figure \ref{fig:conceptualDatabaseDesignDiagram}, which also shows the entity relationships.
 
 \begin{figure}[htb] 
 \includegraphics[width=\linewidth]{conceptualModel}
@@ -538,7 +545,7 @@ These entities shown in Figure \ref{fig:conceptualDatabaseDesignDiagram}, which 
 \end{figure}
 
 \myparagraph{Logical Database Design}
-The logical design of the database reduces the number of entities from five in the conceptual model to three.  This is because there is a one-to-one relationship between the \textit{User} entity and both the \textit{Complete User History} and \textit{Last Question Asked by a User} entities, with a small number of fields.  In a large system where relational databases were used it would make sense to keep these entities separate, but in this case merging them allows a wider variety of databases to be used, simplifies the implementation and does not add significantly add to the complexity of the data model.
+The logical design of the database reduces the number of entities from five in the conceptual model to three.  This is because there is a one-to-one relationship between the \textit{User} entity and both the \textit{Complete User History} and \textit{Last Question Asked by a User} entities, with a small number of fields.  In a large system where relational databases were used it would make sense to keep these entities separate, but in this case merging them allows a wider variety of databases to be used, simplifies the implementation and does not add significantly add to the complexity of the data model. % todo no more 1-1 matching
 
 The logical database requirements are listed in Table \ref{table:logicalDatabaseDesignListing} and represented graphically in Figure \ref{fig:logicalDatabaseDesignDiagram}.
 
@@ -551,7 +558,7 @@ The logical database requirements are listed in Table \ref{table:logicalDatabase
     KeywordRelatednessQuality & (\underline{id}, givenProperty, returnedProperty, oneStarRatings, twoStarRatings, threeStarRatings, fourStarRatings, fiveStarRatings) \\ \hline
     InitialIntelligence & \color{red} Undecided. \\ \hline
     \end{tabular}
-    \caption{Logical Database Design.  \underline{Underlined} fields represent primary keys.}
+    \caption{Logical Database Design.  Underlined fields represent primary keys.}
     \label{table:logicalDatabaseDesignListing}
 \end{center}
 \end{table}
@@ -562,6 +569,7 @@ The logical database requirements are listed in Table \ref{table:logicalDatabase
 \caption{Logical Model of Data}
 \label{fig:logicalDatabaseDesignDiagram}
 \end{figure}
+%todo - remove initial inteligence from the above
 
 \myparagraph{Database Technology}
 The database technology requirements for this project are:
@@ -569,12 +577,12 @@ The database technology requirements for this project are:
 \begin{enumerate}
   \item The selected database must be as simple in implementation and interface as possible, whilst still supporting the system requirements.  This is to allow for quick development and to avoid adding unnecessary complexity.
   \item The selected database must allow for storage and retrieval of records with multiple parameters.
-  \item Support for records that are related to each other is not required; so relational databases are not required, but not ruled out.
+  \item Support for records that are related to each other is not required, so relational databases are not needed, but not ruled out.
   \item The database needs to have built-in support for Sharding and Replication/Mirroring to allow the application to scale.
   \item The database must have a library for interfacing with it in the language of this project.
 \end{enumerate}
 
-There are a number of database technologies available that would fulfil the data requirements of this project.  These can be split into the categories of relational databases (SQL) and document stores (NoSQL).  Two common database approaches that meet the above requirements are MySQL with an ORM \footnote{ORM: Object-relational mapping tool, which maps queries from the syntax of your programming language to SQL.  ORM's commonly also apply optimisations to queries, and validate them against SQL injections.}, and MongoDB with the Mongo Client.  Table \ref{table:mysqlVsMongo} shows a comparison of both of these technologies.
+There are a number of database technologies available that would fulfil the data requirements of this project.  These can be split into the categories of relational databases (SQL) and document stores (NoSQL).  Two common database approaches that meet the above requirements are MySQL with an ORM \footnote{ORM: Object-relational mapping tool, which maps queries from the syntax of your programming language to SQL.  ORMs commonly also apply optimisations to queries, and validate them against SQL injections.}, and MongoDB with the Mongo Client.  Table \ref{table:mysqlVsMongo} shows a comparison of both of these technologies.
 
 \begin{table}
 \begin{center}
@@ -817,6 +825,9 @@ If the author was able to expand this project, areas for expansion include:
   \item Addressing the issue of literacy
   \item Automating the expansion of the database
   \item Units for metrics.
+  \item Make it work with all of wikipedia (all pages with infoboxes anyway)
+  \item make it work with all languages
+  \item use full on random sparql queries to do magic
 \end{itemize}
 
 \newpage
@@ -908,7 +919,7 @@ For the researcher: Participant ID: \textunderscore\textunderscore\textunderscor
 }
 
 \newpage
-\section*{Appendix C - Sample Questionnaire}
+\section{Appendix C - Sample Questionnaire}
 \label{sec:appendixQuestionnaire}
 \newpage
 

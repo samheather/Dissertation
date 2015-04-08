@@ -1,5 +1,5 @@
-\contentsline {table}{\numberline {1}{\ignorespaces Example of software database: hashed phone numbers paired with a list of previous returned answer ID's. }}{19}
-\contentsline {table}{\numberline {2}{\ignorespaces List of non-functional requirements and their Fit Criteria.}}{27}
-\contentsline {table}{\numberline {3}{\ignorespaces Logical Database Design. \relax $\@@underline {\hbox {Underlined}}\mathsurround \z@ $\relax fields represent primary keys.}}{35}
-\contentsline {table}{\numberline {4}{\ignorespaces MySQL \& SQLAlchemy vs MongoDB}}{36}
-\contentsline {table}{\numberline {5}{\ignorespaces Typical Document in each MongoDB Collection}}{37}
+\contentsline {table}{\numberline {1}{\ignorespaces Example of software database: hashed phone numbers paired with a list of previous returned answer IDs. }}{18}
+\contentsline {table}{\numberline {2}{\ignorespaces List of non-functional requirements and their Fit Criteria.}}{26}
+\contentsline {table}{\numberline {3}{\ignorespaces Logical Database Design. Underlined fields represent primary keys.}}{34}
+\contentsline {table}{\numberline {4}{\ignorespaces MySQL \& SQLAlchemy vs MongoDB}}{35}
+\contentsline {table}{\numberline {5}{\ignorespaces Typical Document in each MongoDB Collection}}{36}

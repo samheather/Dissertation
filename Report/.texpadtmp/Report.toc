@@ -1,68 +1,68 @@
-\contentsline {section}{\numberline {1}Useful thoughts from Lilian}{10}
-\contentsline {section}{\numberline {2}Introduction}{11}
-\contentsline {subsection}{\numberline {2.1}Background of this project}{11}
-\contentsline {subsection}{\numberline {2.2}Motivation for this project}{12}
-\contentsline {subsection}{\numberline {2.3}Aims of this project}{12}
-\contentsline {subsection}{\numberline {2.4}Structure of this report}{13}
-\contentsline {subsection}{\numberline {2.5}Assumptions Within This Project}{14}
-\contentsline {section}{\numberline {3}Literature Review}{15}
-\contentsline {subsection}{\numberline {3.1}Previous work using SMS}{15}
-\contentsline {subsection}{\numberline {3.2}Ethical Issues}{16}
-\contentsline {subsubsection}{\numberline {3.2.1}Ethics of Providing Information}{16}
-\contentsline {subsubsection}{\numberline {3.2.2}Ethics of Translation}{17}
-\contentsline {subsubsection}{\numberline {3.2.3}User Privacy and Data Protection}{18}
-\contentsline {subsection}{\numberline {3.3}Software Design Life Cycles}{20}
-\contentsline {subsubsection}{\numberline {3.3.1}The Waterfall Model}{21}
-\contentsline {subsubsection}{\numberline {3.3.2}The Iterative Model}{22}
-\contentsline {subsubsection}{\numberline {3.3.3}Boehm's Spiral Model}{23}
-\contentsline {subsubsection}{\numberline {3.3.4}Agile Development}{23}
-\contentsline {subsubsection}{\numberline {3.3.5}Development Life Cycle Summary}{24}
-\contentsline {section}{\numberline {4}Method and Requirements}{25}
-\contentsline {subsection}{\numberline {4.1}Plan for Software Development}{25}
-\contentsline {subsection}{\numberline {4.2}Requirements}{25}
-\contentsline {subsubsection}{\numberline {4.2.1}Use Cases / User Goals}{25}
-\contentsline {subsubsection}{\numberline {4.2.2}User Requirements}{25}
-\contentsline {subsubsection}{\numberline {4.2.3}System Requirements - Functional}{26}
-\contentsline {subsubsection}{\numberline {4.2.4}System Requirements - Non-Functional}{27}
-\contentsline {subsection}{\numberline {4.3}Data Sources}{27}
-\contentsline {subsubsection}{\numberline {4.3.1}Wikipedia API}{28}
-\contentsline {subsubsection}{\numberline {4.3.2}DBPedia Ontology}{28}
-\contentsline {subsubsection}{\numberline {4.3.3}Choosing the Source and Interface for this Project}{28}
-\contentsline {subsection}{\numberline {4.4}Processing Natural Language Queries}{29}
-\contentsline {subsection}{\numberline {4.5}Evaluating Success}{29}
-\contentsline {section}{\numberline {5}Design}{31}
-\contentsline {subsection}{\numberline {5.1}System Design}{31}
-\contentsline {subsubsection}{\numberline {5.1.1}Micro-system for Protecting User Identity}{31}
-\contentsline {subsection}{\numberline {5.2}Language, Platform and Tools and Libraries}{32}
-\contentsline {subsubsection}{\numberline {5.2.1}Language}{32}
-\contentsline {subsubsection}{\numberline {5.2.2}Platform}{33}
-\contentsline {subsubsection}{\numberline {5.2.3}Database}{33}
-\contentsline {paragraph}{Conceptual Data Model}{33}
-\contentsline {paragraph}{Logical Database Design}{34}
-\contentsline {paragraph}{Database Technology}{34}
-\contentsline {paragraph}{Physical Database Design}{36}
-\contentsline {subsubsection}{\numberline {5.2.4}Libraries}{36}
-\contentsline {paragraph}{Database Querying}{36}
-\contentsline {paragraph}{Creating HTTP Server and REST API}{36}
-\contentsline {paragraph}{Sending SMS}{38}
-\contentsline {paragraph}{Semantic Analysis - Measuring semantic relatedness between texts}{39}
-\contentsline {paragraph}{Semantic Analysis - Discovering Named Entities in text}{40}
-\contentsline {section}{\numberline {6}Implementation}{41}
-\contentsline {subsection}{\numberline {6.1}Implementation Overview}{41}
-\contentsline {subsection}{\numberline {6.2}Tools and services used}{41}
-\contentsline {subsection}{\numberline {6.3}Implementation of natural language processing module}{42}
-\contentsline {subsection}{\numberline {6.4}Implementation of answer location system}{43}
-\contentsline {subsection}{\numberline {6.5}Implementation of rating and learning systme}{44}
-\contentsline {subsection}{\numberline {6.6}Discussion of Implementation}{44}
-\contentsline {section}{\numberline {7}Results}{46}
-\contentsline {section}{\numberline {8}Discussion}{47}
-\contentsline {section}{\numberline {9}Evaluation}{48}
-\contentsline {section}{\numberline {10}Extending this project}{49}
-\contentsline {section}{\numberline {11}Conclusion}{50}
-\contentsline {section}{\numberline {12}Appendix A - Personas}{55}
-\contentsline {subsection}{\numberline {12.1}Nanjala}{55}
-\contentsline {subsubsection}{\numberline {12.1.1}Demographics}{55}
-\contentsline {subsubsection}{\numberline {12.1.2}Average Day}{55}
-\contentsline {subsection}{\numberline {12.2}Cedric}{56}
-\contentsline {subsubsection}{\numberline {12.2.1}Demographics}{56}
-\contentsline {subsubsection}{\numberline {12.2.2}Average European Trip}{56}
+\contentsline {section}{\numberline {1}Introduction}{10}
+\contentsline {subsection}{\numberline {1.1}Background of this project}{10}
+\contentsline {subsection}{\numberline {1.2}Motivation for this project}{11}
+\contentsline {subsection}{\numberline {1.3}Aims of this project}{11}
+\contentsline {subsection}{\numberline {1.4}Structure of this report}{12}
+\contentsline {subsection}{\numberline {1.5}Assumptions Within This Project}{13}
+\contentsline {section}{\numberline {2}Literature Review}{14}
+\contentsline {subsection}{\numberline {2.1}Previous work using SMS}{14}
+\contentsline {subsection}{\numberline {2.2}Ethical Issues}{15}
+\contentsline {subsubsection}{\numberline {2.2.1}Ethics of Providing Information}{15}
+\contentsline {subsubsection}{\numberline {2.2.2}Ethics of Translation}{16}
+\contentsline {subsubsection}{\numberline {2.2.3}User Privacy and Data Protection}{17}
+\contentsline {subsection}{\numberline {2.3}Software Design Life Cycles}{19}
+\contentsline {subsubsection}{\numberline {2.3.1}The Waterfall Model}{20}
+\contentsline {subsubsection}{\numberline {2.3.2}The Iterative Model}{21}
+\contentsline {subsubsection}{\numberline {2.3.3}Boehm's Spiral Model}{22}
+\contentsline {subsubsection}{\numberline {2.3.4}Agile Development}{22}
+\contentsline {subsubsection}{\numberline {2.3.5}Development Life Cycle Summary}{23}
+\contentsline {section}{\numberline {3}Method and Requirements}{24}
+\contentsline {subsection}{\numberline {3.1}Plan for Software Development}{24}
+\contentsline {subsection}{\numberline {3.2}Requirements}{24}
+\contentsline {subsubsection}{\numberline {3.2.1}Use Cases / User Goals}{24}
+\contentsline {subsubsection}{\numberline {3.2.2}User Requirements}{24}
+\contentsline {subsubsection}{\numberline {3.2.3}System Requirements - Functional}{25}
+\contentsline {subsubsection}{\numberline {3.2.4}System Requirements - Non-Functional}{26}
+\contentsline {subsection}{\numberline {3.3}Data Sources}{26}
+\contentsline {subsubsection}{\numberline {3.3.1}Wikipedia API}{27}
+\contentsline {subsubsection}{\numberline {3.3.2}DBPedia Ontology}{27}
+\contentsline {subsubsection}{\numberline {3.3.3}Choosing the Source and Interface for this Project}{27}
+\contentsline {subsection}{\numberline {3.4}Processing Natural Language Queries}{28}
+\contentsline {subsection}{\numberline {3.5}Evaluating Success}{28}
+\contentsline {section}{\numberline {4}Design}{30}
+\contentsline {subsection}{\numberline {4.1}System Design}{30}
+\contentsline {subsubsection}{\numberline {4.1.1}Micro-system for Protecting User Identity}{30}
+\contentsline {subsection}{\numberline {4.2}Language, Platform and Tools and Libraries}{31}
+\contentsline {subsubsection}{\numberline {4.2.1}Language}{31}
+\contentsline {subsubsection}{\numberline {4.2.2}Platform}{32}
+\contentsline {subsubsection}{\numberline {4.2.3}Database}{32}
+\contentsline {paragraph}{Conceptual Data Model}{32}
+\contentsline {paragraph}{Logical Database Design}{33}
+\contentsline {paragraph}{Database Technology}{33}
+\contentsline {paragraph}{Physical Database Design}{35}
+\contentsline {subsubsection}{\numberline {4.2.4}Libraries}{35}
+\contentsline {paragraph}{Database Querying}{35}
+\contentsline {paragraph}{Creating HTTP Server and REST API}{35}
+\contentsline {paragraph}{Sending SMS}{37}
+\contentsline {paragraph}{Semantic Analysis - Measuring semantic relatedness between texts}{38}
+\contentsline {paragraph}{Semantic Analysis - Discovering Named Entities in text}{39}
+\contentsline {section}{\numberline {5}Implementation}{40}
+\contentsline {subsection}{\numberline {5.1}Implementation Overview}{40}
+\contentsline {subsection}{\numberline {5.2}Tools and services used}{40}
+\contentsline {subsection}{\numberline {5.3}Implementation of natural language processing module}{41}
+\contentsline {subsection}{\numberline {5.4}Implementation of answer location system}{42}
+\contentsline {subsection}{\numberline {5.5}Implementation of rating and learning systme}{43}
+\contentsline {subsection}{\numberline {5.6}Discussion of Implementation}{43}
+\contentsline {section}{\numberline {6}Results}{45}
+\contentsline {section}{\numberline {7}Discussion}{46}
+\contentsline {section}{\numberline {8}Evaluation}{47}
+\contentsline {section}{\numberline {9}Extending this project}{48}
+\contentsline {section}{\numberline {10}Conclusion}{49}
+\contentsline {section}{\numberline {11}Appendix A - Personas}{54}
+\contentsline {subsection}{\numberline {11.1}Nanjala}{54}
+\contentsline {subsubsection}{\numberline {11.1.1}Demographics}{54}
+\contentsline {subsubsection}{\numberline {11.1.2}Average Day}{54}
+\contentsline {subsection}{\numberline {11.2}Cedric}{55}
+\contentsline {subsubsection}{\numberline {11.2.1}Demographics}{55}
+\contentsline {subsubsection}{\numberline {11.2.2}Average European Trip}{55}
+\contentsline {section}{\numberline {12}Appendix C - Sample Questionnaire}{59}
