@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.20)  8 APR 2015 19:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.20)  8 APR 2015 20:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -775,25 +775,32 @@ Overfull \hbox (45.41438pt too wide) in paragraph at lines 589--599
  []
 
 [34 <./figures/logicalModel.png (PNG copy)>]
-Package marginnote Info: Margin note 35.1 is on absolute page 35
-(marginnote)              on input line 664.
-Package marginnote Info: right page because not two side mode on input line 664
+Package marginnote Info: Margin note 35.1 is on absolute page 37
+(marginnote)              on input line 668.
+Package marginnote Info: right page because not two side mode on input line 668
 .
-Package marginnote Info: xpos seems to be 205.95288pt,
-(marginnote)             \marginnoterightadjust ignored on input line 664.
- [35] [36] [37]
+Package marginnote Info: xpos seems to be 443.84703pt,
+(marginnote)             \marginnoterightadjust ignored on input line 668.
+ [35] [36]
+Package marginnote Info: Margin note 37.1 is on absolute page 37
+(marginnote)              on input line 673.
+Package marginnote Info: right page because not two side mode on input line 673
+.
+Package marginnote Info: xpos seems to be 134.26999pt,
+(marginnote)             \marginnoterightadjust ignored on input line 673.
+Package marginnote Info: Margin note 37.2 is on absolute page 38
+(marginnote)              on input line 685.
+Package marginnote Info: right page because not two side mode on input line 685
+.
+Package marginnote Info: xpos seems to be 258.05136pt,
+(marginnote)             \marginnoterightadjust ignored on input line 685.
+ [37]
 Package marginnote Info: Margin note 38.1 is on absolute page 38
-(marginnote)              on input line 687.
-Package marginnote Info: right page because not two side mode on input line 687
+(marginnote)              on input line 691.
+Package marginnote Info: right page because not two side mode on input line 691
 .
-Package marginnote Info: xpos seems to be 461.31042pt,
-(marginnote)             \marginnoterightadjust ignored on input line 687.
-Package marginnote Info: Margin note 38.2 is on absolute page 38
-(marginnote)              on input line 690.
-Package marginnote Info: right page because not two side mode on input line 690
-.
-Package marginnote Info: xpos seems to be 181.8099pt,
-(marginnote)             \marginnoterightadjust ignored on input line 690.
+Package marginnote Info: xpos seems to be 134.26999pt,
+(marginnote)             \marginnoterightadjust ignored on input line 691.
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -801,44 +808,26 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
  [38]
-Overfull \hbox (8.6956pt too wide) in paragraph at lines 700--701
+Overfull \hbox (8.6956pt too wide) in paragraph at lines 707--708
 []\OT1/ptm/m/n/10 A named en-tity ex-trac-tion tool is re-quired to es-tab-lish
  the ge-o-graph-i-cal en-tity ('place')
  []
 
 [39]
-Overfull \hbox (14.10641pt too wide) in paragraph at lines 716--717
+Overfull \hbox (14.10641pt too wide) in paragraph at lines 723--724
 \OT1/ptm/b/n/10 This sec-tion will con-tain in-for-ma-tion on how data is store
 d, the struc-ture of databases,
  []
 
-Package marginnote Info: Margin note 40.1 is on absolute page 40
-(marginnote)              on input line 731.
-Package marginnote Info: right page because not two side mode on input line 731
-.
-Package marginnote Info: xpos seems to be 425.59752pt,
-(marginnote)             \marginnoterightadjust ignored on input line 731.
 [40]
-Overfull \hbox (6.61691pt too wide) in paragraph at lines 740--741
+Overfull \hbox (6.61691pt too wide) in paragraph at lines 746--747
 []\OT1/ptm/m/n/10 PyMongo [52] - Python li-brary con-tain-ing tools to work wit
 h Mon-goDB databases. 
  []
 
-[41]
-Overfull \hbox (65.24852pt too wide) in paragraph at lines 758--759
-\OT1/ptm/m/n/10 (place) by sim-ply check-ing each key-word for the type \OT1/pc
-r/m/n/10 http://dbpedia.org/ontology/Place
- []
-
-
-Overfull \hbox (2.35794pt too wide) in paragraph at lines 758--759
-\OT1/ptm/m/n/10 in the types as-so-ci-ated with each key-word. This is done by 
-the \OT1/pcr/m/n/10 extractEntities()
- []
-
-[42] [43] [44] [45] [46] [47]
+[41] [42] [43] [44] [45] [46] [47]
 LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `TS1/ptm/b/n' tried instead on input line 825.
+(Font)              Font shape `TS1/ptm/b/n' tried instead on input line 833.
  [48] [49]
 (/Users/Samuel/Documents/University/Project/Report/.texpadtmp/Report.bbl
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
@@ -920,7 +909,7 @@ iki . com / scrapers /
  []
 
 ) [53] [54] [55] [56] [57] [58] [59]
-Overfull \hbox (34.80664pt too wide) in paragraph at lines 928--1000
+Overfull \hbox (34.80664pt too wide) in paragraph at lines 935--1007
 [][] 
  []
 
@@ -929,11 +918,11 @@ Overfull \hbox (34.80664pt too wide) in paragraph at lines 928--1000
 Here is how much of TeX's memory you used:
  7612 strings out of 493117
  105554 string characters out of 6135432
- 191317 words of memory out of 5000000
+ 191315 words of memory out of 5000000
  10881 multiletter control sequences out of 15000+600000
  45877 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,16n,42p,1605b,1087s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,16n,42p,1603b,1087s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{/u
 sr/local/texlive/2014/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{/usr/l
 ocal/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/20
@@ -946,7 +935,7 @@ type1/urw/times/utmbi8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw
 /times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utm
 ri8a.pfb>
 Output written on /Users/Samuel/Documents/University/Project/Report/.texpadtmp/
-Report.pdf (60 pages, 1295822 bytes).
+Report.pdf (60 pages, 1295860 bytes).
 PDF statistics:
  248 PDF objects out of 1000 (max. 8388607)
  162 compressed objects within 2 object streams

@@ -604,7 +604,7 @@ There are a number of database technologies available that would fulfil the data
 From this comparison, the decision to use MongoDB has been taken because MongoDB has more flexibility than SQL, writing queries is easier in Python and, other than the possibility of future extensions requiring relational structure, it is more scalable than SQL.
 
 \myparagraph{Physical Database Design}
-MongoDB separates entities into collections but does not place restrictions on the structure of objects within a collection.  The general structure of the keys of a document (a JSON dictionary) is shown in Table \ref{table:collectionStructure}.
+MongoDB separates entities into collections but does not place restrictions on the structure of objects within a collection.  The general structure of the keys in a document (a JSON dictionary) is shown in Table \ref{table:collectionStructure}.
 
 \begin{table}
 \begin{center}
@@ -661,36 +661,43 @@ MongoDB comes with a Python client called PyMongo\footnote{For more information:
 \myparagraph{Creating HTTP Server and REST API}
 The application needs to have an HTTP interface to allow interactions with it via SMS.  As a result of the non-functional requirement "The system behind the SMS gateway must respond in a timely manner" in section \ref{subsubsec:systemRequirementsNonFunctional}, the application will need to be able to process multiple HTTP requests concurrently to prevent requests queueing up and responses been significantly delayed.
 
-To create an HTTP Interface, the latest Web Server Gateway Interface (WSGI) specification (version 1.0.1, published as PEP 3333)~\cite{eby2010python} will be followed as it is the industry standard \marginnote{Reference this? (industry standard)}. The WSGI specification describes a general interface between web servers and web applications or frameworks (such as Twilio) in the Python language, thus describing how the web server should be constructed.
+To create an HTTP Interface, the latest Web Server Gateway Interface (WSGI) specification (version 1.0.1, published as PEP 3333)~\cite{eby2010python} will be followed as it is the industry standard. The WSGI specification describes a general interface between web servers and web applications or frameworks (such as Twilio) in the Python language, thus describing how the web server should be constructed.
 
 In this project, two tools are needed: a WSGI server, and a framework for writing WSGI applications. Flask will be used for the framework as the author has extensive experience using it and it is 100\% compliant with the WSGI standard~\cite{libraryFlask}\footnote{100\% compliant according to the Flask product website.}.
+\marginnote{footnote: 100\% compliant - remove? It's a note about bias}
 
-With respect to the WSGI server, many implementations exist such as a simple WSGI server included in Flask~\cite{libraryFlask} called Werkzeug~\cite{libraryWerkzeug}, and the Gevent WSGI server~\cite{libraryGevent}.  Support for multiple concurrent HTTP connections is not a requirement in the WSGI specification, and so some WSGI servers such as the implementation of Werkzeug in Flask do not support this\footnote{Werkzeug does support processing multiple HTTP requests concurrently by specifically enabling threading and increasing the default maximum number of processes from one (as described in the documentation at: http://werkzeug.pocoo.org/docs/0.10/serving/ [accessed: 4th April 2015]). However, the implementation of Werkzeug in Flask has these disabled in the source code because Flask uses thread-local storage (memory that is local to a single thread) and so can not support concurrent HTTP requests on new threads. This is stated on the Flask website at http://flask.pocoo.org/docs/0.10/design/\#thread-locals [accessed: 4th April 2015].}. Gevent does support concurrent HTTP connections~\cite{geventImplementingServers}\footnote{Gevent using the Greenlet library~\cite{libraryGreenlet}, which provides a notion of micro-threading (coroutines). When a new HTTP request is received, Gevent creates a new Greenlet, thus preventing the main thread been blocked and allowing multiple concurrent HTTP requests. The creation of the Greenlet is described in the preceeding reference(\cite{geventImplementingServers}).}, and so will be used in this project.
+With respect to the WSGI server, many implementations exist such as a simple WSGI server included in Flask~\cite{libraryFlask} called Werkzeug~\cite{libraryWerkzeug}, and the Gevent WSGI server~\cite{libraryGevent}.  Support for multiple concurrent HTTP connections is not a requirement in the WSGI specification, and so some WSGI servers such as the implementation of Werkzeug in Flask do not support this\footnote{Werkzeug does support processing multiple HTTP requests concurrently by specifically enabling threading and increasing the default maximum number of processes from one (as described in the documentation at: http://werkzeug.pocoo.org/docs/0.10/serving/ [accessed: 4th April 2015]). However, the implementation of Werkzeug in Flask has these disabled in the source code because Flask uses thread-local storage (memory that is local to a single thread) and so cannot support concurrent HTTP requests on new threads. This is stated on the Flask website at http://flask.pocoo.org/docs/0.10/design/\#thread-locals [accessed: 4th April 2015].}. Gevent does support concurrent HTTP connections~\cite{geventImplementingServers}\footnote{Gevent using the Greenlet library~\cite{libraryGreenlet}, which provides a notion of micro-threading (coroutines). When a new HTTP request is received, Gevent creates a new Greenlet, thus preventing the main thread been blocked and allowing multiple concurrent HTTP requests. The creation of the Greenlet is described in the preceeding reference(\cite{geventImplementingServers}).} and so will be used in this project.
+
+\marginnote{Work these footnotes into the main text}
+% TODO Work these footnotes into the main text
 
 \myparagraph{Sending SMS}
 There are a number of SMS providers with HTTP gateways available to choose from, all of which are similar. For this project, the provider must match the following criteria:
 \begin{itemize}
-  \item Forwards received messages to a REST API.
-  \item Supports sending messages via a REST API.
-  \item The provider must have good coverage of countries so that users from many countries can use the service.
-  \item The provider must have a 'good' reputation. User privacy is still an issue, since data is unencrypted when been sent over SMS, so the provider should be trustworthy. This is difficult to measure accurately, but one possible way of doing this is by looking at the number of significant clients a provider has.
+  \item Forwards received messages to a REST API to enable easy development.
+  \item Supports sending messages via a REST API which also enables easy development.
+  \item Has good coverage of countries so that users from many countries can use the service.
+  \item Has a 'good' reputation. This is because user privacy is still an issue, since data is unencrypted when been sent over SMS, so the provider should be trustworthy.
 \end{itemize}
 
-Two services considered were that matched these criteria.  These were Twilio\footnote{Twilio website: https://www.twilio.com/} and Plivo\footnote{Plivo website: https://www.plivo.com/}. Both use REST API's for handling incoming messages and for sending responses. Both Twilio and Plivo have comparable coverage as well - Twilio state that they send and receive SMS with numbers in 198 countries~\cite{twilioCoverage}, and Plivo state that they support 207 countries~\cite{plivoCoverage}\footnote{This is referenced on a marketing page (https://www.plivo.com/twilio-alternative/) where Plivo compare their product to Twilio's, so is likely to be biased}. The difference is trivial, as the number of recognised independent states in the world is between 190 and 200 (depending on listing) - the US Government recognises 195~\cite{usStateDepartmentListOfIndependentStates}.
+It is difficult to measure the reputation of a provider accurately, but one possible way of doing this is by looking at the number of significant clients they have.
+
+Two services considered were that matched these criteria.  These were Twilio\footnote{Twilio website: https://www.twilio.com/} and Plivo\footnote{Plivo website: https://www.plivo.com/}. Both use REST APIs for handling incoming messages and for sending responses. Both Twilio and Plivo have comparable coverage as well: Twilio state that they send and receive SMS with numbers in 198 countries~\cite{twilioCoverage}, and Plivo state that they support 207 countries~\cite{plivoCoverage}\marginnote{Lilian: remove footnotes about bias?}\footnote{This is referenced on a marketing page (https://www.plivo.com/twilio-alternative/) where Plivo compare their product to Twilio's, so is likely to be biased}. The difference is trivial, as the number of recognised independent states in the world is between 190 and 200 depending on listing; the US Government recognises 195~\cite{usStateDepartmentListOfIndependentStates}.
 
 With regard to reputation, for this project it was decided that Twilio is preferable to Plivo. Although it is difficult to measure reputation accurately, Twilio was founded in 2007 and has an group of clients including PayPal, Uber, Sprint and Airbnb, compared to Plivo, which was founded in 2011 and mainly works with entertainment companies.
 
+\marginnote{citations }
+% TODO - citations above
+
 \myparagraph{Semantic Analysis - Measuring semantic relatedness between texts}
 \label{sec:choosingSemanticAnalysisApi}
-Semantic comparison of text will be used for two purposes within the project: to match keywords from datasources (for example, if a user asks \texttt{how tall} something is, the property \texttt{height} would be appropriate to return; and to match questions with identical meaning to each other to save the application doing a full analysis of the data sources again. The requirements for these use-cases are different: for the former the tools needs to compare pairs of either single words or short strings or words for semantic similiarity; and for the latter the tool needs to be able to compare full sentences for semantic similarity.
+Semantic comparison of text will be used for two purposes within the project: to match keywords from datasources, for example, if a user asks \texttt{how tall} something is, the property \texttt{height} would be appropriate to return; and to match questions with identical meaning to each other to save the application doing a full analysis of the data sources again. The requirements for these use-cases are different: for the former the tool needs to compare pairs of either single words of short strings or words for semantic similiarity; and for the latter the tool needs to be able to compare full sentences for semantic similarity.
 
-Semantic similarity is a measure of how semantically alike entities are in their meaning (for example, \texttt{bank} and \texttt{trust company})~\cite{Budanitsky:2006:EWM:1168106.1168108}. A more general measure exists, called Semantic Relatedness. Whereas semantic similarity compares entities by their meaning, entities may be semantically related by additional lexical relationships such as antonymy (the opposite of an entity, for example, \texttt{tall} and \texttt{short}) and meronymy (entities that are a part of another entity, for example, \texttt{car} and \texttt{wheel})\marginnote{should I move definitions to the footnotes?}~\cite{Budanitsky:2006:EWM:1168106.1168108, budanitsky2001semantic}. Both use-cases in this application will be using semantic similarity as semantic relatedness is too general. An example using the datasource keyword matching usecase is that using semantic relatedness, the word \texttt{tall} would be related to \texttt{width} as well as the target word of \texttt{height} as a result of antonymy, potentially cluttering results. In the second use-case, consider a highly rated question in the database of \texttt{What is the population of England?} and then the question of \texttt{What is the population of London?} been processed. London is a part of England, so there is the potential for the population of England to be returned instead of the population of London.
-\marginnote{use quotation marks in the above?}
-% use quotation marks in the above?
+Semantic similarity is a measure of how semantically alike entities are in their meaning, for example, \texttt{bank} and \texttt{trust company}~\cite{Budanitsky:2006:EWM:1168106.1168108}. A more general measure exists called Semantic Relatedness. Whereas semantic similarity compares entities by their meaning, entities may be semantically related by additional lexical relationships such as antonymy (the opposite of an entity, for example, \texttt{tall} and \texttt{short}) and meronymy (entities that are a part of another entity, for example, \texttt{car} and \texttt{wheel})~\cite{Budanitsky:2006:EWM:1168106.1168108, budanitsky2001semantic}. Both use-cases in this application will be using semantic similarity as semantic relatedness is too general. An example using the datasource keyword matching usecase is that using semantic relatedness, the word \texttt{tall} would be related to \texttt{width} as well as the target word of \texttt{height} as a result of antonymy, potentially cluttering results. In the second use-case, consider a highly rated question in the database of \texttt{What is the population of England?} and then the question of \texttt{What is the population of London?} being processed. London is a part of England, so there is the potential for the population of England to be returned instead of the population of London.
 
-A key requirement for the algorithm and method used to compute semantic similarity is that it can be done so in compliance with the system requirement in section (\ref{subsubsec:systemRequirementsFunctional}, point \ref{requirement:easyToImplement}) - that the system is easy to implement. A number of algorithms were discovered for calculating semantic similarity based on the WordNet lexical database~\cite{wordNet}, such as the Leacock–Chodorow~\cite{leacock1998combining} and Resnik~\cite{resnik1995using} algorithms. Although mathematical representations of the algorithms are published, to fulfil the aforementioned requirement a pre-implemented semantic comparison tool is needed as implementation of these algorithms would be a non-trivial software engineering project. Both of the Leacock–Chodorow and Resnik algorithms are available in a Perl package as part of WordNet::Similarity, a set of Perl modules with an optional web interface for integration into applications. No other open-source libraries were found, so during application design, an attempt was made to use the WordNet::Similarity tools by calling the Perl scripts from Python code. This proved complex as there were numerous out of date dependencies to trace and install.
+A key requirement for the algorithm and method used to compute semantic similarity is that it can be implemented in compliance with the system requirement in section \ref{subsubsec:systemRequirementsFunctional}, point \ref{requirement:easyToImplement}, that the system is easy to implement. A number of algorithms were discovered for calculating semantic similarity based on the WordNet lexical database~\cite{wordNet}, such as the Leacock--–Chodorow and Resnik algorithms. Although mathematical representations of these algorithms are published~\cite{leacock1998combining,resnik1995using}, to fulfil the aforementioned requirement a pre-implemented semantic comparison tool is needed as implementation of these algorithms would be a non-trivial software engineering project. Both of the Leacock--–Chodorow and Resnik algorithms are available in a Perl package as part of WordNet::Similarity, a set of Perl modules with an optional web interface for integration into applications. No other open-source libraries were found, so during application design, an attempt was made to use the WordNet::Similarity tools by calling the Perl scripts from Python code. This proved complex as there were numerous out of date dependencies to trace and install.
 
-An alternative to using a specific algorithm in a library was to use an online semantics package. Two were identified: the Cortical Compare API~\cite{serviceCorticalSim}; and the Dandelion Similarity API~\cite{serviceDandelionSim}. Both take two pieces of text and return a value representing the semantic similarity of the texts. The Cortical API was found to be better suited for comparing single word or short multi-word terms using it's \texttt{term} type~\cite{serviceCorticalSim}, often returning errors when queried with two texts with a similar syntax, and in contrast the Dandelion API is better suited to single or multi-sentence blocks of text~\cite{dandelionSim}.
+An alternative to using a specific algorithm in a library was to use an online semantics package. Two were identified: the Cortical Compare API~\cite{serviceCorticalSim}; and the Dandelion Similarity API~\cite{serviceDandelionSim}. Both take two pieces of text and return a value representing the semantic similarity of the texts. The Cortical API was found to be better suited for comparing single word or short multi-word terms using its \texttt{term} type~\cite{serviceCorticalSim}, often returning errors when queried with two texts with a similar syntax, and in contrast the Dandelion API is better suited to single or multi-sentence blocks of text~\cite{dandelionSim}.
 
 Both the Cortical and Dandelion APIs interface via a HTTP REST interface, so will be simple to implement. They are also in active development with support teams. For these reasons, they have been selected to be the semantic comparison tools used in this project.
 
@@ -704,9 +711,9 @@ A named entity extraction tool is required to establish the geographical entity 
   \item Accessible via a HTTP REST API for ease of implementation (fulfilling functional system requirement \ref{requirement:easyToImplement} in section \ref{subsubsec:systemRequirementsFunctional}).
 \end{enumerate}
 
-During initial research, two keyword extraction API's were discovered, the Cortical Keyword Extraction API~\cite{serviceCorticalNex} and the Dandelion Named Entity Extraction API~\cite{serviceDandelionNex}. However, the Cortical API does not fulfill requirement \ref{nexRequirement:categoriseKeyword}, simply returning a list of keywords. In comparison the Dandelion API returns a complex data structure which includes a list of DBPedia classes that the keyword is an instance of.
+During initial research, two keyword extraction APIs were discovered: the Cortical Keyword Extraction API~\cite{serviceCorticalNex} and the Dandelion Named Entity Extraction API~\cite{serviceDandelionNex}. However, the Cortical API does not fulfill requirement \ref{nexRequirement:categoriseKeyword}, simply returning a list of keywords. In comparison the Dandelion API returns a complex data structure which includes a list of DBPedia classes that the keyword is an instance of.
 
-Research was done to identify a way of using the Cortical API to extract keywords and subsequently categorising the keywords after they have been been identified, however as there was no significant benefit of the Cortical API over the Dandelion API this was quickly discounted and the Dandelion API choosen.
+Research was done to identify a way of using the Cortical API to extract keywords and subsequently categorise the keywords after they have been been identified; however as there was no significant benefit of the Cortical API over the Dandelion API this was discounted and the Dandelion API chosen.
 
 Results from the Dandelion API were checked against the \texttt{Place} class in the DBPedia Ontology by checking their \texttt{types} list (a list of DBPedia classes that the keyword fits into) for the string \texttt{http://dbpedia.org/ontology/Place}.
 
@@ -716,34 +723,33 @@ Results from the Dandelion API were checked against the \texttt{Place} class in 
 {\bf This section will contain information on how data is stored, the structure of databases, and the format of and method through which data is sent to an SMS provider.}
 
 \subsection{Implementation Overview}
-As discussed in the Method and Requirements section, the implementation was completed whilst following the iterative development process. Software development took places in stages, which represented each iteration, and after each iteration a version of the software was demonstrated to Lilian Blot in a weekly meeting. In these meetings, the software's capabilities and success rate were discussed, and requirements were re-evaluated based on progress. Ideas for expansions to the software (for example, the Natural Language Processing, which was not in the original plan) were also discussed to get feedback.
+As discussed in section \ref{sec:method}, the implementation was completed whilst following the iterative development process. Software development took places in stages which represented each iteration, and after each iteration a version of the software was demonstrated in a weekly meeting. In these meetings, the software's capabilities and success rate were discussed, and requirements were re-evaluated based on progress. Ideas for expansions to the software (for example, the Natural Language Processing, which was not in the original plan) were also discussed.
 
-The software has been constructed in a module manner to allow easy future expansion and modification.
+The software has been constructed in a modular manner to allow easy future expansion and modification.
 
 \subsection{Tools and services used}
-The following tools and services were used in the implementation:
+The following tools and services were used in the implementation. These were chosen to fulfil the requirements detailed in section \ref{sec:method}.
 \begin{itemize}
-  \item Python was the programming language used in this project. This was due to a number of reasons, including that the author had experience with writing an application with some similar characteristics as those in this project. A full justification was given in section \ref{section:designLanguage}.
+  \item Python was the programming language used in this project. This was due to a number of reasons, including that the author had experience with writing an application with some similar characteristics as those in this project.
   \item MongoDB version 2.6.6 was used as the database software in this project.
   \item Both the application server and the database server were hosted on an Ubuntu version 14.10 "2 GB General Purpose v1" Linux server, hosted by Rackspace in London.
-  \item No integrated development environment (IDE) was used in the development of the server application. The author choose to use textural editors due to familiarity with them, and it was felt that the assistance provided by an IDE with managing modularity/abstraction/semantic checking would not be of significant benefit, bearing in mind the size of the server application.
-  
-  An IDE was used in the development of the client application (used during testing to reduce the use of expensive SMS). This was written in Objective-C for Mac, and created in the Xcode IDE, which is the industry standard\marginnote{cite?}.
+  \item No integrated development environment (IDE) was used in the development of the server application. The author chose to use textural editors due to familiarity with them, and it was felt that the assistance provided by an IDE with managing modularity/abstraction/semantic checking would not be of significant benefit, bearing in mind the size of the server application.
+  \item An IDE was used in the development of the client application to reduce the use of expensive SMS during testing. This was written in Objective-C for Mac, and created in the Xcode IDE, which is the industry standard.
   \item The Twilio SMS Service~\cite{serviceTwilio} was used to facilitate the SMS interface to the server application.
-  \item The Cortical~\cite{serviceCorticalSim} and Dandelion~\cite{serviceDandelionSim, serviceDandelionNex} API's were used for semantic analysis of text.
+  \item The Cortical~\cite{serviceCorticalSim} and Dandelion~\cite{serviceDandelionSim, serviceDandelionNex} APIs were used for semantic analysis of text.
 \end{itemize}
 
 In addition, the following Python libraries from the Python Package Index\footnote{Python Package Index website: https://pypi.python.org/pypi} were used within the server application:
 \begin{enumerate}
     \item Greenlet~\cite{libraryGreenlet} - provides a notion of micro-threading (coroutines), which allows the server to process multiple HTTP requests concurrently.
-    \item gevent~\cite{libraryGevent} \label{librariesUsed:gevent} - a coroutine based networking library for Python. Gevent provides a Web Server Gateway Interface (WSGI) server that supports processing multiple requests concurrently, using Greenlet.
+    \item gevent~\cite{libraryGevent} \label{librariesUsed:gevent} - a coroutine based networking library for Python. gevent provides a Web Server Gateway Interface (WSGI) server that supports processing multiple requests concurrently, using Greenlet.
     \item PyMongo~\cite{libraryPyMongo} - Python library containing tools to work with MongoDB databases.
-    \item ujson~\cite{libraryUjson} - Twilio use JSON as the format for HTTP requests, so it makes sense to use it for all requests. ujson allows for effecient encoding and decoding of json to/from Python data structures.
+    \item ujson~\cite{libraryUjson} - Twilio uses JSON as the format for HTTP requests, so it makes sense to use it for all requests. ujson allows for effecient encoding and decoding of json to and from Python data structures.
     \item Twilio~\cite{libraryTwilio} - Twilio library used for receiving and sending SMS.
     \item lxml~\cite{libraryLxml} - Used in the 'Wikipedia Utils' library, which handles interactions with the Wikipedia API. lxml is used for processing XML/HTML in Python.
-    \item Flask~\cite{libraryFlask} - a micro-framework for web applications, used for it's simple syntax for defining HTTP routes (URL's that trigger Python functions). Flask also comes with a WSGI server, but it does not support processing multiple HTTP requests concurrently, so it is replaced with the Gevent WSGI server in point \ref{librariesUsed:gevent}.
-    \item NumPy~\cite{libraryNumPy} - Numerical Python (numpy) is used for outlier detection in the rating system. It provides a function call for calculating the standard deviation of a set of numbers.
-    \item re - a Regular Expression matching library (built into Python) which is used in the 'Wikipedia Utils' library, and in application code for converting CamelCase text to Snake case text.
+    \item Flask~\cite{libraryFlask} - a micro-framework for web applications, used for its simple syntax for defining HTTP routes (URLs that trigger Python functions). Flask also comes with a WSGI server, but it does not support processing multiple HTTP requests concurrently, so it is replaced with the Gevent WSGI server in point \ref{librariesUsed:gevent}.
+    \item NumPy~\cite{libraryNumPy} - Numerical Python (NumPy) is used for outlier detection in the rating system. It provides a function call for calculating the standard deviation of a set of numbers.
+    \item re - a Regular Expression matching library built into Python which is used in the 'Wikipedia Utils' library and in application code for converting CamelCase text to Snake case text.
     \item Wikipedia Utils~\cite{libraryWikipediaUtils} - a library used for abstracting the Wikipedia API.
 \end{enumerate}
 
@@ -753,26 +759,28 @@ In this section, a description of how the natural language processing module was
 
 It was decided that a module should be constructed specifically for the parsing of natural language questions in the application.  This module, called nlp, processes question in natural language form, and is able to output the two parameters needed by the application for answering a question.
 
-The first step in the process is to remove punctuation from the question text, and this is of no meaning in the context of this application. Consider an example sentence \texttt{How tall is the Eiffel Tower?}. In this sentence, the question mark will be removed to give \texttt{How tall is the Eiffel Tower}.
+The first step in the process is to remove punctuation from the question text, which is of no meaning in the context of this application. Consider an example sentence \texttt{How tall is the Eiffel Tower?}. In this sentence, the question mark will be removed to give \texttt{How tall is the Eiffel Tower}.
 
-The next step in the process is to identify the geographical entity that a user is investigating. This is done by passing the original question into a Named Keyword Extraction tool, which extracts a list of keywords representing entities from a string and and returns them. The Dandelion Named Entity Extraction tool was selected as in addition to providing a list of words representing entities, it categorised them according to the DBPedia Ontology. By using this, it was possible to identify the geographical entity (place) by simply checking each keyword for the type \texttt{http://dbpedia.org/ontology/Place} in the types associated with each keyword.  This is done by the \texttt{extractEntities()} function in the nlp module.
+\begin{sloppypar} % stops the long url going into the margin
+The next step in the process is to identify the geographical entity that a user is investigating. This is done by passing the original question into a Named Keyword Extraction tool, which extracts a list of keywords representing entities from a string and and returns them. The Dandelion Named Entity Extraction tool was selected as in addition to providing a list of words representing entities, it categorised them according to the DBPedia Ontology. By using this, it was possible to identify the geographical entity by simply checking each keyword for the type \texttt{http://dbpedia.org/ontology/Place} in the types associated with each keyword.  This is done by the \texttt{extractEntities()} function in the nlp module.
+\end{sloppypar}
 
-The final step in the process is to identify the property that a user is requesting about the entity, for example, the height. This is done in the \texttt{stripToProperty()} function in the nlp module. This function identifies the property by assuming it will be the only text in the sentence with meaning, excluding the place name. As such, the first action of this function is to remove words relating to the name of the geographical entity been queried, which is does by checking each word in the question text against each word in the place string, and removing the word if they are equal. After this process, our example question will have been changed from \texttt{How tall is the Eiffel Tower} to \texttt{How tall is the?}. The next step is to remove meaningless words that do not identify the property that the user querying. These are stop words, such as \texttt{and, the, of}. As with removing words relating to the geographical entity, this is done by checking each word in the question text against a list of stop words and removing them if they match. In our above example, the question text will now be \texttt{tall}. This is the property determined to be the subject of a users' query.
+The final step in the process is to identify the property that a user is requesting about the entity, for example, the height. This is done in the \texttt{stripToProperty()} function in the nlp module. This function identifies the property by assuming it will be the only text in the sentence with meaning, excluding the place name. As such, the first action of this function is to remove words relating to the name of the geographical entity being queried, which it does by checking each word in the question text against each word in the place string, and removing the word if they are equal. After this process, our example question will have been changed from \texttt{How tall is the Eiffel Tower} to \texttt{How tall is the?}. The next step is to remove meaningless words that do not identify the property that the user querying. These are stop words, such as \texttt{and, the, of}. As with removing words relating to the geographical entity, this is done by checking each word in the question text against a list of stop words and removing them if they match. In our above example, the question text will now be \texttt{tall}. This is the property determined to be the subject of a users' query.
 
 Having called both \texttt{extractEntities()} and \texttt{stripToProperty()}, the nlp module packages these results into a dictionary and returns them as the processed representation of the question text.
 
 \subsection{Implementation of answer location system}
-In this section, a description of the process followed to answer a question about a property of a geographical entity is described. 
+In this section, a description of the process followed to answer a question about a property of a geographical entity is presented. 
 
-After having identified the place and the property of that place in the question (using the nlp module) the application must locate the value of that property for a place. This is done in the \texttt{sourceProcessor} module, which collates data from the data sources and then attempts to identify from those sources an answer to the users question.
+After having identified the place and the property of that place in the question using the nlp module, the application must locate the value of that property for that place. This is done in the \texttt{sourceProcessor} module, which collates data from the data sources and then attempts to identify from those sources an answer to the users question.
 
-The entry point into \texttt{sourceProcessor} is the \texttt{findArgumentOnPage()} function, which takes the place name and the property been queried as input parameters. The first step of \texttt{findArgumentOnPage()} is to query the data sources for a dictionary of properties about the geographical entity, pulling down all information available on the entity in question. Interfaces to data sources are factored out into modules, such as \texttt{dbpediaParser} and \texttt{wikiPageParser}, which handle queries to these data sources and return the data to the application in a normalised form (a dictionary of keys and values about the geographical entity).
+The entry point into \texttt{sourceProcessor} is the \texttt{findArgumentOnPage()} function, which takes the place name and the property being queried as input parameters. The first step of \texttt{findArgumentOnPage()} is to query the data sources for a dictionary of properties about the geographical entity, pulling down all information available on the entity in question. Interfaces to data sources are factored out into modules, such as \texttt{dbpediaParser} and \texttt{wikiPageParser}, which handle queries to these data sources and return the data to the application in a normalised form (a dictionary of keys and values about the geographical entity).
 
-After having retrieved a list of properties about the entity, the application then iterates through the datasets (one dataset per source) checking the keys against the key in the question text. If any key in the keys for a dataset is an exact (case-insensitive) match, the value for that key is returned as the answer. Else, each key in the compared to the requested key for semantic relatedness. This tries to match key strings given in different contexts, and is useful in the case that a user asks a question using a different word to represent the property they require than the one in the data source. After having compared each key to the property given by the user, the key with the highest semantic similarity is returned. 
+After having retrieved a list of properties about the entity, the application then iterates through the datasets (one dataset per source) checking the keys against the key in the question text. If any key in the keys for a dataset is an exact, case-insensitive match, the value for that key is returned as the answer. Otherwise, each key in the compared to the requested key for semantic relatedness. This tries to match key strings given in different contexts, and is useful in the case that a user asks a question using a different word to represent the property they require than the one in the data source. After having compared each key to the property given by the user, the key with the highest semantic similarity is returned. 
 
-An example of where the semantic comparison and matching of keys is useful is in the question \texttt{How tall is the Eiffel tower?}, where the property string is \texttt{tall}, and in the data source the key might appear as \texttt{height}. The word \texttt{tall} has a high semantic relatedness to the word \texttt{height}, so the value for \texttt{height} will most likely be returned (unless another key with higher semantic similarity is found).
+An example of where the semantic comparison and matching of keys is useful is the question \texttt{How tall is the Eiffel tower?}, where the property string is \texttt{tall}, and in the data source the key might appear as \texttt{height}. The word \texttt{tall} has a high semantic relatedness to the word \texttt{height}, so the value for \texttt{height} will most likely be returned, unless another key with higher semantic similarity is found.
 
-This semantic comparison is done by the the \texttt{compare} module, which has a function \texttt{similarityOfProperty()}. This function takes two strings as an input, and returns a value representing the semantic similarity of the two strings. Two services are used for the semantic comparison: The Cortical~\cite{serviceCorticalSim} and Dandelion~\cite{serviceDandelionSim} similarity API's. Both of these 
+This semantic comparison is done by the the \texttt{compare} module, which has a function \texttt{similarityOfProperty()}. This function takes two strings as an input, and returns a value representing the semantic similarity of the two strings. Two services are used for the semantic comparison: the Cortical~\cite{serviceCorticalSim} and Dandelion~\cite{serviceDandelionSim} similarity APIs.
 
 The Cortical API is not configured for recognising text in CamelCase, so helper functions such as \texttt{camelCaseToSnakeCase} and \texttt{camelCaseToSpace} are also included for converting CamelCase to either Snake Case or space-separated words.
 
@@ -828,6 +836,7 @@ If the author was able to expand this project, areas for expansion include:
   \item Make it work with all of wikipedia (all pages with infoboxes anyway)
   \item make it work with all languages
   \item use full on random sparql queries to do magic
+  \item nlp assumes property is the only other bit of text with meaning. e.g. thank you would break everything.
 \end{itemize}
 
 \newpage
@@ -848,32 +857,32 @@ This section's content...
 \label{sec:appendixPersonas}
 \subsection{Nanjala}
 %TODO Add photo
-\subsubsection{Demographics}
+\subsubsection{Demographics and Profile}
 \begin{itemize}
   \item Female, aged 15
-  \item Living in the village of Amuria, Uganda, 300km from the Capital, Kampala.  Internet access is difficult and expensive to obtain in Amuria, though there is good mobile network coverage.
+  \item Living in the village of Amuria, Uganda, 300km from the capital Kampala.  Internet access is difficult and expensive to obtain in Amuria, though there is good mobile network coverage.
   \item Currently in general education at her village school.
   \item Nanjala is curious and wants to be able to ask questions and retrieve and read more information at her own leisure.  She prefers to be told about something than to learn facts.
 \end{itemize}
 \subsubsection{Average Day}
-In a typical day, Nanjala will rise early to help her family with housework chores, before she prepares for school.  Nanjala wants to become a teacher.  At school, she studies Science, Maths and Geography, and works hard for her classes and on her homework.  Nanjala's school has a small library and a body of students, all of whom are as hard-working as Nanjala, meaning that books are often unavailable when Nanjala would like to look something up.  This increases the amount of time that her homework takes, and can even result in her not having access to information when she must go home to her family.
+In a typical day, Nanjala will rise early to help her family with housework chores, before she prepares for school.  Nanjala wants to become a teacher.  At school, she studies Science, Maths and Geography, and works hard for her classes and on her homework.  Nanjala's school has a small library and a large body of students, meaning that books are often unavailable when Nanjala would like to look something up.  This increases the amount of time that her homework takes, and can even result in her not having access to information when she goes home.
 
 \newpage
 \subsection{Cedric}
 %TODO Add photo
-\subsubsection{Demographics}
+\subsubsection{Demographics and Profile}
 \begin{itemize}
   \item Male, aged 27
   \item Lives in Zurich, Switzerland, and goes on regular hiking trips, from 3-4 day trips around Europe to longer trips to the South American Andes and southern Asia.
   \item Works in a service role in the city and so has little disposable income to spend on guide books for the many places he visits.
   \item Cedric is a competent albeit not professional hiker, often going off-track and summiting 'difficult' peaks or reaching famous camping grounds.  He likes to be spontaneous, only deciding which peaks he will attempt when he arrives.
-  \item Cedric is very conscientious and wants to contribute his own knowledge to the world; especially to projects that help him.
+  \item Cedric is very conscientious and wants to contribute his own knowledge to the world, especially to projects that help him.
   \item Cedric values his privacy is concerned about how much information he gives out online.
 \end{itemize}
 \subsubsection{Average European Trip}
-A typical trip will involve an intercity train from the Zurich Hauptbahnhof (main station) to the city closest to the range Cedric will be hiking.  He takes the train because it tends to be cheaper than flights.  Once in the area, Cedric will take local trains and buses to get into the mountain ranges.  There, he will use the local hiking trail network signs and conversations with the locals to select a peak or route.  Once Cedric has got moving and is reaching higher ground, he uses a combination of his view and the signage to identify other peaks that he would like to wander around.  
+A typical trip will involve an intercity train from the Zurich Hauptbahnhof (the main station) to the city closest to the range Cedric will be hiking.  He takes the train because it tends to be cheaper than flights.  Once in the area, Cedric will take local trains and buses to get into the mountain ranges.  There, he will use the local hiking trail network signs and conversations with the locals to select a peak or route.  Once Cedric has got moving and is reaching higher ground, he uses a combination of his view and the signage to identify other peaks that he would like to wander around.  
 
-Cedric takes a non-smart phone with him because a) the battery life on his smart phone is not long enough for his whole trip, whereas his non-smart phone lasts a week at a time, and b) his smart phone would not be useful anyway, since the internet is so intermittent.  He still wishes he could get information like whether there are maintained routes on the slopes of a given peak or the height of a peak that he sees without having to phone friends back in the city.
+Cedric takes a non-smart phone with him because a) the battery life on his smart phone is not long enough for his whole trip, whereas his non-smart phone lasts a week at a time, and b) his smart phone would not be useful anyway, since the internet is so intermittent.  He still wishes he could get information such as whether there are maintained routes on the slopes of a given peak or the height of a peak that he sees without having to phone friends back in the city.
 \newpage
 
 \section*{Appendix B - Sample Consent Form}
@@ -883,16 +892,14 @@ Cedric takes a non-smart phone with him because a) the battery life on his smart
 \subsection*{System to access knowledge using Machine Learning and SMS - Usability and Usefulness Study}
 {\parindent0pt
 \subsubsection*{Informed Consent - Introduction}
-This study aims to investigate the usability and usefulness of a system developed to provide access to knowledge using machine learning and SMS.  The system aims to provide high quality answers to questions asked of it, where the questions relate to either a description or property of a geographical entity (for example, a city, river or mountain).  The system aims to learn where mistakes have been made and improve by receiving feedback from the user on the previous answer.  
+This study aims to investigate the usability and usefulness of a system developed to provide access to knowledge using machine learning and SMS.  The system aims to provide high quality answers to questions asked of it, where the questions relate to either a description or property of a geographical entity (for example a city, river or mountain).  The system aims to learn where mistakes have been made and improve by receiving feedback from the user on the previous answer.  
 
-\subsubsection*{Form - please complete this section before the study}
+\subsubsection*{Form: please complete this section before the study.}
 I, \textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore, agree to participate in this study.  I have been briefed on and understand the purpose and goals of the project.
 
-I understand that information will be collected from me during this study in the form of my answers to a questionnaire.  I understand that this information will be treated confidentially and only Sam Heather will have access to the original data in it's original format.  When the information is processed, shared, described or interpreted I will not be personally identified.
+I understand that information will be collected from me during this study in the form of my answers to a questionnaire.  I understand that this information will be treated confidentially and only Sam Heather will have access to the original data in its original format.  When the information is processed, shared, described or interpreted I will not be personally identified.
 
-I understand that I can withdraw from the study at any point without reason.
-
-I understand that the aim of this study is to identify whether the system developed in this project is useful and efficient to use to retrieve information about geographical entities.
+I understand that I can withdraw from the study at any point without giving a reason.
 
 Date: \textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore
 Signature: \textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore
@@ -903,7 +910,7 @@ Signature: \textunderscore\textunderscore\textunderscore\textunderscore\textunde
 
 \pagebreak
 
-\subsubsection*{...and this section after the study}
+\subsubsection*{Post experiment consent form - please complete this section after the study.}
 $\square$ I have been suitably debriefed about the system and my performance.
 
 $\square$ I understand I can withdraw my data from the study at any time.
@@ -923,7 +930,7 @@ For the researcher: Participant ID: \textunderscore\textunderscore\textunderscor
 \label{sec:appendixQuestionnaire}
 \newpage
 
-\subsection*{Please fill in the following questionnaire with regard to your experience of the system that has been developed}.
+\subsection*{Please fill in the following questionnaire with regard to your experience of the system that has been developed.}.
 
 \begin{tabular}{|m{0.5cm}|m{7.0cm}|>{\centering\arraybackslash}m{4cm}|}
 \hline
@@ -962,7 +969,7 @@ I would find the system useful in day-to-day life when without access to the int
 \tabularnewline
 \hline
 7  & 
-Learning to operate the system would be easy for me  & 
+Learning to operate the system was easy for me  & 
 1 \ 2 \ 3 \ 4 \ 5
 \tabularnewline
 \hline
@@ -977,7 +984,7 @@ My interaction with the system would be clear and understandable  &
 \tabularnewline
 \hline
 10  & 
-I would find the system to be flexible to interact with  & 
+I found the system to be flexible to interact with  & 
 1 \ 2 \ 3 \ 4 \ 5
 \tabularnewline
 \hline
@@ -987,7 +994,7 @@ It would be easy for me to become skilful at using the system  &
 \tabularnewline
 \hline
 12  & 
-I would find the system easy to use & 
+I found the system easy to use & 
 1 \ 2 \ 3 \ 4 \ 5
 \tabularnewline
 \hline

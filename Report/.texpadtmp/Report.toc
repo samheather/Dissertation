@@ -60,9 +60,9 @@
 \contentsline {section}{\numberline {10}Conclusion}{49}
 \contentsline {section}{\numberline {11}Appendix A - Personas}{54}
 \contentsline {subsection}{\numberline {11.1}Nanjala}{54}
-\contentsline {subsubsection}{\numberline {11.1.1}Demographics}{54}
+\contentsline {subsubsection}{\numberline {11.1.1}Demographics and Profile}{54}
 \contentsline {subsubsection}{\numberline {11.1.2}Average Day}{54}
 \contentsline {subsection}{\numberline {11.2}Cedric}{55}
-\contentsline {subsubsection}{\numberline {11.2.1}Demographics}{55}
+\contentsline {subsubsection}{\numberline {11.2.1}Demographics and Profile}{55}
 \contentsline {subsubsection}{\numberline {11.2.2}Average European Trip}{55}
 \contentsline {section}{\numberline {12}Appendix C - Sample Questionnaire}{59}
