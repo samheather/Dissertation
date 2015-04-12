@@ -1,72 +1,73 @@
 \select@language {british}
-\contentsline {chapter}{\numberline {1}Introduction}{12}{chapter.1}
-\contentsline {section}{\numberline {1.1}Background of this project}{12}{section.1.1}
-\contentsline {section}{\numberline {1.2}Motivation for this project}{12}{section.1.2}
-\contentsline {section}{\numberline {1.3}Aims of this project}{13}{section.1.3}
-\contentsline {section}{\numberline {1.4}Structure of this report}{15}{section.1.4}
-\contentsline {section}{\numberline {1.5}Assumptions Within This Project}{16}{section.1.5}
-\contentsline {chapter}{\numberline {2}Literature Review}{17}{chapter.2}
-\contentsline {section}{\numberline {2.1}Previous work using SMS}{18}{section.2.1}
-\contentsline {section}{\numberline {2.2}Ethical Issues}{19}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Ethics of Providing Information}{19}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Ethics of Translation}{19}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}User Privacy and Data Protection}{21}{subsection.2.2.3}
-\contentsline {section}{\numberline {2.3}Software Design Life Cycles}{24}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}The Waterfall Model}{24}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}The Iterative Model}{25}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Boehm's Spiral Model}{26}{subsection.2.3.3}
-\contentsline {subsection}{\numberline {2.3.4}Agile Development}{27}{subsection.2.3.4}
-\contentsline {subsection}{\numberline {2.3.5}Development Life Cycle Summary}{28}{subsection.2.3.5}
-\contentsline {chapter}{\numberline {3}Method and Requirements}{29}{chapter.3}
-\contentsline {section}{\numberline {3.1}Plan for Software Development}{29}{section.3.1}
-\contentsline {section}{\numberline {3.2}Requirements}{29}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Use Cases / User Goals}{29}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}User Requirements}{30}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}System Requirements - Functional}{30}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}System Requirements - Non-Functional}{31}{subsection.3.2.4}
-\contentsline {section}{\numberline {3.3}Data Sources}{31}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Wikipedia API}{33}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}DBPedia Ontology}{33}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Choosing the Source and Interface for this Project}{34}{subsection.3.3.3}
-\contentsline {section}{\numberline {3.4}Processing Natural Language Queries}{34}{section.3.4}
-\contentsline {section}{\numberline {3.5}Evaluating Success - Experimental evaluation of the system}{35}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Client software for the experiment}{35}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Typical experiment plan}{36}{subsection.3.5.2}
-\contentsline {chapter}{\numberline {4}Design}{37}{chapter.4}
-\contentsline {section}{\numberline {4.1}System Design}{37}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Micro-system for Protecting User Identity}{37}{subsection.4.1.1}
-\contentsline {section}{\numberline {4.2}Language, Platform and Tools and Libraries}{39}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Language}{39}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Platform}{39}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Database}{40}{subsection.4.2.3}
-\contentsline {subsubsection}{\nonumberline Conceptual Data Model}{40}{section*.7}
-\contentsline {subsubsection}{\nonumberline Logical Database Design}{41}{section*.8}
-\contentsline {subsubsection}{\nonumberline Database Technology}{42}{section*.9}
-\contentsline {subsubsection}{\nonumberline Physical Database Design}{43}{section*.10}
-\contentsline {subsection}{\numberline {4.2.4}Libraries}{43}{subsection.4.2.4}
-\contentsline {subsubsection}{\nonumberline Database Querying}{43}{section*.11}
-\contentsline {subsubsection}{\nonumberline Creating HTTP Server and REST API}{45}{section*.12}
-\contentsline {subsubsection}{\nonumberline Sending SMS}{46}{section*.13}
-\contentsline {subsubsection}{\nonumberline Semantic Analysis - Measuring semantic relatedness between texts}{47}{section*.14}
-\contentsline {subsubsection}{\nonumberline Semantic Analysis - Discovering Named Entities in text}{48}{section*.15}
-\contentsline {chapter}{\numberline {5}Implementation}{50}{chapter.5}
-\contentsline {section}{\numberline {5.1}Implementation Overview}{50}{section.5.1}
-\contentsline {section}{\numberline {5.2}Tools and services used}{51}{section.5.2}
-\contentsline {section}{\numberline {5.3}Implementation of natural language processing module}{52}{section.5.3}
-\contentsline {section}{\numberline {5.4}Implementation of answer location system}{53}{section.5.4}
-\contentsline {section}{\numberline {5.5}Implementation of rating and learning system}{55}{section.5.5}
-\contentsline {section}{\numberline {5.6}Implementation of rating and learning system}{55}{section.5.6}
-\contentsline {section}{\numberline {5.7}Discussion of Implementation}{55}{section.5.7}
-\contentsline {chapter}{\numberline {6}Results}{56}{chapter.6}
-\contentsline {chapter}{\numberline {7}Discussion}{57}{chapter.7}
-\contentsline {chapter}{\numberline {8}Evaluation}{58}{chapter.8}
-\contentsline {chapter}{\numberline {9}Extending this project}{59}{chapter.9}
-\contentsline {chapter}{\numberline {10}Conclusion}{60}{chapter.10}
-\contentsline {chapter}{\numberline {11}Appendix A - Personas}{66}{chapter.11}
-\contentsline {section}{\numberline {11.1}Nanjala}{66}{section.11.1}
-\contentsline {subsection}{\numberline {11.1.1}Demographics and Profile}{66}{subsection.11.1.1}
-\contentsline {subsection}{\numberline {11.1.2}Average Day}{66}{subsection.11.1.2}
-\contentsline {section}{\numberline {11.2}Cedric}{67}{section.11.2}
-\contentsline {subsection}{\numberline {11.2.1}Demographics and Profile}{67}{subsection.11.2.1}
-\contentsline {subsection}{\numberline {11.2.2}Average European Trip}{67}{subsection.11.2.2}
-\contentsline {chapter}{\numberline {12}Appendix C - Sample Questionnaire}{71}{chapter.12}
+\contentsline {chapter}{\numberline {1}Introduction}{13}{chapter.1}
+\contentsline {section}{\numberline {1.1}Background of this project}{13}{section.1.1}
+\contentsline {section}{\numberline {1.2}Motivation for this project}{13}{section.1.2}
+\contentsline {section}{\numberline {1.3}Aims of this project}{14}{section.1.3}
+\contentsline {section}{\numberline {1.4}Structure of this report}{16}{section.1.4}
+\contentsline {section}{\numberline {1.5}Assumptions Within This Project}{17}{section.1.5}
+\contentsline {chapter}{\numberline {2}Literature Review}{18}{chapter.2}
+\contentsline {section}{\numberline {2.1}Previous work using SMS}{19}{section.2.1}
+\contentsline {section}{\numberline {2.2}Ethical Issues}{20}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Ethics of Providing Information}{20}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Ethics of Translation}{20}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}User Privacy and Data Protection}{22}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Software Design Life Cycles}{25}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}The Waterfall Model}{25}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}The Iterative Model}{26}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Boehm's Spiral Model}{27}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Agile Development}{28}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.5}Development Life Cycle Summary}{29}{subsection.2.3.5}
+\contentsline {chapter}{\numberline {3}Method and Requirements}{30}{chapter.3}
+\contentsline {section}{\numberline {3.1}Plan for Software Development}{30}{section.3.1}
+\contentsline {section}{\numberline {3.2}Requirements}{30}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Use Cases / User Goals}{30}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}User Requirements}{31}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}System Requirements - Functional}{31}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}System Requirements - Non-Functional}{32}{subsection.3.2.4}
+\contentsline {section}{\numberline {3.3}Data Sources}{32}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Wikipedia API}{34}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}DBPedia Ontology}{34}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Choosing the Source and Interface for this Project}{35}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.4}Processing Natural Language Queries}{35}{section.3.4}
+\contentsline {section}{\numberline {3.5}Evaluating Success - Experimental evaluation of the system}{36}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Client software for the experiment}{36}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Typical experiment plan}{37}{subsection.3.5.2}
+\contentsline {chapter}{\numberline {4}Design}{38}{chapter.4}
+\contentsline {section}{\numberline {4.1}System Design}{38}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Micro-system for Protecting User Identity}{38}{subsection.4.1.1}
+\contentsline {section}{\numberline {4.2}Language, Platform and Tools and Libraries}{40}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Language}{40}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Platform}{40}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Database}{41}{subsection.4.2.3}
+\contentsline {subsubsection}{\nonumberline Conceptual Data Model}{41}{section*.7}
+\contentsline {subsubsection}{\nonumberline Logical Database Design}{42}{section*.8}
+\contentsline {subsubsection}{\nonumberline Database Technology}{43}{section*.9}
+\contentsline {subsubsection}{\nonumberline Physical Database Design}{44}{section*.10}
+\contentsline {subsection}{\numberline {4.2.4}Libraries}{44}{subsection.4.2.4}
+\contentsline {subsubsection}{\nonumberline Database Querying}{44}{section*.11}
+\contentsline {subsubsection}{\nonumberline Creating HTTP Server and REST API}{46}{section*.12}
+\contentsline {subsubsection}{\nonumberline Sending SMS}{47}{section*.13}
+\contentsline {subsubsection}{\nonumberline Semantic Analysis - Measuring semantic relatedness between texts}{48}{section*.14}
+\contentsline {subsubsection}{\nonumberline Semantic Analysis - Discovering Named Entities in text}{49}{section*.15}
+\contentsline {chapter}{\numberline {5}Implementation}{51}{chapter.5}
+\contentsline {section}{\numberline {5.1}Implementation Overview}{51}{section.5.1}
+\contentsline {section}{\numberline {5.2}Tools and services used}{52}{section.5.2}
+\contentsline {section}{\numberline {5.3}Implementation of natural language processing module}{53}{section.5.3}
+\contentsline {section}{\numberline {5.4}Implementation of answer location system}{54}{section.5.4}
+\contentsline {section}{\numberline {5.5}Implementation of rating and learning system}{56}{section.5.5}
+\contentsline {section}{\numberline {5.6}Implementation of rating and learning system}{56}{section.5.6}
+\contentsline {section}{\numberline {5.7}Discussion of Implementation}{56}{section.5.7}
+\contentsline {chapter}{\numberline {6}Results}{57}{chapter.6}
+\contentsline {chapter}{\numberline {7}Discussion}{58}{chapter.7}
+\contentsline {chapter}{\numberline {8}Evaluation}{59}{chapter.8}
+\contentsline {chapter}{\numberline {9}Extending this project}{60}{chapter.9}
+\contentsline {chapter}{\numberline {10}Conclusion}{61}{chapter.10}
+\contentsline {chapter}{\numberline {A}Personas}{68}{appendix.A}
+\contentsline {section}{\numberline {A.1}Nanjala}{68}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Demographics and Profile}{68}{subsection.A.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Average Day}{68}{subsection.A.1.2}
+\contentsline {section}{\numberline {A.2}Cedric}{69}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}Demographics and Profile}{69}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}Average European Trip}{69}{subsection.A.2.2}
+\contentsline {chapter}{\numberline {B}Sample Consent Form}{70}{appendix.B}
+\contentsline {chapter}{\numberline {C}Sample Questionnaire}{73}{appendix.C}

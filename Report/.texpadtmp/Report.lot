@@ -1,13 +1,14 @@
 \select@language {british}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Example of software database: hashed phone numbers paired with a list of previous returned answer IDs. }}{22}{table.2.1}
+\contentsline {table}{\numberline {2.1}{\ignorespaces Example of software database: hashed phone numbers paired with a list of previous returned answer IDs. }}{23}{table.2.1}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces List of non-functional requirements and their Fit Criteria.}}{32}{table.3.1}
+\contentsline {table}{\numberline {3.1}{\ignorespaces List of non-functional requirements and their Fit Criteria.}}{33}{table.3.1}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Logical Database Design. Underlined fields represent primary keys.}}{42}{table.4.1}
-\contentsline {table}{\numberline {4.2}{\ignorespaces MySQL \& SQLAlchemy vs MongoDB}}{43}{table.4.2}
-\contentsline {table}{\numberline {4.3}{\ignorespaces Typical Document in each MongoDB Collection}}{44}{table.4.3}
+\contentsline {table}{\numberline {4.1}{\ignorespaces Logical Database Design. Underlined fields represent primary keys.}}{43}{table.4.1}
+\contentsline {table}{\numberline {4.2}{\ignorespaces MySQL \& SQLAlchemy vs MongoDB}}{44}{table.4.2}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Typical Document in each MongoDB Collection}}{45}{table.4.3}
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
