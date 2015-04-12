@@ -362,7 +362,7 @@ The Iterative Development Model was selected in Section \ref{sec:developmentLife
 
 \section{Requirements}
 \subsection{Use Cases / User Goals}
-Two personas were created to represent individuals who may have a need for the work resulting from this project, which can be seen in Appendix A in Section \ref{sec:appendixPersonas}. These are Nanjala, who is from Uganda, and Cedric, who is from Switzerland, and it is from these that user goals are extracted. These describe what a general user aims to achieve with this service.
+Two personas were created to represent individuals who may have a need for the work resulting from this project, which can be seen in Appendix \ref{sec:appendixPersonas}. These are Nanjala, who is from Uganda, and Cedric, who is from Switzerland, and it is from these that user goals are extracted. These describe what a general user aims to achieve with this service.
 \begin{enumerate}
   \item Nanjala wants to be able to read general information on any given topic.
   \item Cedric wants to be able to retrieve facts from direct questions.
@@ -456,20 +456,35 @@ The result of this simple natural language processing should be that a sentence 
 
 \section{Evaluating Success - Experimental evaluation of the system}
 \label{sec:evaluatingSuccess}
-Success will be evaluated by establishing if the project fulfils its original requirements, based on the scenarios.  Many user requirements such as protecting the privacy of a user will be demonstrated through the software developed, whilst some that involve user interactions must be tested with users.  As such, user testing will be undertaken to evaluate three specific properties of the software through a trial usage and subsequent questionnaire.  The questionnaire will aim to evaluate the usefulness of the system, the usability of the system and the quality of returned answers, and is based off of the IBM "Perceived Usefulness, Perceived Ease of Use, and User Acceptance of Information Technology" questionnaire~\cite{davis1989perceived}.  Questions were modified to suit the software being used in a situation without internet as opposed to a general workplace environment, and two questions were added: one to investigate the overall quality of answers returned to a user, and another to discover how trustworthy users felt the answers returned by the application were in general.  A copy of the questionnaire to be used is included in Appendix C in section \ref{sec:appendixQuestionnaire}.
+Success will be evaluated by establishing if the project fulfils its original requirements, based on the scenarios.  Many user requirements such as protecting the privacy of a user will be demonstrated through the software developed, whilst some that involve user interactions must be tested with users.  As such, user testing will be undertaken to evaluate three specific properties of the software through a trial usage and subsequent questionnaire: the usefulness and quality of the service, its usability, and the quality of the machine learning system.
+
+Prior to running the experimental evaluation, a dry run will be undertaken with two participants. No data will be stored or collected - the purpose of the dry run is purely to establish early on any issues with the running of the experiment that would cause a problem during the real experiment.
 
 \subsection{Client software for the experiment}
-\label{subsubsec:clientSoftware}
+\label{subsec:clientSoftware}
 The goal of this project has been to construct a piece of software that interfaces over SMS, as described in the project title. However there are practical limitations to running the experiment via SMS. During testing of the various services it was observed that HTTP-SMS Gateway Services added approximately a 5 second latency to both the sending and receiving of SMS, extending the length of time that a user would need to partake in the experiment to collect the same number of data points as could be collected when working straight over HTTP. In addition, the sending and receiving of SMS is costly and the savings made by not consuming SMS can be used to encourage participants to partake in the experiment. 
 
-{\color{red} The interface is also an important consideration for the experimental evaluation - a key goal is to collect as many data points from participants as possible, whilst still maintaining some of the context in which the software will be used - on mobile devices. With regard to input speed, it is assumed\marginnote{reference?} that typing speeds are slower on mobile keyboards than full-sized physical keyboards, so data points can be collected more rapidly when working on a full-sized physical keyboard. In order to do this, a mobile app will be developed that interfaces with the software, and this will be run on a laptop with full-size keyboard. This gives participants use of a physical keyboard, allowing them to query the system more quickly and therefore making it acceptable to ask them to do a larger set of queries, and maintains the mobile context.}\marginnote{wording?}
+{\color{red} The interface is also an important consideration for the experimental evaluation - a key goal is to collect as many data points from participants as possible, whilst still maintaining some of the context in which the software will be used - on mobile devices. With regard to input speed, it is assumed\marginnote{reference?} that typing speeds are slower on mobile keyboards than full-sized physical keyboards, so data points can be collected more rapidly when working on a full-sized physical keyboard. In order to do this, a mobile app will be developed that interfaces with the software, and this will be run on a laptop with full-size keyboard. This gives participants use of a physical keyboard, allowing them to query the system more quickly and therefore making it acceptable to ask them to do a larger set of queries, and maintains the mobile context.}\marginnote{poor wording?}
+
+\subsection{Questionnaire Design}
+\label{subsec:questionnaire}
+The questionnaire will aim to evaluate the usefulness of the system, the usability of the system and the quality of returned answers, and is based off of the IBM "Perceived Usefulness, Perceived Ease of Use, and User Acceptance of Information Technology" questionnaire~\cite{davis1989perceived}.  Questions were modified to suit the software being used in a situation without internet as opposed to a general workplace environment, and two questions were added: one to investigate the overall quality of answers returned to a user, and another to discover how trustworthy users felt the answers returned by the application were in general. 
+
+Each question is formed by statement and a measure of how much the participant agrees with the statement. This is measured by selecting a value on a five-level Likert scale~\cite{likertScale}. The scale ranges from 1 through 5, where 1 is \texttt{strongly disagree} with the statement given, 3 is \texttt{neutral} and 5 is \texttt{strongly agree}.
+
+A copy of the questionnaire that will be used is included in Appendix \ref{sec:appendixQuestionnaire}.
 
 \subsection{Typical experiment plan}
-\label{subsubsec:typicalExperiment}
-At the start of the experiment, participants will be given During the experiment, users will be given a pre-written sheet explaining the experiment and 
+\label{subsec:typicalExperiment}
+At the start of the experiment, participants will be given both the consent form, included in Appendix \ref{sec:appendixConsentForm} and a document explaining what the software aims to achieve and what the participant should do, included in Appendix \ref{sec:appendixExperimentalInstructions}. The consent form sets out exactly what participants will be asked to do, the information that will be collected from them, and reminds them that they can withdraw at any time. The instruction sheet sets out some topic areas for the participant to research using the software, with a varying level of freedom within that topic. For example, they may be asked specifically to \texttt{identify the height of the Eiffel Tower}, or to identify a property of an entity of their choice such as \texttt{identify the population of a country of your choice}. Participants may also be asked to locate general information about a geographical entity. Constraints are placed on the area in which participants can query to limit the range of keywords used, thus focussing the machine learning onto a smaller group of words to allow a demonstratable improvement to be shown in the short space of this study.
 
-% TODO XXX - write the boundary at which I will say I succeeded (if I consistently score about netural)
-% TODO XXX - write about Likert model for setting questionnaire scale.
+After the experiment, participants will be asked to complete the questionnaire. Any additional comments arising during the post-experiment debriefing will also be noted beneath the questionnaire.
+
+\subsection{Assessing success quantitively}
+\label{subsec:assessingLearning}
+As stated in section \ref{sec:evaluatingSuccess}, the experiment aims to evaluate three goals: the usefulness and quality of the service, its usability and the quality of the machine learning system. In the questionnaire, questions 1 through 6, 13 and 14 investigate the usefulness and quality of the system, whilst questions 7 through 12 investigate the usability of the system. Bearing in mind that this project is heavily constrained with regard to time due to constraints on the nature of it been a university project, it is not expected that the software will be as good as is possible. As such, a positive mean rating for usefulness and quality, and usability, would be deemed a success.
+
+The machine leaning will be tested by inspecting the change in usefulness and quality rankings of the system made by users in the questionnaire as more participants use the system and provide ratings. The implementation of the machine learning system will be considered a success if a statistically significant positive trend is found in the usefulness and quality ratings when the ratings are sorted by the number of proceeding participants.
 
 \newpage
 \chapter{Design}
@@ -949,6 +964,10 @@ $\square$ The Researcher has treated me with respect and answered all of my ques
 For the researcher: Participant ID: \textunderscore\textunderscore\textunderscore\textunderscore\textunderscore
 
 }
+
+\chapter{Experimental Evaluation Instruction Sheet}
+\label{sec:appendixExperimentalInstructions}
+\includepdf[pages={1,2}]{Experiment_Instructions.pdf}
 
 \newpage
 \chapter{Sample Questionnaire}

@@ -31,43 +31,46 @@
 \contentsline {section}{\numberline {3.4}Processing Natural Language Queries}{35}{section.3.4}
 \contentsline {section}{\numberline {3.5}Evaluating Success - Experimental evaluation of the system}{36}{section.3.5}
 \contentsline {subsection}{\numberline {3.5.1}Client software for the experiment}{36}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Typical experiment plan}{37}{subsection.3.5.2}
-\contentsline {chapter}{\numberline {4}Design}{38}{chapter.4}
-\contentsline {section}{\numberline {4.1}System Design}{38}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Micro-system for Protecting User Identity}{38}{subsection.4.1.1}
-\contentsline {section}{\numberline {4.2}Language, Platform and Tools and Libraries}{40}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Language}{40}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Platform}{40}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Database}{41}{subsection.4.2.3}
-\contentsline {subsubsection}{\nonumberline Conceptual Data Model}{41}{section*.7}
-\contentsline {subsubsection}{\nonumberline Logical Database Design}{42}{section*.8}
-\contentsline {subsubsection}{\nonumberline Database Technology}{43}{section*.9}
-\contentsline {subsubsection}{\nonumberline Physical Database Design}{44}{section*.10}
-\contentsline {subsection}{\numberline {4.2.4}Libraries}{44}{subsection.4.2.4}
-\contentsline {subsubsection}{\nonumberline Database Querying}{44}{section*.11}
-\contentsline {subsubsection}{\nonumberline Creating HTTP Server and REST API}{46}{section*.12}
-\contentsline {subsubsection}{\nonumberline Sending SMS}{47}{section*.13}
-\contentsline {subsubsection}{\nonumberline Semantic Analysis - Measuring semantic relatedness between texts}{48}{section*.14}
-\contentsline {subsubsection}{\nonumberline Semantic Analysis - Discovering Named Entities in text}{49}{section*.15}
-\contentsline {chapter}{\numberline {5}Implementation}{51}{chapter.5}
-\contentsline {section}{\numberline {5.1}Implementation Overview}{51}{section.5.1}
-\contentsline {section}{\numberline {5.2}Tools and services used}{52}{section.5.2}
-\contentsline {section}{\numberline {5.3}Implementation of natural language processing module}{53}{section.5.3}
-\contentsline {section}{\numberline {5.4}Implementation of answer location system}{54}{section.5.4}
-\contentsline {section}{\numberline {5.5}Implementation of rating and learning system}{56}{section.5.5}
-\contentsline {section}{\numberline {5.6}Implementation of rating and learning system}{56}{section.5.6}
-\contentsline {section}{\numberline {5.7}Discussion of Implementation}{56}{section.5.7}
-\contentsline {chapter}{\numberline {6}Results}{57}{chapter.6}
-\contentsline {chapter}{\numberline {7}Discussion}{58}{chapter.7}
-\contentsline {chapter}{\numberline {8}Evaluation}{59}{chapter.8}
-\contentsline {chapter}{\numberline {9}Extending this project}{60}{chapter.9}
-\contentsline {chapter}{\numberline {10}Conclusion}{61}{chapter.10}
-\contentsline {chapter}{\numberline {A}Personas}{68}{appendix.A}
-\contentsline {section}{\numberline {A.1}Nanjala}{68}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}Demographics and Profile}{68}{subsection.A.1.1}
-\contentsline {subsection}{\numberline {A.1.2}Average Day}{68}{subsection.A.1.2}
-\contentsline {section}{\numberline {A.2}Cedric}{69}{section.A.2}
-\contentsline {subsection}{\numberline {A.2.1}Demographics and Profile}{69}{subsection.A.2.1}
-\contentsline {subsection}{\numberline {A.2.2}Average European Trip}{69}{subsection.A.2.2}
-\contentsline {chapter}{\numberline {B}Sample Consent Form}{70}{appendix.B}
-\contentsline {chapter}{\numberline {C}Sample Questionnaire}{73}{appendix.C}
+\contentsline {subsection}{\numberline {3.5.2}Questionnaire Design}{37}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}Typical experiment plan}{37}{subsection.3.5.3}
+\contentsline {chapter}{\numberline {4}Design}{39}{chapter.4}
+\contentsline {section}{\numberline {4.1}System Design}{39}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Micro-system for Protecting User Identity}{39}{subsection.4.1.1}
+\contentsline {section}{\numberline {4.2}Language, Platform and Tools and Libraries}{41}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Language}{41}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Platform}{41}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Database}{42}{subsection.4.2.3}
+\contentsline {subsubsection}{\nonumberline Conceptual Data Model}{42}{section*.7}
+\contentsline {subsubsection}{\nonumberline Logical Database Design}{43}{section*.8}
+\contentsline {subsubsection}{\nonumberline Database Technology}{44}{section*.9}
+\contentsline {subsubsection}{\nonumberline Physical Database Design}{45}{section*.10}
+\contentsline {subsection}{\numberline {4.2.4}Libraries}{45}{subsection.4.2.4}
+\contentsline {subsubsection}{\nonumberline Database Querying}{45}{section*.11}
+\contentsline {subsubsection}{\nonumberline Creating HTTP Server and REST API}{47}{section*.12}
+\contentsline {subsubsection}{\nonumberline Sending SMS}{48}{section*.13}
+\contentsline {subsubsection}{\nonumberline Semantic Analysis - Measuring semantic relatedness between texts}{49}{section*.14}
+\contentsline {subsubsection}{\nonumberline Semantic Analysis - Discovering Named Entities in text}{50}{section*.15}
+\contentsline {chapter}{\numberline {5}Implementation}{52}{chapter.5}
+\contentsline {section}{\numberline {5.1}Implementation Overview}{52}{section.5.1}
+\contentsline {section}{\numberline {5.2}Tools and services used}{53}{section.5.2}
+\contentsline {section}{\numberline {5.3}Implementation of natural language processing module}{54}{section.5.3}
+\contentsline {section}{\numberline {5.4}Implementation of answer location system}{55}{section.5.4}
+\contentsline {section}{\numberline {5.5}Implementation of rating and learning system}{57}{section.5.5}
+\contentsline {section}{\numberline {5.6}Implementation of rating and learning system}{57}{section.5.6}
+\contentsline {section}{\numberline {5.7}Discussion of Implementation}{57}{section.5.7}
+\contentsline {chapter}{\numberline {6}Results}{58}{chapter.6}
+\contentsline {chapter}{\numberline {7}Discussion}{59}{chapter.7}
+\contentsline {chapter}{\numberline {8}Evaluation}{60}{chapter.8}
+\contentsline {chapter}{\numberline {9}Extending this project}{61}{chapter.9}
+\contentsline {chapter}{\numberline {10}Conclusion}{62}{chapter.10}
+\contentsline {part}{\numberline {I}Appendices}{68}{part.1}
+\contentsline {chapter}{\numberline {A}Personas}{69}{appendix.A}
+\contentsline {section}{\numberline {A.1}Nanjala}{69}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Demographics and Profile}{69}{subsection.A.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Average Day}{69}{subsection.A.1.2}
+\contentsline {section}{\numberline {A.2}Cedric}{70}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}Demographics and Profile}{70}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}Average European Trip}{70}{subsection.A.2.2}
+\contentsline {chapter}{\numberline {B}Sample Consent Form}{71}{appendix.B}
+\contentsline {chapter}{\numberline {C}Experimental Evaluation Instruction Sheet}{74}{appendix.C}
+\contentsline {chapter}{\numberline {D}Sample Questionnaire}{77}{appendix.D}

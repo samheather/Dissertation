@@ -30,34 +30,37 @@
 \BOOKMARK [1][-]{section.3.4}{Processing Natural Language Queries}{chapter.3}% 30
 \BOOKMARK [1][-]{section.3.5}{Evaluating Success - Experimental evaluation of the system}{chapter.3}% 31
 \BOOKMARK [2][-]{subsection.3.5.1}{Client software for the experiment}{section.3.5}% 32
-\BOOKMARK [2][-]{subsection.3.5.2}{Typical experiment plan}{section.3.5}% 33
-\BOOKMARK [0][-]{chapter.4}{Design}{}% 34
-\BOOKMARK [1][-]{section.4.1}{System Design}{chapter.4}% 35
-\BOOKMARK [2][-]{subsection.4.1.1}{Micro-system for Protecting User Identity}{section.4.1}% 36
-\BOOKMARK [1][-]{section.4.2}{Language, Platform and Tools and Libraries}{chapter.4}% 37
-\BOOKMARK [2][-]{subsection.4.2.1}{Language}{section.4.2}% 38
-\BOOKMARK [2][-]{subsection.4.2.2}{Platform}{section.4.2}% 39
-\BOOKMARK [2][-]{subsection.4.2.3}{Database}{section.4.2}% 40
-\BOOKMARK [2][-]{subsection.4.2.4}{Libraries}{section.4.2}% 41
-\BOOKMARK [0][-]{chapter.5}{Implementation}{}% 42
-\BOOKMARK [1][-]{section.5.1}{Implementation Overview}{chapter.5}% 43
-\BOOKMARK [1][-]{section.5.2}{Tools and services used}{chapter.5}% 44
-\BOOKMARK [1][-]{section.5.3}{Implementation of natural language processing module}{chapter.5}% 45
-\BOOKMARK [1][-]{section.5.4}{Implementation of answer location system}{chapter.5}% 46
-\BOOKMARK [1][-]{section.5.5}{Implementation of rating and learning system}{chapter.5}% 47
-\BOOKMARK [1][-]{section.5.6}{Implementation of rating and learning system}{chapter.5}% 48
-\BOOKMARK [1][-]{section.5.7}{Discussion of Implementation}{chapter.5}% 49
-\BOOKMARK [0][-]{chapter.6}{Results}{}% 50
-\BOOKMARK [0][-]{chapter.7}{Discussion}{}% 51
-\BOOKMARK [0][-]{chapter.8}{Evaluation}{}% 52
-\BOOKMARK [0][-]{chapter.9}{Extending this project}{}% 53
-\BOOKMARK [0][-]{chapter.10}{Conclusion}{}% 54
-\BOOKMARK [0][-]{appendix.A}{Personas}{}% 55
-\BOOKMARK [1][-]{section.A.1}{Nanjala}{appendix.A}% 56
-\BOOKMARK [2][-]{subsection.A.1.1}{Demographics and Profile}{section.A.1}% 57
-\BOOKMARK [2][-]{subsection.A.1.2}{Average Day}{section.A.1}% 58
-\BOOKMARK [1][-]{section.A.2}{Cedric}{appendix.A}% 59
-\BOOKMARK [2][-]{subsection.A.2.1}{Demographics and Profile}{section.A.2}% 60
-\BOOKMARK [2][-]{subsection.A.2.2}{Average European Trip}{section.A.2}% 61
-\BOOKMARK [0][-]{appendix.B}{Sample Consent Form}{}% 62
-\BOOKMARK [0][-]{appendix.C}{Sample Questionnaire}{}% 63
+\BOOKMARK [2][-]{subsection.3.5.2}{Questionnaire Design}{section.3.5}% 33
+\BOOKMARK [2][-]{subsection.3.5.3}{Typical experiment plan}{section.3.5}% 34
+\BOOKMARK [0][-]{chapter.4}{Design}{}% 35
+\BOOKMARK [1][-]{section.4.1}{System Design}{chapter.4}% 36
+\BOOKMARK [2][-]{subsection.4.1.1}{Micro-system for Protecting User Identity}{section.4.1}% 37
+\BOOKMARK [1][-]{section.4.2}{Language, Platform and Tools and Libraries}{chapter.4}% 38
+\BOOKMARK [2][-]{subsection.4.2.1}{Language}{section.4.2}% 39
+\BOOKMARK [2][-]{subsection.4.2.2}{Platform}{section.4.2}% 40
+\BOOKMARK [2][-]{subsection.4.2.3}{Database}{section.4.2}% 41
+\BOOKMARK [2][-]{subsection.4.2.4}{Libraries}{section.4.2}% 42
+\BOOKMARK [0][-]{chapter.5}{Implementation}{}% 43
+\BOOKMARK [1][-]{section.5.1}{Implementation Overview}{chapter.5}% 44
+\BOOKMARK [1][-]{section.5.2}{Tools and services used}{chapter.5}% 45
+\BOOKMARK [1][-]{section.5.3}{Implementation of natural language processing module}{chapter.5}% 46
+\BOOKMARK [1][-]{section.5.4}{Implementation of answer location system}{chapter.5}% 47
+\BOOKMARK [1][-]{section.5.5}{Implementation of rating and learning system}{chapter.5}% 48
+\BOOKMARK [1][-]{section.5.6}{Implementation of rating and learning system}{chapter.5}% 49
+\BOOKMARK [1][-]{section.5.7}{Discussion of Implementation}{chapter.5}% 50
+\BOOKMARK [0][-]{chapter.6}{Results}{}% 51
+\BOOKMARK [0][-]{chapter.7}{Discussion}{}% 52
+\BOOKMARK [0][-]{chapter.8}{Evaluation}{}% 53
+\BOOKMARK [0][-]{chapter.9}{Extending this project}{}% 54
+\BOOKMARK [0][-]{chapter.10}{Conclusion}{}% 55
+\BOOKMARK [-1][-]{part.1}{Appendices}{}% 56
+\BOOKMARK [0][-]{appendix.A}{Personas}{part.1}% 57
+\BOOKMARK [1][-]{section.A.1}{Nanjala}{appendix.A}% 58
+\BOOKMARK [2][-]{subsection.A.1.1}{Demographics and Profile}{section.A.1}% 59
+\BOOKMARK [2][-]{subsection.A.1.2}{Average Day}{section.A.1}% 60
+\BOOKMARK [1][-]{section.A.2}{Cedric}{appendix.A}% 61
+\BOOKMARK [2][-]{subsection.A.2.1}{Demographics and Profile}{section.A.2}% 62
+\BOOKMARK [2][-]{subsection.A.2.2}{Average European Trip}{section.A.2}% 63
+\BOOKMARK [0][-]{appendix.B}{Sample Consent Form}{part.1}% 64
+\BOOKMARK [0][-]{appendix.C}{Experimental Evaluation Instruction Sheet}{part.1}% 65
+\BOOKMARK [0][-]{appendix.D}{Sample Questionnaire}{part.1}% 66
