@@ -26,6 +26,9 @@
 % to avoid having to escape all underscores in URL's to avoid "missing $ inserted" error.
 \usepackage{url}
 
+% to include PDFs
+\usepackage{pdfpages}
+
 % For column centering in the questionnaire
 \usepackage{array}
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
@@ -365,7 +368,6 @@ Two personas were created to represent individuals who may have a need for the w
   \item Cedric needs a simple and efficient user interface that allows him to retrieve facts quickly. 
   \item Cedric wants to be able to feedback into the system when he finds an answer particularly useful or unhelpful. 
   \item Nanjala wants to be able to show the service to her friends without explaining how to use it every time.
-  \item Nanjala wants to get recommendations on content she might find interesting. \marginnote{Note to self: might not implement this, in which case discuss in DISCUSSION.}% TODO remove recommendations
   \item Cedric wants the system to protect his privacy, obscuring his identity.
   \item Nanjala wants to be able to ask questions as she would ask a friend without having to learn a syntax.
 \end{enumerate}
@@ -380,15 +382,15 @@ User goals are distilled into formal user requirements.  Each user requirement c
   \item Users must be able to make their queries and get responses quickly.
   \item Users must be able to feedback to the system when an answer is of noticeably low or high quality so the system can learn and improve.
   \item Users must be able to learn how to use the system themselves and this learning process should be quick.
-  \item Users must be able to get recommendations on entities they might be interested in based on previous query history.\marginnote{Haven't decided yet if this is a feature I will implement - time based!}
   \item Users must be comfortable that their privacy is been protected whilst using the service.
   \item \label{requirement:userReqNaturalLanguage} Users must be able to interact with the system using natural language.
 \end{enumerate}
 
 \subsubsection{System Requirements - Functional}
 \label{subsubsec:systemRequirementsFunctional}
-\marginnote{write intro text}
-% TODO - write intro text
+
+System requirements are derived from the capabilities that the software needs to have to be able to support the user requirements. To support the user requirements in section \ref{subsubsec:userRequirements}, the application system must fulfil the following system requirements.
+
 \begin{enumerate}
   \item \label{requirement:sysReqNaturalLanguage} The system will be capable of processing queries in natural language form.
   \item The system will receive queries via SMS, process them and then respond via SMS.
@@ -450,9 +452,19 @@ The property about the geographical entity will be established by removing stop 
 
 The result of this simple natural language processing should be that a sentence such as 'What is the Height of the Eiffel Tower?' is reduced to a structure indicating that the geographical entity is the 'Eiffel Tower' and the property is the 'height'.
 
-\subsection{Evaluating Success}
+\subsection{Evaluating Success - Experimental evaluation of the system}
 \label{sec:evaluatingSuccess}
-Success will be evaluated by establishing if the project fulfils its original requirements, based on the scenarios.  Many user requirements such as protecting the privacy of a user will be proven through software, whilst some that involve user interactions must be tested with users.  As such, user testing will be undertaken to evaluate three specific properties of the software through a trial usage and subsequent questionnaire.  The questionnaire will aim to evaluate the usefulness of the system, the usability of the system and the quality of returned answers, and is based off of the IBM "Perceived Usefulness, Perceived Ease of Use, and User Acceptance of Information Technology" questionnaire~\cite{davis1989perceived}.  Questions were modified to suit the software being used in a situation without internet as opposed to a general workplace environment, and a question was added to investigate the quality of answers returned to a user.  A copy of the questionnaire to be used is included in Appendix C in section \ref{sec:appendixQuestionnaire}.
+Success will be evaluated by establishing if the project fulfils its original requirements, based on the scenarios.  Many user requirements such as protecting the privacy of a user will be demonstrated through the software developed, whilst some that involve user interactions must be tested with users.  As such, user testing will be undertaken to evaluate three specific properties of the software through a trial usage and subsequent questionnaire.  The questionnaire will aim to evaluate the usefulness of the system, the usability of the system and the quality of returned answers, and is based off of the IBM "Perceived Usefulness, Perceived Ease of Use, and User Acceptance of Information Technology" questionnaire~\cite{davis1989perceived}.  Questions were modified to suit the software being used in a situation without internet as opposed to a general workplace environment, and two questions were added: one to investigate the overall quality of answers returned to a user, and another to discover how trustworthy users felt the answers returned by the application were in general.  A copy of the questionnaire to be used is included in Appendix C in section \ref{sec:appendixQuestionnaire}.
+
+\subsubsection{Client software for the experiment}
+\label{subsubsec:clientSoftware}
+The goal of this project has been to construct a piece of software that interfaces over SMS, as described in the project title. However there are practical limitations to running the experiment via SMS. During testing of the various services it was observed that HTTP-SMS Gateway Services added approximately a 5 second latency to both the sending and receiving of SMS, extending the length of time that a user would need to partake in the experiment to collect the same number of data points as could be collected when working straight over HTTP. In addition, the sending and receiving of SMS is costly and the savings made by not consuming SMS can be used to encourage participants to partake in the experiment. 
+
+{\color{red} The interface is also an important consideration for the experimental evaluation - a key goal is to collect as many data points from participants as possible, whilst still maintaining some of the context in which the software will be used - on mobile devices. With regard to input speed, it is assumed\marginnote{reference?} that typing speeds are slower on mobile keyboards than full-sized physical keyboards, so data points can be collected more rapidly when working on a full-sized physical keyboard. In order to do this, a mobile app will be developed that interfaces with the software, and this will be run on a laptop with full-size keyboard. This gives participants use of a physical keyboard, allowing them to query the system more quickly and therefore making it acceptable to ask them to do a larger set of queries, and maintains the mobile context.}\marginnote{wording?}
+
+\subsubsection{Typical experiment plan}
+\label{subsubsec:typicalExperiment}
+At the start of the experiment, participants will be given During the experiment, users will be given a pre-written sheet explaining the experiment and 
 
 % TODO XXX - write the boundary at which I will say I succeeded (if I consistently score about netural)
 % TODO XXX - write about Likert model for setting questionnaire scale.
@@ -722,6 +734,13 @@ Results from the Dandelion API were checked against the \texttt{Place} class in 
 \label{sec:implementation}
 {\bf This section will contain information on how data is stored, the structure of databases, and the format of and method through which data is sent to an SMS provider.}
 
+Code used within this project is located in the following Git repositories:
+\begin{itemize}
+  \item \texttt{https://github.com/samheather/dissertationServer} - This repository contains the code for the server application.
+  \item \texttt{https://github.com/samheather/dissertationClient} - This repository contains the Xcode Project and code for the Mac OS X testing client, used in development of the application.
+  \item \texttt{https://github.com/samheather/dissertationIos} - This repository contains the Xcode Project and code for the iOS client application, used in the experimental evaluation of the application. It has been constructed for an iPhone 5 screen size.
+\end{itemize}
+
 \subsection{Implementation Overview}
 As discussed in section \ref{sec:method}, the implementation was completed whilst following the iterative development process. Software development took places in stages which represented each iteration, and after each iteration a version of the software was demonstrated in a weekly meeting. In these meetings, the software's capabilities and success rate were discussed, and requirements were re-evaluated based on progress. Ideas for expansions to the software (for example, the Natural Language Processing, which was not in the original plan) were also discussed.
 
@@ -788,7 +807,10 @@ The Cortical API is not configured for recognising text in CamelCase, so helper 
 % also talk about issues with compare module, multiple services etc, here
 {\bf explain why had to use both, explain why using both is bad}
 
-\subsection{Implementation of rating and learning systme}
+\subsection{Implementation of rating and learning system}
+% TODO XXX - write this
+
+\subsection{Implementation of rating and learning system}
 % TODO XXX - write this
 
 \subsection{Discussion of Implementation}
@@ -851,6 +873,11 @@ This section's content...
 %http://scholar.google.co.uk/scholar?hl=en&q=melby+why+cant+a+computer+translate+like+a+person&btnG=&as_sdt=1%2C5&as_sdtp=
 \bibliographystyle{IEEEtran}
 \bibliography{IEEEabrv,mybib}
+
+\begin{appendices}
+
+\end{appendices}
+
 
 \newpage
 \section{Appendix A - Personas}

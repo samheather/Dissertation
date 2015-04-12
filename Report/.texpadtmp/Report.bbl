@@ -21,6 +21,10 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{sommervilleSoftwareEngineering}
+I.~Sommerville, \emph{Software Engineering}.\hskip 1em plus 0.5em minus
+  0.4em\relax Pearson Education, 2010.
+
 \bibitem{community1948universal}
 \BIBentryALTinterwordspacing
 U.~N. international community, ``The universal declaration of human rights,''
@@ -136,10 +140,6 @@ B.~Boehm, ``A spiral model of software development and enhancement,''
 K.~Beck, M.~Beedle, A.~van Bennekum, A.~Cockburn, W.~Cunningham, M.~Fowler,
   J.~Grenning, J.~Highsmith, A.~Hunt, R.~Jeffries \emph{et~al.}, ``The agile
   manifesto,'' 2001.
-
-\bibitem{sommervilleSoftwareEngineering}
-I.~Sommerville, \emph{Software Engineering}.\hskip 1em plus 0.5em minus
-  0.4em\relax Pearson Education, 2010.
 
 \bibitem{differenceBetweenLifeCycleModels}
 \BIBentryALTinterwordspacing
