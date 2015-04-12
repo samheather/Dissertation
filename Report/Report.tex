@@ -9,9 +9,9 @@
 %\paragraph{paragraph}	4
 %\subparagraph{subparagraph}	5
 
-\documentclass{article}
+\documentclass[authoryearcitations]{UoYCSproject}
 \usepackage{times}
-\usepackage{cite}
+%\usepackage{cite}
 \usepackage[autostyle]{csquotes}
 \usepackage{marginnote}
 \usepackage{listings}% for source code styling
@@ -52,13 +52,10 @@
   The University of York,\\
   \texttt{sam@heather.sh}}
 \date{\today}
-\maketitle
-\thispagestyle{empty}
-
-\newpage
-
-\begin{abstract}
-
+\supervisor{Dr. Lilian-JL Blot}
+\wordcount{\color{red} 999999}
+\BEng
+\abstract{
 \marginnote{It is early days so it is normal that many things are missing from the abstract. You should keep in mind that it should include later on few sentences on method/experiment, result and conclusion.}
 
 In remote Africa there are millions of disadvantaged and uneducated individuals, who in the vast majority do not have access to the internet the knowledge that this brings.  Outside of their immediate friends and family, individuals cannot access the information they need to further their education, or just for general interest.
@@ -67,7 +64,12 @@ In many parts of the world, the number of people without access to the internet 
 
 This project raises ethical issues relating to the responsibility of providing accurate information when in a position of trust, the ethics of machine translation and maintaining user privacy.
 % TODO - finish abstract
-\end{abstract}
+}
+
+\maketitle
+\thispagestyle{empty}
+
+\newpage
 
 \newpage
 \tableofcontents
@@ -284,7 +286,7 @@ line space
 \marginnote{Lilian: remove these two footnotes? Not always necessary to reference the original}
 
 \subsubsection{The Waterfall Model}
-The waterfall model consists of 5 phases of work, where each leads directly into the next.  It is a plan driven development model, which means that all process activities such as the implementation of the project must be planned and scheduled before work on them begins~\cite{sommervilleSoftwareEngineering}.  The five layers are shown in Figure \ref{fig:waterfallModel} and described below:
+The waterfall model consists of 5 phases of work, where each leads directly into the next.  It is a plan driven development model, which means that all process activities such as the implementation of the project must be planned and scheduled before work on them begins~\cite{Engineering}.  The five layers are shown in Figure \ref{fig:waterfallModel} and described below:
 \begin{enumerate}
   \item {\bf Requirements}.  In this stage, both user and system requirements for the project are determined after examining the business goals for the project.  These form the system specification.
   \item {\bf Design}.  Here, a plan for the software development is created.  The overall architecture for the software is created, the external libraries to be used are chosen and the interaction between different modules is modelled.
@@ -873,11 +875,6 @@ This section's content...
 %http://scholar.google.co.uk/scholar?hl=en&q=melby+why+cant+a+computer+translate+like+a+person&btnG=&as_sdt=1%2C5&as_sdtp=
 \bibliographystyle{IEEEtran}
 \bibliography{IEEEabrv,mybib}
-
-\begin{appendices}
-
-\end{appendices}
-
 
 \newpage
 \section{Appendix A - Personas}
