@@ -59,7 +59,7 @@
 \contentsline {section}{\numberline {5.5}Implementation of rating and learning system}{57}{section.5.5}
 \contentsline {section}{\numberline {5.6}Implementation of Testing Client}{57}{section.5.6}
 \contentsline {section}{\numberline {5.7}Implementation and iteration of iOS app used in experimental evaluation}{58}{section.5.7}
-\contentsline {section}{\numberline {5.8}Discussion of Implementation}{58}{section.5.8}
+\contentsline {section}{\numberline {5.8}Discussion of Implementation}{59}{section.5.8}
 \contentsline {chapter}{\numberline {6}Results}{61}{chapter.6}
 \contentsline {chapter}{\numberline {7}Discussion}{62}{chapter.7}
 \contentsline {chapter}{\numberline {8}Evaluation}{63}{chapter.8}
