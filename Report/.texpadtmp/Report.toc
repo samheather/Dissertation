@@ -33,6 +33,7 @@
 \contentsline {subsection}{\numberline {3.5.1}Client software for the experiment}{36}{subsection.3.5.1}
 \contentsline {subsection}{\numberline {3.5.2}Questionnaire Design}{37}{subsection.3.5.2}
 \contentsline {subsection}{\numberline {3.5.3}Typical experiment plan}{37}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.4}Assessing success quantitively}{38}{subsection.3.5.4}
 \contentsline {chapter}{\numberline {4}Design}{39}{chapter.4}
 \contentsline {section}{\numberline {4.1}System Design}{39}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Micro-system for Protecting User Identity}{39}{subsection.4.1.1}
@@ -56,21 +57,22 @@
 \contentsline {section}{\numberline {5.3}Implementation of natural language processing module}{54}{section.5.3}
 \contentsline {section}{\numberline {5.4}Implementation of answer location system}{55}{section.5.4}
 \contentsline {section}{\numberline {5.5}Implementation of rating and learning system}{57}{section.5.5}
-\contentsline {section}{\numberline {5.6}Implementation of rating and learning system}{57}{section.5.6}
-\contentsline {section}{\numberline {5.7}Discussion of Implementation}{57}{section.5.7}
-\contentsline {chapter}{\numberline {6}Results}{58}{chapter.6}
-\contentsline {chapter}{\numberline {7}Discussion}{59}{chapter.7}
-\contentsline {chapter}{\numberline {8}Evaluation}{60}{chapter.8}
-\contentsline {chapter}{\numberline {9}Extending this project}{61}{chapter.9}
-\contentsline {chapter}{\numberline {10}Conclusion}{62}{chapter.10}
-\contentsline {part}{\numberline {I}Appendices}{68}{part.1}
-\contentsline {chapter}{\numberline {A}Personas}{69}{appendix.A}
-\contentsline {section}{\numberline {A.1}Nanjala}{69}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}Demographics and Profile}{69}{subsection.A.1.1}
-\contentsline {subsection}{\numberline {A.1.2}Average Day}{69}{subsection.A.1.2}
-\contentsline {section}{\numberline {A.2}Cedric}{70}{section.A.2}
-\contentsline {subsection}{\numberline {A.2.1}Demographics and Profile}{70}{subsection.A.2.1}
-\contentsline {subsection}{\numberline {A.2.2}Average European Trip}{70}{subsection.A.2.2}
-\contentsline {chapter}{\numberline {B}Sample Consent Form}{71}{appendix.B}
-\contentsline {chapter}{\numberline {C}Experimental Evaluation Instruction Sheet}{74}{appendix.C}
-\contentsline {chapter}{\numberline {D}Sample Questionnaire}{77}{appendix.D}
+\contentsline {section}{\numberline {5.6}Implementation of Testing Client}{57}{section.5.6}
+\contentsline {section}{\numberline {5.7}Implementation and iteration of iOS app used in experimental evaluation}{58}{section.5.7}
+\contentsline {section}{\numberline {5.8}Discussion of Implementation}{58}{section.5.8}
+\contentsline {chapter}{\numberline {6}Results}{61}{chapter.6}
+\contentsline {chapter}{\numberline {7}Discussion}{62}{chapter.7}
+\contentsline {chapter}{\numberline {8}Evaluation}{63}{chapter.8}
+\contentsline {chapter}{\numberline {9}Extending this project}{64}{chapter.9}
+\contentsline {chapter}{\numberline {10}Conclusion}{65}{chapter.10}
+\contentsline {part}{\numberline {I}Appendices}{71}{part.1}
+\contentsline {chapter}{\numberline {A}Personas}{72}{appendix.A}
+\contentsline {section}{\numberline {A.1}Nanjala}{72}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Demographics and Profile}{72}{subsection.A.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Average Day}{72}{subsection.A.1.2}
+\contentsline {section}{\numberline {A.2}Cedric}{73}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}Demographics and Profile}{73}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}Average European Trip}{73}{subsection.A.2.2}
+\contentsline {chapter}{\numberline {B}Sample Consent Form}{74}{appendix.B}
+\contentsline {chapter}{\numberline {C}Experimental Evaluation Instruction Sheet}{77}{appendix.C}
+\contentsline {chapter}{\numberline {D}Sample Questionnaire}{80}{appendix.D}

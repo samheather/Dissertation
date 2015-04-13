@@ -830,19 +830,44 @@ The Cortical API is not configured for recognising text in CamelCase, so helper 
 
 \section{Implementation of Testing Client}
 \label{sec:implementationTestingClient}
-To aid development of the server application, a desktop client application was developed which interacted with the HTTP interface of the server application to allow queries to be tested quickly as the software was developed. The application allowed both the user's phone number and the question parameters to be set and sent to the server. The raw returned output is then displayed regardless of whether this was an answer or an error, thus making testing and debugging both quicker and easier. 
+To aid development of the server application, a desktop client application was developed which interacted with the HTTP interface of the server application to allow queries to be tested quickly as the software was developed. The application, shown in Figure \ref{fig:devClient}, allows both the user's phone number and the question parameters to be set and sent to the server. The raw returned output is then displayed regardless of whether this was an answer or an error, thus making testing and debugging both quicker and easier. 
 
 The application was built in Objective-C using the Xcode IDE, as described in section \ref{sec:toolsAndServices}. The application used the phone number and question text variables to construct a HTTP query which was then sent to the server. The responses was then displayed in the application. The simplicity of this application makes it easy to port to other platforms, as was done in section \ref{sec:implementationExperimentClient}.
 
-%                      ADD IMAGES!!!                 ADD IMAGES!!!
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=300pt]{devClient}
+    \caption{Development and testing client for Mac OS X showing a sample query}
+    \label{fig:devClient}
+\end{figure}
 
 \section{Implementation and iteration of iOS app used in experimental evaluation}
 \label{sec:implementationExperimentClient}
 As described in section \ref{sec:evaluatingSuccess} an iOS app was created to act as a query interface for the server application for the experimental evaluation. This was written in Objective-C meaning it was trivial to port the implementation used in the testing client in section \ref{sec:implementationTestingClient}.
 
-After running the dry run of the experiment three usability issues were identified resulting from the use of the iOS Simulator on the Mac platform: the on-screen keyboard remained visible covering text on some longer answers; the participant ID field at the top of the screen caused confusion with one dry run participant attempting to change the value; it was slow to clear the question field to send a new query. Also, both users would press \texttt{return} as opposed to clicking the \texttt{Go} button.
+After running the dry run of the experiment three usability issues were identified resulting from the use of the iOS Simulator on the Mac platform: the on-screen keyboard remained visible covering text on some longer answers; the participant ID field at the top of the screen caused confusion with one dry run participant attempting to change the value; it was slow to clear the question field to send a new query. Also, both users would press \texttt{return} as opposed to clicking the \texttt{Go} button, which wouldn't send a question.
 
-% TODO XXX - write this
+Fixes were made to the software before running the full experimental evaluation such as:
+\begin{itemize}
+  \item Questions are now sent both if either the \texttt{Go} button is tapped or the \texttt{return} button is pressed on the keyboard.
+  \item When a query is sent, the on-screen keyboard is hidden as seen in Figure \ref{fig:experimentClientParis}. It can be brought back by tapping on the question field.
+  \item When selecting the question field, all the text is selected by default making it easier to type a new query without spending time deleting the old text. A 'clear field' cross button which is standard on the iOS platform is also shown. This is shown in Figure \ref{fig:experimentClientPopulation}.
+  \item The field to enter participant ID is hidden, as shown in \ref{fig:experimentClientParis}. This is now requested in a modal alert when the application starts: the ID is then entered by the researcher.
+\end{itemize}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\linewidth]{describe_paris}
+    \caption{Left: Original application. Right: Revised application with keyboard hiding.}
+    \label{fig:experimentClientParis}
+\end{figure}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\linewidth]{population}
+    \caption{Left: Original application. Right: Revised application with hidden participant ID field and Question field with a clear button and auto-selection of text when it's tapped to bring the keyboard up.}
+    \label{fig:experimentClientPopulation}
+\end{figure}
 
 \section{Discussion of Implementation}
 % TODO XXX - write this
