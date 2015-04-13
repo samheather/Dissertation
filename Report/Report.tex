@@ -3,15 +3,15 @@
 % Heirarchy:
 %\part{part}	-1
 %\chapter{chapter}	0
-%\section{section}	1
-%\subsection{subsection}	2
-%\subsubsection{subsubsection}	3
+%\chapter{section}	1
+%\section{subsection}	2
+%\subsection{subsubsection}	3
 %\paragraph{paragraph}	4
 %\subparagraph{subparagraph}	5
 
-\documentclass{article}
+\documentclass[authoryearcitations]{UoYCSproject}
 \usepackage{times}
-\usepackage{cite}
+%\usepackage{cite}
 \usepackage[autostyle]{csquotes}
 \usepackage{marginnote}
 \usepackage{listings}% for source code styling
@@ -26,12 +26,15 @@
 % to avoid having to escape all underscores in URL's to avoid "missing $ inserted" error.
 \usepackage{url}
 
+% to include PDFs
+\usepackage{pdfpages}
+
 % For column centering in the questionnaire
 \usepackage{array}
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 
 % Paragraph that starts on a new line.
-\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+%\newcommand{\subsubsection}[1]{\paragraph{#1}\mbox{}\\}
 
 %\textwidth = 490pt
 
@@ -49,13 +52,10 @@
   The University of York,\\
   \texttt{sam@heather.sh}}
 \date{\today}
-\maketitle
-\thispagestyle{empty}
-
-\newpage
-
-\begin{abstract}
-
+\supervisor{Dr. Lilian-JL Blot}
+\wordcount{\color{red} 999999}
+\BEng
+\abstract{
 \marginnote{It is early days so it is normal that many things are missing from the abstract. You should keep in mind that it should include later on few sentences on method/experiment, result and conclusion.}
 
 In remote Africa there are millions of disadvantaged and uneducated individuals, who in the vast majority do not have access to the internet the knowledge that this brings.  Outside of their immediate friends and family, individuals cannot access the information they need to further their education, or just for general interest.
@@ -64,7 +64,12 @@ In many parts of the world, the number of people without access to the internet 
 
 This project raises ethical issues relating to the responsibility of providing accurate information when in a position of trust, the ethics of machine translation and maintaining user privacy.
 % TODO - finish abstract
-\end{abstract}
+}
+
+\maketitle
+\thispagestyle{empty}
+
+\newpage
 
 \newpage
 \tableofcontents
@@ -74,7 +79,7 @@ This project raises ethical issues relating to the responsibility of providing a
 \listoftables
 \newpage
 
-\section*{Statement of Ethics}
+\chapter*{Statement of Ethics}
 % TODO write this
 {\bf Pretty much the most important part - write this!}
  - data protection - users information irreversibly obscured and protected in the database to protect them in case of database hack.
@@ -84,7 +89,7 @@ This project raises ethical issues relating to the responsibility of providing a
  - ethics of providing information - steps taken to try and prevent wrong info been returned
 
 \newpage
-\section*{Acknowledgement}
+\chapter*{Acknowledgement}
 The author would like to acknowledge the following individuals for their contribution to this project:
 
 \begin{itemize}
@@ -95,9 +100,9 @@ The author would like to acknowledge the following individuals for their contrib
 \end{itemize}
 
 \newpage
-\section{Introduction}
+\chapter{Introduction}
 
-\subsection{Background of this project}
+\section{Background of this project}
 
 The inspiration for this project originates from a project the author undertook in September 2014 whilst attending Yacht Hack, a week-long hackathon on a Yacht in Croatia\footnote{http://toughhackers.com/yacht-hack-2014/}.  The author co-created a project called Shy to prototype a mobile application that would facilitate the immediate answering of questions that fall within certain categories using a knowledge base, simple machine learning and profiling of users based on their usage history.
 
@@ -111,12 +116,12 @@ A semi-functional prototype was completed for iOS, as seen in Figure~\ref{fig:sh
 \label{fig:shy-ios-screenshots}
 \end{figure}
 
-\subsection{Motivation for this project}
+\section{Motivation for this project}
 Access to knowledge is a critical part of modern life.  It's also a Human Right, under Article 27 of the Universal Declaration of Human Rights~\cite{community1948universal}.  As members of a developed country, we have the facility to retrieve information and instantly communicate with each other using our smart phones, and commonly do it up to 200 times a day~\cite{falaki} which is a facility that hundreds of millions of individuals in developing countries live without.  This project aims to investigate the technical and ethical challenges behind this and to create a technology to give more people access to knowledge, and thus their human rights.
 
 The project involves the use of a number of systems, including machine translation, an SMS input/output system and a system to build a profile on a user in order to facilitate high-quality targeted question-answer matching.  The system will also feature machine learning so that as time progresses, the quality of the answers it returns increases.  The use of these systems in one application along with complex ethics and privacy issues create an interesting project that draws together many technologies and discussions in a way that can be used as a basis for further research in the future.
 
-\subsection{Aims of this project}
+\section{Aims of this project}
 
 The first goal of this project is to assess and address the ethical issues that arise from the software that will be created.  These include the responsibility that the software and its developer has because of its position of trust to provide accurate information and to protect the privacy of its users by storing only necessary information, among others.  This project will do this by researching ethical issues relating to the technologies that the project will use, for example machine translation and user information storage.  This will then be used to feed the design process of the software and to specify the expected use-case of it.  Finally, the resulting software will be evaluated through experimentation, with volunteers asking the software a set of questions within a topic area, in a non-English language, and evaluate the relevance of answers returned.
 
@@ -129,7 +134,7 @@ Initially, the goal for this dissertation was to focus on questions relating to 
 
 As a result of the above issues with locating a reputable knowledge base and the complex ethical issues, a decision was made in early December 2014 to switch the target topic for questions to Geography and to use Wikipedia as a datasource, since it is openly available, well populated and multiple methods exist for extracting information from it.  In future work, it should be possible to extend this project to work with medical questions, if a high quality data-source is located and a solution to the ethical issues is found. A full discussion of possible future work is included in section \ref{sec:extending}.
 
-\subsection{Structure of this report}
+\section{Structure of this report}
 This report starts with a literature review in chapter~\ref{sec:literatureReview} where existing software, tools and services of a similar type to those that will be used in this project are presented, along with research into the ethical issues of the creation and use of the software under development. Comparisons between different software development life-cycles are also described and discussed.
 
 Chapter~\ref{sec:method} describes the method that will be taken to develop the software and service.  This covers the software development life-cycle that will be followed, and sets out a plan for when development will take place.  Requirements will also be identified, described and categorised  as either functional or non-functional.  A method of evaluating the success of the software will also be discussed and chosen.
@@ -148,7 +153,7 @@ Finally, the main achievements of this project are concluded in chapter~\ref{sec
 
 
 % Lilian: This section should be expended, especially mentioning the consequences of such assumptions. Why do you make those assumption (e.g. time constraint, little or no consequences, ...). What limitation this may cause to your findings.  Shows a mastery of the field.
-\subsection{Assumptions Within This Project}
+\section{Assumptions Within This Project}
 This project will make the assumption that users of this service have basic literacy skills in \marginnote{Lilian: I no longer have language support, and you said to keep research in about it. Should I remove it from introduction / abstract etc?}a language supported by the project.  Although this is not a correct assumption world-wide, expanding the remit of this project to include a 'graphical' user interface that works over SMS would scale this project outside of the practical limitations of this project.
 
 The main use-case for this project is going to be parts of the world with limited internet access.  Although these exist all over the world, the African continent is typical of this problem so I will focus my research in demonstrating a need for this tool there.
@@ -157,7 +162,7 @@ The main use-case for this project is going to be parts of the world with limite
 
 \newpage
 
-\section{Literature Review}
+\chapter{Literature Review}
 \label{sec:literatureReview}
 
 {\bf The point of this is to show that I 'own' the material and subject (competence).  Show different points of view, choose a side, express a view on which I prefer and if I agree, critique.  Have objective goals.}
@@ -174,7 +179,7 @@ A significant amount of work has previously been undertaken in the area of makin
 This is easy to do in the developed world where up to 75\% of the population are connected to the internet~\cite{ITU_Cell_Usage_2013}, with the population of elderly people been largely responsible for the remaining 25\%~\cite{Gov_Internet_Usage_UK_2014}.  This contrasts strongly with the situation in the African continent, where in 2013, internet usage had only reached 16\%~\cite{ITU_Cell_Usage_2013}, a figure largely inflated by South Africa where 5\% of the African population generate 2/3 of internet traffic from the African Continent~\cite{ITU_Cell_Usage_2013}.
 
 % But there are other communication methods which are proven to work
-\subsection{Previous work using SMS}
+\section{Previous work using SMS}
 Although the above suggests that the African continent is majoritively disconnected, this is not the case.  Because of restrictions in the electricity available, the ways in which a non-smart phone \marginnote{\color{red}cite that these are lower power consumption, or assume?  Emma: Isn't necessary but would be helpful; leave it up to whether you need to fill out your word count or cut down.} can be used in Africa have far surpassed those in the developed world~\cite{Fox:2011:Online}, in part due to the low power consumption of a non-smart mobile phone.  Interesting examples of SMS use in Africa include an automated service which sends an SMS to HIV/AIDS sufferers to remind them to take their medication, and a system for farmers that gives them the current market prices for goods, saving them from making regular long-distance trips to the market or relying on out-of-date information from a weekly radio broadcast~\cite{Aker_Mobile_Phones_2010}.
 
 Interactive systems have also been developed to operate over SMS.  One successful example is mobile money platforms.  These allow for users from any background to pay and be paid for goods and to transfer money across long distances at negligible cost~\cite{Aker_Mobile_Phones_2010}.  One of the most highly adopted services is M-Pesa, which in Kenya alone was responsible for \textsterling5.7 Billion in transfers in 2012 \footnote{Data from Safaricom, M-Pesa operator in Kenya - actual value 817,085,000,000 Kenyan Shillings, converted to GBP on 1st November 2014 at rate of approximately 0.007.}.  M-Pesa gives users a balance linked to a national ID number from which they can pay for goods by sending an SMS with a cashier (recipient) number or pay outstanding bills in a similar way.  Non-subscribers can also use the system by depositing money with a M-Pesa cashier in exchange for an access code, which can be sent via SMS to a contact who can subsequently redeem it with their local cashier~\cite{Aker_Mobile_Phones_2010}.
@@ -183,10 +188,10 @@ This difference in standard use of mobile phones is demonstrated in the Internat
 
 % No research has been undertaken investigating whether bringing knowledge through this method is viable option.
 
-\subsection{Ethical Issues}
+\section{Ethical Issues}
 This project raises a number of ethical issues related to translation accuracy, providing information to people in an ethically acceptable way (with a focus on information accuracy) and maintaining user privacy.
 
-\subsubsection{Ethics of Providing Information}
+\subsection{Ethics of Providing Information}
 One significant issue for this project stems from providing information that may affect an individual or lead them to take a harmful action.
 
 % TODO Finish Ethics of Providing Informatio
@@ -202,7 +207,7 @@ One significant issue for this project stems from providing information that may
 
 \marginnote{teachers code of conduct, wikipedia ethics to provide infomration that contributos believe to be correct. doctors and gp's provide to the best of their knowledge}
 
-\subsubsection{Ethics of Translation}
+\subsection{Ethics of Translation}
 A significant part of this project is represented by the support of multiple languages.  It is clear that translation on demand, at scale, needs to be automated by some kind of machine or algorithmic translation.
 
 This project involves two blocks of translation.  These are:
@@ -227,7 +232,7 @@ This issue is a result of the translation engine not being capable of taking and
 
 The potential uses of this system include distributing information that may be used by individuals making important decisions, regardless of whether that is within this project or in further work based off of this project, as cultural confusion such as this could have potentially catastrophic effects.
 
-\subsubsection{User Privacy and Data Protection}
+\subsection{User Privacy and Data Protection}
 \label{subsubsec:userPrivacyAndDataProtection}
 This project uses a simple Artificial Intelligence (AI) to keep a record of information that has already been returned to a user, to attempt to save sending repetitive information (saving the cost of additional SMS).  This raises another ethical issue though of privacy.  The material that a user has researched is likely to be sensitive; such is the nature of health related questions\marginnote{Lilian: Need to re-write this for new question subject, or can leave as a mark of the old subject topic?}.  This means that the information on a user has to be kept securely, in a way that an individual user can not be identified.
 
@@ -267,7 +272,7 @@ In password authentication systems, this can be solved by the use of a technique
 
 As such, it has been decided that the best way of protecting a user's phone number in the event of a database hack without significantly degrading performance is to salt phone numbers with a constant, large and complex salt. This means that a rainbow table would have to be specifically computed specifically for this application and would be extremely large in size.
 
-\subsection{Software Design Life Cycles}
+\section{Software Design Life Cycles}
 There are many software development life cycles that a developer or company has available to choose from.  Four common ones include the Waterfall Model~\cite{royce1970managing-FirstDescriptionOfWaterFallModelNotByName}, Iterative Model~\cite{briefHistoryOfIncrementalAndIterativeSoftwareDevelopment}\footnote{Iterative development came together from many concepts dating back to 1957.  There was no single paper that initially presented the entire concept, but this paper gives a summary of how the various concepts came together into the current Iterative Development model.}, Spiral Model~\cite{spiralModelSoftwareDevelopment} and the Agile Development Model~\cite{beck2001agile}\footnote{The Agile Manifesto brought together a group of Agile Methods which had been in use since the mid-1990's into a single concept, that of Agile Development.}.\marginnote{Lilian: Do I need to reference that these are common?} In order to choose which life cycle suits this project best, research into all four has been carried out.
 
 line space
@@ -280,8 +285,8 @@ line space
 
 \marginnote{Lilian: remove these two footnotes? Not always necessary to reference the original}
 
-\subsubsection{The Waterfall Model}
-The waterfall model consists of 5 phases of work, where each leads directly into the next.  It is a plan driven development model, which means that all process activities such as the implementation of the project must be planned and scheduled before work on them begins~\cite{sommervilleSoftwareEngineering}.  The five layers are shown in Figure \ref{fig:waterfallModel} and described below:
+\subsection{The Waterfall Model}
+The waterfall model consists of 5 phases of work, where each leads directly into the next.  It is a plan driven development model, which means that all process activities such as the implementation of the project must be planned and scheduled before work on them begins~\cite{Engineering}.  The five layers are shown in Figure \ref{fig:waterfallModel} and described below:
 \begin{enumerate}
   \item {\bf Requirements}.  In this stage, both user and system requirements for the project are determined after examining the business goals for the project.  These form the system specification.
   \item {\bf Design}.  Here, a plan for the software development is created.  The overall architecture for the software is created, the external libraries to be used are chosen and the interaction between different modules is modelled.
@@ -299,7 +304,7 @@ The waterfall model consists of 5 phases of work, where each leads directly into
 
 A key advantage of the Waterfall Model is its simplicity: it is easy to understand and to use, saving time at the start of the project that would otherwise have been spent on learning and preparing to use a more complex model. The main disadvantage of the waterfall model is that once development has moved from one stage to another it cannot go back because the model is fixed and progresses in one direction only, until the maintenance step.
 
-\subsubsection{The Iterative Model}
+\subsection{The Iterative Model}
 Iterative development is the practise of splitting the overall development of a project into multiple independent and distinct blocks.  A block contains a sequence of tasks which are essentially a mini life cycle, such that each iteration can really be thought of as its own project.  Each iteration tends to focus on a specific set of features such that when the iteration is complete the overall project is stable and the modules developed to date can be tested as a whole system~\cite{differenceBetweenLifeCycleModels}.
 
 There are a multiple variations of the iterative development method. Two of these are Timeboxed Iterative Development where all iterations have a fixed duration, and Client-driven Iterative Development where each iteration contains the features that the client considers have the highest business value~\cite{larman2004agile}.
@@ -316,7 +321,7 @@ A key advantage of the Iterative Model is that it allows for the user to revise 
 \label{fig:iterativeDevelopment}
 \end{figure}
 
-\subsubsection{Boehm's Spiral Model}
+\subsection{Boehm's Spiral Model}
 The Spiral Model~\cite{spiralModelSoftwareDevelopment} was originally developed as a result of the adjustments that were commonly made to the waterfall model in large government projects.  The Spiral Model is a general model and can be used as a generator for other more specific models, given the parameters for a project such as its risks~\cite{boehm2000spiral}.  Models such as the waterfall model are specialisations of the spiral model~\cite{boehm2000spiral}.
 
 Each loop represents a stage of the software development, from planning on the inside loop to system testing and verification on the outside, as shown in Figure \ref{fig:spiralModel}.
@@ -332,12 +337,12 @@ Each loop represents a stage of the software development, from planning on the i
 
 A key advantage of the Spiral Model is the level of detail it models.  The stage of a sub-task within the entire development process is represented by the distance from the origin and each loop is split into small, well described sections.  The main disadvantage is that the planning and use of the model is largely driven by the results of complex risk analysis on the sub-tasks~\cite{sommervilleSoftwareEngineering}.  Although this makes it favourable to large organisations, it has the opposite effect for smaller projects.
 
-\subsubsection{Agile Development}
+\subsection{Agile Development}
 Agile Development essentially represents a group of development techniques targeted towards either the development of a small to medium sized product for sale or the development of a custom system within an organisation, where the customer has a high degree of involvement, for example 'Extreme Programming'~\cite{sommervilleSoftwareEngineering}.
 
 Agile development is highly targeted towards teams with components such as Pair Programming, Collective Ownership, regular meetings and employee health (avoiding overtime) playing an integral part in the model~\cite{sommervilleSoftwareEngineering}.
 
-\subsubsection{Development Life Cycle Summary}
+\subsection{Development Life Cycle Summary}
 \label{sec:developmentLifeCycleSummary}
 Iterative development has been chosen as the model that this project will use, based on the following factors:
 \begin{enumerate}
@@ -348,16 +353,16 @@ Iterative development has been chosen as the model that this project will use, b
 
 
 \newpage
-\section{Method and Requirements}
+\chapter{Method and Requirements}
 \label{sec:method}
 
-\subsection{Plan for Software Development}
+\section{Plan for Software Development}
 %TODO start writing this!
 The Iterative Development Model was selected in Section \ref{sec:developmentLifeCycleSummary}.  Therefore, the development of this service will follow the principles set forth in this process.
 
-\subsection{Requirements}
-\subsubsection{Use Cases / User Goals}
-Two personas were created to represent individuals who may have a need for the work resulting from this project, which can be seen in Appendix A in Section \ref{sec:appendixPersonas}. These are Nanjala, who is from Uganda, and Cedric, who is from Switzerland, and it is from these that user goals are extracted. These describe what a general user aims to achieve with this service.
+\section{Requirements}
+\subsection{Use Cases / User Goals}
+Two personas were created to represent individuals who may have a need for the work resulting from this project, which can be seen in Appendix \ref{sec:appendixPersonas}. These are Nanjala, who is from Uganda, and Cedric, who is from Switzerland, and it is from these that user goals are extracted. These describe what a general user aims to achieve with this service.
 \begin{enumerate}
   \item Nanjala wants to be able to read general information on any given topic.
   \item Cedric wants to be able to retrieve facts from direct questions.
@@ -365,12 +370,11 @@ Two personas were created to represent individuals who may have a need for the w
   \item Cedric needs a simple and efficient user interface that allows him to retrieve facts quickly. 
   \item Cedric wants to be able to feedback into the system when he finds an answer particularly useful or unhelpful. 
   \item Nanjala wants to be able to show the service to her friends without explaining how to use it every time.
-  \item Nanjala wants to get recommendations on content she might find interesting. \marginnote{Note to self: might not implement this, in which case discuss in DISCUSSION.}% TODO remove recommendations
   \item Cedric wants the system to protect his privacy, obscuring his identity.
   \item Nanjala wants to be able to ask questions as she would ask a friend without having to learn a syntax.
 \end{enumerate}
 
-\subsubsection{User Requirements}
+\subsection{User Requirements}
 \label{subsubsec:userRequirements}
 User goals are distilled into formal user requirements.  Each user requirement corresponds directly to the correspondingly numbered user goal.
 \begin{enumerate}
@@ -380,15 +384,15 @@ User goals are distilled into formal user requirements.  Each user requirement c
   \item Users must be able to make their queries and get responses quickly.
   \item Users must be able to feedback to the system when an answer is of noticeably low or high quality so the system can learn and improve.
   \item Users must be able to learn how to use the system themselves and this learning process should be quick.
-  \item Users must be able to get recommendations on entities they might be interested in based on previous query history.\marginnote{Haven't decided yet if this is a feature I will implement - time based!}
   \item Users must be comfortable that their privacy is been protected whilst using the service.
   \item \label{requirement:userReqNaturalLanguage} Users must be able to interact with the system using natural language.
 \end{enumerate}
 
-\subsubsection{System Requirements - Functional}
+\subsection{System Requirements - Functional}
 \label{subsubsec:systemRequirementsFunctional}
-\marginnote{write intro text}
-% TODO - write intro text
+
+System requirements are derived from the capabilities that the software needs to have to be able to support the user requirements. To support the user requirements in section \ref{subsubsec:userRequirements}, the application system must fulfil the following system requirements.
+
 \begin{enumerate}
   \item \label{requirement:sysReqNaturalLanguage} The system will be capable of processing queries in natural language form.
   \item The system will receive queries via SMS, process them and then respond via SMS.
@@ -403,7 +407,7 @@ User goals are distilled into formal user requirements.  Each user requirement c
   \item The system must obscure a user's phone number in the database.
 \end{enumerate}
 
-\subsubsection{System Requirements - Non-Functional}
+\subsection{System Requirements - Non-Functional}
 \label{subsubsec:systemRequirementsNonFunctional}
 Non-functional requirements are listed in table \ref{table:nonFunctionalRequirementsFitCrit} and are accompanied by a Fit Criterion, which will be used to identify whether a requirement has been met successfully.
 
@@ -423,23 +427,23 @@ Non-functional requirements are listed in table \ref{table:nonFunctionalRequirem
 \end{center}
 \end{table}
 
-\subsection{Data Sources}
+\section{Data Sources}
 A number of possible datasources were identified from which data could be drawn from for this project.  These were all based off of Wikipedia (a large, linked source of knowledge), and include the Wikipedia API and various representations of the DBPedia Ontology.  In this section, both will be discussed and a decision will be made with regard to which ones will be used.
 
-\subsubsection{Wikipedia API}
+\subsection{Wikipedia API}
 The Wikipedia API is a standard MediaWiki API and allows applications to query a page or resource for various parameters from a page, including the page contents, infobox parameters, citation list and links to other articles in various flat or multi-layered data structures~\cite{mediaWikiAPI}.  Interactions are made via a HTTP GET request to a URL containing the parameters, and responses can be received in JSON.  This makes the API easy to use and widely compatible, especially since JSON can be converted to a dictionary in most languages.
 
-\subsubsection{DBPedia Ontology}
+\subsection{DBPedia Ontology}
 The DBPedia Ontology is the result of a project that aims to build an OWL ontology representing all of the knowledge within Wikipedia.  The ontology has been manually created from the most commonly used infoboxes on Wikipedia and covers 685 classes with 2,795 properties, providing structured information on 4.2 million places, people, work, species and organisations~\cite{dbPediaIntro}.  This makes it especially good for use in applications since the data is both curated and well structured.
 
 There are two ways of querying the DBPedia Ontology.  One is using the standard SPARQL ontology query software to make a query form the ontology structure; however this is complex as queries must be structured correctly and it is necessary to know the class structure of the entities being queried~\cite{dbPediaSparql}.
 
 In the event that the class structure is not known, queries can be made by querying the top-level representation of an entity in the ontology, which presents data in a similar format to that of the Wikipedia API, albeit in a 'cleaner' form (with human readable keys) as a result of the data been processed by hand.  Although the keys are of a more human-readable format, some material is abstracted within the ontology and so is inaccessible with a basic query.  An example of this is page for 'London', which does not have a parameter 'Mayor' with the value 'Boris Johnson'.  Instead it refers to a number of 'Leader Titles' and 'Leader Names', which include a reference to Boris Johnson\footnote{A web representation of the London object is available at: http://dbpedia.org/page/London}.
 
-\subsubsection{Choosing the Source and Interface for this Project}
+\subsection{Choosing the Source and Interface for this Project}
 This project has a limited scope and time period available to it, and creating a system capable of identifying the relevant classes and then constructing SPARQL queries for looking up an abstract property is an example of an approach that is out of scope, as it involves natural language processing and semantic analysis of the names of the ontological classes, not just the query being made.  As such, this project will make use of a combination of the data from the Wikipedia API and DBPedia top-level entity representations, collecting keys from both and working with the key with the highest semantic relatedness match to identify the data-value that most likely is the answer to a user's question.  The DBPedia Ontology also provides access to the abstract at the same level as the infobox, so general descriptions of entities will be sourced from there.
 
-\subsection{Processing Natural Language Queries}
+\section{Processing Natural Language Queries}
 Because of the nature of its audience, the system needs to be able to process input in natural language form rather than enforcing a formal grammar on users as described in User Requirement \ref{requirement:userReqNaturalLanguage} and System Requirement \ref{requirement:sysReqNaturalLanguage}. This involves constructing a natural language processing system to process queries and identify their meaning. In this project, queries are of a simple form: if a user is asking a question they are requesting a property of information about a given entity. An assumption is therefore made that each query consists of: a token representing the geographical entity been queried; a token representing the property been requested of that geographical entity; and some noise in the form of stop words 
 \footnote{Stop words are words that are frequently used in in language but do not carry any significance themselves \cite{dataMiningStopWords}. It is common practise in Natural Language Processing to to remove these stop words before attempting to process an input \cite{dataMiningStopWords}. An example of stop word is the word \texttt{the}.}.
 
@@ -450,19 +454,44 @@ The property about the geographical entity will be established by removing stop 
 
 The result of this simple natural language processing should be that a sentence such as 'What is the Height of the Eiffel Tower?' is reduced to a structure indicating that the geographical entity is the 'Eiffel Tower' and the property is the 'height'.
 
-\subsection{Evaluating Success}
+\section{Evaluating Success - Experimental evaluation of the system}
 \label{sec:evaluatingSuccess}
-Success will be evaluated by establishing if the project fulfils its original requirements, based on the scenarios.  Many user requirements such as protecting the privacy of a user will be proven through software, whilst some that involve user interactions must be tested with users.  As such, user testing will be undertaken to evaluate three specific properties of the software through a trial usage and subsequent questionnaire.  The questionnaire will aim to evaluate the usefulness of the system, the usability of the system and the quality of returned answers, and is based off of the IBM "Perceived Usefulness, Perceived Ease of Use, and User Acceptance of Information Technology" questionnaire~\cite{davis1989perceived}.  Questions were modified to suit the software being used in a situation without internet as opposed to a general workplace environment, and a question was added to investigate the quality of answers returned to a user.  A copy of the questionnaire to be used is included in Appendix C in section \ref{sec:appendixQuestionnaire}.
+Success will be evaluated by establishing if the project fulfils its original requirements, based on the scenarios.  Many user requirements such as protecting the privacy of a user will be demonstrated through the software developed, whilst some that involve user interactions must be tested with users.  As such, user testing will be undertaken to evaluate three specific properties of the software through a trial usage and subsequent questionnaire: the usefulness and quality of the service, its usability, and the quality of the machine learning system.
 
-% TODO XXX - write the boundary at which I will say I succeeded (if I consistently score about netural)
-% TODO XXX - write about Likert model for setting questionnaire scale.
+Prior to running the experimental evaluation, a dry run will be undertaken with two participants. No data will be stored or collected - the purpose of the dry run is purely to establish early on any issues with the running of the experiment that would cause a problem during the real experiment.
+
+\subsection{Client software for the experiment}
+\label{subsec:clientSoftware}
+The goal of this project has been to construct a piece of software that interfaces over SMS, as described in the project title. However there are practical limitations to running the experiment via SMS. During testing of the various services it was observed that HTTP-SMS Gateway Services added approximately a 5 second latency to both the sending and receiving of SMS, extending the length of time that a user would need to partake in the experiment to collect the same number of data points as could be collected when working straight over HTTP. In addition, the sending and receiving of SMS is costly and the savings made by not consuming SMS can be used to encourage participants to partake in the experiment. 
+
+{\color{red} The interface is also an important consideration for the experimental evaluation - a key goal is to collect as many data points from participants as possible, whilst still maintaining some of the context in which the software will be used - on mobile devices. With regard to input speed, it is assumed\marginnote{reference?} that typing speeds are slower on mobile keyboards than full-sized physical keyboards, so data points can be collected more rapidly when working on a full-sized physical keyboard. In order to do this, a mobile app will be developed that interfaces with the software, and this will be run on a laptop with full-size keyboard. This gives participants use of a physical keyboard, allowing them to query the system more quickly and therefore making it acceptable to ask them to do a larger set of queries, and maintains the mobile context.}\marginnote{poor wording?}
+
+\subsection{Questionnaire Design}
+\label{subsec:questionnaire}
+The questionnaire will aim to evaluate the usefulness of the system, the usability of the system and the quality of returned answers, and is based off of the IBM "Perceived Usefulness, Perceived Ease of Use, and User Acceptance of Information Technology" questionnaire~\cite{davis1989perceived}.  Questions were modified to suit the software being used in a situation without internet as opposed to a general workplace environment, and two questions were added: one to investigate the overall quality of answers returned to a user, and another to discover how trustworthy users felt the answers returned by the application were in general. 
+
+Each question is formed by statement and a measure of how much the participant agrees with the statement. This is measured by selecting a value on a five-level Likert scale~\cite{likertScale}. The scale ranges from 1 through 5, where 1 is \texttt{strongly disagree} with the statement given, 3 is \texttt{neutral} and 5 is \texttt{strongly agree}.
+
+A copy of the questionnaire that will be used is included in Appendix \ref{sec:appendixQuestionnaire}.
+
+\subsection{Typical experiment plan}
+\label{subsec:typicalExperiment}
+At the start of the experiment, participants will be given both the consent form, included in Appendix \ref{sec:appendixConsentForm} and a document explaining what the software aims to achieve and what the participant should do, included in Appendix \ref{sec:appendixExperimentalInstructions}. The consent form sets out exactly what participants will be asked to do, the information that will be collected from them, and reminds them that they can withdraw at any time. The instruction sheet sets out some topic areas for the participant to research using the software, with a varying level of freedom within that topic. For example, they may be asked specifically to \texttt{identify the height of the Eiffel Tower}, or to identify a property of an entity of their choice such as \texttt{identify the population of a country of your choice}. Participants may also be asked to locate general information about a geographical entity. Constraints are placed on the area in which participants can query to limit the range of keywords used, thus focussing the machine learning onto a smaller group of words to allow a demonstratable improvement to be shown in the short space of this study.
+
+After the experiment, participants will be asked to complete the questionnaire. Any additional comments arising during the post-experiment debriefing will also be noted beneath the questionnaire.
+
+\subsection{Assessing success quantitively}
+\label{subsec:assessingLearning}
+As stated in section \ref{sec:evaluatingSuccess}, the experiment aims to evaluate three goals: the usefulness and quality of the service, its usability and the quality of the machine learning system. In the questionnaire, questions 1 through 6, 13 and 14 investigate the usefulness and quality of the system, whilst questions 7 through 12 investigate the usability of the system. Bearing in mind that this project is heavily constrained with regard to time due to constraints on the nature of it been a university project, it is not expected that the software will be as good as is possible. As such, a positive mean rating for usefulness and quality, and usability, would be deemed a success.
+
+The machine leaning will be tested by inspecting the change in usefulness and quality rankings of the system made by users in the questionnaire as more participants use the system and provide ratings. The implementation of the machine learning system will be considered a success if a statistically significant positive trend is found in the usefulness and quality ratings when the ratings are sorted by the number of proceeding participants.
 
 \newpage
-\section{Design}
+\chapter{Design}
 \label{sec:design}
 In this section, the design of the system will be described, including information on: the structure of the server application and database; interactions with third-party services; systems used to protect user-identity; and the language, platform, tools and libraries used for development.
 
-\subsection{System Design}
+\section{System Design}
 In this section, the high-level design of the system software and its interactions with third-party services is described.  The system design was driven by requirements listed in sections \ref{subsubsec:userRequirements}, \ref{subsubsec:systemRequirementsFunctional} and \ref{subsubsec:systemRequirementsNonFunctional}, which were generalised to:
 
 \begin{itemize}
@@ -480,7 +509,7 @@ Based majoritively from these requirements, the formal aforementioned requiremen
 \label{fig:systemArchitecture}
 \end{figure}
 
-\subsubsection{Micro-system for Protecting User Identity}
+\subsection{Micro-system for Protecting User Identity}
 
 In section \ref{subsubsec:userPrivacyAndDataProtection}, the need to protect the privacy of a user and the general technique that will be used (involving irreversible hashing) are described.  The design of this system will now be discussed.
 
@@ -498,8 +527,8 @@ def entry(userCell, question):
 
 The userCell is required at the output of the function to determine the number to which a response will be sent.  However, as the computation of an answer only requires a general constant representation of user identity, not necessarily the user's phone number, the specific value of userCell is not required within the computation of the answer.  As such, a hash is passed into the answer-computing function.  This hash will be used within the database to store a user's history and profile.  This means that only a user's history can be identified from the database, not the actual identity of a user.
 
-\subsection{Language, Platform and Tools and Libraries}
-\subsubsection{Language}
+\section{Language, Platform and Tools and Libraries}
+\subsection{Language}
 \label{section:designLanguage}
 The language Python has been selected to be the main language in project for four reasons:
 \begin{enumerate}
@@ -511,7 +540,7 @@ The language Python has been selected to be the main language in project for fou
 
 A testing utility will also be created to query the application from a personal computer without using SMS.  A simple OS X Cocoa application will be created that queries the HTTP interface with JSON in the expected format and displays an answer.  Objective-C and and Mac OS X were chosen as the language and platform for this as the author has experience with Objective-C and uses a Mac.  There was no requirement for universal compatibility because the application is only for testing and development purposes.
 
-\subsubsection{Platform}
+\subsection{Platform}
 The development platform of the utility will be Linux.  This is for three reasons:
 \begin{enumerate}
   \item Linux manages Python and its libraries in a simple way without complex installers with tools like the Python Package Index (a library repository)~\cite{pypi}.
@@ -521,10 +550,10 @@ The development platform of the utility will be Linux.  This is for three reason
 
 As previously stated, the interface to the application will be over the SMS platform.
 
-\subsubsection{Database}
+\subsection{Database}
 There are three tables of data that need to be stored.  These are the tables for: user profiles, to allow the application to handle queries that make use of 'state' with users; the machine learning of question-answer quality; and an initial intelligence that a new deployment of the application starts with.  Both the conceptual data model and the logical database design are now presented.
 
-\myparagraph{Conceptual Data Model}
+\subsubsection{Conceptual Data Model}
 % TODO --- - write conceptual database model
 There are five entities in the conceptual data model for this project.  These are:
 
@@ -544,7 +573,7 @@ These entities are shown in Figure \ref{fig:conceptualDatabaseDesignDiagram}, wh
 \label{fig:conceptualDatabaseDesignDiagram}
 \end{figure}
 
-\myparagraph{Logical Database Design}
+\subsubsection{Logical Database Design}
 The logical design of the database reduces the number of entities from five in the conceptual model to three.  This is because there is a one-to-one relationship between the \textit{User} entity and both the \textit{Complete User History} and \textit{Last Question Asked by a User} entities, with a small number of fields.  In a large system where relational databases were used it would make sense to keep these entities separate, but in this case merging them allows a wider variety of databases to be used, simplifies the implementation and does not add significantly add to the complexity of the data model. % todo no more 1-1 matching
 
 The logical database requirements are listed in Table \ref{table:logicalDatabaseDesignListing} and represented graphically in Figure \ref{fig:logicalDatabaseDesignDiagram}.
@@ -571,7 +600,7 @@ The logical database requirements are listed in Table \ref{table:logicalDatabase
 \end{figure}
 %todo - remove initial inteligence from the above
 
-\myparagraph{Database Technology}
+\subsubsection{Database Technology}
 The database technology requirements for this project are:
 
 \begin{enumerate}
@@ -603,7 +632,7 @@ There are a number of database technologies available that would fulfil the data
 
 From this comparison, the decision to use MongoDB has been taken because MongoDB has more flexibility than SQL, writing queries is easier in Python and, other than the possibility of future extensions requiring relational structure, it is more scalable than SQL.
 
-\myparagraph{Physical Database Design}
+\subsubsection{Physical Database Design}
 MongoDB separates entities into collections but does not place restrictions on the structure of objects within a collection.  The general structure of the keys in a document (a JSON dictionary) is shown in Table \ref{table:collectionStructure}.
 
 \begin{table}
@@ -654,11 +683,11 @@ MongoDB separates entities into collections but does not place restrictions on t
 \end{center}
 \end{table}
 
-\subsubsection{Libraries}
-\myparagraph{Database Querying}
+\subsection{Libraries}
+\subsubsection{Database Querying}
 MongoDB comes with a Python client called PyMongo\footnote{For more information: https://api.mongodb.org/python/current/}, which is developed by the same developers as MongoDB.  It is the recommended tool to interact with a MongoDB database~\cite{pyMongoDoc} and has good community support, so it will be used in this project.
 
-\myparagraph{Creating HTTP Server and REST API}
+\subsubsection{Creating HTTP Server and REST API}
 The application needs to have an HTTP interface to allow interactions with it via SMS.  As a result of the non-functional requirement "The system behind the SMS gateway must respond in a timely manner" in section \ref{subsubsec:systemRequirementsNonFunctional}, the application will need to be able to process multiple HTTP requests concurrently to prevent requests queueing up and responses been significantly delayed.
 
 To create an HTTP Interface, the latest Web Server Gateway Interface (WSGI) specification (version 1.0.1, published as PEP 3333)~\cite{eby2010python} will be followed as it is the industry standard. The WSGI specification describes a general interface between web servers and web applications or frameworks (such as Twilio) in the Python language, thus describing how the web server should be constructed.
@@ -671,7 +700,7 @@ With respect to the WSGI server, many implementations exist such as a simple WSG
 \marginnote{Work these footnotes into the main text}
 % TODO Work these footnotes into the main text
 
-\myparagraph{Sending SMS}
+\subsubsection{Sending SMS}
 There are a number of SMS providers with HTTP gateways available to choose from, all of which are similar. For this project, the provider must match the following criteria:
 \begin{itemize}
   \item Forwards received messages to a REST API to enable easy development.
@@ -689,7 +718,7 @@ With regard to reputation, for this project it was decided that Twilio is prefer
 \marginnote{citations }
 % TODO - citations above
 
-\myparagraph{Semantic Analysis - Measuring semantic relatedness between texts}
+\subsubsection{Semantic Analysis - Measuring semantic relatedness between texts}
 \label{sec:choosingSemanticAnalysisApi}
 Semantic comparison of text will be used for two purposes within the project: to match keywords from datasources, for example, if a user asks \texttt{how tall} something is, the property \texttt{height} would be appropriate to return; and to match questions with identical meaning to each other to save the application doing a full analysis of the data sources again. The requirements for these use-cases are different: for the former the tool needs to compare pairs of either single words of short strings or words for semantic similiarity; and for the latter the tool needs to be able to compare full sentences for semantic similarity.
 
@@ -701,7 +730,7 @@ An alternative to using a specific algorithm in a library was to use an online s
 
 Both the Cortical and Dandelion APIs interface via a HTTP REST interface, so will be simple to implement. They are also in active development with support teams. For these reasons, they have been selected to be the semantic comparison tools used in this project.
 
-\myparagraph{Semantic Analysis - Discovering Named Entities in text}
+\subsubsection{Semantic Analysis - Discovering Named Entities in text}
 \label{sec:choosingNamedEntityExtractionApi}
 
 A named entity extraction tool is required to establish the geographical entity ('place') in a users' question. The requirements of the tool were:
@@ -718,16 +747,23 @@ Research was done to identify a way of using the Cortical API to extract keyword
 Results from the Dandelion API were checked against the \texttt{Place} class in the DBPedia Ontology by checking their \texttt{types} list (a list of DBPedia classes that the keyword fits into) for the string \texttt{http://dbpedia.org/ontology/Place}.
 
 \newpage
-\section{Implementation}
+\chapter{Implementation}
 \label{sec:implementation}
 {\bf This section will contain information on how data is stored, the structure of databases, and the format of and method through which data is sent to an SMS provider.}
 
-\subsection{Implementation Overview}
+Code used within this project is located in the following Git repositories:
+\begin{itemize}
+  \item \texttt{https://github.com/samheather/dissertationServer} - This repository contains the code for the server application.
+  \item \texttt{https://github.com/samheather/dissertationClient} - This repository contains the Xcode Project and code for the Mac OS X testing client, used in development of the application.
+  \item \texttt{https://github.com/samheather/dissertationIos} - This repository contains the Xcode Project and code for the iOS client application, used in the experimental evaluation of the application. It has been constructed for an iPhone 5 screen size.
+\end{itemize}
+
+\section{Implementation Overview}
 As discussed in section \ref{sec:method}, the implementation was completed whilst following the iterative development process. Software development took places in stages which represented each iteration, and after each iteration a version of the software was demonstrated in a weekly meeting. In these meetings, the software's capabilities and success rate were discussed, and requirements were re-evaluated based on progress. Ideas for expansions to the software (for example, the Natural Language Processing, which was not in the original plan) were also discussed.
 
 The software has been constructed in a modular manner to allow easy future expansion and modification.
 
-\subsection{Tools and services used}
+\section{Tools and services used}
 The following tools and services were used in the implementation. These were chosen to fulfil the requirements detailed in section \ref{sec:method}.
 \begin{itemize}
   \item Python was the programming language used in this project. This was due to a number of reasons, including that the author had experience with writing an application with some similar characteristics as those in this project.
@@ -754,7 +790,7 @@ In addition, the following Python libraries from the Python Package Index\footno
 \end{enumerate}
 
 
-\subsection{Implementation of natural language processing module}
+\section{Implementation of natural language processing module}
 In this section, a description of how the natural language processing module was implemented is given.
 
 It was decided that a module should be constructed specifically for the parsing of natural language questions in the application.  This module, called nlp, processes question in natural language form, and is able to output the two parameters needed by the application for answering a question.
@@ -769,7 +805,7 @@ The final step in the process is to identify the property that a user is request
 
 Having called both \texttt{extractEntities()} and \texttt{stripToProperty()}, the nlp module packages these results into a dictionary and returns them as the processed representation of the question text.
 
-\subsection{Implementation of answer location system}
+\section{Implementation of answer location system}
 In this section, a description of the process followed to answer a question about a property of a geographical entity is presented. 
 
 After having identified the place and the property of that place in the question using the nlp module, the application must locate the value of that property for that place. This is done in the \texttt{sourceProcessor} module, which collates data from the data sources and then attempts to identify from those sources an answer to the users question.
@@ -788,10 +824,13 @@ The Cortical API is not configured for recognising text in CamelCase, so helper 
 % also talk about issues with compare module, multiple services etc, here
 {\bf explain why had to use both, explain why using both is bad}
 
-\subsection{Implementation of rating and learning systme}
+\section{Implementation of rating and learning system}
 % TODO XXX - write this
 
-\subsection{Discussion of Implementation}
+\section{Implementation of rating and learning system}
+% TODO XXX - write this
+
+\section{Discussion of Implementation}
 % TODO XXX - write this
  - Tweaking the constants for best results
  - Excluding wikipedia due to dirty data
@@ -807,25 +846,25 @@ Key issues:
  - can't do properties that are stored deep within the ontology.
 
 \newpage
-\section{Results}
+\chapter{Results}
 \label{sec:results}
 This section's content...
 
 \newpage
-\section{Discussion}
+\chapter{Discussion}
 \label{sec:discussion}
 This section's content...
 
 \newpage
 
 \newpage
-\section{Evaluation}
+\chapter{Evaluation}
 \label{sec:evaluation}
 This section's content...
 
 \newpage
 
-\section{Extending this project}
+\chapter{Extending this project}
 \label{sec:extending}
 {\bf Section not complete} %TODO Write extending project
 If the author was able to expand this project, areas for expansion include:
@@ -841,36 +880,37 @@ If the author was able to expand this project, areas for expansion include:
 
 \newpage
 
-\section{Conclusion}
+\chapter{Conclusion}
 \label{sec:conclusion}
 This section's content...
 
 \newpage
 
-{\bf Melby reference not right, publisher weird - ask Lilian in next session.  Url Commented in TEX here} 
-%http://scholar.google.co.uk/scholar?hl=en&q=melby+why+cant+a+computer+translate+like+a+person&btnG=&as_sdt=1%2C5&as_sdtp=
 \bibliographystyle{IEEEtran}
 \bibliography{IEEEabrv,mybib}
 
+\appendix
+\part{Appendices}
+
 \newpage
-\section{Appendix A - Personas}
+\chapter{Personas}
 \label{sec:appendixPersonas}
-\subsection{Nanjala}
+\section{Nanjala}
 %TODO Add photo
-\subsubsection{Demographics and Profile}
+\subsection{Demographics and Profile}
 \begin{itemize}
   \item Female, aged 15
   \item Living in the village of Amuria, Uganda, 300km from the capital Kampala.  Internet access is difficult and expensive to obtain in Amuria, though there is good mobile network coverage.
   \item Currently in general education at her village school.
   \item Nanjala is curious and wants to be able to ask questions and retrieve and read more information at her own leisure.  She prefers to be told about something than to learn facts.
 \end{itemize}
-\subsubsection{Average Day}
+\subsection{Average Day}
 In a typical day, Nanjala will rise early to help her family with housework chores, before she prepares for school.  Nanjala wants to become a teacher.  At school, she studies Science, Maths and Geography, and works hard for her classes and on her homework.  Nanjala's school has a small library and a large body of students, meaning that books are often unavailable when Nanjala would like to look something up.  This increases the amount of time that her homework takes, and can even result in her not having access to information when she goes home.
 
 \newpage
-\subsection{Cedric}
+\section{Cedric}
 %TODO Add photo
-\subsubsection{Demographics and Profile}
+\subsection{Demographics and Profile}
 \begin{itemize}
   \item Male, aged 27
   \item Lives in Zurich, Switzerland, and goes on regular hiking trips, from 3-4 day trips around Europe to longer trips to the South American Andes and southern Asia.
@@ -879,22 +919,22 @@ In a typical day, Nanjala will rise early to help her family with housework chor
   \item Cedric is very conscientious and wants to contribute his own knowledge to the world, especially to projects that help him.
   \item Cedric values his privacy is concerned about how much information he gives out online.
 \end{itemize}
-\subsubsection{Average European Trip}
+\subsection{Average European Trip}
 A typical trip will involve an intercity train from the Zurich Hauptbahnhof (the main station) to the city closest to the range Cedric will be hiking.  He takes the train because it tends to be cheaper than flights.  Once in the area, Cedric will take local trains and buses to get into the mountain ranges.  There, he will use the local hiking trail network signs and conversations with the locals to select a peak or route.  Once Cedric has got moving and is reaching higher ground, he uses a combination of his view and the signage to identify other peaks that he would like to wander around.  
 
 Cedric takes a non-smart phone with him because a) the battery life on his smart phone is not long enough for his whole trip, whereas his non-smart phone lasts a week at a time, and b) his smart phone would not be useful anyway, since the internet is so intermittent.  He still wishes he could get information such as whether there are maintained routes on the slopes of a given peak or the height of a peak that he sees without having to phone friends back in the city.
 \newpage
 
-\section*{Appendix B - Sample Consent Form}
+\chapter{Sample Consent Form}
 \label{sec:appendixConsentForm}
 \newpage
 
-\subsection*{System to access knowledge using Machine Learning and SMS - Usability and Usefulness Study}
+\section*{System to access knowledge using Machine Learning and SMS - Usability and Usefulness Study}
 {\parindent0pt
-\subsubsection*{Informed Consent - Introduction}
+\subsection*{Informed Consent - Introduction}
 This study aims to investigate the usability and usefulness of a system developed to provide access to knowledge using machine learning and SMS.  The system aims to provide high quality answers to questions asked of it, where the questions relate to either a description or property of a geographical entity (for example a city, river or mountain).  The system aims to learn where mistakes have been made and improve by receiving feedback from the user on the previous answer.  
 
-\subsubsection*{Form: please complete this section before the study.}
+\subsection*{Form: please complete this section before the study.}
 I, \textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore\textunderscore, agree to participate in this study.  I have been briefed on and understand the purpose and goals of the project.
 
 I understand that information will be collected from me during this study in the form of my answers to a questionnaire.  Additionally, I understand that my interactions with the application will be recorded, specifically the questions I ask, answers returned and my quality ratings of answer. I understand that this information will be treated confidentially and only Sam Heather and the project supervisor (Lilian Blot) will have access to the original data in its original format.  When the information is processed, shared, described or interpreted I will not be personally identified.
@@ -910,7 +950,7 @@ Signature: \textunderscore\textunderscore\textunderscore\textunderscore\textunde
 
 \pagebreak
 
-\subsubsection*{Post experiment consent form - please complete this section after the study.}
+\subsection*{Post experiment consent form - please complete this section after the study.}
 $\square$ I have been suitably debriefed about the system and my performance.
 
 $\square$ I understand I can withdraw my data from the study at any time.
@@ -925,12 +965,16 @@ For the researcher: Participant ID: \textunderscore\textunderscore\textunderscor
 
 }
 
+\chapter{Experimental Evaluation Instruction Sheet}
+\label{sec:appendixExperimentalInstructions}
+\includepdf[pages={1,2}]{Experiment_Instructions.pdf}
+
 \newpage
-\section{Appendix C - Sample Questionnaire}
+\chapter{Sample Questionnaire}
 \label{sec:appendixQuestionnaire}
 \newpage
 
-\subsection*{Please fill in the following questionnaire with regard to your experience of the system that has been developed.}.
+\section*{Please fill in the following questionnaire with regard to your experience of the system that has been developed.}.
 
 \begin{tabular}{|m{0.5cm}|m{7.0cm}|>{\centering\arraybackslash}m{4cm}|}
 \hline
