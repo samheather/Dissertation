@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.4.12)  13 APR 2015 19:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.4.12)  13 APR 2015 19:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1248,13 +1248,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [34]
 [35]
 Package marginnote Info: Margin note 36.1 is on absolute page 36
-(marginnote)              on input line 463.
+(marginnote)              on input line 462.
 Package marginnote Info: xpos seems to be 394.60376pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 463.
+(marginnote)             \marginnoteleftadjust ignored on input line 462.
 Package marginnote Info: Margin note 36.2 is on absolute page 37
-(marginnote)              on input line 464.
+(marginnote)              on input line 463.
 Package marginnote Info: xpos seems to be 239.85335pt,
-(marginnote)             \marginnoterightadjust ignored on input line 464.
+(marginnote)             \marginnoterightadjust ignored on input line 463.
  [36] [37] [38]
 Chapter 4.
 <./figures/systemArchitecture.png, id=752, 963.6pt x 514.92375pt>
@@ -1262,15 +1262,15 @@ File: ./figures/systemArchitecture.png Graphic file (type png)
 
 <use ./figures/systemArchitecture.png>
 Package pdftex.def Info: ./figures/systemArchitecture.png used on input line 50
-3.
+2.
 (pdftex.def)             Requested size: 350.32463pt x 187.20311pt.
  [39
 
 ]
 Package marginnote Info: Margin note 40.1 is on absolute page 40
-(marginnote)              on input line 516.
+(marginnote)              on input line 515.
 Package marginnote Info: xpos seems to be 140.12982pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 516.
+(marginnote)             \marginnoteleftadjust ignored on input line 515.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/03/04 1.5c listings language file
@@ -1279,14 +1279,28 @@ Underfull \vbox (badness 7796) has occurred while \output is active []
 
  [40 <./figures/systemArchitecture.png>]
 Package marginnote Info: Margin note 41.1 is on absolute page 41
-(marginnote)              on input line 532.
+(marginnote)              on input line 531.
 Package marginnote Info: xpos seems to be 431.90962pt,
-(marginnote)             \marginnoterightadjust ignored on input line 532.
+(marginnote)             \marginnoterightadjust ignored on input line 531.
 Package marginnote Info: Margin note 41.2 is on absolute page 41
-(marginnote)              on input line 543.
+(marginnote)              on input line 542.
 Package marginnote Info: xpos seems to be 181.39308pt,
-(marginnote)             \marginnoterightadjust ignored on input line 543.
+(marginnote)             \marginnoterightadjust ignored on input line 542.
  [41]
+
+Class scrreprt Warning: Usage of deprecated font command `\bf'!
+(scrreprt)              You should note, that in 1994 font command `\bf' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\bf' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
+(scrreprt)              by `\normalfont \bfseries ' on input line 556.
+
 
 Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              You should note, that in 1994 font command `\bf' has
@@ -1343,62 +1357,48 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
 (scrreprt)              by `\normalfont \bfseries ' on input line 560.
 
-
-Class scrreprt Warning: Usage of deprecated font command `\bf'!
-(scrreprt)              You should note, that in 1994 font command `\bf' has
-(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
-(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
-(scrreprt)              shouldn't use such commands any longer and within
-(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
-(scrreprt)              See `fntguide.pdf' for more information about
-(scrreprt)              recommended font commands.
-(scrreprt)              Note also, that KOMA-Script will remove the definition
-(scrreprt)              of `\bf' anytime until release of about version 3.20.
-(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
-(scrreprt)              by `\normalfont \bfseries ' on input line 561.
-
 <./figures/conceptualModel.png, id=783, 692.5875pt x 291.0875pt>
 File: ./figures/conceptualModel.png Graphic file (type png)
 
 <use ./figures/conceptualModel.png>
-Package pdftex.def Info: ./figures/conceptualModel.png used on input line 567.
+Package pdftex.def Info: ./figures/conceptualModel.png used on input line 566.
 (pdftex.def)             Requested size: 350.32463pt x 147.24008pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [42]
-Underfull \hbox (badness 1005) in paragraph at lines 582--582
+Underfull \hbox (badness 1005) in paragraph at lines 581--581
 \T1/ptm/m/n/10.95 (+20) Text, lastQues-tion-Re-ques-ted-Prop-erty,
  []
 
 
-Underfull \hbox (badness 1014) in paragraph at lines 583--583
+Underfull \hbox (badness 1014) in paragraph at lines 582--582
 []|\T1/ptm/m/n/10.95 (+20) ($[]$, given-Prop-erty, re-turned-Prop-erty,
  []
 
 Package marginnote Info: Margin note 43.1 is on absolute page 43
-(marginnote)              on input line 591.
+(marginnote)              on input line 590.
 Package marginnote Info: xpos seems to be 107.05348pt,
-(marginnote)             \marginnoterightadjust ignored on input line 591.
+(marginnote)             \marginnoterightadjust ignored on input line 590.
 <./figures/logicalModel.png, id=792, 732.7375pt x 200.75pt>
 File: ./figures/logicalModel.png Graphic file (type png)
 
 <use ./figures/logicalModel.png>
-Package pdftex.def Info: ./figures/logicalModel.png used on input line 593.
+Package pdftex.def Info: ./figures/logicalModel.png used on input line 592.
 (pdftex.def)             Requested size: 350.32463pt x 95.97905pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [43 <./figures/conceptualModel.png (PNG copy)> <./figures/logicalModel.png (PN
 G copy)>]
-Overfull \hbox (40.08975pt too wide) in paragraph at lines 614--624
+Overfull \hbox (40.08975pt too wide) in paragraph at lines 613--623
  [] 
  []
 
 [44] [45] [46]
 Package marginnote Info: Margin note 47.1 is on absolute page 47
 (marginnote)              on input line 693.
-Package marginnote Info: xpos seems to be 175.76366pt,
+Package marginnote Info: xpos seems to be 107.05348pt,
 (marginnote)             \marginnoterightadjust ignored on input line 693.
 Package marginnote Info: Margin note 47.2 is on absolute page 47
 (marginnote)              on input line 698.
@@ -1407,27 +1407,22 @@ Package marginnote Info: xpos seems to be 107.05348pt,
  [47]
 Package marginnote Info: Margin note 48.1 is on absolute page 48
 (marginnote)              on input line 710.
-Package marginnote Info: xpos seems to be 315.0402pt,
+Package marginnote Info: xpos seems to be 362.92027pt,
 (marginnote)             \marginnoteleftadjust ignored on input line 710.
 Package marginnote Info: Margin note 48.2 is on absolute page 48
-(marginnote)              on input line 716.
+(marginnote)              on input line 715.
 Package marginnote Info: xpos seems to be 140.12982pt,
-(marginnote)             \marginnoteleftadjust ignored on input line 716.
-
+(marginnote)             \marginnoteleftadjust ignored on input line 715.
+ [48]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [48]
-[49]
-Overfull \hbox (0.36357pt too wide) in paragraph at lines 743--744
+ [49]
+Overfull \hbox (0.36357pt too wide) in paragraph at lines 744--745
 \T1/ptm/m/n/10.95 (-20) keyword fits into) for the string \T1/pcr/m/n/10.95 htt
 p://dbpedia.org/ontology/Place\T1/ptm/m/n/10.95 (-20) . 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [50]
-[51]
+[50]
 Chapter 5.
 
 Class scrreprt Warning: Usage of deprecated font command `\bf'!
@@ -1441,16 +1436,16 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\bf' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
-(scrreprt)              by `\normalfont \bfseries ' on input line 748.
+(scrreprt)              by `\normalfont \bfseries ' on input line 749.
 
 
-Overfull \hbox (19.2239pt too wide) in paragraph at lines 752--753
+Overfull \hbox (19.2239pt too wide) in paragraph at lines 753--754
 []\T1/pcr/m/n/10.95 https://github.com/samheather/dissertationServer \T1/ptm/m/
 n/10.95 (-20) - This
  []
 
 
-Overfull \hbox (19.2239pt too wide) in paragraph at lines 753--754
+Overfull \hbox (19.2239pt too wide) in paragraph at lines 754--755
 []\T1/pcr/m/n/10.95 https://github.com/samheather/dissertationClient \T1/ptm/m/
 n/10.95 (-20) - This
  []
@@ -1458,20 +1453,20 @@ n/10.95 (-20) - This
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [52
+ [51
 
 ]
 Underfull \vbox (badness 2126) has occurred while \output is active []
 
- [53]
-[54]
-Overfull \hbox (12.31772pt too wide) in paragraph at lines 801--802
+ [52]
+[53]
+Overfull \hbox (12.31772pt too wide) in paragraph at lines 802--803
 \T1/ptm/m/n/10.95 (-20) about the en-tity, for ex-ample, the height. This is do
 ne in the \T1/pcr/m/n/10.95 stripToProperty()
  []
 
 
-Overfull \hbox (1.53145pt too wide) in paragraph at lines 810--811
+Overfull \hbox (1.53145pt too wide) in paragraph at lines 811--812
 []\T1/ptm/m/n/10.95 (-20) The entry point into \T1/pcr/m/n/10.95 sourceProcesso
 r \T1/ptm/m/n/10.95 (-20) is the \T1/pcr/m/n/10.95 findArgumentOnPage()
  []
@@ -1479,52 +1474,52 @@ r \T1/ptm/m/n/10.95 (-20) is the \T1/pcr/m/n/10.95 findArgumentOnPage()
 
 Underfull \vbox (badness 1960) has occurred while \output is active []
 
- [55]
-Package marginnote Info: Margin note 56.1 is on absolute page 57
-(marginnote)              on input line 821.
-Package marginnote Info: xpos seems to be 457.31575pt,
-(marginnote)             \marginnoterightadjust ignored on input line 821.
+ [54]
+Package marginnote Info: Margin note 55.1 is on absolute page 56
+(marginnote)              on input line 822.
+Package marginnote Info: xpos seems to be 490.39209pt,
+(marginnote)             \marginnoteleftadjust ignored on input line 822.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [56]
-<./figures/devClient.png, id=1001, 481.8pt x 333.245pt>
+ [55]
+<./figures/devClient.png, id=996, 481.8pt x 333.245pt>
 File: ./figures/devClient.png Graphic file (type png)
 
 <use ./figures/devClient.png>
-Package pdftex.def Info: ./figures/devClient.png used on input line 835.
+Package pdftex.def Info: ./figures/devClient.png used on input line 836.
 (pdftex.def)             Requested size: 300.0pt x 207.5047pt.
 
 Underfull \vbox (badness 6268) has occurred while \output is active []
 
- [57]
+ [56]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [58 <./figures/devClient.png>]
-<./figures/describe_paris.png, id=1016, 1606.0pt x 1204.5pt>
+ [57 <./figures/devClient.png>]
+<./figures/describe_paris.png, id=1011, 1606.0pt x 1204.5pt>
 File: ./figures/describe_paris.png Graphic file (type png)
 
 <use ./figures/describe_paris.png>
-Package pdftex.def Info: ./figures/describe_paris.png used on input line 856.
+Package pdftex.def Info: ./figures/describe_paris.png used on input line 857.
 (pdftex.def)             Requested size: 350.32463pt x 262.73018pt.
 
-<./figures/population.png, id=1017, 803.0pt x 602.25pt>
+<./figures/population.png, id=1012, 803.0pt x 602.25pt>
 File: ./figures/population.png Graphic file (type png)
 
 <use ./figures/population.png>
-Package pdftex.def Info: ./figures/population.png used on input line 863.
+Package pdftex.def Info: ./figures/population.png used on input line 864.
 (pdftex.def)             Requested size: 350.32463pt x 262.74855pt.
- [59 <./figures/describe_paris.png>] [60 <./figures/population.png>]
+ [58 <./figures/describe_paris.png>] [59 <./figures/population.png>]
 Chapter 6.
-[61
+[60
 
 ]
 Chapter 7.
-[62
+[61
 
 ]
 Chapter 8.
-[63
+[62
 
 ]
 Chapter 9.
@@ -1540,13 +1535,13 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\bf' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
-(scrreprt)              by `\normalfont \bfseries ' on input line 904.
+(scrreprt)              by `\normalfont \bfseries ' on input line 905.
 
-[64
+[63
 
 ]
 Chapter 10.
-[65
+[64
 
 ] (/Users/Samuel/Documents/University/Project/Report/.texpadtmp/Report.bbl
 ** WARNING: IEEEtranN.bst: No hyphenation pattern has been
@@ -1555,7 +1550,7 @@ Chapter 10.
 ** WARNING: IEEEtranN.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
-[66
+[65
 
 ]
 Underfull \hbox (badness 1648) in paragraph at lines 150--154
@@ -1563,48 +1558,49 @@ Underfull \hbox (badness 1648) in paragraph at lines 150--154
 s . com / 2012 / 06 / 10 /
  []
 
-[67] [68]
-Underfull \hbox (badness 2932) in paragraph at lines 282--286
-[]\T1/ptm/m/n/10.95 (+20) Cortical, ``Cor-tical com-pare api,'' []$http : / / w
-ww . cortical . io / developers _
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 288--290
-[]\T1/ptm/m/n/10.95 (+20) SpazioDati, ``Text sim-il-ar-ity api,'' ht-
- []
-
-
-Underfull \hbox (badness 3281) in paragraph at lines 298--302
+[66]
+Underfull \hbox (badness 3281) in paragraph at lines 186--190
 []\T1/ptm/m/n/10.95 (+20) Cortical, ``Cor-tical keyword ex-trac-tion api,'' []$
 http : / / www . cortical . io /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--306
-[]\T1/ptm/m/n/10.95 (+20) SpazioDati, ``Named en-tity ex-trac-tion api,'' ht-
+Underfull \hbox (badness 10000) in paragraph at lines 192--194
+[]\T1/ptm/m/n/10.95 (+20) SpazioDati, ``Dan-delion named en-tity ex-trac-tion a
+pi,'' ht-
  []
 
-[69]
-Underfull \hbox (badness 4254) in paragraph at lines 331--334
+[67]
+Underfull \hbox (badness 2932) in paragraph at lines 300--304
+[]\T1/ptm/m/n/10.95 (+20) Cortical, ``Cor-tical com-pare api,'' []$http : / / w
+ww . cortical . io / developers _
+ []
+
+[68]
+Underfull \hbox (badness 10000) in paragraph at lines 306--308
+[]\T1/ptm/m/n/10.95 (+20) SpazioDati, ``Text sim-il-ar-ity api,'' ht-
+ []
+
+
+Underfull \hbox (badness 4254) in paragraph at lines 335--338
 []\T1/ptm/m/n/10.95 (+20) J. Todd, ``Wiki-pe-dia utils,'' []$https : / / classi
 c . scraperwiki . com / scrapers /
  []
 
-) [70]
+) [69]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 928.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 929.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 22.39185pt on input line 928.
- [71
+(Font)              scaled to size 22.39185pt on input line 929.
+ [70
 
 ]
 Appendix A.
-[72
+[71
 
-] [73]
+] [72]
 Appendix B.
-[74
+[73
 
 ]
 
@@ -1619,7 +1615,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\bf' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
-(scrreprt)              by `\normalfont \bfseries ' on input line 982.
+(scrreprt)              by `\normalfont \bfseries ' on input line 983.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\bf'!
@@ -1633,115 +1629,115 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\bf' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
-(scrreprt)              by `\normalfont \bfseries ' on input line 984.
+(scrreprt)              by `\normalfont \bfseries ' on input line 985.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [75]
-[76]
+ [74]
+[75]
 Appendix C.
-<Experiment_Instructions.pdf, id=1139, 614.295pt x 794.97pt>
+<Experiment_Instructions.pdf, id=1135, 614.295pt x 794.97pt>
 File: Experiment_Instructions.pdf Graphic file (type pdf)
 
 <use Experiment_Instructions.pdf>
-Package pdftex.def Info: Experiment_Instructions.pdf used on input line 1005.
+Package pdftex.def Info: Experiment_Instructions.pdf used on input line 1006.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Experiment_Instructions.pdf Graphic file (type pdf)
  <use Experiment_Instructions.pdf>
-Package pdftex.def Info: Experiment_Instructions.pdf used on input line 1005.
+Package pdftex.def Info: Experiment_Instructions.pdf used on input line 1006.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Experiment_Instructions.pdf Graphic file (type pdf)
 
 <use Experiment_Instructions.pdf>
-Package pdftex.def Info: Experiment_Instructions.pdf used on input line 1005.
+Package pdftex.def Info: Experiment_Instructions.pdf used on input line 1006.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
- [77
+ [76
 
 ]
-<Experiment_Instructions.pdf, id=1147, page=1, 614.295pt x 794.97pt>
+<Experiment_Instructions.pdf, id=1143, page=1, 614.295pt x 794.97pt>
 File: Experiment_Instructions.pdf Graphic file (type pdf)
 
 <use Experiment_Instructions.pdf, page 1>
 Package pdftex.def Info: Experiment_Instructions.pdf, page1 used on input line 
-1005.
+1006.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Experiment_Instructions.pdf Graphic file (type pdf)
 
 <use Experiment_Instructions.pdf, page 1>
 Package pdftex.def Info: Experiment_Instructions.pdf, page1 used on input line 
-1005.
+1006.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Experiment_Instructions.pdf Graphic file (type pdf)
 
 <use Experiment_Instructions.pdf, page 1>
 Package pdftex.def Info: Experiment_Instructions.pdf, page1 used on input line 
-1005.
+1006.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Experiment_Instructions.pdf Graphic file (type pdf)
 
 <use Experiment_Instructions.pdf, page 1>
 Package pdftex.def Info: Experiment_Instructions.pdf, page1 used on input line 
-1005.
+1006.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Experiment_Instructions.pdf Graphic file (type pdf)
 
 <use Experiment_Instructions.pdf, page 1>
 Package pdftex.def Info: Experiment_Instructions.pdf, page1 used on input line 
-1005.
+1006.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [77 <./Experiment_Instructions.pdf>]
+<Experiment_Instructions.pdf, id=1178, page=2, 614.295pt x 794.97pt>
+File: Experiment_Instructions.pdf Graphic file (type pdf)
+
+<use Experiment_Instructions.pdf, page 2>
+Package pdftex.def Info: Experiment_Instructions.pdf, page2 used on input line 
+1006.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Experiment_Instructions.pdf Graphic file (type pdf)
+
+<use Experiment_Instructions.pdf, page 2>
+Package pdftex.def Info: Experiment_Instructions.pdf, page2 used on input line 
+1006.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Experiment_Instructions.pdf Graphic file (type pdf)
+
+<use Experiment_Instructions.pdf, page 2>
+Package pdftex.def Info: Experiment_Instructions.pdf, page2 used on input line 
+1006.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
  [78 <./Experiment_Instructions.pdf>]
-<Experiment_Instructions.pdf, id=1182, page=2, 614.295pt x 794.97pt>
-File: Experiment_Instructions.pdf Graphic file (type pdf)
-
-<use Experiment_Instructions.pdf, page 2>
-Package pdftex.def Info: Experiment_Instructions.pdf, page2 used on input line 
-1005.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: Experiment_Instructions.pdf Graphic file (type pdf)
-
-<use Experiment_Instructions.pdf, page 2>
-Package pdftex.def Info: Experiment_Instructions.pdf, page2 used on input line 
-1005.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: Experiment_Instructions.pdf Graphic file (type pdf)
-
-<use Experiment_Instructions.pdf, page 2>
-Package pdftex.def Info: Experiment_Instructions.pdf, page2 used on input line 
-1005.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [79 <./Experiment_Instructions.pdf>]
 Appendix D.
-[80
+[79
 
 ]
-Overfull \hbox (25.36989pt too wide) in paragraph at lines 1014--1091
+Overfull \hbox (25.36989pt too wide) in paragraph at lines 1015--1092
 [][] 
  []
 
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1098.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1099.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [81]
-[82]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1098.
+ [80]
+[81]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1099.
  (/Users/Samuel/Documents/University/Project/Report/.texpadtmp/Report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1098.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1098.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1099.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1099.
 
 Package rerunfilecheck Info: File `Report.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1098.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1099.
  ) 
 Here is how much of TeX's memory you used:
- 16775 strings out of 493117
- 253105 string characters out of 6135433
- 431129 words of memory out of 5000000
- 19326 multiletter control sequences out of 15000+600000
+ 16776 strings out of 493117
+ 253151 string characters out of 6135433
+ 431152 words of memory out of 5000000
+ 19329 multiletter control sequences out of 15000+600000
  102810 words of font info for 297 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  46i,18n,52p,1608b,1122s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1756,10 +1752,10 @@ rw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
 >
 Output written on /Users/Samuel/Documents/University/Project/Report/.texpadtmp/
-Report.pdf (82 pages, 2454030 bytes).
+Report.pdf (81 pages, 2453850 bytes).
 PDF statistics:
- 1313 PDF objects out of 1440 (max. 8388607)
- 1173 compressed objects within 12 object streams
- 354 named destinations out of 1000 (max. 500000)
+ 1309 PDF objects out of 1440 (max. 8388607)
+ 1170 compressed objects within 12 object streams
+ 352 named destinations out of 1000 (max. 500000)
  52347 words of extra memory for PDF output out of 61914 (max. 10000000)
 

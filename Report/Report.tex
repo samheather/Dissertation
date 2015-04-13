@@ -688,12 +688,13 @@ The application needs to have an HTTP interface to allow interactions with it vi
 To create an HTTP Interface, the latest Web Server Gateway Interface (WSGI) specification (version 1.0.1, published as PEP 3333)~\cite{eby2010python} will be followed as it is the industry standard. The WSGI specification describes a general interface between web servers and web applications or frameworks (such as Twilio) in the Python language, thus describing how the web server should be constructed.
 
 In this project, two tools are needed: a WSGI server, and a framework for writing WSGI applications. Flask will be used for the framework as the author has extensive experience using it and it is 100\% compliant with the WSGI standard~\cite{libraryFlask}\footnote{100\% compliant according to the Flask product website.}.
-\marginnote{footnote: 100\% compliant - remove? It's a note about bias}
+
+\marginnote{Lilian: footnote: 100\% compliant - remove? It's a note about bias}
 
 With respect to the WSGI server, many implementations exist such as a simple WSGI server included in Flask~\cite{libraryFlask} called Werkzeug~\cite{libraryWerkzeug}, and the Gevent WSGI server~\cite{libraryGevent}.  Support for multiple concurrent HTTP connections is not a requirement in the WSGI specification, and so some WSGI servers such as the implementation of Werkzeug in Flask do not support this\footnote{Werkzeug does support processing multiple HTTP requests concurrently by specifically enabling threading and increasing the default maximum number of processes from one (as described in the documentation at: http://werkzeug.pocoo.org/docs/0.10/serving/ [accessed: 4th April 2015]). However, the implementation of Werkzeug in Flask has these disabled in the source code because Flask uses thread-local storage (memory that is local to a single thread) and so cannot support concurrent HTTP requests on new threads. This is stated on the Flask website at http://flask.pocoo.org/docs/0.10/design/\#thread-locals [accessed: 4th April 2015].}. Gevent does support concurrent HTTP connections~\cite{geventImplementingServers}\footnote{Gevent using the Greenlet library~\cite{libraryGreenlet}, which provides a notion of micro-threading (coroutines). When a new HTTP request is received, Gevent creates a new Greenlet, thus preventing the main thread been blocked and allowing multiple concurrent HTTP requests. The creation of the Greenlet is described in the preceeding reference(\cite{geventImplementingServers}).} and so will be used in this project.
 
-\marginnote{Work these footnotes into the main text}
-% TODO Work these footnotes into the main text
+\marginnote{Lilian: Should I work these footnotes into the main text?}
+% TODO Work these footnotes into the main text?
 
 \subsubsection{Sending SMS}
 There are a number of SMS providers with HTTP gateways available to choose from, all of which are similar. For this project, the provider must match the following criteria:
@@ -706,12 +707,9 @@ There are a number of SMS providers with HTTP gateways available to choose from,
 
 It is difficult to measure the reputation of a provider accurately, but one possible way of doing this is by looking at the number of significant clients they have.
 
-Two services considered were that matched these criteria.  These were Twilio\footnote{Twilio website: https://www.twilio.com/} and Plivo\footnote{Plivo website: https://www.plivo.com/}. Both use REST APIs for handling incoming messages and for sending responses. Both Twilio and Plivo have comparable coverage as well: Twilio state that they send and receive SMS with numbers in 198 countries~\cite{twilioCoverage}, and Plivo state that they support 207 countries~\cite{plivoCoverage}\marginnote{Lilian: remove footnotes about bias?}\footnote{This is referenced on a marketing page (https://www.plivo.com/twilio-alternative/) where Plivo compare their product to Twilio's, so is likely to be biased}. The difference is trivial, as the number of recognised independent states in the world is between 190 and 200 depending on listing; the US Government recognises 195~\cite{usStateDepartmentListOfIndependentStates}.
+Two services considered were that matched these criteria.  These were Twilio~\cite{serviceTwilio} and Plivo~\cite{servicePlivo}. Both use REST APIs for handling incoming messages and for sending responses. Both Twilio and Plivo have comparable coverage as well: Twilio state that they send and receive SMS with numbers in 198 countries~\cite{twilioCoverage}, and Plivo state that they support 207 countries~\cite{plivoCoverage}\marginnote{Lilian: remove footnotes about bias? Also, ok to mention a RAW URL?}\footnote{This is referenced on a marketing page (https://www.plivo.com/twilio-alternative/) where Plivo compare their product to Twilio's, so is likely to be biased}. The difference is trivial, as the number of recognised independent states in the world is between 190 and 200 depending on listing; the US Government recognises 195~\cite{usStateDepartmentListOfIndependentStates}.
 
-With regard to reputation, for this project it was decided that Twilio is preferable to Plivo. Although it is difficult to measure reputation accurately, Twilio was founded in 2007 and has an group of clients including PayPal, Uber, Sprint and Airbnb, compared to Plivo, which was founded in 2011 and mainly works with entertainment companies.
-
-\marginnote{citations }
-% TODO - citations above
+With regard to reputation, for this project it was decided that Twilio is preferable to Plivo. Although it is difficult to measure reputation accurately, Twilio was founded in 2007 and has an group of clients including PayPal, Uber, Sprint and Airbnb, compared to Plivo, which was founded more recently in 2011.
 
 \subsubsection{Semantic Analysis - Measuring semantic relatedness between texts}
 \label{sec:choosingSemanticAnalysisApi}
