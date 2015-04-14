@@ -27,7 +27,7 @@ lastQuestionReturnedProperty</panel_attributes>
       <w>210</w>
       <h>160</h>
     </coordinates>
-    <panel_attributes>KeywordRelatednessQuality
+    <panel_attributes>KeywordPairingRatings
 --
 id
 givenProperty
@@ -45,11 +45,14 @@ fiveStarRatings</panel_attributes>
       <x>490</x>
       <y>220</y>
       <w>210</w>
-      <h>70</h>
+      <h>100</h>
     </coordinates>
-    <panel_attributes>InitialInteligence
+    <panel_attributes>RankedPreviousAnswers
 --
-Some stuff will go here.</panel_attributes>
+id
+question
+answer
+rating</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
