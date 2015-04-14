@@ -42,7 +42,7 @@
 \contentsline {subsection}{\numberline {4.2.2}Platform}{41}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}Database}{42}{subsection.4.2.3}
 \contentsline {subsubsection}{\nonumberline Conceptual Data Model}{42}{section*.7}
-\contentsline {subsubsection}{\nonumberline Logical Database Design}{43}{section*.8}
+\contentsline {subsubsection}{\nonumberline Logical Database Design}{42}{section*.8}
 \contentsline {subsubsection}{\nonumberline Database Technology}{44}{section*.9}
 \contentsline {subsubsection}{\nonumberline Physical Database Design}{45}{section*.10}
 \contentsline {subsection}{\numberline {4.2.4}Libraries}{45}{subsection.4.2.4}

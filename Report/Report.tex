@@ -549,15 +549,14 @@ As previously stated, the interface to the application will be over the SMS plat
 There are three tables of data that need to be stored.  These are the tables for: user profiles, to allow the application to handle queries that make use of 'state' with users; the machine learning of question-answer quality; and an initial intelligence that a new deployment of the application starts with.  Both the conceptual data model and the logical database design are now presented.
 
 \subsubsection{Conceptual Data Model}
-% TODO --- - write conceptual database model
-There are five entities in the conceptual data model for this project.  These are:
+% TODO --- - finish writing conceptual database model
+There are four entities in the conceptual data model for this project.  These are:
 
 \begin{itemize}
   \item {\bf Users:} An entity that represents a user, purely by an identifier based on their phone number.
-  \item {\bf Complete User History:} A history of all questions they have asked previously to allow for future expansion of the system, perhaps to implement a recommendations system.
   \item {\bf Last Question Asked by a User:} An object containing the parameters of the last question.  This allows the system to handle stateful queries based upon a previous query.
-  \item {\bf Keyword Pairs Quality Learning:} Will contain the property requested by a user, the property returned to that user, and the number of times a matching was ranked as being either one, two, three, four or five stars.
-  \item {\bf Initial Intelligence:} \color{red} Undecided.
+  \item {\bf Keyword Pairs Quality Ratings:} An entity that contains the property requested by a user, the property returned to that user, and the number of times a matching was ranked as being either one, two, three, four or five stars.
+  \item {\bf Ranked Previous Answers:} A representation of a previously asked question, the answer text provided, and the rating given to the answer.
 \end{itemize}
 
 These entities are shown in Figure \ref{fig:conceptualDatabaseDesignDiagram}, which also shows the entity relationships.
@@ -569,7 +568,7 @@ These entities are shown in Figure \ref{fig:conceptualDatabaseDesignDiagram}, wh
 \end{figure}
 
 \subsubsection{Logical Database Design}
-The logical design of the database reduces the number of entities from five in the conceptual model to three.  This is because there is a one-to-one relationship between the \textit{User} entity and both the \textit{Complete User History} and \textit{Last Question Asked by a User} entities, with a small number of fields.  In a large system where relational databases were used it would make sense to keep these entities separate, but in this case merging them allows a wider variety of databases to be used, simplifies the implementation and does not add significantly add to the complexity of the data model. % todo no more 1-1 matching
+The logical design of the database reduces the number of entities from five in the conceptual model to three.  This is because there is a one-to-one relationship between the \texttt{User} entity and both the \texttt{Complete User History} and \texttt{Last Question Asked by a User} entities, with a small number of fields.  In a large system where relational databases were used it would make sense to keep these entities separate, but in this case merging them allows a wider variety of databases to be used, simplifies the implementation and does not add significantly add to the complexity of the data model. % todo no more 1-1 matching
 
 The logical database requirements are listed in Table \ref{table:logicalDatabaseDesignListing} and represented graphically in Figure \ref{fig:logicalDatabaseDesignDiagram}.
 
@@ -579,21 +578,20 @@ The logical database requirements are listed in Table \ref{table:logicalDatabase
     \hline
     Table/Collection & Parameters \\ \hline
     Users & (\underline{id}, cellNumber, history, lastQuestionText, lastQuestionRequestedProperty, lastQuestionReturnedProperty) \\ \hline
-    KeywordRelatednessQuality & (\underline{id}, givenProperty, returnedProperty, oneStarRatings, twoStarRatings, threeStarRatings, fourStarRatings, fiveStarRatings) \\ \hline
-    InitialIntelligence & \color{red} Undecided. \\ \hline
+    KeywordPairingRatings & (\underline{id}, givenProperty, returnedProperty, oneStarRatings, twoStarRatings, threeStarRatings, fourStarRatings, fiveStarRatings) \\ \hline
+    RankedPreviousAnswers & (\underline{id}, question, answer, rating) \\ \hline
     \end{tabular}
     \caption{Logical Database Design.  Underlined fields represent primary keys.}
     \label{table:logicalDatabaseDesignListing}
 \end{center}
 \end{table}
-\marginnote{\color{red}Need to fill in initial intelligence}
 
 \begin{figure}[htb] 
 \includegraphics[width=\linewidth]{logicalModel}
 \caption{Logical Model of Data}
 \label{fig:logicalDatabaseDesignDiagram}
 \end{figure}
-%todo - remove initial inteligence from the above
+%todo - remove initial intelligence from the above
 
 \subsubsection{Database Technology}
 The database technology requirements for this project are:
@@ -665,11 +663,15 @@ MongoDB separates entities into collections but does not place restrictions on t
     \end{lstlisting}
     \\ \hline
     
-    InitialInteligence &
+    RankedPreviousAnswers &
     \begin{lstlisting}
-    Something here
+    {
+    '_id',
+    'question',
+    'answer',
+    'rating'
+    }
     \end{lstlisting}
-    \color{red} Undecided.
     \\ \hline
     
     \end{tabular}
@@ -744,9 +746,9 @@ Results from the Dandelion API were checked against the \texttt{Place} class in 
 \newpage
 \chapter{Implementation}
 \label{sec:implementation}
-{\bf This section will contain information on how data is stored, the structure of databases, and the format of and method through which data is sent to an SMS provider.}
+This section will contain information on how data is stored, the structure of databases, and the format of and method through which data is sent to an SMS provider.
 
-Code used within this project is located in the following Git repositories:
+Code used within this project and discussed in this section is located in the following Git repositories:
 \begin{itemize}
   \item \texttt{https://github.com/samheather/dissertationServer} - This repository contains the code for the server application.
   \item \texttt{https://github.com/samheather/dissertationClient} - This repository contains the Xcode Project and code for the Mac OS X testing client, used in development of the application.
