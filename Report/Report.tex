@@ -560,6 +560,7 @@ These entities are shown in the UML diagram in Figure \ref{fig:conceptualDatabas
 \end{figure}
 
 \subsubsection{Database Technology}
+\label{subsubsec:databaseTechnology}
 The database technology requirements for this project are:
 
 \begin{enumerate}
@@ -598,7 +599,7 @@ To fulfil the database requirements, the database chosen should be flexible with
 From this comparison, the decision to use MongoDB has been taken because MongoDB has more flexibility than SQL meaning that development will be less time consuming, and writing queries is easier in Python with the built-in MongoDB Library~\cite{libraryPyMongo}.
 
 \subsubsection{Logical Database Design}
-The logical design of the database reduces the number of entities from four in the conceptual model to three.  This is because there is a one-to-one relationship between the \texttt{User} and \texttt{Last Question Asked by a User} entities, so the \texttt{Last Question Asked by a User} entity can be nested inside of the \texttt{User} entity as only contains a small number of user-specific fields.  In a system where relational databases were used it would make sense to keep these entities separate since each one would be a column in the database, but in this case merging them allows a wider variety of databases to be used, simplifies the implementation and does not add significantly add to the complexity of the data model. \marginnote{end of this is wrong - come back once fixed SQL/noSQL} % todo no more 1-1 matching 
+Having decided that the database technology will be MongoDB which supports nesting in section \ref{subsubsec:databaseTechnology}, the logical design of the database is able to reduce the number of entities from four in the conceptual model to three.  This is because there is a one-to-one relationship between the \texttt{User} and \texttt{Last Question Asked by a User} entities, so the \texttt{Last Question Asked by a User} entity can be nested inside of the \texttt{User} entity as it only contains a small number of user-specific fields.  This will simplify the implementation, meaning that a smaller number of collections will be needed to contain the entities.
 
 The logical database requirements are listed in Table \ref{table:logicalDatabaseDesignListing} and represented graphically in Figure \ref{fig:logicalDatabaseDesignDiagram}.
 
@@ -607,7 +608,7 @@ The logical database requirements are listed in Table \ref{table:logicalDatabase
     \begin{tabular}{| l | p{6cm} |}
     \hline
     Table/Collection & Parameters \\ \hline
-    Users & (\underline{id}, cellNumber, history, lastQuestionText, lastQuestionRequestedProperty, lastQuestionReturnedProperty) \\ \hline
+    Users & (\underline{id}, cellNumber, history, (lastQuestionText, lastQuestionRequestedProperty, lastQuestionReturnedProperty)) \\ \hline
     KeywordPairingRatings & (\underline{id}, givenProperty, returnedProperty, oneStarRatings, twoStarRatings, threeStarRatings, fourStarRatings, fiveStarRatings) \\ \hline
     RankedPreviousAnswers & (\underline{id}, question, answer, rating) \\ \hline
     \end{tabular}
