@@ -622,10 +622,9 @@ The logical database requirements are listed in Table \ref{table:logicalDatabase
 \caption{Logical Model of Data}
 \label{fig:logicalDatabaseDesignDiagram}
 \end{figure}
-%todo - remove initial intelligence from the above
 
 \subsubsection{Physical Database Design}
-MongoDB separates groups or types of entity into collections (which are similar to a Table in an SQL database) but does not place restrictions on the structure of objects within a collection.  The general structure of each document in a collection for this application is shown in Table \ref{table:collectionStructure}.
+As previously discussed section \ref{subsubsec:databaseTechnology }, MongoDB separates groups or types of entity into collections (which are similar to a Table in an SQL database) but does not place restrictions on the structure of objects within a collection.  The general structure of each document in a collection for this application is shown in Table \ref{table:collectionStructure}. A small change was made between the logical and the physical database designs with the storage of ratings in KeywordPairingRatings. In the logical model these were individual counts of ratings at the five different levels (for example, a count of one-star ratings, a count of five-star ratings, etc) however in the physical model this was converted to a list of ratings received (e.g. \texttt{[5,5,3,4,5]}). This made the implementation more compact as five different variables did not need to be addressed every time the ratings were read or written to.
 
 \begin{table}
 \begin{center}
@@ -647,17 +646,13 @@ MongoDB separates groups or types of entity into collections (which are similar 
     \end{lstlisting}
     \\ \hline
     
-    KeywordRelatednessQuality &
+    KeywordPairingRatings &
     \begin{lstlisting}
     {
     '_id',
     'givenProperty',
     'returnedProperty',
-    'oneStarRatings',
-    'twoStarRatings',
-    'threeStarRatings',
-    'fourStarRatings',
-    'fiveStarRatings'
+    'ratings'
     }
     \end{lstlisting}
     \\ \hline
