@@ -537,20 +537,21 @@ The development platform of the utility will be Linux.  This is for three reason
 As previously stated, the interface to the application will be over the SMS platform.
 
 \subsection{Database}
-There are three tables of data that need to be stored.  These are the tables for: user profiles, to allow the application to handle queries that make use of 'state' with users; the machine learning of question-answer quality; and an initial intelligence that a new deployment of the application starts with.  Both the conceptual data model and the logical database design are now presented.
+There are three tables of data that need to be stored.  These are the tables for: user profiles, to allow the application to handle queries that make use of 'state' with users; a list of keyword matchings between the requested property in the question asked and the property returned from the data source with quality ratings from user feedback, which the application uses to learn from and improve its answers; and a record of all asked questions, their answers and the ratings provided, to allow for questions to be answered based on highly rated previous answers.  
+
+In the following section, the conceptual model is presented and then this is used to choose a database technology. Once the database technology has been chosen a logical data model and a physical database design are given.
 
 \subsubsection{Conceptual Data Model}
-% TODO --- - finish writing conceptual database model
 There are four entities in the conceptual data model for this project.  These are:
 
 \begin{itemize}
-  \item {\bf Users:} An entity that represents a user, purely by an identifier based on their phone number.
-  \item {\bf Last Question Asked by a User:} An object containing the parameters of the last question.  This allows the system to handle stateful queries based upon a previous query.
-  \item {\bf Keyword Pairs Quality Ratings:} An entity that contains the property requested by a user, the property returned to that user, and the number of times a matching was ranked as being either one, two, three, four or five stars.
+  \item {\bf Users:} An entity that represents a user. The user is identified via an obscured representation of their phone number.
+  \item {\bf Last Question Asked by a User:} An entity containing the parameters of the last question.  This allows the system to handle stateful queries that are based upon a previous query.
+  \item {\bf Keyword Pair Quality Ratings:} An entity that contains the property requested by a user, the property returned to that user, and the number of times a matching was ranked as being either one, two, three, four or five stars.
   \item {\bf Ranked Previous Answers:} A representation of a previously asked question, the answer text provided, and the rating given to the answer.
 \end{itemize}
 
-These entities are shown in Figure \ref{fig:conceptualDatabaseDesignDiagram}, which also shows the entity relationships.
+These entities are shown in the UML diagram in Figure \ref{fig:conceptualDatabaseDesignDiagram}, which also shows the entity relationships.
 
 \begin{figure}[htb] 
 \includegraphics[width=\linewidth]{conceptualModel}
@@ -558,8 +559,51 @@ These entities are shown in Figure \ref{fig:conceptualDatabaseDesignDiagram}, wh
 \label{fig:conceptualDatabaseDesignDiagram}
 \end{figure}
 
+
+
+
+\subsubsection{Database Technology}
+The database technology requirements for this project are:
+
+\begin{enumerate}
+  \item The selected database must be as simple in implementation and interface as possible, whilst still supporting the system requirements.  This is to allow for quick development and to avoid adding unnecessary complexity.
+  \item The selected database must allow for storage and retrieval of records with multiple parameters.
+  \item Support for records that are related to each other is not required, so relational databases are not needed, but not ruled out.
+  \item The database needs to have built-in support for Sharding and Replication/Mirroring to allow the application to scale.
+  \item The database must have a library for interfacing with it in the language of this project.
+\end{enumerate}
+
+There are a number of database technologies available that would fulfil the data requirements of this project.  Specifically, these can be split into two categories: relational databases and non-relational databases. Relational databases are used to store highly structured data perceived to be in tables. Each table uses rows to represent a single record and columns to represent the variables within that record. These tables may contain constraints on the contained data to ensure integrity such as limiting the range of a variable. Relational databases also encourage the use of table manipulation operations to use multiple tables to derive new tables with a processing stage in-between. Relational databases also require a scheme to be devised to indicate how the data is structured. 
+
+Non-relational databases are specialised towards unstructured data, or where the data may be structured but there is a desire to not enforce a structure on the stored data.
+
+  Two common database approaches that meet the above requirements are MySQL with an ORM \footnote{ORM: Object-relational mapping tool, which maps queries from the syntax of your programming language to SQL and then maps the returned data to objects compatible with your programming language.  ORMs commonly apply optimisations to queries and validate them to ensure they are not malicious.}, and MongoDB with the Mongo Client.  Table \ref{table:mysqlVsMongo} shows a comparison of both of these technologies.
+
+\begin{table}
+\begin{center}
+    \begin{tabular}{| p{3.8cm} | p{4.0cm} | p{4.6cm} |}
+    \hline
+     & MySQL/SQLAlchemy & MongoDB \\ \hline
+    Fixed Schema & Yes, reducing flexible & No, giving flexibility \\ \hline
+    Querying Simplicity & Requires complex ORM and awareness of transactions, or construction of SQL queries. & MongoDB comes with a Python client, which allows queries in the form of dictionaries. \\ \hline
+    Relational Queries Supported & Yes (could be of help in a future extension) & No \\ \hline
+    Records support nested parameters & No & Yes \\ \hline
+    Built in Sharding support & No & Yes \\ \hline
+    Built in Mirroring support & No & Yes \\ \hline
+    \end{tabular}
+    \caption{MySQL \& SQLAlchemy vs MongoDB}
+    \label{table:mysqlVsMongo}
+\end{center}
+\end{table}
+
+From this comparison, the decision to use MongoDB has been taken because MongoDB has more flexibility than SQL meaning that development will be less time consuming, writing queries is easier in Python and, other than the possibility of future extensions requiring relational structure, it is more scalable than SQL.
+
+
+
+
+
 \subsubsection{Logical Database Design}
-The logical design of the database reduces the number of entities from five in the conceptual model to three.  This is because there is a one-to-one relationship between the \texttt{User} entity and both the \texttt{Complete User History} and \texttt{Last Question Asked by a User} entities, with a small number of fields.  In a large system where relational databases were used it would make sense to keep these entities separate, but in this case merging them allows a wider variety of databases to be used, simplifies the implementation and does not add significantly add to the complexity of the data model. % todo no more 1-1 matching
+The logical design of the database reduces the number of entities from four in the conceptual model to three.  This is because there is a one-to-one relationship between the \texttt{User} and \texttt{Last Question Asked by a User} entities, so the \texttt{Last Question Asked by a User} entity can be nested inside of the \texttt{User} entity as only contains a small number of user-specific fields.  In a system where relational databases were used it would make sense to keep these entities separate since each one would be a column in the database, but in this case merging them allows a wider variety of databases to be used, simplifies the implementation and does not add significantly add to the complexity of the data model. \marginnote{end of this is wrong - come back once fixed SQL/noSQL} % todo no more 1-1 matching 
 
 The logical database requirements are listed in Table \ref{table:logicalDatabaseDesignListing} and represented graphically in Figure \ref{fig:logicalDatabaseDesignDiagram}.
 
@@ -584,40 +628,8 @@ The logical database requirements are listed in Table \ref{table:logicalDatabase
 \end{figure}
 %todo - remove initial intelligence from the above
 
-\subsubsection{Database Technology}
-The database technology requirements for this project are:
-
-\begin{enumerate}
-  \item The selected database must be as simple in implementation and interface as possible, whilst still supporting the system requirements.  This is to allow for quick development and to avoid adding unnecessary complexity.
-  \item The selected database must allow for storage and retrieval of records with multiple parameters.
-  \item Support for records that are related to each other is not required, so relational databases are not needed, but not ruled out.
-  \item The database needs to have built-in support for Sharding and Replication/Mirroring to allow the application to scale.
-  \item The database must have a library for interfacing with it in the language of this project.
-\end{enumerate}
-
-There are a number of database technologies available that would fulfil the data requirements of this project.  These can be split into the categories of relational databases (SQL) and document stores (NoSQL).  Two common database approaches that meet the above requirements are MySQL with an ORM \footnote{ORM: Object-relational mapping tool, which maps queries from the syntax of your programming language to SQL.  ORMs commonly also apply optimisations to queries, and validate them against SQL injections.}, and MongoDB with the Mongo Client.  Table \ref{table:mysqlVsMongo} shows a comparison of both of these technologies.
-
-\begin{table}
-\begin{center}
-    \begin{tabular}{| p{3.8cm} | p{4.0cm} | p{4.6cm} |}
-    \hline
-     & MySQL/SQLAlchemy & MongoDB \\ \hline
-    Fixed Schema & Yes, reducing flexible & No, giving flexibility \\ \hline
-    Querying Simplicity & Requires complex ORM and awareness of transactions, or construction of SQL queries. & MongoDB comes with a Python client, which allows queries in the form of dictionaries. \\ \hline
-    Relational Queries Supported & Yes (could be of help in a future extension) & No \\ \hline
-    Records support nested parameters & No & Yes \\ \hline
-    Built in Sharding support & No & Yes \\ \hline
-    Built in Mirroring support & No & Yes \\ \hline
-    \end{tabular}
-    \caption{MySQL \& SQLAlchemy vs MongoDB}
-    \label{table:mysqlVsMongo}
-\end{center}
-\end{table}
-
-From this comparison, the decision to use MongoDB has been taken because MongoDB has more flexibility than SQL, writing queries is easier in Python and, other than the possibility of future extensions requiring relational structure, it is more scalable than SQL.
-
 \subsubsection{Physical Database Design}
-MongoDB separates entities into collections but does not place restrictions on the structure of objects within a collection.  The general structure of the keys in a document (a JSON dictionary) is shown in Table \ref{table:collectionStructure}.
+MongoDB separates groups or types of entity into collections (which are similar to a Table in an SQL database) but does not place restrictions on the structure of objects within a collection.  The general structure of each document in a collection for this application is shown in Table \ref{table:collectionStructure}.
 
 \begin{table}
 \begin{center}
@@ -673,7 +685,7 @@ MongoDB separates entities into collections but does not place restrictions on t
 
 \subsection{Libraries}
 \subsubsection{Database Querying}
-MongoDB comes with a Python client called PyMongo\footnote{For more information: https://api.mongodb.org/python/current/}, which is developed by the same developers as MongoDB.  It is the recommended tool to interact with a MongoDB database~\cite{pyMongoDoc} and has good community support, so it will be used in this project.
+MongoDB comes with a Python client called PyMongo~\cite{libraryPyMongo}, which is developed by the same developers as MongoDB.  It is the recommended tool to interact with a MongoDB database~\cite{pyMongoDoc} and has good community support, so it will be used in this project.
 
 \subsubsection{Creating HTTP Server and REST API}
 The application needs to have an HTTP interface to allow interactions with it via SMS.  As a result of the non-functional requirement "The system behind the SMS gateway must respond in a timely manner" in section \ref{subsubsec:systemRequirementsNonFunctional}, the application will need to be able to process multiple HTTP requests concurrently to prevent requests queueing up and responses been significantly delayed.
