@@ -123,12 +123,7 @@ The project involves the use of a number of systems, including machine translati
 
 The first goal of this project is to assess and address the ethical issues that arise from the software that will be created.  These include the responsibility that the software and its developer has because of its position of trust to provide accurate information and to protect the privacy of its users by storing only necessary information, among others.  This project will do this by researching ethical issues relating to the technologies that the project will use, for example machine translation and user information storage.  This will then be used to feed the design process of the software and to specify the expected use-case of it.  Finally, the resulting software will be evaluated through experimentation, with volunteers asking the software a set of questions within a topic area, in a non-English language, and evaluate the relevance of answers returned.
 
-Initially, the goal for this dissertation was to focus on questions relating to personal health, sex, relationships and family, which was as a direct result of the focus of 'Shy'.  Although a health and diseases database was located in the early stages of the project (Diseases Database, www.diseasesdatabase.com), it was targeted at professional uses for the data and came with a significant licence fee, as well as complex documentation that the provider customised specifically for each use-case.  An attempt was made to acquire a free academic research licence via email but this was unsuccessful.  Additionally, as the project progressed in the early stages it became clear that the author's original two-page document discussing ethical considerations with the project did not cover all possible situations.  Indeed, the Author and Supervisor\marginnote{Lilian: Should I avoid mentioning 'author' and 'supervisor' here? I want to communicate that there was effort in this. Should I reword to 'significant effort was .......'} were still discovering further significant ethical issues as far as eight weeks into the project, which would have required a complex ethics panel review, critically delaying this project.  Two example ethical issues that occurred were:
-
-\begin{itemize}
-  \item Any application has that dispenses health related information that a user might act upon in a life changing manner has to respond with correct information, since an incorrect response could lead to a user taking an action which leads to them harming themselves.
-  \item Privacy is critical since the questions been asked are personal.  This could not be absolutely guaranteed, since a third-party service had to be used to send SMSs and, although unlikely, it was possible that this service could build profiles on users and identify them.
-\end{itemize}
+Initially, the goal for this dissertation was to focus on questions relating to personal health, sex, relationships and family, which was as a direct result of the focus of 'Shy'.  Although a health and diseases database was located in the early stages of the project (Diseases Database, www.diseasesdatabase.com), it was targeted at professional uses for the data and came with a significant licence fee, as well as complex documentation that the provider customised specifically for each use-case.  An attempt was made to acquire a free academic research licence via email but this was unsuccessful.  Additionally, as the project progressed in the early stages it became clear that the author's original two-page document discussing ethical considerations with the project did not cover all possible situations.  Indeed, further significant ethical issues were still been discovered as far as eight weeks into the project, which would have required a complex ethics panel review, critically delaying this project.  One major issues was that any application that dispenses health related information that a user might act upon in a life changing manner has to always provide correct information in response to a query, since an incorrect response could lead to a user taking an action which leads to them harming themselves. No information source containing knowledge of a high enough quality with a licence that allowed it to be used in this project could be found. Another issue was that privacy, which is critical to a project in the area of personal health, couldn't be guaranteed since information would be transmitted in an unencrypted form via SMS.
 
 As a result of the above issues with locating a reputable knowledge base and the complex ethical issues, a decision was made in early December 2014 to switch the target topic for questions to Geography and to use Wikipedia as a datasource, since it is openly available, well populated and multiple methods exist for extracting information from it.  In future work, it should be possible to extend this project to work with medical questions, if a high quality data-source is located and a solution to the ethical issues is found. A full discussion of possible future work is included in section \ref{sec:extending}.
 
@@ -178,7 +173,7 @@ This is easy to do in the developed world where up to 75\% of the population are
 
 % But there are other communication methods which are proven to work
 \section{Previous work using SMS}
-Although the above suggests that the African continent is majoritively disconnected, this is not the case.  Because of restrictions in the electricity available, the ways in which a non-smart phone \marginnote{\color{red}cite that these are lower power consumption, or assume?  Emma: Isn't necessary but would be helpful; leave it up to whether you need to fill out your word count or cut down.} can be used in Africa have far surpassed those in the developed world~\cite{Fox:2011:Online}, in part due to the low power consumption of a non-smart mobile phone.  Interesting examples of SMS use in Africa include an automated service which sends an SMS to HIV/AIDS sufferers to remind them to take their medication, and a system for farmers that gives them the current market prices for goods, saving them from making regular long-distance trips to the market or relying on out-of-date information from a weekly radio broadcast~\cite{Aker_Mobile_Phones_2010}.
+Although the above suggests that the African continent is majoritively disconnected, this is not the case.  Because of restrictions in the electricity available, the ways in which a non-smart phone can be used in Africa have far surpassed those in the developed world~\cite{Fox:2011:Online}, in part due to the longer battery life of a non-smart mobile phone compared to a smart mobile phone.  Interesting examples of SMS use in Africa include an automated service which sends an SMS to HIV/AIDS sufferers to remind them to take their medication, and a system for farmers that gives them the current market prices for goods, saving them from making regular long-distance trips to the market or relying on out-of-date information from a weekly radio broadcast~\cite{Aker_Mobile_Phones_2010}.
 
 Interactive systems have also been developed to operate over SMS.  One successful example is mobile money platforms.  These allow for users from any background to pay and be paid for goods and to transfer money across long distances at negligible cost~\cite{Aker_Mobile_Phones_2010}.  One of the most highly adopted services is M-Pesa, which in Kenya alone was responsible for \textsterling5.7 Billion in transfers in 2012 \footnote{Data from Safaricom, M-Pesa operator in Kenya - actual value 817,085,000,000 Kenyan Shillings, converted to GBP on 1st November 2014 at rate of approximately 0.007.}.  M-Pesa gives users a balance linked to a national ID number from which they can pay for goods by sending an SMS with a cashier (recipient) number or pay outstanding bills in a similar way.  Non-subscribers can also use the system by depositing money with a M-Pesa cashier in exchange for an access code, which can be sent via SMS to a contact who can subsequently redeem it with their local cashier~\cite{Aker_Mobile_Phones_2010}.
 
@@ -222,7 +217,6 @@ More commonly, Statistical Machine Translation (SMT) is used, for example, by Go
 A significant issue that is present in statistical machine learning systems comes from the knowledge we assume an individual has and derives from a word; in this project, this affects the translation of the answers returned to a user.  In human translation this is solved by the translator's knowledge of the difference in material culture, allowing them to append necessary information to the resulting translation that the recipient might find useful.  In statistical machine learning, cultural awareness of material knowledge is a separate problem on its own.  {\bf formal reference to this, probably again from Kenny, but should be able to find better}.  To take one example from Melby (2006):
 
 \blockquote{"when translating a French menu, a human translator might stop to think that an English speaker in France would appreciate being told that a steak tartare is served entirely raw, even if this information is not contained in the original text (because French people might be assumed to know this already). Such a translator would be aware of differences in material culture, and would be able to empathise with the English speaker who might choose to avoid the dish, given more information"~\cite{melby2006can, kenny2011ethics}}
-\marginnote{Lilian: quote taken from~\cite{kenny2011ethics}, but quote is interpreted from~\cite{melby2006can} - so I think referencing both is correct, but for this reason rather than last reason we discussed?}
 
 This issue is a result of the translation engine not being capable of taking and using a complete representation of the expected cultural differences between those who speak the input language and those who speak the output language~\cite{melby2006can}. This does not apply to the first block of translation within the application where a user's input is translated into the language of the system, since the application will only need to parse text to identify geographical entities and the property been queried, making context unnecessary.
 
@@ -262,7 +256,10 @@ One way of doing this is using a technology called hashing.  Hashing is the tech
 
 In practise it is possible for the output of a hashing algorithm not to be unique to a particular input.  This is known as the collision resistance property of a hashing algorithm and formally is the property of a hashing algorithm that determines the probability of the same output hash for two distinct random inputs~\cite{mitCryptographyMd5}.  It occurs because the range of possible input values is much larger than the range of output hashes, and because all valid inputs must map to an output there is repetition in outputs~\cite{mitCryptographyMd5}.  This property of hashing algorithms can be a security risk for some use-cases, where hashes are used to verify that data has not changed since been hashed.  In this case, a third-party may be attempting to generate alternative, malicious data with the same hash as some pre-existing data, to swap them undetected~\cite{securityEngineeringHashingAnderson}.  In the use-case of this project there is no security risk since hashes are only used to anonymise phone numbers; however a high collision resistance is necessary to ensure that two users of the system with distinct phone numbers don't get mapped to the same row in the database, resulting in poor quality question-answer matching or in the extreme worst case, privacy issues originating from returning to one user answers that are targeted to another.
 
-Irreversibility is a necessary property of the hashing algorithm chosen for this project.  This ensures that the key used in the database cannot be used to retrieve the phone number of the user, thus protecting their identity.  Commonly used hashing algorithm families, such as the MD family (e.g. MD5) and SHA family are all designed to be one-way~\cite{schneierCryptanalysisMD5SHA}\footnote{Bruce Schneier is a fellow at Harvard's Berkman center for internet and society.  He has been posting regularly for his newsletter and then blog since 1998 (over 16 years) and has published material related to this field throughout this time.  He has been involved in the creation of other cryptographic algorithms, such as the Skein hashing algorithm, blowfish block cipher, so may have a vested interest in discrediting other algorithms such as MD5 and SHA.  However, the essay cited above is written as a result of the Crypto 2004 Conference in California, where the algorithm that Schneier suggests should be used at the end is not one that he has involvement in.  For these reasons, I believe this source is reliable.}\marginnote{Lilian: Dump the whole footnote?}.  
+Irreversibility is a necessary property of the hashing algorithm chosen for this project.  This ensures that the key used in the database cannot be used to retrieve the phone number of the user, thus protecting their identity.  Commonly used hashing algorithm families, such as the MD family (e.g. MD5) and SHA family are all designed to be one-way~\cite{schneierCryptanalysisMD5SHA}
+
+\marginnote{Lilian: Is the wording of Bruce Schneier paragraph ok? Should I perhaps remove the last sentence?}
+It should be noted that Bruce Schneier is a fellow at Harvard's Berkman center for internet and society.  He has been posting regularly for his newsletter and then blog since 1998 (over 16 years) and has published material related to this field throughout this time.  He has been involved in the creation of other cryptographic algorithms, such as the Skein hashing algorithm and blowfish block cipher, so may have a vested interest in discrediting other algorithms such as MD5 and SHA.  However, the essay cited above is written as a result of the Crypto 2004 Conference in California, where the algorithm that Schneier suggests should be used at the end is not one that he has involvement in.  For these reasons, his material should be treated as reliable.
 
 Although hashing algorithms are computationally one-way, they can suffer from another type of vulnerability affecting the security of the original input data.  When hashes are used for short strings of information (passwords, for example), a simple way to try and retrieve the original data is to compute a dictionary of the hashes of lots of common passwords, from which matches can be found.  This idea has been extended to produce Precomputed Hash Chains and subsequently Rainbow Tables.  These are highly efficient data structures that consist of chains of processed input messages and their hashes with a reduce function to reach the next item in the chain, allowing original input data to be looked-up from its hash.  Both Precomputed Hash Chains and Rainbow Tables tend to be Terabytes in size, and as such they only exist in a significant form for the most commonly used hash functions (including MD5 and SHA)~\cite{Teat:2011:SCH:2016039.2016072}.  Within this project, this raises privacy implications, as hashes within the database would be 'convertible' to phone numbers.
 
@@ -271,15 +268,7 @@ In password authentication systems, this can be solved by the use of a technique
 As such, it has been decided that the best way of protecting a user's phone number in the event of a database hack without significantly degrading performance is to salt phone numbers with a constant, large and complex salt. This means that a rainbow table would have to be specifically computed specifically for this application and would be extremely large in size.
 
 \section{Software Design Life Cycles}
-There are many software development life cycles that a developer or company has available to choose from.  Four common ones include the Waterfall Model~\cite{royce1970managing-FirstDescriptionOfWaterFallModelNotByName}, Iterative Model~\cite{briefHistoryOfIncrementalAndIterativeSoftwareDevelopment}\footnote{Iterative development came together from many concepts dating back to 1957.  There was no single paper that initially presented the entire concept, but this paper gives a summary of how the various concepts came together into the current Iterative Development model.}, Spiral Model~\cite{spiralModelSoftwareDevelopment} and the Agile Development Model~\cite{beck2001agile}\footnote{The Agile Manifesto brought together a group of Agile Methods which had been in use since the mid-1990's into a single concept, that of Agile Development.}.\marginnote{Lilian: Do I need to reference that these are common?} In order to choose which life cycle suits this project best, research into all four has been carried out.
-
-line space
-
-line space
-
-line space
-
-% TODO remove the above line space
+There are many software development life cycles that a developer or company has available to choose from.  Four common ones include the Waterfall Model~\cite{royce1970managing-FirstDescriptionOfWaterFallModelNotByName}, Iterative Model~\cite{briefHistoryOfIncrementalAndIterativeSoftwareDevelopment}\footnote{Iterative development came together from many concepts dating back to 1957.  There was no single paper that initially presented the entire concept, but this paper gives a summary of how the various concepts came together into the current Iterative Development model.}, Spiral Model~\cite{spiralModelSoftwareDevelopment} and the Agile Development Model~\cite{beck2001agile}\footnote{The Agile Manifesto brought together a group of Agile Methods which had been in use since the mid-1990's into a single concept, that of Agile Development.}. In order to choose which life cycle suits this project best, research into all four has been carried out.
 
 \marginnote{Lilian: remove these two footnotes? Not always necessary to reference the original}
 
@@ -434,14 +423,16 @@ The DBPedia Ontology is the result of a project that aims to build an OWL ontolo
 
 There are two ways of querying the DBPedia Ontology.  One is using the standard SPARQL ontology query software to make a query form the ontology structure; however this is complex as queries must be structured correctly and it is necessary to know the class structure of the entities being queried~\cite{dbPediaSparql}.
 
-In the event that the class structure is not known, queries can be made by querying the top-level representation of an entity in the ontology, which presents data in a similar format to that of the Wikipedia API, albeit in a 'cleaner' form (with human readable keys) as a result of the data been processed by hand.  Although the keys are of a more human-readable format, some material is abstracted within the ontology and so is inaccessible with a basic query.  An example of this is page for 'London', which does not have a parameter 'Mayor' with the value 'Boris Johnson'.  Instead it refers to a number of 'Leader Titles' and 'Leader Names', which include a reference to Boris Johnson\footnote{A web representation of the London object is available at: http://dbpedia.org/page/London}.
+In the event that the class structure is not known, queries can be made by querying the top-level representation of an entity in the ontology, which presents data in a similar format to that of the Wikipedia API, albeit in a 'cleaner' form (with human readable keys) as a result of the data been processed by hand.  Although the keys are of a more human-readable format, some material is abstracted within the ontology and so is inaccessible with a basic query.  An example of this is page for 'London' (accessible at: \texttt{http://dbpedia.org/page/London}), which does not have a parameter 'Mayor' with the value 'Boris Johnson'.  Instead it refers to a number of 'Leader Titles' and 'Leader Names', which include a reference to Boris Johnson
 
 \subsection{Choosing the Source and Interface for this Project}
 This project has a limited scope and time period available to it, and creating a system capable of identifying the relevant classes and then constructing SPARQL queries for looking up an abstract property is an example of an approach that is out of scope, as it involves natural language processing and semantic analysis of the names of the ontological classes, not just the query being made.  As such, this project will make use of a combination of the data from the Wikipedia API and DBPedia top-level entity representations, collecting keys from both and working with the key with the highest semantic relatedness match to identify the data-value that most likely is the answer to a user's question.  The DBPedia Ontology also provides access to the abstract at the same level as the infobox, so general descriptions of entities will be sourced from there.
 
 \section{Processing Natural Language Queries}
-Because of the nature of its audience, the system needs to be able to process input in natural language form rather than enforcing a formal grammar on users as described in User Requirement \ref{requirement:userReqNaturalLanguage} and System Requirement \ref{requirement:sysReqNaturalLanguage}. This involves constructing a natural language processing system to process queries and identify their meaning. In this project, queries are of a simple form: if a user is asking a question they are requesting a property of information about a given entity. An assumption is therefore made that each query consists of: a token representing the geographical entity been queried; a token representing the property been requested of that geographical entity; and some noise in the form of stop words 
-\footnote{Stop words are words that are frequently used in in language but do not carry any significance themselves \cite{dataMiningStopWords}. It is common practise in Natural Language Processing to to remove these stop words before attempting to process an input \cite{dataMiningStopWords}. An example of stop word is the word \texttt{the}.}.
+Because of the nature of its audience, the system needs to be able to process input in natural language form rather than enforcing a formal grammar on users as described in User Requirement \ref{requirement:userReqNaturalLanguage} and System Requirement \ref{requirement:sysReqNaturalLanguage}. This involves constructing a natural language processing system to process queries and identify their meaning. In this project, queries are of a simple form: if a user is asking a question they are requesting a property of information about a given entity. An assumption is therefore made that each query consists of: a token representing the geographical entity been queried; a token representing the property been requested of that geographical entity; and some noise in the form of stop words.
+
+\marginnote{Lilian: Ok to have this quite descriptive definition in the main text following straight on from the last paragraph?}
+Stop words are words that are frequently used in in language but do not carry any significance themselves \cite{dataMiningStopWords}. It is common practise in Natural Language Processing to to remove these stop words before attempting to process an input \cite{dataMiningStopWords}. An example of a stop word is the word \texttt{the}.
 
 It necessary to be able to identify the geographical entity in the query. This will be done using a Named Entity Extraction tool, of which there many available online including Cortical~\cite{serviceCorticalNex} and Dandelion~\cite{serviceDandelionNex}. These tools extract keywords from a text and in some cases are capable of categorising keywords according to an ontology. For example, Dandelion links entities to the DBPedia Ontology \cite{dandelionNex}.
 
@@ -528,7 +519,7 @@ The userCell is required at the output of the function to determine the number t
 The language Python has been selected to be the main language in project for four reasons:
 \begin{enumerate}
   \item Python is universally compatible and simple to execute.  Once the server application is written, it will be simple to migrate it between machines and adjust the application's configuration or environment.
-  \item Python is commonly used and has significant community support \marginnote{just cite a big community website} in the form of libraries for all the tools that will be used in this project, for example libraries for querying common databases and for sending text messages.  This is useful as it will save time implementing common functionality like database calls.
+  \item Python is commonly used and has significant community support in the form of libraries for all the tools that will be used in this project, for example libraries for querying common databases and for sending text messages.  This is useful as it will save time implementing common functionality like database calls.
   \item Python is an extremely flexible language in which it is easy to implement applications of this type without syntax issues.  This fulfils the system requirement in section (\ref{subsubsec:systemRequirementsFunctional}, point \ref{requirement:easyToImplement}) that the application is easy and quick to implement.
   \item The author has significant expertise in the language.
 \end{enumerate}
@@ -546,20 +537,21 @@ The development platform of the utility will be Linux.  This is for three reason
 As previously stated, the interface to the application will be over the SMS platform.
 
 \subsection{Database}
-There are three tables of data that need to be stored.  These are the tables for: user profiles, to allow the application to handle queries that make use of 'state' with users; the machine learning of question-answer quality; and an initial intelligence that a new deployment of the application starts with.  Both the conceptual data model and the logical database design are now presented.
+There are three tables of data that need to be stored.  These are the tables for: user profiles, to allow the application to handle queries that make use of 'state' with users; a list of keyword matchings between the requested property in the question asked and the property returned from the data source with quality ratings from user feedback, which the application uses to learn from and improve its answers; and a record of all asked questions, their answers and the ratings provided, to allow for questions to be answered based on highly rated previous answers.  
+
+In the following section, the conceptual model is presented and then this is used to choose a database technology. Once the database technology has been chosen a logical data model and a physical database design are given.
 
 \subsubsection{Conceptual Data Model}
-% TODO --- - finish writing conceptual database model
 There are four entities in the conceptual data model for this project.  These are:
 
 \begin{itemize}
-  \item {\bf Users:} An entity that represents a user, purely by an identifier based on their phone number.
-  \item {\bf Last Question Asked by a User:} An object containing the parameters of the last question.  This allows the system to handle stateful queries based upon a previous query.
-  \item {\bf Keyword Pairs Quality Ratings:} An entity that contains the property requested by a user, the property returned to that user, and the number of times a matching was ranked as being either one, two, three, four or five stars.
+  \item {\bf Users:} An entity that represents a user. The user is identified via an obscured representation of their phone number.
+  \item {\bf Last Question Asked by a User:} An entity containing the parameters of the last question.  This allows the system to handle stateful queries that are based upon a previous query.
+  \item {\bf Keyword Pair Quality Ratings:} An entity that contains the property requested by a user, the property returned to that user, and the number of times a matching was ranked as being either one, two, three, four or five stars.
   \item {\bf Ranked Previous Answers:} A representation of a previously asked question, the answer text provided, and the rating given to the answer.
 \end{itemize}
 
-These entities are shown in Figure \ref{fig:conceptualDatabaseDesignDiagram}, which also shows the entity relationships.
+These entities are shown in the UML diagram in Figure \ref{fig:conceptualDatabaseDesignDiagram}, which also shows the entity relationships.
 
 \begin{figure}[htb] 
 \includegraphics[width=\linewidth]{conceptualModel}
@@ -567,8 +559,46 @@ These entities are shown in Figure \ref{fig:conceptualDatabaseDesignDiagram}, wh
 \label{fig:conceptualDatabaseDesignDiagram}
 \end{figure}
 
+\subsubsection{Database Technology}
+The database technology requirements for this project are:
+
+\begin{enumerate}
+  \item The selected database must be as simple in implementation and interface with as possible, whilst still supporting the system requirements.  This is to allow for quick development and to avoid adding unnecessary complexity.
+  \item The selected database must allow for storage and retrieval of records with multiple parameters.
+  \item Support for records that are related to each other is not required, so relational databases are not needed, but not ruled out.
+  \item The database must have a library for interfacing with it in the language of this project.
+  \item The database should have built-in support for Sharding and Replication/Mirroring if possible to allow the application to scale. Sharding is the theory of distributing data and hence load across multiple servers~\cite{aboutSharding}, and replication is where data is stored on multiple machines to provide redundancy~\cite{aboutReplication}.
+\end{enumerate}
+
+There are a number of database technologies available that would fulfil the database requirements of this project.  Specifically, these can be split into two categories: relational databases and non-relational databases. Relational databases are used to store highly structured data in a table format~\cite{introToDatabaseSys}. Each table uses rows to represent a single record, and columns to represent the variables within that record~\cite{introToDatabaseSys}. These tables may contain constraints on the contained data to ensure integrity, such as limiting the range of a variable or enforcing that a variable may not be null~\cite{introToDatabaseSys}. Relational databases also encourage the use of table manipulation operations, where multiple tables are used to derive new tables with a processing stage in-between~\cite{introToDatabaseSys}. Relational databases also require a schema to be devised to formally structure the data~\cite{Parker:2013:CNM:2498328.2500047}.
+
+Non-relational databases are specialised towards unstructured data, or where the data may be structured but there is a desire to not enforce a structure~\cite{Parker:2013:CNM:2498328.2500047}. Records are stored in collections which are similar to a table in a relational database, and collections then contain documents, which are similar to rows in a relational database~\cite{Parker:2013:CNM:2498328.2500047}. Unlike a relational database a collection does not have a set of columns or preset list of variables for each record~\cite{Parker:2013:CNM:2498328.2500047}. Instead, each record is a dictionary. Non-relational databases generally support storing relational data (entities that refer to other entities) by nesting documents inside of each other for one-to-one and one-to-many relationships~\cite{Parker:2013:CNM:2498328.2500047}. They also support referencing another document via its unique ID (which is assigned to all documents)~\cite{Parker:2013:CNM:2498328.2500047}. A downside of this latter technique is that the first object must be retrieved from the database to retrieve the ID of the referenced object before the referenced object can then be fetched in a relational-like query.
+
+The two common databases used for each of these database categories are MySQL databases~\cite{mySqlDb} (relational) and MongoDB databases~\cite{mongoDb} (non-relational). In a Python application a MySQL database can be queried with an Object-relational mapping tool (ORM), which maps queries from the syntax of your programming language to a query in the SQL (a query language) and then maps the returned data to objects compatible with your programming language\footnote{ORMs also commonly apply optimisations to queries and validate them to ensure they are not malicious.}. MongoDB comes with a simple pre-existing client to query the database natively~\cite{libraryPyMongo}.
+
+To fulfil the database requirements, the database chosen should be flexible with no fixed schema, querying should be easy in the Python language, and either support for relational queries or nested documents will be required. Additionally, it would be good if the database natively has sharing and replication/mirroring support so that in future work a stable and reliable system can be built. MongoDB meets all of these criteria, with no fixed schema, a simple method for querying the database, support for nesting documents and sharding and mirroring support for future expandability. In contrast, MySQL forces a fixed schema for data and requires a complex ORM for querying, although it does support relational queries natively and has support for sharding and mirroring~\cite{mySqlShardingReplication}. These properties of the two databases are shown in Table \ref{table:mysqlVsMongo}.
+
+\begin{table}
+\begin{center}
+    \begin{tabular}{| p{4.0cm} | p{4.5cm} | p{4.0cm} |}
+    \hline
+     & MySQL & MongoDB \\ \hline
+    Fixed Schema & Yes, reducing flexible & No, giving flexibility \\ \hline
+    Querying Simplicity & Requires complex ORM and awareness of transactions, or construction of SQL queries. & Very simple with included MongoDB client. \\ \hline
+    Records support nested parameters & No & Yes \\ \hline
+    Supports relational queries natively & Yes & No \\ \hline
+    Built in Sharding support & Yes & Yes \\ \hline
+    Built in Mirroring support & Yes & Yes \\ \hline
+    \end{tabular}
+    \caption{MySQL \& SQLAlchemy vs MongoDB}
+    \label{table:mysqlVsMongo}
+\end{center}
+\end{table}
+
+From this comparison, the decision to use MongoDB has been taken because MongoDB has more flexibility than SQL meaning that development will be less time consuming, and writing queries is easier in Python with the built-in MongoDB Library~\cite{libraryPyMongo}.
+
 \subsubsection{Logical Database Design}
-The logical design of the database reduces the number of entities from five in the conceptual model to three.  This is because there is a one-to-one relationship between the \texttt{User} entity and both the \texttt{Complete User History} and \texttt{Last Question Asked by a User} entities, with a small number of fields.  In a large system where relational databases were used it would make sense to keep these entities separate, but in this case merging them allows a wider variety of databases to be used, simplifies the implementation and does not add significantly add to the complexity of the data model. % todo no more 1-1 matching
+The logical design of the database reduces the number of entities from four in the conceptual model to three.  This is because there is a one-to-one relationship between the \texttt{User} and \texttt{Last Question Asked by a User} entities, so the \texttt{Last Question Asked by a User} entity can be nested inside of the \texttt{User} entity as only contains a small number of user-specific fields.  In a system where relational databases were used it would make sense to keep these entities separate since each one would be a column in the database, but in this case merging them allows a wider variety of databases to be used, simplifies the implementation and does not add significantly add to the complexity of the data model. \marginnote{end of this is wrong - come back once fixed SQL/noSQL} % todo no more 1-1 matching 
 
 The logical database requirements are listed in Table \ref{table:logicalDatabaseDesignListing} and represented graphically in Figure \ref{fig:logicalDatabaseDesignDiagram}.
 
@@ -593,40 +623,8 @@ The logical database requirements are listed in Table \ref{table:logicalDatabase
 \end{figure}
 %todo - remove initial intelligence from the above
 
-\subsubsection{Database Technology}
-The database technology requirements for this project are:
-
-\begin{enumerate}
-  \item The selected database must be as simple in implementation and interface as possible, whilst still supporting the system requirements.  This is to allow for quick development and to avoid adding unnecessary complexity.
-  \item The selected database must allow for storage and retrieval of records with multiple parameters.
-  \item Support for records that are related to each other is not required, so relational databases are not needed, but not ruled out.
-  \item The database needs to have built-in support for Sharding and Replication/Mirroring to allow the application to scale.
-  \item The database must have a library for interfacing with it in the language of this project.
-\end{enumerate}
-
-There are a number of database technologies available that would fulfil the data requirements of this project.  These can be split into the categories of relational databases (SQL) and document stores (NoSQL).  Two common database approaches that meet the above requirements are MySQL with an ORM \footnote{ORM: Object-relational mapping tool, which maps queries from the syntax of your programming language to SQL.  ORMs commonly also apply optimisations to queries, and validate them against SQL injections.}, and MongoDB with the Mongo Client.  Table \ref{table:mysqlVsMongo} shows a comparison of both of these technologies.
-
-\begin{table}
-\begin{center}
-    \begin{tabular}{| p{3.8cm} | p{4.0cm} | p{4.6cm} |}
-    \hline
-     & MySQL/SQLAlchemy & MongoDB \\ \hline
-    Fixed Schema & Yes, reducing flexible & No, giving flexibility \\ \hline
-    Querying Simplicity & Requires complex ORM and awareness of transactions, or construction of SQL queries. & MongoDB comes with a Python client, which allows queries in the form of dictionaries. \\ \hline
-    Relational Queries Supported & Yes (could be of help in a future extension) & No \\ \hline
-    Records support nested parameters & No & Yes \\ \hline
-    Built in Sharding support & No & Yes \\ \hline
-    Built in Mirroring support & No & Yes \\ \hline
-    \end{tabular}
-    \caption{MySQL \& SQLAlchemy vs MongoDB}
-    \label{table:mysqlVsMongo}
-\end{center}
-\end{table}
-
-From this comparison, the decision to use MongoDB has been taken because MongoDB has more flexibility than SQL, writing queries is easier in Python and, other than the possibility of future extensions requiring relational structure, it is more scalable than SQL.
-
 \subsubsection{Physical Database Design}
-MongoDB separates entities into collections but does not place restrictions on the structure of objects within a collection.  The general structure of the keys in a document (a JSON dictionary) is shown in Table \ref{table:collectionStructure}.
+MongoDB separates groups or types of entity into collections (which are similar to a Table in an SQL database) but does not place restrictions on the structure of objects within a collection.  The general structure of each document in a collection for this application is shown in Table \ref{table:collectionStructure}.
 
 \begin{table}
 \begin{center}
@@ -682,16 +680,14 @@ MongoDB separates entities into collections but does not place restrictions on t
 
 \subsection{Libraries}
 \subsubsection{Database Querying}
-MongoDB comes with a Python client called PyMongo\footnote{For more information: https://api.mongodb.org/python/current/}, which is developed by the same developers as MongoDB.  It is the recommended tool to interact with a MongoDB database~\cite{pyMongoDoc} and has good community support, so it will be used in this project.
+MongoDB comes with a Python client called PyMongo~\cite{libraryPyMongo}, which is developed by the same developers as MongoDB.  It is the recommended tool to interact with a MongoDB database~\cite{pyMongoDoc} and has good community support, so it will be used in this project.
 
 \subsubsection{Creating HTTP Server and REST API}
 The application needs to have an HTTP interface to allow interactions with it via SMS.  As a result of the non-functional requirement "The system behind the SMS gateway must respond in a timely manner" in section \ref{subsubsec:systemRequirementsNonFunctional}, the application will need to be able to process multiple HTTP requests concurrently to prevent requests queueing up and responses been significantly delayed.
 
 To create an HTTP Interface, the latest Web Server Gateway Interface (WSGI) specification (version 1.0.1, published as PEP 3333)~\cite{eby2010python} will be followed as it is the industry standard. The WSGI specification describes a general interface between web servers and web applications or frameworks (such as Twilio) in the Python language, thus describing how the web server should be constructed.
 
-In this project, two tools are needed: a WSGI server, and a framework for writing WSGI applications. Flask will be used for the framework as the author has extensive experience using it and it is 100\% compliant with the WSGI standard~\cite{libraryFlask}\footnote{100\% compliant according to the Flask product website.}.
-
-\marginnote{Lilian: footnote: 100\% compliant - remove? It's a note about bias}
+In this project, two tools are needed: a WSGI server, and a framework for writing WSGI applications. Flask will be used for the framework as the author has extensive experience using it and it is compliant with the WSGI standard~\cite{libraryFlask}.
 
 With respect to the WSGI server, many implementations exist such as a simple WSGI server included in Flask~\cite{libraryFlask} called Werkzeug~\cite{libraryWerkzeug}, and the Gevent WSGI server~\cite{libraryGevent}.  Support for multiple concurrent HTTP connections is not a requirement in the WSGI specification, and so some WSGI servers such as the implementation of Werkzeug in Flask do not support this\footnote{Werkzeug does support processing multiple HTTP requests concurrently by specifically enabling threading and increasing the default maximum number of processes from one (as described in the documentation at: http://werkzeug.pocoo.org/docs/0.10/serving/ [accessed: 4th April 2015]). However, the implementation of Werkzeug in Flask has these disabled in the source code because Flask uses thread-local storage (memory that is local to a single thread) and so cannot support concurrent HTTP requests on new threads. This is stated on the Flask website at http://flask.pocoo.org/docs/0.10/design/\#thread-locals [accessed: 4th April 2015].}. Gevent does support concurrent HTTP connections~\cite{geventImplementingServers}\footnote{Gevent using the Greenlet library~\cite{libraryGreenlet}, which provides a notion of micro-threading (coroutines). When a new HTTP request is received, Gevent creates a new Greenlet, thus preventing the main thread been blocked and allowing multiple concurrent HTTP requests. The creation of the Greenlet is described in the preceeding reference(\cite{geventImplementingServers}).} and so will be used in this project.
 
@@ -771,7 +767,7 @@ The following tools and services were used in the implementation. These were cho
   \item The Cortical~\cite{serviceCorticalSim} and Dandelion~\cite{serviceDandelionSim, serviceDandelionNex} APIs were used for semantic analysis of text.
 \end{itemize}
 
-In addition, the following Python libraries from the Python Package Index\footnote{Python Package Index website: https://pypi.python.org/pypi} were used within the server application:
+In addition, the following Python libraries from the Python Package Index~\cite{pypi} were used within the server application:
 \begin{enumerate}
     \item Greenlet~\cite{libraryGreenlet} - provides a notion of micro-threading (coroutines), which allows the server to process multiple HTTP requests concurrently.
     \item gevent~\cite{libraryGevent} \label{librariesUsed:gevent} - a coroutine based networking library for Python. gevent provides a Web Server Gateway Interface (WSGI) server that supports processing multiple requests concurrently, using Greenlet.
@@ -1006,91 +1002,7 @@ For the researcher: Participant ID: \textunderscore\textunderscore\textunderscor
 \newpage
 \chapter{Sample Questionnaire}
 \label{sec:appendixQuestionnaire}
-\newpage
-
-\section*{Please fill in the following questionnaire with regard to your experience of the system that has been developed.}.
-
-\begin{tabular}{|m{0.5cm}|m{7.0cm}|>{\centering\arraybackslash}m{4cm}|}
-\hline
-\centering \# &
-\centering Question &   
-\centering Agreement \\ 1 = strongly disagree \\ 3 = neutral \\ 5 = strongly agree \tabularnewline
-\hline
-1  & 
-Using the system would enable me to locate information more quickly when without access to the internet  & 
-1 \ 2 \ 3 \ 4 \ 5
-\tabularnewline
-\hline
-2  & 
-Using the system would improve my performance when working or researching without access to the internet  & 
-1 \ 2 \ 3 \ 4 \ 5
-\tabularnewline
-\hline
-3  & 
-Using the system would increase my productivity when performing casual research without access to the internet  & 
-1 \ 2 \ 3 \ 4 \ 5
-\tabularnewline
-\hline
-4  & 
-Using the system would enhance my effectiveness at finding information without the internet  & 
-1 \ 2 \ 3 \ 4 \ 5
-\tabularnewline
-\hline
-5  & 
-Using the system would make it easier for me to find information without access to the internet  & 
-1 \ 2 \ 3 \ 4 \ 5
-\tabularnewline
-\hline
-6  & 
-I would find the system useful in day-to-day life when without access to the internet  & 
-1 \ 2 \ 3 \ 4 \ 5
-\tabularnewline
-\hline
-7  & 
-Learning to operate the system was easy for me  & 
-1 \ 2 \ 3 \ 4 \ 5
-\tabularnewline
-\hline
-8  & 
-I would find it easy to get the system to do what I want it to do  & 
-1 \ 2 \ 3 \ 4 \ 5
-\tabularnewline
-\hline
-9  & 
-My interaction with the system would be clear and understandable  & 
-1 \ 2 \ 3 \ 4 \ 5
-\tabularnewline
-\hline
-10  & 
-I found the system to be flexible to interact with  & 
-1 \ 2 \ 3 \ 4 \ 5
-\tabularnewline
-\hline
-11  & 
-It would be easy for me to become skilful at using the system  & 
-1 \ 2 \ 3 \ 4 \ 5
-\tabularnewline
-\hline
-12  & 
-I found the system easy to use & 
-1 \ 2 \ 3 \ 4 \ 5
-\tabularnewline
-\hline
-13  & 
-The information returned was useful, relevant, and answered the question asked & 
-1 \ 2 \ 3 \ 4 \ 5
-\tabularnewline
-\hline
-14  & 
-I trust the answers returned by this application & 
-1 \ 2 \ 3 \ 4 \ 5
-\tabularnewline
-\hline
-\end{tabular}
-
-\vspace{10 mm}
-
-For the researcher: Participant ID: \textunderscore\textunderscore\textunderscore\textunderscore\textunderscore
+\includepdf[pages={1,2}]{Questionnaire_3.pdf}
 
 
 
