@@ -336,14 +336,19 @@ Iterative development has been chosen as the model that this project will use, b
   \item The Iterative development model can be implemented effectively by a single developer, and supports the adjustment of requirements and implementation in each iteration of the cycle.
 \end{enumerate}
 
-
 \newpage
 \chapter{Method and Requirements}
 \label{sec:method}
 
 \section{Plan for Software Development}
-%TODO start writing this!
-The Iterative Development Model was selected in Section \ref{sec:developmentLifeCycleSummary}.  Therefore, the development of this service will follow the principles set forth in this process.
+\label{sec:planForSoftwareDevelopment}
+The Iterative Development Model was selected in Section \ref{sec:developmentLifeCycleSummary}.  Therefore, the development of this service will follow the principles set forth in this process. Software development will take place in stages representing each iteration of the iterative process.  After each iteration the software will be discussed in a meeting, with a focus on the developed capabilities, quality and any issues. Three iterations were scheduled that mapped to calendar months with the goal of having completed the software by the end of March.
+
+Software development will begin in late December 2014 the first iteration is expected to be complete by the end of January which will demonstrate matching a variable directly by exact name to the Wikipedia API. A testing application will also be developed to aid development. The following additional iterations are planned, although it is expected they will evolve as the software changes and more clarity is achieved with regard to the goals.
+
+During the second iteration running through February semantic analysis and matching of requested properties / keys in the data sources will be added to the application, and additional data sources will be researched and included.
+
+In the final iteration running through March a natural language processing module will be constructed to handle questions in natural form as opposed to using a set syntax as had been used during development. Any additional tools needed to run an experimental evaluation of the software will also be developed.
 
 \section{Requirements}
 \subsection{Use Cases / User Goals}
@@ -674,14 +679,9 @@ To create an HTTP Interface, the latest Web Server Gateway Interface (WSGI) spec
 
 In this project, two tools are needed: a WSGI server, and a framework for writing WSGI applications. Flask will be used for the framework as the author has extensive experience using it and it is compliant with the WSGI standard~\cite{libraryFlask}.
 
-With respect to the WSGI server, many implementations exist such as a simple WSGI server included in Flask~\cite{libraryFlask} called Werkzeug~\cite{libraryWerkzeug}, and the Gevent WSGI server~\cite{libraryGevent}.  Support for multiple concurrent HTTP connections is not a requirement in the WSGI specification, and so some WSGI servers such as the implementation of Werkzeug in Flask do not support this.
+With respect to the WSGI server, many implementations exist such as a simple WSGI server included in Flask~\cite{libraryFlask} called Werkzeug~\cite{libraryWerkzeug}, and the Gevent WSGI server~\cite{libraryGevent}.  Support for multiple concurrent HTTP connections is not a requirement in the WSGI specification, and so some WSGI servers such as the implementation of Werkzeug in Flask do not support this even though Werkzeug does natively support processing multiple HTTP requests concurrently. It does this by specifically enabling threading and increasing the default maximum number of processes from one~\cite{werkzeugThreading}. The implementation of Werkzeug in Flask has these disabled in the source code because Flask uses thread-local storage (memory that is local to a single thread) and so cannot support concurrent HTTP requests on new threads~\cite{flaskThreading}.
 
-Werkzeug does support processing multiple HTTP requests concurrently by specifically enabling threading and increasing the default maximum number of processes from one~\cite{werkzeugThreading}. However, the implementation of Werkzeug in Flask has these disabled in the source code because Flask uses thread-local storage (memory that is local to a single thread) and so cannot support concurrent HTTP requests on new threads~\cite{flaskThreading}.
-
- Gevent does support concurrent HTTP connections~\cite{geventImplementingServers}\footnote{Gevent using the Greenlet library~\cite{libraryGreenlet}, which provides a notion of micro-threading (coroutines). When a new HTTP request is received, Gevent creates a new Greenlet, thus preventing the main thread been blocked and allowing multiple concurrent HTTP requests. The creation of the Greenlet is described in the preceeding reference(\cite{geventImplementingServers}).} and so will be used in this project.
-
-\marginnote{Lilian: Should I work these footnotes into the main text?}
-% TODO Work these footnotes into the main text?
+A library called Gevent will be used to replace Werkzeug in Flask as it does support concurrent HTTP connections~\cite{geventImplementingServers} using using the Greenlet library~\cite{libraryGreenlet}, which provides a notion of micro-threading (coroutines). When a new HTTP request is received, Gevent creates a new Greenlet, thus preventing the main thread been blocked and allowing multiple concurrent HTTP requests. The creation of the Greenlet is described in the preceding reference(\cite{geventImplementingServers}). 
 
 \subsubsection{Sending SMS}
 There are a number of SMS providers with HTTP gateways available to choose from, all of which are similar. For this project, the provider must match the following criteria:
@@ -739,7 +739,7 @@ Code used within this project and discussed in this section is located in the fo
 \end{itemize}
 
 \section{Implementation Overview}
-As discussed in section \ref{sec:method}, the implementation was completed whilst following the iterative development process. Software development took places in stages which represented each iteration, and after each iteration a version of the software was demonstrated in a weekly meeting. In these meetings, the software's capabilities and success rate were discussed, and requirements were re-evaluated based on progress. Ideas for expansions to the software (for example, the Natural Language Processing, which was not in the original plan) were also discussed.
+As discussed in section \ref{sec:developmentLifeCycleSummary}, the implementation was completed whilst following the iterative development process. Software development took places in stages which represented each iteration, and after each iteration a version of the software was demonstrated in a weekly meeting. In these meetings, the software's capabilities and success rate were discussed, and requirements were re-evaluated based on progress. Ideas for expansions to the software (for example, the Natural Language Processing, which was not in the original plan) were also discussed.
 
 The software has been constructed in a modular manner to allow easy future expansion and modification.
 
@@ -787,6 +787,7 @@ The final step in the process is to identify the property that a user is request
 Having called both \texttt{extractEntities()} and \texttt{stripToProperty()}, the nlp module packages these results into a dictionary and returns them as the processed representation of the question text.
 
 \section{Implementation of answer location system}
+\label{sec:implementationOfAnswerLocationSys}
 In this section, a description of the process followed to answer a question about a property of a geographical entity is presented. 
 
 After having identified the place and the property of that place in the question text using the nlp module, the application must locate the value of that property for that place. This is done in the \texttt{sourceProcessor} module, which collates data from the data sources and then attempts to identify from those sources an answer to the user's question.
@@ -806,6 +807,21 @@ Initially it was planned to compare questions to historical highly rated questio
 The comparison of question texts is also done in the \texttt{compare} module which contains a function \texttt{similarityOfQuestion()}. This function uses the Dandelion~\cite{serviceDandelionSim} similarity API to compute the semantic similarity of two longer pieces of text such as questions to the application.
 
 \section{Implementation of rating and learning system}
+\label{sec:implementationRatingLearningSys}
+When a user asks a question and an answer is found the function \texttt{updateUserWithLastQuestion()} is called. This stores the text of the question, the requested property interpreted from the question text, the geographical entity name and the property returned from the data source in an object called \texttt{lastQuestion} inside the \texttt{user} object. This means a record of the last question a user asked is always kept by system, allowing them to send another message to the system relating to their previous question. 
+
+This is used by the ratings system. When a message is received of the form \texttt{rate X} (where X is an integer and in the inclusive range of 1 and 5) the system can identify what the last question was and what parameters it should be applying the rating to.
+
+Two ratings are stored by the system: the \texttt{Keyword Pair Quality Ratings} and \textt{Ranked Previous Answers}. The \texttt{Keyword Pair Quality Ratings} is a measure of the quality of a semantic matching between the desired key in the user's question and the key returned from the data source. In the case that the answer returned to a user is unrelated to what they asked, for example they asked about the height of a building and were given the name of the city it is in, the wrong key from the data source will have been returned. After receiving a low rating, the application can learn that the key requested by the user does not map to the key that was originally been returned as the answer (in this example, it can learn that the key \texttt{height} does not semantically match a key called \text{city_name}).
+
+The second set of ratings, \textt{Ranked Previous Answers}, are only stored within the database and are not used to answer questions. This is due to time constraints within the project, but it was decided that as it was possible to start collecting the ratings this should be done so that in future work a pre-existing dataset already exists to use rather than having to wait to collect more user ratings. An explanation of how this would be used is provided at the end of section \ref{sec:implementationOfAnswerLocationSys}.
+
+Ratings are stored using the function \texttt{adjustRanking()}, which is called with the the following parameters from the question been rated (the last question): the full question text, the answer given, the property quested in the question of an entity, the property sent to the user from the data source, and finally the actual rating number. The \texttt{adjustRanking()} function first inserts a record into the \textt{Ranked Previous Answers collection containing the question text, the answer given and the rating the user gave. Next, the function checks if any rating records already exist in the \texttt{Keyword Pair Quality Ratings} collection for the requested and the given keyword. If they do the document is retrieved, or if they don't a new document is created. In that record, the rating is added to the \texttt{ratings} list, and the document is updated/saved back into the collection.
+
+How keyword matching used in calculation
+
+variable adjustments
+
 % TODO XXX - write this
 
 \section{Implementation of Testing Client}
@@ -853,6 +869,8 @@ Fixes were made to the software before running the full experimental evaluation 
 % TODO XXX - write this
  - Tweaking the constants for best results
  - Excluding wikipedia due to dirty data
+ 
+ \ref{sec:planForSoftwareDevelopment} - stuck to the iterative plan.
  
 Key issues:
 
