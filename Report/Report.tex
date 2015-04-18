@@ -669,6 +669,8 @@ As previously discussed section \ref{subsubsec:databaseTechnology }, MongoDB sep
 \end{table}
 
 \subsection{Libraries}
+In this section the libraries that were used in the server application in this project are presented. These include the libraries for querying the database, creating an HTTP server and sending SMS.
+
 \subsubsection{Database Querying}
 MongoDB comes with a Python client called PyMongo~\cite{libraryPyMongo}, which is developed by the same developers as MongoDB.  It is the recommended tool to interact with a MongoDB database~\cite{pyMongoDoc} and has good community support, so it will be used in this project.
 
@@ -808,21 +810,45 @@ The comparison of question texts is also done in the \texttt{compare} module whi
 
 \section{Implementation of rating and learning system}
 \label{sec:implementationRatingLearningSys}
-When a user asks a question and an answer is found the function \texttt{updateUserWithLastQuestion()} is called. This stores the text of the question, the requested property interpreted from the question text, the geographical entity name and the property returned from the data source in an object called \texttt{lastQuestion} inside the \texttt{user} object. This means a record of the last question a user asked is always kept by system, allowing them to send another message to the system relating to their previous question. 
+
+The application developed uses user ratings of answers to questions to learn about the quality of answers and to improve future answers. The implementation of this can be split into two sections: the collection of ratings and the use of ratings in answering collections.
+
+\sloppy
+\subsection{Collecting Ratings}
+\label{subsec:collectingRatings}
+
+When a user asks a question and an answer is found the function \texttt{updateUserWithLastQuestion()} is called. This stores the text of the question, the requested property interpreted from the question text, the geographical entity name and the name of the property returned from the data source in an object called \texttt{lastQuestion} inside the \texttt{user} object. This means a record of the last question a user asked is always kept by system, allowing them to send another message to the system that relates to their previous question. 
 
 This is used by the ratings system. When a message is received of the form \texttt{rate X} (where X is an integer and in the inclusive range of 1 and 5) the system can identify what the last question was and what parameters it should be applying the rating to.
 
-Two ratings are stored by the system: the \texttt{Keyword Pair Quality Ratings} and \texttt{Ranked Previous Answers}. The \texttt{Keyword Pair Quality Ratings} is a measure of the quality of a semantic matching between the desired key in the user's question and the key returned from the data source. In the case that the answer returned to a user is unrelated to what they asked, for example they asked about the height of a building and were given the name of the city it is in, the wrong key from the data source will have been returned. After receiving a low rating, the application can learn that the key requested by the user does not map to the key that was originally been returned as the answer (in this example, it can learn that the key \texttt{height} does not semantically match a key called \texttt{city\_name}).
+Two ratings are stored by the system: the \texttt{Keyword Pair Quality Ratings} and \texttt{Ranked Previous Answers}. The \texttt{Keyword Pair Quality Ratings} is a measure of the quality of a semantic matching between the desired key in the user's question and the key returned from the data source. In the case that the answer returned to a user is unrelated to what they asked, for example they asked about the height of a building and were given the name of the city it is in, the wrong key from the data source will have been returned. After receiving a low rating, the application learns that the key requested by the user does not map to the key that was originally been returned as the answer (in this example, it can learn that the key \texttt{height} does not semantically match a key called \texttt{city\_name}).
 
-The second set of ratings, \texttt{Ranked Previous Answers}, are only stored within the database and are not used to answer questions. This is due to time constraints within the project, but it was decided that as it was possible to start collecting the ratings this should be done so that in future work a pre-existing dataset already exists to use rather than having to wait to collect more user ratings. An explanation of how this would be used is provided at the end of section \ref{sec:implementationOfAnswerLocationSys}.
+The second set of ratings, \texttt{Ranked Previous Answers}, are only stored within the database and are not used to answer questions. This is due to time constraints within the project as implementing this would have taken a significant amount of time. However it was decided that even though it was not possible to provide answers based off of \texttt{Ranked Previous Answers} the collection should still be constructed so that in future work a pre-existing dataset already exists to use rather than having to wait to collect more user ratings. An explanation of how this would be used is provided at the end of section \ref{sec:implementationOfAnswerLocationSys}.
 
-Ratings are stored using the function \texttt{adjustRanking()}, which is called with the the following parameters from the question been rated (the last question): the full question text, the answer given, the property quested in the question of an entity, the property sent to the user from the data source, and finally the actual rating number. The \texttt{adjustRanking()} function first inserts a record into the \texttt{Ranked Previous Answers} collection containing the question text, the answer given and the rating the user gave. Next, the function checks if any rating records already exist in the \texttt{Keyword Pair Quality Ratings} collection for the requested and the given keyword. If they do the document is retrieved, or if they don't a new document is created. In that record, the rating is added to the \texttt{ratings} list, and the document is updated/saved back into the collection.
+Ratings are stored using the function \texttt{adjustRanking()}, which is called with the the following parameters from the question been rated (the last question): the full question text; the answer given; the property quested in the question of an entity; the property sent to the user from the data source; and finally the actual rating number. The \texttt{adjustRanking()} function first inserts a record into the \texttt{Ranked Previous Answers} collection containing the question text, the answer given and the rating the user gave. Next, the function checks if any rating records already exist in the \texttt{Keyword Pair Quality Ratings} collection for the requested and the given keyword. If they do the document is retrieved, or if they don't a new document is created. In that record, the rating is added to the \texttt{ratings} list, and the document is updated/saved back into the collection.
+
+\subsection{Using ratings to improve answer quality}
+\label{subsec:usingRatings}
+
+Rating are used in the \texttt{sourceProcessor} module to provide answers of a higher quality to users. When the similarity score has been computed for a pair of properties using the \texttt{compare} module the function \texttt{adjustSimilarityWithRanking()} is called. This takes the similarity score that was returned, the property currently been inspected in the data source and the property that the user requested. The \texttt{adjustSimilarityWithRanking()} function then does a lookup in the \texttt{wordReferencePairs} collection using the two properties to identify if any ratings exist between the requested keyword and the keyword found in the data source. If no ratings do exist the similarity score is returned unchanged. If there are ratings, adjustments are made to the similarity score to take into account whether the property in the data source has been rated as providing a good answer or a bad answer in the past. This is done by applying a multiplier to the similarity score for each rating. 
+
+The multipliers selected were driven by the goal to see an improvement during the experimental evaluation, such that a single answer would be replaced by another answer within 2-3 ratings........
+
+The adjustments applied followed the schema 
+
+% TODO - where the scores come from
 
 How keyword matching used in calculation
 
 variable adjustments
 
-% TODO XXX - write this
+A potential issue with the ratings system is that of handling incorrect and anomalous ratings, whether caused by user error or malicious attempt to damage the system. If the matching of pair of keys has the ratings \texttt{[4,5,1,4]} it appears that the rating of \texttt{1} is anomalous and should be ignored from the adjustment process. This is done through the use of the standard deviation of the group, which is calculated in the function \texttt{removeOutliers()}. The standard deviation of the group of ratings is computed to calculate the spread of the majority of results. Techniques exist for choosing the multiple of the standard deviation from the mean that should be used for finding outliers by choosing a desired significance level, such as Grubbs' test~\cite{grubbs1969procedures}. However, as the range was limited and small with only five possible values it was decided that to keep the implementation simple and conserve time that a single multiple of the standard deviation would be used constantly.
+
+The multiple of \texttt{1} was chosen for the standard deviation based on numeric experimentation meaning that results that are outside of the range of one standard deviation from the mean are then excluded from the adjustment process. Where the standard deviation from the mean is a decimal, it is rounded to its nearest integer to establish the range of ratings that will be included in the computation. The value of one standard deviation was selected as the range of ratings was so small (with only five possible values for a rating) that a larger multiple of the standard deviation made it likely to include anomalous data. This is shown with the above example data, where the mean is 3.5 and the standard deviation is 1.5, meaning that the range of valid ratings is 2 through 5 inclusive which successfully excludes the outlying result. If the multiple for standard deviation was increased to 1.5 or even the commonly used value of 2 the range from the mean would increase to 2.25 or 3.0 respectively, meaning that the range of valid ratings would be 1 (rounded from 1.25 for a standard deviation multiplier of 1.5) through 5, which includes the incorrect value.
+
+Using this method there are situations where a result which is perhaps not an outlier (depending on the method used to categorise it) is excluded. An example of this is if a pair of keys has the ratings \texttt{[4,4,4,4,4,4,5]}. It's reasonable to expect that the there is some variation in the opinion of users as to whether the answer provided is excellent and so scores \texttt{5} or just good and so scores a \texttt{4}.  However in this situation the give is excluded using the aforementioned standard deviation of \texttt{1}. In this group of ratings the mean is \texttt{4.14} and the standard deviation is \texttt{0.35}, which will mean the included range of valid ratings is only those with value \texttt{4}.
+
+% TODO - write about cortical 0.2
 
 \section{Implementation of Testing Client}
 \label{sec:implementationTestingClient}
