@@ -78,13 +78,17 @@ This project raises ethical issues relating to the responsibility of providing a
 \newpage
 
 \chapter*{Statement of Ethics}
-% TODO write this
-{\bf Pretty much the most important part - write this!}
- - data protection - users information irreversibly obscured and protected in the database to protect them in case of database hack.
- - data protection - supervisor had root password to the server.
- - experiment - participants were asked to sign consent forms, these were stored with supervisor.
- - after experient, all participants were anonymised by a unique participant id, and the only mapping of these to names is the consent form, which the supervisor has
- - ethics of providing information - steps taken to try and prevent wrong info been returned
+\marginnote{Lilian: Please review this}
+
+At the end of this project an experimental evaluation was carried out which involved participants using the system developed and completing a questionnaire. Informed consent was given by each participant before they decided to partake in the experiment in the form of a consent form. Participants were able to withdraw at any time without providing a reason and were reminded of this on the consent form. The consent form explained exactly the data that would be collected from participants who took part and informed participants that they were able to withdraw their data after the experiment. It also informed participants exactly who would have access to the data collected and the form they would have access to it in. In this case participants individual responses were kept confidential and their identify (name) only collected on the consent form, after which a new identifying number was assigned to each participant which linked the participants name on the consent form to the data collected. The consent forms were kept locked in a cupboard during the 4 days that the experiment was been run, and upon competition they were transferred to the Supervisor for safe keeping in University facilities. The consent forms are the only method of identifying a participant. A copy of the consent form, questionnaire and instructions for the experiment can be seen in Appendices \ref{sec:appendixConsentForm}, \ref{sec:appendixExperimentalInstructions} and \ref{sec:appendixQuestionnaire}.
+
+The root credentials for the server used to host the application were provided to the Supervisor in advance of any data collection. This allows the University access to all information in the system for data protection purposes. After the competition of the experiment a dump of the data in the database was also provided to the Supervisor for safe keeping.
+
+Close attention to ethical issues was also paid during the design and development of the software. Although phone numbers are used to uniquely identify users of the system, they are never directly stored in the database: instead only an obscured representation of the phone number is stored, which makes it is impossible to gain the identity of a user from the database, which is particularly useful in the event that the database is hacked.  Additionally, service providers who would carry information over SMS were researched to assess their reputation as they would be transmitting information to private individuals.
+
+This system was only developed for research purposes, but if it were to be extended to be used outside of this context a feature should be built in to allow a user to delete all data corresponding to them via SMS to comply with data protection regulations.
+
+Finally, it was noted in early research that there is a ethical responsibility to only provide correct information to a user in response to a question. An attempt is made to significantly reduce the chance of incorrect information been sent to a user by assessing the quality of a potential answer and checking that it is above a quality threshold. This check compares the information that is been returned to the information requested by the user to check they are related and only if it passes this test is the answer sent to the user.
 
 \newpage
 \chapter*{Acknowledgement}
@@ -731,7 +735,10 @@ Results from the Dandelion API were checked against the \texttt{Place} class in 
 \newpage
 \chapter{Implementation}
 \label{sec:implementation}
-This section will contain information on how data is stored, the structure of databases, and the format of and method through which data is sent to an SMS provider.
+This section will describe the implementation of the server application and the clients developed for testing and evaluation. In the server application focus will be given to the tools and services used, the natural language processing system, the method used to identify answers and the machine learning aspects of the application.
+
+% TODO - need to talk about Twilio
+%, and the format of and method through which data is sent to an SMS provider.
 
 Code used within this project and discussed in this section is located in the following Git repositories:
 \begin{itemize}
@@ -850,8 +857,6 @@ The multiple of \texttt{1} was chosen for the standard deviation based on numeri
 
 Using this method there are situations where a result which is perhaps not an outlier (depending on the method used to categorise it) is excluded. An example of this is if a pair of keys has the ratings \texttt{[4,4,4,4,4,4,5]}. It's reasonable to expect that the there is some variation in the opinion of users as to whether the answer provided is excellent and so scores \texttt{5} or just good and so scores a \texttt{4}.  However in this situation the give is excluded using the aforementioned standard deviation of \texttt{1}. In this group of ratings the mean is \texttt{4.14} and the standard deviation is \texttt{0.35}, which will mean the included range of valid ratings is only those with value \texttt{4}.
 
-% TODO - write about cortical 0.2
-
 \section{Implementation of Testing Client}
 \label{sec:implementationTestingClient}
 To aid development of the server application, a desktop client application was developed which interacted with the HTTP interface of the server application to allow queries to be tested quickly as the software was developed. The application, shown in Figure \ref{fig:devClient}, allows both the user's phone number and the question parameters to be set and sent to the server. The raw returned output is then displayed regardless of whether this was an answer or an error, thus making testing and debugging both quicker and easier. 
@@ -961,7 +966,6 @@ This section's content...
 \chapter{Personas}
 \label{sec:appendixPersonas}
 \section{Nanjala}
-%TODO Add photo
 \subsection{Demographics and Profile}
 \begin{itemize}
   \item Female, aged 15
@@ -974,7 +978,6 @@ In a typical day, Nanjala will rise early to help her family with housework chor
 
 \newpage
 \section{Cedric}
-%TODO Add photo
 \subsection{Demographics and Profile}
 \begin{itemize}
   \item Male, aged 27
