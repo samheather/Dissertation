@@ -841,13 +841,23 @@ Ratings are stored using the function \texttt{adjustRanking()}, which is called 
 
 Rating are used in the \texttt{sourceProcessor} module to provide answers of a higher quality to users. When the similarity score has been computed for a pair of properties using the \texttt{compare} module the function \texttt{adjustSimilarityWithRanking()} is called. This takes the similarity score that was returned, the property currently been inspected in the data source and the property that the user requested. The \texttt{adjustSimilarityWithRanking()} function then does a lookup in the \texttt{wordReferencePairs} collection using the two properties to identify if any ratings exist between the requested keyword and the keyword found in the data source. If no ratings do exist the similarity score is returned unchanged. If there are ratings, adjustments are made to the similarity score to take into account whether the property in the data source has been rated as providing a good answer or a bad answer in the past. This is done by applying a multiplier to the similarity score for each rating. 
 
-The multipliers selected were driven by the goal to see an improvement during the experimental evaluation, such that a single answer would be replaced by another answer within 2-3 ratings........
+The multipliers selected were driven by the goal to see an improvement during the experimental evaluation, such that a single answer would be replaced by another answer within the course of the experiment. The following values were used in the implementation:
 
-The adjustments applied followed the schema 
+\begin{itemize}
+  \item For each rating of \texttt{1}: reduce the semantic similarity by 5\% (multiply by 0.95)
+  \item For each rating of \texttt{2}: reduce the semantic similarity by 2\% (multiply by 0.98)
+  \item For each rating of \texttt{3}: do not change the semantic similarity
+  \item For each rating of \texttt{4}: increase the semantic similarity by 2\% (multiply by 1.02)
+  \item For each rating of \texttt{5}: increase the semantic similarity by 5\% (multiply by 1.05)  
+\end{itemize}
+
+These values were found using trial and adjustment but were tested with two particular use cases: 
+
+When \texttt{population} is requested, the value for \texttt{areaUrban} is returned with semantic similarity of 0.30488 (5 significant figures) instead of \texttt{height\_max}, which also has a semantic similarity of 0.30488.
+
+When the property \texttt{tall} is requested of the Leaning Tower of Pisa (in the context of \texttt{how tall is...}), the value for \texttt{architect} is returned with semantic similarity of 0.25305 XXXXXX instead of \texttt{population\_urban}, which also has a semantic similarity of 0.30488.
 
 % TODO - where the scores come from
-
-How keyword matching used in calculation
 
 variable adjustments
 
@@ -914,11 +924,37 @@ Key issues:
  - can't do subjective stuff 'depth of the deepest ocean'
  
  - can't do properties that are stored deep within the ontology.
+ 
+ - translation not done (here or extending this project?)
 
 \newpage
 \chapter{Results}
 \label{sec:results}
-This section's content...
+
+In this chapter the results from the experiment will be discussed with information on the pool of participants used.
+
+\section{Participants}
+\label{sec:participants}
+
+21 participants were sourced to take part in the experimental evaluation of this project. Participants were mainly sourced from the University of York however a small number did come from other locations such as Bristol when the researcher made an unrelated trip there.
+
+Participants were heavily skewed towards young students: 17 participants identified as been aged 18-24 and 14 as students. Of the remaining participants, two were aged in the range 25-34 and the remaining two in the range 45-54.
+
+Three of the non-student participants identified as been self-employed, one identified as been employed and one as retired. Additionally, two participants identified multiple occupations: one selected employed and self-employed, whilst another indicated self-employed and student.
+
+All participants in the experiment were regular internet users with all participants identifying their typical Internet usage been 'multiple times per day' or greater. 7 participants selected 'multiple times per day' whilst 14 selected 'more than once per hour'.
+
+\section{Results}
+\label{sec:results}
+
+The criteria that would be measured in this experimental evaluation was set out in section \ref{sec:evaluatingSuccess}. The data was inspected from two viewpoints: the usefulness of the application and the usability of the application.
+
+% 2x comments about units
+
+\section{Data loss}
+\label{sec:dataLoss}
+
+Log files were kept during the experiment containing the questions asked, answers provided and the ratings from a user to allow for the possibility of further analysis, such as the identification of specific questions that caused users a problem or questions where the answer returned changed as more participants took part. However due to a software bug log files for participants up until participant 14 were not stored.
 
 \newpage
 \chapter{Discussion}
