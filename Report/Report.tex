@@ -33,6 +33,8 @@
 \usepackage{array}
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 
+%\usepackage[margin=1.3in]{geometry}
+
 % Paragraph that starts on a new line.
 %\newcommand{\subsubsection}[1]{\paragraph{#1}\mbox{}\\}
 
@@ -45,6 +47,8 @@
 \setlength{\parskip}{0.6em}
 
 \begin{document}
+
+\pagenumbering{Roman}
 
 \title{Bringing Knowledge Through AI and SMS}
 \author{Sam Heather\\
@@ -70,8 +74,6 @@ This project raises ethical issues relating to the responsibility of providing a
 \newpage
 
 \newpage
-\tableofcontents
-\newpage
 \listoffigures
 \newpage
 \listoftables
@@ -80,7 +82,7 @@ This project raises ethical issues relating to the responsibility of providing a
 \chapter*{Statement of Ethics}
 \marginnote{Lilian: Please review this}
 
-At the end of this project, an experimental evaluation was carried out which involved participants using the system developed and completing a questionnaire about their experience. Informed consent was given by each participant before they decided to partake in the experiment using a consent form. Participants were able to withdraw at any time without providing a reason and were reminded of this on the consent form. The consent form explained that the data would be collected from the participants and stated that they were able to withdraw their data after the experiment. It also informed participants exactly who would have access to the data collected and the format that they would have access to it in, specifically that it would be anonymised and kept confidential with the single exception of the Supervisor. In this case, participants’ individual responses were kept confidential and their name was only collected on the consent form, after which a new identifying number was assigned to each participant which linked the participants’ name on the consent form to the data collected. The consent forms were kept locked in a cupboard during the 4 days that the experiment was run, and upon completion they were transferred to the Supervisor for safe keeping in University facilities. The consent forms are the only method of identifying a participant. A copy of the consent form, questionnaire and instructions for the experiment can be seen in Appendices \ref{sec:appendixConsentForm}, \ref{sec:appendixExperimentalInstructions} and \ref{sec:appendixQuestionnaire}.
+At the end of this project, an experimental evaluation was carried out which involved participants using the system developed and completing a questionnaire about their experience. Informed consent was given by each participant before they decided to partake in the experiment using a consent form. Participants were able to withdraw at any time without providing a reason and were reminded of this on the consent form. The consent form explained that the data would be collected from the participants and stated that they were able to withdraw their data after the experiment. It also informed participants exactly who would have access to the data collected and the format that they would have access to it in, specifically that it would be anonymised and kept confidential with the single exception of the Supervisor. In this case, participants' individual responses were kept confidential and their name was only collected on the consent form, after which a new identifying number was assigned to each participant which linked the participants' name on the consent form to the data collected. The consent forms were kept locked in a cupboard during the 4 days that the experiment was run, and upon completion they were transferred to the Supervisor for safe keeping in University facilities. The consent forms are the only method of identifying a participant. A copy of the consent form, questionnaire and instructions for the experiment can be seen in Appendices \ref{sec:appendixConsentForm}, \ref{sec:appendixExperimentalInstructions} and \ref{sec:appendixQuestionnaire}.
 
 The root credentials for the server used to host the application were provided to the Supervisor in advance of any data collection. This allows the University access to all information in the system for data protection purposes. After the competition of the experiment a dump of the data in the database was also provided to the Supervisor for safe keeping.
 
@@ -99,6 +101,7 @@ The author would like to acknowledge the following individuals for their contrib
 \begin{itemize}
   \item SpazioDati (http://spaziodati.eu/) for providing extended access to the Dandelion Text Semantics API at no extra charge.
   \item Rackspace for providing server infrastructure.
+  \item Emma Rizkallah for providing guidance on writing style and reviewing this report.
   \item Julie Markham and Nicholas Hopper, with whom the author collaborated with on Shy, the mobile application that inspired this project.
   \item Lilian Blot, for his time and effort spent supervising and providing guidance for this project.
 \end{itemize}
@@ -106,9 +109,11 @@ The author would like to acknowledge the following individuals for their contrib
 \newpage
 \chapter{Introduction}
 
+\pagenumbering{arabic}
+
 \section{Background of this project}
 
-The inspiration for this project originates from a project the author undertook in September 2014 whilst attending Yacht Hack, a week-long hackathon on a Yacht in Croatia\footnote{http://toughhackers.com/yacht-hack-2014/}.  The author co-created a project called Shy to prototype a mobile application that would facilitate the immediate answering of questions that fall within certain categories using a knowledge base, simple machine learning and profiling of users based on their usage history.
+The inspiration for this project originates from a project the author undertook in September 2014 whilst attending Yacht Hack, a week-long hackathon on a Yacht in Croatia~\cite{yachtHack}.  The author co-created a project called Shy to prototype a mobile application that would facilitate the immediate answering of questions that fall within certain categories using a knowledge base, simple machine learning and profiling of users based on their usage history.
 
 One of the initial goals of Shy was to bring knowledge via m-learning\footnote{M-Learning: learning using tools available on a mobile device} as opposed to e-learning\footnote{E-Learning: learning conducted online, usually with the help of a computer}.  This is because m-learning systems are available to a much larger demographic of people, because the hardware (mobile devices, commonly phones) is becoming ever cheaper and more accessible.
 
@@ -855,7 +860,7 @@ The multipliers selected were driven by the goal to see an improvement during th
 
 These values were found using trial and adjustment but were tested with two particular use cases: 
 
-When \texttt{population} is requested, the value for \texttt{areaUrban} is returned with semantic similarity of 0.30488 (5 significant figures) instead of \texttt{height\_max}, which also has a semantic similarity of 0.30488.
+When \texttt{population} is requested, the value for \texttt{areaUrban} is returned with semantic similarity of 0.30488 (5 significant figures) instead of \texttt{population\_urban}, which also has a semantic similarity of 0.30488.
 
 When the property \texttt{tall} is requested of the Leaning Tower of Pisa (in the context of \texttt{how tall is...}), the value for \texttt{architect} is returned with semantic similarity of 0.25305 XXXXXX instead of \texttt{population\_urban}, which also has a semantic similarity of 0.30488.
 
@@ -949,8 +954,7 @@ All participants in the experiment were regular internet users with all particip
 \section{Results}
 \label{sec:results}
 
-In this section the results from the experiment are presented and analysed. The key piece of research been investigated is whether the application learns effectively, although results for general usefulness and usability are also presented. The raw data that has been analysed below is included in Appendix XYZ.
-% TODO ask lilian what to do with raw data? and above line: ^
+In this section the results from the experiment are presented and analysed. The key piece of research been investigated is whether the application learns effectively, although results for general usefulness and usability are also presented.
 
 \subsection{Usefulness}
 \label{subsec:resultsUsefulness}
@@ -991,7 +995,7 @@ Although these can't be included in any analysis due to not asking for a comment
 \section{Data loss}
 \label{sec:dataLoss}
 
-Log files were kept during the experiment containing the questions asked, answers provided and the ratings from a user to allow for the possibility of further analysis, such as the identification of specific questions that caused users a problem or questions where the answer returned changed as more participants took part. However due to a software bug log files for participants up until participant number 14 were not stored.
+Log files were kept during the experiment containing the questions asked, answers provided and the ratings from a user to allow for the possibility of further analysis, such as the identification of specific questions that caused users a problem or questions where the answer returned changed as more participants took part. However due to a bug log files for participants up until participant number 14 were not stored. The seven remaining log files are too small a dataset to analyse.
 
 \newpage
 \chapter{Discussion}
