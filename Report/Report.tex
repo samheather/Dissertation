@@ -80,15 +80,17 @@ This project raises ethical issues relating to the responsibility of providing a
 \chapter*{Statement of Ethics}
 \marginnote{Lilian: Please review this}
 
-At the end of this project an experimental evaluation was carried out which involved participants using the system developed and completing a questionnaire. Informed consent was given by each participant before they decided to partake in the experiment in the form of a consent form. Participants were able to withdraw at any time without providing a reason and were reminded of this on the consent form. The consent form explained exactly the data that would be collected from participants who took part and informed participants that they were able to withdraw their data after the experiment. It also informed participants exactly who would have access to the data collected and the form they would have access to it in. In this case participants individual responses were kept confidential and their identify (name) only collected on the consent form, after which a new identifying number was assigned to each participant which linked the participants name on the consent form to the data collected. The consent forms were kept locked in a cupboard during the 4 days that the experiment was been run, and upon competition they were transferred to the Supervisor for safe keeping in University facilities. The consent forms are the only method of identifying a participant. A copy of the consent form, questionnaire and instructions for the experiment can be seen in Appendices \ref{sec:appendixConsentForm}, \ref{sec:appendixExperimentalInstructions} and \ref{sec:appendixQuestionnaire}.
+At the end of this project, an experimental evaluation was carried out which involved participants using the system developed and completing a questionnaire about their experience. Informed consent was given by each participant before they decided to partake in the experiment using a consent form. Participants were able to withdraw at any time without providing a reason and were reminded of this on the consent form. The consent form explained that the data would be collected from the participants and stated that they were able to withdraw their data after the experiment. It also informed participants exactly who would have access to the data collected and the format that they would have access to it in, specifically that it would be anonymised and kept confidential with the single exception of the Supervisor. In this case, participants’ individual responses were kept confidential and their name was only collected on the consent form, after which a new identifying number was assigned to each participant which linked the participants’ name on the consent form to the data collected. The consent forms were kept locked in a cupboard during the 4 days that the experiment was run, and upon completion they were transferred to the Supervisor for safe keeping in University facilities. The consent forms are the only method of identifying a participant. A copy of the consent form, questionnaire and instructions for the experiment can be seen in Appendices \ref{sec:appendixConsentForm}, \ref{sec:appendixExperimentalInstructions} and \ref{sec:appendixQuestionnaire}.
 
 The root credentials for the server used to host the application were provided to the Supervisor in advance of any data collection. This allows the University access to all information in the system for data protection purposes. After the competition of the experiment a dump of the data in the database was also provided to the Supervisor for safe keeping.
 
-Close attention to ethical issues was also paid during the design and development of the software. Although phone numbers are used to uniquely identify users of the system, they are never directly stored in the database: instead only an obscured representation of the phone number is stored, which makes it is impossible to gain the identity of a user from the database, which is particularly useful in the event that the database is hacked.  Additionally, service providers who would carry information over SMS were researched to assess their reputation as they would be transmitting information to private individuals.
+Close attention to ethical issues was also paid during the design and development of the software. Although phone numbers are used to uniquely identify users of the system, they are never directly stored in the database: instead only an obscured representation of the phone number is stored, which is generated using an industry standard one-way hashing function. This means that it is impossible to gain the identity of a user from the database, protecting their privacy in the event that the database is hacked.  Additionally, service providers who would carry information over SMS were researched to assess their reputability, as they would be transmitting information to private individuals.
 
-This system was only developed for research purposes, but if it were to be extended to be used outside of this context a feature should be built in to allow a user to delete all data corresponding to them via SMS to comply with data protection regulations.
+This system was only developed for research purposes, but if it were to be extended to be used outside of this context a feature should be built in to allow a user to delete all data corresponding to them via SMS to comply with data protection regulations. This was not done in this project as participants specifically gave consent for information to be collected and they will not have access to the system after the experiment as the server will be shutdown. Participants were provided with the Supervisors contact details which they could use to request the deletion of their data in the future.
 
-Finally, it was noted in early research that there is a ethical responsibility to only provide correct information to a user in response to a question. An attempt is made to significantly reduce the chance of incorrect information been sent to a user by assessing the quality of a potential answer and checking that it is above a quality threshold. This check compares the information that is been returned to the information requested by the user to check they are related and only if it passes this test is the answer sent to the user.
+Initially this project was about providing medical information however the ethical issues were too significant to handle within the parameters of this project. Ethical issues that arose were: information provided in a medical context could lead to a user taking a harmful or life-changing action if the information was incorrect, meaning that the application developed had the potential to cause physical harm; and communicating questions and answers between a user and the service in a secure manner is not possible over SMS, which does not support encryption, meaning user privacy does not meet appropriate standards.
+
+Finally, it was noted in early research that there is an ethical responsibility to only provide correct information to a user in response to a question. An attempt is made to significantly reduce the chance of incorrect information being sent to a user by assessing the quality of a potential answer and checking that it is above a quality threshold. This check compares the information that has been returned to the information requested by the user to make sure that they are related, and only if it passes this test is the answer sent to the user.
 
 \newpage
 \chapter*{Acknowledgement}
@@ -477,7 +479,7 @@ After the experiment, participants will be asked to complete the questionnaire. 
 
 \subsection{Assessing success quantitively}
 \label{subsec:assessingLearning}
-As stated in section \ref{sec:evaluatingSuccess}, the experiment aims to evaluate three goals: the usefulness and quality of the service, its usability and the quality of the machine learning system. In the questionnaire, questions 1 through 6, 13 and 14 investigate the usefulness and quality of the system, whilst questions 7 through 12 investigate the usability of the system. Bearing in mind that this project is heavily constrained with regard to time due to constraints on the nature of it been a university project, it is not expected that the software will be as good as is possible. As such, a positive mean rating for usefulness and quality, and usability, would be deemed a success.
+As stated in section \ref{sec:evaluatingSuccess}, the experiment aims to evaluate three goals: the usefulness and quality of the service, its usability and the quality of the machine learning system. In the questionnaire, questions 1 through 6, 13 and 14 investigate the usefulness and quality of the system, whilst questions 7 through 12 investigate the usability of the system. Bearing in mind that this project is heavily constrained with regard to time due to constraints on the nature of it been a final-year project, it is not expected that the software will be as good as is possible. As such, the system's usefulness and usability will be deemed a success if it scores a significant positive average rating across all users in the questionnaire. The standard deviation of usefulness and usability ratings will also be inspected to judge whether users had a consistent experience or if different users had extremely different views on the software.
 
 The machine leaning will be tested by inspecting the change in usefulness and quality rankings of the system made by users in the questionnaire as more participants use the system and provide ratings. The implementation of the machine learning system will be considered a success if a statistically significant positive trend is found in the usefulness and quality ratings when the ratings are sorted by the number of proceeding participants.
 
@@ -947,14 +949,49 @@ All participants in the experiment were regular internet users with all particip
 \section{Results}
 \label{sec:results}
 
-The criteria that would be measured in this experimental evaluation was set out in section \ref{sec:evaluatingSuccess}. The data was inspected from two viewpoints: the usefulness of the application and the usability of the application.
+In this section the results from the experiment are presented and analysed. The key piece of research been investigated is whether the application learns effectively, although results for general usefulness and usability are also presented. The raw data that has been analysed below is included in Appendix XYZ.
+% TODO ask lilian what to do with raw data? and above line: ^
 
-% 2x comments about units
+\subsection{Usefulness}
+\label{subsec:resultsUsefulness}
+
+The usefulness of the system is measured by questions 1 through 6, 13 and 14 in the questionnaire. In section \ref{sec:evaluatingSuccess} the success criteria for usefulness is defined as a significant positive average rating for the usefulness questions. The average of usefulness ratings was 3.51 (3.s.f.) with a standard deviation of 0.919. This shows a slightly-above neutral rating of the system. One standard deviation of the data from the mean (containing 68\% of the data points) put the usability of the system in the range 2.59 through 4.43, which shows that the data was moderately spaced out in the range - (it was not highly concentrated or well distributed in the range of possible ratings).
+
+\subsection{Usability}
+\label{subsec:resultsUsability}
+
+The usability of the system is measured by questions 7 through 12 in the questionnaire. In section \ref{sec:evaluatingSuccess} the success criteria for usability is defined as a significant positive average rating for the usability questions. The average of usability ratings was 3.46 (3.s.f.) with a standard deviation of 0.810. This shows a slightly-above neutral rating of the system. One standard deviation of the data from the mean (containing 68\% of the data points) put the usability of the system in the range 2.65 through 4.27, which shows that the data was moderately spaced out in the range - (it was not highly concentrated or well distributed in the range of possible ratings).
+
+\subsection{Machine Learning}
+\label{subsec:resultsMachineLearning}
+
+The criteria that would be measured in this experimental evaluation was set out in section \ref{sec:evaluatingSuccess}. The data was inspected from two view points: the usefulness of the application and the usability of the application.
+
+As discussed in section \ref{sec:evaluatingSuccess}, the usefulness will be evaluated according to a positive trend in feedback from participants as the number of participants who have used the application prior to them increases. A mean value of usefulness was calculated using the values from questions 1 through 6, 13 and 14 and plotted. Linear regression was then carried out to identify whether a positive correlation existed showing that participants were indicating they would find the application more useful as more participants used it before them. The Correlation Coefficient for this dataset was 0.506, indicating a moderate positive trend. This implies that the application was learning and its usefulness improving as more participants used it.
+
+A graph shoeing usefulness plotted against the participant number is shown in figure \ref{fig:usefulnessTrend} Using linear regression a line of best fit was added to the graph with the equation $y = 0.075 x + 2.68$.
+
+\begin{figure}[htb] 
+\includegraphics[width=\linewidth]{usefulnessTrend}
+\caption{Graph showing Usefulness as rated by participants against participant ID with a trend line.}
+\label{fig:usefulnessTrend}
+\end{figure}
+
+\subsection{Additional comments from particiapnts}
+\label{subsec:resultsComments}
+
+No space was made on the questionnaire for participants to write additional comments or thoughts on the system, however two participants did make a comment at the end of their forms, both of which addressed a specific issue. These comments were:
+
+\blockquote{I thought the detail generated from the answers to the describe questions were really detailed and informative, although displaying the units in other answers would have been helpful.} - Participant 14.
+
+\blockquote{Answers with units would be helpful to understand values given as answers} - Participant 9.
+
+Although these can't be included in any analysis due to not asking for a comment from all participants, both do raise the issue of units of measurement not been returned with an answer for some questions.
 
 \section{Data loss}
 \label{sec:dataLoss}
 
-Log files were kept during the experiment containing the questions asked, answers provided and the ratings from a user to allow for the possibility of further analysis, such as the identification of specific questions that caused users a problem or questions where the answer returned changed as more participants took part. However due to a software bug log files for participants up until participant 14 were not stored.
+Log files were kept during the experiment containing the questions asked, answers provided and the ratings from a user to allow for the possibility of further analysis, such as the identification of specific questions that caused users a problem or questions where the answer returned changed as more participants took part. However due to a software bug log files for participants up until participant number 14 were not stored.
 
 \newpage
 \chapter{Discussion}
