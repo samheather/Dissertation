@@ -757,9 +757,6 @@ Results from the Dandelion API were checked against the \texttt{Place} class in 
 \label{sec:implementation}
 This section will describe the implementation of the server application and the clients developed for testing and evaluation. In the server application focus will be given to the tools and services used, the natural language processing system, the method used to identify answers and the machine learning aspects of the application.
 
-% TODO - need to talk about Twilio
-%, and the format of and method through which data is sent to an SMS provider.
-
 Code used within this project and discussed in this section is located in the following Git repositories:
 \begin{itemize}
   \item \texttt{https://github.com/samheather/dissertationServer} - This repository contains the code for the server application.
@@ -983,24 +980,22 @@ All participants in the experiment were regular internet users with all particip
 \section{Results}
 \label{sec:results}
 
-In this section the results from the experiment are presented and analysed. The key piece of research been investigated is whether the application learns effectively, although results for general usefulness and usability are also presented.
+In this section the results from the experiment are presented.
 
 \subsection{Usefulness}
 \label{subsec:resultsUsefulness}
 
-The usefulness of the system is measured by questions 1 through 6, 13 and 14 in the questionnaire. In section \ref{sec:evaluatingSuccess} the success criteria for usefulness is defined as a significant positive average rating for the usefulness questions. The average of usefulness ratings was 3.51 (3.s.f.) with a standard deviation of 0.919. This shows a slightly-above neutral rating of the system. One standard deviation of the data from the mean (containing 68\% of the data points) put the usability of the system in the range 2.59 through 4.43, which shows that the data was moderately spaced out in the range - (it was not highly concentrated or well distributed in the range of possible ratings).
+The usefulness of the system is measured by questions 1 through 6, 13 and 14 in the questionnaire. The average of usefulness ratings was 3.51 (3.s.f.) with a standard deviation of 0.919. One standard deviation of the data from the mean (containing 68\% of the data points) put the usability of the system in the range 2.59 through 4.43.
 
 \subsection{Usability}
 \label{subsec:resultsUsability}
 
-The usability of the system is measured by questions 7 through 12 in the questionnaire. In section \ref{sec:evaluatingSuccess} the success criteria for usability is defined as a significant positive average rating for the usability questions. The average of usability ratings was 3.46 (3.s.f.) with a standard deviation of 0.810. This shows a slightly-above neutral rating of the system. One standard deviation of the data from the mean (containing 68\% of the data points) put the usability of the system in the range 2.65 through 4.27, which shows that the data was moderately spaced out in the range - (it was not highly concentrated or well distributed in the range of possible ratings).
+The usability of the system is measured by questions 7 through 12 in the questionnaire.  The average of usability ratings was 3.46 (3.s.f.) with a standard deviation of 0.810. One standard deviation of the data from the mean (containing 68\% of the data points) put the usability of the system in the range 2.65 through 4.27.
 
 \subsection{Machine Learning}
 \label{subsec:resultsMachineLearning}
 
-The criteria that would be measured in this experimental evaluation was set out in section \ref{sec:evaluatingSuccess}. The data was inspected from two view points: the usefulness of the application and the usability of the application.
-
-As discussed in section \ref{sec:evaluatingSuccess}, the usefulness will be evaluated according to a positive trend in feedback from participants as the number of participants who have used the application prior to them increases. A mean value of usefulness was calculated using the values from questions 1 through 6, 13 and 14 and plotted. Linear regression was then carried out to identify whether a positive correlation existed showing that participants were indicating they would find the application more useful as more participants used it before them. The Correlation Coefficient for this dataset was 0.506, indicating a moderate positive trend. This implies that the application was learning and its usefulness improving as more participants used it.
+A mean value of usefulness as rated by each participant was calculated using the values from questions 1 through 6, 13 and 14 and plotted. Linear regression was then carried out to identify whether a positive correlation existed showing that participants were indicating they would find the application more useful as more participants used it before them. The Correlation Coefficient for this dataset was 0.506.
 
 A graph shoeing usefulness plotted against the participant number is shown in figure \ref{fig:usefulnessTrend} Using linear regression a line of best fit was added to the graph with the equation $y = 0.075 x + 2.68$.
 
@@ -1010,7 +1005,7 @@ A graph shoeing usefulness plotted against the participant number is shown in fi
 \label{fig:usefulnessTrend}
 \end{figure}
 
-\subsection{Additional comments from particiapnts}
+\subsection{Additional comments from participants}
 \label{subsec:resultsComments}
 
 No space was made on the questionnaire for participants to write additional comments or thoughts on the system, however two participants did make a comment at the end of their forms, both of which addressed a specific issue. These comments were:
@@ -1019,17 +1014,40 @@ No space was made on the questionnaire for participants to write additional comm
 
 \blockquote{Answers with units would be helpful to understand values given as answers} - Participant 9.
 
-Although these can't be included in any analysis due to not asking for a comment from all participants, both do raise the issue of units of measurement not been returned with an answer for some questions.
+These can't be included in any analysis due to not asking for a comment from all participants, but the issue will be discussed in Discussion in section \ref{sec:discussion}.
+
+\newpage
+\chapter{Discussion}
+\label{sec:discussion}
+
+In this section the results from section \ref{sec:results} are analysed and discussed. The key piece of research been investigated is whether the application learns effectively, although the discussion will also look at the usefulness and usability results individually.
+
+\section{Discussion of Results}
+\label{sec:disResults}
+In section \ref{sec:evaluatingSuccess} the success criteria for both usefulness and usability is defined as 'a significant positive average rating' for the relevant questions. Both the mean ratings and standard deviations for both the usefulness and usability questions were very similar - both show a slightly-above-neutral mean rating of the system, and the standard deviation shows the data is moderately distributed over the full range of possible ratings (it was not highly concentrated or well distributed).
+
+Because of the spread of the results it is not all-together clear whether there is a significant positive view of the usefulness and the usability of the software. However, as the mean is above the neural point of \texttt{3} by 0.51 and 0.46 respectively (representing ~1/8th of the range of possible ratings) it is justified to state that the software was rated as having neutral or greater usefulness and usability. This does not fulfil the initial success criteria from section \ref{sec:evaluatingSuccess}, but still shows the software developed was not rated 'useless' and so has some potential.
+
+% TODO - come back and do a significance test on 'is it significant and high enough?'
+
+%Learning
+The results for showing the learning of the application, which was the key thing been measured, show that the application was successfully learning. As discussed in section \ref{sec:evaluatingSuccess}, the usefulness was evaluated according to a positive trend in feedback from participants as the number of participants who have used the application prior to them increases. A positive trend line can clearly be seen in the graph showing rated usefulness against the number of preceding participants. The correlation coefficient indicates that there is a moderate positive trend, which implies that the application was learning and its usefulness improving as more participants used it. This is therefore a success in the context of this project.
+
+The graph showing rated usefulness against the number of preceding participants does show that the data collected is 'noisy' with a lot of variation in the ratings given by different participants. It is speculated that this is due to the different levels of expectations that participants had. The questionnaire was worded to remind participants that they should rate the system in the context of them having no other access to the internet, but it is likely some participants considered this more than others whilst rating the application.
+
+imperfect group of participants
+
+noise in the data - participants not given enough guidance as to who they represent
+
+issues with units: both do raise the issue of units of measurement not been returned with an answer for some questions.
+
+
+
 
 \section{Data loss}
 \label{sec:dataLoss}
 
 Log files were kept during the experiment containing the questions asked, answers provided and the ratings from a user to allow for the possibility of further analysis, such as the identification of specific questions that caused users a problem or questions where the answer returned changed as more participants took part. However due to a bug log files for participants up until participant number 14 were not stored. The seven remaining log files are too small a dataset to analyse.
-
-\newpage
-\chapter{Discussion}
-\label{sec:discussion}
-This section's content...
 
 \newpage
 
@@ -1051,7 +1069,7 @@ If the author was able to expand this project, areas for expansion include:
   \item Make it work with all of wikipedia (all pages with infoboxes anyway)
   \item make it work with all languages
   \item use full on random sparql queries to do magic
-  \item nlp assumes property is the only other bit of text with meaning. e.g. thank you would break everything.
+  \item nlp assumes property is the only other bit of text with meaning. e.g. 'please' would break everything.
 \end{itemize}
 
 \newpage
