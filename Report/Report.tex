@@ -496,6 +496,7 @@ The machine leaning will be tested by inspecting the change in usefulness and qu
 In this section, the design of the system will be described, including information on: the structure of the server application and database; interactions with third-party services; systems used to protect user-identity; and the language, platform, tools and libraries used for development.
 
 \section{System Design}
+\label{sec:sysDesign}
 In this section, the high-level design of the system software and its interactions with third-party services is described.  The system design was driven by requirements listed in sections \ref{subsubsec:userRequirements}, \ref{subsubsec:systemRequirementsFunctional} and \ref{subsubsec:systemRequirementsNonFunctional}, which were generalised to:
 
 \begin{itemize}
@@ -505,11 +506,11 @@ In this section, the high-level design of the system software and its interactio
     \item The system must have clear interfaces for interacting with the external world.
 \end{itemize}
 
-Based majoritively from these requirements, the formal aforementioned requirements and the application of an informal gap-analysis between each iteration of the architecture, the system architecture shown in Figure \ref{fig:systemArchitecture} was created.  This shows the structure of the system, from the level of hardware and third-party services through to individual software modules.
+Based majoritively from these requirements, the requirements in sections \ref{subsubsec:userRequirements}, \ref{subsubsec:systemRequirementsFunctional} and \ref{subsubsec:systemRequirementsNonFunctional}, and the application of an informal gap-analysis between each iteration of the architecture, a modular system architecture was designed. This architecture details the modular structure of the application as well as some key pieces of functionality. A diagram showing the modular architecture is shown in Figure \ref{fig:systemArchitecture}, and shows that the main application contains 3 core modules: a module for performing semantic comparisons of text; a module for Natural Language Processing (NLP); and a module for extracting and processing information from sources. This final module contains two further sub-modules, one for fetching and processing data from each of the DBPedia and Wikipedia data sources. Key application functionality from the top level of the application is also shown including Query Parsing, where the type of the query is identified (for example, a question, a rating or a request for instructions) and Feedback Storage, where a feedback message is processed, linked to a previous question and stored in the database. In the NLP module the function for identifying the geographical entity been queried and the function for extracting the property a user is looking for from their question text are shown. Finally, in the Source Information Extractor and Processor module the function that applies past users feedback to answers to improve their quality is shown.
 
 \begin{figure}[htb] 
 \includegraphics[width=\linewidth]{systemArchitecture}
-\caption{System Architecture}
+\caption{ArchiMate diagram showing modular structure of the application relevant to computing the answer to a question.}
 \label{fig:systemArchitecture}
 \end{figure}
 
@@ -633,6 +634,15 @@ The logical database requirements are listed in Table \ref{table:logicalDatabase
 \subsubsection{Physical Database Design}
 \label{subsubsec:physicalDatabaseDesign}
 As previously discussed section \ref{subsubsec:databaseTechnology }, MongoDB separates groups or types of entity into collections (which are similar to a Table in an SQL database) but does not place restrictions on the structure of objects within a collection.  The general structure of each document in a collection for this application is shown in Table \ref{table:collectionStructure}. A small change was made between the logical and the physical database designs with the storage of ratings in KeywordPairingRatings. In the logical model these were individual counts of ratings at the five different levels (for example, a count of one-star ratings, a count of five-star ratings, etc) however in the physical model this was converted to a list of ratings received (e.g. \texttt{[5,5,3,4,5]}). This made the implementation more compact as five different variables did not need to be addressed every time the ratings were read or written to.
+
+The database software MongoDB will be hosted on the same server as the main application, as shown in Figure \ref{fig:physicalServerDb}.
+
+\begin{figure}[htb] 
+\centerline{\includegraphics[width=0.6\linewidth]{physicalServerDb}}
+\caption{ArchiMate diagram showing the structure of the main server, which runs the application and hosts the database.}
+\label{fig:physicalServerDb}
+\end{figure}
+
 
 \begin{table}
 \begin{center}
@@ -760,7 +770,7 @@ Code used within this project and discussed in this section is located in the fo
 \section{Implementation Overview}
 As discussed in section \ref{sec:developmentLifeCycleSummary}, the implementation was completed whilst following the iterative development process. Software development took places in stages which represented each iteration, and after each iteration a version of the software was demonstrated in a weekly meeting. In these meetings, the software's capabilities and success rate were discussed, and requirements were re-evaluated based on progress. Ideas for expansions to the software (for example, the Natural Language Processing, which was not in the original plan) were also discussed.
 
-The software has been constructed in a modular manner to allow easy future expansion and modification.
+The software has been constructed in a modular manner to allow easy future expansion and modification. This modular structure is described in section \ref{sec:sysDesign}, where the system design is presented.
 
 \section{Tools and services used}
 \label{sec:toolsAndServices}
@@ -792,6 +802,14 @@ In addition, the following Python libraries from the Python Package Index~\cite{
 
 \section{Implementation of SMS interface}
 The SMS interface to the application was developed using the Twilio SMS service and Library~\cite{serviceTwilio, libraryTwilio}. A HTTP interface to the application was hosted using Flask~\cite{libraryFlask} at \texttt{<server\_url>/sms}, and the Twilio service was configured to make a request to this URL when an SMS was received. The function \texttt{sms()} is executed upon receiving a request on the \texttt{<server\_url>/sms} address, which extracts the phone number of the user and the text of their message from the request. The number is obscured, as explained in section \ref{subsec:hashingUserId}, and then the function \texttt{start()} is called with both the obscured number and the text from the message. This function then computes the answer to return to the user, described in section \ref{sec:implementationOfAnswerLocationSys}, and the response is sent back to the user using the Twilio library to make a HTTP call to the Twilio service.
+
+The service provided by the application and its service are shown in the ArchiMate diagram in Figure \ref{fig:systemSmsInterface}.
+
+\begin{figure}[htb] 
+\centerline{\includegraphics[width=0.8\linewidth]{systemSmsInterface}}
+\caption{ArchiMate diagram showing the service provided by the application and the SMS interface to it.}
+\label{fig:systemSmsInterface}
+\end{figure}
 
 \section{Implementation of natural language processing module}
 In this section, a description of how the natural language processing module was implemented is given.
