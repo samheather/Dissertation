@@ -79,18 +79,15 @@ This project raises ethical issues relating to the responsibility of providing a
 \listoftables
 \newpage
 
-\chapter*{Statement of Ethics}
-\marginnote{Lilian: Please review this}
+\chapter{Statement of Ethics}
 
-At the end of this project, an experimental evaluation was carried out which involved participants using the system developed and completing a questionnaire about their experience. Informed consent was given by each participant before they decided to partake in the experiment using a consent form. Participants were able to withdraw at any time without providing a reason and were reminded of this on the consent form. The consent form explained that the data would be collected from the participants and stated that they were able to withdraw their data after the experiment. It also informed participants exactly who would have access to the data collected and the format that they would have access to it in, specifically that it would be anonymised and kept confidential with the single exception of the Supervisor. In this case, participants' individual responses were kept confidential and their name was only collected on the consent form, after which a new identifying number was assigned to each participant which linked the participants' name on the consent form to the data collected. The consent forms were kept locked in a cupboard during the 4 days that the experiment was run, and upon completion they were transferred to the Supervisor for safe keeping in University facilities. The consent forms are the only method of identifying a participant. A copy of the consent form, questionnaire and instructions for the experiment can be seen in Appendices \ref{sec:appendixConsentForm}, \ref{sec:appendixExperimentalInstructions} and \ref{sec:appendixQuestionnaire}.
+At the end of this project, an experimental evaluation was carried out which involved participants using the system developed and completing a questionnaire about their experience. Informed consent was given by each participant before they decided to partake in the experiment using a consent form. Participants were able to withdraw at any time without providing a reason and were reminded of this on the consent form. The consent form explained that the data would be collected from the participants and stated that they were able to withdraw their data after the experiment. It also informed participants exactly who would have access to the data collected and the format that they would have access to it in, specifically that it would be anonymised and kept confidential with the single exception of the Supervisor. In this case, participants' individual responses were kept confidential and their name was only collected on the consent form, after which a new identifying number was assigned to each participant which linked the participants' name on the consent form to the data collected. The consent forms were kept locked in a cupboard during the 4 days that the experiment was run, and upon completion they were transferred to the Supervisor for safe keeping in University facilities. The consent forms are the only method of identifying a participant. No participants were harmed by the experiment, and no participants under the age of 18 were used. A copy of the consent form, questionnaire and instructions for the experiment can be seen in Appendices \ref{sec:appendixConsentForm}, \ref{sec:appendixExperimentalInstructions} and \ref{sec:appendixQuestionnaire}.
 
-The root credentials for the server used to host the application were provided to the Supervisor in advance of any data collection. This allows the University access to all information in the system for data protection purposes. After the competition of the experiment a dump of the data in the database was also provided to the Supervisor for safe keeping.
+The root credentials for the server used to host the application were provided to the Supervisor in advance of any data collection. This allows the University access to all information in the system for data protection purposes. After the completion of the experiment a dump of the data in the database was also provided to the Supervisor for safe keeping.
 
 Close attention to ethical issues was also paid during the design and development of the software. Although phone numbers are used to uniquely identify users of the system, they are never directly stored in the database: instead only an obscured representation of the phone number is stored, which is generated using an industry standard one-way hashing function. This means that it is impossible to gain the identity of a user from the database, protecting their privacy in the event that the database is hacked.  Additionally, service providers who would carry information over SMS were researched to assess their reputability, as they would be transmitting information to private individuals.
 
 This system was only developed for research purposes, but if it were to be extended to be used outside of this context a feature should be built in to allow a user to delete all data corresponding to them via SMS to comply with data protection regulations. This was not done in this project as participants specifically gave consent for information to be collected and they will not have access to the system after the experiment as the server will be shutdown. Participants were provided with the Supervisors contact details which they could use to request the deletion of their data in the future.
-
-Initially this project was about providing medical information however the ethical issues were too significant to handle within the parameters of this project. Ethical issues that arose were: information provided in a medical context could lead to a user taking a harmful or life-changing action if the information was incorrect, meaning that the application developed had the potential to cause physical harm; and communicating questions and answers between a user and the service in a secure manner is not possible over SMS, which does not support encryption, meaning user privacy does not meet appropriate standards.
 
 Finally, it was noted in early research that there is an ethical responsibility to only provide correct information to a user in response to a question. An attempt is made to significantly reduce the chance of incorrect information being sent to a user by assessing the quality of a potential answer and checking that it is above a quality threshold. This check compares the information that has been returned to the information requested by the user to make sure that they are related, and only if it passes this test is the answer sent to the user.
 
@@ -212,6 +209,7 @@ One significant issue for this project stems from providing information that may
 \marginnote{teachers code of conduct, wikipedia ethics to provide infomration that contributos believe to be correct. doctors and gp's provide to the best of their knowledge}
 
 \subsection{Ethics of Translation}
+\label{subsec:ethicsOfTranslation}
 A significant part of this project is represented by the support of multiple languages.  It is clear that translation on demand, at scale, needs to be automated by some kind of machine or algorithmic translation.
 
 This project involves two blocks of translation.  These are:
@@ -351,6 +349,8 @@ Iterative development has been chosen as the model that this project will use, b
 \chapter{Method and Requirements}
 \label{sec:method}
 
+In this chapter the method that will be followed for software development and an experimental evaluation of the software will be presented. The tools that will be used in the software will also be described.
+
 \section{Plan for Software Development}
 \label{sec:planForSoftwareDevelopment}
 The Iterative Development Model was selected in Section \ref{sec:developmentLifeCycleSummary}.  Therefore, the development of this service will follow the principles set forth in this process. Software development will take place in stages representing each iteration of the iterative process.  After each iteration the software will be discussed in a meeting, with a focus on the developed capabilities, quality and any issues. Three iterations were scheduled that mapped to calendar months with the goal of having completed the software by the end of March.
@@ -360,6 +360,8 @@ Software development will begin in late December 2014 the first iteration is exp
 During the second iteration running through February semantic analysis and matching of requested properties / keys in the data sources will be added to the application, and additional data sources will be researched and included.
 
 In the final iteration running through March a natural language processing module will be constructed to handle questions in natural form as opposed to using a set syntax as had been used during development. Any additional tools needed to run an experimental evaluation of the software will also be developed.
+
+In the initial specification of the project one aspect was to make the software developed capable of handling queries in multiple languages. However it has been decided after researching the issues of machine translation in section \ref{subsec:ethicsOfTranslation} that compatibility with multiple languages will be omitted from the software developed due to its complexity and the time constraints on this project. A discussion of how it can be added into the system in the future is provided in section \ref{sec:addingMultilanguageSupport}.
 
 \section{Requirements}
 \subsection{Use Cases / User Goals}
@@ -512,6 +514,7 @@ Based majoritively from these requirements, the formal aforementioned requiremen
 \end{figure}
 
 \subsection{Micro-system for Protecting User Identity}
+\label{subsec:hashingUserId}
 
 In section \ref{subsubsec:userPrivacyAndDataProtection}, the need to protect the privacy of a user and the general technique that will be used (involving irreversible hashing) are described.  The design of this system will now be discussed.
 
@@ -787,6 +790,9 @@ In addition, the following Python libraries from the Python Package Index~\cite{
 \end{enumerate}
 
 
+\section{Implementation of SMS interface}
+The SMS interface to the application was developed using the Twilio SMS service and Library~\cite{serviceTwilio, libraryTwilio}. A HTTP interface to the application was hosted using Flask~\cite{libraryFlask} at \texttt{<server\_url>/sms}, and the Twilio service was configured to make a request to this URL when an SMS was received. The function \texttt{sms()} is executed upon receiving a request on the \texttt{<server\_url>/sms} address, which extracts the phone number of the user and the text of their message from the request. The number is obscured, as explained in section \ref{subsec:hashingUserId}, and then the function \texttt{start()} is called with both the obscured number and the text from the message. This function then computes the answer to return to the user, described in section \ref{sec:implementationOfAnswerLocationSys}, and the response is sent back to the user using the Twilio library to make a HTTP call to the Twilio service.
+
 \section{Implementation of natural language processing module}
 In this section, a description of how the natural language processing module was implemented is given.
 
@@ -818,7 +824,7 @@ This semantic comparison is done by the the \texttt{compare} module, which has a
 
 The Cortical API is not configured for recognising text in CamelCase, so helper functions such as \texttt{camelCaseToSnakeCase} and \texttt{camelCaseToSpace} are also included for converting CamelCase to either Snake Case or space-separated words.
 
-A minimum threshold was set for the semantic similarity of keys that could be returned to prevent a key with a very low semantic similarity been returned as answer where the data source didn't have the requested information available. The Cortical API documentation recommended a threshold value of 0.3~\cite{Retina-API Documentation}, however this was resulting in some key matchings been ignored. Contact was made with the Cortical team who suggested a value of 0.2 might be more appropriate for this use case, and during development all key pairs and their semantic similarity values were printed so that when an answer was not found the semantic similarity value of the correct matching could be inspected with the potential to adjust the threshold. The advice from Cortical turned out to be correct, with numerous examples of requested keys having a similarity score to those from the data sources in the range \texttt{0.2} through \texttt{0.3} during development, such as the requested key \texttt{population} and the key \texttt{population urban} from the DBPedia dataset having a similarity score of \texttt{0.24695}.
+A minimum threshold was set for the semantic similarity of keys that could be returned to prevent a key with a very low semantic similarity been returned as the answer where the data source didn't have the requested information available. This helps to prevent incorrect answers been returned to users. The Cortical API documentation recommended a threshold value of 0.3~\cite{Retina-API Documentation}, however this was resulting in some key matchings been ignored. Contact was made with the Cortical team who suggested a value of 0.2 might be more appropriate for this use case, and during development all key pairs and their semantic similarity values were printed so that when an answer was not found the semantic similarity value of the correct matching could be inspected with the potential to adjust the threshold. The advice from Cortical turned out to be correct, with numerous examples of requested keys having a similarity score to those from the data sources in the range \texttt{0.2} through \texttt{0.3} during development, such as the requested key \texttt{population} and the key \texttt{population urban} from the DBPedia dataset having a similarity score of \texttt{0.24695}.
 
 Initially it was planned to compare questions to historical highly rated questions with extremely high semantic similarity. If the database contains the highly rated question \texttt{What's the height of the Eiffel Tower?} and then the new question of \texttt{How tall is the Eiffel Tower?} is asked, the answer that was provided for the first question would be sent for the second question. Unfortunately there were issues with implementing this such as how to efficiently check a new question against every historical highly rated question for semantic similarity. Although it would be possible to implement using keywords for a question to limit the number of pairs that were compared, and by storing semantic representations locally and therefore doing the comparison locally, this would have taken too much time. As a compromise, the current version of the software does collect question texts and their ratings to begin building a database. In the future when this feature if this feature is implemented, this historical database will be useful as it means there will already be data for the application to use rather than having to wait to build up a dataset of full question texts and ratings.\marginnote{wording?!}
 
@@ -858,21 +864,21 @@ The multipliers selected were driven by the goal to see an improvement during th
   \item For each rating of \texttt{5}: increase the semantic similarity by 5\% (multiply by 1.05)  
 \end{itemize}
 
-These values were found using trial and adjustment but were tested with two particular use cases: 
+These values were found using trial and adjustment but were tested with two particular use cases with the intent that an improvement would be seen in the course of the experiment: 
 
-When \texttt{population} is requested, the value for \texttt{areaUrban} is returned with semantic similarity of 0.30488 (5 significant figures) instead of \texttt{population\_urban}, which also has a semantic similarity of 0.30488.
+In the first case, when \texttt{population} is requested, the value for \texttt{areaUrban} is returned with semantic similarity of 0.30488 (5 significant figures) instead of \texttt{population\_urban}, which also has a semantic similarity of 0.30488.
 
-When the property \texttt{tall} is requested of the Leaning Tower of Pisa (in the context of \texttt{how tall is...}), the value for \texttt{architect} is returned with semantic similarity of 0.25305 XXXXXX instead of \texttt{population\_urban}, which also has a semantic similarity of 0.30488.
+In the second case, when the property \texttt{height} is requested of Mount Everest (in the context of \texttt{what is the height of...}), the value for \texttt{width} is returned with semantic similarity of 0.34451 instead of \texttt{elevation}, which has a semantic similarity 0.24695.
 
-% TODO - where the scores come from
+In the first case only one rating is needed for the application to begin sending the correct property, however in the second case seven ratings of one 'star' are required before the application starts returning the elevation of Mount Everest as opposed to its width.
 
-variable adjustments
+The values for the adjustments for the ratings were chosen with the aim of preventing dramatic 'swings' or changes in the application behaviour caused by a small number of ratings. A disadvantage of the current adjustment values is that it can take a number of ratings for the application to learn the correct answer, such as in the case of the \texttt{height of Mount Everest}. However it was observed during development that typical similarity scores between a requested property and all the keys in a data source typically varied from 0.1 through 0.4.  If the adjustments were to be larger, for example 15\% for a rating of \texttt{1} or \texttt{5}, a typical similarity score of 0.25 (in the center of the common score range) would have been adjusted to 0.437 after just three positive ratings of \texttt{5}. This is outside of the common range, thus it will quickly dominating any new keys that are added to the data source which could be more relevant. 
 
 A potential issue with the ratings system is that of handling incorrect and anomalous ratings, whether caused by user error or malicious attempt to damage the system. If the matching of pair of keys has the ratings \texttt{[4,5,1,4]} it appears that the rating of \texttt{1} is anomalous and should be ignored from the adjustment process. This is done through the use of the standard deviation of the group, which is calculated in the function \texttt{removeOutliers()}. The standard deviation of the group of ratings is computed to calculate the spread of the majority of results. Techniques exist for choosing the multiple of the standard deviation from the mean that should be used for finding outliers by choosing a desired significance level, such as Grubbs' test~\cite{grubbs1969procedures}. However, as the range was limited and small with only five possible values it was decided that to keep the implementation simple and conserve time that a single multiple of the standard deviation would be used constantly.
 
 The multiple of \texttt{1} was chosen for the standard deviation based on numeric experimentation meaning that results that are outside of the range of one standard deviation from the mean are then excluded from the adjustment process. Where the standard deviation from the mean is a decimal, it is rounded to its nearest integer to establish the range of ratings that will be included in the computation. The value of one standard deviation was selected as the range of ratings was so small (with only five possible values for a rating) that a larger multiple of the standard deviation made it likely to include anomalous data. This is shown with the above example data, where the mean is 3.5 and the standard deviation is 1.5, meaning that the range of valid ratings is 2 through 5 inclusive which successfully excludes the outlying result. If the multiple for standard deviation was increased to 1.5 or even the commonly used value of 2 the range from the mean would increase to 2.25 or 3.0 respectively, meaning that the range of valid ratings would be 1 (rounded from 1.25 for a standard deviation multiplier of 1.5) through 5, which includes the incorrect value.
 
-Using this method there are situations where a result which is perhaps not an outlier (depending on the method used to categorise it) is excluded. An example of this is if a pair of keys has the ratings \texttt{[4,4,4,4,4,4,5]}. It's reasonable to expect that the there is some variation in the opinion of users as to whether the answer provided is excellent and so scores \texttt{5} or just good and so scores a \texttt{4}.  However in this situation the give is excluded using the aforementioned standard deviation of \texttt{1}. In this group of ratings the mean is \texttt{4.14} and the standard deviation is \texttt{0.35}, which will mean the included range of valid ratings is only those with value \texttt{4}.
+Using this method there are situations where a result which is perhaps not an outlier (depending on the method used to categorise it) is excluded. An example of this is if a pair of keys has the ratings \texttt{[4,4,4,4,4,4,5]}. It's reasonable to expect that the there is some variation in the opinion of users as to whether the answer provided is excellent and so scores \texttt{5} or just good with a score of \texttt{4}.  However in this situation the give is excluded using the aforementioned standard deviation of \texttt{1}. In this group of ratings the mean is \texttt{4.14} and the standard deviation is \texttt{0.35}, which will mean the included range of valid ratings is only those with value \texttt{4}.
 
 \section{Implementation of Testing Client}
 \label{sec:implementationTestingClient}
@@ -914,6 +920,11 @@ Fixes were made to the software before running the full experimental evaluation 
     \caption{Left: Original application. Right: Revised application with hidden participant ID field and Question field with a clear button and auto-selection of text when it's tapped to bring the keyboard up.}
     \label{fig:experimentClientPopulation}
 \end{figure}
+
+\section{Adding Multi-Language Support}
+\label{sec:addingMultilanguageSupport}
+As described in section \ref{sec:planForSoftwareDevelopment} the software was initially intended to have support for multiple languages. Although this was not included in the software developed, the software has been constructed with an awareness of this potential future feature so that it can easily be added.
+...%TODO Add with diagrams.
 
 \section{Discussion of Implementation}
 % TODO XXX - write this
