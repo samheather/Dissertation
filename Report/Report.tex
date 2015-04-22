@@ -941,8 +941,9 @@ Fixes were made to the software before running the full experimental evaluation 
 As described in section \ref{sec:planForSoftwareDevelopment} the software was initially intended to have support for multiple languages. Although this was not included in the software developed, the software has been constructed with an awareness of this potential future feature so that it can easily be added.
 ...%TODO Add with diagrams.
 
-\section{Discussion of Implementation}
+\section{Discussion of implementation and issues faced}
 % TODO XXX - write this
+% TODO - write about issues faced.
  - Tweaking the constants for best results
  - Excluding wikipedia due to dirty data
  
@@ -1014,7 +1015,7 @@ No space was made on the questionnaire for participants to write additional comm
 
 \blockquote{Answers with units would be helpful to understand values given as answers} - Participant 9.
 
-These can't be included in any analysis due to not asking for a comment from all participants, but the issue will be discussed in Discussion in section \ref{sec:discussion}.
+These can't be included in any analysis due to not asking for a comment from all participants, but the issue will be discussed in the Discussion in section \ref{sec:discussion}.
 
 \newpage
 \chapter{Discussion}
@@ -1033,43 +1034,62 @@ Because of the spread of the results it is not all-together clear whether there 
 %Learning
 The results for showing the learning of the application, which was the key thing been measured, show that the application was successfully learning. As discussed in section \ref{sec:evaluatingSuccess}, the usefulness was evaluated according to a positive trend in feedback from participants as the number of participants who have used the application prior to them increases. A positive trend line can clearly be seen in the graph showing rated usefulness against the number of preceding participants. The correlation coefficient indicates that there is a moderate positive trend, which implies that the application was learning and its usefulness improving as more participants used it. This is therefore a success in the context of this project.
 
-The graph showing rated usefulness against the number of preceding participants does show that the data collected is 'noisy' with a lot of variation in the ratings given by different participants. It is speculated that this is due to the different levels of expectations that participants had. The questionnaire was worded to remind participants that they should rate the system in the context of them having no other access to the internet, but it is likely some participants considered this more than others whilst rating the application.
+The graph showing rated usefulness against the number of preceding participants does show that the data collected is 'noisy' with a lot of variation in the ratings given by different participants. It is speculated that this was caused by the different levels of expectations that participants had. The questionnaire was worded to remind participants that they should rate the system in the context of them having no other access to the internet, but it is likely some participants considered this more than others whilst rating the application, sometimes making comparisons to other services from well-known consumer products that they have used.
 
-imperfect group of participants
+It's noted that the participants were skewed towards a young student population with regular access to the internet. All participants identified as users who typically use the Internet multiple times daily and so some perhaps had difficulty imagining themselves working in the context of not having access to the Internet.
 
-noise in the data - participants not given enough guidance as to who they represent
-
-issues with units: both do raise the issue of units of measurement not been returned with an answer for some questions.
-
-
+Also, as was mentioned in the Results in section \ref{sec:results}, two participants did note an issue on the questionnaire about units not been returned with the data, for example with questions about the \texttt{height} of a structure. Although this issue was noted before the experimental evaluation, the significance of not having units had not been fully considered and it was helpful to have this indicated by the participants.
 
 
 \section{Data loss}
 \label{sec:dataLoss}
 
-Log files were kept during the experiment containing the questions asked, answers provided and the ratings from a user to allow for the possibility of further analysis, such as the identification of specific questions that caused users a problem or questions where the answer returned changed as more participants took part. However due to a bug log files for participants up until participant number 14 were not stored. The seven remaining log files are too small a dataset to analyse.
+It was initially planned to keep log files during the experiment containing the questions asked, answers provided and the ratings from a user. This would allow for the possibility of further analysis such as the identification of specific questions that caused users a problem or questions where the answer returned changed as more participants took part. However due to a bug where log files were over-written instead of having new entries appended to them, log files for participants up until participant number 14 were not stored. The seven remaining log files were too small a dataset to analyse, however some examples may be used in later chapters.
 
 \newpage
 
 \newpage
 \chapter{Evaluation}
 \label{sec:evaluation}
-This section's content...
+
+In this section an evaluation will be presented on the experimental evaluation that was run. There were a number of issues with the experiment with regard to the pool of participants used.
+
+
+Evaluation:
+noise in the data
+    - participants not given enough guidance as to who they represent - could give more guidance
+    - could choose better pool of participants as well
+    - more particiapnts, does curve continue, get less noisy,
+    - more data
+    - need units
 
 \newpage
 
 \chapter{Extending this project}
 \label{sec:extending}
 {\bf Section not complete} %TODO Write extending project
+In this chapter solutions for some of the issues addressed in the evaluation will be presented as work that can be undertaken in the future, along with other thoughts.
+
+\section{Obtaining and presenting units for measurements}
+\label{sec:evalUnits}
+One of the major issues with the application developed is that units are not returned with all measurements. This is a direct result of the quality and inconsistent format of the data in the data sources. For some geographical entities units are stored in the field when the field type is a string, however in other entities the unit is stored in the key, for example \texttt{height_m} is used to represent the height in metres. It should be possible to customise the processor for each data source in the source-specific module to handle this in the future.
+
+\section{Improving the Natural Language Processing module}
+\label{sec:evalNlp}
+It was noticed both during development and informally during the experiments that the Natural Language Processing module isn't yet at the standard that a user expects. Although queries can be made in natural language, the structure of the question must be extremely simple. This is because of the way the property a user is requesting is identified, where additional unnecessary words in the query cause the process to fail. There were two example of this, one that arose during testing and one from the log files collected from the experimental evaluation. The first example was where the word \texttt{please} was added to a query, for example \texttt{How tall is the Eiffel Tower please?} which resulted in the application searching for the property \texttt{tall please}. The second example from the experimental evaluation occurred when a user was asked to identify the \texttt{currency that we use in England}. A typical query was \texttt{What currency is used in England?}, which resulted in the application searching for the property \texttt{currency used} instead of just \texttt{currency}. This also resulted in the application failing.
+
+In future work the natural language processing module can be improved to cope better with noise, perhaps through the use of a more complex third-party library.
+
+
 If the author was able to expand this project, areas for expansion include:
 \begin{itemize}
   \item Addressing the issue of literacy
   \item Automating the expansion of the database
-  \item Units for metrics.
+  \item 
   \item Make it work with all of wikipedia (all pages with infoboxes anyway)
   \item make it work with all languages
   \item use full on random sparql queries to do magic
-  \item nlp assumes property is the only other bit of text with meaning. e.g. 'please' would break everything.
+  \item 
 \end{itemize}
 
 \newpage
