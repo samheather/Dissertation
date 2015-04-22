@@ -60,6 +60,8 @@
 \abstract{
 \marginnote{It is early days so it is normal that many things are missing from the abstract. You should keep in mind that it should include later on few sentences on method/experiment, result and conclusion.}
 
+Currently been worked on in Google Docs...
+
 In remote Africa there are millions of disadvantaged and uneducated individuals, who in the vast majority do not have access to the internet the knowledge that this brings.  Outside of their immediate friends and family, individuals cannot access the information they need to further their education, or just for general interest.
 
 In many parts of the world, the number of people without access to the internet but access to a mobile phone is significant.  This project aims to research and develop a system capable of bringing knowledge through a question and answer based interactive system, in the language natively spoken by the user, through the use of a simple Artificial Intelligence and an SMS interface.  The system will be expandable, such that it can be adjusted to handle questions on any knowledge area.
@@ -365,6 +367,7 @@ In the final iteration running through March a natural language processing modul
 In the initial specification of the project one aspect was to make the software developed capable of handling queries in multiple languages. However it has been decided after researching the issues of machine translation in section \ref{subsec:ethicsOfTranslation} that compatibility with multiple languages will be omitted from the software developed due to its complexity and the time constraints on this project. A discussion of how it can be added into the system in the future is provided in section \ref{sec:addingMultilanguageSupport}.
 
 \section{Requirements}
+\label{sec:requirements}
 \subsection{Use Cases / User Goals}
 Two personas were created to represent individuals who may have a need for the work resulting from this project, which can be seen in Appendix \ref{sec:appendixPersonas}. These are Nanjala, who is from Uganda, and Cedric, who is from Switzerland, and it is from these that user goals are extracted. These describe what a general user aims to achieve with this service.
 \begin{enumerate}
@@ -383,7 +386,7 @@ Two personas were created to represent individuals who may have a need for the w
 User goals are distilled into formal user requirements.  Each user requirement corresponds directly to the correspondingly numbered user goal.
 \begin{enumerate}
   \item Users must be able to request general or descriptive information on a geographical entity.
-  \item Users must be able to ask questions requesting a fact or statistic about an entity and get the answer or number they are looking for.
+  \item \label{requirement:getFact} Users must be able to ask questions requesting a fact or statistic about an entity and get the answer or number they are looking for.
   \item Users must be able to interact with the system over SMS.
   \item Users must be able to make their queries and get responses quickly.
   \item Users must be able to feedback to the system when an answer is of noticeably low or high quality so the system can learn and improve.
@@ -417,14 +420,14 @@ Non-functional requirements are listed in table \ref{table:nonFunctionalRequirem
 
 \begin{table}
 \begin{center}
-    \begin{tabular}{| p{6.0cm} | p{6.0cm} |}
+    \begin{tabular}{| p{0.8cm} | p{6.0cm} | p{6.0cm} |}
     \hline
-    Non-Functional Requirement & Fit Criterion \\ \hline
-    The system behind the SMS gateway must respond in a timely manner.  & From an SMS been received, a response must be sent within 20 seconds.  SMS transmission times on the cellular network and gateway are out of the control of this project, so are not accounted for. \\ \hline
-    The answers returned must be of high quality.  & In testing, the system returns the correct information for at least 90\% of queries initially (before learning starts) if an answer is returned at all. \\ \hline
-    Answers that are consistently rated poorly are are less likely to be returned. & In testing, after receiving a small number of negative ratings for an answer, a different answer is returned. \\ \hline
-    Instructions to use the service should be clear and concise, with no ambiguity.  & In testing, having explained the purpose of the system, a user should be able to use the system with just the help information, without needing to ask for assistance. \\ \hline  
-    The system should accept and be able to process questions in natural human language as opposed to a delimited message. & In testing, a user should be able to use the system for general questions without having had a syntax explained to them. \\ \hline
+    ID & Non-Functional Requirement & Fit Criterion \\ \hline
+    NF.1 & The system behind the SMS gateway must respond in a timely manner.  & From an SMS been received, a response must be sent within 20 seconds.  SMS transmission times on the cellular network and gateway are out of the control of this project, so are not accounted for. \\ \hline
+    NF.2 & The answers returned must be of high quality.  & In testing, the system returns the correct information for at least 90\% of queries initially (before learning starts) if an answer is returned at all. \\ \hline
+    NF.3 & Answers that are consistently rated poorly are are less likely to be returned. & In testing, after receiving a small number of negative ratings for an answer, a different answer is returned. \\ \hline
+    NF.4 &Instructions to use the service should be clear and concise, with no ambiguity.  & In testing, having explained the purpose of the system, a user should be able to use the system with just the help information, without needing to ask for assistance. \\ \hline  
+    NF.5 &The system should accept and be able to process questions in natural human language as opposed to a delimited message. & In testing, a user should be able to use the system for general questions without having had a syntax explained to them. \\ \hline
     \end{tabular}
     \caption{List of non-functional requirements and their Fit Criteria.}
     \label{table:nonFunctionalRequirementsFitCrit}
@@ -1029,7 +1032,7 @@ In this section the results from section \ref{sec:results} are analysed and disc
 \label{sec:disResults}
 In section \ref{sec:evaluatingSuccess} the success criteria for both usefulness and usability is defined as 'a significant positive average rating' for the relevant questions. Both the mean ratings and standard deviations for both the usefulness and usability questions were very similar - both show a slightly-above-neutral mean rating of the system, and the standard deviation shows the data is moderately distributed over the full range of possible ratings (it was not highly concentrated or well distributed).
 
-Because of the spread of the results it is not all-together clear whether there is a significant positive view of the usefulness and the usability of the software. However, as the mean is above the neural point of \texttt{3} by 0.51 and 0.46 respectively (representing ~1/8th of the range of possible ratings) it is justified to state that the software was rated as having neutral or greater usefulness and usability. This does not fulfil the initial success criteria from section \ref{sec:evaluatingSuccess}, but still shows the software developed was not rated 'useless' and so has some potential.
+Because of the spread of the results it is not all-together clear whether there is a significant positive view of the usefulness and the usability of the software. However, as the mean is above the neural point of \texttt{3} by 0.51 and 0.46 respectively (representing ~1/8th of the range of possible ratings) it is justified to state that the software was rated as having neutral or greater usefulness and usability. This does not fulfil the initial success criteria from section \ref{sec:evaluatingSuccess}, but still shows the software developed was not rated 'useless' and so has potential to become useful.
 
 % TODO - come back and do a significance test on 'is it significant and high enough?'
 
@@ -1054,12 +1057,59 @@ It was initially planned to keep log files during the experiment containing the 
 \chapter{Evaluation}
 \label{sec:evaluation}
 
-In this section an evaluation will be presented on the experimental evaluation that was run. There were a number of issues with the experiment with regard to the pool of participants used.
+This Chapter aims to provide an evaluation on the experimental evaluation that was run and the software that was developed. The experiment will be evaluated based on the results,  and the software will be compared to the original requirements in section \ref{sec:requirements}.
+
+\section{Evaluation of Software Developed}
+\label{sec:evalSoftwareDeveloped}
+
+The success of the software developed according to the experimental evaluation has been discussed in the Discussion chapter in section \ref{sec:discussion}. However it's also important to check the software against the requirements originally proposed. The software has been compared to the User Requirements from section \ref{subsubsec:userRequirements} in table \ref{table:evalUserReqs}. In this table it is shown that all user requirements for the system were met apart from user requirement \ref{requirement:getFact} which is partially met. User requirement \ref{requirement:getFact} refers to the fact that units are not always returned with answers and this is a usefulness failure in the system. A proposal for future work to fix this is proposed in section \ref{sec:evalUnits}. The application meets all other user requirements fully.
+
+The software is also compared against the non-functional requirements proposed in section \ref{subsubsec:systemRequirementsNonFunctional} in table \ref{table:evalNonFunctionalReqs}. In this table it is shown that the application meets all non-functional requirements except NF.2, which is that the application returns the correct answer for 90\% of queries. This requirement was marked as not met as the data that would have been used to evaluate it was lost, as described in section \ref{sec:dataLoss}. It was suggested that the ratings provided for application usefulness in the questionnaire would have been higher if this requirement was met.
+
+% explain what can be done to improve this
+% sumarise, only 2 requirements not fully met, acceptable.
+
+\begin{table}[h]
+\begin{tabular}{|p{0.4cm}|p{9.0cm}|p{4.0cm}|}
+\hline
+ID & Discussion                                                                                                                                                                                                                                                                                                                                                                                                                                & Conclusion                          \\ \hline
+1  & Two types of questions were accepted: questions where a property was requested of a geographical entity; and questions where a user could ask the application to describe an entity.                                                                                                                                                                                                                                                      & This requirement was met.           \\ \hline
+2  & Users were able to ask questions about a specific property, fact or statistic, however in some cases the units were not returned which reduced the usefulness of the answer. This occurred in a significant number of cases, such as whenever a measurement of an entity was requested, so the requirement wasn't fully met.                                                                                                              & This requirement was partially met. \\ \hline
+3  & The Twilio service and API was used to create an SMS interface to the system.                                                                                                                                                                                                                                                                                                                                                             & This requirement was met.           \\ \hline
+4  & Users were able to make queries quickly by entering them in natural language form, and a response was returned within a a few seconds.                                                                                                                                                                                                                                                                                                    & This requirement was met.           \\ \hline
+5  & A ratings system was implemented to allow a user to give feedback on the last answer they received, which was subsequently used to improve the quality of future answers.                                                                                                                                                                                                                                                                 & This requirement was met.           \\ \hline
+6  & Help and tutorial functionality was provided in the system and was available for users by simply sending a message with the world \texttt{help}. This was not tested during the experimental evaluation however, as a tutorial was given in the instructions for the experiment. Feedback from the experiment did show that users quickly learnt to use the system though, indicating that they were able to learn the system themselves. & This requirement was met.           \\ \hline
+7  & A privacy protection system was implemented. Participants in the experiment were not made aware of this as the experiment focussed on answer quality, however they were comfortable with the privacy they had for their experimental data (explained on a consent form).                                                                                                                                                                  & This requirement was met.           \\ \hline
+8  & Natural Language Processing was added to the application to allow users to make queries in natural English sentences. Users used this in the experimental evaluation and it was rated neutrally or above as part of the usability questions.                                                                                                                                                                                              & This requirement was met.           \\ \hline
+\end{tabular}
+\caption{Evaluation of User Requirements}
+\label{table:evalUserReqs}
+\end{table}
+
+\begin{table}[h]
+\begin{tabular}{|p{0.7cm}|p{9cm}|p{4.0cm}|}
+\hline
+ID   & Discussion                                                                                                                                                                                                                                                                                                                                     & Conclusion                    \\ \hline
+NF.1 & The time from receiving a query to sending a response was typically under 10 seconds during development, which is less than the 20 second fit criterion.                                                                                                                                                                                       & This requirement was met.     \\ \hline
+NF.2 & Due to the loss of log file data it is not possible to analyse the question logs to check against this criteria. However it is speculated that usefulness ratings from the experimental evaluation would have been higher than they were if 90\% of questions were answered correctly first time so it is assumed this requirement was not met. & This requirement was not met. \\ \hline
+NF.3 & The ratings system implemented did prevent poor answers been returned after they were rated as such. Examples were given in section \ref{subsec:usingRatings}.                                                                                                                                                                                 & This requirement was met.     \\ \hline
+NF.4 & The help information was not used during the experimental evaluation however users did not need further assistance when using the application beyond the instructions provided for the experiment, and the instructions provided were based on the instructions in the application.                                                            & This requirement was met.     \\ \hline
+NF.5 & Participants used natural language to ask questions of the application during the experiment.                                                                                                                                                                                                                                                  & This requirement was met.     \\ \hline
+\end{tabular}
+\caption{Evaluation of Non-Functional Requirements}
+\label{table:evalNonFunctionalReqs}
+\end{table}
+
+\section{Evaluation of Experimental Evaluation}
+\label{sec:evalExperimentalEvaluation}
+
+The experimental evaluation suffered from issues caused by the pool of participants used. As discussed the data was extremely noisy and it was speculated that this was caused by varying levels of expectation from participants. This could have been fixed by spending more time with each participant explaining the expectations they should have of the software and a typical situation in which it would be used.
+
+
 
 
 Evaluation:
 noise in the data
-    - participants not given enough guidance as to who they represent - could give more guidance
     - could choose better pool of participants as well
     - more participants, does curve continue, get less noisy,
     - more data
@@ -1098,7 +1148,7 @@ One area where significant progress can be made in the software is with queries 
 
 \chapter{Conclusion}
 \label{sec:conclusion}
-This section's content...
+Currently been worked on in Google Docs...
 
 \newpage
 
