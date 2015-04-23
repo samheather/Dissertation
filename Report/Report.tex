@@ -446,7 +446,7 @@ The Wikipedia API is a standard MediaWiki API and allows applications to query a
 \label{subsec:dbpediaOntology}
 The DBPedia Ontology is the result of a project that aims to build an OWL ontology representing all of the knowledge within Wikipedia.  The ontology has been manually created from the most commonly used infoboxes on Wikipedia and covers 685 classes with 2,795 properties, providing structured information on 4.2 million places, people, work, species and organisations~\cite{dbPediaIntro}.  This makes it especially good for use in applications since the data is both curated and well structured.
 
-There are two ways of querying the DBPedia Ontology.  One is using the standard SPARQL ontology query software to make a query form the ontology structure; however this is complex as queries must be structured correctly and it is necessary to know the class structure of the entities being queried~\cite{dbPediaSparql}. Matching a question asked by a user to entities within the Ontology is difficult and outside of the time scope of this project.
+There are two ways of querying the DBPedia Ontology.  One is using the SPARQL language to query the ontology via its SPARQL interface~\cite{dbPediaSparql}; however this is complex as queries must be structured correctly and it is necessary to know the class structure of the entities being queried~\cite{dbPediaSparql}. Matching a question asked by a user to entities within the Ontology is difficult and outside of the time scope of this project.
 
 In the event that the class structure is not known, queries can be made by querying the top-level representation of an entity in the ontology, which presents data in a similar format to that of the Wikipedia API, albeit in a 'cleaner' form (with human readable keys) as a result of the data been processed by hand.  Although the keys are of a more human-readable format, some material is abstracted within the ontology and so is inaccessible with a basic query.  An example of this is page for 'London' (accessible at: \texttt{http://dbpedia.org/page/London}), which does not have a parameter 'Mayor' with the value 'Boris Johnson'.  Instead it refers to a number of 'Leader Titles' and 'Leader Names', which include a reference to Boris Johnson
 
@@ -1047,7 +1047,6 @@ It's noted that the participants were skewed towards a young student population 
 
 Also, as was mentioned in the Results in section \ref{sec:results}, two participants did note an issue on the questionnaire about units not been returned with the data, for example with questions about the \texttt{height} of a structure. Although this issue was noted before the experimental evaluation, the significance of not having units had not been fully considered and it was helpful to have this indicated by the participants.
 
-
 \section{Data loss}
 \label{sec:dataLoss}
 
@@ -1068,10 +1067,7 @@ The success of the software developed according to the experimental evaluation h
 
 The software is also compared against the non-functional requirements proposed in section \ref{subsubsec:systemRequirementsNonFunctional} in table \ref{table:evalNonFunctionalReqs}. In this table it is shown that the application meets all non-functional requirements except NF.2, which is that the application returns the correct answer for 90\% of queries. This requirement was marked as not met as the data that would have been used to evaluate it was lost, as described in section \ref{sec:dataLoss}. It was suggested that the ratings provided for application usefulness in the questionnaire would have been higher if this requirement was met.
 
-% explain what can be done to improve this
-% sumarise, only 2 requirements not fully met, acceptable.
-
-TODO: explain what can be done to improve this; sumarise, only 2 requirements not fully met, acceptable.
+Non-functional requirement NF.2 cam be improved by extending the amount of data that the application can retrieve from the data sources. As described in section \ref{subsec:dbpediaOntology} some information for a Geographical entity in the DBPedia Ontology is not queryable in the current implementation, which simply pulls a list of top-level parameters about an entity. This could be improved by adding support for complex Ontological queries using the SPARQL interface~\cite{dbPediaSparql}, and is discussed in the Future Work chapter in section \ref{sec:evalSparql}. Additional data sources could also be added to the application to increase the amount of information available for the application to utilise when answering questions. This is also discussed in the Future Work chapter in section \ref{sec:evalAdditionalSources}.
 
 \begin{table}[h]
 \begin{tabular}{|p{0.4cm}|p{9.0cm}|p{4.0cm}|}
@@ -1109,16 +1105,23 @@ NF.5 & Participants used natural language to ask questions of the application du
 
 The experimental evaluation suffered from issues caused by the pool of participants used. As discussed the data was extremely noisy and it was speculated that this was caused by varying levels of expectation from participants. This could have been fixed by spending more time with each participant explaining the expectations they should have of the software and a typical situation in which it would be used. 
 
-The participant pool contained 21 individuals and was extremely skewed towards students in the age range of 18-24 who used the internet multiple times per day. This is not representative of the range of possible users of the application developed, notably the personas developed in appendix \ref{sec:appendixPersonas} which were used to drive the user requirements.
+The participant pool contained 21 individuals and was skewed towards students in the age range of 18-24 who used the internet multiple times per day. This is not representative of the range of possible users of the application developed, notably the personas developed in appendix \ref{sec:appendixPersonas} which were used to drive the user requirements.
 
-Only 21 participants were used for the experimental evaluation, and each participant was asked to identify 16 pieces of information. The application learns more as each participant takes part and it would have been interesting to see if the trend of increasing ratings of usefulness continued with a larger number of participants. Time restrictions limited the number of data points that could be collected from each participant: with 16 pieces of information to identify the experiment took around 10 minutes during a test run. It would have been preferable to have more data points from asking participants to identify more information as this would perhaps have reduced the noise in the data due to a single poor result having less of a part of the whole experiment. Unfortunately this would have extended each run experiment making it more difficult to recruit participants without a remuneration for their time.
+Each of the 21 participants in the experimental evaluation were asked to identify 16 pieces of information. The application learns more as each participant takes part and it would have been interesting to see if the trend of increasing ratings of usefulness continued with a larger number of participants. Time restrictions limited the number of data points that could be collected from each participant: with 16 pieces of information to identify the experiment took around 10 minutes during a test run. It would have been preferable to have more data points from asking participants to identify more information as this would perhaps have reduced the noise in the data due to a single poor result having less of a part of the whole experiment. A suitable expansion of the task would be to ask participants to identify 50 pieces of information instead of 16 which would extend the experiment to take approximately 30 minutes. Unfortunately this would make it more difficult to recruit participants without a remuneration for their time.
 
-% TODO:     - more participants, does curve continue, get less noisy,
-% TODO:     - more data
+The experiment showed a usefulness trend that indicated the application was learning and improving, however as was previously mentioned the data was noisy. Ideally additional participants would be used to verify the quality of answers provided by the application continues to improve. It is suggested that a suitable expansion would be to increase the number of participants to between 30 and 40. This would mean the experiment had more participants who used the application in the later stage of its learning process.
+
+\section{Conclusion of the Evaluation}
+\label{sec:conclusionOfEval}
+The software developed has been evaluated according to the original user requirements and non-functional requirements of the system in section \ref{sec:evalSoftwareDeveloped}. It was shown that the system satisfied all of the requirements except two, one of which it partially satisfied. From this it is concluded that the development of the software was majoritively successful, but with space for future improvement especially in the area of answer quality. Suggestions for improvements to the system including those that will improve the quality of answers are provided in the Future Work chapter in section \ref{sec:extending}.
+
+The experimental evaluation was evaluated with a focus on the participants used and the data collected. Some issues were found, such as that the participants had different expectations of the quality of answers they could expect and different perceptions of the situations that the application would be used in. The experiment was limited by time and cost: ideally more participants would be used and more data points would be collected. However, valuable data was collected showing that the application partially met its usefulness and usability \marginnote{Remove usefulness if removing that data?} goals and a correlation was found showing that the application was learning, making the experimental evaluation a moderate success.
+
+% TODO - remove above usefulness if removing the data.
 
 \newpage
 
-\chapter{Extending this project}
+\chapter{Future Work}
 \label{sec:extending}
 {\bf Section not complete}
 In this chapter solutions for some of the issues addressed in the evaluation will be presented as work that can be undertaken in the future to improve the software developed.
@@ -1141,9 +1144,13 @@ Geography was selected as the topic area to perform research on in this project 
 \label{sec:evalMultipleLanguages}
 This has been discussed in section \ref{sec:addingMultilanguageSupport} in the implementation as detail was given as to where it would fit into the application. 
 
+\section{Adding additional data sources}
+\label{sec:evalAdditionalSources}
+Currently only Wikipedia and DBPedia are used as data sources for the application. Additional databases for specific topics could added to the software to improve the quality of answers for specific areas. Adding these data sources would be simple: a module would be created that follows the interface specification given in \ref{sec:implementationOfAnswerLocationSys}. An example of a data source that could be added is the Peakware World Mountain Encyclopedia~\cite{peakware} through a possible collaboration with the owners.
+
 \section{Using SPARQL to perform complex queries in DBPedia}
 \label{sec:evalSparql}
-One area where significant progress can be made in the software is with queries to the DBPedia ontology. In section \ref{subsec:dbpediaOntology} the available interfaces to DBPedia are discussed and the issues with creating SPARQL queries presented. The main issue is one of software complexity: taking a query in natural language form and then constructing a formal Ontology query is difficult as terms in the query have to be matched to classes in the Ontology. However if this were to be achieved the results that the Ontology could return would be significant of significantly higher quality as data that is abstracted into linked objects could be retrieved. An example of this is the query \texttt{Who is the mayor of London?}. The object \texttt{London} in the DBPedia Ontology does not have a field \texttt{Mayor}, but instead a pointer to another object called \texttt{Mayor\_of\_London} which contains the data requested. This was beyond the scope of the original project due to the time constraints, as this will not be a quick feature to implement.
+One area where significant progress can be made in the software is with queries to the DBPedia ontology. In section \ref{subsec:dbpediaOntology} the available interfaces to DBPedia are discussed and the issues with creating SPARQL queries presented. The main issue is one of software complexity: taking a query in natural language form and then constructing a formal Ontology query using the SPARQL interface~\cite{dbPediaSparql} is difficult as terms in the query have to be matched to classes in the Ontology. However if this were to be achieved the results that the Ontology could return would be significant of significantly higher quality as data that is abstracted into linked objects could be retrieved. An example of this is the query \texttt{Who is the mayor of London?}. The object \texttt{London} in the DBPedia Ontology does not have a field \texttt{Mayor}, but instead a pointer to another object called \texttt{Mayor\_of\_London} which contains the data requested. This was beyond the scope of the original project due to the time constraints, as this will not be a quick feature to implement.
 
 \newpage
 
