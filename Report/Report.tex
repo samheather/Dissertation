@@ -50,7 +50,7 @@
 
 \pagenumbering{Roman}
 
-\title{Bringing Knowledge Through AI and SMS}
+\title{Bringing Knowledge Through Machine Learning and SMS}
 \author{Sam Heather\\
   \texttt{sam@heather.sh}}
 \date{\today}
@@ -557,7 +557,7 @@ There are four entities in the conceptual data model for this project.  These ar
 These entities are shown in the UML diagram in Figure \ref{fig:conceptualDatabaseDesignDiagram}, which also shows the entity relationships.
 
 \begin{figure}[htb] 
-\includegraphics[width=\linewidth]{conceptualModel}
+\centerline{\includegraphics[width=0.8\linewidth]{conceptualModel}}
 \caption{Conceptual Model of Data}
 \label{fig:conceptualDatabaseDesignDiagram}
 \end{figure}
@@ -628,13 +628,13 @@ The logical database requirements are listed in Table \ref{table:logicalDatabase
 
 \subsubsection{Physical Database Design}
 \label{subsubsec:physicalDatabaseDesign}
-As previously discussed section \ref{subsubsec:databaseTechnology}, MongoDB separates groups or types of entity into collections (which are similar to a Table in an SQL database) but does not place restrictions on the structure of objects within a collection.  The general structure of each document in a collection for this application is shown in Table \ref{table:collectionStructure}. A small change was made between the logical and the physical database designs with the storage of ratings in KeywordPairingRatings. In the logical model these were individual counts of ratings at the five different levels (for example, a count of one-star ratings, a count of five-star ratings, etc) however in the physical model this was converted to a list of ratings received (e.g. \texttt{[5,5,3,4,5]}). This made the implementation more compact as five different variables did not need to be addressed every time the ratings were read or written to.
+As previously discussed in section \ref{subsubsec:databaseTechnology}, MongoDB separates groups or types of entity into collections (which are similar to a Table in an SQL database) but does not place restrictions on the structure of objects within a collection.  The general structure of each document in a collection for this application is shown in Table \ref{table:collectionStructure}. A small change was made between the logical and the physical database designs with the storage of ratings in KeywordPairingRatings. In the logical model these were individual counts of ratings at the five different levels (for example, a count of one-star ratings, a count of five-star ratings, etc) however in the physical model this was converted to a list of ratings received (e.g. \texttt{[5,5,3,4,5,3]}). This made the implementation more compact as five different variables did not need to be addressed every time the ratings were read or written to.
 
 The database software MongoDB will be hosted on the same server as the main application, as shown in Figure \ref{fig:physicalServerDb}.
 
 \begin{figure}[htb] 
 \centerline{\includegraphics[width=0.6\linewidth]{physicalServerDb}}
-\caption{ArchiMate diagram showing the structure of the main server, which runs the application and hosts the database.}
+\caption{Deployment View of the system in ArchiMate notation. The diagram shows the structure of the main server, which both runs the application and hosts the database.}
 \label{fig:physicalServerDb}
 \end{figure}
 
@@ -793,6 +793,7 @@ In addition, the following Python libraries from the Python Package Index~\cite{
 
 
 \section{Implementation of SMS interface}
+\label{sec:implSms}
 The SMS interface to the application was developed using the Twilio SMS service and Library~\cite{serviceTwilio, libraryTwilio}. A HTTP interface to the application was hosted using Flask~\cite{libraryFlask} at \texttt{<server\_url>/sms}, and the Twilio service was configured to make a request to this URL when an SMS was received. The function \texttt{sms()} is executed upon receiving a request on the \texttt{<server\_url>/sms} address, which extracts the phone number of the user and the text of their message from the request. The number is obscured, as explained in section \ref{subsec:hashingUserId}, and then the function \texttt{start()} is called with both the obscured number and the text from the message. This function then computes the answer to return to the user, described in section \ref{sec:implementationOfAnswerLocationSys}, and the response is sent back to the user using the Twilio library to make a HTTP call to the Twilio service.
 
 The service provided by the application and its service are shown in the ArchiMate diagram in Figure \ref{fig:systemSmsInterface}.
@@ -804,6 +805,7 @@ The service provided by the application and its service are shown in the ArchiMa
 \end{figure}
 
 \section{Implementation of natural language processing module}
+\label{sec:impNlp}
 In this section, a description of how the natural language processing module was implemented is given.
 
 It was decided that a module should be constructed specifically for the parsing of natural language questions in the application.  This module, called nlp, processes question in natural language form, and is able to output the two parameters needed by the application for answering a question.
@@ -811,18 +813,18 @@ It was decided that a module should be constructed specifically for the parsing 
 The first step in the process is to remove punctuation from the question text, which is of no meaning in the context of this application. Consider an example sentence \texttt{How tall is the Eiffel Tower?}. In this sentence, the question mark will be removed to give \texttt{How tall is the Eiffel Tower}.
 
 \begin{sloppypar} % stops the long url going into the margin
-The next step in the process is to identify the geographical entity that a user is investigating. This is done by passing the original question into a Named Keyword Extraction tool, which extracts a list of keywords representing entities from a string and and returns them. The Dandelion Named Entity Extraction tool was selected as in addition to providing a list of words representing entities, it categorised them according to the DBPedia Ontology. By using this, it was possible to identify the geographical entity by simply checking each keyword for the type \texttt{http://dbpedia.org/ontology/Place} in the types associated with each keyword.  This is done by the \texttt{extractEntities()} function in the nlp module.
+The next step in the process is to identify the geographical entity that a user is investigating. This is done by passing the original question into a Named Keyword Extraction tool, which extracts a list of keywords representing entities from a string and returns them. The Dandelion Named Entity Extraction tool was selected as in addition to providing a list of words representing entities, it categorised them according to the DBPedia Ontology. By using this, it was possible to identify the geographical entity by simply checking each keyword for the type \texttt{http://dbpedia.org/ontology/Place} in the types associated with each keyword.  This is done by the \texttt{extractEntities()} function in the nlp module.
 \end{sloppypar}
 
 The final step in the process is to identify the property that a user is requesting about the entity, for example, the height. This is done in the \texttt{stripToProperty()} function in the nlp module. This function identifies the property by assuming it will be the only text in the sentence with meaning, excluding the place name. As such, the first action of this function is to remove words relating to the name of the geographical entity being queried, which it does by checking each word in the question text against each word in the place string, and removing the word if they are equal. After this process, our example question will have been changed from \texttt{How tall is the Eiffel Tower} to \texttt{How tall is the?}. The next step is to remove meaningless words that do not identify the property that the user querying. These are stop words, such as \texttt{and, the, of}. As with removing words relating to the geographical entity, this is done by checking each word in the question text against a list of stop words and removing them if they match. In our above example, the question text will now be \texttt{tall}. This is the property determined to be the subject of a user's query.
 
-Having called both \texttt{extractEntities()} and \texttt{stripToProperty()}, the nlp module packages these results into a dictionary and returns them as the processed representation of the question text.
+Having called both \texttt{extractEntities()} and \texttt{stripToProperty()}, the NLP module packages these results into a dictionary and returns them as the processed representation of the question text.
 
 \section{Implementation of answer location system}
 \label{sec:implementationOfAnswerLocationSys}
 In this section, a description of the process followed to answer a question about a property of a geographical entity is presented. 
 
-After having identified the place and the property of that place in the question text using the nlp module, the application must locate the value of that property for that place. This is done in the \texttt{sourceProcessor} module, which collates data from the data sources and then attempts to identify from those sources an answer to the user's question.
+After having identified the place and the property of that place in the question text using the NLP module, the application must locate the value of that property for that place. This is done in the \texttt{sourceProcessor} module, which collates data from the data sources and then attempts to identify from those sources an answer to the user's question.
 
 The entry point into \texttt{sourceProcessor} is the \texttt{findArgumentOnPage()} function which takes the place name and the property being queried as input parameters. The first step of \texttt{findArgumentOnPage()} is to query the data sources for a dictionary of properties about the geographical entity, pulling down all information available on the entity in question. Interfaces to data sources are factored out into modules, such as \texttt{dbpediaParser} and \texttt{wikiPageParser}, which handle queries to these data sources and return the data to the application in a normalised form (a dictionary of keys and values about the geographical entity). The modules controlling the data sources have a common interface: a function \texttt{getInfobox()} which returns a dictionary of keys and values from a source. Additional data sources can easily be added to the application by conforming to this interface.
 
@@ -834,16 +836,16 @@ This semantic comparison is done by the the \texttt{compare} module, which has a
 
 The Cortical API is not configured for recognising text in CamelCase, so helper functions such as \texttt{camelCaseToSnakeCase} and \texttt{camelCaseToSpace} are also included for converting CamelCase to either Snake Case or space-separated words.
 
-A minimum threshold was set for the semantic similarity of keys that could be returned to prevent a key with a very low semantic similarity been returned as the answer where the data source didn't have the requested information available. This helps to prevent incorrect answers been returned to users. The Cortical API documentation recommended a threshold value of 0.3~\cite{Retina-API Documentation}, however this was resulting in some key matchings been ignored. Contact was made with the Cortical team who suggested a value of 0.2 might be more appropriate for this use case, and during development all key pairs and their semantic similarity values were printed so that when an answer was not found the semantic similarity value of the correct matching could be inspected with the potential to adjust the threshold. The advice from Cortical turned out to be correct, with numerous examples of requested keys having a similarity score to those from the data sources in the range \texttt{0.2} through \texttt{0.3} during development, such as the requested key \texttt{population} and the key \texttt{population urban} from the DBPedia dataset having a similarity score of \texttt{0.24695}.
+A minimum threshold was set for the semantic similarity of keys that could be returned to prevent a key with a very low semantic similarity been returned as the answer where the data source didn't have the requested information available. This helps to prevent incorrect answers been returned to users. The Cortical API documentation recommended a threshold value of 0.3~\cite{generalCorticalDoc}, however this was resulting in some key matchings been ignored. Contact was made with the Cortical team who suggested a value of 0.2 might be more appropriate for this use case, and during development all key pairs and their semantic similarity values were printed so that when an answer was not found the semantic similarity value of the correct matching could be inspected with the potential to adjust the threshold. The advice from Cortical turned out to be correct, with numerous examples of requested keys having a similarity score to those from the data sources in the range \texttt{0.2} through \texttt{0.3} during development, such as the requested key \texttt{population} and the key \texttt{population urban} from the DBPedia dataset having a similarity score of \texttt{0.24695}.
 
-Initially it was planned to compare questions to historical highly rated questions with extremely high semantic similarity. If the database contains the highly rated question \texttt{What's the height of the Eiffel Tower?} and then the new question of \texttt{How tall is the Eiffel Tower?} is asked, the answer that was provided for the first question would be sent for the second question. Unfortunately there were issues with implementing this such as how to efficiently check a new question against every historical highly rated question for semantic similarity. Although it would be possible to implement using keywords for a question to limit the number of pairs that were compared, and by storing semantic representations locally and therefore doing the comparison locally, this would have taken too much time. As a compromise, the current version of the software does collect question texts and their ratings to begin building a database. In the future when this feature if this feature is implemented, this historical database will be useful as it means there will already be data for the application to use rather than having to wait to build up a dataset of full question texts and ratings.\marginnote{wording?!}
+Initially it was planned to compare questions to historical highly rated questions with extremely high semantic similarity. If the database contains the highly rated question \texttt{What's the height of the Eiffel Tower?} and then the new question of \texttt{How tall is the Eiffel Tower?} is asked, the answer that was provided for the first question would be sent for the second question. Unfortunately there were issues with implementing this such as how to efficiently check a new question against every historical highly rated question for semantic similarity. Although it would be possible to implement this by storing a list of keywords for each question and then only semantically comparing questions that share keywords to reduce the number of questions that are compared, or by storing semantic representations locally and therefore doing the comparison locally, this would have taken too much time\marginnote{long sentence}. As a compromise, the current version of the software does collect question texts and their ratings to begin building a database. In the future when this feature is implemented, this historical database will be useful as it means there will already be data for the application to use rather than having to wait to build up a dataset of full question texts and ratings.
 
 The comparison of question texts is also done in the \texttt{compare} module which contains a function \texttt{similarityOfQuestion()}. This function uses the Dandelion~\cite{serviceDandelionSim} similarity API to compute the semantic similarity of two longer pieces of text such as questions to the application.
 
 \section{Implementation of rating and learning system}
 \label{sec:implementationRatingLearningSys}
 
-The application developed uses user ratings of answers to questions to learn about the quality of answers and to improve future answers. The implementation of this can be split into two sections: the collection of ratings and the use of ratings in answering collections.
+The application developed uses user ratings of answers to questions to learn about the quality of answers and to improve future answers. The implementation of this can be split into two sections: the collection of ratings and the use of ratings when answering questions. A five 'star' scale is used for ratings: a rating of one indicates that an answer was of low quality and a rating of five indicates that an answer was of high quality.
 
 \sloppy
 \subsection{Collecting Ratings}
@@ -888,7 +890,9 @@ A potential issue with the ratings system is that of handling incorrect and anom
 
 The multiple of \texttt{1} was chosen for the standard deviation based on numeric experimentation meaning that results that are outside of the range of one standard deviation from the mean are then excluded from the adjustment process. Where the standard deviation from the mean is a decimal, it is rounded to its nearest integer to establish the range of ratings that will be included in the computation. The value of one standard deviation was selected as the range of ratings was so small (with only five possible values for a rating) that a larger multiple of the standard deviation made it likely to include anomalous data. This is shown with the above example data, where the mean is 3.5 and the standard deviation is 1.5, meaning that the range of valid ratings is 2 through 5 inclusive which successfully excludes the outlying result. If the multiple for standard deviation was increased to 1.5 or even the commonly used value of 2 the range from the mean would increase to 2.25 or 3.0 respectively, meaning that the range of valid ratings would be 1 (rounded from 1.25 for a standard deviation multiplier of 1.5) through 5, which includes the incorrect value.
 
-Using this method there are situations where a result which is perhaps not an outlier (depending on the method used to categorise it) is excluded. An example of this is if a pair of keys has the ratings \texttt{[4,4,4,4,4,4,5]}. It's reasonable to expect that the there is some variation in the opinion of users as to whether the answer provided is excellent and so scores \texttt{5} or just good with a score of \texttt{4}.  However in this situation the give is excluded using the aforementioned standard deviation of \texttt{1}. In this group of ratings the mean is \texttt{4.14} and the standard deviation is \texttt{0.35}, which will mean the included range of valid ratings is only those with value \texttt{4}.
+Using this method there are situations where a result which is perhaps not an outlier (depending on the method used to categorise it) is excluded. An example of this is if a pair of keys has the ratings \texttt{[4,4,4,4,4,4,5]}. It's reasonable to expect that the there is some variation in the opinion of users as to whether the answer provided is excellent and so scores \texttt{5} or just good with a score of \texttt{4}.  However in this situation the \texttt{5} is excluded using the aforementioned standard deviation of \texttt{1}. In this group of ratings the mean is \texttt{4.14} and the standard deviation is \texttt{0.35}, which will mean the included range of valid ratings is only those with value \texttt{4}.
+
+A possible solution to this would be to ensure that ratings within one star rating of the mean are always included and not classified as outliers. For example if the mean of a list of ratings is \texttt{3.14} then, regardless of the aforementioned outlier detection techniques, ratings of \texttt{2} and \texttt{4} would not be treated as outliers. This was not implemented for the experimental evaluation as it was an enhancement that was thought about in the later stages of the project.
 
 \section{Implementation of Testing Client}
 \label{sec:implementationTestingClient}
@@ -933,28 +937,42 @@ Fixes were made to the software before running the full experimental evaluation 
 
 \section{Adding Multi-Language Support}
 \label{sec:addingMultilanguageSupport}
-As described in section \ref{sec:planForSoftwareDevelopment} the software was initially intended to have support for multiple languages. Although this was not included in the software developed, the software has been constructed with an awareness of this potential future feature so that it can easily be added.
-...%TODO Add with diagrams.
+As described in section \ref{sec:planForSoftwareDevelopment} the software was initially intended to have support for multiple languages. Although this was not included in the software developed, the software has been constructed with an awareness of this potential future feature so that it can easily be added. 
+
+On a high level there are two potential methods of implementing multiple language support. The first method is simply to translate questions into the language of the system when the question arrives and then to re-translate the answer to the language of the user before sending it to them. A key advantage of this is that very little of the implementation will change, however as the application will still be working with English resources like the English edition of Wikipedia and then translating back it's likely that the quality of the answers will not be as high as if the application were to work natively in multiple languages.
+
+The second method is to adjust the application to work natively in multiple languages. This involves adjusting the \texttt{Natural Language Processing (NLP)} module described in section \ref{} $$ and the tools used to make semantic comparison so that comparisons can be made of words in non-English languages. The \texttt{NLP} module currently has two pieces of functionality specific to the English language: the identification of geographical entities in a question text (entity extraction) and the removal of stop words, described in section \ref{sec:impNlp}. With regard to entity extraction, the Dandelion Entity Extraction API used for identifying geographical entities has built in support for five languages, where the language can be set to an Auto-detect mode or to a specific language via a parameter in the API call~\cite{serviceDandelionNex}. The second piece of functionality in the \texttt{NLP} module, that of removing stop words to obtain the property string, is dependent on having a list of stop words in the language of the question. These would have to be collected from various sources and language identification would need to be used to identify the correct set of stop words to use for a question. Finally the \texttt{compare} module would need changed to support comparing words in non-English languages. Currently this module uses the Cortical API~\cite{serviceCorticalSim} which currently only supports the English language~\cite{generalCorticalDoc}.
+
+Due to the second method requiring substantial engineering work to support the removal of stop words in the NLP module, the requirement to find new tools for semantically comparing words, and the entity extraction only supporting five languages, the first method will be used when multiple language support is added. This will be done through the addition of a new \texttt{translate} module into the system. This module's interface will be two functions: \texttt{translateQuestion()} for translating an input question to English and \texttt{translateAnswer()} for translating an answer back to the language of the user from English. The \texttt{translateQuestion()} function will return a dictionary containing a representation of the original language that the question was in and the translated question in English. When translating the answer back to the language of the user with the \texttt{translateAnswer()} function, the function will take the original language as a parameter to indicate which language it should translate the answer to. The \texttt{translate} module will use an online language detection and translation API such as Google Translate~\cite{googleTranslateApi} to both detect the language used in a question and translate text between languages. 
+
+The module will be implemented into the application between the SMS interface and the \texttt{start()} function, described in section \ref{sec:implSms}. The question will be translated before the \texttt{start()} function is called, the original language will be stored, and then the answer returned from the \texttt{start()} function will be translated back into the users language.
+
+% TODO add diagram?
 
 \section{Discussion of implementation and issues faced}
+
+Software was developed following the plan based on the iterative model, which was described in section \ref{sec:planForSoftwareDevelopment}. In this section some of the limitations and issues faced with the implementation will be described and methods for expanding the modular software will be presented.
+
+\subsection{Issues faced in the implementation}
+One of the key issues that was faced during the implementation was that the APIs provided by Cortical for semantically comparing text were still been heavily developed as Cortical evolved their product. These changes were not documented so caused issues when they happened. One such example is when the API started rejecting some strings with space characters in them that it previously accepted. This was fixed by replacing space characters with underscore characters when checking keys in the data sources for semantic similarity. Another example is that the API started returning HTTP errors for some specific comparisons instead of zero ratings as it had previously. This occurred when the keys for input parameters in the query were incorrect as the API is unclear on when to classify an input as a \texttt{term} or a \texttt{text}~\cite{serviceCorticalSim}. Again this was undocumented and required an unexpected change to the application during development.
+
+
+
+Key issues:
+ - can't handle units
+ - sometimes wikipedia attaches other garbage 
+ - can't do subjective stuff 'depth of the deepest ocean'
+ - can't do properties that are stored deep within the ontology.
+ - translation not done (here or extending this project?)
+
 % TODO XXX - write this
 % TODO - write about issues faced.
  - Tweaking the constants for best results
  - Excluding wikipedia due to dirty data
  
- \ref{sec:planForSoftwareDevelopment} - stuck to the iterative plan.
- 
-Key issues:
 
- - can't handle units
  
- - sometimes wikipedia attaches other garbage
- 
- - can't do subjective stuff 'depth of the deepest ocean'
- 
- - can't do properties that are stored deep within the ontology.
- 
- - translation not done (here or extending this project?)
+
 
 \newpage
 \chapter{Results}
