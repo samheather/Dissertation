@@ -89,7 +89,7 @@ The root credentials for the server used to host the application were provided t
 
 Close attention to ethical issues, in particular privacy, was also paid during the design and development of the software. A key example of this is the use of phone numbers to uniquely identify users of the system. These are never directly stored in the database: instead only an obscured representation of the phone number is stored, which is generated using an industry standard one-way hashing function. This means that it is impossible to gain the identity of a user from the database, protecting their privacy in the event that the database is hacked.  Additionally, service providers who would carry information over SMS were researched to assess their reputability, as they would be transmitting information to private individuals. 
 
-Another ethical issue that attention was paid to was the potential for the application to cause harm. The choice of Geography as the subject for the software to answer questions on was made to remove the risk of the software working in a domain where it could cause harm. Answers for questions relating to Geographical entities are etremely unlikely to result in someone making a decision that could lead them harming themselves.
+Another ethical issue that attention was paid to was the potential for the application to cause harm. The choice of Geography as the subject for the software to answer questions on was made to remove the risk of the software working in a domain where it could cause harm. Answers for questions relating to Geographical entities are extremely unlikely to result in someone making a decision that could lead them harming themselves.
 
 This system was only developed for research purposes, but if it were to be extended to be used outside of this context a feature should be built in to allow a user to delete all data corresponding to them via SMS to comply with data protection regulations. This was not done in this project as participants specifically gave consent for information to be collected and they will not have access to the system after the experiment as the server will be shutdown. Participants were provided with the Supervisors contact details which they could use to request the deletion of their data in the future. During the experiment the phone numbers of participants were not collected or used.
 
@@ -97,15 +97,9 @@ Finally, it was noted in early research that there is an ethical responsibility 
 
 \newpage
 \chapter*{Acknowledgement}
-The author would like to acknowledge the following individuals for their contribution to this project:
+The author would like to thank various individuals for their contributions to this project. First, the author would like to thank Lilian Blot for his time and effort spent supervising and providing guidance for this project. He would also like to thank Julie Markham and Nicholas Hopper, with whom the author collaborated with on Shy, the mobile application that inspired this project. Finally, the author would like to thank Emma Rizkallah and Ashley Clayton for providing guidance on writing style and reviewing this report.
 
-\begin{itemize}
-  \item SpazioDati (http://spaziodati.eu/) for providing extended access to the Dandelion Text Semantics API at no extra charge.
-  \item Rackspace for providing server infrastructure.
-  \item Emma Rizkallah for providing guidance on writing style and reviewing this report.
-  \item Julie Markham and Nicholas Hopper, with whom the author collaborated with on Shy, the mobile application that inspired this project.
-  \item Lilian Blot, for his time and effort spent supervising and providing guidance for this project.
-\end{itemize}
+The author would also like to acknowledge the organisations who supported this project. These were SpazioDati (http://spaziodati.eu/), who providing extended access to the Dandelion Text Semantics API at no extra charge, and Rackspace who provided free server infrastructure.
 
 \newpage
 \chapter{Introduction}
@@ -116,7 +110,7 @@ The author would like to acknowledge the following individuals for their contrib
 
 The inspiration for this project originates from a project the author undertook in September 2014 whilst attending Yacht Hack, a week-long hackathon on a Yacht in Croatia~\cite{yachtHack}.  The author co-created a project called Shy to prototype a mobile application that would facilitate the immediate answering of questions that fall within certain categories using a knowledge base, simple machine learning and profiling of users based on their usage history.
 
-One of the initial goals of Shy was to bring knowledge via m-learning\footnote{M-Learning: learning using tools available on a mobile device} as opposed to e-learning\footnote{E-Learning: learning conducted online, usually with the help of a computer}.  This is because m-learning systems are available to a much larger demographic of people, because the hardware (mobile devices, commonly phones) is becoming ever cheaper and more accessible.
+One of the initial goals of Shy was to bring knowledge via m-learning\footnote{M-Learning: learning using tools available on a mobile device} as opposed to e-learning\footnote{E-Learning: learning conducted online, usually with the help of a computer}.  This is because m-learning systems are available to a much larger demographic of people as a result of the hardware (mobile devices, commonly phones) becoming cheaper and more accessible.
 
 A semi-functional prototype was completed for iOS, as seen in Figure~\ref{fig:shy-ios-screenshots}.  The front-end was complete; however in the backend question-answer matching was evaluated without knowledge of previous material the user had viewed.  This meant that explicitly targeted answers for a question and suggestions of questions that a given user profile might be interested in could not be made.  Up until this point, the service was restricted to working on iOS smart devices only, with poor quality question-answer matching.  In the initial project, the knowledge base was built for questions on personal health, sex, relationships and family.
 
@@ -153,7 +147,7 @@ Results from the evaluation of the system will be presented in Chapter~\ref{sec:
 
 Chapter~\ref{sec:evaluation} contains an evaluation of the software produced and the process taken to complete it.  Comparisons will be made to the success criteria, set out for the project in section \ref{sec:evaluatingSuccess}.
 
-Thoughts on potential future research that builds on the work produced in this project are then displayed in chapter~\ref{sec:extending}.
+Thoughts on future research that builds on the work produced in this project are then displayed in chapter~\ref{sec:extending}.
 
 Finally, the main achievements of this project are concluded in chapter~\ref{sec:conclusion} with closing thoughts.
 
@@ -171,8 +165,6 @@ The main use-case for this project is going to be parts of the world with limite
 \chapter{Literature Review}
 \label{sec:literatureReview}
 
-{\bf The point of this is to show that I 'own' the material and subject (competence).  Show different points of view, choose a side, express a view on which I prefer and if I agree, critique.  Have objective goals.}
-
 % TODO expand introduction to explain why sms, then look at related work in next section.  compare to smart phones loosely.
 A significant amount of work has previously been undertaken in the area of making knowledge quickly accessible to us in the form of questions and answers.  To take one example, imagine that an individual needs to find the population of London as quickly as possible.  The initial step would be to search for information.  In the connected world, this is easy: a simple Google search returns the answers without even having to click through to any resources, as shown in Figure \ref{fig:googleInstant}.
 
@@ -182,7 +174,7 @@ A significant amount of work has previously been undertaken in the area of makin
 \label{fig:googleInstant}
 \end{figure}
 
-This is easy to do in the developed world where up to 75\% of the population are connected to the internet~\cite{ITU_Cell_Usage_2013}, with the population of elderly people been largely responsible for the remaining 25\%~\cite{Gov_Internet_Usage_UK_2014}.  This contrasts strongly with the situation in the African continent, where in 2013, internet usage had only reached 16\%~\cite{ITU_Cell_Usage_2013}, a figure largely inflated by South Africa where 5\% of the African population generate 2/3 of internet traffic from the African Continent~\cite{ITU_Cell_Usage_2013}.
+This is easy to do in the developed world where up to 75\% of the population are connected to the internet~\cite{ITU_Cell_Usage_2013}, with the population of elderly people been largely responsible for the remaining 25\%~\cite{Gov_Internet_Usage_UK_2014}.  This contrasts strongly with the situation in the African continent, where in 2013, internet usage had only reached 16\%, a figure largely inflated by South Africa where 5\% of the African population generate two-thirds of internet traffic from the African Continent~\cite{ITU_Cell_Usage_2013}.
 
 % But there are other communication methods which are proven to work
 \section{Previous work using SMS}
@@ -190,7 +182,7 @@ Although the above suggests that the African continent is majoritively disconnec
 
 Interactive systems have also been developed to operate over SMS.  One successful example is mobile money platforms.  These allow for users from any background to pay and be paid for goods and to transfer money across long distances at negligible cost~\cite{Aker_Mobile_Phones_2010}.  One of the most highly adopted services is M-Pesa, which in Kenya alone was responsible for \textsterling5.7 Billion in transfers in 2012 \footnote{Data from Safaricom, M-Pesa operator in Kenya - actual value 817,085,000,000 Kenyan Shillings, converted to GBP on 1st November 2014 at rate of approximately 0.007.}.  M-Pesa gives users a balance linked to a national ID number from which they can pay for goods by sending an SMS with a cashier (recipient) number or pay outstanding bills in a similar way.  Non-subscribers can also use the system by depositing money with a M-Pesa cashier in exchange for an access code, which can be sent via SMS to a contact who can subsequently redeem it with their local cashier~\cite{Aker_Mobile_Phones_2010}.
 
-This difference in standard use of mobile phones is demonstrated in the International Telecommunications Union's 2013 report~\cite{ITU_Cell_Usage_2013}, which shows that in Europe, for 790 million mobile subscriptions, 53\% of subscribers have mobile internet access (422 million), compared to 17\% in Africa (93 million have mobile broadband, out of 545 mobile subscribers).  This is due to the prohibitively high cost of accessing data services, regardless of the hardware that the user has.  In 2012 in Europe, 500 MB of data per month for 12 months cost 1.2\% of the average Gross National Income Per Capita (GNI pc).  In Africa, the average price was 30x this, at 36.2\% of an individuals GNI pc~\cite{ITU_Information_Society_2013}.
+This difference in standard use of mobile phones is demonstrated in the International Telecommunications Union's 2013 report~\cite{ITU_Cell_Usage_2013}, which shows that in Europe, for 790 million mobile subscriptions, 53\% of subscribers have mobile internet access (422 million), compared to 17\% in Africa (93 million have mobile broadband, out of 545 million mobile subscribers).  This is due to the prohibitively high cost of accessing data services, regardless of the hardware that the user has.  In 2012 in Europe, 500 MB of data per month for 12 months cost 1.2\% of the average Gross National Income Per Capita (GNI pc).  In Africa, the average price was 30 times this, at 36.2\% of an individuals GNI pc~\cite{ITU_Information_Society_2013}.
 
 % No research has been undertaken investigating whether bringing knowledge through this method is viable option.
 
@@ -211,7 +203,7 @@ One significant issue for this project stems from providing information that may
 % Lilian: You should provide both point of view so do use this material, then you will have to critic both point of views. 
 {\bf this needs to be waaaayyyyy expanded, but I struggled to find information that was useful.  There's lots on remote education, and on basic ethics of teaching, but I struggled to find anything specifically relating to ethics of ensuring information you provide is correct}.
 
-\marginnote{teachers code of conduct, wikipedia ethics to provide infomration that contributos believe to be correct. doctors and gp's provide to the best of their knowledge}
+\marginnote{teachers code of conduct, wikipedia ethics to provide information that contributors believe to be correct. doctors and gp's provide to the best of their knowledge}
 
 \subsection{Ethics of Translation}
 \label{subsec:ethicsOfTranslation}
@@ -224,7 +216,7 @@ This project involves two blocks of translation.  These are:
 \end{itemize}
 The latter of these raises some issues that do not apply to the former. To understand these issues it is first necessary to understand the two categories of machine translation.
 
-Rule-based machine translation effectively treats human language in a similar style to programming languages.  Formal grammars and lexicons are used to represent words that exist in either the source or target language, structures representing the translation of individual words or groups of words.  Map structures contain mappings between individual or groups of words to their translated counterparts, sometimes with multiple results (a 1-to-many map), from which rules decide which is selected.  Maps and rule sets are created by trained computational linguists~\cite{kenny2011ethics}.
+Rule-based machine translation effectively treats human language in a similar style to programming languages.  Formal grammars and lexicons are used to represent words that exist in either the source or target language, structures representing the translation of individual words or groups of words.  Map structures contain mappings between individual or groups of words to their translated counterparts, sometimes with multiple results (a one-to-many map), from which rules decide which is selected.  Maps and rule sets are created by trained computational linguists~\cite{kenny2011ethics}.
 
 More commonly, Statistical Machine Translation (SMT) is used, for example, by Google and Microsoft in their translation products~\cite{kenny2011ethics, Google_Translate_Research}.  SMT learns mappings between strings of words of potentially unequal lengths from pre-existing original texts and their trusted human translations.  The accuracy and breadth of language support for translation increases as more source material is analysed by the system, as potentially erroneous or low quality translations can be identified and flagged.  SMT is also dependent on the quality of the human translation on the input material~\cite{kenny2011ethics}.
 
@@ -240,9 +232,9 @@ The potential uses of this system include distributing information that may be u
 
 \subsection{User Privacy and Data Protection}
 \label{subsubsec:userPrivacyAndDataProtection}
-This project uses a simple Artificial Intelligence (AI) to keep a record of information that has already been returned to a user, to attempt to save sending repetitive information (saving the cost of additional SMS).  This raises another ethical issue though of privacy.  The material that a user has researched is likely to be sensitive; such is the nature of health related questions\marginnote{Lilian: Need to re-write this for new question subject, or can leave as a mark of the old subject topic?}.  This means that the information on a user has to be kept securely, in a way that an individual user can not be identified.
+This project stores a record of information that has already been returned to a user to allow it to handle questions based on previous questions and the software needs a method for identifying users to match them to their history. This raises the ethical issue of privacy. All information on a user has to be kept securely in a way that an individual user can not be identified.
 
-One way of doing this is using a technology called hashing.  Hashing is the technique of taking data as an input and generating an output value (called a 'hash') that is unique to an input.  Hash functions are ideally one way functions where given a piece of input data X, the output hash will always be a constant value Y, whenever and however the hashing algorithm is executed.  This allows a user's identifying information such as their phone number to be obscured, in such a way that the mobile number can not be recovered from the database.  When a question is received, the phone number (represented by variable X in the above example) can be hashed and the data for this number looked up from the database without the database application ever being aware of the phone number of the user.  In the example in Figure~\ref{fig:hashPhoneNumber}, a phone number (X) is used as input to an imaginary hashing function and the output hash (Y) is shown on the right hand side.  As just described, this number can then be used as the key for the user information database, shown in Table~\ref{table:hashDatabase} to retrieve the information needed for the AI.
+One way of doing this is using a technology called hashing.  Hashing is the technique of taking data as an input and generating an output value (called a 'hash') that is unique to an input.  Hash functions are ideally one way functions where given a piece of input data X, the output hash will always be a constant value Y, whenever and however the hashing algorithm is executed.  This allows a user's identifying information such as their phone number to be obscured, in such a way that the mobile number can not be recovered from the database.  When a question is received, the phone number (represented by variable X in the above example) can be hashed and the data for this number looked up from the database without the database application ever being aware of the phone number of the user.  In the example in Figure~\ref{fig:hashPhoneNumber}, a phone number (X) is used as input to an imaginary hashing function and the output hash (Y) is shown on the right hand side.  As just described, this number can then be used as the key for the user information database, shown in Table~\ref{table:hashDatabase} to retrieve a users' information.
 
 {\bf reference the above from security engineering ross anderson, chapter 10 and 21?}
 
@@ -258,9 +250,9 @@ One way of doing this is using a technology called hashing.  Hashing is the tech
     \begin{tabular}{| l | l |}
     \hline
     userId & userData \\ \hline
-    8f64B2 & \{‘previousQuestions’:[13,301,170,577]\} \\ \hline
-    9ac5e3 & \{‘previousQuestions’:[441,56]\} \\ \hline
-    f9dd7e & \{‘previousQuestions’:[301,623,89,280,364,621,209]\} \\
+    8f64B2 & \{'previousQuestions':[13,301,170,577]\} \\ \hline
+    9ac5e3 & \{'previousQuestions':[441,56]\} \\ \hline
+    f9dd7e & \{'previousQuestions':[301,623,89,280,364,621,209]\} \\
     \hline
     \end{tabular}
     \caption{Example of software database: hashed phone numbers paired with a list of previous returned answer IDs. }
@@ -270,10 +262,7 @@ One way of doing this is using a technology called hashing.  Hashing is the tech
 
 In practise it is possible for the output of a hashing algorithm not to be unique to a particular input.  This is known as the collision resistance property of a hashing algorithm and formally is the property of a hashing algorithm that determines the probability of the same output hash for two distinct random inputs~\cite{mitCryptographyMd5}.  It occurs because the range of possible input values is much larger than the range of output hashes, and because all valid inputs must map to an output there is repetition in outputs~\cite{mitCryptographyMd5}.  This property of hashing algorithms can be a security risk for some use-cases, where hashes are used to verify that data has not changed since been hashed.  In this case, a third-party may be attempting to generate alternative, malicious data with the same hash as some pre-existing data, to swap them undetected~\cite{securityEngineeringHashingAnderson}.  In the use-case of this project there is no security risk since hashes are only used to anonymise phone numbers; however a high collision resistance is necessary to ensure that two users of the system with distinct phone numbers don't get mapped to the same row in the database, resulting in poor quality question-answer matching or in the extreme worst case, privacy issues originating from returning to one user answers that are targeted to another.
 
-Irreversibility is a necessary property of the hashing algorithm chosen for this project.  This ensures that the key used in the database cannot be used to retrieve the phone number of the user, thus protecting their identity.  Commonly used hashing algorithm families, such as the MD family (e.g. MD5) and SHA family are all designed to be one-way~\cite{schneierCryptanalysisMD5SHA}
-
-\marginnote{Lilian: Is the wording of Bruce Schneier paragraph ok? Should I perhaps remove the last sentence?}
-It should be noted that Bruce Schneier is a fellow at Harvard's Berkman center for internet and society.  He has been posting regularly for his newsletter and then blog since 1998 (over 16 years) and has published material related to this field throughout this time.  He has been involved in the creation of other cryptographic algorithms, such as the Skein hashing algorithm and blowfish block cipher, so may have a vested interest in discrediting other algorithms such as MD5 and SHA.  However, the essay cited above is written as a result of the Crypto 2004 Conference in California, where the algorithm that Schneier suggests should be used at the end is not one that he has involvement in.  For these reasons, his material should be treated as reliable.
+Irreversibility is a necessary property of the hashing algorithm chosen for this project.  This ensures that the key used in the database cannot be used to retrieve the phone number of the user, thus protecting their identity.  Commonly used hashing algorithm families, such as the MD family (e.g. MD5) and SHA family are all designed to be one-way~\cite{schneierCryptanalysisMD5SHA}.
 
 Although hashing algorithms are computationally one-way, they can suffer from another type of vulnerability affecting the security of the original input data.  When hashes are used for short strings of information (passwords, for example), a simple way to try and retrieve the original data is to compute a dictionary of the hashes of lots of common passwords, from which matches can be found.  This idea has been extended to produce Precomputed Hash Chains and subsequently Rainbow Tables.  These are highly efficient data structures that consist of chains of processed input messages and their hashes with a reduce function to reach the next item in the chain, allowing original input data to be looked-up from its hash.  Both Precomputed Hash Chains and Rainbow Tables tend to be Terabytes in size, and as such they only exist in a significant form for the most commonly used hash functions (including MD5 and SHA)~\cite{Teat:2011:SCH:2016039.2016072}.  Within this project, this raises privacy implications, as hashes within the database would be 'convertible' to phone numbers.
 
@@ -287,7 +276,7 @@ There are many software development life cycles that a developer or company has 
 \marginnote{Lilian: remove these two footnotes? Not always necessary to reference the original}
 
 \subsection{The Waterfall Model}
-The waterfall model consists of 5 phases of work, where each leads directly into the next.  It is a plan driven development model, which means that all process activities such as the implementation of the project must be planned and scheduled before work on them begins~\cite{Engineering}.  The five layers are shown in Figure \ref{fig:waterfallModel} and described below:
+The waterfall model consists of 5 phases of work, where each leads directly into the next.  It is a plan driven development model, which means that all process activities such as the implementation of the project must be planned and scheduled before work on them begins~\cite{sommervilleSoftwareEngineering}.  The five layers are shown in Figure \ref{fig:waterfallModel} and described below:
 \begin{enumerate}
   \item {\bf Requirements}.  In this stage, both user and system requirements for the project are determined after examining the business goals for the project.  These form the system specification.
   \item {\bf Design}.  Here, a plan for the software development is created.  The overall architecture for the software is created, the external libraries to be used are chosen and the interaction between different modules is modelled.
@@ -360,7 +349,7 @@ In this chapter the method that will be followed for software development and an
 \label{sec:planForSoftwareDevelopment}
 The Iterative Development Model was selected in Section \ref{sec:developmentLifeCycleSummary}.  Therefore, the development of this service will follow the principles set forth in this process. Software development will take place in stages representing each iteration of the iterative process.  After each iteration the software will be discussed in a meeting, with a focus on the developed capabilities, quality and any issues. Three iterations were scheduled that mapped to calendar months with the goal of having completed the software by the end of March.
 
-Software development will begin in late December 2014 the first iteration is expected to be complete by the end of January which will demonstrate matching a variable directly by exact name to the Wikipedia API. A testing application will also be developed to aid development. The following additional iterations are planned, although it is expected they will evolve as the software changes and more clarity is achieved with regard to the goals.
+Software development began in late December 2014 and the first iteration is expected to be complete by the end of January which will demonstrate matching a variable directly by exact name to the Wikipedia API. A testing application will also be developed to aid development. The following additional iterations are planned, although it is expected they will evolve as the software changes and more clarity is achieved with regard to the goals.
 
 During the second iteration running through February semantic analysis and matching of requested properties / keys in the data sources will be added to the application, and additional data sources will be researched and included.
 
@@ -456,20 +445,19 @@ This project has a limited scope and time period available to it, and creating a
 \section{Processing Natural Language Queries}
 Because of the nature of its audience, the system needs to be able to process input in natural language form rather than enforcing a formal grammar on users as described in User Requirement \ref{requirement:userReqNaturalLanguage} and System Requirement \ref{requirement:sysReqNaturalLanguage}. This involves constructing a natural language processing system to process queries and identify their meaning. In this project, queries are of a simple form: if a user is asking a question they are requesting a property of information about a given entity. An assumption is therefore made that each query consists of: a token representing the geographical entity been queried; a token representing the property been requested of that geographical entity; and some noise in the form of stop words.
 
-\marginnote{Lilian: Ok to have this quite descriptive definition in the main text following straight on from the last paragraph?}
-Stop words are words that are frequently used in in language but do not carry any significance themselves \cite{dataMiningStopWords}. It is common practise in Natural Language Processing to to remove these stop words before attempting to process an input \cite{dataMiningStopWords}. An example of a stop word is the word \texttt{the}.
+Stop words are words that are frequently used in in language but do not carry any significance themselves \cite{dataMiningStopWords}. It is common practise in Natural Language Processing to remove these stop words before attempting to process an input \cite{dataMiningStopWords}. An example of a stop word is the word \texttt{the}.
 
 It necessary to be able to identify the geographical entity in the query. This will be done using a Named Entity Extraction tool, of which there many available online including Cortical~\cite{serviceCorticalNex} and Dandelion~\cite{serviceDandelionNex}. These tools extract keywords from a text and in some cases are capable of categorising keywords according to an ontology. For example, Dandelion links entities to the DBPedia Ontology \cite{dandelionNex}.
 
-The property about the geographical entity will be established by removing stop words, punctuation and the name of the geographical entity from the string.  In the input 'What is the height of the Eiffel Tower?', this would result in the string 'height'.
+The property about the geographical entity will be established by removing stop words, punctuation and the name of the geographical entity from the string.  In the input \texttt{What is the height of the Eiffel Tower?}, this would result in the string \texttt{height}.
 
-The result of this simple natural language processing should be that a sentence such as 'What is the Height of the Eiffel Tower?' is reduced to a structure indicating that the geographical entity is the 'Eiffel Tower' and the property is the 'height'.
+The result of this simple natural language processing should be that a sentence such as \texttt{What is the height of the Eiffel Tower?} is reduced to a structure indicating that the geographical entity is the \texttt{Eiffel Tower} and the property is the \texttt{height}.
 
 \section{Evaluating Success - Experimental evaluation of the system}
 \label{sec:evaluatingSuccess}
 Success will be evaluated by establishing if the project fulfils its original requirements, based on the scenarios.  Many user requirements such as protecting the privacy of a user will be demonstrated through the software developed, whilst some that involve user interactions must be tested with users.  As such, user testing will be undertaken to evaluate three specific properties of the software through a trial usage and subsequent questionnaire: the usefulness and quality of the service, its usability, and the quality of the machine learning system.
 
-Prior to running the experimental evaluation, a dry run will be undertaken with two participants. No data will be stored or collected - the purpose of the dry run is purely to establish early on any issues with the running of the experiment that would cause a problem during the real experiment.
+Prior to running the experimental evaluation, a dry run will be undertaken with two participants. No data will be stored or collected - the purpose of the dry run is purely to establish early on any issues with the running of the experiment that would cause a problem during the real experiment. These participants will not be used in the final experiment as they will already have experience of using the software.
 
 \subsection{Client software for the experiment}
 \label{subsec:clientSoftware}
@@ -487,13 +475,13 @@ A copy of the questionnaire that will be used is included in Appendix \ref{sec:a
 
 \subsection{Typical experiment plan}
 \label{subsec:typicalExperiment}
-At the start of the experiment, participants will be given both the consent form, included in Appendix \ref{sec:appendixConsentForm} and a document explaining what the software aims to achieve and what the participant should do, included in Appendix \ref{sec:appendixExperimentalInstructions}. The consent form sets out exactly what participants will be asked to do, the information that will be collected from them, and reminds them that they can withdraw at any time. The instruction sheet sets out some topic areas for the participant to research using the software, with a varying level of freedom within that topic. For example, they may be asked specifically to \texttt{identify the height of the Eiffel Tower}, or to identify a property of an entity of their choice such as \texttt{identify the population of a country of your choice}. Participants may also be asked to locate general information about a geographical entity. Constraints are placed on the area in which participants can query to limit the range of keywords used, thus focussing the machine learning onto a smaller group of words to allow a demonstratable improvement to be shown in the short space of this study.
+At the start of the experiment, participants will be given both the consent form, included in Appendix \ref{sec:appendixConsentForm} and a document explaining what the software aims to achieve and what the participant should do, included in Appendix \ref{sec:appendixExperimentalInstructions}. The consent form sets out exactly what participants will be asked to do, the information that will be collected from them, and reminds them that they can withdraw at any time. The instruction sheet sets out some topic areas for the participant to research using the software, with a varying level of freedom within that topic. For example, they may be asked specifically to \texttt{identify the height of the Eiffel Tower}, or to identify a property of an entity of their choice such as \texttt{identify the population of a country of your choice}. Participants will be asked to locate general information about a geographical entity. Constraints are placed on the area in which participants can query to limit the range of keywords used, thus focussing the machine learning onto a smaller group of words to allow a demonstrable improvement to be shown in the short space of this study.
 
 After the experiment, participants will be asked to complete the questionnaire. Any additional comments arising during the post-experiment debriefing will also be noted beneath the questionnaire.
 
 \subsection{Assessing success quantitively}
 \label{subsec:assessingLearning}
-As stated in section \ref{sec:evaluatingSuccess}, the experiment aims to evaluate three goals: the usefulness and quality of the service, its usability and the quality of the machine learning system. In the questionnaire, questions 1 through 6, 13 and 14 investigate the usefulness and quality of the system, whilst questions 7 through 12 investigate the usability of the system. Bearing in mind that this project is heavily constrained with regard to time due to constraints on the nature of it been a final-year project, it is not expected that the software will be as good as is possible. As such, the system's usefulness and usability will be deemed a success if it scores a significant positive average rating across all users in the questionnaire. The standard deviation of usefulness and usability ratings will also be inspected to judge whether users had a consistent experience or if different users had extremely different views on the software.
+As stated in section \ref{sec:evaluatingSuccess}, the experiment aims to evaluate three goals: the usefulness and quality of the service, its usability and the quality of the machine learning system. In the questionnaire, questions 1 through 6, 13 and 14 investigate the usefulness and quality of the system, whilst questions 7 through 12 investigate the usability of the system. This project is heavily constrained with regard to time. As such the system's usefulness and usability will be deemed a success if it scores a significant positive average rating across all users in the questionnaire. The standard deviation of usefulness and usability ratings and the percentage of positive ratings will also be inspected to judge whether users had a consistent experience or if different users had extremely different views on the software.
 
 The machine leaning will be tested by inspecting the change in usefulness and quality rankings of the system made by users in the questionnaire as more participants use the system and provide ratings. The implementation of the machine learning system will be considered a success if a statistically significant positive trend is found in the usefulness and quality ratings when the ratings are sorted by the number of proceeding participants.
 
@@ -528,7 +516,7 @@ In section \ref{subsubsec:userPrivacyAndDataProtection}, the need to protect the
 
 The main gateway into the system will be an HTTP call to a Python function called \texttt{sms()}, which takes the phone number of the user and the question being asked as its parameters.  This function represents a core part of the privacy protection system, by generating the hashed phone number and only using that when calling the function that computes the answer.  The user's unobscured phone number is only subsequently used when that function call has returned and it's time to send a reply SMS to the user. After that message has been sent the HTTP connection will close and the original number will be lost when the memory is released. As the computation of an answer only requires a general constant representation of user identity, not necessarily the user's real phone number, the specific value of the users phone number is not required within the computation of the answer.  As such, a hash is passed into the answer-computing function.  This hash will be used within the database to store a user's history and profile.  This means that only minimal user information (described in the physical data model in section \ref{subsubsec:physicalDatabaseDesign}) can be identified from the database, not the actual identity of a user.
 
-\section{Language, Platform and Tools and Libraries}
+\section{Language, Platform, and Libraries}
 \subsection{Language}
 \label{section:designLanguage}
 The language Python has been selected to be the main language in project for four reasons:
@@ -561,7 +549,7 @@ There are four entities in the conceptual data model for this project.  These ar
 
 \begin{itemize}
   \item {\bf Users:} An entity that represents a user. The user is identified via an obscured representation of their phone number.
-  \item {\bf Last Question Asked by a User:} An entity containing the parameters of the last question.  This allows the system to handle stateful queries that are based upon a previous query.
+  \item {\bf Last Question Asked by a User:} An entity containing the parameters of the last question.  This allows the system to handle stateful queries that are based upon a previous query, such as when a user rates a previous answer.
   \item {\bf Keyword Pair Quality Ratings:} An entity that contains the property requested by a user, the property returned to that user, and the number of times a matching was ranked as being either one, two, three, four or five stars.
   \item {\bf Ranked Previous Answers:} A representation of a previously asked question, the answer text provided, and the rating given to the answer.
 \end{itemize}
@@ -640,7 +628,7 @@ The logical database requirements are listed in Table \ref{table:logicalDatabase
 
 \subsubsection{Physical Database Design}
 \label{subsubsec:physicalDatabaseDesign}
-As previously discussed section \ref{subsubsec:databaseTechnology }, MongoDB separates groups or types of entity into collections (which are similar to a Table in an SQL database) but does not place restrictions on the structure of objects within a collection.  The general structure of each document in a collection for this application is shown in Table \ref{table:collectionStructure}. A small change was made between the logical and the physical database designs with the storage of ratings in KeywordPairingRatings. In the logical model these were individual counts of ratings at the five different levels (for example, a count of one-star ratings, a count of five-star ratings, etc) however in the physical model this was converted to a list of ratings received (e.g. \texttt{[5,5,3,4,5]}). This made the implementation more compact as five different variables did not need to be addressed every time the ratings were read or written to.
+As previously discussed section \ref{subsubsec:databaseTechnology}, MongoDB separates groups or types of entity into collections (which are similar to a Table in an SQL database) but does not place restrictions on the structure of objects within a collection.  The general structure of each document in a collection for this application is shown in Table \ref{table:collectionStructure}. A small change was made between the logical and the physical database designs with the storage of ratings in KeywordPairingRatings. In the logical model these were individual counts of ratings at the five different levels (for example, a count of one-star ratings, a count of five-star ratings, etc) however in the physical model this was converted to a list of ratings received (e.g. \texttt{[5,5,3,4,5]}). This made the implementation more compact as five different variables did not need to be addressed every time the ratings were read or written to.
 
 The database software MongoDB will be hosted on the same server as the main application, as shown in Figure \ref{fig:physicalServerDb}.
 
