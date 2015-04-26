@@ -509,6 +509,8 @@ Based majoritively from these requirements, the requirements in sections \ref{su
 \label{fig:systemArchitecture}
 \end{figure}
 
+% TODO - component view.
+
 \subsection{Micro-system for Protecting User Identity}
 \label{subsec:hashingUserId}
 
@@ -799,7 +801,7 @@ The SMS interface to the application was developed using the Twilio SMS service 
 The service provided by the application and its service are shown in the ArchiMate diagram in Figure \ref{fig:systemSmsInterface}.
 
 \begin{figure}[htb] 
-\centerline{\includegraphics[width=0.8\linewidth]{systemSmsInterface}}
+\centerline{\includegraphics[width=\linewidth]{systemSmsInterface}}
 \caption{ArchiMate diagram showing the service provided by the application and the SMS interface to it.}
 \label{fig:systemSmsInterface}
 \end{figure}
@@ -946,8 +948,6 @@ The second method is to adjust the application to work natively in multiple lang
 Due to the second method requiring substantial engineering work to support the removal of stop words in the NLP module, the requirement to find new tools for semantically comparing words, and the entity extraction only supporting five languages, the first method will be used when multiple language support is added. This will be done through the addition of a new \texttt{translate} module into the system. This module's interface will be two functions: \texttt{translateQuestion()} for translating an input question to English and \texttt{translateAnswer()} for translating an answer back to the language of the user from English. The \texttt{translateQuestion()} function will return a dictionary containing a representation of the original language that the question was in and the translated question in English. When translating the answer back to the language of the user with the \texttt{translateAnswer()} function, the function will take the original language as a parameter to indicate which language it should translate the answer to. The \texttt{translate} module will use an online language detection and translation API such as Google Translate~\cite{googleTranslateApi} to both detect the language used in a question and translate text between languages. 
 
 The module will be implemented into the application between the SMS interface and the \texttt{start()} function, described in section \ref{sec:implSms}. The question will be translated before the \texttt{start()} function is called, the original language will be stored, and then the answer returned from the \texttt{start()} function will be translated back into the users language.
-
-% TODO add diagram?
 
 \section{Discussion of implementation and issues faced}
 
