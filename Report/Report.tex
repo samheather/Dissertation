@@ -509,7 +509,7 @@ Based majoritively from these requirements, the requirements in sections \ref{su
 \label{fig:systemArchitecture}
 \end{figure}
 
-% TODO - component view.
+% TODO - component view. and make sure described the diagram somewhere.
 
 \subsection{Micro-system for Protecting User Identity}
 \label{subsec:hashingUserId}
@@ -954,18 +954,19 @@ The module will be implemented into the application between the SMS interface an
 Software was developed following the plan based on the iterative model, which was described in section \ref{sec:planForSoftwareDevelopment}. In this section some of the limitations and issues faced with the implementation will be described and methods for expanding the modular software will be presented.
 
 \subsection{Issues faced in the implementation}
-One of the key issues that was faced during the implementation was that the APIs provided by Cortical for semantically comparing text were still been heavily developed as Cortical evolved their product. These changes were not documented so caused issues when they happened. One such example is when the API started rejecting some strings with space characters in them that it previously accepted. This was fixed by replacing space characters with underscore characters when checking keys in the data sources for semantic similarity. Another example is that the API started returning HTTP errors for some specific comparisons instead of zero ratings as it had previously. This occurred when the keys for input parameters in the query were incorrect as the API is unclear on when to classify an input as a \texttt{term} or a \texttt{text}~\cite{serviceCorticalSim}. Again this was undocumented and required an unexpected change to the application during development.
+One of the key issues that was faced during the implementation was that the APIs provided by Cortical for semantically comparing text were still been heavily developed as Cortical evolved their product. These changes were not documented so caused issues when they happened. One such example is when the API started rejecting some strings with space characters in them that it previously had accepted. This was fixed by replacing space characters with underscore characters when checking keys in the data sources for semantic similarity. Another example is that the API started returning HTTP errors for some specific comparisons instead of ratings of zero as it had previously. This occurred when the keys for the input parameters to the HTTP query were incorrect as the API is unclear on when to classify an input as a \texttt{term} or a \texttt{text}~\cite{serviceCorticalSim}. Again this was undocumented and required an unexpected change to the application during development.
 
-Another issue faced was that the data sources did not always present the data in an ideal format. One data source where this occurred is the Wikipedia API, which would inconsistently return measurements as either a number without a unit or a string containing the data in different units. An example of this is a query for the property \texttt{height} on the page for the Leaning Tower of Pisa, which returns the string \texttt{convert|55.86|m|ft}. Basic efforts were made to resolve this by removing unusual symbols such as the vertical bar (pipe) symbol but it was not possible to identify and remove incorrect units and words. In the future it may a consideration to remove Wikipedia as a data source if other 'cleaner' data sources can be found.
+Another issue faced was that the data sources did not always present the data in an ideal format. One data source where this occurred is the Wikipedia API, which would inconsistently return measurements as either a number without a unit or a string containing the data in different units. An example of this is a query for the property \texttt{height} on the page for the Leaning Tower of Pisa, which returns the string \texttt{convert|55.86|m|ft}. Basic efforts were made to resolve this by removing unusual symbols such as the vertical bar (pipe) but it was not possible to identify and remove incorrect units and words. In the future it may a consideration to remove Wikipedia as a data source if other 'cleaner' data sources can be found. An ideal data source uses simple and descriptive names for keys in the data source to allow the semantic analysis to link the terms from a users query to the key names, and the values in the data source are only the data been measured, without additional words and symbols as the Wikipedia API provides.
 
-The structure of the DBPedia data source caused another issue. This was that some properties of geographical entities remain inaccessible to the application because they are abstracted into linked objects in the DBPedia Ontology. An example of this is the object \texttt{London} which does not have a field \texttt{Mayor} but instead a pointer to another object called \texttt{Mayor\_of\_London} which contains the name of the Mayor of London. An explanation of why this can not be done is given in section \ref{subsec:dbpediaOntology} and a suggestion for adding it in the future is presented in section \ref{sec:evalSparql}.
+The structure of the DBPedia data source caused another issue. This was that some properties of geographical entities remain inaccessible to the application because they are abstracted into linked objects in the DBPedia Ontology. An example of this is the object \texttt{London} which does not have a field \texttt{Mayor} but instead a pointer to another object called \texttt{Mayor\_of\_London} which contains the name of the Mayor of London. An explanation of why data from these objects can not be retrieved is given in section \ref{subsec:dbpediaOntology} and a suggestion for adding this as a feature in the future is presented in section \ref{sec:evalSparql}.
+
+A known limitation of the implementation is that the type of questions that the application would handle are also limited to questions which ask about a specific property of a known geographical entity, or for a description of such an entity. The application can not handle complex questions that are not of this form, such as \texttt{What is the depth of the deepest ocean?}. This does restrict the type of questions that can be asked of the application. To extend the application to work with these more complex questions would require substantial work and it was decided that this was out of the scope of this project.
 
 \subsection{Extending the Application}
- 
 
-Although not an issue.........The type of questions that the application would handle are also limited to questions which ask about a specific property of a known geographical entity, or for a description of such an entity. The application can not handle complex questions that are not of this form, such as \texttt{What is the depth of the deepest ocean?}. This does restrict the type of questions that can be asked of the application. To extend the application to work with these more complex questions would require substantial work and it was decided that this was out of the scope of this project.
-% TODO - above paragraph - move to one of the above sections.
+The application has been constructed in a modular manner to provide good maintainability. Code that handles a specific and distinct piece of functionality is abstracted into a separate module, such as Natural Language Processing functionality which is in a module called \texttt{NLP}, and the code that is used for doing semantic comparisons which is in a module called \texttt{compare}. This is shown in the Component View diagram of the application in figure \ref{fig:systemArchitecture} in section \ref{sec:sysDesign}, where the diagram is also described. A key advantage of this modulear design is that modules can be swapped in and out and external services change. For example, if the semantic comparison service currently used by the application becomes unavailable, the \texttt{compare} module can be changed to use another service without affecting the rest of the application.
 
+The application was also designed to be easily extendable. One example of this is the simple process to add additional data sources to the application. This is done by creating a module for that data source that conforms to the interface described in section \ref{sec:implementationOfAnswerLocationSys}. The interface dictates that the module needs to have a function \texttt{getInfobox()} which returns a dictionary of the keys and values on a given page. That module is then simply added to a list of data sources in the \texttt{sourceProcessor} module and then the application will use that data source when computing answers.
 
 \newpage
 \chapter{Results}
@@ -1064,7 +1065,9 @@ This Chapter aims to provide an evaluation on the experimental evaluation that w
 
 The success of the software developed according to the experimental evaluation has been discussed in the Discussion chapter in section \ref{sec:discussion}. However it's also important to check the software against the requirements originally proposed. The software has been compared to the User Requirements from section \ref{subsubsec:userRequirements} in table \ref{table:evalUserReqs}. In this table it is shown that all user requirements for the system were met apart from user requirement \ref{requirement:getFact} which is partially met. User requirement \ref{requirement:getFact} refers to the fact that units are not always returned with answers and this is a usefulness failure in the system. A proposal for future work to fix this is proposed in section \ref{sec:evalUnits}. The application meets all other user requirements fully.
 
-The software is also compared against the non-functional requirements proposed in section \ref{subsubsec:systemRequirementsNonFunctional} in table \ref{table:evalNonFunctionalReqs}. In this table it is shown that the application meets all non-functional requirements except NF.2, which is that the application returns the correct answer for 90\% of queries. This requirement was marked as not met as the data that would have been used to evaluate it was lost, as described in section \ref{sec:dataLoss}. It was suggested that the ratings provided for application usefulness in the questionnaire would have been higher if this requirement was met.
+The software is also compared to the functional requirements given in section \ref{subsubsec:systemRequirementsFunctional} in table \ref{table:evalFunctionalReqs}. This table shows that the application developed fulfils all of the system requirements.
+
+Finally, the software is compared against the non-functional requirements proposed in section \ref{subsubsec:systemRequirementsNonFunctional} in table \ref{table:evalNonFunctionalReqs}. In this table it is shown that the application meets all non-functional requirements except NF.2, which is that the application returns the correct answer for 90\% of queries. This requirement was marked as not met as the data that would have been used to evaluate it was lost, as described in section \ref{sec:dataLoss}. It was suggested that the ratings provided for application usefulness in the questionnaire would have been higher if this requirement was met.
 
 Non-functional requirement NF.2 cam be improved by extending the amount of data that the application can retrieve from the data sources. As described in section \ref{subsec:dbpediaOntology} some information for a Geographical entity in the DBPedia Ontology is not queryable in the current implementation, which simply pulls a list of top-level parameters about an entity. This could be improved by adding support for complex Ontological queries using the SPARQL interface~\cite{dbPediaSparql}, and is discussed in the Future Work chapter in section \ref{sec:evalSparql}. Additional data sources could also be added to the application to increase the amount of information available for the application to utilise when answering questions. This is also discussed in the Future Work chapter in section \ref{sec:evalAdditionalSources}.
 
@@ -1086,6 +1089,26 @@ ID & Discussion                                                                 
 \end{table}
 
 \begin{table}[h]
+\begin{tabular}{|p{0.4cm}|p{9cm}|p{4.0cm}|}
+\hline
+ID & Discussion                                                                                                                                                                           & Conclusion                \\ \hline
+1  & The system has a Natural Language Processing (NLP) module which processed queries in natural language.                                                                               & This requirement was met. \\ \hline
+2  & The system has an SMS interface allowing it receive queries via SMS and to then send replies via SMS.                                                                                & This requirement was met. \\ \hline
+3  & The system uses a number of data sources including DBPedia, which is able to return specific facts about an entity as well as a general description.                                 & This requirement was met. \\ \hline
+4  & The system can parse queries using the NLP module to identify the entity that is been queried about and the parameter a user is looking for.                                         & This requirement was met. \\ \hline
+5  & The system uses the general descriptions of entities in DBPedia to support providing general descriptive information on an entity.                                                   & This requirement was met. \\ \hline
+6  & The system uses semantic comparison libraries to match words that are semantically related.                                                                                          & This requirement was met. \\ \hline
+7  & The system learns from feedback sent to it about whether a particular answer is of high or low quality and then applies this to future queries.                                      & This requirement was met. \\ \hline
+8  & The system has built in documentation that can be retrieved by sending the message 'help'                                                                                            & This requirement was met. \\ \hline
+9  & The previous question asked is stored in the User object in the database to support queries that rely on user state (such as rating a previous answer).                              & This requirement was met. \\ \hline
+10 & The system was not overly complex to implement as appropriate tools and languages were used. A modular structure was used to make the application easily extendable for future work. & This requirement was met. \\ \hline
+11 & The system obscures a user's phone number via hashing.                                                                                                                               & This requirement was met. \\ \hline
+\end{tabular}
+\caption{Evaluation of Functional System Requirements}
+\label{table:evalFunctionalReqs}
+\end{table}
+
+\begin{table}[h]
 \begin{tabular}{|p{0.7cm}|p{9cm}|p{4.0cm}|}
 \hline
 ID   & Discussion                                                                                                                                                                                                                                                                                                                                     & Conclusion                    \\ \hline
@@ -1095,7 +1118,7 @@ NF.3 & The ratings system implemented did prevent poor answers been returned aft
 NF.4 & The help information was not used during the experimental evaluation however users did not need further assistance when using the application beyond the instructions provided for the experiment, and the instructions provided were based on the instructions in the application.                                                            & This requirement was met.     \\ \hline
 NF.5 & Participants used natural language to ask questions of the application during the experiment.                                                                                                                                                                                                                                                  & This requirement was met.     \\ \hline
 \end{tabular}
-\caption{Evaluation of Non-Functional Requirements}
+\caption{Evaluation of Non-Functional System Requirements}
 \label{table:evalNonFunctionalReqs}
 \end{table}
 
@@ -1155,7 +1178,17 @@ One area where significant progress can be made in the software is with queries 
 
 \chapter{Conclusion}
 \label{sec:conclusion}
-Currently been worked on in Google Docs...
+This project presented the design and development of an application for providing automated answers to questions relating to geography via SMS, targeted at an audience who do not have access to information via other means such as books or the Internet. The application uses machine learning to improve the quality of the answers it provides over time. The development of the application included researching and implementing Natural Language Processing, Machine Learning and a system for semantically matching related phrases and keywords.
+
+The application was evaluated through an experimental evaluation where participants were asked to use the application and then complete a questionnaire. The questionnaire specifically asked questions that measured how useful the application was its usability. The application was also compared to the user requirements, functional system requirements and non-functional system requirements.
+
+The overall implementation of the system is viewed as been a success, with the application fulfilling all of its functional system requirements and the majority of its user requirements and non-functional system requirements. Participants in the experimental evaluation also rated the application positively.
+
+One of the more complex parts of this project was extracting high quality information from the data sources used. This affected the answer location system, sometimes resulting in the application been unable to find a simple answer or providing answers to questions which request a measurement of something without any units. 
+
+There was an awareness of ethical issues throughout this project, with a specific focus on protecting the privacy of users. This was well researched in the early stages of the project.
+
+There is substantial room for future work to both expand this project and fix some of the limitations, including improvements to the natural language processing and machine learning systems. However the application developed did meet its goals and despite its limitations a tool was produced that is capable of providing useful information to a user.
 
 \newpage
 
