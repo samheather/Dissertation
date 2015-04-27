@@ -59,16 +59,9 @@
 \includes{Bibliography and Appendices}
 \BEng
 \abstract{
-\marginnote{It is early days so it is normal that many things are missing from the abstract. You should keep in mind that it should include later on few sentences on method/experiment, result and conclusion.}
+Accessing information whilst without access to books or the Internet is near impossible, yet whether the situation is short term or long term it's common for an individual to be carrying a mobile phone capable of SMS. This dissertation aims to use SMS to create an application capable of automatically answering questions about geographical places. The project looks specifically at Natural Language Processing and Machine Learning to improve the quality of service provided over time.
 
-Currently been worked on in Google Docs...
-
-In remote Africa there are millions of disadvantaged and uneducated individuals, who in the vast majority do not have access to the internet the knowledge that this brings.  Outside of their immediate friends and family, individuals cannot access the information they need to further their education, or just for general interest.
-
-In many parts of the world, the number of people without access to the internet but access to a mobile phone is significant.  This project aims to research and develop a system capable of bringing knowledge through a question and answer based interactive system, in the language natively spoken by the user, through the use of a simple Artificial Intelligence and an SMS interface.  The system will be expandable, such that it can be adjusted to handle questions on any knowledge area.
-
-This project raises ethical issues relating to the responsibility of providing accurate information when in a position of trust, the ethics of machine translation and maintaining user privacy.
-% TODO - finish abstract
+A server application has been created which does this using various online data sources to locate answers to questions. The resulting application is tested against defined requirements and is used in an experimental evaluation. The experimental evaluation shows that the application is both useful and usable, and that the machine learning is effective at improving the quality of answers over time. Overall this dissertation looks at the process followed and the issues faced with developing this project, which resulted in an application that provides a useful access point to information.
 }
 
 \maketitle
@@ -802,7 +795,7 @@ In addition, the following Python libraries from the Python Package Index~\cite{
     \item gevent~\cite{libraryGevent} \label{librariesUsed:gevent} - a coroutine based networking library for Python. gevent provides a Web Server Gateway Interface (WSGI) server that supports processing multiple requests concurrently, using Greenlet.
     \item PyMongo~\cite{libraryPyMongo} - Python library containing tools to work with MongoDB databases.
     \item ujson~\cite{libraryUjson} - Twilio uses JSON as the format for HTTP requests, so it makes sense to use it for all requests. ujson allows for effecient encoding and decoding of json to and from Python data structures.
-    \item Twilio~\cite{libraryTwilio} - Twilio library used for receiving and sending SMS.
+    \item Twilio~\cite{libraryTwilio2} - Twilio library used for receiving and sending SMS.
     \item lxml~\cite{libraryLxml} - Used in the 'Wikipedia Utils' library, which handles interactions with the Wikipedia API. lxml is used for processing XML/HTML in Python.
     \item Flask~\cite{libraryFlask} - a micro-framework for web applications, used for its simple syntax for defining HTTP routes (URLs that trigger Python functions). Flask also comes with a WSGI server, but it does not support processing multiple HTTP requests concurrently, so it is replaced with the Gevent WSGI server in point \ref{librariesUsed:gevent}.
     \item NumPy~\cite{libraryNumPy} - Numerical Python (NumPy) is used for outlier detection in the rating system. It provides a function call for calculating the standard deviation of a set of numbers.
@@ -813,7 +806,7 @@ In addition, the following Python libraries from the Python Package Index~\cite{
 
 \section{Implementation of SMS interface}
 \label{sec:implSms}
-The SMS interface to the application was developed using the Twilio SMS service and Library~\cite{serviceTwilio, libraryTwilio}. A HTTP interface to the application was hosted using Flask~\cite{libraryFlask} at \texttt{<server\_url>/sms}, and the Twilio service was configured to make a request to this URL when an SMS was received. The function \texttt{sms()} is executed upon receiving a request on the \texttt{<server\_url>/sms} address, which extracts the phone number of the user and the text of their message from the request. The number is obscured, as explained in section \ref{subsec:hashingUserId}, and then the function \texttt{start()} is called with both the obscured number and the text from the message. This function then computes the answer to return to the user, described in section \ref{sec:implementationOfAnswerLocationSys}, and the response is sent back to the user using the Twilio library to make a HTTP call to the Twilio service.
+The SMS interface to the application was developed using the Twilio SMS service and Library~\cite{serviceTwilio, libraryTwilio2}. A HTTP interface to the application was hosted using Flask~\cite{libraryFlask} at \texttt{<server\_url>/sms}, and the Twilio service was configured to make a request to this URL when an SMS was received. The function \texttt{sms()} is executed upon receiving a request on the \texttt{<server\_url>/sms} address, which extracts the phone number of the user and the text of their message from the request. The number is obscured, as explained in section \ref{subsec:hashingUserId}, and then the function \texttt{start()} is called with both the obscured number and the text from the message. This function then computes the answer to return to the user, described in section \ref{sec:implementationOfAnswerLocationSys}, and the response is sent back to the user using the Twilio library to make a HTTP call to the Twilio service.
 
 The service provided by the application and its service are shown in the ArchiMate diagram in Figure \ref{fig:systemSmsInterface}.
 
@@ -1216,17 +1209,19 @@ One area where significant progress can be made in the software is with queries 
 
 \chapter{Conclusion}
 \label{sec:conclusion}
-This project presented the design and development of an application for providing automated answers to questions relating to geography via SMS, targeted at an audience who do not have access to information via other means such as books or the Internet. The application uses machine learning to improve the quality of the answers it provides over time. The development of the application included researching and implementing Natural Language Processing, Machine Learning and a system for semantically matching related phrases and keywords.
+This project presented the design and development of an application for providing automated answers to questions relating to geography via SMS, targeted at an audience who do not have access to information via other means such as books or the Internet. The application uses machine learning to improve the quality of the answers it provides over time. The development of the application included researching and implementing Natural Language Processing, Machine Learning, and a system for semantically matching related phrases and keywords.
 
-The application was evaluated through an experimental evaluation where participants were asked to use the application and then complete a questionnaire. The questionnaire specifically asked questions that measured how useful the application was its usability. The application was also compared to the user requirements, functional system requirements and non-functional system requirements.
+The application was evaluated through an experimental evaluation where participants were asked to use the application and then complete a questionnaire. The questionnaire specifically asked questions that measured how useful the application was, and its usability. The application was also compared to the user requirements, functional system requirements and non-functional system requirements.
 
-The overall implementation of the system is viewed as been a success, with the application fulfilling all of its functional system requirements and the majority of its user requirements and non-functional system requirements. Participants in the experimental evaluation also rated the application positively.
+The overall implementation of the system is viewed as being a success, with the application fulfilling all of its functional system requirements and the majority of its user requirements and non-functional system requirements. Participants in the experimental evaluation rated the application positively with regard to usefulness and usability, and it was shown that the machine learning in the application was effective at improving the quality of answers
 
-One of the more complex parts of this project was extracting high quality information from the data sources used. This affected the answer location system, sometimes resulting in the application been unable to find a simple answer or providing answers to questions which request a measurement of something without any units. 
+One of the more complex parts of this project was extracting high quality information from the data sources used. This affected the answer location system, sometimes resulting in the application being unable to find a simple answer, or in the case of a question about a measurement of something (such as height) being unable to return the units with the number. Another issue that was faced came from the APIs that were used in the project, some of which changed a few times. This was fixed by developing the application in a modular way such that modules could be adjusted and then swapped in and out.
 
-There was an awareness of ethical issues throughout this project, with a specific focus on protecting the privacy of users. This was well researched in the early stages of the project.
+There was an awareness of ethical issues throughout this project, specifically focussing  on protecting the privacy of users. This was well researched in the early stages of the project.
 
-There is substantial room for future work to both expand this project and fix some of the limitations, including improvements to the natural language processing and machine learning systems. However the application developed did meet its goals and despite its limitations a tool was produced that is capable of providing useful information to a user.
+A key point that was learnt during this project is that locating information in third-party data sources from natural language descriptions of the data required is a non-trivial problem, however that machine learning can be used to match natural language to data in data sources. Another learning point that stems from this was that, even with good machine learning, the quality of responses is limited by the quality of the data sources used.
+
+There is substantial room for future work to both expand this project and fix some of the limitations, including improvements to the Natural Language Processing and Machine Learning Systems. However the application developed did meet its goals and despite its limitations, a tool was produced that is capable of providing helpful information to a user.
 
 \newpage
 
