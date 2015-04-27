@@ -143,7 +143,7 @@ The design of the software, driven from information collected from the requireme
 
 Chapter~\ref{sec:implementation} contains details about the implementation of the software.  This includes information on the tools that will be used to create components such as the SMS interface and question-answer matching system.
 
-Results from the evaluation of the system will be presented in Chapter~\ref{sec:results}.  A discussion of these results and their implication on this project is then presented to the reader in Chapter~\ref{sec:discussion}.
+Results from the evaluation of the system will be presented in Chapter~\ref{chapter:results}, where they will also be discussed and their implication on this project given.
 
 Chapter~\ref{sec:evaluation} contains an evaluation of the software produced and the process taken to complete it.  Comparisons will be made to the success criteria, set out for the project in section \ref{sec:evaluatingSuccess}.
 
@@ -969,43 +969,58 @@ The application has been constructed in a modular manner to provide good maintai
 The application was also designed to be easily extendable. One example of this is the simple process to add additional data sources to the application. This is done by creating a module for that data source that conforms to the interface described in section \ref{sec:implementationOfAnswerLocationSys}. The interface dictates that the module needs to have a function \texttt{getInfobox()} which returns a dictionary of the keys and values on a given page. That module is then simply added to a list of data sources in the \texttt{sourceProcessor} module and then the application will use that data source when computing answers.
 
 \newpage
-\chapter{Results}
-\label{sec:results}
+\chapter{Results and Discussion}
+\label{chapter:results}
 
-$$r= \frac{\sum_{i=1}^{n} (x_{i}-\bar{x})(y_{i}-\bar{y})}{\sqrt{\sum_{i=1}^{n}(x_{i}-\bar{x})^{2}}\sqrt{\sum_{i=1}^{n}(y_{i}-\bar{y})^{2}}}$$
-
-In this chapter the results from the experiment will be discussed with information on the pool of participants used.
+In this chapter the results from the experiment will be presented, analysed and discussed, and information on the pool of participants will also be provided. The key piece of research been investigated is whether the application learns effectively, although usefulness and usability ratings will also be looked at.
 
 \section{Participants}
 \label{sec:participants}
 
 21 participants were sourced to take part in the experimental evaluation of this project. Participants were mainly sourced from the University of York however a small number did come from other locations such as Bristol when the researcher made an unrelated trip there.
 
-Participants were heavily skewed towards young students: 17 participants identified as been aged 18-24 and 14 as students. Of the remaining participants, two were aged in the range 25-34 and the remaining two in the range 45-54.
+Participants were heavily skewed towards young students: 17 participants identified as being aged 18-24 and 14 as students. Of the remaining participants, two were aged in the range 25-34 and the remaining two in the range 45-54.
 
 Three of the non-student participants identified as been self-employed, one identified as been employed and one as retired. Additionally, two participants identified multiple occupations: one selected employed and self-employed, whilst another indicated self-employed and student.
 
-All participants in the experiment were regular internet users with all participants identifying their typical Internet usage been 'multiple times per day' or greater. 7 participants selected 'multiple times per day' whilst 14 selected 'more than once per hour'.
+All participants in the experiment were regular internet users with all participants identifying their typical Internet usage being 'multiple times per day' or greater. Seven participants selected 'multiple times per day' whilst 14 selected 'more than once per hour'.
+
+As the participant pool was skewed towards a young student population with regular access to the internet it is suggested that some perhaps had difficulty imagining themselves working in the context of not having access to the Internet. \marginnote{move to end?}
 
 \section{Results}
 \label{sec:results}
 
-In this section the results from the experiment are presented.
+In this section the results collected from the experiment for application usefulness, usability, and whether the application learns effectively, will be presented, analysed and discussed.
 
-\subsection{Usefulness}
-\label{subsec:resultsUsefulness}
+\subsection{Usefulness and Usability}
+\label{subsec:resultsUsefulnessAndUsability}
 
-The usefulness of the system is measured by questions 1 through 6, 13 and 14 in the questionnaire. The average of usefulness ratings was 3.51 (3.s.f.) with a standard deviation of 0.919. One standard deviation of the data from the mean (containing 68\% of the data points) put the usability of the system in the range 2.59 through 4.43.
+The usefulness of the system is measured by questions 1 to 6, 13 and 14 in the questionnaire. The average of usefulness ratings was 3.51 (3.s.f.) with a standard deviation of 0.919. One standard deviation of the data from the mean (containing 68\% of the data points) put the usability of the system in the range 2.59 through 4.43. The percentage of positive usefulness ratings (those greater than \texttt{3} in the questionnaire) was 55.9\%, and the percentage of negative ratings (those below \texttt{3} in the questionnaire) was 22.6\%, as calculated from each individual question in the questionnaire.
 
-\subsection{Usability}
-\label{subsec:resultsUsability}
+The usability of the system is measured by questions 7 through 12 in the questionnaire.  The average of usability ratings was 3.46 (3.s.f.) with a standard deviation of 0.810. One standard deviation of the data from the mean put the usability of the system in the range 2.65 through 4.27. The percentage of positive usability ratings was 50.0\%, and the percentage of negative ratings was 23.8\%.
 
-The usability of the system is measured by questions 7 through 12 in the questionnaire.  The average of usability ratings was 3.46 (3.s.f.) with a standard deviation of 0.810. One standard deviation of the data from the mean (containing 68\% of the data points) put the usability of the system in the range 2.65 through 4.27.
+A box plot was produced showing the mean usefulness ratings and usability ratings per user and is shown in Figure \ref{fig:boxPlot}. This shows that the spread of usability ratings was smaller than that of usefulness, but that the means and interquartile ranges were similar.
+
+\begin{figure}[htb] 
+\centerline{\includegraphics[width=0.55\linewidth]{boxPlot}}
+\caption{Box plot showing usefulness and usability ratings derived from calculating a mean usefulness and usability rating from each user.}
+\label{fig:boxPlot}
+\end{figure}
+
+In section \ref{sec:evaluatingSuccess} the success criteria for both usefulness and usability is defined as 'a significant positive average rating' for the relevant questions. Both the mean ratings and standard deviations for both the usefulness and usability questions were very similar - both show a slightly-above-neutral mean rating of the system, and the standard deviation shows the data is moderately distributed over the range of possible ratings (it was not highly concentrated or well distributed).
+
+Because of the spread of the results it is not all-together clear whether there is a significant positive view of the usefulness and the usability of the software. However, as the mean is above the neural point of \texttt{3} by 0.51 and 0.46 respectively (representing ~1/8th of the range of possible ratings) it is justified to state that the software was rated as having neutral or greater usefulness and usability. This does not fulfil the initial success criteria from section \ref{sec:evaluatingSuccess}, but still shows the software developed was not rated 'useless' and so has potential to become useful.
+
+% TODO - come back and do a significance test on 'is it significant and high enough?'
 
 \subsection{Machine Learning}
 \label{subsec:resultsMachineLearning}
 
-A mean value of usefulness as rated by each participant was calculated using the values from questions 1 through 6, 13 and 14 and plotted. Linear regression was then carried out to identify whether a positive correlation existed showing that participants were indicating they would find the application more useful as more participants used it before them. The Correlation Coefficient for this dataset was 0.506.
+A mean value of usefulness as rated by each participant was calculated using the values from questions 1 through 6, 13 and 14 and plotted. Linear regression was then carried out to identify whether a positive correlation existed showing that participants were indicating they would find the application more useful as more participants used it before them. The Pearson product-moment correlation coefficient (PCC) was calculated for this dataset to establish the strength of the correlation using the following equation: 
+
+$$r= \frac{\sum_{i=1}^{n} (x_{i}-\bar{x})(y_{i}-\bar{y})}{\sqrt{\sum_{i=1}^{n}(x_{i}-\bar{x})^{2}}\sqrt{\sum_{i=1}^{n}(y_{i}-\bar{y})^{2}}}$$
+
+The PCC gives a value in the range of \texttt{-1}, which indicates a perfect negative correlation, to \texttt{+1}, which indicates a perfect positive correlation, with zero indicating no correlation at-all. Using this equation the correlation coefficient for this dataset was found to be 0.506.
 
 A graph shoeing usefulness plotted against the participant number is shown in figure \ref{fig:usefulnessTrend} Using linear regression a line of best fit was added to the graph with the equation $y = 0.075 x + 2.68$.
 
@@ -1015,44 +1030,44 @@ A graph shoeing usefulness plotted against the participant number is shown in fi
 \label{fig:usefulnessTrend}
 \end{figure}
 
+These results show that the application was successfully learning. As discussed in section \ref{sec:evaluatingSuccess}, the effectiveness of the machine learning was evaluated according to a positive trend in feedback from participants as the number of participants who have used the application prior to them increases. A positive trend line can clearly be seen in the graph showing rated usefulness against the number of preceding participants. The correlation coefficient indicates that there is a moderate positive trend, which implies that the application was learning and its usefulness improving as more participants used it. This is therefore a success in the context of this project.
+
+The graph does show that the data collected is 'noisy' with a lot of variation in the ratings given by different participants. It is speculated that this was caused by the different levels of expectations that participants had. The questionnaire was worded to remind participants that they should rate the system in the context of them having no other access to the internet, but it is likely some participants considered this more than others whilst rating the application, sometimes making comparisons to other services from well-known consumer products that they have used.
+
+The correlation coefficient was calculated individually for each of the questions that measure usefulness to establish if any of the specific questions yielded a particularly low or high correlation coefficient when measured against the number of preceding participants. The results are shown in table \ref{table:pccOfUsefulnessQuestions}.
+
+\begin{table}[h]
+\centerline{\begin{tabular}{|l|l|}
+\hline
+Question ID & PCC \\ \hline
+1  & 0.424 \\ \hline
+2  & 0.540 \\ \hline
+3  & 0.294 \\ \hline
+4  & 0.125 \\ \hline
+5  & 0.371 \\ \hline
+6  & 0.425 \\ \hline
+13  & 0.617 \\ \hline
+14  & 0.240 \\ \hline
+\end{tabular}}
+\caption{Table showing the Pearson product-moment correlation coefficient of the answers given for the individual usefulness questions against the number of preceding participants.}
+\label{table:pccOfUsefulnessQuestions}
+\end{table}
+
 \subsection{Additional comments from participants}
 \label{subsec:resultsComments}
 
-No space was made on the questionnaire for participants to write additional comments or thoughts on the system, however two participants did make a comment at the end of their forms, both of which addressed a specific issue. These comments were:
+No space was made on the questionnaire for participants to write additional comments or thoughts on the system, however two participants did make a comment at the end of their forms, both of which addressed the same issue. These comments were:
 
 \blockquote{I thought the detail generated from the answers to the describe questions were really detailed and informative, although displaying the units in other answers would have been helpful.} - Participant 14.
 
 \blockquote{Answers with units would be helpful to understand values given as answers} - Participant 9.
 
-These can't be included in any analysis due to not asking for a comment from all participants, but the issue will be discussed in the Discussion in section \ref{sec:discussion}.
-
-\newpage
-\chapter{Discussion}
-\label{sec:discussion}
-
-In this section the results from section \ref{sec:results} are analysed and discussed. The key piece of research been investigated is whether the application learns effectively, although the discussion will also look at the usefulness and usability results individually.
-
-\section{Discussion of Results}
-\label{sec:disResults}
-In section \ref{sec:evaluatingSuccess} the success criteria for both usefulness and usability is defined as 'a significant positive average rating' for the relevant questions. Both the mean ratings and standard deviations for both the usefulness and usability questions were very similar - both show a slightly-above-neutral mean rating of the system, and the standard deviation shows the data is moderately distributed over the full range of possible ratings (it was not highly concentrated or well distributed).
-
-Because of the spread of the results it is not all-together clear whether there is a significant positive view of the usefulness and the usability of the software. However, as the mean is above the neural point of \texttt{3} by 0.51 and 0.46 respectively (representing ~1/8th of the range of possible ratings) it is justified to state that the software was rated as having neutral or greater usefulness and usability. This does not fulfil the initial success criteria from section \ref{sec:evaluatingSuccess}, but still shows the software developed was not rated 'useless' and so has potential to become useful.
-
-% TODO - come back and do a significance test on 'is it significant and high enough?'
-
-%Learning
-The results for showing the learning of the application, which was the key thing been measured, show that the application was successfully learning. As discussed in section \ref{sec:evaluatingSuccess}, the usefulness was evaluated according to a positive trend in feedback from participants as the number of participants who have used the application prior to them increases. A positive trend line can clearly be seen in the graph showing rated usefulness against the number of preceding participants. The correlation coefficient indicates that there is a moderate positive trend, which implies that the application was learning and its usefulness improving as more participants used it. This is therefore a success in the context of this project.
-
-The graph showing rated usefulness against the number of preceding participants does show that the data collected is 'noisy' with a lot of variation in the ratings given by different participants. It is speculated that this was caused by the different levels of expectations that participants had. The questionnaire was worded to remind participants that they should rate the system in the context of them having no other access to the internet, but it is likely some participants considered this more than others whilst rating the application, sometimes making comparisons to other services from well-known consumer products that they have used.
-
-It's noted that the participants were skewed towards a young student population with regular access to the internet. All participants identified as users who typically use the Internet multiple times daily and so some perhaps had difficulty imagining themselves working in the context of not having access to the Internet.
-
-Also, as was mentioned in the Results in section \ref{sec:results}, two participants did note an issue on the questionnaire about units not been returned with the data, for example with questions about the \texttt{height} of a structure. Although this issue was noted before the experimental evaluation, the significance of not having units had not been fully considered and it was helpful to have this indicated by the participants.
+Although this issue was noted before the experimental evaluation, the significance of not having units had not been fully considered and it was helpful to have this indicated by the participants. These can't be included in any formal analysis due to not asking for a comment from all participants.
 
 \section{Data loss}
 \label{sec:dataLoss}
 
-It was initially planned to keep log files during the experiment containing the questions asked, answers provided and the ratings from a user. This would allow for the possibility of further analysis such as the identification of specific questions that caused users a problem or questions where the answer returned changed as more participants took part. However due to a bug where log files were over-written instead of having new entries appended to them, log files for participants up until participant number 14 were not stored. The seven remaining log files were too small a dataset to analyse, however some examples may be used in later chapters.
+It was initially planned to keep log files during the experiment containing the questions asked, answers provided and the ratings from a user. This would allow for the possibility of further analysis such as the identification of specific questions that caused users a problem or questions where the answer returned changed as more participants took part. However due to a bug where log files were over-written instead of having new entries appended to them, log files for participants up until participant number 14 were not stored. The seven remaining log files were too small a dataset to analyse.
 
 \newpage
 
@@ -1065,11 +1080,13 @@ This Chapter aims to provide an evaluation on the experimental evaluation that w
 \section{Evaluation of Software Developed}
 \label{sec:evalSoftwareDeveloped}
 
-The success of the software developed according to the experimental evaluation has been discussed in the Discussion chapter in section \ref{sec:discussion}. However it's also important to check the software against the requirements originally proposed. The software has been compared to the User Requirements from section \ref{subsubsec:userRequirements} in table \ref{table:evalUserReqs}. In this table it is shown that all user requirements for the system were met apart from user requirement \ref{requirement:getFact} which is partially met. User requirement \ref{requirement:getFact} refers to the fact that units are not always returned with answers and this is a usefulness failure in the system. A proposal for future work to fix this is proposed in section \ref{sec:evalUnits}. The application meets all other user requirements fully.
+% TODO delete below ref discussion
+
+The success of the software developed according to the experimental evaluation has been discussed in the Discussion chapter in section \ref{sec:discussion}. However it's also important to check the software against the requirements originally proposed. The software has been compared to the User Requirements from section \ref{subsubsec:userRequirements} in table \ref{table:evalUserReqs}. In this table it is shown that all user requirements for the system were met apart from user requirement \ref{requirement:getFact} which is partially met. User requirement \ref{requirement:getFact} refers to the fact that units are not always returned with answers and this is a usefulness failure in the system. A proposal for future work to fix this is included in section \ref{sec:evalUnits}. The application meets all other user requirements fully.
 
 The software is also compared to the functional requirements given in section \ref{subsubsec:systemRequirementsFunctional} in table \ref{table:evalFunctionalReqs}. This table shows that the application developed fulfils all of the system requirements.
 
-Finally, the software is compared against the non-functional requirements proposed in section \ref{subsubsec:systemRequirementsNonFunctional} in table \ref{table:evalNonFunctionalReqs}. In this table it is shown that the application meets all non-functional requirements except NF.2, which is that the application returns the correct answer for 90\% of queries. This requirement was marked as not met as the data that would have been used to evaluate it was lost, as described in section \ref{sec:dataLoss}. It was suggested that the ratings provided for application usefulness in the questionnaire would have been higher if this requirement was met.
+Finally, the software is compared against the non-functional requirements proposed in section \ref{subsubsec:systemRequirementsNonFunctional} in table \ref{table:evalNonFunctionalReqs}. In this table it is shown that the application meets all non-functional requirements except NF.2, which is that the application returns the correct answer for 90\% of queries. This requirement was marked as not met, as the data that would have been used to evaluate it was lost, as described in section \ref{sec:dataLoss}. It was suggested that the ratings provided for application usefulness in the questionnaire would have been higher if this requirement was met.
 
 Non-functional requirement NF.2 cam be improved by extending the amount of data that the application can retrieve from the data sources. As described in section \ref{subsec:dbpediaOntology} some information for a Geographical entity in the DBPedia Ontology is not queryable in the current implementation, which simply pulls a list of top-level parameters about an entity. This could be improved by adding support for complex Ontological queries using the SPARQL interface~\cite{dbPediaSparql}, and is discussed in the Future Work chapter in section \ref{sec:evalSparql}. Additional data sources could also be added to the application to increase the amount of information available for the application to utilise when answering questions. This is also discussed in the Future Work chapter in section \ref{sec:evalAdditionalSources}.
 
@@ -1133,7 +1150,7 @@ The participant pool contained 21 individuals and was skewed towards students in
 
 Each of the 21 participants in the experimental evaluation were asked to identify 16 pieces of information. The application learns more as each participant takes part and it would have been interesting to see if the trend of increasing ratings of usefulness continued with a larger number of participants. Time restrictions limited the number of data points that could be collected from each participant: with 16 pieces of information to identify the experiment took around 10 minutes during a test run. It would have been preferable to have more data points from asking participants to identify more information as this would perhaps have reduced the noise in the data due to a single poor result having less of a part of the whole experiment. A suitable expansion of the task would be to ask participants to identify 50 pieces of information instead of 16 which would extend the experiment to take approximately 30 minutes. Unfortunately this would make it more difficult to recruit participants without a remuneration for their time.
 
-The experiment showed a usefulness trend that indicated the application was learning and improving, however as was previously mentioned the data was noisy. Ideally additional participants would be used to verify the quality of answers provided by the application continues to improve. It is suggested that a suitable expansion would be to increase the number of participants to between 30 and 40. This would mean the experiment had more participants who used the application in the later stage of its learning process.
+The experiment showed a usefulness trend that indicated the application was learning and improving, however as was previously mentioned the data was noisy. Ideally additional participants would be used to verify the quality of answers provided by the application continues to improve. It is suggested that a suitable expansion would be to increase the number of participants to between 30 and 40. This would mean the experiment had more participants who used the application in the later stages of its learning process.
 
 \section{Conclusion of the Evaluation}
 \label{sec:conclusionOfEval}
