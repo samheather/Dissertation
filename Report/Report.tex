@@ -186,6 +186,16 @@ This difference in standard use of mobile phones is demonstrated in the Internat
 
 % No research has been undertaken investigating whether bringing knowledge through this method is viable option.
 
+\section{Machine Learning Techniques}
+
+There are two common machine learning paradigms which will be described in this section. These are Supervised Leaning and "Learning without a teacher"~\cite{haykin1999neural}. Supervised learning is the paradigm of machine learning techniques that involve learning from a teacher, where the teacher gives the exact expected output for a possible input. The application is then able to learn from this output, usually by comparing to the output that it would have produced previously.~\cite{incaLecture}.
+
+The paradigm of Learning without a teacher is split into two subdivisions. The first of these is Reinforcement Learning~\cite{haykin1999neural}, which shares some characteristics with supervised learning. Instead of using a teacher that provides the correct output for a given input into the system, the feedback comes as a yes or no signal intended to reinforce whether the output the system provided was correct or not. This system is binary and so doesn't provide information on what the actual correct output should be, and depending on the machine learning technique been used this can make it more difficult to determine how to adjust the system for system for this knowledge.
+
+
+
+
+
 \section{Ethical Issues}
 This project raises a number of ethical issues related to translation accuracy, providing information to people in an ethically acceptable way (with a focus on information accuracy) and maintaining user privacy.
 
@@ -1034,7 +1044,11 @@ These results show that the application was successfully learning. As discussed 
 
 The graph does show that the data collected is 'noisy' with a lot of variation in the ratings given by different participants. It is speculated that this was caused by the different levels of expectations that participants had. The questionnaire was worded to remind participants that they should rate the system in the context of them having no other access to the internet, but it is likely some participants considered this more than others whilst rating the application, sometimes making comparisons to other services from well-known consumer products that they have used.
 
-The correlation coefficient was calculated individually for each of the questions that measure usefulness to establish if any of the specific questions yielded a particularly low or high correlation coefficient when measured against the number of preceding participants. The results are shown in table \ref{table:pccOfUsefulnessQuestions}.
+The correlation coefficient was calculated individually for each of the questions that measure usefulness to establish if any of the specific questions yielded a particularly low or high correlation coefficient when measured against the number of preceding participants. The results are presented in table \ref{table:pccOfUsefulnessQuestions}, which shows that all of the questions showed a positive correlation, with varying degrees of strength. The results from questions four and thirteen are of interest: question four has a much lower correlation coefficient than other questions, and question thirteen has a relatively high correlation coefficient. 
+
+Question four looked at whether the application would improve the effectiveness of a user at finding information without access to the internet, and this result would indicate that the system does improve in terms of 
+
+Question thirteen investigated whether a user felt the information returned was useful, relevant and answered the question asked. 
 
 \begin{table}[h]
 \centerline{\begin{tabular}{|l|l|}
@@ -1058,9 +1072,9 @@ Question ID & PCC \\ \hline
 
 No space was made on the questionnaire for participants to write additional comments or thoughts on the system, however two participants did make a comment at the end of their forms, both of which addressed the same issue. These comments were:
 
-\blockquote{I thought the detail generated from the answers to the describe questions were really detailed and informative, although displaying the units in other answers would have been helpful.} - Participant 14.
+\blockquote{I thought the detail generated from the answers to the describe questions were really detailed and informative, although displaying the units in other answers would have been helpful.} - Participant fourteen.
 
-\blockquote{Answers with units would be helpful to understand values given as answers} - Participant 9.
+\blockquote{Answers with units would be helpful to understand values given as answers} - Participant nine.
 
 Although this issue was noted before the experimental evaluation, the significance of not having units had not been fully considered and it was helpful to have this indicated by the participants. These can't be included in any formal analysis due to not asking for a comment from all participants.
 
