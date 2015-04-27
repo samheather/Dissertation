@@ -514,11 +514,9 @@ Based majoritively from these requirements, the requirements in sections \ref{su
 
 \begin{figure}[htb] 
 \includegraphics[width=\linewidth]{systemArchitecture}
-\caption{ArchiMate diagram showing modular structure of the application relevant to computing the answer to a question.}
+\caption{Component View of the system in ArchiMate notation~\cite{archiMateSpec} showing the modular structure of the application. The diagram shows the modules used when computing an answer to a question and the interfaces between them.}
 \label{fig:systemArchitecture}
 \end{figure}
-
-% TODO - component view. and make sure described the diagram somewhere.
 
 \subsection{Micro-system for Protecting User Identity}
 \label{subsec:hashingUserId}
@@ -645,7 +643,7 @@ The database software MongoDB will be hosted on the same server as the main appl
 
 \begin{figure}[htb] 
 \centerline{\includegraphics[width=0.6\linewidth]{physicalServerDb}}
-\caption{Deployment View of the system in ArchiMate notation. The diagram shows the structure of the main server, which both runs the application and hosts the database.}
+\caption{Deployment View of the system in ArchiMate notation~\cite{archiMateSpec}. The diagram shows the structure of the main server, which both runs the application and hosts the database.}
 \label{fig:physicalServerDb}
 \end{figure}
 
@@ -810,8 +808,8 @@ The SMS interface to the application was developed using the Twilio SMS service 
 The service provided by the application and its service are shown in the ArchiMate diagram in Figure \ref{fig:systemSmsInterface}.
 
 \begin{figure}[htb] 
-\centerline{\includegraphics[width=\linewidth]{systemSmsInterface}}
-\caption{ArchiMate diagram showing the service provided by the application and the SMS interface to it.}
+\centerline{\includegraphics[width=0.96\linewidth]{systemSmsInterface}}
+\caption{Application Behaviour View of the system in ArchiMate notation~\cite{archiMateSpec}. This diagram shows the question/answer service provided by the application and the SMS interface to it. The HTTP interface used for development and testing is also shown for completeness.~\cite{archiMateSpec}}
 \label{fig:systemSmsInterface}
 \end{figure}
 
@@ -823,7 +821,7 @@ It was decided that a module should be constructed specifically for the parsing 
 
 The first step in the process is to remove punctuation from the question text, which is of no meaning in the context of this application. Consider an example sentence \texttt{How tall is the Eiffel Tower?}. In this sentence, the question mark will be removed to give \texttt{How tall is the Eiffel Tower}.
 
-\begin{sloppypar} % stops the long url going into the margin
+\begin{sloppypar}
 The next step in the process is to identify the geographical entity that a user is investigating. This is done by passing the original question into a Named Keyword Extraction tool, which extracts a list of keywords representing entities from a string and returns them. The Dandelion Named Entity Extraction tool was selected as in addition to providing a list of words representing entities, it categorised them according to the DBPedia Ontology. By using this, it was possible to identify the geographical entity by simply checking each keyword for the type \texttt{http://dbpedia.org/ontology/Place} in the types associated with each keyword.  This is done by the \texttt{extractEntities()} function in the nlp module.
 \end{sloppypar}
 
