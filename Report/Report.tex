@@ -56,6 +56,7 @@
 \date{\today}
 \supervisor{Dr. Lilian-JL Blot}
 \wordcount{\color{red} 999999}
+\includes{Bibliography and Appendices}
 \BEng
 \abstract{
 \marginnote{It is early days so it is normal that many things are missing from the abstract. You should keep in mind that it should include later on few sentences on method/experiment, result and conclusion.}
@@ -188,10 +189,16 @@ This difference in standard use of mobile phones is demonstrated in the Internat
 
 \section{Machine Learning Techniques}
 
-There are two common machine learning paradigms which will be described in this section. These are Supervised Leaning and "Learning without a teacher"~\cite{haykin1999neural}. Supervised learning is the paradigm of machine learning techniques that involve learning from a teacher, where the teacher gives the exact expected output for a possible input. The application is then able to learn from this output, usually by comparing to the output that it would have produced previously.~\cite{incaLecture}.
+There are two common machine learning paradigms which will be described in this section. These are Supervised Leaning and "Learning without a teacher"~\cite{haykin1999neural}. Supervised learning is the paradigm of machine learning techniques that involve learning from a teacher, where the teacher gives the exact expected output for a possible input. The application is then able to learn from this output, usually by comparing to the output that it would have produced previously, thus improving the output in future use.~\cite{incaLecture}.
 
-The paradigm of Learning without a teacher is split into two subdivisions. The first of these is Reinforcement Learning~\cite{haykin1999neural}, which shares some characteristics with supervised learning. Instead of using a teacher that provides the correct output for a given input into the system, the feedback comes as a yes or no signal intended to reinforce whether the output the system provided was correct or not. This system is binary and so doesn't provide information on what the actual correct output should be, and depending on the machine learning technique been used this can make it more difficult to determine how to adjust the system for system for this knowledge.
+The paradigm of Learning Without a Teacher is split into two subdivisions. The first of these is Reinforcement Learning~\cite{haykin1999neural}, which shares some characteristics with supervised learning. Instead of using a teacher that provides the correct output for a given input into the system, the feedback comes as a yes or no signal intended to reinforce whether the output the system provided was correct or not. This system is binary and so doesn't provide information on what the correct output should be and how much the system needs to change by to produce the optimal output~\cite{incaLecture}.
 
+The second subdivision of the "Learning Without a Teacher" paradigm is that of Unsupervised Learning~\cite{haykin1999neural}. Unsupervised learning is where there is no teacher or other source of information about the ideal results of the system. The system typically has an internal method for establishing the quality of an output, which it then uses to adjust and improve~\cite{incaLecture}.
+
+In the case of this application the goal is to use Machine Learning to improve the quality of answers, based only from the feedback users give about answers. A user can not be expected to understand how Machine Learning is used in the application. This means that Supervised Machine Learning can not be used as it is not feasible for a user to act as a teacher and always provide the matching that should have been given by the system. A user is however able to provide feedback on whether an answer is of high or low quality, thus fulfilling the requirement to use Reinforcement Learning. With regard to Unsupervised Learning, to use this approach a automated system would have to be developed to provide feedback to the Machine Learning. This system would have to be capable of identifying if an answer was correct for a question, which is out of the scope of this project. \marginnote{This is perhaps out of place in the lit review. But it is required to indicate why I'm then looking at Learning by reward/punishment. Come back to this!}
+% TODO This is perhaps out of place in the lit review. But it is required to indicate why I'm then looking at Learning by reward/punishment. Come back to this!
+
+One common technique for building a Reinforcement Machine Learning system for learning if an output was of high or low quality is to use "Learning by Reward/Punishment"~\cite{kodratoff1988introduction}. In this technique each concept or rule is assigned a weighting initially. Then, if the system receives positive feedback for an outcome it increases the weighting for that concept or rule. If the system receives negative feedback for an outcome it decreases the weighting for that rule or concept~\cite{kodratoff1988introduction}.
 
 
 
@@ -202,7 +209,7 @@ This project raises a number of ethical issues related to translation accuracy, 
 \subsection{Ethics of Providing Information}
 One significant issue for this project stems from providing information that may affect an individual or lead them to take a harmful action.
 
-% TODO Finish Ethics of Providing Informatio
+% TODO Finish Ethics of Providing Information
 
 {\bf In a similar way to that which a teacher has a responsibility to teach accurate information to a pupil due to their position of trust, any service relied upon by a user must equally provide accurate information.  The result of not doing this could be providing inaccurate information that leads to a user carrying out an action that causes harm}.
 
@@ -473,7 +480,7 @@ Prior to running the experimental evaluation, a dry run will be undertaken with 
 \label{subsec:clientSoftware}
 The goal of this project has been to construct a piece of software that interfaces over SMS, as described in the project title. However there are practical limitations to running the experiment via SMS. During testing of the various services it was observed that HTTP-SMS Gateway Services added approximately a 5 second latency to both the sending and receiving of SMS, extending the length of time that a user would need to partake in the experiment to collect the same number of data points as could be collected when working straight over HTTP. In addition, the sending and receiving of SMS is costly and the savings made by not consuming SMS can be used to encourage participants to partake in the experiment. 
 
-{\color{red} The interface is also an important consideration for the experimental evaluation - a key goal is to collect as many data points from participants as possible, whilst still maintaining some of the context in which the software will be used - on mobile devices. With regard to input speed, it is assumed\marginnote{reference?} that typing speeds are slower on mobile keyboards than full-sized physical keyboards, so data points can be collected more rapidly when working on a full-sized physical keyboard. In order to do this, a mobile app will be developed that interfaces with the software, and this will be run on a laptop with full-size keyboard. This gives participants use of a physical keyboard, allowing them to query the system more quickly and therefore making it acceptable to ask them to do a larger set of queries, and maintains the mobile context.}\marginnote{poor wording?}
+{\color{red} The interface is also an important consideration for the experimental evaluation - a key goal is to collect as many data points from participants as possible, whilst still maintaining some of the context in which the software will be used - on mobile devices. With regard to input speed, it is assumed that typing speeds are slower on mobile keyboards than full-sized physical keyboards, so data points can be collected more rapidly when working on a full-sized physical keyboard. In order to do this, a mobile application will be developed that interfaces with the software, and this will be run on a laptop with full-size keyboard. This gives participants use of a physical keyboard, allowing them to query the system more quickly and therefore making it acceptable to ask them to do a larger set of queries, and maintains the mobile context.}
 
 \subsection{Questionnaire Design}
 \label{subsec:questionnaire}
@@ -1146,7 +1153,7 @@ ID & Discussion                                                                 
 \hline
 ID   & Discussion                                                                                                                                                                                                                                                                                                                                     & Conclusion                    \\ \hline
 NF.1 & The time from receiving a query to sending a response was typically under 10 seconds during development, which is less than the 20 second fit criterion.                                                                                                                                                                                       & This requirement was met.     \\ \hline
-NF.2 & Due to the loss of log file data it is not possible to analyse the question logs to check against this criteria. However it is speculated that usefulness ratings from the experimental evaluation would have been higher than they were if 90\% of questions were answered correctly first time so it is assumed this requirement was not met. & This requirement was not met. \\ \hline
+NF.2 & Due to the loss of log file data it is not possible to analyse the question logs to check against this criteria. However it is speculated that usefulness ratings from the experimental evaluation would have been higher than they were if 90\% of questions were answered correctly first time so it is assumed this requirement was not met. The bug that led to data loss was resolved after the evaluation with participant 14 took place. & This requirement was not met. \\ \hline
 NF.3 & The ratings system implemented did prevent poor answers been returned after they were rated as such. Examples were given in section \ref{subsec:usingRatings}.                                                                                                                                                                                 & This requirement was met.     \\ \hline
 NF.4 & The help information was not used during the experimental evaluation however users did not need further assistance when using the application beyond the instructions provided for the experiment, and the instructions provided were based on the instructions in the application.                                                            & This requirement was met.     \\ \hline
 NF.5 & Participants used natural language to ask questions of the application during the experiment.                                                                                                                                                                                                                                                  & This requirement was met.     \\ \hline
@@ -1172,8 +1179,6 @@ The software developed has been evaluated according to the original user require
 
 The experimental evaluation was evaluated with a focus on the participants used and the data collected. Some issues were found, such as that the participants had different expectations of the quality of answers they could expect and different perceptions of the situations that the application would be used in. The experiment was limited by time and cost: ideally more participants would be used and more data points would be collected. However, valuable data was collected showing that the application partially met its usefulness and usability \marginnote{Remove usefulness if removing that data?} goals and a correlation was found showing that the application was learning, making the experimental evaluation a moderate success.
 
-% TODO - remove above usefulness if removing the data.
-
 \newpage
 
 \chapter{Future Work}
@@ -1191,9 +1196,9 @@ It was noticed both during development and informally during the experiments tha
 
 In future work the natural language processing module can be improved to cope better with noise, perhaps through the use of a more complex third-party library.
 
-\section{Expanding the range of subjects from Geography}
+\section{Expanding the range of subjects from just Geography}
 \label{sec:evalExpandingSubjects}
-Geography was selected as the topic area to perform research on in this project because it was a topic with few ethical issues, as discussed in the introduction in section \ref{sec:introAimsOfThisProject}. If the ethical issues could be addressed and resolved, interesting future work includes expanding this application to work with Wikipedia resources from a larger number of subject areas. There would also be some engineering issues: the current software is dependent on knowing that a query is about a geographical entity. As the range of possible entity types expanded there will be issues in identifying the specific entity that a user is inquiring about if a query contains multiple entities or concepts.
+Geography was selected as the topic area to perform research on in this project because it was a topic with few ethical issues, as discussed in the introduction in section \ref{sec:introAimsOfThisProject}. If the ethical issues could be addressed and resolved, interesting future work includes expanding this application to work with Wikipedia resources from a larger number of subject areas. There would also be some engineering issues: the current software is dependent on knowing that a query is about a geographical entity, as the Natural Language Processing module, described in section \ref{sec:impNlp}, only looks for an entity that can be classed as a Place. Changing this is to a different type of entity is trivial: the Place class must be replaced with the DBPedia class that describes the new type of entity that the application will work with. However, as the range of possible entity types expand there will be issues in identifying the specific entity that a user is inquiring about if a query contains multiple entities or concepts.
 
 \section{Add support for multiple languages}
 \label{sec:evalMultipleLanguages}

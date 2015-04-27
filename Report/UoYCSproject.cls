@@ -118,7 +118,7 @@
                {Declare the word count in the preamble using \protect\wordcount{Numeral}.} %
   \else
     Number of words = \UoYCSP@wordcount, as counted by
-    \textsf{wc~-w}.
+    \textsf{detex | wc -w}.
   \fi
 
   This includes the body of the report%
@@ -127,7 +127,7 @@
              {\ only}
              {\ifthenelse{\equal{\UoYCSP@includes}{\@empty}}%
                          {}%
-                         {, and \UoYCSP@includes}%
+                         {, \UoYCSP@includes}%
               \ifthenelse{\equal{\UoYCSP@excludes}{\@empty}}%
                          {}%
                          {, but not \UoYCSP@excludes}%
