@@ -211,6 +211,7 @@ This difference in standard use of mobile phones is demonstrated in the Internat
 % No research has been undertaken investigating whether bringing knowledge through this method is a viable option.
 
 \section{Machine Learning Techniques}
+\label{sec:litRevML}
 
 There are two common machine learning paradigms which will be described in this section. These are Supervised Leaning and "Learning without a teacher"~\cite{haykin1999neural}. Supervised learning is the paradigm of machine learning techniques that involve learning from a 'teacher', where the teacher gives the exact expected output for a possible input. The application is then able to learn from this output, usually by comparing to the output that it would have produced previously, thus improving the output in future use.~\cite{incaLecture}.
 
@@ -265,9 +266,7 @@ A significant issue that is present in statistical machine learning systems come
 
 This issue is a result of the translation engine not being capable of taking and using a complete representation of the expected cultural differences between those who speak the input language and those who speak the output language~\cite{melby2006can}. This does not apply to the first block of translation within the application where a user's input is translated into the language of the system, since the application will only need to parse text to identify geographical entities and the property been queried, making context unnecessary.
 
-{\bf below should really be expanded and be in the discussion.  Explain the decision to keep translated answers in the database, which are pre-approved, to ensure no cultural misunderstandings.}
-
-The potential uses of this system include distributing information that may be used by individuals making important decisions, regardless of whether that is within this project or in further work based off of this project, as cultural confusion such as this could have potentially catastrophic effects.
+With the current focus of the application been Geography it is unlikely that the information distributed will be used by individuals making important decisions so this issue is not relevant. However, in the future if the application is extended to work in more sensitive subject areas such as personal health, where users may make important personal decisions based on the answers returned, cultural confusion such as this could have potentially catastrophic effects.
 
 \subsection{User Privacy and Data Protection}
 \label{subsubsec:userPrivacyAndDataProtection}
@@ -877,10 +876,12 @@ Initially it was planned to compare questions to historical highly rated questio
 
 The comparison of question texts is also done in the \texttt{compare} module which contains a function \texttt{similarityOfQuestion()}. This function uses the Dandelion~\cite{serviceDandelionSim} similarity API to compute the semantic similarity of two longer pieces of text such as questions to the application.
 
-\section{Implementation of rating and learning system}
+\section{Implementation of rating and machine learning system}
 \label{sec:implementationRatingLearningSys}
 
 The application developed uses user ratings of answers to questions to learn about the quality of answers and to improve future answers. The implementation of this can be split into two sections: the collection of ratings and the use of ratings when answering questions. A five 'star' scale is used for ratings: a rating of one indicates that an answer was of low quality and a rating of five indicates that an answer was of high quality.
+
+The machine learning system built uses Machine Learning from the Reinforcement Learning paradigm, as described in the Literature Review in section \ref{sec:litRevML}, as this suits the concept of users providing feedback which only indicates if an answer was of high or low quality. The general technique used is that of Learning by Reward/Punishment, also described in section \ref{sec:litRevML}, where ratings in the database are used as weightings to adjust the parameters in the answer location process.
 
 \sloppy
 \subsection{Collecting Ratings}
@@ -1191,7 +1192,7 @@ The experiment showed a usefulness trend that indicated the application was lear
 \label{sec:conclusionOfEval}
 The software developed has been evaluated according to the original user requirements and non-functional requirements of the system in section \ref{sec:evalSoftwareDeveloped}. It was shown that the system satisfied all of the requirements except two, one of which it partially satisfied. From this it is concluded that the development of the software was majoritively successful, but with space for future improvement especially in the area of answer quality. Suggestions for improvements to the system including those that will improve the quality of answers are provided in the Future Work chapter in section \ref{sec:extending}.
 
-The experimental evaluation was evaluated with a focus on the participants used and the data collected. Some issues were found, such as that the participants had different expectations of the quality of answers they could expect and different perceptions of the situations that the application would be used in. The experiment was limited by time and cost: ideally more participants would be used and more data points would be collected. However, valuable data was collected showing that the application partially met its usefulness and usability \marginnote{Remove usefulness if removing that data?} goals and a correlation was found showing that the application was learning, making the experimental evaluation a moderate success.
+The experimental evaluation was evaluated with a focus on the participants used and the data collected. Some issues were found, such as that the participants had different expectations of the quality of answers they could expect and different perceptions of the situations that the application would be used in. The experiment was limited by time and cost: ideally more participants would be used and more data points would be collected. However, valuable data was collected showing that the application partially met its usefulness and usability goals and a correlation was found showing that the application was learning, making the experimental evaluation a moderate success.
 
 \newpage
 
