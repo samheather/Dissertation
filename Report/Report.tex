@@ -86,7 +86,7 @@
   \texttt{sam@heather.sh}}
 \date{\today}
 \supervisor{Dr. Lilian-JL Blot}
-\wordcount{23804}
+\wordcount{23835}
 \includes{Bibliography and Appendices}
 \BEng
 \abstract{
@@ -191,7 +191,7 @@ Finally, an assumption is made about the types of question that a user may wish 
 \chapter{Literature Review}
 \label{sec:literatureReview}
 
-A significant amount of work has previously been undertaken in the area of making knowledge quickly accessible to us in the form of questions and answers.  To take one example, imagine that an individual needs to find the population of London as quickly as possible.  The initial step would be to search for information.  In the connected world, this is easy: a simple Google search returns the answers without even having to click through to any resources, as shown in Figure \ref{fig:googleInstant}.
+A significant amount of work has previously been undertaken in the area of making knowledge quickly accessible to us in the form of questions and answers.  To take one example, imagine that an individual needs to find the population of London as quickly as possible.  The initial step would be to search for information.  In the connected world, this is easy: a simple Google search returns the answers without even having to click through to any resources, as shown in Figure \ref{fig:googleInstant}. It should be noted that Google do not provide any information on how they do this or the data sources that they use.
 
 \begin{figure}[htb] 
 \includegraphics[width=\linewidth]{googleInstant}
@@ -226,7 +226,7 @@ One common technique for building a Reinforcement Machine Learning system for le
 
 \section{Semantically Comparing Text}
 \label{sec:litRevSemantics}
-This project will use semantic comparison of text to locate information in remote data sources, so it is important to have an understanding of the different ways of semantically comparing text.
+This project will use semantic comparison of text to locate information in remote data sources, so it is important to have an understanding of the different methods and measures for doing this.
 
 Semantic similarity is a measure of how semantically alike entities are in their meaning, for example, \texttt{bank} and \texttt{trust company}~\cite{Budanitsky:2006:EWM:1168106.1168108}. A more general measure exists called Semantic Relatedness. Whereas semantic similarity compares entities by their meaning, entities may be semantically related by additional lexical relationships such as antonymy (the opposite of an entity, for example, \texttt{tall} and \texttt{short}) and meronymy (entities that are a part of another entity, for example, \texttt{car} and \texttt{wheel})~\cite{Budanitsky:2006:EWM:1168106.1168108, budanitsky2001semantic}. 
 
@@ -749,9 +749,9 @@ With regard to reputation, for this project it was decided that Twilio is prefer
 
 \subsubsection{Semantic Analysis - Measuring semantic relatedness between texts}
 \label{sec:choosingSemanticAnalysisApi}
-Semantic comparison of text will be used for two purposes within the project: to match keywords from datasources, for example, if a user asks \texttt{how tall} something is, the property \texttt{height} would be appropriate to return; and to match questions with identical meaning to each other to save the application doing a full analysis of the data sources again. The requirements for these use-cases are different: for the former the tool needs to compare pairs of either single words of short strings or words for semantic similiarity; and for the latter the tool needs to be able to compare full sentences for semantic similarity.
+Semantic comparison of text will be used for two purposes within the project: to match keywords from data sources, for example, if a user asks \texttt{how tall} something is, the property \texttt{height} would be appropriate to return; and to match questions with identical meaning to each other, so that good answers can be re-used, saving the application from doing a full analysis of the data sources again. The requirements for these use-cases are different: for the former the tool needs to compare pairs of either single words of short strings or words for semantic similiarity; and for the latter the tool needs to be able to compare full sentences for semantic similarity.
 
-The difference between semantic similarity and semantic relatedness is given in the Literature Review in section \ref{sec:litRevSemantics}. Both use-cases in this application will be using semantic similarity as semantic relatedness is too general. An example using the datasource keyword matching usecase is that using semantic relatedness, the word \texttt{tall} would be related to \texttt{width} as well as the target word of \texttt{height} as a result of antonymy, potentially cluttering results. In the second use-case, consider a highly rated question in the database of \texttt{What is the population of England?} and then the question of \texttt{What is the population of London?} being processed. London is a part of England, so there is the potential for the population of England to be returned instead of the population of London.
+A description and comparison of semantic similarity and semantic relatedness is given in the Literature Review in section \ref{sec:litRevSemantics}. Both use-cases in this application will be using semantic similarity as semantic relatedness is too general. An example using the datasource keyword matching usecase is that using semantic relatedness, the word \texttt{tall} would be related to \texttt{width} as well as the target word of \texttt{height} as a result of antonymy, potentially cluttering results. In the second use-case, consider a highly rated question in the database of \texttt{What is the population of England?} and then the question of \texttt{What is the population of London?} being processed. London is a part of England, so there is the potential for the population of England to be returned instead of the population of London.
 
 A key requirement for the algorithm and method used to compute semantic similarity is that it can be implemented in compliance with the system requirement in section \ref{subsubsec:systemRequirementsFunctional}, point \ref{requirement:easyToImplement}, that the system is easy to implement. A number of algorithms were discovered for calculating semantic similarity based on the WordNet lexical database~\cite{wordNet}, such as the Leacock-Chodorow and Resnik algorithms. Although mathematical representations of these algorithms are published~\cite{leacock1998combining,resnik1995using}, to fulfil the aforementioned requirement a pre-implemented semantic comparison tool is needed as implementation of these algorithms would be a non-trivial software engineering project. Both of the Leacock-Chodorow and Resnik algorithms are available in a Perl package as part of WordNet::Similarity, a set of Perl modules with an optional web interface for integration into applications. No other open-source libraries were found, so during application design, an attempt was made to use the WordNet::Similarity tools by calling the Perl scripts from Python code. This proved complex as there were numerous out of date dependencies to trace and install.
 
@@ -1190,7 +1190,6 @@ The experimental evaluation was evaluated with a focus on the participants used 
 
 \chapter{Future Work}
 \label{sec:extending}
-{\bf Section not complete}
 In this chapter solutions for some of the issues addressed in the evaluation will be presented as work that can be undertaken in the future to improve the software developed.
 
 \section{Obtaining and presenting units for measurements}
