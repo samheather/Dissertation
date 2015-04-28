@@ -86,7 +86,7 @@
   \texttt{sam@heather.sh}}
 \date{\today}
 \supervisor{Dr. Lilian-JL Blot}
-\wordcount{\color{red} 999999}
+\wordcount{23804}
 \includes{Bibliography and Appendices}
 \BEng
 \abstract{
@@ -176,14 +176,13 @@ Thoughts on future research that builds on the work produced in this project are
 
 Finally, the main achievements of this project are concluded in chapter~\ref{sec:conclusion} with closing thoughts.
 
-% Lilian: This section should be expended, especially mentioning the consequences of such assumptions. Why do you make those assumption (e.g. time constraint, little or no consequences, ...). What limitation this may cause to your findings.  Shows a mastery of the field.
 \section{Assumptions Within This Project}
 
 This project will make the assumption that users of this service have basic literacy skills in a language supported by the project.  Although this is not a correct assumption world-wide, expanding the remit of this project to include a 'graphical' user interface is not possible as SMS only supports the transmission of short pieces of text.
 
 The main use-case for this project is going to be for people in parts of the world with limited internet access, whether this is a short term situation or a long term situation.  Although these places exist all over the world, the African continent is typical of this problem so I will focus my research in demonstrating a need for this tool there.
 
-Another assumption made in this project is that the users who may use this service have access to SMS facilities. Although SMS coverage does cover a majority of the world there are remote areas where it does not, and in these areas the application would be inaccessible.
+Another assumption made in this project is that the users who may use this service have access to SMS facilities. Although SMS coverage does cover a majority of the world there are remote areas where it does not, and in these areas the application would be inaccessible. Another consequence of this is that the poorest of users, those without a non-smart phone, will not be able to use the application developed.
 
 Finally, an assumption is made about the types of question that a user may wish to ask of the application. It is assumed that users will only want to ask questions in two forms: a question about a specific property of a geographical entity; and a request for general information about a geographical entity. This assumption is made to simplify the implementation to allow it to be created by a single developer in the course of this project. The consequence of this is that the application will not be able to handle more complex questions.
 
@@ -192,7 +191,6 @@ Finally, an assumption is made about the types of question that a user may wish 
 \chapter{Literature Review}
 \label{sec:literatureReview}
 
-% TODO expand introduction to explain why sms, then look at related work in next section.  compare to smart phones loosely.
 A significant amount of work has previously been undertaken in the area of making knowledge quickly accessible to us in the form of questions and answers.  To take one example, imagine that an individual needs to find the population of London as quickly as possible.  The initial step would be to search for information.  In the connected world, this is easy: a simple Google search returns the answers without even having to click through to any resources, as shown in Figure \ref{fig:googleInstant}.
 
 \begin{figure}[htb] 
@@ -226,6 +224,11 @@ The goal of this application is to use a Machine Learning technique to improve t
 One common technique for building a Reinforcement Machine Learning system for learning if an output was of high or low quality is to use "Learning by Reward/Punishment"~\cite{kodratoff1988introduction}. In this technique each concept or rule is assigned a weighting initially. Then, if the system receives positive feedback for an outcome it increases the weighting for that concept or rule. If the system receives negative feedback for an outcome it decreases the weighting for that rule or concept~\cite{kodratoff1988introduction}.
 
 
+\section{Semantically Comparing Text}
+\label{sec:litRevSemantics}
+This project will use semantic comparison of text to locate information in remote data sources, so it is important to have an understanding of the different ways of semantically comparing text.
+
+Semantic similarity is a measure of how semantically alike entities are in their meaning, for example, \texttt{bank} and \texttt{trust company}~\cite{Budanitsky:2006:EWM:1168106.1168108}. A more general measure exists called Semantic Relatedness. Whereas semantic similarity compares entities by their meaning, entities may be semantically related by additional lexical relationships such as antonymy (the opposite of an entity, for example, \texttt{tall} and \texttt{short}) and meronymy (entities that are a part of another entity, for example, \texttt{car} and \texttt{wheel})~\cite{Budanitsky:2006:EWM:1168106.1168108, budanitsky2001semantic}. 
 
 
 \section{Ethical Issues}
@@ -748,7 +751,7 @@ With regard to reputation, for this project it was decided that Twilio is prefer
 \label{sec:choosingSemanticAnalysisApi}
 Semantic comparison of text will be used for two purposes within the project: to match keywords from datasources, for example, if a user asks \texttt{how tall} something is, the property \texttt{height} would be appropriate to return; and to match questions with identical meaning to each other to save the application doing a full analysis of the data sources again. The requirements for these use-cases are different: for the former the tool needs to compare pairs of either single words of short strings or words for semantic similiarity; and for the latter the tool needs to be able to compare full sentences for semantic similarity.
 
-Semantic similarity is a measure of how semantically alike entities are in their meaning, for example, \texttt{bank} and \texttt{trust company}~\cite{Budanitsky:2006:EWM:1168106.1168108}. A more general measure exists called Semantic Relatedness. Whereas semantic similarity compares entities by their meaning, entities may be semantically related by additional lexical relationships such as antonymy (the opposite of an entity, for example, \texttt{tall} and \texttt{short}) and meronymy (entities that are a part of another entity, for example, \texttt{car} and \texttt{wheel})~\cite{Budanitsky:2006:EWM:1168106.1168108, budanitsky2001semantic}. Both use-cases in this application will be using semantic similarity as semantic relatedness is too general. An example using the datasource keyword matching usecase is that using semantic relatedness, the word \texttt{tall} would be related to \texttt{width} as well as the target word of \texttt{height} as a result of antonymy, potentially cluttering results. In the second use-case, consider a highly rated question in the database of \texttt{What is the population of England?} and then the question of \texttt{What is the population of London?} being processed. London is a part of England, so there is the potential for the population of England to be returned instead of the population of London.
+The difference between semantic similarity and semantic relatedness is given in the Literature Review in section \ref{sec:litRevSemantics}. Both use-cases in this application will be using semantic similarity as semantic relatedness is too general. An example using the datasource keyword matching usecase is that using semantic relatedness, the word \texttt{tall} would be related to \texttt{width} as well as the target word of \texttt{height} as a result of antonymy, potentially cluttering results. In the second use-case, consider a highly rated question in the database of \texttt{What is the population of England?} and then the question of \texttt{What is the population of London?} being processed. London is a part of England, so there is the potential for the population of England to be returned instead of the population of London.
 
 A key requirement for the algorithm and method used to compute semantic similarity is that it can be implemented in compliance with the system requirement in section \ref{subsubsec:systemRequirementsFunctional}, point \ref{requirement:easyToImplement}, that the system is easy to implement. A number of algorithms were discovered for calculating semantic similarity based on the WordNet lexical database~\cite{wordNet}, such as the Leacock-Chodorow and Resnik algorithms. Although mathematical representations of these algorithms are published~\cite{leacock1998combining,resnik1995using}, to fulfil the aforementioned requirement a pre-implemented semantic comparison tool is needed as implementation of these algorithms would be a non-trivial software engineering project. Both of the Leacock-Chodorow and Resnik algorithms are available in a Perl package as part of WordNet::Similarity, a set of Perl modules with an optional web interface for integration into applications. No other open-source libraries were found, so during application design, an attempt was made to use the WordNet::Similarity tools by calling the Perl scripts from Python code. This proved complex as there were numerous out of date dependencies to trace and install.
 
