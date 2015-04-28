@@ -40,6 +40,11 @@
 
 %\textwidth = 490pt
 
+% Hiding Part Page title stuff
+%\renewcommand\thepart{}
+\usepackage{titlesec}
+\usepackage{xcoffins}
+
 \usepackage{graphicx}
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
 \graphicspath{ {./figures/} }
@@ -47,6 +52,32 @@
 \setlength{\parskip}{0.6em}
 
 \begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\headerdisplay[1]{%
+  \huge
+  \vskip.5\baselineskip
+  \filcenter\MakeUppercase{#1}%
+  \vskip.0\baselineskip
+}
+\NewCoffin\mytmpa
+\NewCoffin\mytmpb
+\newcommand\placeabove[3][0pt]{%
+ \SetHorizontalCoffin\mytmpa{#2}%
+ \SetHorizontalCoffin\mytmpb{#3}%
+ \JoinCoffins*\mytmpb[hc,t]\mytmpa[hc,b](0pt,#1)%
+ \TypesetCoffin\mytmpb
+}
+
+\renewcommand\thepart{\arabic{part}}
+\titleclass{\part}{top} % make part like a chapter
+\titleformat{\part}%[frame]
+  {\normalfont}
+  {\filcenter\placeabove[2\baselineskip]{\Large}{\huge\enspace\enspace}}
+  {0pt}
+  {\headerdisplay}
+\titlespacing*{\part}{0pt}{0pt}{20pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \pagenumbering{Roman}
 
@@ -1224,7 +1255,8 @@ There is substantial room for future work to both expand this project and fix so
 \bibliography{IEEEabrv,mybib}
 
 \appendix
-\part{Appendices}
+\part*{Appendices}
+\addcontentsline{toc}{part}{Appendices}
 
 \newpage
 \chapter{Personas}
