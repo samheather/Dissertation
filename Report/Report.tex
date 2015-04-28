@@ -176,14 +176,16 @@ Thoughts on future research that builds on the work produced in this project are
 
 Finally, the main achievements of this project are concluded in chapter~\ref{sec:conclusion} with closing thoughts.
 
-
 % Lilian: This section should be expended, especially mentioning the consequences of such assumptions. Why do you make those assumption (e.g. time constraint, little or no consequences, ...). What limitation this may cause to your findings.  Shows a mastery of the field.
 \section{Assumptions Within This Project}
-This project will make the assumption that users of this service have basic literacy skills in \marginnote{Lilian: I no longer have language support, and you said to keep research in about it. Should I remove it from introduction / abstract etc?}a language supported by the project.  Although this is not a correct assumption world-wide, expanding the remit of this project to include a 'graphical' user interface that works over SMS would scale this project outside of the practical limitations of this project.
 
-The main use-case for this project is going to be parts of the world with limited internet access.  Although these exist all over the world, the African continent is typical of this problem so I will focus my research in demonstrating a need for this tool there.
+This project will make the assumption that users of this service have basic literacy skills in a language supported by the project.  Although this is not a correct assumption world-wide, expanding the remit of this project to include a 'graphical' user interface is not possible as SMS only supports the transmission of short pieces of text.
 
-{\color{red} extend this}
+The main use-case for this project is going to be for people in parts of the world with limited internet access, whether this is a short term situation or a long term situation.  Although these places exist all over the world, the African continent is typical of this problem so I will focus my research in demonstrating a need for this tool there.
+
+Another assumption made in this project is that the users who may use this service have access to SMS facilities. Although SMS coverage does cover a majority of the world there are remote areas where it does not, and in these areas the application would be inaccessible.
+
+Finally, an assumption is made about the types of question that a user may wish to ask of the application. It is assumed that users will only want to ask questions in two forms: a question about a specific property of a geographical entity; and a request for general information about a geographical entity. This assumption is made to simplify the implementation to allow it to be created by a single developer in the course of this project. The consequence of this is that the application will not be able to handle more complex questions.
 
 \newpage
 
@@ -230,20 +232,9 @@ One common technique for building a Reinforcement Machine Learning system for le
 This project raises a number of ethical issues related to translation accuracy, providing information to people in an ethically acceptable way (with a focus on information accuracy) and maintaining user privacy.
 
 \subsection{Ethics of Providing Information}
-One significant issue for this project stems from providing information that may affect an individual or lead them to take a harmful action.
+One issue for this project comes from providing information that may affect an individual or lead to them to take a harmful action. In a similar way to that which a teacher has a responsibility to teach accurate information to a pupil due to their position of trust, any service relied upon by a user must equally provide accurate information. An analogy can be drawn between the application been developed and a teacher in modern life with regard to ethical issues about providing information. In modern society a teacher has a responsibility for directing the learning of students and ensuring that the material that students learn is accurate information~\cite{ryan2012teaching}. The American Academy of Pediatrics describes a similar view; that Schools exist to educate people, not to misinform them~\cite{ethicsRhodeIsland}. In an example, they describe the situation of the Department of Health in Rhode Island changing the curriculum on sex education to teach abstinence instead of methods to have safe sex. The effect of providing this information to students in the past has been that the rate of sexually transmitted diseases and teenage pregnancies has increased as teenagers then do not have the knowledge that will prevent the unintended consequences of sex~\cite{ethicsRhodeIsland}.
 
-% TODO Finish Ethics of Providing Information
-
-{\bf In a similar way to that which a teacher has a responsibility to teach accurate information to a pupil due to their position of trust, any service relied upon by a user must equally provide accurate information.  The result of not doing this could be providing inaccurate information that leads to a user carrying out an action that causes harm}.
-
-% TODO Reword last two sentences.  This is something important and obvious - perhaps simple analogy is not necessary.  Perhaps give a generalised example.
-
-% Lilian: You may want to look toward news paper (online/printed) to look at current/past issues that led to a law suit/inquiry and subsequent verdict/laws that may have been changed.
-
-% Lilian: You should provide both point of view so do use this material, then you will have to critic both point of views. 
-{\bf this needs to be waaaayyyyy expanded, but I struggled to find information that was useful.  There's lots on remote education, and on basic ethics of teaching, but I struggled to find anything specifically relating to ethics of ensuring information you provide is correct}.
-
-\marginnote{teachers code of conduct, wikipedia ethics to provide information that contributors believe to be correct. doctors and gp's provide to the best of their knowledge}
+This clearly shows that as the application been developed in this project will be providing information from a position of trust (users will ask questions and then use the output), the information it provides must be correct if that information could result in a user taking a potentially harmful action.
 
 \subsection{Ethics of Translation}
 \label{subsec:ethicsOfTranslation}
@@ -266,7 +257,7 @@ A significant issue that is present in statistical machine learning systems come
 
 This issue is a result of the translation engine not being capable of taking and using a complete representation of the expected cultural differences between those who speak the input language and those who speak the output language~\cite{melby2006can}. This does not apply to the first block of translation within the application where a user's input is translated into the language of the system, since the application will only need to parse text to identify geographical entities and the property been queried, making context unnecessary.
 
-With the current focus of the application been Geography it is unlikely that the information distributed will be used by individuals making important decisions so this issue is not relevant. However, in the future if the application is extended to work in more sensitive subject areas such as personal health, where users may make important personal decisions based on the answers returned, cultural confusion such as this could have potentially catastrophic effects.
+With the current focus of the application being Geography it is unlikely that the information distributed will be used by individuals making important decisions so this issue is not relevant. However, in the future if the application is extended to work in more sensitive subject areas such as personal health, where users may make important personal decisions based on the answers returned, cultural confusion such as this could have potentially catastrophic effects.
 
 \subsection{User Privacy and Data Protection}
 \label{subsubsec:userPrivacyAndDataProtection}
@@ -567,7 +558,7 @@ A testing utility will also be created to query the application from a personal 
 The development platform of the utility will be Linux.  This is for three reasons:
 \begin{enumerate}
   \item Linux manages Python and its libraries in a simple way without complex installers with tools like the Python Package Index (a library repository)~\cite{pypi}.
-  \item Common libraries that will be used for creating a HTTP server, creating a REST API\marginnote{Lilian: should I explain what this is somewhere?}, making database queries and sending SMSs tend to be written primarily on the Linux platform.
+  \item Common libraries that will be used for creating a HTTP server, making database queries and sending SMSs tend to be written primarily on the Linux platform.
   \item The author has familiarity with Linux and has access to significant Linux infrastructure under a grant from Rackspace.
 \end{enumerate}
 
@@ -736,7 +727,7 @@ In this project, two tools are needed: a WSGI server, and a framework for writin
 
 With respect to the WSGI server, many implementations exist such as a simple WSGI server included in Flask~\cite{libraryFlask} called Werkzeug~\cite{libraryWerkzeug}, and the Gevent WSGI server~\cite{libraryGevent}.  Support for multiple concurrent HTTP connections is not a requirement in the WSGI specification, and so some WSGI servers such as the implementation of Werkzeug in Flask do not support this even though Werkzeug does natively support processing multiple HTTP requests concurrently. It does this by specifically enabling threading and increasing the default maximum number of processes from one~\cite{werkzeugThreading}. The implementation of Werkzeug in Flask has these disabled in the source code because Flask uses thread-local storage (memory that is local to a single thread) and so cannot support concurrent HTTP requests on new threads~\cite{flaskThreading}.
 
-A library called Gevent will be used to replace Werkzeug in Flask as it does support concurrent HTTP connections~\cite{geventImplementingServers} using using the Greenlet library~\cite{libraryGreenlet}, which provides a notion of micro-threading (coroutines). When a new HTTP request is received, Gevent creates a new Greenlet, thus preventing the main thread being blocked and allowing multiple concurrent HTTP requests. The creation of the Greenlet is described in the preceding reference(\cite{geventImplementingServers}). 
+A library called Gevent will be used to replace Werkzeug in Flask as it does support concurrent HTTP connections~\cite{geventImplementingServers} using using the Greenlet library~\cite{libraryGreenlet}, which provides a notion of micro-threading (coroutines). When a new HTTP request is received, Gevent creates a new Greenlet~\cite{geventImplementingServers}, thus preventing the main thread being blocked and allowing multiple concurrent HTTP requests. 
 
 \subsubsection{Sending SMS}
 There are a number of SMS providers with HTTP gateways available to choose from, all of which are similar. For this project, the provider must match the following criteria:
@@ -749,7 +740,7 @@ There are a number of SMS providers with HTTP gateways available to choose from,
 
 It is difficult to measure the reputation of a provider accurately, but one possible way of doing this is by looking at the number of significant clients they have.
 
-Two services considered were that matched these criteria.  These were Twilio~\cite{serviceTwilio} and Plivo~\cite{servicePlivo}. Both use REST APIs for handling incoming messages and for sending responses. Both Twilio and Plivo have comparable coverage as well: Twilio state that they send and receive SMS with numbers in 198 countries~\cite{twilioCoverage}, and Plivo state that they support 207 countries~\cite{plivoCoverage}. The difference is trivial, as the number of recognised independent states in the world is between 190 and 200 depending on listing; the US Government recognises 195~\cite{usStateDepartmentListOfIndependentStates}.
+Two services were considered that matched these criteria.  These were Twilio~\cite{serviceTwilio} and Plivo~\cite{servicePlivo}. Both use REST APIs for handling incoming messages and for sending responses. Both Twilio and Plivo have comparable coverage as well: Twilio state that they send and receive SMS with numbers in 198 countries~\cite{twilioCoverage}, and Plivo state that they support 207 countries~\cite{plivoCoverage}. The difference is trivial, as the number of recognised independent states in the world is between 190 and 200 depending on listing; the US Government recognises 195~\cite{usStateDepartmentListOfIndependentStates}.
 
 With regard to reputation, for this project it was decided that Twilio is preferable to Plivo. Although it is difficult to measure reputation accurately, Twilio was founded in 2007 and has an group of clients including PayPal, Uber, Sprint and Airbnb, compared to Plivo, which was founded more recently in 2011.
 
@@ -1019,8 +1010,6 @@ Three of the non-student participants identified as been self-employed, one iden
 
 All participants in the experiment were regular internet users with all participants identifying their typical Internet usage being 'multiple times per day' or greater. Seven participants selected 'multiple times per day' whilst 14 selected 'more than once per hour'.
 
-As the participant pool was skewed towards a young student population with regular access to the internet it is suggested that some perhaps had difficulty imagining themselves working in the context of not having access to the Internet. \marginnote{move to end?}
-
 \section{Results}
 \label{sec:results}
 
@@ -1056,7 +1045,7 @@ $$r= \frac{\sum_{i=1}^{n} (x_{i}-\bar{x})(y_{i}-\bar{y})}{\sqrt{\sum_{i=1}^{n}(x
 
 In this equation, \texttt{n} is the number of participants, \texttt{x} is the participant ID, and \texttt{y} is the mean usefulness rating calculated for an individual participant. The PCC gives a value in the range of \texttt{-1}, which indicates a perfect negative correlation, to \texttt{+1}, which indicates a perfect positive correlation, with zero indicating no correlation at-all. Using this equation the correlation coefficient for this dataset was found to be 0.506.
 
-A graph shoeing usefulness plotted against the participant number is shown in figure \ref{fig:usefulnessTrend} Using linear regression a line of best fit was added to the graph with the equation $y = 0.075 x + 2.68$.
+A graph showing usefulness plotted against the participant number is shown in figure \ref{fig:usefulnessTrend} Using linear regression a line of best fit was added to the graph with the equation $y = 0.075 x + 2.68$.
 
 \begin{figure}[htb] 
 \includegraphics[width=\linewidth]{usefulnessTrend}
@@ -1070,9 +1059,9 @@ The graph does show that the data collected is 'noisy' with a lot of variation i
 
 The correlation coefficient was calculated individually for each of the questions that measure usefulness to establish if any of the specific questions yielded a particularly low or high correlation coefficient when measured against the number of preceding participants. The results are presented in table \ref{table:pccOfUsefulnessQuestions}, which shows that all of the questions showed a positive correlation, with varying degrees of strength. The results from questions four and thirteen are of interest: question four has a much lower correlation coefficient than other questions, and question thirteen has a relatively high correlation coefficient. 
 
-Question four looked at whether the application would improve the effectiveness of a user at finding information without access to the internet, and this result would indicate that the system does improve in terms of 
+Question four looked at whether the application would improve the effectiveness of a user at finding information without access to the internet, and this result would indicate that correlation between this and the number of participants who have used the application previously is very weak. This means that as more users used the application, the application did not appear to improve the way users felt about their effectiveness at finding information without access to the internet.
 
-Question thirteen investigated whether a user felt the information returned was useful, relevant and answered the question asked. 
+Question thirteen investigated whether a user felt the information returned was useful, relevant and answered the question asked. A Correlation Coefficient value of 0.617 shows a moderately strong correlation, which shows that the information returned did improve in terms of its usefulness and relevance to the question asked.
 
 \begin{table}[h]
 \centerline{\begin{tabular}{|l|l|}
@@ -1182,7 +1171,7 @@ NF.5 & Participants used natural language to ask questions of the application du
 
 The experimental evaluation suffered from issues caused by the pool of participants used. As discussed the data was extremely noisy and it was speculated that this was caused by varying levels of expectation from participants. This could have been fixed by spending more time with each participant explaining the expectations they should have of the software and a typical situation in which it would be used. 
 
-The participant pool contained 21 individuals and was skewed towards students in the age range of 18-24 who used the internet multiple times per day. This is not representative of the range of possible users of the application developed, notably the personas developed in appendix \ref{sec:appendixPersonas} which were used to drive the user requirements.
+The participant pool contained 21 individuals and was skewed towards students in the age range of 18-24 who used the internet multiple times per day. This is not representative of the range of possible users of the application developed, notably the personas developed in appendix \ref{sec:appendixPersonas} which were used to drive the user requirements. As the participant pool was skewed towards a young student population with regular access to the internet it is suggested that some had difficulty imagining themselves working in the context of not having access to the Internet.
 
 Each of the 21 participants in the experimental evaluation were asked to identify 16 pieces of information. The application learns more as each participant takes part and it would have been interesting to see if the trend of increasing ratings of usefulness continued with a larger number of participants. Time restrictions limited the number of data points that could be collected from each participant: with 16 pieces of information to identify the experiment took around 10 minutes during a test run. It would have been preferable to have more data points from asking participants to identify more information as this would perhaps have reduced the noise in the data due to a single poor result having less of a part of the whole experiment. A suitable expansion of the task would be to ask participants to identify 50 pieces of information instead of 16 which would extend the experiment to take approximately 30 minutes. Unfortunately this would make it more difficult to recruit participants without a remuneration for their time.
 
