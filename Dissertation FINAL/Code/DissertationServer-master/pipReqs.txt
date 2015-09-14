@@ -1,0 +1,8 @@
+greenlet
+gevent
+pymongo
+ujson
+twilio
+lxml
+flask
+numpy
